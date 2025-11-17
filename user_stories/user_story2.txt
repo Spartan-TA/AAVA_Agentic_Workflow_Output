@@ -1,0 +1,17 @@
+Title: Employee Master Data (CRUD)
+
+User Story: As an HR manager I want to create, update, and manage employee records with all relevant details so that there is a single source of truth for warehouse employee data.
+
+Acceptance Criteria:
+Scenario: Employee record management
+Given I have HR manager access
+When I POST, GET, PUT, PATCH, or DELETE employee records via the API
+Then the system enforces unique badgeId
+And supports soft-delete, pagination, and filtering
+And OpenAPI schemas are available with examples
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Project Scaffolding & Domain Setup (E01)
+- Notes: Ensure all employee fields (name, badgeId, role, department, shiftGroup, hireDate, status) are present; validate badgeId uniqueness.
