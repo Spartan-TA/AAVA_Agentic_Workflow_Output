@@ -1,0 +1,30 @@
+Title: Employee Master Data (CRUD)
+
+User Story: As an HR manager I want to create, read, update, and delete employee records So that I can maintain a single source of truth for warehouse employee data.
+
+Acceptance Criteria:
+Scenario: Employee record creation
+Given I have valid employee details
+When I submit a POST request to /employees
+Then a new employee record is created with a unique badgeId
+
+Scenario: Employee record update
+Given an employee exists
+When I send a PUT or PATCH request with updated details
+Then the employee record is updated accordingly
+
+Scenario: Employee record deletion
+Given an employee exists
+When I send a DELETE request
+Then the employee is soft-deleted and excluded from active lists
+
+Scenario: Pagination and filtering
+Given multiple employee records exist
+When I request employee data with pagination and filters
+Then I receive the correct subset of employee records
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Project Scaffolding & Domain Setup (E01)
+- Notes: Ensure OpenAPI schemas with examples and enforce unique badgeId.
