@@ -1,0 +1,15 @@
+Title: Role Based Access Control (RBAC)
+
+User Story: As a system administrator I want to configure roles and permissions (ADMIN, HR, SUPERVISOR, WORKER) so that sensitive operations are restricted and PII is protected.
+
+Acceptance Criteria:
+Scenario: Role-based access enforcement
+Given a user attempts to access a protected endpoint
+When their role is checked
+Then unauthorized requests return 401, forbidden actions return 403, ADMIN can manage all records, SUPERVISOR is limited to their team, and security rules are covered by tests
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Project Scaffolding & Domain Setup, Employee Master Data
+- Notes: Support API key/OAuth2 toggle via config; ensure row-level constraints where applicable.
