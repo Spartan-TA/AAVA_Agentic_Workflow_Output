@@ -1,0 +1,18 @@
+Title: Project Scaffolding & Domain Setup
+
+User Story: As a developer I want to initialize the Spring Boot (Maven) project with base packages and core modules so that all teams have a standardized foundation for rapid delivery and consistency.
+
+Acceptance Criteria:
+Scenario: Successful project scaffolding
+Given I have access to the repository
+When I build and run the project
+Then the application starts on port 8080 and the Actuator health endpoint returns UP
+And the README contains build/run steps
+And the base package structure is created
+And Flyway/Liquibase runs baseline migration
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: Ensure all modules (employee, scheduling, attendance, safety) are present; Actuator and DB migration tools are enabled.
