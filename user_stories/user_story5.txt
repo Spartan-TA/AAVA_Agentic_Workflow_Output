@@ -1,0 +1,30 @@
+Title: Shift & Schedule Management
+
+User Story: As a supervisor I want to create and manage shift templates, rotations, and assignments so that warehouse staffing is optimized and scheduling conflicts are minimized.
+
+Acceptance Criteria:
+Scenario: Create shift template
+Given I have access to scheduling tools
+When I create a new shift template
+Then the template is saved and available for assignment
+
+Scenario: Assign shifts to employees
+Given a shift template exists
+When I bulk-assign employees to shifts
+Then assignments are created and conflicts are detected/prevented
+
+Scenario: View personal shifts
+Given I am a worker
+When I access my schedule
+Then I see my upcoming shifts and blackout dates
+
+Scenario: Audit shift changes
+Given shift assignments are modified
+When I review the audit log
+Then all changes are tracked with timestamps and actors
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee Master Data (CRUD), Role Based Access Control (RBAC), Time & Attendance (Clock In/Out)
+- Notes: Blackout dates and warehouse operation calendars must be supported.
