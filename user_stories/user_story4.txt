@@ -1,0 +1,17 @@
+Title: Time & Attendance (Clock In/Out)
+
+User Story: As a warehouse worker I want to clock in and out with device and location capture so that my worked hours are accurately recorded for payroll and compliance.
+
+Acceptance Criteria:
+Scenario: Accurate time capture
+Given I am scheduled for a shift
+When I clock in or out using the provided endpoint
+Then my attendance is validated, associated with the correct shift, and daily totals are computed
+And missed punches trigger a correction workflow
+And attendance reports are exportable as CSV
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee Master Data (E02), Role Based Access Control (E03)
+- Notes: Geofence and device capture are optional; corrections create approval tasks.
