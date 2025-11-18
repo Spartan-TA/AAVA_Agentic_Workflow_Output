@@ -1,0 +1,30 @@
+Title: Leave & Absence Management
+
+User Story: As an employee I want to request and track leave so that my time off is managed according to company policies and staffing plans remain accurate.
+
+Acceptance Criteria:
+Scenario: Request leave
+Given I have available leave balance
+When I submit a leave request
+Then the request is logged and pending supervisor approval
+
+Scenario: Approve/deny leave
+Given a leave request is pending
+When my supervisor reviews the request
+Then they can approve or deny it and my balance updates accordingly
+
+Scenario: Auto-flag scheduled shifts
+Given I have approved leave overlapping scheduled shifts
+When the leave is approved
+Then affected shifts are flagged for coverage
+
+Scenario: Export approved leaves
+Given approved leave records exist
+When I request an export
+Then the system generates a report of approved leaves
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee Master Data (CRUD), Role Based Access Control (RBAC), Shift & Schedule Management
+- Notes: Accrual balances and policies must be enforced; integration hooks for scheduling and payroll.
