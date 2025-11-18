@@ -1,0 +1,22 @@
+{
+  "name": "Warehouse Employee Management System",
+  "short_name": "WarehouseEMS",
+  "start_url": "/mobile/clock-in",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1976d2",
+  "description": "PWA for warehouse employees to clock-in/out, view schedules, request leave, and see announcements.",
+  "icons": [
+    {
+      "src": "/static/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "offline_enabled": true
+}
