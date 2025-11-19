@@ -1,0 +1,111 @@
+Epic E02: Employee Master Data (CRUD)
+
+---
+
+Title: Create Employee Record
+
+User Story: As an HR Manager I want to create a new employee record with all required fields So that employee data is accurate and complete from the start
+
+Acceptance Criteria:
+Scenario: Successful Employee Creation
+Given I have HR Manager access
+When I submit a new employee with name, badgeId, role, department, shiftGroup, hireDate, and status
+Then the employee record is created and visible in the employee list
+
+Scenario: Duplicate Badge ID
+Given an employee with the same badgeId exists
+When I attempt to create a new employee with that badgeId
+Then the system rejects the request with a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding (E01)
+- Notes: BadgeId must be unique
+
+---
+
+Title: Update Employee Information
+
+User Story: As an HR Manager I want to update employee details So that records remain current and accurate
+
+Acceptance Criteria:
+Scenario: Successful Update
+Given an employee exists
+When I update their department or role
+Then the changes are saved and reflected in the employee profile
+
+Scenario: Invalid Data
+Given I enter an invalid date or status
+When I submit the update
+Then the system returns a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Only HR and Admin can update all fields
+
+---
+
+Title: Soft Delete Employee Record
+
+User Story: As an HR Manager I want to soft-delete employee records So that terminated employees are excluded from active lists but history is preserved
+
+Acceptance Criteria:
+Scenario: Soft Delete
+Given an employee is active
+When I soft-delete the record
+Then the employee is marked inactive and excluded from active queries
+
+Scenario: Restore Deleted Employee
+Given an employee is soft-deleted
+When I restore the record
+Then the employee returns to active status
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Soft-deleted employees retained for audit
+
+---
+
+Title: List and Filter Employees
+
+User Story: As a Supervisor I want to view and filter employee records by department, role, or status So that I can quickly find relevant staff
+
+Acceptance Criteria:
+Scenario: Filter by Department
+Given multiple employees exist
+When I filter by department
+Then only employees in that department are shown
+
+Scenario: Pagination
+Given more than 50 employees exist
+When I view the employee list
+Then results are paginated for performance
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Filtering and pagination must be efficient
+
+---
+
+Title: API Documentation for Employee Endpoints
+
+User Story: As a Developer I want OpenAPI documentation for employee CRUD endpoints So that integration is straightforward and reliable
+
+Acceptance Criteria:
+Scenario: OpenAPI Schema Available
+Given the API is deployed
+When I access the documentation endpoint
+Then I see schemas and example payloads for all employee CRUD operations
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Employee CRUD API
+- Notes: Documentation must be kept up to date
