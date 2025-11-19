@@ -1,0 +1,57 @@
+Title: Notify Users of Shift Changes
+User Story: As a worker I want to receive notifications for shift changes So that I am informed in real time
+Acceptance Criteria:
+Scenario: Shift Change Notification
+Given a shift change
+When the change occurs
+Then I receive an in-app and email/SMS notification
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: RBAC, Shift assignment
+- Notes: Quiet hours configuration
+
+---
+
+Title: Notify Users of Expiring Certifications
+User Story: As a worker I want to receive notifications for expiring certifications So that I can renew them on time
+Acceptance Criteria:
+Scenario: Certification Expiry Notification
+Given a certification nearing expiry
+When the alert is triggered
+Then I receive a notification
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification tracking
+- Notes: Templates localized
+
+---
+
+Title: Notify Users of Approvals and Announcements
+User Story: As a worker I want to receive notifications for approvals and announcements So that I am kept informed
+Acceptance Criteria:
+Scenario: Approval/Announcement Notification
+Given an approval or announcement
+When it is published
+Then I receive a notification and see it on my dashboard
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave management, Announcements
+- Notes: Opt-in/out per channel
+
+---
+
+Title: Track Notification Delivery Status
+User Story: As an admin I want to track notification delivery status So that I can ensure messages are received
+Acceptance Criteria:
+Scenario: Delivery Status Tracking
+Given a sent notification
+When I view the status
+Then delivery status is visible and rate limits are applied
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Notifications
+- Notes: Dashboard visibility
