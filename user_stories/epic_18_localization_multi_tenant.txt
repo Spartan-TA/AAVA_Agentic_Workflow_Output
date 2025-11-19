@@ -1,0 +1,42 @@
+Title: Support Multi-Tenant Data Isolation
+User Story: As a system admin I want to support multiple warehouses with isolated data So that multi-site operations are scalable
+Acceptance Criteria:
+Scenario: Tenant Data Isolation
+Given multiple tenants
+When data is accessed
+Then queries are scoped to the tenant
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: Project scaffolding, Employee CRUD, Shift assignment
+- Notes: Tenant ID in all entities
+
+---
+
+Title: Localize UI for English/Spanish
+User Story: As a worker I want to switch between English and Spanish So that I can use the system in my preferred language
+Acceptance Criteria:
+Scenario: UI Localization
+Given the locale switcher
+When I select a language
+Then the UI displays in that language
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Multi-tenant
+- Notes: Translations for core UI strings
+
+---
+
+Title: Support Timezone-Aware Scheduling
+User Story: As a scheduler I want timezone-aware scheduling So that shifts are displayed correctly for each location
+Acceptance Criteria:
+Scenario: Timezone Handling
+Given schedules in different timezones
+When I view a schedule
+Then dates/times are displayed in the user's timezone
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Timezone configuration per tenant
