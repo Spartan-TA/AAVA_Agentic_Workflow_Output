@@ -1,0 +1,42 @@
+Title: Request Leave
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that my time off is tracked and approved
+Acceptance Criteria:
+Scenario: Leave Request Submission
+Given my leave balance
+When I submit a leave request
+Then my supervisor can approve or deny it
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Accrual balances and policies
+
+---
+
+Title: Approve/Deny Leave Requests
+User Story: As a supervisor I want to approve or deny leave requests So that staffing plans are maintained
+Acceptance Criteria:
+Scenario: Leave Approval Workflow
+Given a pending leave request
+When I review and take action
+Then the employee's balance updates and scheduled shifts are flagged
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave request
+- Notes: Integration with scheduling
+
+---
+
+Title: Exclude Approved Leave from Scheduling
+User Story: As a scheduler I want approved leaves to exclude employees from scheduling So that coverage is maintained
+Acceptance Criteria:
+Scenario: Scheduling Exclusion
+Given an approved leave
+When generating schedules
+Then the employee is excluded from shift assignments
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave approval
+- Notes: Export shows approved leaves
