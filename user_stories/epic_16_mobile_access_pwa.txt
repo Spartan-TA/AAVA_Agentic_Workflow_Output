@@ -1,0 +1,57 @@
+Title: Enable Mobile Clock In/Out
+User Story: As a worker I want to clock in/out on my mobile device So that I can record attendance from anywhere
+Acceptance Criteria:
+Scenario: Mobile Clock In/Out
+Given the mobile PWA
+When I clock in/out
+Then the event is recorded and synced
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Attendance, Shift assignment, Leave management, Notifications
+- Notes: Offline-friendly via PWA
+
+---
+
+Title: View Schedules on Mobile
+User Story: As a worker I want to view my schedules on mobile So that I can plan my shifts
+Acceptance Criteria:
+Scenario: Mobile Schedule View
+Given the mobile PWA
+When I access my schedule
+Then I see my upcoming shifts
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Responsive views
+
+---
+
+Title: Request Leave on Mobile
+User Story: As a worker I want to request leave on mobile So that I can manage time off conveniently
+Acceptance Criteria:
+Scenario: Mobile Leave Request
+Given the mobile PWA
+When I submit a leave request
+Then it is processed and I receive confirmation
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave management
+- Notes: Installable PWA manifest
+
+---
+
+Title: Offline Queue for Clock Events
+User Story: As a worker I want clock events queued offline So that connectivity issues do not prevent attendance recording
+Acceptance Criteria:
+Scenario: Offline Clock Event Queue
+Given the mobile PWA is offline
+When I clock in/out
+Then the event is queued and synced when online
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Mobile access
+- Notes: Conflict resolution
