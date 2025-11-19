@@ -1,0 +1,42 @@
+Title: Create Performance Review Templates
+User Story: As an HR manager I want to create performance review templates So that structured feedback can be collected
+Acceptance Criteria:
+Scenario: Review Template Creation
+Given review criteria
+When I create a template
+Then it is available for assignment
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC
+- Notes: Quarterly/annual cycles
+
+---
+
+Title: Assign and Complete Performance Reviews
+User Story: As a supervisor I want to assign and complete performance reviews So that employee productivity and retention are improved
+Acceptance Criteria:
+Scenario: Review Assignment and Completion
+Given a review cycle
+When reviews are assigned and completed
+Then ratings and comments are recorded
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Review templates
+- Notes: Supervisor/employee acknowledgements
+
+---
+
+Title: Export Performance Reviews as PDF
+User Story: As an HR manager I want to export performance reviews as PDF So that records are easily shared
+Acceptance Criteria:
+Scenario: PDF Export
+Given completed reviews
+When I request an export
+Then a PDF is generated
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Review completion
+- Notes: Immutable history after sign-off
