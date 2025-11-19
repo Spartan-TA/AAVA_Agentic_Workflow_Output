@@ -1,0 +1,77 @@
+EPIC E17: ONBOARDING & OFFBOARDING WORKFLOW
+
+===========================================
+
+Title: Automated Account Provisioning for New Hires
+
+User Story: As an HR admin I want new hire accounts to be provisioned automatically So that onboarding is efficient and error-free
+
+Acceptance Criteria:
+
+Scenario: New hire detected
+Given a new hire appears from HRIS
+When onboarding is triggered
+Then user accounts and initial schedules are created
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: HRIS integration, scheduling module
+- Notes: Tasks generated for training and asset assignment
+
+---
+
+Title: Training Assignment During Onboarding
+
+User Story: As a supervisor I want required training tasks assigned to new employees So that compliance is ensured before work begins
+
+Acceptance Criteria:
+
+Scenario: Onboarding workflow
+Given a new employee is onboarded
+When onboarding tasks are generated
+Then required training is assigned and tracked
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Training module, onboarding workflow
+- Notes: Certification status updated upon completion
+
+---
+
+Title: Asset Assignment for New Employees
+
+User Story: As an asset manager I want assets (PPE, scanners) assigned to new hires during onboarding So that equipment is tracked from day one
+
+Acceptance Criteria:
+
+Scenario: Asset assignment
+Given a new employee is onboarded
+When onboarding tasks are generated
+Then required assets are assigned and logged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset management, onboarding workflow
+- Notes: Asset history log updated
+
+---
+
+Title: Automated Offboarding and Access Revocation
+
+User Story: As an HR admin I want terminated employees to have access revoked and assets collected So that offboarding is secure and complete
+
+Acceptance Criteria:
+
+Scenario: Termination detected
+Given an employee is terminated in HRIS
+When offboarding is triggered
+Then system access is revoked and asset collection tasks are generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: HRIS integration, asset management
+- Notes: Schedules updated to remove terminated employees
