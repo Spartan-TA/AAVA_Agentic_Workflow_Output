@@ -1,0 +1,55 @@
+Epic E09: Equipment & Asset Assignment
+
+---
+
+Title: Assign Equipment and Assets to Employees
+
+User Story: As a supervisor I want to assign equipment (scanners, forklifts, PPE) to employees So that asset usage is tracked
+
+Acceptance Criteria:
+Scenario: Assigning an asset
+Given an asset is available
+When I assign it to an employee
+Then the asset's status is updated to checked out
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Asset assignment history tracked
+
+---
+
+Title: Track Asset Checkout and Return
+
+User Story: As an asset manager I want to track checkout and return of equipment So that asset availability and condition are maintained
+
+Acceptance Criteria:
+Scenario: Returning an asset
+Given an asset is checked out
+When the employee returns it
+Then the asset's status is updated and condition logged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Condition checklist on return
+
+---
+
+Title: Prevent Asset Use if Certification Missing
+
+User Story: As a supervisor I want to prevent use of equipment if required certification is missing So that safety compliance is enforced
+
+Acceptance Criteria:
+Scenario: Certification check on assignment
+Given an employee lacks forklift certification
+When I try to assign a forklift
+Then the system blocks the assignment
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E07
+- Notes: Integrated with certification tracking
