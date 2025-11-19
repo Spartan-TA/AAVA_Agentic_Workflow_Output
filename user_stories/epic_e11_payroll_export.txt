@@ -1,0 +1,54 @@
+EPIC E11: PAYROLL EXPORT INTEGRATION
+
+===========================================
+
+Title: Payroll Export Generation
+
+User Story: As a payroll administrator I want to generate payroll-ready files from attendance and leave So that payroll runs are accurate and automated
+
+Acceptance Criteria:
+
+Scenario: Generate export
+Given approved attendance and leave data
+When I request a payroll export
+Then the file matches provider schema
+
+Scenario: Reconcile totals
+Given export is generated
+When I compare with reports
+Then totals reconcile
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Attendance, Leave Management
+- Notes: Secure delivery via SFTP/API
+
+---
+
+Title: Payroll Export Delivery and Audit
+
+User Story: As a payroll administrator I want to securely deliver payroll exports and audit every export So that errors are tracked and retried
+
+Acceptance Criteria:
+
+Scenario: Secure delivery
+Given export is ready
+When I deliver via SFTP/API
+Then delivery status is tracked
+
+Scenario: Retry failed delivery
+Given delivery fails
+When retry is triggered
+Then backoff is applied and delivery retried
+
+Scenario: Audit log
+Given exports are delivered
+When I inspect logs
+Then every export is logged
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Payroll Export Generation
+- Notes: Audit log for every export
