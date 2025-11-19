@@ -1,0 +1,42 @@
+Title: Expose REST APIs for HRIS/WMS
+User Story: As an integration engineer I want to expose REST APIs for HRIS and WMS So that master data is synchronized
+Acceptance Criteria:
+Scenario: API Exposure
+Given HRIS/WMS connectors
+When I access the APIs
+Then JWT/OAuth2-secured endpoints are available
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding, Employee CRUD, RBAC
+- Notes: Idempotent webhooks
+
+---
+
+Title: Sync Employee Data from HRIS
+User Story: As an HR manager I want to sync employee data from HRIS So that new hires and terminations are automatically updated
+Acceptance Criteria:
+Scenario: HRIS Sync Job
+Given HRIS integration
+When the sync job runs
+Then employees are created/updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Integration APIs
+- Notes: Documented in OpenAPI
+
+---
+
+Title: Link WMS for Department/Location
+User Story: As a scheduler I want to link WMS for department and location data So that scheduling is accurate
+Acceptance Criteria:
+Scenario: WMS Link
+Given WMS integration
+When department/location data is requested
+Then it is retrieved from WMS
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Integration APIs
+- Notes: Webhooks for events
