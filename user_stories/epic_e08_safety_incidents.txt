@@ -1,0 +1,55 @@
+Epic E08: Safety Incidents & OSHA Reporting
+
+---
+
+Title: Record Safety Incidents and Near-Misses
+
+User Story: As a supervisor I want to record safety incidents and near-misses So that workplace hazards are tracked and mitigated
+
+Acceptance Criteria:
+Scenario: Logging an incident
+Given an incident occurs
+When I submit a report with severity, location, and description
+Then the incident is logged and flagged for investigation
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Severity levels configurable
+
+---
+
+Title: Workflow for Investigation and Corrective Actions
+
+User Story: As a safety officer I want a workflow to investigate incidents and assign corrective actions So that incidents are resolved and documented
+
+Acceptance Criteria:
+Scenario: Assigning corrective action
+Given an incident is under investigation
+When I assign a corrective action to a responsible party
+Then the action is tracked until completion
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Workflow includes status updates
+
+---
+
+Title: Generate OSHA Summary Reports
+
+User Story: As an admin I want to generate OSHA summary reports from incident data So that regulatory compliance is maintained
+
+Acceptance Criteria:
+Scenario: Generating a report
+Given incidents are logged
+When I request an OSHA summary
+Then a formatted report is generated for submission
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Export in PDF/CSV formats
