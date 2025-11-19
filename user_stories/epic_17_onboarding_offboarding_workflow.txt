@@ -1,0 +1,27 @@
+Title: Automate Onboarding Provisioning
+User Story: As an HR manager I want to automate onboarding provisioning So that new hires are set up quickly
+Acceptance Criteria:
+Scenario: Onboarding Automation
+Given a new hire from HRIS
+When onboarding is triggered
+Then accounts, schedules, and training tasks are created
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC, Shift assignment, Certification tracking, Asset assignment, Integration APIs
+- Notes: Tasks generated for training and asset assignment
+
+---
+
+Title: Automate Offboarding Deprovision
+User Story: As an HR manager I want to automate offboarding deprovision So that access and assets are revoked on termination
+Acceptance Criteria:
+Scenario: Offboarding Automation
+Given a termination from HRIS
+When offboarding is triggered
+Then access is revoked, assets are collected, and schedules are updated
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Onboarding
+- Notes: Deprovision access and assets
