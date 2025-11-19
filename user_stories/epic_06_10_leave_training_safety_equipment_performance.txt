@@ -1,0 +1,243 @@
+EPIC 06: LEAVE & ABSENCE MANAGEMENT
+
+===========================================
+
+Title: Leave Request Workflow
+
+User Story: As a warehouse worker I want to request PTO, sick, or unpaid leave So that my time off is tracked and approved
+
+Acceptance Criteria:
+Scenario: Submit leave request
+Given I am authenticated as WORKER
+When I POST to /leave/requests with valid data
+Then a leave request is created
+
+Scenario: Supervisor approval
+Given a leave request is pending
+When a supervisor reviews and approves/denies
+Then the request status is updated and balances are adjusted
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC, Shift Management
+- Notes: Scheduled shifts auto-flag for coverage
+
+---
+
+Title: Leave Accrual and Integration
+
+User Story: As an HR staff member I want leave balances and policies integrated with scheduling and payroll So that compliance and accurate staffing are maintained
+
+Acceptance Criteria:
+Scenario: Accrual balance update
+Given a leave is approved
+When the payroll export is generated
+Then the leave balance is updated and reflected in payroll
+
+Scenario: Export approved leaves
+Given approved leave requests exist
+When I export leave data
+Then only approved leaves are included
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Employee CRUD API, RBAC, Shift Management
+- Notes: Integration hooks for scheduling and payroll
+
+
+===========================================
+EPIC 07: TRAINING & CERTIFICATION TRACKING
+===========================================
+
+Title: Certification Tracking
+
+User Story: As a safety officer I want to track employee certifications and expirations So that only qualified staff are assigned to sensitive roles
+
+Acceptance Criteria:
+Scenario: Add certification
+Given I am authenticated as HR or SUPERVISOR
+When I POST to /certifications with valid data
+Then the certification is added to the employee profile
+
+Scenario: Expiry alerts
+Given a certification is expiring in 30/7 days
+When the system checks certification dates
+Then an alert is sent to the employee and supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Upload proof documents supported
+
+---
+
+Title: Certification Assignment Blocking
+
+User Story: As a supervisor I want to prevent assignment of tasks to employees with expired certifications So that safety and compliance are enforced
+
+Acceptance Criteria:
+Scenario: Block assignment
+Given an employee's certification is expired
+When I try to assign them to a restricted task
+Then the system blocks the assignment and displays a warning
+
+Scenario: Certification status visibility
+Given I view an employee profile
+When I check certifications
+Then current status and expiry dates are visible
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Scheduling checks block unqualified assignments
+
+
+===========================================
+EPIC 08: SAFETY INCIDENTS & OSHA REPORTING
+===========================================
+
+Title: Safety Incident Recording
+
+User Story: As a safety officer I want to record safety incidents and near-misses So that investigations and OSHA reporting are streamlined
+
+Acceptance Criteria:
+Scenario: Record incident
+Given I am authenticated as SAFETY_OFFICER
+When I POST to /safety/incidents with valid data
+Then the incident is recorded with severity, location, and involved employees
+
+Scenario: Status workflow
+Given an incident is recorded
+When investigation progresses
+Then status changes from Open to Investigating to Resolved
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Export OSHA 300/300A fields supported
+
+---
+
+Title: OSHA Metrics Dashboard
+
+User Story: As a compliance manager I want a dashboard of safety metrics and OSHA reports So that regulatory requirements are met
+
+Acceptance Criteria:
+Scenario: View metrics dashboard
+Given incidents are recorded
+When I access the dashboard endpoint
+Then I see summary metrics and export options
+
+Scenario: Export OSHA report
+Given incidents exist for the period
+When I export OSHA report
+Then the file contains all required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Metrics dashboard endpoints available
+
+
+===========================================
+EPIC 09: EQUIPMENT & ASSET ASSIGNMENT
+===========================================
+
+Title: Equipment Assignment
+
+User Story: As a supervisor I want to assign equipment and assets to employees So that accountability and safe operation are ensured
+
+Acceptance Criteria:
+Scenario: Assign asset
+Given I am authenticated as SUPERVISOR
+When I POST to /assets/assign with valid employee and asset
+Then the asset is assigned and recorded
+
+Scenario: Certification check
+Given an employee lacks required certification
+When I assign restricted equipment
+Then the system blocks the assignment
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC, Certification Tracking
+- Notes: Asset registry CRUD supported
+
+---
+
+Title: Asset Checkout/Return
+
+User Story: As a warehouse worker I want to check out and return equipment So that asset usage is tracked and overdue returns are flagged
+
+Acceptance Criteria:
+Scenario: Check out asset
+Given asset is available
+When I POST to /assets/checkout with my employee ID
+Then the asset is checked out to me
+
+Scenario: Overdue return report
+Given asset is overdue for return
+When I view asset history
+Then the report shows overdue status
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Employee CRUD API, RBAC, Certification Tracking
+- Notes: History log visible per asset and employee
+
+
+===========================================
+EPIC 10: PERFORMANCE REVIEWS & GOALS
+===========================================
+
+Title: Performance Review Cycle
+
+User Story: As an HR staff member I want to create and assign performance review cycles So that employee development is tracked
+
+Acceptance Criteria:
+Scenario: Create review cycle
+Given I am authenticated as HR
+When I POST to /reviews/cycles with valid data
+Then a new review cycle is created
+
+Scenario: Assign review
+Given a review cycle exists
+When I assign to employees
+Then review tasks are generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Quarterly/annual templates supported
+
+---
+
+Title: Review Submission and Acknowledgement
+
+User Story: As a supervisor I want to submit and acknowledge performance reviews So that feedback is documented and immutable after sign-off
+
+Acceptance Criteria:
+Scenario: Submit review
+Given a review is assigned
+When I submit ratings and comments
+Then the review is saved and visible to HR
+
+Scenario: PDF export
+Given a review is completed
+When I export the review
+Then a PDF file is generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Role-based visibility; immutable history after sign-off
