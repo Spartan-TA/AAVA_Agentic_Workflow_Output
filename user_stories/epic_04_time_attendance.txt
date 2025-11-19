@@ -1,0 +1,47 @@
+EPIC 04: TIME & ATTENDANCE (CLOCK IN/OUT)
+
+===========================================
+
+Title: Clock In/Out Functionality
+
+User Story: As a warehouse worker I want to clock in and out using my device So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am scheduled to work
+When I POST to /attendance/clock-in with valid credentials
+Then my clock-in event is recorded
+
+Scenario: Geofence validation
+Given geofence is enabled
+When I clock in outside the allowed area
+Then the request is rejected
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Device capture and geofence optional
+
+---
+
+Title: Attendance Calculation
+
+User Story: As a payroll administrator I want hours worked per shift to be calculated automatically So that payroll processing is accurate
+
+Acceptance Criteria:
+Scenario: Daily totals computed
+Given clock-in and clock-out events exist for a day
+When I request attendance totals
+Then the correct hours worked are returned
+
+Scenario: Missed punch correction
+Given a missed punch is detected
+When a correction is submitted
+Then an approval task is created for supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Reports exportable as CSV
