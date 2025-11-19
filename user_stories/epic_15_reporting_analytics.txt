@@ -1,0 +1,27 @@
+Title: Generate Operational Reports
+User Story: As a supervisor I want to generate operational reports for attendance, overtime, and leave So that I can make data-driven decisions
+Acceptance Criteria:
+Scenario: Report Generation
+Given operational data
+When I request a report
+Then it is generated with filters and exported in CSV/PDF
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Attendance, Shift assignment, Leave management, Certification tracking, Safety incidents, Audit logging
+- Notes: Exports within 10s for 50k rows
+
+---
+
+Title: Access Role-Based Dashboards
+User Story: As a supervisor I want to access role-based dashboards So that I can view relevant KPIs
+Acceptance Criteria:
+Scenario: Dashboard Access
+Given my role
+When I access the dashboard
+Then I see relevant metrics and reports
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Reporting
+- Notes: Metrics endpoints for BI
