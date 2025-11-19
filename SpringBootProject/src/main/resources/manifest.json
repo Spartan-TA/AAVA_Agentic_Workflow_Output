@@ -1,8 +1,0 @@
-{
-  "name": "SpringBoot Mobile API",
-  "short_name": "MobileAPI",
-  "start_url": "/mobile/status",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "description": "Mobile API manifest for Spring Boot application"
-}
