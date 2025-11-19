@@ -1,0 +1,77 @@
+EPIC E13: INTEGRATION LAYER (HRIS/WMS APIs)
+
+===========================================
+
+Title: HRIS Employee Sync
+
+User Story: As an HR admin I want new hires and terminations to sync automatically from HRIS So that employee records stay up to date
+
+Acceptance Criteria:
+
+Scenario: HRIS sync job runs
+Given a new hire or termination in HRIS
+When the sync job executes
+Then the employee record is created or updated in the system
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: HRIS API, employee master data
+- Notes: Idempotent sync required
+
+---
+
+Title: WMS Department/Location Integration
+
+User Story: As a system admin I want to link employee records to WMS department and location data So that assignments are accurate and up to date
+
+Acceptance Criteria:
+
+Scenario: WMS data mapping
+Given WMS provides updated department/location info
+When the integration job runs
+Then employee records are updated accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: WMS API, employee master data
+- Notes: Mapping documented in OpenAPI
+
+---
+
+Title: Secure API Authentication
+
+User Story: As a developer I want all integration APIs to be secured via JWT/OAuth2 So that only authorized systems can access sensitive data
+
+Acceptance Criteria:
+
+Scenario: API authentication
+Given an API request is made
+When the request includes valid JWT/OAuth2 credentials
+Then access is granted; otherwise, denied
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Security module
+- Notes: API documented in OpenAPI
+
+---
+
+Title: Webhook Event Delivery
+
+User Story: As a partner system I want to receive webhooks for key events (new hire, termination, shift change) So that I can trigger downstream processes
+
+Acceptance Criteria:
+
+Scenario: Event triggers webhook
+Given a key event occurs
+When the webhook is configured
+Then the partner system receives the event payload reliably
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Event bus, partner API
+- Notes: Delivery retries with backoff
