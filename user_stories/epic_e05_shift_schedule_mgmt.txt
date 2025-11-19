@@ -1,0 +1,60 @@
+Epic E05: Shift & Schedule Management
+
+---
+
+Title: Create Recurring Shift Templates
+
+User Story: As an HR manager I want to define recurring shift templates So that scheduling is efficient and consistent
+
+Acceptance Criteria:
+Scenario: Creating a weekly shift template
+Given I am on the shift management page
+When I create a template for Mon-Fri, 8am-4pm
+Then the template is saved and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Support daily, weekly, and custom recurrence
+
+---
+
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor I want to assign shifts to employees So that coverage and compliance are maintained
+
+Acceptance Criteria:
+Scenario: Assigning a shift
+Given a shift template exists
+When I assign it to an employee
+Then the employee's schedule is updated
+
+Scenario: Blackout date enforcement
+Given a blackout date is set
+When I try to assign a shift on that date
+Then the system prevents the assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03, E04
+- Notes: Blackout dates configurable per site
+
+---
+
+Title: Configure Overtime Rules
+
+User Story: As an HR manager I want to set overtime rules So that overtime pay is calculated according to policy
+
+Acceptance Criteria:
+Scenario: Overtime calculation
+Given an employee works more than 40 hours in a week
+When payroll is processed
+Then overtime hours are calculated and flagged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Support federal and local overtime regulations
