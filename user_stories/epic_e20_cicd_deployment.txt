@@ -1,0 +1,77 @@
+EPIC E20: CI/CD & DEPLOYMENT AUTOMATION
+
+===========================================
+
+Title: Automated Build & Test Pipeline
+
+User Story: As a developer I want code changes to trigger automated builds and tests So that deployments are reliable and errors are caught early
+
+Acceptance Criteria:
+
+Scenario: Code push to repository
+Given code is pushed to the main branch
+When the CI pipeline runs
+Then builds and tests execute automatically and report status
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: CI/CD tool, test suite
+- Notes: Pipeline status visible to team
+
+---
+
+Title: One-Click Deployment to Staging
+
+User Story: As a release manager I want to deploy to staging with a single action So that I can validate releases before production
+
+Acceptance Criteria:
+
+Scenario: Staging deployment
+Given a build is successful
+When I trigger deployment
+Then the application is deployed to staging automatically
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: CI/CD tool, staging environment
+- Notes: Deployment logs available
+
+---
+
+Title: Rollback Automation
+
+User Story: As a DevOps engineer I want automated rollback on failed deployments So that system stability is maintained
+
+Acceptance Criteria:
+
+Scenario: Deployment failure
+Given a deployment fails
+When rollback is triggered
+Then the previous stable version is restored automatically
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: CI/CD tool, deployment scripts
+- Notes: Rollback status reported
+
+---
+
+Title: Deployment Audit Logging
+
+User Story: As a compliance officer I want all deployments to be logged with actor, timestamp, and outcome So that I can review deployment history
+
+Acceptance Criteria:
+
+Scenario: Deployment occurs
+Given a deployment is triggered
+When it completes
+Then a log entry is created with actor, timestamp, and result
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: CI/CD tool, audit log module
+- Notes: Exportable for audits
