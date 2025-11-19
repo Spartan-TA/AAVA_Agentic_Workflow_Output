@@ -1,0 +1,77 @@
+EPIC E16: MOBILE ACCESS (PWA)
+
+===========================================
+
+Title: Mobile Clock-In/Out
+
+User Story: As a warehouse worker I want to clock in and out using my mobile device So that I can record attendance conveniently
+
+Acceptance Criteria:
+
+Scenario: Mobile clock event
+Given I access the mobile app
+When I submit a clock-in or clock-out
+Then my attendance is recorded and queued offline if needed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance module, PWA framework
+- Notes: Offline queue with conflict resolution
+
+---
+
+Title: View Personal Schedule on Mobile
+
+User Story: As a worker I want to view my upcoming shifts on my mobile device So that I can plan my work schedule
+
+Acceptance Criteria:
+
+Scenario: Schedule view
+Given I log in to the mobile app
+When I navigate to my schedule
+Then my assigned shifts are displayed responsively
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Scheduling module, PWA framework
+- Notes: PWA manifest required
+
+---
+
+Title: Request Leave via Mobile
+
+User Story: As an employee I want to request leave from my mobile device So that I can manage time off easily
+
+Acceptance Criteria:
+
+Scenario: Leave request
+Given I access the leave request form
+When I submit a request
+Then my supervisor is notified and the request is tracked
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave management, notification module
+- Notes: Responsive design required
+
+---
+
+Title: Announcements on Mobile Dashboard
+
+User Story: As a worker I want to see company announcements on my mobile dashboard So that I stay informed
+
+Acceptance Criteria:
+
+Scenario: Announcement visibility
+Given a new announcement is published
+When I open the mobile dashboard
+Then the announcement is displayed until dismissed or expired
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Notification module, PWA framework
+- Notes: Lighthouse PWA score â¥ 80
