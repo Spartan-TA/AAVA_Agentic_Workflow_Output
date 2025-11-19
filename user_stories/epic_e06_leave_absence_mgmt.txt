@@ -1,0 +1,49 @@
+EPIC E06: LEAVE & ABSENCE MANAGEMENT
+
+===========================================
+
+Title: Leave Request and Approval
+
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that my time off is tracked and approved
+
+Acceptance Criteria:
+
+Scenario: Submit leave request
+Given I have leave balance
+When I submit a request
+Then the request is created and pending approval
+
+Scenario: Supervisor approval
+Given a leave request is pending
+When the supervisor approves or denies
+Then the request status is updated and balances adjusted
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee Master Data, Role-Based Access Control, Shift Management
+- Notes: Scheduled shifts auto-flag for coverage
+
+---
+
+Title: Leave Balance and Policy Management
+
+User Story: As an HR manager I want to manage leave accrual balances and policies So that leave is compliant and accurately tracked
+
+Acceptance Criteria:
+
+Scenario: Accrual update
+Given a leave is approved
+When balances are recalculated
+Then the employee's leave balance reflects the change
+
+Scenario: Policy enforcement
+Given leave policies exist
+When a request violates a policy
+Then the request is rejected with a reason
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Leave Request and Approval
+- Notes: Exports show approved leaves
