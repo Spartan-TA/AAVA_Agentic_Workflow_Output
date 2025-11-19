@@ -1,0 +1,58 @@
+EPIC E14: AUDIT TRAIL & COMPLIANCE
+
+===========================================
+
+Title: Audit Logging for Sensitive Changes
+
+User Story: As a compliance officer I want all sensitive changes to be logged with actor, timestamp, and before/after values So that I can trace actions for audits
+
+Acceptance Criteria:
+
+Scenario: Sensitive change occurs
+Given a create/update/delete on sensitive data
+When the change is committed
+Then an immutable audit log entry is created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Security module, database
+- Notes: Log table must be tamper-evident
+
+---
+
+Title: Export Audit Logs by Date/User/Entity
+
+User Story: As an auditor I want to export audit logs filtered by date, user, or entity So that I can review compliance for specific periods or users
+
+Acceptance Criteria:
+
+Scenario: Export request
+Given I specify filter criteria
+When I request an export
+Then the filtered audit logs are generated in CSV format
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Audit log module
+- Notes: Export must be access controlled
+
+---
+
+Title: Automated Coverage Tests for Audit Logging
+
+User Story: As a QA engineer I want automated tests to validate audit logging coverage So that no sensitive change goes unlogged
+
+Acceptance Criteria:
+
+Scenario: Test runs on change
+Given a sensitive operation is performed
+When automated tests execute
+Then audit log entries are verified for completeness
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Test automation, audit log module
+- Notes: Tests must cover all CRUD operations
