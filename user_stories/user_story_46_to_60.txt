@@ -1,0 +1,267 @@
+Title: Automated Account Provisioning
+
+User Story: As an HR manager I want new worker accounts to be provisioned automatically so that onboarding is efficient and error-free
+
+Acceptance Criteria:
+Scenario: Automated provisioning
+  Given a new worker is hired
+  When onboarding is initiated
+  Then accounts, schedules, and training are provisioned automatically
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Integrate with AD/LDAP
+
+---
+
+Title: Automated Offboarding Workflow
+
+User Story: As an HR manager I want departing workers to be deprovisioned automatically so that access and assets are revoked securely
+
+Acceptance Criteria:
+Scenario: Automated offboarding
+  Given a worker is marked for departure
+  When offboarding is initiated
+  Then accounts are disabled, schedules removed, and assets reclaimed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Notify IT and security
+
+---
+
+Title: Onboarding Progress Tracker
+
+User Story: As a supervisor I want to track onboarding progress for new hires so that I can ensure all steps are completed
+
+Acceptance Criteria:
+Scenario: Progress tracking
+  Given a new hire is onboarded
+  When I view their profile
+  Then I see a checklist of completed and pending onboarding tasks
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Automated reminders
+
+---
+
+Title: Asset Assignment During Onboarding
+
+User Story: As an asset manager I want assets to be assigned during onboarding so that workers have necessary equipment from day one
+
+Acceptance Criteria:
+Scenario: Asset assignment
+  Given onboarding is in progress
+  When a worker is assigned a role
+  Then relevant assets are allocated and tracked
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Integrate with asset inventory
+
+---
+
+Title: Training Module Integration
+
+User Story: As a training coordinator I want onboarding to include mandatory training modules so that compliance is ensured
+
+Acceptance Criteria:
+Scenario: Training assignment
+  Given onboarding is initiated
+  When a worker is onboarded
+  Then required training modules are assigned and tracked
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Track completion status
+
+---
+
+Title: Multi-Warehouse Policy Support
+
+User Story: As an admin I want to configure distinct policies for each warehouse so that local regulations and practices are enforced
+
+Acceptance Criteria:
+Scenario: Warehouse policy configuration
+  Given multiple warehouses exist
+  When I configure policies
+  Then each warehouse applies its own rules for attendance, leave, and scheduling
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E01, E02, E03, E05
+- Notes: Support future expansion
+
+---
+
+Title: Warehouse-Specific User Roles
+
+User Story: As an admin I want to assign user roles specific to each warehouse so that permissions reflect local responsibilities
+
+Acceptance Criteria:
+Scenario: Role assignment
+  Given multiple warehouses
+  When I assign roles
+  Then users have permissions relevant to their warehouse
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02, E03, E05
+- Notes: Prevent cross-warehouse access
+
+---
+
+Title: UI Localization for English/Spanish
+
+User Story: As a worker I want the UI to be available in English and Spanish so that I can use the system in my preferred language
+
+Acceptance Criteria:
+Scenario: UI language selection
+  Given I access the system
+  When I select a language
+  Then all UI elements are displayed in the chosen language
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02, E03, E05
+- Notes: Support additional languages in future
+
+---
+
+Title: Warehouse Selection at Login
+
+User Story: As a worker I want to select my warehouse at login so that I access relevant data and features
+
+Acceptance Criteria:
+Scenario: Warehouse selection
+  Given I log in
+  When I choose my warehouse
+  Then I am directed to the appropriate dashboard
+
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E01, E02, E03, E05
+- Notes: Remember selection for future logins
+
+---
+
+Title: Warehouse-Specific Reporting
+
+User Story: As a manager I want reports to be filtered by warehouse so that I can analyze local performance
+
+Acceptance Criteria:
+Scenario: Warehouse reporting
+  Given reports are generated
+  When I select a warehouse
+  Then only relevant data is displayed
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02, E03, E05
+- Notes: Support multi-warehouse rollup
+
+---
+
+Title: Prometheus Metrics Integration
+
+User Story: As a DevOps engineer I want application metrics to be exposed to Prometheus so that I can monitor system health
+
+Acceptance Criteria:
+Scenario: Metrics exposure
+  Given the app is running
+  When Prometheus scrapes metrics
+  Then relevant metrics (CPU, memory, errors) are available
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E01
+- Notes: Follow Prometheus best practices
+
+---
+
+Title: Grafana Dashboard Setup
+
+User Story: As a DevOps engineer I want to visualize metrics in Grafana dashboards so that I can quickly identify issues
+
+Acceptance Criteria:
+Scenario: Dashboard setup
+  Given metrics are available
+  When I configure Grafana
+  Then dashboards display key metrics and trends
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Pre-built dashboard templates
+
+---
+
+Title: Structured Application Logging
+
+User Story: As a developer I want logs to be structured and centralized so that debugging and monitoring are efficient
+
+Acceptance Criteria:
+Scenario: Structured logging
+  Given the app generates logs
+  When logs are sent to the logging system
+  Then logs include timestamp, severity, trace ID, and are queryable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Use JSON format
+
+---
+
+Title: Distributed Tracing Implementation
+
+User Story: As a DevOps engineer I want distributed tracing across services so that I can diagnose performance bottlenecks
+
+Acceptance Criteria:
+Scenario: Distributed tracing
+  Given multiple services interact
+  When a request is made
+  Then trace IDs are propagated and visualized in tracing tools
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E01
+- Notes: Integrate with Jaeger/Zipkin
+
+---
+
+Title: Alerting for Critical Events
+
+User Story: As an operations engineer I want alerts for critical application events so that I can respond to incidents proactively
+
+Acceptance Criteria:
+Scenario: Critical event alert
+  Given a critical event occurs
+  When thresholds are breached
+  Then an alert is sent via email/SMS/Slack
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Configurable alert channels
