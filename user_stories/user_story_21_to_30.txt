@@ -1,0 +1,227 @@
+Title: Record Safety Incident
+
+User Story: As a Warehouse Worker I want to report a safety incident or near-miss So that the organization can investigate and improve safety
+
+Acceptance Criteria:
+Scenario: Incident Submission
+  Given I witness an incident
+  When I submit a report
+  Then the incident is logged and assigned for investigation
+
+Scenario: Required Fields Validation
+  Given I submit incomplete data
+  When I attempt to report
+  Then the system requires mandatory fields
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Support attachments/photos
+
+---
+
+Title: Investigate Safety Incident
+
+User Story: As a Safety Officer I want to manage the investigation workflow for reported incidents So that root causes are identified
+
+Acceptance Criteria:
+Scenario: Investigation Assignment
+  Given an incident is reported
+  When I assign an investigator
+  Then the workflow is tracked until closure
+
+Scenario: Generate OSHA Report
+  Given investigation is complete
+  When I request a report
+  Then OSHA-compliant documentation is generated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Safety Incident Reporting
+- Notes: Track corrective actions
+
+---
+
+Title: Assign Equipment to Employee
+
+User Story: As a Supervisor I want to assign equipment (scanners, forklifts, PPE) to employees So that asset usage is tracked
+
+Acceptance Criteria:
+Scenario: Equipment Assignment
+  Given equipment is available
+  When I assign it to an employee
+  Then the assignment is logged
+
+Scenario: Asset Checkout/Return
+  Given equipment is assigned
+  When the employee checks out or returns it
+  Then the system updates asset status
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC, Certification Tracking
+- Notes: Track asset history
+
+---
+
+Title: Track Equipment Checkout/Return
+
+User Story: As a Warehouse Worker I want to check out and return equipment So that asset usage is recorded
+
+Acceptance Criteria:
+Scenario: Successful Checkout
+  Given equipment is available
+  When I check it out
+  Then the system records the transaction
+
+Scenario: Successful Return
+  Given equipment is checked out
+  When I return it
+  Then the system updates the asset status
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Equipment Assignment
+- Notes: Notify supervisor on overdue returns
+
+---
+
+Title: Create Performance Review Template
+
+User Story: As an HR Manager I want to create performance review templates So that reviews are standardized
+
+Acceptance Criteria:
+Scenario: Template Creation
+  Given I provide review criteria
+  When I save the template
+  Then it is available for future reviews
+
+Scenario: Template Modification
+  Given a template exists
+  When I edit it
+  Then changes are saved
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Support multiple review types
+
+---
+
+Title: Conduct Performance Review
+
+User Story: As a Supervisor I want to conduct performance reviews for employees So that goals and competencies are tracked
+
+Acceptance Criteria:
+Scenario: Review Submission
+  Given a review template exists
+  When I complete a review
+  Then the employee's record is updated
+
+Scenario: Employee Acknowledgement
+  Given a review is completed
+  When the employee acknowledges
+  Then the review is finalized
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Performance Review Templates
+- Notes: Support supervisor and employee comments
+
+---
+
+Title: Generate Payroll Export
+
+User Story: As a Payroll Manager I want to generate payroll files from attendance and leave data So that payroll processing is automated
+
+Acceptance Criteria:
+Scenario: Payroll File Generation
+  Given attendance and leave data is available
+  When I trigger export
+  Then a payroll file is generated in the required format
+
+Scenario: Secure Delivery
+  Given a payroll file is generated
+  When I send it via SFTP/API
+  Then delivery is secure and logged
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Time & Attendance, Leave Management
+- Notes: Support multiple export formats
+
+---
+
+Title: Send In-App Notifications
+
+User Story: As a Warehouse Worker I want to receive in-app notifications for shift changes and approvals So that I stay informed
+
+Acceptance Criteria:
+Scenario: Notification Delivery
+  Given a shift change or approval occurs
+  When the event is triggered
+  Then I receive a notification in the app
+
+Scenario: Notification Read Status
+  Given I receive a notification
+  When I read it
+  Then the status is updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: RBAC, Shift Management, Leave Management
+- Notes: Support notification history
+
+---
+
+Title: Send Email/SMS Notifications
+
+User Story: As a Supervisor I want to send email/SMS notifications for expiring certifications and approvals So that employees are promptly informed
+
+Acceptance Criteria:
+Scenario: Certification Expiry Alert
+  Given a certification is expiring
+  When the date approaches
+  Then an email/SMS is sent to the employee
+
+Scenario: Approval Notification
+  Given a leave or shift is approved
+  When the approval is processed
+  Then an email/SMS is sent
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Notifications, Certification Tracking
+- Notes: Support configurable templates
+
+---
+
+Title: HRIS Integration API
+
+User Story: As a System Administrator I want to synchronize employee data with external HRIS systems So that records remain consistent
+
+Acceptance Criteria:
+Scenario: Data Sync
+  Given HRIS credentials are configured
+  When I trigger sync
+  Then employee data is updated from HRIS
+
+Scenario: Error Handling
+  Given sync fails
+  When an error occurs
+  Then the system logs the error and alerts admin
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project Scaffolding, Employee Master Data, RBAC
+- Notes: Support REST API and webhooks
