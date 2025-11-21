@@ -1,0 +1,16 @@
+Title: Role Based Access Control (RBAC)
+
+User Story: As a system administrator I want to configure role-based access controls so that sensitive operations are restricted to authorized users and PII is protected.
+
+Acceptance Criteria:
+Scenario: Enforcing access controls
+Given a user attempts to access a protected endpoint
+When their role is checked
+Then unauthorized requests return 401, forbidden actions return 403, and ADMIN can manage all records while SUPERVISOR is limited to their team
+And security rules are covered by automated tests
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Project Scaffolding & Domain Setup (E01), Employee Master Data (E02)
+- Notes: Support API key/OAuth2 toggle via config; method/endpoint security and row-level constraints.
