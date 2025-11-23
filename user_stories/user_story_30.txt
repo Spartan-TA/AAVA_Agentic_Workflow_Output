@@ -1,0 +1,20 @@
+Title: Assignment Blocking for Expired Certifications
+
+User Story: As a scheduler I want employees with expired certifications to be blocked from assignment So that only qualified staff are scheduled for roles requiring valid certifications
+
+Acceptance Criteria:
+Scenario: Attempting to assign an employee with expired certification
+Given an employee's certification is expired
+When I try to assign them to a role requiring that certification
+Then the system should prevent the assignment and display an error message
+
+Scenario: Assigning an employee with valid certification
+Given an employee's certification is valid
+When I assign them to a role
+Then the assignment should proceed without error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Certification tracking, scheduling module
+- Notes: Blocking logic should be enforced at both manual and automated assignment points.
