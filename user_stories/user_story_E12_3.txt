@@ -1,0 +1,15 @@
+Title: Notifications for Approvals and Announcements
+
+User Story: As a supervisor I want to send and receive notifications for approvals (leave, shift swaps) and company-wide announcements so that all relevant parties are informed promptly.
+
+Acceptance Criteria:
+Scenario: Approval and announcement notification
+Given an approval or announcement is created
+When the event occurs
+Then notifications should be sent to the appropriate users and visible on their dashboard
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: RBAC (E03), Leave & Absence Management (E06), Shift & Schedule Management (E05)
+- Notes: Announcements must support scheduling and quiet hours configuration.
