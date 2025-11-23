@@ -1,0 +1,20 @@
+Title: Corrective Action Tracking
+
+User Story: As a safety officer I want to assign and track corrective actions for safety incidents So that issues are resolved and compliance is maintained
+
+Acceptance Criteria:
+Scenario: Assigning a corrective action
+Given an incident investigation is complete
+When I create a corrective action and assign it to a responsible party
+Then the action should be tracked until completion
+
+Scenario: Marking corrective action as complete
+Given a corrective action is assigned
+When the responsible party marks it as complete
+Then the status should update and notify the safety officer
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Incident investigation workflow
+- Notes: Corrective actions should have due dates and support attachments.
