@@ -1,0 +1,15 @@
+Title: Employee OpenAPI Schemas
+
+User Story: As a developer I want OpenAPI schemas with examples for employee endpoints So that API consumers understand the data structure and usage
+
+Acceptance Criteria:
+Scenario: API documentation
+Given the employee endpoints are implemented
+When I view the OpenAPI documentation
+Then schemas and example payloads are available for all operations
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Include examples for POST, GET, PUT, PATCH, DELETE
