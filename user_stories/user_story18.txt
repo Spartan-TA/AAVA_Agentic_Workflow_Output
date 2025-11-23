@@ -1,0 +1,15 @@
+Title: Bulk Assign Shifts to Employees
+
+User Story: As a supervisor I want to bulk assign shifts to multiple employees So that I can efficiently manage large teams and reduce manual effort
+
+Acceptance Criteria:
+Scenario: Bulk shift assignment
+Given I have selected multiple employees
+When I assign a shift template to the group
+Then all selected employees should be scheduled for the shift and audit entries generated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift Templates, Employee Master Data
+- Notes: Audit log must capture bulk actions for compliance.
