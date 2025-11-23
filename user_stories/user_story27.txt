@@ -1,0 +1,15 @@
+Title: Certification Status on Employee Profile
+
+User Story: As a supervisor I want to view the certification status of each employee on their profile So that I can quickly verify qualifications and compliance
+
+Acceptance Criteria:
+Scenario: Certification status display
+Given I am viewing an employee profile
+When certifications are present or expired
+Then the status (valid/expiring/expired) is clearly displayed with relevant details
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Certification CRUD
+- Notes: Display should include expiry dates and document links.
