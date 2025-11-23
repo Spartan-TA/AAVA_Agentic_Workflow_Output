@@ -1,0 +1,19 @@
+Title: Automated Hours Calculation
+
+User Story: As a payroll manager I want employee hours to be automatically calculated from clock in/out events So that payroll processing is accurate and efficient
+
+Acceptance Criteria:
+Scenario: Calculating regular hours
+  Given an employee has clocked in and out for a shift
+  When the system processes attendance records
+  Then total hours worked should be calculated and stored
+Scenario: Handling overtime
+  Given an employee exceeds standard shift duration
+  When hours are calculated
+  Then overtime should be flagged and separated from regular hours
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Attendance records, payroll module
+- Notes: Calculation logic should support overtime, breaks, and shift exceptions.
