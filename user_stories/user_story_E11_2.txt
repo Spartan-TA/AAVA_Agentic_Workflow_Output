@@ -1,0 +1,15 @@
+Title: Map Payroll Export to External Provider Formats
+
+User Story: As a payroll administrator I want payroll exports to be mapped to the specific schema required by our external payroll provider so that files can be imported without manual rework.
+
+Acceptance Criteria:
+Scenario: Schema mapping
+Given I have configured the external provider format
+When I generate a payroll export
+Then the file should match the provider's required fields and structure
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Time & Attendance (E04), Leave & Absence Management (E06)
+- Notes: Mapping should be configurable for multiple providers.
