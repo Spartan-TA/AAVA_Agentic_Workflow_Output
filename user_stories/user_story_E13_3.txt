@@ -1,0 +1,15 @@
+Title: IDP Integration for SSO
+
+User Story: As an IT administrator I want the EMS to support SSO via our identity provider (IDP) so that users can access the system securely with their corporate credentials.
+
+Acceptance Criteria:
+Scenario: SSO login
+Given the EMS is configured with the IDP
+When a user attempts to log in
+Then authentication should occur via SSO and access should be granted based on mapped roles
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Project Scaffolding (E01), Employee Master Data (E02), RBAC (E03)
+- Notes: SSO must support JWT/OAuth2 and be covered by automated tests.
