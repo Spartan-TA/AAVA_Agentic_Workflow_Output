@@ -1,0 +1,15 @@
+Title: Audit Log for Payroll Exports
+
+User Story: As a compliance officer I want every payroll export to be logged with actor, timestamp, and delivery status so that we can trace and audit all payroll activities.
+
+Acceptance Criteria:
+Scenario: Export audit logging
+Given a payroll export is initiated
+When the export is completed or fails
+Then an audit log entry should be created with all relevant details
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Time & Attendance (E04), Leave & Absence Management (E06)
+- Notes: Audit logs must be tamper-evident and exportable by date or user.
