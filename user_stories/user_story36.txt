@@ -1,0 +1,15 @@
+Title: Create Performance Review Cycles
+
+User Story: As an HR manager I want to create quarterly and annual review cycles So that I can track employee performance and development over time
+
+Acceptance Criteria:
+Scenario: Review cycle creation
+Given I am on the performance review setup page
+When I create a new review cycle
+Then the cycle is available for assignment and tracking
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Support custom review periods and templates.
