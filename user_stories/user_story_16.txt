@@ -1,0 +1,19 @@
+Title: Employee Clock In Endpoint
+
+User Story: As an employee I want to clock in at the start of my shift So that my working hours are accurately recorded
+
+Acceptance Criteria:
+Scenario: Successful clock in
+  Given I am scheduled for a shift and within allowed clock-in time
+  When I submit a clock-in request
+  Then my clock-in time should be recorded and confirmed
+Scenario: Attempt to clock in outside allowed time
+  Given I am not scheduled or outside allowed window
+  When I submit a clock-in request
+  Then I should receive an error message
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift schedule, employee profile
+- Notes: Endpoint should validate shift assignment and time window.
