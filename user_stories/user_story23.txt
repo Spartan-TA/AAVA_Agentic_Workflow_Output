@@ -1,0 +1,15 @@
+Title: Export Approved Leaves for Payroll
+
+User Story: As a payroll administrator I want to export all approved leaves So that I can accurately process payroll and ensure compliance with leave policies
+
+Acceptance Criteria:
+Scenario: Approved leave export
+Given I have access to the payroll export module
+When I generate an export for a given pay period
+Then all approved leaves are included and formatted for payroll provider integration
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave Approval, Payroll Export Integration
+- Notes: Export should match provider schema and include leave types.
