@@ -1,0 +1,15 @@
+Title: Approve or Deny Leave Requests
+
+User Story: As a supervisor I want to approve or deny employee leave requests So that I can manage team coverage and ensure compliance with leave policies
+
+Acceptance Criteria:
+Scenario: Leave approval workflow
+Given I have pending leave requests in my dashboard
+When I review and take action on a request
+Then the employee is notified and the schedule is updated accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave Request Submission, Shift & Schedule Management
+- Notes: Approval/denial should trigger notifications and update accrual balances.
