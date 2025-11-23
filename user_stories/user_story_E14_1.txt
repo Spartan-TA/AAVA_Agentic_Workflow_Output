@@ -1,0 +1,15 @@
+Title: Centralized Audit Logging for Sensitive Changes
+
+User Story: As a compliance officer I want all sensitive changes (employee PII, schedules, approvals, payroll) to be logged centrally so that we can meet audit and regulatory requirements.
+
+Acceptance Criteria:
+Scenario: Audit log entry
+Given a sensitive change occurs
+When the action is performed
+Then an audit log entry should be created with actor, timestamp, before/after values
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: RBAC (E03)
+- Notes: Audit logs must be immutable and tamper-evident.
