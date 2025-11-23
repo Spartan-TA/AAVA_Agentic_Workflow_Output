@@ -1,0 +1,15 @@
+Title: Block Asset Use if Certification Missing
+
+User Story: As a supervisor I want the system to prevent asset assignment to employees lacking required certifications So that only qualified staff operate equipment and safety is ensured
+
+Acceptance Criteria:
+Scenario: Asset assignment block
+Given I am assigning an asset requiring certification
+When the employee does not have a valid certification
+Then the system blocks the assignment and displays a warning
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification Tracking, Asset Registry
+- Notes: Block should apply to equipment-sensitive assets.
