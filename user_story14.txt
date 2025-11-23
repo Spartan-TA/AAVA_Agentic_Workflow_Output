@@ -1,0 +1,15 @@
+Title: Clock-Out Event Capture
+
+User Story: As a warehouse worker I want to clock out using my device So that my attendance and shift end time are recorded accurately
+
+Acceptance Criteria:
+Scenario: Clock-out event
+Given a valid employee and device
+When I submit a clock-out request
+Then the system records the event with timestamp and device info
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Optionally capture geofence location
