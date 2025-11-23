@@ -1,0 +1,20 @@
+Title: Document Upload for Certification Proof
+
+User Story: As an employee I want to upload documents as proof of certification So that my records are complete and verifiable
+
+Acceptance Criteria:
+Scenario: Uploading a certification document
+Given I am updating my certification record
+When I select and upload a document
+Then the file should be stored and linked to my certification
+
+Scenario: Viewing uploaded documents
+Given a certification record has documents attached
+When I view the record
+Then I should be able to download or preview the documents
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: File storage, certification CRUD
+- Notes: Supported file types and size limits should be enforced.
