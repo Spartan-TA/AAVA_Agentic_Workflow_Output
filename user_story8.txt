@@ -1,0 +1,17 @@
+Title: Enforce Unique BadgeId and Soft-Delete
+
+User Story: As an HR manager I want badgeId to be unique and support soft-delete for employees So that data integrity is maintained and deleted records can be recovered
+
+Acceptance Criteria:
+Scenario: BadgeId uniqueness and soft-delete
+Given an employee record is created
+When I attempt to create another with the same badgeId
+Then the system rejects the duplicate
+And when I delete an employee
+Then the record is marked as inactive, not removed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Soft-deleted employees should not appear in active lists
