@@ -1,0 +1,20 @@
+Title: Safety Metrics Dashboard
+
+User Story: As a safety manager I want to view key safety metrics on a dashboard So that I can monitor trends and proactively address risks
+
+Acceptance Criteria:
+Scenario: Viewing safety metrics
+Given incidents and corrective actions are recorded
+When I access the safety dashboard
+Then I should see charts and KPIs for incident rates, corrective action completion, and OSHA compliance
+
+Scenario: Filtering dashboard data
+Given I am on the safety dashboard
+When I apply filters by date, location, or department
+Then the metrics should update accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Incident log, reporting module
+- Notes: Dashboard should support export and drill-down to individual records.
