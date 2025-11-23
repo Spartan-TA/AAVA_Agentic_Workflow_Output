@@ -1,0 +1,15 @@
+Title: Supervisor/Employee Acknowledgement Workflow
+
+User Story: As an employee I want to acknowledge my performance review after my supervisor submits it so that both parties confirm the review is complete and accurate.
+
+Acceptance Criteria:
+Scenario: Review acknowledgement
+Given a review has been submitted by the supervisor
+When I log in and view my review
+Then I should be able to acknowledge receipt, add optional comments, and the review should be locked from further edits
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee Master Data (E02), RBAC (E03)
+- Notes: Acknowledgement timestamp and PDF export required for compliance.
