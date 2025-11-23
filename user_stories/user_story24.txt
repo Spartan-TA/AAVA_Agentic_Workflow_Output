@@ -1,0 +1,15 @@
+Title: Manage Employee Certifications
+
+User Story: As an HR manager I want to create, update, and delete employee certifications So that I can ensure compliance and track required training
+
+Acceptance Criteria:
+Scenario: Certification CRUD
+Given I am on the employee profile page
+When I add, edit, or remove a certification
+Then the changes are reflected in the employee's record and alerts are triggered for expirations
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Include upload of proof documents for each certification.
