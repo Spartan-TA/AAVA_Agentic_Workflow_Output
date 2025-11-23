@@ -1,0 +1,15 @@
+Title: Detect and Prevent Shift Conflicts
+
+User Story: As a supervisor I want the system to detect and prevent scheduling conflicts So that I can ensure adequate staffing and avoid double-booking employees
+
+Acceptance Criteria:
+Scenario: Scheduling conflict detection
+Given I am assigning shifts to employees
+When a conflict is detected (overlapping shifts or blackout dates)
+Then the system should prevent the assignment and display a clear error message
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift Templates, Employee Master Data
+- Notes: Include blackout dates and warehouse operation calendars in conflict checks.
