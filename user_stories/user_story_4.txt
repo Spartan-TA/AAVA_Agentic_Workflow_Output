@@ -1,0 +1,19 @@
+Title: Enable Actuator Health Endpoint
+
+User Story: As a DevOps engineer I want to enable the Actuator health endpoint So that system health can be monitored and integrated with deployment pipelines.
+
+Acceptance Criteria:
+Scenario: Health endpoint enabled
+  Given the application is running
+  When I access /actuator/health
+  Then the endpoint returns UP
+Scenario: Health endpoint failure
+  Given a critical dependency is down
+  When I access /actuator/health
+  Then the endpoint returns DOWN with details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story_1.txt
+- Notes: Endpoint must be secured; health checks should cover DB and core modules.
