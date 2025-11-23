@@ -1,0 +1,15 @@
+Title: Create Recurring Shift Templates
+
+User Story: As an HR manager I want to create recurring shift templates So that I can efficiently schedule employees and reduce manual entry
+
+Acceptance Criteria:
+Scenario: Shift template creation
+Given I am on the shift management page
+When I create a new shift template with recurrence rules
+Then the template should be saved and available for future assignments
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Support daily, weekly, and custom recurrence options.
