@@ -1,0 +1,15 @@
+Title: Notifications for Expiring Certifications
+
+User Story: As a supervisor I want to receive notifications when employee certifications are about to expire so that I can ensure compliance and schedule renewals proactively.
+
+Acceptance Criteria:
+Scenario: Certification expiry notification
+Given an employee's certification is within 30 days of expiry
+When the system detects the upcoming expiration
+Then a notification should be sent to the supervisor and the employee
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: RBAC (E03), Training & Certification Tracking (E07)
+- Notes: Notification templates must be localized and delivery status tracked.
