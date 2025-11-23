@@ -1,0 +1,25 @@
+Title: Certification CRUD Operations
+
+User Story: As an HR administrator I want to create, update, and delete employee certifications So that records remain accurate and up-to-date
+
+Acceptance Criteria:
+Scenario: Adding a new certification
+Given I am on the certification management page
+When I enter certification details and save
+Then the new certification should appear in the employee's record
+
+Scenario: Editing a certification
+Given an existing certification is listed
+When I update the details and save
+Then the changes should be reflected in the employee's record
+
+Scenario: Deleting a certification
+Given an existing certification is listed
+When I click 'Delete' and confirm
+Then the certification should be removed from the employee's record
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee profile module
+- Notes: All actions should be logged for audit purposes.
