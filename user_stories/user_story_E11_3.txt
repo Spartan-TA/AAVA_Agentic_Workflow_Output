@@ -1,0 +1,15 @@
+Title: Secure Delivery of Payroll Exports via SFTP/API
+
+User Story: As a payroll administrator I want payroll exports to be delivered securely to our external provider via SFTP or API so that sensitive data is protected during transmission.
+
+Acceptance Criteria:
+Scenario: Secure export delivery
+Given a payroll export file is ready
+When I select the delivery method (SFTP/API)
+Then the system should transmit the file securely and log the delivery status
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Time & Attendance (E04), Leave & Absence Management (E06)
+- Notes: Failed deliveries must be retried with exponential backoff and all actions logged for audit.
