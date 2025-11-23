@@ -1,0 +1,20 @@
+Title: Safety Incident Investigation Workflow
+
+User Story: As a safety officer I want to initiate and track investigations for reported incidents So that root causes can be identified and corrective actions implemented
+
+Acceptance Criteria:
+Scenario: Initiating an investigation
+Given an incident is reported
+When I assign an investigator and set a due date
+Then the investigation should be tracked in the system
+
+Scenario: Updating investigation status
+Given an investigation is in progress
+When I update findings or status
+Then the changes should be logged and visible to relevant stakeholders
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Incident log, user roles
+- Notes: Investigation workflow should support attachments and comments.
