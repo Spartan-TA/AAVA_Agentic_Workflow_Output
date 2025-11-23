@@ -1,0 +1,19 @@
+Title: Geofence Validation for Clock In/Out
+
+User Story: As an employee I want my clock in/out to be validated against a geofence So that only on-premise attendance is recorded
+
+Acceptance Criteria:
+Scenario: Clock in within geofence
+  Given I am physically present within the warehouse geofence
+  When I submit a clock-in request
+  Then my location should be validated and clock-in accepted
+Scenario: Clock in outside geofence
+  Given I am outside the geofence
+  When I submit a clock-in request
+  Then I should receive an error and clock-in should be rejected
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Location services, attendance endpoint
+- Notes: Geofence boundaries should be configurable per warehouse.
