@@ -1,0 +1,23 @@
+Title: Support Soft-Delete for Employee Records
+
+User Story: As an HR manager I want to soft-delete employee records So that historical data is preserved and can be restored if needed.
+
+Acceptance Criteria:
+Scenario: Soft-delete employee
+  Given an active employee
+  When I DELETE /employees/{id}
+  Then the employee status is set to 'deleted' and record is not physically removed
+Scenario: Restore soft-deleted employee
+  Given a soft-deleted employee
+  When I PATCH /employees/{id} with status 'active'
+  Then the employee is restored
+Scenario: Exclude deleted from default queries
+  Given soft-deleted employees
+  When I GET /employees
+  Then deleted employees are excluded unless explicitly requested
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story_6.txt
+- Notes: Soft-delete must be reflected in API and UI; audit trail required for deletions.
