@@ -1,0 +1,51 @@
+Title: Record Safety Incident
+User Story: As a safety manager I want to record a safety incident with details on severity, location, and involved personnel so that incidents are documented for compliance and follow-up.
+Acceptance Criteria:
+Scenario: Recording a new incident
+Given I am on the incident reporting page
+When I enter incident details and submit the form
+Then the incident should be saved and visible in the incident log
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Must support attachment of photos and documents
+
+Title: Initiate Incident Investigation Workflow
+User Story: As a safety manager I want to initiate an investigation workflow for recorded incidents so that corrective actions can be tracked and completed.
+Acceptance Criteria:
+Scenario: Starting investigation
+Given an incident is recorded
+When I click 'Start Investigation'
+Then an investigation task list should be created and assigned to relevant personnel
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Workflow should support status updates and comments
+
+Title: Generate OSHA Report
+User Story: As a compliance officer I want to generate OSHA-compliant reports from incident data so that regulatory requirements are met.
+Acceptance Criteria:
+Scenario: Generating OSHA report
+Given incidents are recorded in the system
+When I select 'Generate OSHA Report'
+Then a formatted report should be produced for download
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Report format must match OSHA standards
+
+Title: Notify Stakeholders of Safety Incident
+User Story: As a safety manager I want stakeholders to be notified when a new safety incident is recorded so that immediate action can be taken.
+Acceptance Criteria:
+Scenario: Incident notification
+Given a new incident is recorded
+When the incident is submitted
+Then notifications should be sent to designated stakeholders
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Notification channels include email and in-app alerts
