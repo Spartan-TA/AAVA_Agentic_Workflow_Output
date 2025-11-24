@@ -1,0 +1,69 @@
+Title: Record Safety Incident or Near-Miss
+
+User Story: As a supervisor I want to record safety incidents and near-misses so that investigations and corrective actions can be tracked
+
+Acceptance Criteria:
+Scenario: Recording an incident
+Given an incident occurs in the warehouse
+When I submit a report with severity, location, and involved employees
+Then the incident is logged and status is set to Open
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee master data, RBAC
+- Notes: Validation required for all fields
+
+---
+
+Title: Manage Incident Investigation Workflow
+
+User Story: As a safety manager I want to progress incidents through investigation and resolution so that corrective actions are documented
+
+Acceptance Criteria:
+Scenario: Investigating an incident
+Given an incident is Open
+When I update the status to Investigating and add notes
+Then the workflow progresses and corrective actions can be tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Incident reporting
+- Notes: Statuses: Open â Investigating â Resolved
+
+---
+
+Title: Export OSHA Summary Reports
+
+User Story: As a compliance officer I want to export OSHA 300/300A summary reports so that regulatory requirements are met
+
+Acceptance Criteria:
+Scenario: Exporting OSHA report
+Given incident records exist for a period
+When I request an OSHA summary export
+Then the system generates a file with required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Incident reporting
+- Notes: Export must match OSHA format
+
+---
+
+Title: View Safety Metrics Dashboard
+
+User Story: As a warehouse manager I want to view safety KPIs and incident metrics so that I can monitor trends and improve safety culture
+
+Acceptance Criteria:
+Scenario: Viewing dashboard
+Given incident data exists
+When I access the safety dashboard
+Then I see metrics and KPIs for incidents and corrective actions
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Incident reporting
+- Notes: Endpoints must be available for BI integration
