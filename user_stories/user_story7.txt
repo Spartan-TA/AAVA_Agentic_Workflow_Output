@@ -1,0 +1,69 @@
+Title: Create Shift Templates and Rotations
+
+User Story: As an HR manager I want to define recurring shift templates and rotations so that scheduling is efficient and consistent
+
+Acceptance Criteria:
+Scenario: Creating a shift template
+Given I am logged in as HR manager
+When I create a new shift template with recurrence rules
+Then the template is saved and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee master data, RBAC, Attendance
+- Notes: Supports overtime rules and blackout dates
+
+---
+
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor I want to bulk-assign shifts to employees so that staffing plans are implemented quickly
+
+Acceptance Criteria:
+Scenario: Bulk shift assignment
+Given a list of employees and a shift template
+When I assign the template to the group
+Then all employees receive their personal shift schedules
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift templates
+- Notes: Audit entries generated for assignments
+
+---
+
+Title: Detect and Prevent Scheduling Conflicts
+
+User Story: As a scheduler I want the system to detect and prevent shift conflicts so that employees are not double-booked
+
+Acceptance Criteria:
+Scenario: Conflict detection
+Given an employee has an existing shift
+When I attempt to assign an overlapping shift
+Then the system blocks the assignment and notifies me of the conflict
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Must handle blackout dates and operation calendars
+
+---
+
+Title: View Upcoming Shifts
+
+User Story: As a warehouse worker I want to view my upcoming shifts so that I can plan my work schedule
+
+Acceptance Criteria:
+Scenario: Viewing personal schedule
+Given I am logged in as a worker
+When I access my schedule page
+Then I see a list of all upcoming assigned shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Shift assignment
+- Notes: Must be mobile-friendly
