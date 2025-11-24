@@ -1,0 +1,51 @@
+Title: Generate Attendance Report
+User Story: As an operations manager I want to generate attendance reports so that I can monitor workforce presence and trends.
+Acceptance Criteria:
+Scenario: Attendance report generation
+Given attendance data is available
+When I select a date range and generate the report
+Then I should see a summary of attendance by employee and shift
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Export to CSV and PDF
+
+Title: View Overtime and Leave Analytics
+User Story: As an HR manager I want to view analytics on overtime and leave so that I can identify patterns and manage costs.
+Acceptance Criteria:
+Scenario: Viewing analytics
+Given overtime and leave data is available
+When I access the analytics dashboard
+Then I should see charts and summaries by department and period
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Filters for department and date
+
+Title: Track Certification and Safety KPIs
+User Story: As a safety officer I want to track certification status and safety KPIs so that compliance and risk are managed.
+Acceptance Criteria:
+Scenario: KPI tracking
+Given certification and incident data is available
+When I view the KPI dashboard
+Then I should see metrics for compliance and safety incidents
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: KPIs configurable
+
+Title: Schedule Automated Report Delivery
+User Story: As an administrator I want to schedule automated report delivery so that stakeholders receive regular updates.
+Acceptance Criteria:
+Scenario: Automated delivery
+Given reports are configured
+When I set a delivery schedule
+Then reports should be sent automatically to designated recipients
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Support for email delivery
