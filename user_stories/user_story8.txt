@@ -1,0 +1,69 @@
+Title: Request Leave (PTO, Sick, Unpaid)
+
+User Story: As an employee I want to request paid time off, sick leave, or unpaid leave so that my absences are tracked and approved according to policy
+
+Acceptance Criteria:
+Scenario: Requesting leave
+Given I am logged in as an employee
+When I submit a leave request with dates and type
+Then my request is recorded and routed for approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee master data, RBAC, Shift management
+- Notes: Accrual balances must be checked
+
+---
+
+Title: Approve or Deny Leave Requests
+
+User Story: As a supervisor I want to approve or deny leave requests so that staffing plans remain accurate
+
+Acceptance Criteria:
+Scenario: Approving leave
+Given a pending leave request exists
+When I review and approve the request
+Then the employee's leave balance is updated and scheduled shifts are flagged for coverage
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave request workflow
+- Notes: Approval/denial must be auditable
+
+---
+
+Title: Update Leave Accrual Balances
+
+User Story: As an HR manager I want leave balances to update automatically after requests are approved so that records remain accurate
+
+Acceptance Criteria:
+Scenario: Leave balance update
+Given a leave request is approved
+When the system processes the approval
+Then the employee's accrual balance is reduced accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Leave approval
+- Notes: Policy rules must be enforced
+
+---
+
+Title: Export Approved Leaves for Payroll
+
+User Story: As a payroll administrator I want to export approved leave records so that payroll calculations exclude absences
+
+Acceptance Criteria:
+Scenario: Exporting leave data
+Given approved leave records exist for a pay period
+When I request an export
+Then the system generates a file with all approved leaves for payroll
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Leave approval, Payroll integration
+- Notes: Export must match payroll provider schema
