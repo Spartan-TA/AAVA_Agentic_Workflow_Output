@@ -1,0 +1,51 @@
+Title: Notify Employees of Shift Changes
+User Story: As a scheduler I want employees to receive notifications of shift changes so that they are aware of updated schedules.
+Acceptance Criteria:
+Scenario: Shift change notification
+Given a shift is updated
+When the change is saved
+Then affected employees should receive notifications via app and email/SMS
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E03, E05, E06, E07
+- Notes: Notification templates configurable
+
+Title: Alert on Expiring Certifications
+User Story: As an HR manager I want employees and supervisors to be alerted when certifications are nearing expiration so that compliance is maintained.
+Acceptance Criteria:
+Scenario: Certification expiry alert
+Given a certification is expiring soon
+When the expiry date approaches
+Then notifications should be sent to the employee and supervisor
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Alert threshold configurable
+
+Title: Broadcast Company Announcements
+User Story: As an administrator I want to broadcast company-wide announcements so that all employees are informed of important updates.
+Acceptance Criteria:
+Scenario: Sending announcement
+Given I compose an announcement
+When I send it
+Then all employees should receive the message via app and email
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Announcements archived for reference
+
+Title: Manage Notification Preferences
+User Story: As an employee I want to manage my notification preferences so that I receive alerts in my preferred channels.
+Acceptance Criteria:
+Scenario: Updating preferences
+Given I am logged in
+When I update my notification settings
+Then notifications should be sent according to my preferences
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Support for opt-in/opt-out
