@@ -1,0 +1,15 @@
+Title: Time & Attendance (Clock In/Out)
+
+User Story: As a warehouse worker I want to clock in and out using my device So that my worked hours are accurately captured for payroll and compliance
+
+Acceptance Criteria:
+Scenario: Clock-in and clock-out event
+Given I am scheduled for a shift
+When I clock in or out using the endpoint
+Then my attendance is recorded, hours are calculated, and corrections can be submitted for approval
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee Master Data (CRUD), Role-Based Access Control (RBAC)
+- Notes: Geofence and device capture optional; daily totals computed; corrections workflow; exportable reports (CSV).
