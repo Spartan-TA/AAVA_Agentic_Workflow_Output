@@ -1,0 +1,69 @@
+Title: Create Performance Review Cycles
+
+User Story: As an HR manager I want to create quarterly and annual performance review cycles so that structured feedback can be collected
+
+Acceptance Criteria:
+Scenario: Creating a review cycle
+Given I am logged in as HR manager
+When I create a new review cycle and assign it to employees
+Then the cycle is visible to supervisors and employees
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee master data, RBAC
+- Notes: Templates must support goals, competencies, ratings
+
+---
+
+Title: Submit and Acknowledge Performance Reviews
+
+User Story: As a supervisor I want to submit reviews and as an employee I want to acknowledge them so that feedback is documented and confirmed
+
+Acceptance Criteria:
+Scenario: Submitting and acknowledging reviews
+Given a review cycle is active
+When a supervisor submits a review and employee acknowledges
+Then the review is locked and history is immutable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review cycle
+- Notes: PDF export required
+
+---
+
+Title: Role-Based Visibility of Reviews
+
+User Story: As an HR manager I want reviews to be visible only to authorized roles so that privacy and compliance are maintained
+
+Acceptance Criteria:
+Scenario: Viewing reviews
+Given I am logged in as HR manager or supervisor
+When I access the review dashboard
+Then I see only reviews for my scope
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: RBAC
+- Notes: Employees see only their own reviews
+
+---
+
+Title: Track Goals and Competencies
+
+User Story: As a supervisor I want to track employee goals and competencies so that development plans can be monitored
+
+Acceptance Criteria:
+Scenario: Tracking goals
+Given a review cycle is active
+When I update goals and competencies for an employee
+Then the updates are saved and visible in the review history
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Review cycle
+- Notes: History must be immutable after sign-off
