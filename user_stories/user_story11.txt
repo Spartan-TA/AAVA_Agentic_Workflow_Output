@@ -1,0 +1,69 @@
+Title: Register and Track Equipment Assets
+
+User Story: As an asset manager I want to register and track equipment assets so that accountability and condition can be maintained
+
+Acceptance Criteria:
+Scenario: Registering an asset
+Given I have a new equipment item
+When I add it to the asset registry
+Then the asset is visible for assignment and condition tracking
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee master data, RBAC, Certification tracking
+- Notes: Assets include scanners, forklifts, PPE
+
+---
+
+Title: Assign Equipment to Employees
+
+User Story: As a supervisor I want to assign equipment to employees so that usage and responsibility are tracked
+
+Acceptance Criteria:
+Scenario: Assigning equipment
+Given an asset is available and employee is qualified
+When I assign the asset
+Then the assignment is logged and history updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset registry, Certification tracking
+- Notes: Blocks assignment if certification is invalid
+
+---
+
+Title: Track Asset Check-In and Check-Out
+
+User Story: As an employee I want to check in and check out equipment so that asset usage is accurately recorded
+
+Acceptance Criteria:
+Scenario: Checking out an asset
+Given I am assigned to a shift
+When I check out a scanner
+Then the system records the event and updates asset status
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Asset assignment
+- Notes: History log required for each asset
+
+---
+
+Title: Report Overdue Asset Returns
+
+User Story: As an asset manager I want to report overdue asset returns so that lost or unreturned equipment can be investigated
+
+Acceptance Criteria:
+Scenario: Overdue asset report
+Given assets are checked out past due date
+When I run the overdue report
+Then the system lists all overdue assets and responsible employees
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Asset check-in/out
+- Notes: Report must be exportable
