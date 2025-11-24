@@ -1,0 +1,51 @@
+Title: Create Performance Review Template
+User Story: As an HR manager I want to create customizable performance review templates so that reviews can be tailored to different roles and competencies.
+Acceptance Criteria:
+Scenario: Creating a template
+Given I am on the review template page
+When I add sections and competencies
+Then the template should be saved and available for future reviews
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Support for multiple rating scales
+
+Title: Assign Goals to Employees
+User Story: As a supervisor I want to assign goals to employees during performance reviews so that progress can be tracked over time.
+Acceptance Criteria:
+Scenario: Assigning goals
+Given a performance review is in progress
+When I enter goals for an employee
+Then the goals should be saved and linked to the employee profile
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Goals should be visible in employee dashboard
+
+Title: Track Competency Ratings
+User Story: As a reviewer I want to rate employee competencies during reviews so that strengths and areas for improvement are documented.
+Acceptance Criteria:
+Scenario: Rating competencies
+Given a review template is selected
+When I rate each competency
+Then the ratings should be saved and included in the review summary
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Ratings should be numeric and/or descriptive
+
+Title: View Performance Review History
+User Story: As an employee I want to view my past performance reviews and goals so that I can understand my progress and feedback.
+Acceptance Criteria:
+Scenario: Viewing review history
+Given I am logged in
+When I navigate to my review history
+Then I should see a list of completed reviews and assigned goals
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: History should include reviewer comments
