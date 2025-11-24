@@ -1,0 +1,51 @@
+Title: Employee Clock In
+User Story: As an employee I want to clock in at the start of my shift so that my attendance is accurately recorded
+Acceptance Criteria:
+Scenario: Successful clock in
+Given I am logged into the system
+When I select 'Clock In'
+Then my start time should be recorded and confirmation displayed
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance module
+- Notes: Prevent multiple clock-ins per shift
+
+Title: Employee Clock Out
+User Story: As an employee I want to clock out at the end of my shift so that my work hours are tracked
+Acceptance Criteria:
+Scenario: Successful clock out
+Given I am logged into the system
+When I select 'Clock Out'
+Then my end time should be recorded and confirmation displayed
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance module
+- Notes: Prevent clock out before clock in
+
+Title: View Attendance Records
+User Story: As a supervisor I want to view attendance records so that I can monitor employee punctuality
+Acceptance Criteria:
+Scenario: View records
+Given I am on the attendance dashboard
+When I select a date range
+Then attendance records for all employees should be displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Reporting module
+- Notes: Support filtering by employee
+
+Title: Edit Attendance Entry
+User Story: As an HR manager I want to edit attendance entries so that errors can be corrected
+Acceptance Criteria:
+Scenario: Edit entry
+Given I am viewing an attendance record
+When I edit and save changes
+Then the updated entry should be reflected in the system
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance module
+- Notes: Log all edits for audit
