@@ -1,0 +1,23 @@
+Title: Create Employee Record
+
+User Story: As an HR Manager I want to create a new employee record via API and web DTO so that all warehouse employees are registered with accurate master data.
+
+Acceptance Criteria:
+Scenario: Employee creation via API
+  Given I have HR Manager role and valid employee data
+  When I POST to /employees with required fields
+  Then a new employee record is created and badgeId is unique
+Scenario: Employee creation via web DTO
+  Given I am on the employee creation page
+  When I enter employee details and submit
+  Then the employee is added and appears in the employee list
+Scenario: OpenAPI schema validation
+  Given the API documentation
+  When I view the employee POST schema
+  Then all required fields and examples are present
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Enforce unique badgeId and validate required fields.
