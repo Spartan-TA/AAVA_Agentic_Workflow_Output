@@ -1,0 +1,51 @@
+Title: Assign Training to Employee
+User Story: As a supervisor I want to assign training modules to employees so that compliance is maintained
+Acceptance Criteria:
+Scenario: Assign training
+Given I am on the training management page
+When I select an employee and assign a module
+Then the employee should be notified and the assignment recorded
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Training module
+- Notes: Track assignment date
+
+Title: Track Certification Expiry
+User Story: As an HR manager I want to track certification expiry dates so that renewals are managed proactively
+Acceptance Criteria:
+Scenario: Monitor expiry
+Given I am viewing employee certifications
+When a certification is nearing expiry
+Then a notification should be sent to the employee and supervisor
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Notification module
+- Notes: Support custom reminder intervals
+
+Title: View Training History
+User Story: As an employee I want to view my training history so that I can track my progress
+Acceptance Criteria:
+Scenario: View history
+Given I am logged into the portal
+When I access my training records
+Then all completed and pending modules should be displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Employee portal
+- Notes: Display completion dates
+
+Title: Upload Certification Document
+User Story: As an employee I want to upload certification documents so that my records are complete
+Acceptance Criteria:
+Scenario: Upload document
+Given I am viewing my certification profile
+When I upload a document
+Then it should be stored and linked to my certification record
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Document management module
+- Notes: Support PDF and image formats
