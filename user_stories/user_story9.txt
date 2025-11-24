@@ -1,0 +1,55 @@
+Title: Assign Equipment to Employee
+User Story: As a warehouse supervisor I want to assign equipment (scanners, forklifts, PPE) to employees so that asset usage is tracked and managed.
+Acceptance Criteria:
+Scenario: Assigning equipment
+Given an employee is selected
+When I choose equipment and assign it
+Then the assignment should be recorded in the system
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Equipment status must update to 'assigned'
+
+Title: Track Equipment Checkout and Return
+User Story: As a warehouse worker I want to check out and return equipment so that asset availability is accurately reflected.
+Acceptance Criteria:
+Scenario: Equipment checkout
+Given equipment is available
+When I check out the equipment
+Then the system should log the checkout and update availability
+Scenario: Equipment return
+Given I have checked out equipment
+When I return it
+Then the system should log the return and mark equipment as available
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E02, E03, E07
+- Notes: Audit trail required for each transaction
+
+Title: View Equipment Assignment History
+User Story: As an asset manager I want to view the assignment history of equipment so that I can audit usage and maintenance needs.
+Acceptance Criteria:
+Scenario: Viewing history
+Given I select a piece of equipment
+When I view its details
+Then I should see a log of all assignments and returns
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Include timestamps and employee names
+
+Title: Notify on Overdue Equipment Return
+User Story: As a supervisor I want to be notified when equipment is overdue for return so that timely follow-up can occur.
+Acceptance Criteria:
+Scenario: Overdue notification
+Given equipment is not returned by the due date
+When the due date passes
+Then a notification should be sent to the supervisor and employee
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Notification via email and in-app
