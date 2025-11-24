@@ -1,0 +1,51 @@
+Title: Request Leave
+User Story: As an employee I want to request leave so that my absences are properly tracked
+Acceptance Criteria:
+Scenario: Submit leave request
+Given I am logged into the portal
+When I fill out and submit the leave form
+Then my request should be sent to my supervisor for approval
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Leave management module
+- Notes: Validate leave balance
+
+Title: Approve/Reject Leave Request
+User Story: As a supervisor I want to approve or reject leave requests so that staffing is maintained
+Acceptance Criteria:
+Scenario: Review leave request
+Given I am viewing pending leave requests
+When I approve or reject a request
+Then the employee should be notified of the decision
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Notification module
+- Notes: Record decision for audit
+
+Title: View Leave Balance
+User Story: As an employee I want to view my leave balance so that I can plan my time off
+Acceptance Criteria:
+Scenario: Check leave balance
+Given I am logged into the portal
+When I access my leave summary
+Then my current leave balance should be displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Employee portal
+- Notes: Update in real time
+
+Title: Edit Leave Request
+User Story: As an employee I want to edit my leave request so that I can correct mistakes
+Acceptance Criteria:
+Scenario: Edit request
+Given my leave request is pending
+When I update the details and resubmit
+Then the revised request should be sent for approval
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Leave management module
+- Notes: Prevent edits after approval
