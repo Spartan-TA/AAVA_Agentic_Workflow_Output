@@ -1,0 +1,70 @@
+Title: Record Employee Clock-In Event
+
+User Story: As a warehouse worker I want to clock in at the start of my shift so that my attendance and hours worked are accurately recorded
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am scheduled for a shift today
+When I submit a clock-in event with valid credentials
+Then my attendance record is created and associated with my shift
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee master data, RBAC
+- Notes: Geofence and device capture optional
+
+---
+
+Title: Record Employee Clock-Out Event
+
+User Story: As a warehouse worker I want to clock out at the end of my shift so that my total hours worked are calculated for payroll
+
+Acceptance Criteria:
+Scenario: Successful clock-out
+Given I am clocked in for a shift
+When I submit a clock-out event
+Then my attendance record is updated and daily totals are computed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee master data, RBAC
+- Notes: Automatic shift association required
+
+---
+
+Title: Handle Missed Punches and Corrections
+
+User Story: As a supervisor I want to approve corrections for missed punches so that attendance records remain accurate
+
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a worker missed a clock-in or clock-out
+When a correction request is submitted
+Then an approval task is created for the supervisor
+And upon approval, the attendance record is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee master data, RBAC
+- Notes: Correction workflow must be auditable
+
+---
+
+Title: Export Attendance Reports
+
+User Story: As an HR manager I want to export attendance data in CSV format so that I can reconcile payroll and compliance records
+
+Acceptance Criteria:
+Scenario: Export attendance report
+Given attendance records exist for a date range
+When I request a CSV export
+Then the system generates a file with all relevant attendance data
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance module
+- Notes: Export must include shift totals and corrections
