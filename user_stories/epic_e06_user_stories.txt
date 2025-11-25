@@ -1,0 +1,37 @@
+EPIC E06: Leave & Absence Management
+
+===========================================
+
+Title: Leave & Absence Management
+
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that my time off is tracked
+
+Acceptance Criteria:
+Scenario: Leave request
+Given I am logged in
+When I submit a leave request
+Then my supervisor is notified for approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD, Schedule management
+- Notes: Accrual balances shown
+
+---
+
+Title: Supervisor Approves/Deny Leave
+
+User Story: As a supervisor I want to approve or deny leave requests So that staffing plans are maintained
+
+Acceptance Criteria:
+Scenario: Leave approval
+Given a leave request is pending
+When I approve or deny
+Then the employee is notified and balances updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave management
+- Notes: Scheduled shifts auto-flagged for coverage
