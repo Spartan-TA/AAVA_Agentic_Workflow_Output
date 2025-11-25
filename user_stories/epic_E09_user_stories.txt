@@ -1,0 +1,70 @@
+EPIC E09: Equipment & Asset Assignment
+
+===========================================
+
+Title: Assign Equipment to Employees
+
+User Story: As a Supervisor I want to assign equipment (scanners, forklifts, PPE) to employees So that asset usage is tracked
+
+Acceptance Criteria:
+Scenario: Successful assignment
+Given equipment is available
+When I assign it to an employee
+Then the assignment is logged
+
+Scenario: Assign unavailable equipment
+Given equipment is already assigned
+When I attempt assignment
+Then the system prevents it
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC, Certification Tracking
+- Notes: Track assignment history
+
+===========================================
+
+Title: Track Equipment Checkout/Return
+
+User Story: As a WORKER I want to check out and return equipment via the system So that asset inventory is accurate
+
+Acceptance Criteria:
+Scenario: Successful checkout
+Given equipment is available
+When I check it out
+Then my assignment is recorded
+
+Scenario: Return equipment
+Given I have checked out equipment
+When I return it
+Then the inventory is updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Equipment Assignment
+- Notes: Notify supervisor on overdue returns
+
+===========================================
+
+Title: Block Unqualified Equipment Assignment
+
+User Story: As a Supervisor I want to prevent assignment of equipment to employees lacking required certifications So that safety is maintained
+
+Acceptance Criteria:
+Scenario: Assignment to unqualified employee
+Given an employee lacks certification
+When I assign equipment
+Then the system blocks the assignment
+
+Scenario: Assignment to qualified employee
+Given an employee has certification
+When I assign equipment
+Then the assignment is allowed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification Tracking, Equipment Assignment
+- Notes: Alert HR on blocked assignments
