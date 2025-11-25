@@ -1,0 +1,12 @@
+Title: Set Up DB Migration Tool
+User Story: As a developer I want to set up Flyway or Liquibase for database migrations So that I can manage schema changes consistently and safely
+Acceptance Criteria:
+Scenario: DB Migration Setup
+  Given the project is initialized
+  When I configure Flyway or Liquibase
+  Then baseline migration runs successfully and database schema is created
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story1.txt
+- Notes: Document migration steps in README and ensure tool runs on build.
