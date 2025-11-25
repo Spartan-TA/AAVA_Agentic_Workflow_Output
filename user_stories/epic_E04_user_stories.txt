@@ -1,0 +1,70 @@
+EPIC E04: Time & Attendance (Clock In/Out)
+
+===========================================
+
+Title: Clock In/Out Endpoint
+
+User Story: As a WORKER I want to clock in and out via API with geofence validation So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Successful clock-in within geofence
+Given I am within the geofence
+When I submit a clock-in request
+Then my attendance is recorded
+
+Scenario: Clock-in outside geofence
+Given I am outside the geofence
+When I submit a clock-in request
+Then the request is rejected
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Log location data
+
+===========================================
+
+Title: Calculate Hours Worked
+
+User Story: As a Supervisor I want the system to calculate hours worked based on clock-in/out data So that payroll and overtime are accurate
+
+Acceptance Criteria:
+Scenario: Standard shift calculation
+Given valid clock-in and clock-out times
+When I request hours worked
+Then the system returns the correct total
+
+Scenario: Missed punch
+Given a missing clock-out time
+When I request hours worked
+Then the system flags the record for review
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock In/Out Endpoint
+- Notes: Handle overnight shifts
+
+===========================================
+
+Title: Handle Missed Punches
+
+User Story: As an HR I want to review and correct missed punches So that attendance records are accurate
+
+Acceptance Criteria:
+Scenario: Review missed punch
+Given a missed punch is detected
+When I access the review interface
+Then I can correct the record
+
+Scenario: Unauthorized correction
+Given a user without HR role
+When they attempt to correct a missed punch
+Then access is denied
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock In/Out Endpoint, RBAC
+- Notes: Log corrections
