@@ -1,0 +1,55 @@
+EPIC E03: Role-Based Access Control (RBAC)
+
+===========================================
+
+Title: Role-Based Access Control (RBAC)
+
+User Story: As an admin I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) So that access to sensitive operations is restricted
+
+Acceptance Criteria:
+Scenario: Role assignment
+Given a user exists
+When I assign a role
+Then the user has permissions per role definition
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD
+- Notes: Roles must be documented
+
+---
+
+Title: Secure Endpoints by Role
+
+User Story: As a developer I want to secure endpoints and methods by role So that unauthorized access is prevented
+
+Acceptance Criteria:
+Scenario: Endpoint security
+Given a user with insufficient role
+When they access a restricted endpoint
+Then the system returns 401 or 403
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC
+- Notes: Security rules covered by tests
+
+---
+
+Title: API Key/OAuth2 Toggle
+
+User Story: As an admin I want to toggle between API key and OAuth2 authentication So that I can adapt security to integration needs
+
+Acceptance Criteria:
+Scenario: Auth toggle
+Given the config is set
+When I switch authentication mode
+Then endpoints require the selected method
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: RBAC
+- Notes: Document configuration steps
