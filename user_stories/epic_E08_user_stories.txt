@@ -1,0 +1,70 @@
+EPIC E08: Safety Incidents & OSHA Reporting
+
+===========================================
+
+Title: Record Safety Incidents
+
+User Story: As a Supervisor I want to record safety incidents with severity and details So that incidents are tracked and investigated
+
+Acceptance Criteria:
+Scenario: Incident entry
+Given an incident occurs
+When I submit details
+Then the incident is logged
+
+Scenario: Missing required fields
+Given required fields are missing
+When I submit the incident
+Then the system returns a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Support attachments
+
+===========================================
+
+Title: Investigate Safety Incidents
+
+User Story: As an ADMIN I want to manage investigation workflows for safety incidents So that root causes are identified
+
+Acceptance Criteria:
+Scenario: Assign investigation
+Given an incident is logged
+When I assign an investigator
+Then the workflow is started
+
+Scenario: Investigation closure
+Given investigation steps are completed
+When I close the incident
+Then the status is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Safety Incident Recording
+- Notes: Log investigation steps
+
+===========================================
+
+Title: Generate OSHA Reports
+
+User Story: As an HR I want to generate OSHA-compliant reports from incident data So that regulatory requirements are met
+
+Acceptance Criteria:
+Scenario: Report generation
+Given incident data is available
+When I generate a report
+Then the report meets OSHA format
+
+Scenario: Missing data for report
+Given required data is missing
+When I generate a report
+Then the system returns an error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Safety Incident Recording
+- Notes: Export to PDF/Excel
