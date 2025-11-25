@@ -1,0 +1,19 @@
+EPIC E11: Payroll Export Integration
+
+===========================================
+
+Title: Payroll Export Integration
+
+User Story: As a payroll admin I want to generate payroll-ready files from attendance and leave So that payroll runs are accurate
+
+Acceptance Criteria:
+Scenario: Payroll export
+Given approved attendance and leave data
+When I export payroll files
+Then the files match provider schema
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Attendance, Leave management
+- Notes: Secure delivery via SFTP/API
