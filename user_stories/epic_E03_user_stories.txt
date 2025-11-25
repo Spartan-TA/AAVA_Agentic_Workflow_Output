@@ -1,0 +1,47 @@
+EPIC E03: Role Based Access Control (RBAC)
+
+===========================================
+
+Title: Implement Role-Based Access Control
+
+User Story: As an ADMIN I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users So that access to features is restricted appropriately
+
+Acceptance Criteria:
+Scenario: Role assignment
+Given a user account exists
+When I assign a role
+Then the user has access to permitted endpoints
+
+Scenario: Unauthorized access attempt
+Given a user with insufficient privileges
+When they access a restricted endpoint
+Then access is denied
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project Scaffolding & Employee Master Data
+- Notes: Use Spring Security
+
+===========================================
+
+Title: Secure Endpoints by Role
+
+User Story: As a Developer I want to secure API endpoints based on user roles So that sensitive operations are protected
+
+Acceptance Criteria:
+Scenario: Endpoint access by role
+Given an endpoint requires ADMIN role
+When a user with ADMIN role accesses it
+Then access is granted
+
+Scenario: Endpoint access by non-privileged role
+Given an endpoint requires HR role
+When a WORKER accesses it
+Then access is denied
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role-Based Access Control
+- Notes: Document endpoint permissions
