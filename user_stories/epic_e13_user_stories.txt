@@ -1,0 +1,19 @@
+EPIC E13: Integration Layer (HRIS/WMS APIs)
+
+===========================================
+
+Title: Integration Layer (HRIS/WMS APIs)
+
+User Story: As an integration engineer I want to expose REST APIs and connectors for HRIS and WMS So that master data is synchronized
+
+Acceptance Criteria:
+Scenario: API exposure
+Given HRIS/WMS integration is configured
+When I sync data
+Then employees and departments are updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding, Employee CRUD, RBAC
+- Notes: JWT/OAuth2-secured APIs
