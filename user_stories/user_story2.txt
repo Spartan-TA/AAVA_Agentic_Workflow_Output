@@ -1,0 +1,12 @@
+Title: Create Base Package Structure
+User Story: As a developer I want to create a base package structure for core modules So that all future development follows a consistent organization
+Acceptance Criteria:
+Scenario: Base Package Structure
+  Given the project is initialized
+  When I create packages for employee, scheduling, attendance, and safety modules
+  Then each module should have its own directory and initial class files
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story1.txt
+- Notes: Follow naming conventions and document structure in README.
