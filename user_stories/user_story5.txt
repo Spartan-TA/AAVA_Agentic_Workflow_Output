@@ -1,0 +1,12 @@
+Title: Document Build and Run Steps in README
+User Story: As a developer I want to document build and run steps in the README So that new team members can quickly set up and run the project
+Acceptance Criteria:
+Scenario: README Documentation
+  Given the project is initialized
+  When I open the README file
+  Then I see clear instructions for building, running, and accessing the health endpoint
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: user_story1.txt
+- Notes: Include migration tool usage and base package overview.
