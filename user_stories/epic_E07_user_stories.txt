@@ -1,0 +1,70 @@
+EPIC E07: Training & Certification Tracking
+
+===========================================
+
+Title: Track Employee Certifications
+
+User Story: As an HR I want to track employee certifications and expiration dates So that compliance is maintained
+
+Acceptance Criteria:
+Scenario: Certification entry
+Given an employee completes a certification
+When I add it to their record
+Then the expiration date is tracked
+
+Scenario: Expired certification
+Given a certification has expired
+When I view assignments
+Then the employee is flagged as unqualified
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Support multiple certification types
+
+===========================================
+
+Title: Block Unqualified Assignments
+
+User Story: As a Supervisor I want the system to block shift assignments for employees with expired certifications So that safety and compliance are ensured
+
+Acceptance Criteria:
+Scenario: Assignment to unqualified employee
+Given an employee's certification is expired
+When I assign a shift requiring certification
+Then the system prevents assignment
+
+Scenario: Assignment to qualified employee
+Given an employee's certification is valid
+When I assign a shift
+Then the assignment is allowed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Certification Tracking, Shift Management
+- Notes: Notify HR of blocked assignments
+
+===========================================
+
+Title: Certification Renewal Notifications
+
+User Story: As an HR I want to receive notifications for expiring certifications So that renewals are managed proactively
+
+Acceptance Criteria:
+Scenario: Notification for upcoming expiration
+Given a certification expires in 30 days
+When I view notifications
+Then I see a renewal reminder
+
+Scenario: No notification for valid certifications
+Given all certifications are valid
+When I view notifications
+Then no reminders are shown
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Certification Tracking
+- Notes: Support email and in-app notifications
