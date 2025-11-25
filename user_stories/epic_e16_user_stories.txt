@@ -1,0 +1,19 @@
+EPIC E16: Mobile Access (PWA)
+
+===========================================
+
+Title: Mobile Access (PWA)
+
+User Story: As a warehouse worker I want to access core flows (clock-in/out, schedules, leave, announcements) on mobile So that I can use the system on any device
+
+Acceptance Criteria:
+Scenario: Mobile usability
+Given I use a mobile device
+When I access the app
+Then core flows are responsive and offline-friendly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Attendance, Schedule, Leave, Notifications
+- Notes: PWA manifest, Lighthouse score â¥ 80
