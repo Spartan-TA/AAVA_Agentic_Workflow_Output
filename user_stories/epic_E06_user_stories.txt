@@ -1,0 +1,93 @@
+EPIC E06: Leave & Absence Management
+
+===========================================
+
+Title: Request PTO
+
+User Story: As a WORKER I want to request paid time off via the system So that my leave is tracked and approved
+
+Acceptance Criteria:
+Scenario: Successful PTO request
+Given I have available leave balance
+When I submit a PTO request
+Then the request is sent for approval
+
+Scenario: Insufficient leave balance
+Given I have no available leave
+When I submit a PTO request
+Then the system rejects the request
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC, Shift Management
+- Notes: Show leave balance
+
+===========================================
+
+Title: Approve Leave Requests
+
+User Story: As a Supervisor I want to approve or reject leave requests So that team schedules are managed
+
+Acceptance Criteria:
+Scenario: Approve leave
+Given a pending leave request
+When I approve it
+Then the employee's schedule is updated
+
+Scenario: Reject leave
+Given a pending leave request
+When I reject it
+Then the employee is notified
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave Request, Shift Management
+- Notes: Log approval actions
+
+===========================================
+
+Title: Track Leave Accruals
+
+User Story: As an HR I want to track leave accrual balances for employees So that leave policies are enforced
+
+Acceptance Criteria:
+Scenario: Accrual calculation
+Given an employee's work history
+When I view leave balance
+Then accruals are calculated per policy
+
+Scenario: Manual adjustment
+Given an accrual error
+When I adjust the balance
+Then the change is logged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, Shift Management
+- Notes: Support multiple accrual policies
+
+===========================================
+
+Title: Integrate Leave with Scheduling
+
+User Story: As a Developer I want leave requests to block shift assignments So that scheduling conflicts are avoided
+
+Acceptance Criteria:
+Scenario: Leave blocks shift
+Given an approved leave
+When I assign a shift
+Then the system prevents assignment
+
+Scenario: Overlapping leave and shift
+Given a leave overlaps with a scheduled shift
+When I view the schedule
+Then the conflict is highlighted
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave Management, Shift Management
+- Notes: Notify supervisors of conflicts
