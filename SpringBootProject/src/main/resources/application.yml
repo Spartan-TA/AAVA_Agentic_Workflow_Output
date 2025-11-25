@@ -1,0 +1,51 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: warehouse-ems
+  datasource:
+    url: jdbc:h2:mem:warehouseemsdb;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+security:
+  oauth2:
+    enabled: false # Toggle for OAuth2
+  api-key:
+    enabled: true # Toggle for API Key
+  jwt:
+    secret: "SuperSecretJWTKeyForWarehouseEMS2024ChangeInProduction"
+    expiration: 86400000 # 24 hours in milliseconds
+
+logging:
+  level:
+    com.warehouse.ems: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
