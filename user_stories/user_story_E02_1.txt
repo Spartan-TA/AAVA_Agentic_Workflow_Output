@@ -1,0 +1,15 @@
+Title: Create Employee Domain Model
+
+User Story: As a backend developer I want to define the Employee domain model with fields such as name, badgeId, role, department, shiftGroup, hireDate, and status so that employee data is structured and consistent across the system.
+
+Acceptance Criteria:
+Scenario: Employee entity definition
+  Given the project is set up
+  When I review the domain model
+  Then the Employee entity should have all required fields with appropriate data types and constraints
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story_E01_1
+- Notes: badgeId must be unique; status should support active/inactive/terminated.
