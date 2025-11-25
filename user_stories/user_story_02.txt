@@ -1,0 +1,15 @@
+Title: Configure Database Migration Tool
+
+User Story: As a Developer I want to integrate Flyway or Liquibase for database migrations So that schema changes are versioned and manageable
+
+Acceptance Criteria:
+Scenario: Migration tool setup
+  Given the Spring Boot project is initialized
+  When I add Flyway or Liquibase dependencies
+  Then migration scripts are executed on startup
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Initialize Spring Boot Project
+- Notes: Choose tool based on team preference
