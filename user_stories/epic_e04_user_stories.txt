@@ -1,0 +1,73 @@
+EPIC E04: Time & Attendance (Clock In/Out)
+
+===========================================
+
+Title: Time & Attendance Clock In/Out
+
+User Story: As a warehouse worker I want to clock in and out So that my working hours are accurately recorded
+
+Acceptance Criteria:
+Scenario: Clock in/out
+Given I am scheduled for a shift
+When I clock in or out
+Then the event is recorded and hours calculated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC
+- Notes: Geofence optional
+
+---
+
+Title: Device Capture for Attendance
+
+User Story: As a supervisor I want to capture device info during clock in/out So that attendance events are traceable
+
+Acceptance Criteria:
+Scenario: Device capture
+Given a clock event occurs
+When I submit the event
+Then device info is stored with the record
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance
+- Notes: Device type and ID
+
+---
+
+Title: Handle Missed Punches and Corrections
+
+User Story: As a worker I want to request corrections for missed punches So that my attendance is accurate
+
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch is detected
+When I submit a correction request
+Then an approval task is created for supervisor
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance
+- Notes: Approval required for changes
+
+---
+
+Title: Attendance Reports Export
+
+User Story: As a payroll admin I want to export attendance reports in CSV So that payroll processing is streamlined
+
+Acceptance Criteria:
+Scenario: Report export
+Given attendance data exists
+When I request export
+Then a CSV file is generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance
+- Notes: Include daily totals
