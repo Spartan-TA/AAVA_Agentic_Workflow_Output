@@ -1,0 +1,12 @@
+Title: Create Employee API Endpoint
+User Story: As an HR manager I want to create new employee records via API So that I can maintain an accurate employee master list
+Acceptance Criteria:
+Scenario: Employee Creation
+  Given I have HR manager access
+  When I POST to /employees with valid data
+  Then a new employee record is created and badgeId is unique
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story1.txt
+- Notes: Validate required fields and enforce badgeId uniqueness.
