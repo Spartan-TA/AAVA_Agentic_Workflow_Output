@@ -1,0 +1,15 @@
+Title: Export OSHA 300/300A Summary Fields
+
+User Story: As a compliance officer I want to export OSHA 300/300A summary fields So that I can meet regulatory reporting requirements and analyze safety trends
+
+Acceptance Criteria:
+Scenario: Export OSHA summary
+Given safety incidents are recorded in the system
+When I generate an OSHA export
+Then the file includes all required OSHA 300/300A fields and is formatted for submission
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Export should be available by date range and include incident details.
