@@ -1,0 +1,20 @@
+Title: Employees Request Leave, Supervisors Approve/Deny
+
+User Story: As an employee I want to request PTO, sick, or unpaid leave and have my supervisor approve or deny the request So that my absences are tracked and managed according to company policy
+
+Acceptance Criteria:
+Scenario: Submit leave request
+Given I am authenticated as an employee
+When I submit a leave request with type, dates, and reason
+Then the system creates a pending approval task for my supervisor
+
+Scenario: Supervisor reviews leave request
+Given a leave request is pending
+When my supervisor approves or denies it
+Then the employee is notified and the leave balance is updated if approved
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E05
+- Notes: Leave types and policies must be configurable; all actions must be logged for audit.
