@@ -1,0 +1,15 @@
+Title: Delete Employee Record
+
+User Story: As an HR administrator I want to delete an employee record So that I can remove staff who are no longer employed
+
+Acceptance Criteria:
+Scenario: Successful employee deletion
+Given I am viewing an employee's profile
+When I choose to delete the employee and confirm the action
+Then the employee record should be removed from the system and no longer appear in searches or lists
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Implement safeguards to prevent accidental deletion and ensure compliance with data retention policies.
