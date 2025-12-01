@@ -1,0 +1,12 @@
+Title: HR Starts Offboarding Checklist
+User Story: As an HR manager I want to initiate an offboarding checklist for departing employees So that all required steps are completed efficiently
+Acceptance Criteria:
+Scenario: Start offboarding checklist
+Given an employee is marked for departure
+When I start the offboarding checklist
+Then all offboarding tasks are assigned and tracked for completion
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Offboarding module, task assignment
+- Notes: Checklist should be customizable by role.
