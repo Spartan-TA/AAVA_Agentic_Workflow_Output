@@ -1,0 +1,15 @@
+Title: Asset Registry CRUD
+
+User Story: As an asset manager I want to create, update, and delete asset records So that I can maintain an accurate inventory of equipment and PPE
+
+Acceptance Criteria:
+Scenario: Asset registry management
+Given I am on the asset management page
+When I add, edit, or remove an asset record
+Then the changes are saved and reflected in the asset registry
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E02, E03, E07
+- Notes: Include fields for asset type, serial number, condition, and assignment status.
