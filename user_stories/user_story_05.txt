@@ -1,0 +1,34 @@
+Title: Create Employee Entity and Repository
+
+User Story: As a developer I want to create the Employee domain entity with JPA annotations and repository so that employee data can be persisted and retrieved from the database.
+
+Acceptance Criteria:
+
+Scenario: Employee entity is properly mapped
+Given the Employee entity class exists
+When I inspect the entity
+Then it should have fields for name, badgeId, role, department, shiftGroup, hireDate, and status
+And badgeId should be marked as unique
+And appropriate JPA annotations should be present
+And audit fields (createdAt, updatedAt, createdBy, updatedBy) should exist
+
+Scenario: Repository provides CRUD operations
+Given the EmployeeRepository interface exists
+When I use the repository
+Then I should be able to save, find, update, and delete employees
+And I should be able to find by badgeId
+And I should be able to find by department
+And I should be able to find by status
+
+Scenario: Soft delete is supported
+Given an employee record exists
+When I delete the employee
+Then the record should not be physically deleted
+And the status should be updated to INACTIVE or DELETED
+And the deletedAt timestamp should be set
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding (E01), Database migrations (E01)
+- Notes: Use Lombok to reduce boilerplate. Implement soft delete using @SQLDelete and @Where annotations or status field.
