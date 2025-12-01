@@ -1,0 +1,20 @@
+Title: API Key/OAuth2 Toggle
+
+User Story: As a DevOps engineer I want to toggle between API key and OAuth2 authentication So that the system can adapt to different security requirements
+
+Acceptance Criteria:
+Scenario: Toggle Authentication
+  Given the configuration is set to API key
+  When a request is made with a valid API key
+  Then access is granted
+
+Scenario: Toggle to OAuth2
+  Given the configuration is set to OAuth2
+  When a request is made with a valid token
+  Then access is granted
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: user_story8
+- Notes: Document toggle steps.
