@@ -1,0 +1,20 @@
+Title: Leave Accrual Balances and Policy Enforcement
+
+User Story: As an HR manager I want leave accrual balances and policies to be enforced automatically So that employees' leave requests are validated against their available balances and company rules
+
+Acceptance Criteria:
+Scenario: Leave request exceeds balance
+Given an employee submits a leave request
+When the requested days exceed their available balance
+Then the system blocks the request and displays an error message
+
+Scenario: Accrual policy update
+Given company leave policies change
+When I update the accrual rules
+Then all future leave calculations use the new policy
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Accruals must be calculated monthly; policy changes must not retroactively affect approved leave.
