@@ -1,0 +1,15 @@
+Title: Offline Queue and Conflict Resolution for Clock Events
+
+User Story: As a worker I want my clock-in/out events to be queued offline and synced with conflict resolution so that my attendance is accurately recorded even without network
+
+Acceptance Criteria:
+Scenario: Offline clock event queue and sync
+  Given I am offline and clock in or out
+  When I regain connectivity
+  Then my events are synced to the server and any conflicts are resolved according to business rules
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: User notified of sync status and any conflicts; must not lose events.
