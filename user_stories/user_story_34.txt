@@ -1,0 +1,15 @@
+Title: Asset Check-In and Check-Out
+
+User Story: As an employee I want to check out and return assigned equipment and PPE so that asset usage is tracked and overdue returns are flagged
+
+Acceptance Criteria:
+Scenario: Check out and return asset
+  Given I am assigned an asset
+  When I check out or return the asset in the system
+  Then the asset status and history log are updated accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02 (User Management), E03 (Scheduling), E07 (Certifications)
+- Notes: Overdue returns must trigger notifications
