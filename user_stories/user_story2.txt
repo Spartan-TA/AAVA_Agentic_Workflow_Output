@@ -1,0 +1,15 @@
+Title: Create Employee Domain Model
+
+User Story: As an HR admin I want to manage employee records (CRUD) so that employee data is accurate and up-to-date across the system.
+
+Acceptance Criteria:
+Scenario: Employee CRUD operations
+Given I am authenticated as HR
+When I create, update, or delete an employee
+Then the changes are reflected in the employee list and badgeId uniqueness is enforced
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project Scaffolding & Domain Setup
+- Notes: Support pagination, filtering, and soft-delete; OpenAPI schemas with examples
