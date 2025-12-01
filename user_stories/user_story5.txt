@@ -1,0 +1,16 @@
+Title: Implement Employee CRUD API Endpoints
+
+User Story: As an HR manager I want to create, read, update, and delete employee records via API endpoints so that employee data is accurately maintained in the system.
+
+Acceptance Criteria:
+Scenario: Employee CRUD operations
+  Given I have valid HR credentials
+  When I call the POST, GET, PUT, PATCH, or DELETE /employees endpoint with appropriate data
+  Then the employee record is created, retrieved, updated, or soft-deleted as requested
+  And a unique badgeId is enforced for each employee
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project scaffolding (E01)
+- Notes: Support pagination and filtering in GET; implement soft-delete.
