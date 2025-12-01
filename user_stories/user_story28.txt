@@ -1,0 +1,12 @@
+Title: Supervisor Assigns Equipment
+User Story: As a supervisor I want to assign equipment and assets to employees So that resources are distributed efficiently and tracked
+Acceptance Criteria:
+Scenario: Assign equipment
+Given I am logged into the system as a supervisor
+When I select an employee and assign equipment
+Then the assignment is logged and the employee is notified
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Asset management module, notifications
+- Notes: Assignment history should be tracked for compliance.
