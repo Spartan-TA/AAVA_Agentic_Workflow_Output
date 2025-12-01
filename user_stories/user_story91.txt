@@ -1,0 +1,15 @@
+Title: Localized Date/Time Formats and Policy Scoping by Warehouse
+
+User Story: As an employee I want date/time formats and policies to be localized and scoped to my assigned warehouse So that I see accurate schedules and rules for my location
+
+Acceptance Criteria:
+Scenario: Localization and policy scoping
+Given I am assigned to a warehouse
+When I view schedules and policies
+Then date/time formats and rules reflect my warehouse's configuration and locale
+
+Additional Details:
+- Priority: Low
+- Story Points: 4
+- Dependencies: E01, E02, E05
+- Notes: Support US and international formats; policies editable by warehouse admin.
