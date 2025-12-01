@@ -1,0 +1,15 @@
+Title: CI/CD Pipeline with Quality Gates and Zero-Downtime Deployments
+
+User Story: As a DevOps engineer I want a CI/CD pipeline with quality gates, automated DB migrations, and zero-downtime deployments so that releases are reliable and production is not disrupted
+
+Acceptance Criteria:
+Scenario: Run CI/CD pipeline
+  Given new code is merged to main
+  When the pipeline runs
+  Then tests and linting must pass, migrations are applied, and deployment occurs with rollback plan in place
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01 (Core)
+- Notes: Pipeline must fail on test/lint errors and support rollback
