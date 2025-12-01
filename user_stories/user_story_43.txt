@@ -1,0 +1,15 @@
+Title: Notification Delivery Tracking and Rate Limiting
+
+User Story: As an admin I want to track notification delivery status and enforce rate limits so that users are not spammed and we can audit notification effectiveness
+
+Acceptance Criteria:
+Scenario: Notification delivery is tracked and rate limited
+  Given a notification is sent to a user
+  When the notification is delivered via in-app, email, or SMS
+  Then the delivery status is logged and no user receives more than the configured number of notifications per hour
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E03, E05, E06, E07
+- Notes: Delivery logs must be queryable; rate limits configurable per channel.
