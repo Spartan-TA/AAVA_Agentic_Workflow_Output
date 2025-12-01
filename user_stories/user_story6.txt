@@ -1,0 +1,20 @@
+Title: Support Employee Soft-Delete and OpenAPI Schema Documentation
+
+User Story: As an HR manager I want to soft-delete employee records and have clear API documentation So that inactive employees are excluded from active queries and integration is straightforward
+
+Acceptance Criteria:
+Scenario: Soft-delete employee
+Given an active employee record
+When I DELETE /employees/{id}
+Then the employee is marked as inactive and excluded from active lists
+
+Scenario: OpenAPI schema documentation
+Given the API is implemented
+When I view the OpenAPI documentation
+Then all endpoints and DTOs are described with examples
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD APIs (E02)
+- Notes: Soft-deleted employees must be retrievable for audit purposes
