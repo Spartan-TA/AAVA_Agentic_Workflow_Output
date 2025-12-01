@@ -1,0 +1,15 @@
+Title: Clock In/Out Attendance
+
+User Story: As a warehouse worker I want to clock in and out with device and location capture so that my worked hours are accurately tracked.
+
+Acceptance Criteria:
+Scenario: Clock in/out event
+Given I am scheduled for a shift
+When I clock in/out via the endpoint
+Then my attendance is recorded, shift association is automatic, and missed punches trigger correction workflow
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee Master Data, RBAC
+- Notes: Support corrections approval, CSV export, and geofence validation
