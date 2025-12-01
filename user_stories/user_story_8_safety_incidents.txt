@@ -1,0 +1,12 @@
+Title: Safety Incident Recording
+User Story: As a safety officer I want to record safety incidents with severity and investigation workflow So that OSHA reporting is accurate
+Acceptance Criteria:
+Scenario: Incident recording
+Given an incident occurs
+When I log the incident details
+Then the system should capture severity, investigation steps, and generate OSHA reports
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee domain, RBAC
+- Notes: Support attachments and workflow tracking
