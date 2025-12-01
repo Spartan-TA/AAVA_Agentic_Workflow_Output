@@ -1,0 +1,15 @@
+Title: Expose Secure REST APIs for HRIS/WMS/IDP
+
+User Story: As a system integrator I want to access JWT/OAuth2-secured REST APIs for HRIS, WMS, and IDP integration so that employee, department, and SSO data can be synchronized securely
+
+Acceptance Criteria:
+Scenario: Access secured API endpoints
+  Given I have valid credentials
+  When I call the HRIS, WMS, or IDP API endpoints
+  Then I receive data per OpenAPI documentation and all access is logged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01 (Core), E02 (User Management), E03 (Scheduling)
+- Notes: API must support JWT/OAuth2 and be documented in OpenAPI
