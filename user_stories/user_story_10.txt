@@ -1,0 +1,43 @@
+Title: Implement Employee Filtering and Search
+
+User Story: As an HR user I want to filter and search employee records so that I can quickly find specific employees or groups of employees.
+
+Acceptance Criteria:
+
+Scenario: Filter by department
+Given there are employees in multiple departments
+When I GET /api/v1/employees?department=Shipping
+Then I should receive only employees in the Shipping department
+And the response should include pagination metadata
+
+Scenario: Filter by role
+Given there are employees with different roles
+When I GET /api/v1/employees?role=SUPERVISOR
+Then I should receive only employees with SUPERVISOR role
+
+Scenario: Filter by status
+Given there are active and inactive employees
+When I GET /api/v1/employees?status=ACTIVE
+Then I should receive only active employees
+
+Scenario: Filter by shift group
+Given employees are assigned to different shift groups
+When I GET /api/v1/employees?shiftGroup=NIGHT_SHIFT
+Then I should receive only employees in NIGHT_SHIFT group
+
+Scenario: Search by name
+Given there are employees with various names
+When I GET /api/v1/employees?search=John
+Then I should receive employees whose name contains 'John'
+And the search should be case-insensitive
+
+Scenario: Combine multiple filters
+Given there are many employees
+When I GET /api/v1/employees?department=Shipping&role=WORKER&status=ACTIVE
+Then I should receive only active workers in the Shipping department
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee entity (E02), Get employee APIs (E02)
+- Notes: Implement efficient database queries. Support multiple filter combinations. Ensure proper indexing for performance.
