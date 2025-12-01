@@ -1,0 +1,15 @@
+Title: Support API Key/OAuth2 Toggle via Config
+
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication via configuration so that the system can adapt to different security requirements
+
+Acceptance Criteria:
+Scenario: Switching authentication modes
+Given the system is running
+When I change the authentication mode in the config
+Then the system enforces the selected authentication method for all endpoints
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Configuration changes should be logged and tested for both modes.
