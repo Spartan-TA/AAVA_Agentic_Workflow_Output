@@ -1,0 +1,15 @@
+Title: Automated Offboarding and Asset Collection
+
+User Story: As an HR manager I want employee access and assets to be revoked and collected automatically upon termination So that offboarding is secure and complete
+
+Acceptance Criteria:
+Scenario: Employee offboarding
+Given an employee is terminated in HRIS
+When the offboarding workflow runs
+Then access is revoked, assets are collected, and schedules are updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Offboarding must update all relevant systems and track asset return status.
