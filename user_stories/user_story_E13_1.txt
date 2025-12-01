@@ -1,0 +1,15 @@
+Title: HRIS REST API Connector
+
+User Story: As an HRIS integration engineer I want a secure REST API to create and update employee records So that master data is synchronized between systems
+
+Acceptance Criteria:
+Scenario: HRIS sync job
+Given new hire or termination data is available in HRIS
+When the sync job runs
+Then employee records are created or updated in the EMS system via JWT/OAuth2-secured API
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02, E03
+- Notes: API must be documented in OpenAPI and support idempotency.
