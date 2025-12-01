@@ -1,0 +1,12 @@
+Title: Multi-Warehouse & Localization Support
+User Story: As a system administrator I want support for multiple warehouses and UI localization So that the system is usable across regions
+Acceptance Criteria:
+Scenario: Multi-tenant and localization
+Given multiple warehouses and languages are configured
+When users log in
+Then they should see data and UI in their warehouse context and preferred language
+Additional Details:
+- Priority: Low
+- Story Points: 4
+- Dependencies: Project scaffolding, Employee domain, Shift management
+- Notes: Support timezone-aware scheduling
