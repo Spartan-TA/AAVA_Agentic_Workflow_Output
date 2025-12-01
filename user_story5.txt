@@ -1,0 +1,20 @@
+Title: Document Build and Run Steps in README
+
+User Story: As a developer I want clear build and run instructions in the README So that new team members can set up the project quickly
+
+Acceptance Criteria:
+Scenario: README contains setup instructions
+  Given the project is initialized
+  When I open the README file
+  Then I should see step-by-step instructions for building and running the application
+
+Scenario: README updated after changes
+  Given build/run steps change
+  When I update the project
+  Then the README should be updated to reflect the new process
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project initialization
+- Notes: Include troubleshooting tips for common issues
