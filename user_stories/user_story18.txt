@@ -1,0 +1,12 @@
+Title: Submit Leave Request
+User Story: As an employee I want to submit a leave request So that I can formally notify my supervisor of planned absences
+Acceptance Criteria:
+Scenario: Submit leave request
+Given I am logged into the system
+When I fill out and submit the leave request form
+Then my supervisor receives a notification and the request is logged in the system
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User authentication, notifications
+- Notes: Leave types should be selectable (sick, vacation, etc.).
