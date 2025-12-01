@@ -1,0 +1,15 @@
+Title: Export Approved Leaves for Reporting and Payroll
+
+User Story: As a payroll administrator I want to export approved leave records So that I can process payroll accurately and maintain compliance
+
+Acceptance Criteria:
+Scenario: Export approved leaves
+Given there are approved leave requests in the system
+When I generate a leave export
+Then the export includes all relevant fields and matches the payroll provider's format
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Export should include leave type, dates, employee ID, and approval status.
