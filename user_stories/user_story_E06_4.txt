@@ -1,0 +1,20 @@
+Title: Leave Exports Show Approved Leaves
+
+User Story: As an HR manager I want to export leave records showing all approved leaves So that I can provide accurate absence data for compliance and reporting
+
+Acceptance Criteria:
+Scenario: Export approved leave report
+Given I am authenticated as HR or ADMIN
+When I request a leave export for a specified period
+Then the system generates a CSV file listing all approved leaves with employee, type, dates, and status
+
+Scenario: Export includes pending/denied leaves
+Given there are pending or denied leave requests
+When the report is generated
+Then only approved leaves are included in the export
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Export format must match regulatory requirements; available via API and UI.
