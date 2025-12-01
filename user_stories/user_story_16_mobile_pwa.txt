@@ -1,0 +1,12 @@
+Title: Mobile PWA Access
+User Story: As a warehouse worker I want responsive mobile views and offline access So that I can use the system from any device
+Acceptance Criteria:
+Scenario: Mobile access
+Given I access the system from a mobile device
+When I use the PWA
+Then I should have a responsive UI and offline capability
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: Attendance, Shift management, Leave, Notifications
+- Notes: Support push notifications
