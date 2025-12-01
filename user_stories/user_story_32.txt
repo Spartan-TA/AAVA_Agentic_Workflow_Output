@@ -1,0 +1,16 @@
+Title: Asset and Employee History Log & Overdue Return Reports
+User Story: As an asset manager I want to view asset and employee history logs and generate reports of overdue returns so that asset accountability and timely returns are enforced
+Acceptance Criteria:
+Scenario: View asset history log
+Given an asset has been assigned and returned
+When I view its history
+Then I see all check-in/check-out transactions with timestamps and users
+Scenario: Generate overdue return report
+Given assets are checked out
+When I generate a report
+Then I see all assets overdue for return with responsible employees
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Reports exportable as CSV
