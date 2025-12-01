@@ -1,0 +1,15 @@
+Title: Track Onboarding and Offboarding Tasks
+
+User Story: As an HR administrator I want to track the completion status of all onboarding and offboarding tasks so that nothing is missed during employee transitions
+
+Acceptance Criteria:
+Scenario: View onboarding/offboarding task status
+  Given onboarding or offboarding is in progress for an employee
+  When I view the task list
+  Then I see the status of each task and can export a completion report
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02 (User Management), E03 (Scheduling), E05 (Attendance), E07 (Certifications), E09 (Assets), E13 (Integration)
+- Notes: Task status must be visible to HR and supervisors
