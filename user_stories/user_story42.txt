@@ -1,0 +1,12 @@
+Title: Admin Views Audit Log
+User Story: As an administrator I want to view the audit log of system actions So that I can monitor compliance and investigate issues
+Acceptance Criteria:
+Scenario: View audit log
+Given system actions have been performed
+When I access the audit log
+Then I should see a list of actions with timestamps, user IDs, and descriptions
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Audit module
+- Notes: Log should be exportable for compliance reporting.
