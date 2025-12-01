@@ -1,0 +1,12 @@
+Title: Implement Method and Row-Level Security
+User Story: As a system administrator I want to enforce method and row-level security So that supervisors can only access records for their team and sensitive operations are restricted
+Acceptance Criteria:
+Scenario: Row-level security enforcement
+Given a supervisor user
+When the supervisor accesses employee records
+Then only records for their assigned team are visible and editable
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Role-based endpoint security (E03)
+- Notes: Security rules must be covered by automated tests
