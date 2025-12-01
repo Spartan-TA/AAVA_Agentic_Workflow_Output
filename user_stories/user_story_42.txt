@@ -1,0 +1,15 @@
+Title: Localized Notification Templates
+
+User Story: As an admin I want to configure notification templates in multiple languages so that users receive announcements and alerts in their preferred language
+
+Acceptance Criteria:
+Scenario: Admin configures and previews localized templates
+  Given I am on the notification template management page
+  When I add or edit a template and select a language
+  Then the template is saved and users with matching locale receive notifications in that language
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Support for all supported UI languages; fallback to default if translation missing.
