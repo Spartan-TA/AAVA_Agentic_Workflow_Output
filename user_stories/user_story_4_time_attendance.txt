@@ -1,0 +1,42 @@
+Title: Employee Clock In/Out API
+User Story: As a warehouse worker I want to clock in and out via an endpoint So that my attendance is accurately recorded
+Acceptance Criteria:
+Scenario: Clock in/out
+Given I am at the warehouse
+When I submit a clock in/out request
+Then my attendance record should be updated with timestamp and location
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee domain, RBAC
+- Notes: Enforce geofence validation
+
+---
+
+Title: Attendance Calculation
+User Story: As a supervisor I want the system to calculate hours worked based on clock in/out So that payroll and overtime are accurate
+Acceptance Criteria:
+Scenario: Attendance calculation
+Given valid clock in/out records
+When I view attendance summary
+Then total hours worked should be calculated correctly
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock in/out API
+- Notes: Handle missed punches gracefully
+
+---
+
+Title: Missed Punch Handling
+User Story: As a worker I want to report missed punches So that my attendance can be corrected
+Acceptance Criteria:
+Scenario: Missed punch report
+Given I missed a clock in/out
+When I submit a missed punch request
+Then my supervisor should be notified and able to approve correction
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance calculation
+- Notes: Track all corrections for audit
