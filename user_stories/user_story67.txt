@@ -1,0 +1,15 @@
+Title: HRIS Sync Job Creates and Updates Employee Records
+
+User Story: As an HR manager I want the HRIS sync job to automatically create and update employee records So that onboarding and personnel changes are reflected in real time
+
+Acceptance Criteria:
+Scenario: HRIS sync job
+Given new hires or terminations are processed in HRIS
+When the sync job runs
+Then employee records are created, updated, or deactivated in the EMS system
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02, E03
+- Notes: Sync job must be idempotent and log all changes.
