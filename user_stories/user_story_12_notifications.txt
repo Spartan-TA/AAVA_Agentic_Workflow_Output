@@ -1,0 +1,12 @@
+Title: Notification Delivery
+User Story: As an employee I want to receive notifications for shift changes and expiring certifications So that I am informed of important updates
+Acceptance Criteria:
+Scenario: Notification delivery
+Given a shift change or certification expiration
+When the event occurs
+Then the system should send in-app and email/SMS notifications
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: RBAC, Shift management, Leave management, Certification tracking
+- Notes: Support opt-in/out preferences
