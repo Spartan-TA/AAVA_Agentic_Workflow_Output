@@ -1,0 +1,20 @@
+Title: Export Attendance Reports as CSV
+
+User Story: As a payroll specialist I want to export attendance records as CSV files So that I can reconcile payroll and compliance data efficiently
+
+Acceptance Criteria:
+Scenario: Export attendance report
+Given attendance data for a period
+When I request a CSV export
+Then the system generates a CSV file with all relevant fields
+
+Scenario: Large data export
+Given a large dataset (e.g., 10,000 records)
+When I export attendance
+Then the export completes within 10 seconds
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC, Attendance
+- Notes: Export must match payroll and compliance requirements
