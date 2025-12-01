@@ -1,0 +1,15 @@
+Title: Rollback Strategy and Pipeline Validation
+
+User Story: As a DevOps engineer I want the CI/CD pipeline to support rollback and validate all steps so that failed deployments can be reverted safely
+
+Acceptance Criteria:
+Scenario: Rollback and pipeline validation
+  Given a deployment fails or is rolled back
+  When the rollback is triggered
+  Then the previous stable version is restored and all pipeline steps are validated for success before merge
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Rollback must be tested in staging and production; rollback logs must be available.
