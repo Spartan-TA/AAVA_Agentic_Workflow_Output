@@ -1,0 +1,15 @@
+Title: Block Assignment to Tasks Requiring Expired Certifications
+
+User Story: As a scheduler I want the system to block assignment of employees to tasks requiring expired certifications So that only qualified workers are scheduled for safety-critical roles
+
+Acceptance Criteria:
+Scenario: Assignment blocked for expired certification
+Given an employee's certification has expired
+When I attempt to assign them to a task requiring that certification
+Then the system prevents the assignment and displays a warning
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: E02, E03
+- Notes: Certification status should be checked during scheduling and visible on employee profile.
