@@ -1,0 +1,16 @@
+Title: Block Asset Use for Invalid Certifications
+User Story: As a scheduler I want the system to prevent asset assignment to employees lacking required certifications so that safety and compliance are enforced
+Acceptance Criteria:
+Scenario: Block check-out for invalid certification
+Given an employee lacks a valid certification for an asset
+When they attempt to check out the asset
+Then the system blocks the transaction and displays an error
+Scenario: Allow check-out for valid certification
+Given an employee has a valid certification
+When they check out the asset
+Then the transaction is successful
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Applies to assets requiring certifications (e.g., forklifts)
