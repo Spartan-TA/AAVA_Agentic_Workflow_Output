@@ -1,0 +1,15 @@
+Title: Safety Incidents & OSHA Reporting
+
+User Story: As a safety officer I want to record and manage safety incidents so that compliance and corrective actions are tracked.
+
+Acceptance Criteria:
+Scenario: Incident workflow
+Given a new incident is reported
+When I submit the incident details
+Then the workflow status updates, OSHA export fields are available, and metrics are shown on dashboard
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee Master Data, RBAC
+- Notes: Support near-misses, investigation workflow, and export OSHA 300/300A
