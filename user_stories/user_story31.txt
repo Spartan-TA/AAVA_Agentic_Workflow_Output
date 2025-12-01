@@ -1,0 +1,15 @@
+Title: Capture Clock-In Event
+
+User Story: As a worker I want to clock in at the start of my shift using my device and location So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am at the worksite and logged into the app
+When I clock in with my device
+Then my clock-in event should be recorded with timestamp and geolocation
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (E02), RBAC (E03)
+- Notes: Enforce geofence validation and device capture.
