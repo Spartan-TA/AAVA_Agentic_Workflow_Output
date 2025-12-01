@@ -1,0 +1,15 @@
+Title: Investigation Workflow for Safety Incidents
+
+User Story: As a safety manager I want to manage the investigation workflow for reported incidents So that corrective actions are tracked and compliance is ensured
+
+Acceptance Criteria:
+Scenario: Incident investigation workflow
+Given an incident is reported and logged as 'Open'
+When I assign the incident for investigation
+Then the status changes to 'Investigating' and corrective actions can be documented
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Workflow should support status transitions: Open, Investigating, Resolved.
