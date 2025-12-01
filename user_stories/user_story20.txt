@@ -1,0 +1,12 @@
+Title: Employee Views Leave Balance
+User Story: As an employee I want to view my current leave balance So that I can plan future absences responsibly
+Acceptance Criteria:
+Scenario: View leave balance
+Given I am logged into the system
+When I navigate to the leave balance section
+Then I should see my available leave days by type
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave accrual calculation
+- Notes: Display breakdown by leave type (sick, vacation, etc.).
