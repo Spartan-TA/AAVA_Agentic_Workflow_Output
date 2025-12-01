@@ -1,0 +1,12 @@
+Title: Equipment Assignment
+User Story: As a supervisor I want to assign equipment (scanners, forklifts, PPE) to employees So that asset usage is tracked
+Acceptance Criteria:
+Scenario: Equipment assignment
+Given equipment inventory exists
+When I assign equipment to an employee
+Then the system should track checkout and return status
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee domain, RBAC, Certification tracking
+- Notes: Prevent assignment if certification expired
