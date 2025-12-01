@@ -1,0 +1,12 @@
+Title: Employee Reports Safety Incident
+User Story: As an employee I want to report a safety incident So that the organization can take corrective action and comply with OSHA regulations
+Acceptance Criteria:
+Scenario: Report safety incident
+Given I am logged into the system
+When I submit a safety incident report
+Then the incident is logged and the safety officer is notified
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Incident reporting module, notifications
+- Notes: Incident details should be editable until submitted.
