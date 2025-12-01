@@ -1,0 +1,12 @@
+Title: Dev Receives Deployment Failure Notification
+User Story: As a developer I want to receive notifications when a deployment fails So that I can take corrective action quickly
+Acceptance Criteria:
+Scenario: Deployment failure notification
+Given a deployment fails
+When the error is detected
+Then I receive a notification with error details and suggested actions
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: CI/CD pipeline, notification module
+- Notes: Notification should include deployment log reference.
