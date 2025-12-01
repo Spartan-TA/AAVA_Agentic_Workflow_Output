@@ -1,0 +1,15 @@
+Title: Integration Layer (HRIS/WMS APIs)
+
+User Story: As an integration engineer I want to expose and consume APIs for HRIS and WMS so that master data is synchronized and duplicate entry is reduced.
+
+Acceptance Criteria:
+Scenario: HRIS sync
+Given a new hire in HRIS
+When the sync job runs
+Then the employee is created/updated, APIs are secured, and webhooks are idempotent
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project Scaffolding & Domain Setup, Employee Master Data, RBAC
+- Notes: OpenAPI documentation; SSO via IDP
