@@ -1,0 +1,20 @@
+Title: Update Employee Record via API
+
+User Story: As an HR manager I want to update employee records via API So that employee information remains accurate and current
+
+Acceptance Criteria:
+Scenario: Successful employee update
+  Given an existing employee record
+  When I PUT or PATCH to /employees/{id} with updated data
+  Then the employee record should reflect the changes
+
+Scenario: Invalid update data
+  Given an existing employee record
+  When I submit invalid data
+  Then the API should return a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee creation
+- Notes: Support partial updates and validation
