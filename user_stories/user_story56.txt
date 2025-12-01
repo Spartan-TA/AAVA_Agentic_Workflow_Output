@@ -1,0 +1,12 @@
+Title: Employee Switches Site Context
+User Story: As an employee with access to multiple sites I want to switch my site context So that I can view and manage resources for the correct location
+Acceptance Criteria:
+Scenario: Switch site context
+Given I am logged into the system and have access to multiple sites
+When I select a different site from the menu
+Then the interface updates to show data for the selected site
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Site management module
+- Notes: Site context should persist across sessions.
