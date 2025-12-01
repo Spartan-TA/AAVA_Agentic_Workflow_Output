@@ -1,0 +1,20 @@
+Title: Enable Actuator Endpoints for Health Checks and Monitoring
+
+User Story: As a DevOps engineer I want to enable Actuator endpoints in the Spring Boot application so that system health and metrics can be monitored in real time.
+
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+  Given the application is running
+  When I access the /actuator/health endpoint
+  Then it should return status UP
+
+Scenario: Metrics endpoint available
+  Given the application is running
+  When I access the /actuator/metrics endpoint
+  Then I should see application metrics such as JVM memory, CPU, and request counts
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project scaffolding
+- Notes: Actuator must be enabled; endpoints must be accessible and documented in README.
