@@ -1,0 +1,15 @@
+Title: Responsive Mobile Views and PWA Installability
+
+User Story: As a worker I want to access core features like clock-in/out, schedules, leave requests, and announcements on my mobile device so that I can manage my work from anywhere
+
+Acceptance Criteria:
+Scenario: Mobile access and PWA install
+  Given I open the app on a mobile device
+  When I use clock-in/out, view schedules, request leave, or read announcements
+  Then all features are responsive and the app can be installed as a PWA with a manifest
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E04, E05, E06, E12
+- Notes: Lighthouse PWA score must be 80 or higher; offline support required for clock events.
