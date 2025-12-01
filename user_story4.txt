@@ -1,0 +1,20 @@
+Title: Enable Actuator Health Endpoint
+
+User Story: As a developer I want to enable the Actuator health endpoint So that I can monitor the application's health status
+
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+  Given the application is running
+  When I access /actuator/health
+  Then the response should indicate status UP
+
+Scenario: Health endpoint documentation
+  Given the endpoint is enabled
+  When I review the README
+  Then instructions for accessing the health endpoint should be present
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project initialization
+- Notes: Ensure endpoint is secured if needed
