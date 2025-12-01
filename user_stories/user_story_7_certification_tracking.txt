@@ -1,0 +1,12 @@
+Title: Certification Tracking
+User Story: As a supervisor I want to track employee certifications and expirations So that compliance is maintained
+Acceptance Criteria:
+Scenario: Certification tracking
+Given employee certifications are recorded
+When a certification is nearing expiration
+Then the system should notify the employee and supervisor
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee domain, RBAC
+- Notes: Block assignments for expired certifications
