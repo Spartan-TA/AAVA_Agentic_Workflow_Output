@@ -1,0 +1,15 @@
+Title: Implement Idempotent Webhooks for Event Notifications
+
+User Story: As a system integrator I want webhooks for event notifications to be idempotent So that duplicate processing is avoided and integrations remain reliable
+
+Acceptance Criteria:
+Scenario: Idempotent webhook delivery
+Given an event occurs in the EMS system
+When the webhook is triggered
+Then the receiving system processes the event only once, even if retried
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: E01, E02, E03
+- Notes: Webhook payloads must include unique event IDs.
