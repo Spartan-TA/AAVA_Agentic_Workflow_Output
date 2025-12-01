@@ -1,0 +1,20 @@
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor I want to assign shifts to employees in bulk or individually So that I can ensure adequate staffing and reduce scheduling conflicts
+
+Acceptance Criteria:
+Scenario: Bulk assign shifts
+Given a list of employees and a shift template
+When I assign the shift
+Then all selected employees receive the assignment
+
+Scenario: Conflict detection
+Given an employee with an existing shift
+When I assign an overlapping shift
+Then the system prevents the assignment and notifies me of the conflict
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD, RBAC, Attendance, Shift Templates
+- Notes: Audit entries must be generated for assignments
