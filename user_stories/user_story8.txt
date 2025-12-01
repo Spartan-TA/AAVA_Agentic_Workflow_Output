@@ -1,0 +1,20 @@
+Title: Enforce Row-Level Security and Role-Based Record Management
+
+User Story: As a supervisor I want to access and manage only my teamâs employee records So that sensitive data is protected and supervisors cannot access other teams
+
+Acceptance Criteria:
+Scenario: Supervisor access limitation
+Given a supervisor is logged in
+When they access employee records
+Then only employees assigned to their team are visible and editable
+
+Scenario: Admin access
+Given an admin is logged in
+When they access employee records
+Then all records are visible and editable
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD APIs (E02), RBAC (E03)
+- Notes: Security rules must be covered by automated tests
