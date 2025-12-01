@@ -1,0 +1,15 @@
+Title: Notifications & Announcements
+
+User Story: As a supervisor I want to send notifications and announcements to staff so that everyone is informed of important updates.
+
+Acceptance Criteria:
+Scenario: Notification delivery
+Given a shift change or announcement
+When I send a notification
+Then users receive it via their chosen channel, delivery status is tracked, and rate limits are enforced
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: RBAC, Shift & Schedule Management, Leave & Absence Management, Training & Certification Tracking
+- Notes: In-app, email, SMS; templates localized; quiet hours config
