@@ -1,0 +1,41 @@
+Title: Assign Employees to Shifts
+
+User Story: As a supervisor I want to assign employees to shifts so that I can ensure adequate staffing for warehouse operations.
+
+Acceptance Criteria:
+
+Scenario: Assign employee to single shift
+Given an employee and a shift template exist
+When I assign the employee to a specific date and shift
+Then the assignment should be created
+And the employee should see the shift in their schedule
+
+Scenario: Bulk assign employees to shifts
+Given I have multiple employees to schedule
+When I bulk assign them to shifts for a week
+Then all assignments should be created
+And conflicts should be detected and reported
+
+Scenario: Detect scheduling conflicts
+Given an employee is already assigned to a shift
+When I try to assign them to an overlapping shift
+Then the system should prevent the assignment
+And display a conflict error message
+
+Scenario: View employee schedule
+Given an employee has shift assignments
+When they view their schedule
+Then they should see all upcoming shifts
+And shifts should show date, time, and location
+
+Scenario: Generate audit entries
+Given a shift assignment is created or modified
+When the change is saved
+Then an audit entry should be created
+And it should capture who made the change and when
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Shift templates (E05), Employee entity (E02), RBAC (E03)
+- Notes: Implement conflict detection. Support drag-and-drop scheduling UI. Allow shift swaps with approval.
