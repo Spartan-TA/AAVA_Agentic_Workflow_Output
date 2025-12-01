@@ -1,0 +1,15 @@
+Title: Database Migration Setup
+
+User Story: As a developer I want to enable Flyway/Liquibase for database migrations So that schema changes are version-controlled and repeatable
+
+Acceptance Criteria:
+Scenario: Baseline Migration
+  Given the migration tool is configured
+  When I run the migration
+  Then the baseline schema is applied without errors
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: user_story1
+- Notes: Document migration steps in README.
