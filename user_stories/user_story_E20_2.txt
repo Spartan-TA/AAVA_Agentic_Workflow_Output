@@ -1,0 +1,15 @@
+Title: Shift Assignment Performance Metrics and Manual Override
+
+User Story: As a supervisor I want to track performance metrics for AI-assisted scheduling and manually override assignments So that I can ensure optimal staffing and accountability
+
+Acceptance Criteria:
+Scenario: Metrics tracking and manual override
+Given shift assignments are suggested by the system
+When I review and accept or modify the assignments
+Then the rationale is logged and performance metrics are updated for reporting
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E02, E05, E15
+- Notes: Fallback to manual assignment must be seamless; metrics tracked for BI.
