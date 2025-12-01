@@ -1,0 +1,12 @@
+Title: Dev Reviews Deployment History
+User Story: As a developer I want to review the history of deployments So that I can troubleshoot issues and track release cycles
+Acceptance Criteria:
+Scenario: Review deployment history
+Given deployments have been performed
+When I access the deployment history section
+Then I see a list of deployments with timestamps, commit IDs, and status
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: CI/CD pipeline, version control
+- Notes: Deployment history should be exportable for analysis.
