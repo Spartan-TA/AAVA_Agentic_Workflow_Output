@@ -1,0 +1,12 @@
+Title: Employee Completes Onboarding Task
+User Story: As a new employee I want to complete onboarding tasks assigned to me So that I am fully prepared for my role
+Acceptance Criteria:
+Scenario: Complete onboarding task
+Given onboarding tasks are assigned
+When I mark a task as complete
+Then the task status is updated and HR is notified
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Onboarding module, notifications
+- Notes: Task completion should be tracked for compliance.
