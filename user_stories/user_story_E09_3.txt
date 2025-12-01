@@ -1,0 +1,20 @@
+Title: Asset and Employee History Log Visibility and Overdue Return Reports
+
+User Story: As an asset manager I want to view the full history of asset assignments and generate reports of overdue returns So that accountability and timely returns are enforced
+
+Acceptance Criteria:
+Scenario: View asset history log
+Given I am authenticated as a supervisor or ADMIN
+When I view an asset or employee profile
+Then I see a complete log of all check-in/out events, conditions, and responsible employees
+
+Scenario: Generate overdue return report
+Given assets are overdue for return
+When I request a report
+Then the system generates a list of overdue assets with responsible employees and due dates
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: History log must be immutable; overdue reports available via API and UI.
