@@ -1,0 +1,15 @@
+Title: Create Employee Record
+
+User Story: As an HR administrator I want to create a new employee record with all required fields So that I can onboard new staff efficiently and accurately
+
+Acceptance Criteria:
+Scenario: Successful employee creation
+Given I am on the employee creation form
+When I enter valid details for name, badgeId, role, department, shiftGroup, hireDate, and status and submit
+Then the employee record should be saved and visible in the employee list
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Validate all required fields and enforce unique badgeId.
