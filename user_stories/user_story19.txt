@@ -1,0 +1,12 @@
+Title: Supervisor Reviews Leave Request
+User Story: As a supervisor I want to review and approve or reject leave requests So that I can manage team coverage and ensure compliance
+Acceptance Criteria:
+Scenario: Review leave request
+Given a leave request is pending
+When I review the details and select approve or reject
+Then the request status is updated and the employee is notified
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Leave request workflow, notifications
+- Notes: Approval history should be logged for audit purposes.
