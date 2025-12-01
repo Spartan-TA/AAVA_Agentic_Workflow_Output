@@ -1,0 +1,15 @@
+Title: Overtime Rule Configuration
+
+User Story: As an HR manager I want to configure overtime rules So that payroll calculations are accurate
+
+Acceptance Criteria:
+Scenario: Overtime Rule Setup
+  Given overtime parameters
+  When I configure rules
+  Then overtime is calculated for eligible shifts
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: user_story13
+- Notes: Audit entries for changes.
