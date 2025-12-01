@@ -1,0 +1,15 @@
+Title: View Personal Upcoming Shifts
+
+User Story: As a warehouse worker I want to view my upcoming shifts So that I can plan my work and personal time effectively
+
+Acceptance Criteria:
+Scenario: Worker views upcoming shifts
+Given I am logged into my account
+When I navigate to the schedule section
+Then I see a list of my assigned upcoming shifts with dates, times, and locations
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Include shift details and highlight any changes or cancellations.
