@@ -1,0 +1,15 @@
+Title: Generate OSHA Summary Report
+
+User Story: As an HR manager I want to generate OSHA summary reports from recorded safety incidents So that we can meet regulatory requirements and analyze safety trends
+
+Acceptance Criteria:
+Scenario: Generate OSHA report
+Given safety incidents have been recorded in the system
+When I request an OSHA summary report for a specified period
+Then the system should generate a compliant report including all required incident details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02 (Employee Profiles), E03 (Scheduling)
+- Notes: Report format should meet OSHA standards and support export to PDF/CSV.
