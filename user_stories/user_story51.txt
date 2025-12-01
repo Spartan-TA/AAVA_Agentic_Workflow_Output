@@ -1,0 +1,15 @@
+Title: Create Quarterly/Annual Review Templates
+
+User Story: As an HR manager I want to create standardized quarterly and annual review templates So that performance reviews are consistent and aligned with company goals
+
+Acceptance Criteria:
+Scenario: Template creation
+Given I am on the performance review admin page
+When I select 'Create New Template' and define review periods, competencies, and rating scales
+Then the template should be saved and available for assignment to employees
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Templates must support custom competencies and rating scales.
