@@ -1,0 +1,20 @@
+Title: Create and Manage Shift Templates
+
+User Story: As a scheduler I want to create, update, and delete recurring shift templates So that I can efficiently manage warehouse staffing patterns
+
+Acceptance Criteria:
+Scenario: Create shift template
+Given valid shift details
+When I POST to /shifts/templates
+Then a new shift template is created and available for assignment
+
+Scenario: Update shift template
+Given an existing shift template
+When I PUT updated details
+Then the template is updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC, Attendance
+- Notes: Templates must support recurring patterns
