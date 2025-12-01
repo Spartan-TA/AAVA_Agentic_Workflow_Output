@@ -1,0 +1,15 @@
+Title: WMS Department/Location Sync and Webhooks
+
+User Story: As a warehouse manager I want department and location data to sync from the WMS and receive webhooks for key events so that the EMS reflects the latest operational structure
+
+Acceptance Criteria:
+Scenario: WMS sync and webhook delivery
+  Given departments or locations are updated in the WMS
+  When the sync job or webhook fires
+  Then the EMS updates department/location data and triggers downstream events
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01 (Core), E02 (User Management), E03 (Scheduling)
+- Notes: Webhooks must be idempotent and documented
