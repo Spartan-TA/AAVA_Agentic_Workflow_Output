@@ -1,0 +1,15 @@
+Title: Mobile Leave Requests and Offline Queue
+
+User Story: As a warehouse worker I want to request leave and have my clock events queued offline in the PWA so that I can manage absences even without network connectivity
+
+Acceptance Criteria:
+Scenario: Submit leave request and offline clock event
+  Given I am using the mobile PWA
+  When I submit a leave request or clock event offline
+  Then the action is queued and synced when connectivity is restored, with conflict resolution if needed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04 (Attendance), E05 (Scheduling), E06 (Leave), E12 (Notifications)
+- Notes: Offline queue must handle retries and conflicts
