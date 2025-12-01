@@ -1,0 +1,15 @@
+Title: Update Employee Record via API
+
+User Story: As an HR manager I want to update employee details such as role, department, shiftGroup, and status so that employee records remain current and accurate
+
+Acceptance Criteria:
+Scenario: Successful employee update
+  Given an existing employee record
+  When I submit a PUT or PATCH request to /employees/{id} with updated details
+  Then the employee record is updated and changes are reflected in subsequent queries
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee creation (E02_1)
+- Notes: Validate updates and maintain audit trail
