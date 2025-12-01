@@ -1,0 +1,39 @@
+Title: Implement Authentication with API Key and OAuth2 Toggle
+
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication via configuration so that the system can adapt to different deployment environments.
+
+Acceptance Criteria:
+
+Scenario: API key authentication enabled
+Given API key mode is enabled in application.yml
+When a request includes a valid API key in the X-API-Key header
+Then the request should be authenticated
+And the user's roles should be determined from the API key mapping
+
+Scenario: Invalid API key rejected
+Given API key mode is enabled
+When a request includes an invalid or missing API key
+Then the request should be rejected with 401 Unauthorized
+
+Scenario: OAuth2 authentication enabled
+Given OAuth2 mode is enabled in application.yml
+When a request includes a valid Bearer token
+Then the token should be validated against the OAuth2 provider
+And the user's roles should be extracted from the token claims
+
+Scenario: Invalid OAuth2 token rejected
+Given OAuth2 mode is enabled
+When a request includes an invalid or expired token
+Then the request should be rejected with 401 Unauthorized
+
+Scenario: Configuration toggle
+Given the authentication mode is configured
+When I change the mode in application.yml
+Then the application should use the new authentication method after restart
+And no code changes should be required
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC configuration (E03)
+- Notes: Support both authentication methods but only one active at a time. Document configuration clearly. Provide sample configurations for both modes.
