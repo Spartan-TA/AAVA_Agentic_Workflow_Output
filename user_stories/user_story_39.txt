@@ -1,0 +1,15 @@
+Title: Track Goals, Competencies, and Comments
+
+User Story: As an employee I want to view and update my performance goals, competencies, and comments during the review cycle so that I can participate actively in my evaluation
+
+Acceptance Criteria:
+Scenario: Update goals and comments
+  Given a performance review cycle is active
+  When I add or update goals and comments
+  Then the changes are saved and visible to my supervisor until the review is acknowledged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02 (User Management), E03 (Scheduling)
+- Notes: Employees and supervisors can both add comments
