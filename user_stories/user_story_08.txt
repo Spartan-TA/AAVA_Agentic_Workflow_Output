@@ -1,0 +1,37 @@
+Title: Implement Update Employee API Endpoints
+
+User Story: As an HR manager I want to update employee records via REST API so that I can keep employee information current.
+
+Acceptance Criteria:
+
+Scenario: Full update with PUT
+Given an employee with ID 123 exists
+When I PUT to /api/v1/employees/123 with complete employee data
+Then I should receive a 200 OK response
+And all employee fields should be updated
+And the updatedAt timestamp should be refreshed
+And the updatedBy field should reflect the current user
+
+Scenario: Partial update with PATCH
+Given an employee with ID 123 exists
+When I PATCH to /api/v1/employees/123 with only department field
+Then I should receive a 200 OK response
+And only the department field should be updated
+And other fields should remain unchanged
+
+Scenario: Update non-existent employee
+Given no employee with ID 999 exists
+When I PUT to /api/v1/employees/999
+Then I should receive a 404 Not Found response
+
+Scenario: Prevent badgeId duplication on update
+Given employee A has badgeId 'EMP001' and employee B has badgeId 'EMP002'
+When I update employee B's badgeId to 'EMP001'
+Then I should receive a 409 Conflict response
+And the error message should indicate duplicate badgeId
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee entity (E02), Create/Get employee APIs (E02)
+- Notes: Support both PUT (full update) and PATCH (partial update). Validate all constraints on update.
