@@ -1,0 +1,20 @@
+Title: Enable Actuator Monitoring
+
+User Story: As a DevOps engineer I want to enable Spring Actuator endpoints So that I can monitor application health and metrics
+
+Acceptance Criteria:
+Scenario: Health Endpoint
+  Given the application is running
+  When I access /actuator/health
+  Then I receive a status of "UP"
+
+Scenario: Metrics Endpoint
+  Given the application is running
+  When I access /actuator/metrics
+  Then I receive application metrics data
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story1
+- Notes: Secure actuator endpoints for production.
