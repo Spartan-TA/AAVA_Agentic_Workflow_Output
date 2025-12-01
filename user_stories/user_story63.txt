@@ -1,0 +1,15 @@
+Title: Announcements Visible on Dashboard and Quiet Hours Configuration
+
+User Story: As an employee I want to see company announcements on my dashboard and configure quiet hours for notifications So that I stay informed without being disturbed outside work hours
+
+Acceptance Criteria:
+Scenario: Announcement and quiet hours
+Given an announcement is published
+When I log in to my dashboard
+Then the announcement is visible and notifications respect my quiet hours settings
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E03, E05, E06, E07
+- Notes: Announcements must be localized and delivery status tracked.
