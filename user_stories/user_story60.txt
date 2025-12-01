@@ -1,0 +1,12 @@
+Title: Dev Triggers Automated Build
+User Story: As a developer I want to trigger automated builds for new code commits So that deployments are consistent and reliable
+Acceptance Criteria:
+Scenario: Trigger automated build
+Given new code is committed to the repository
+When I push the commit
+Then an automated build is triggered and the build status is reported
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: CI/CD pipeline, version control
+- Notes: Build status notifications should be sent to the team.
