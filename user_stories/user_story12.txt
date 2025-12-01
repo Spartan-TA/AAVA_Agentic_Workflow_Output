@@ -1,0 +1,12 @@
+Title: Automated Security Rule Testing
+User Story: As a QA engineer I want automated tests to validate security rules So that unauthorized and forbidden actions are reliably blocked
+Acceptance Criteria:
+Scenario: Security rule test coverage
+Given security rules are defined
+When automated tests are executed
+Then all rules are validated and coverage reports are generated
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Role-based endpoint security (E03)
+- Notes: Tests must cover all roles and access scenarios
