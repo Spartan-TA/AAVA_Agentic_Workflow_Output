@@ -1,0 +1,15 @@
+Title: Support Multiple Warehouses with Distinct Calendars and Policies
+
+User Story: As an operations manager I want to configure multiple warehouses with unique calendars and policies So that each warehouse operates according to its local requirements
+
+Acceptance Criteria:
+Scenario: Warehouse configuration
+Given I am in the warehouse admin panel
+When I create or edit a warehouse
+Then I can set its calendar, shift templates, and policies independently
+
+Additional Details:
+- Priority: Low
+- Story Points: 5
+- Dependencies: E01, E02, E05
+- Notes: Policies must be scoped to warehouse entity.
