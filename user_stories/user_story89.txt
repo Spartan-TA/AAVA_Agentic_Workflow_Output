@@ -1,0 +1,15 @@
+Title: Assign Employees to Warehouses
+
+User Story: As an HR manager I want to assign employees to specific warehouses So that scheduling and policy enforcement are accurate for each location
+
+Acceptance Criteria:
+Scenario: Employee warehouse assignment
+Given I am managing employee records
+When I assign an employee to a warehouse
+Then the employee is linked to that warehouse and inherits its policies
+
+Additional Details:
+- Priority: Low
+- Story Points: 4
+- Dependencies: E01, E02, E05
+- Notes: Employees may be reassigned between warehouses as needed.
