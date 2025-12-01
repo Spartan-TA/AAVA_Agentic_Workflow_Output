@@ -1,0 +1,43 @@
+Title: Implement Clock-In Endpoint
+
+User Story: As a warehouse worker I want to clock in at the start of my shift so that my work hours are accurately recorded for payroll.
+
+Acceptance Criteria:
+
+Scenario: Successful clock-in
+Given I am an authenticated employee
+And I have not clocked in today
+When I POST to /api/v1/attendance/clock-in with my employee ID and timestamp
+Then I should receive a 201 Created response
+And a clock-in record should be created
+And the record should include timestamp, employee ID, and device information
+
+Scenario: Prevent duplicate clock-in
+Given I have already clocked in today
+When I attempt to clock in again
+Then I should receive a 409 Conflict response
+And the error message should indicate I'm already clocked in
+
+Scenario: Automatic shift association
+Given I clock in during my scheduled shift time
+When the clock-in is processed
+Then the system should automatically associate the clock-in with my scheduled shift
+And the shift ID should be recorded
+
+Scenario: Geofence validation (optional)
+Given geofence validation is enabled
+When I clock in from outside the warehouse location
+Then I should receive a 400 Bad Request response
+And the error should indicate invalid location
+
+Scenario: Device capture
+Given I clock in using a mobile device
+When the clock-in is processed
+Then the device ID and type should be captured
+And the IP address should be logged
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee entity (E02), RBAC (E03)
+- Notes: Support both web and mobile clock-in. Implement geofence as optional feature. Capture device metadata for audit purposes.
