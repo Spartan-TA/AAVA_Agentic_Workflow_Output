@@ -1,0 +1,15 @@
+Title: Integrate Prometheus Metrics and Expose at /actuator/prometheus
+
+User Story: As a DevOps engineer I want Prometheus metrics integrated and exposed at /actuator/prometheus So that system health and performance can be monitored in real time
+
+Acceptance Criteria:
+Scenario: Prometheus metrics integration
+Given the EMS app is running
+When I access /actuator/prometheus
+Then all relevant metrics are available for scraping
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E01
+- Notes: Metrics must include latency, errors, and throughput.
