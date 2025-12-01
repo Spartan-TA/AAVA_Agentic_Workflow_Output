@@ -1,0 +1,15 @@
+Title: Implement Row-Level Security
+
+User Story: As a supervisor I want to access only the employee records and data for my assigned department So that sensitive information is protected and access is limited by role
+
+Acceptance Criteria:
+Scenario: Department-based data access
+Given I am logged in as a supervisor
+When I view employee data
+Then I should only see records for my department
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (E02)
+- Notes: Enforce row-level constraints in queries and APIs.
