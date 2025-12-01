@@ -1,0 +1,15 @@
+Title: Opt-In/Out Per Notification Channel and Localized Templates
+
+User Story: As an employee I want to manage my notification preferences per channel and receive messages in my preferred language So that I have control over how and when I am notified
+
+Acceptance Criteria:
+Scenario: Channel preference and localization
+Given I access my notification settings
+When I update my channel preferences and language
+Then notifications are sent only via selected channels and in my chosen language
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E03, E05, E06, E07
+- Notes: Support English and Spanish templates; preferences editable at any time.
