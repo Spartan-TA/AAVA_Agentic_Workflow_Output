@@ -1,0 +1,15 @@
+Title: Update Employee Record
+
+User Story: As an HR administrator I want to update an employee's details So that I can maintain accurate and current employee information
+
+Acceptance Criteria:
+Scenario: Successful employee update
+Given I am viewing an existing employee's profile
+When I edit fields such as role, department, shiftGroup, or status and save changes
+Then the updated information should be reflected in the employee record
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Track changes for audit purposes.
