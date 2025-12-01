@@ -1,0 +1,15 @@
+Title: User Manuals and Onboarding Checklist for Developers
+
+User Story: As a new developer I want user manuals for each role and an onboarding checklist so that I can quickly become productive and understand system responsibilities
+
+Acceptance Criteria:
+Scenario: Access user manuals and onboarding checklist
+  Given I am a new developer
+  When I access the documentation
+  Then I find user guides for each role and a checklist of onboarding tasks to complete
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01 (Core), E19 (Testing/CI)
+- Notes: Checklist must cover environment setup, repo access, and key workflows
