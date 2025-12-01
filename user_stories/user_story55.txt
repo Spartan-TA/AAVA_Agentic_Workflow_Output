@@ -1,0 +1,12 @@
+Title: Admin Adds New Site
+User Story: As an administrator I want to add new company sites to the system So that employees and resources can be managed by location
+Acceptance Criteria:
+Scenario: Add new site
+Given I am logged into the system as an administrator
+When I add a new site with location details
+Then the site is available for assignment of employees and assets
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Site management module
+- Notes: Support multiple sites with unique settings.
