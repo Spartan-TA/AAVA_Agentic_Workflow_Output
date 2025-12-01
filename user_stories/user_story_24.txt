@@ -1,0 +1,15 @@
+Title: Leave Balances and Export Reporting
+
+User Story: As a payroll administrator I want to view and export approved leave records and up-to-date leave balances so that payroll processing and compliance reporting are accurate
+
+Acceptance Criteria:
+Scenario: Export approved leave data
+  Given there are approved leave requests in the system
+  When I generate a leave export
+  Then the file includes employee, leave type, dates, approval status, and updated balances
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E05 (Attendance), E06 (Leave), E04 (Payroll)
+- Notes: Export format must match payroll provider requirements
