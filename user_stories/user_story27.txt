@@ -1,0 +1,15 @@
+Title: Assign Roles to Users
+
+User Story: As an admin I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users So that access permissions are enforced throughout the application
+
+Acceptance Criteria:
+Scenario: Successful role assignment
+Given I am managing user accounts
+When I select a role for a user and save
+Then the user should have the correct permissions based on their role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (E02)
+- Notes: Roles should be editable and auditable.
