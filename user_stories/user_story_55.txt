@@ -1,0 +1,15 @@
+Title: Automated Onboarding from HRIS and Task Generation
+
+User Story: As an HR admin I want new hires from HRIS to be onboarded automatically with accounts, initial schedules, and required training tasks so that onboarding is efficient and consistent
+
+Acceptance Criteria:
+Scenario: Automated onboarding workflow
+  Given a new hire appears in the HRIS
+  When the onboarding workflow is triggered
+  Then the user account is provisioned, an initial schedule is assigned, and training/asset tasks are generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: All onboarding steps must be tracked and auditable.
