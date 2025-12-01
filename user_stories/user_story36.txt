@@ -1,0 +1,15 @@
+Title: Request Leave (PTO, Sick, Unpaid)
+
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that I can manage my time off and ensure proper coverage
+
+Acceptance Criteria:
+Scenario: Employee requests leave
+Given I am logged into my account
+When I submit a leave request with type, dates, and reason
+Then the request is sent to my supervisor for approval and my accrual balance is checked
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Leave types and balances should be visible to the employee.
