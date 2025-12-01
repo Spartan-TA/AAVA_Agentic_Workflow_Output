@@ -1,0 +1,37 @@
+Title: Generate Attendance Reports
+
+User Story: As an HR manager I want to generate attendance reports so that I can analyze attendance patterns and prepare payroll data.
+
+Acceptance Criteria:
+
+Scenario: Generate daily attendance report
+Given attendance records exist for a specific date
+When I request a daily attendance report
+Then I should receive a report showing all clock-ins and clock-outs
+And the report should include total hours worked per employee
+And the report should be exportable as CSV
+
+Scenario: Generate weekly attendance summary
+Given attendance records exist for a week
+When I request a weekly summary
+Then I should receive total hours worked per employee for the week
+And overtime hours should be highlighted
+And the report should show attendance rate
+
+Scenario: Filter reports by department
+Given employees in multiple departments
+When I generate a report filtered by department
+Then only employees from that department should be included
+
+Scenario: Export to CSV for payroll
+Given I need to prepare payroll data
+When I export attendance report as CSV
+Then the CSV should include employee ID, name, total hours, overtime hours
+And the format should match payroll system requirements
+And the export should complete within 10 seconds for 1000 records
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Clock-in/out endpoints (E04), Employee entity (E02)
+- Notes: Support multiple date ranges. Implement efficient queries for large datasets. Cache frequently accessed reports.
