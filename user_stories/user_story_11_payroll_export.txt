@@ -1,0 +1,12 @@
+Title: Payroll File Generation
+User Story: As a payroll administrator I want to generate payroll files from attendance and leave data So that payroll processing is automated
+Acceptance Criteria:
+Scenario: Payroll export
+Given attendance and leave records exist
+When I generate payroll files
+Then the files should be securely delivered to payroll system
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Attendance, Leave management
+- Notes: Ensure data privacy and accuracy
