@@ -1,0 +1,15 @@
+Title: Localized Notification Templates and Delivery Status
+
+User Story: As a system administrator I want notification templates to be localized and delivery status tracked so that users receive messages in their preferred language and delivery issues are visible
+
+Acceptance Criteria:
+Scenario: Send localized notification and track status
+  Given a notification is triggered
+  When the template is sent in the user's preferred language
+  Then the delivery status is logged and visible to admins
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03 (Scheduling), E05 (Attendance), E06 (Leave), E07 (Certifications)
+- Notes: Delivery failures must be retried
