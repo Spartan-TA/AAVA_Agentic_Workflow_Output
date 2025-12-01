@@ -1,0 +1,20 @@
+Title: Attendance Correction Workflow
+
+User Story: As a supervisor I want to approve or deny attendance corrections So that missed punches are handled compliantly
+
+Acceptance Criteria:
+Scenario: Correction Request
+  Given a missed punch
+  When a correction is submitted
+  Then an approval task is created for the supervisor
+
+Scenario: Correction Approval
+  Given a pending correction
+  When the supervisor approves
+  Then the attendance record is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: user_story11
+- Notes: Export reports in CSV.
