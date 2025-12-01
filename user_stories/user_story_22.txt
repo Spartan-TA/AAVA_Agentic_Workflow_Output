@@ -1,0 +1,16 @@
+Title: Certification Expiry Alerts
+User Story: As an HR manager I want to receive alerts for certifications expiring in 30 or 7 days so that I can proactively manage renewals and compliance
+Acceptance Criteria:
+Scenario: Alert for expiring certification
+Given an employee has a certification expiring in 30 or 7 days
+When the system checks certification dates
+Then an alert is sent to the HR manager and employee
+Scenario: No alert for valid certifications
+Given a certification is not expiring soon
+When the system checks certification dates
+Then no alert is sent
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Alerts should be configurable for timing
