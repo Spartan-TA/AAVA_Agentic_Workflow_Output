@@ -1,0 +1,15 @@
+Title: Generate Operational Reports for Attendance, Overtime, and Leave Balances
+
+User Story: As an operations manager I want to generate reports for attendance, overtime, and leave balances So that I can monitor workforce trends and compliance
+
+Acceptance Criteria:
+Scenario: Report generation
+Given I select report type and filters
+When I generate the report
+Then the report displays accurate data and can be exported
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Export formats: CSV and PDF; filter by date, department, shift.
