@@ -1,0 +1,15 @@
+Title: Structured JSON Logging and Trace IDs in Headers
+
+User Story: As a DevOps engineer I want all logs to be structured in JSON format and include trace IDs in headers So that troubleshooting and distributed tracing are efficient
+
+Acceptance Criteria:
+Scenario: JSON logging and trace IDs
+Given the EMS app processes requests
+When logs are generated
+Then they are formatted in JSON and include trace IDs for each request
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E01
+- Notes: Logs must be compatible with centralized log management tools.
