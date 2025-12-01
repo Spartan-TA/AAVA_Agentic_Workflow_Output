@@ -1,0 +1,12 @@
+Title: Employee Receives Shift Notification
+User Story: As an employee I want to receive notifications about upcoming shifts So that I am reminded to report on time
+Acceptance Criteria:
+Scenario: Receive shift notification
+Given I have an upcoming shift
+When the notification time is reached
+Then I receive a notification with shift details
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Notification module, shift schedule
+- Notes: Support push, email, and SMS notifications.
