@@ -1,0 +1,15 @@
+Title: Record Safety Incidents and Near-Misses
+
+User Story: As a warehouse supervisor I want to record safety incidents and near-misses So that I can track workplace safety and initiate investigations
+
+Acceptance Criteria:
+Scenario: Record incident
+Given I witness or am notified of a safety incident
+When I submit an incident report with severity, location, description, and involved employees
+Then the incident is logged and assigned a status of 'Open'
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: E02, E03
+- Notes: Support validation for required fields and attach supporting documents.
