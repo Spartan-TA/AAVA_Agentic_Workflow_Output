@@ -1,0 +1,20 @@
+Title: Initialize Spring Boot Project and Validate Build/Run
+
+User Story: As a developer I want to initialize a Spring Boot (Maven) project with standardized base packages and core modules so that the team has a consistent foundation for building warehouse EMS features.
+
+Acceptance Criteria:
+Scenario: Project scaffolding and build validation
+  Given I have cloned the repository
+  When I run the build and start the application
+  Then the application should start on port 8080 and the Actuator health endpoint should return UP
+
+Scenario: Documentation for onboarding
+  Given a new developer joins the team
+  When they view the README
+  Then they should find clear build and run instructions
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Base package structure must be created; README must include build/run steps; Actuator must be enabled.
