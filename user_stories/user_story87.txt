@@ -1,0 +1,15 @@
+Title: Update Schedules and Revoke Access in Linked Systems During Offboarding
+
+User Story: As an HR manager I want offboarding to update schedules and revoke access in all linked systems So that employee termination is reflected across HRIS, EMS, and asset management
+
+Acceptance Criteria:
+Scenario: Linked system offboarding
+Given an employee is terminated
+When offboarding is processed
+Then schedules are updated and access is revoked in all integrated systems
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Offboarding must trigger sync jobs to all connected systems.
