@@ -1,0 +1,16 @@
+Title: Safety Metrics Dashboard Endpoints
+User Story: As a safety manager I want to access dashboard endpoints for safety metrics so that I can monitor incident trends and compliance in real time
+Acceptance Criteria:
+Scenario: Access safety metrics dashboard
+Given safety incidents are recorded
+When I access the dashboard endpoint
+Then I see metrics such as incident rate, severity distribution, and open investigations
+Scenario: Metrics update in real time
+Given new incidents are recorded
+When I refresh the dashboard
+Then metrics reflect the latest data
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Endpoints must support filtering by date, location
