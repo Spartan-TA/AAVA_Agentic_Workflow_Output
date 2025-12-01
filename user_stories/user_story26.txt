@@ -1,0 +1,12 @@
+Title: Generate OSHA Report
+User Story: As a compliance manager I want to generate OSHA incident reports So that the organization can meet regulatory reporting requirements
+Acceptance Criteria:
+Scenario: Generate OSHA report
+Given safety incidents are logged in the system
+When I select the OSHA report option and specify a date range
+Then a formatted OSHA report is generated and available for download
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Incident reporting module, reporting engine
+- Notes: Report format must comply with OSHA standards.
