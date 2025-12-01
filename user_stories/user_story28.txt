@@ -1,0 +1,15 @@
+Title: Enforce Endpoint Security
+
+User Story: As a developer I want to restrict API endpoints and methods based on user roles So that only authorized users can access sensitive operations
+
+Acceptance Criteria:
+Scenario: Unauthorized access attempt
+Given a user with insufficient permissions
+When they attempt to access a restricted endpoint
+Then the system should deny access and return an appropriate error message
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (E02)
+- Notes: Use Spring Security for implementation.
