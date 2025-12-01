@@ -1,0 +1,53 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/warehouse_ems
+    username: ems_user
+    password: ems_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  main:
+    allow-bean-definition-overriding: true
+
+security:
+  oauth2:
+    resourceserver:
+      jwt:
+        jwk-set-uri: http://localhost:8080/.well-known/jwks.json
+  api-key:
+    enabled: true
+    header: X-API-KEY
+    keys:
+      - sample-api-key-123
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+locale:
+  default: en
+  supported:
+    - en
+    - es
