@@ -1,0 +1,20 @@
+Title: Exportable Attendance Reports (CSV)
+
+User Story: As an HR manager I want to export attendance records and corrections as CSV files So that I can analyze attendance trends and provide data to payroll
+
+Acceptance Criteria:
+Scenario: Export attendance report
+Given I am authenticated as HR or ADMIN
+When I request an attendance report export for a specified date range
+Then the system generates and delivers a CSV file containing all relevant clock-in/out and correction data
+
+Scenario: Export includes corrections
+Given corrections have been approved for the period
+When the report is generated
+Then the corrections are included and clearly marked
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Export must be available via API and UI; file format must match payroll requirements.
