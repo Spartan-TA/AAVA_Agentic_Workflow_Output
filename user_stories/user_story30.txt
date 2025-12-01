@@ -1,0 +1,15 @@
+Title: Audit Role Changes
+
+User Story: As a compliance officer I want all changes to user roles to be logged and auditable So that we can track permission changes for security and compliance
+
+Acceptance Criteria:
+Scenario: Role change audit log
+Given a user role is updated
+When the change is saved
+Then an entry should be created in the audit log with details of the change
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data (E02)
+- Notes: Include timestamp, user, and previous/new roles in the log.
