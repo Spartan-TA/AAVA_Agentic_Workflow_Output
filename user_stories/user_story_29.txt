@@ -1,0 +1,20 @@
+Title: Asset Registry CRUD
+User Story: As an asset manager I want to create, update, and delete asset records for equipment and PPE so that all assets are tracked and managed centrally
+Acceptance Criteria:
+Scenario: Add new asset
+Given I have new equipment or PPE
+When I create an asset record with type, serial number, and condition
+Then the asset is saved in the registry
+Scenario: Edit asset details
+Given an asset exists
+When I update its information
+Then the changes are reflected and logged
+Scenario: Delete asset
+Given an asset exists
+When I delete it
+Then it is removed from the registry
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Asset types include scanners, forklifts, PPE
