@@ -1,0 +1,12 @@
+Title: WMS API Sync
+User Story: As a system administrator I want to synchronize warehouse management data with the WMS API So that inventory and shift assignments are up-to-date
+Acceptance Criteria:
+Scenario: WMS data sync
+Given new data is available in the WMS
+When I trigger a sync operation
+Then the warehouse records are updated in the system and a log entry is created
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: WMS API, integration module
+- Notes: Support scheduled and manual sync.
