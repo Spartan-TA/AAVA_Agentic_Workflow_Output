@@ -1,0 +1,20 @@
+Title: Create Employee Record via API
+
+User Story: As an HR manager I want to create a new employee record via API So that employee data is centrally managed and accessible
+
+Acceptance Criteria:
+Scenario: Successful employee creation
+  Given I have valid employee data
+  When I POST to /employees
+  Then a new employee record should be created with a unique badgeId
+
+Scenario: Missing required fields
+  Given I submit incomplete employee data
+  When I POST to /employees
+  Then the API should return a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Ensure badgeId uniqueness and required fields
