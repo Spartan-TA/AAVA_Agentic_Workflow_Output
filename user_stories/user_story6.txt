@@ -1,0 +1,15 @@
+Title: Leave & Absence Management
+
+User Story: As an employee I want to request and track leave so that my time off is properly managed and reflected in schedules.
+
+Acceptance Criteria:
+Scenario: Leave request and approval
+Given I have available leave balance
+When I submit a leave request
+Then my supervisor can approve/deny, balances update, and scheduled shifts are flagged for coverage
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee Master Data, RBAC, Shift & Schedule Management
+- Notes: PTO, sick, unpaid leave; integration hooks for scheduling/payroll
