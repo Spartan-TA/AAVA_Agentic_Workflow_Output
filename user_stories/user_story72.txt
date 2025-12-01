@@ -1,0 +1,15 @@
+Title: Immutable Log Table and Export by Date/User/Entity
+
+User Story: As a compliance officer I want audit logs to be stored in an immutable table and exportable by date, user, or entity So that investigations and compliance audits are efficient
+
+Acceptance Criteria:
+Scenario: Log export
+Given audit logs are stored
+When I filter by date, user, or entity and export
+Then the exported file contains all matching log entries and is tamper-evident
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: E03
+- Notes: Export formats: CSV and PDF; access controlled by role.
