@@ -1,0 +1,15 @@
+Title: In-App and Email/SMS Notifications for Shift Changes and Approvals
+
+User Story: As an employee I want to receive notifications via app, email, or SMS for shift changes and approvals So that I am always informed about my work schedule
+
+Acceptance Criteria:
+Scenario: Notification delivery
+Given my shift or approval status changes
+When the system triggers a notification
+Then I receive the update via my selected channels
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E03, E05, E06, E07
+- Notes: Users must be able to opt-in/out per channel.
