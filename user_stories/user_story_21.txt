@@ -1,0 +1,20 @@
+Title: Certification Management CRUD
+User Story: As an HR manager I want to create, update, and delete employee certifications so that I can ensure compliance and track required qualifications
+Acceptance Criteria:
+Scenario: Add new certification
+Given an employee profile exists
+When I add a certification with type, issue date, and expiry date
+Then the certification is saved and visible on the profile
+Scenario: Edit certification
+Given a certification exists
+When I update its details
+Then the changes are reflected and logged
+Scenario: Delete certification
+Given a certification exists
+When I delete it
+Then it is removed from the employee profile
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Must support multiple certification types
