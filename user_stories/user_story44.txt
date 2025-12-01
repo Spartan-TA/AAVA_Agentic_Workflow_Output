@@ -1,0 +1,15 @@
+Title: Upload Proof Documents for Certifications
+
+User Story: As an employee I want to upload proof documents for my certifications So that my qualification status is verified and stored securely
+
+Acceptance Criteria:
+Scenario: Upload certification proof
+Given I have obtained a new or renewed certification
+When I upload the proof document to my profile
+Then the document is stored and linked to my certification record
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Support PDF, image formats, and secure storage.
