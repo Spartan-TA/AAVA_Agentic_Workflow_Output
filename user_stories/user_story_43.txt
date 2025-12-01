@@ -1,0 +1,15 @@
+Title: Audit Log for Payroll Exports
+
+User Story: As a compliance officer I want every payroll export to be logged with delivery status and audit details so that all payroll data transfers are traceable and verifiable
+
+Acceptance Criteria:
+Scenario: Log payroll export event
+  Given a payroll export is generated and delivered
+  When I review the audit log
+  Then I see the export details, delivery status, and any retry attempts
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04 (Attendance), E06 (Leave)
+- Notes: Audit log must be exportable by date
