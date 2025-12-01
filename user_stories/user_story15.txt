@@ -1,0 +1,12 @@
+Title: View Shift Schedule
+User Story: As an employee I want to view my upcoming shift schedule So that I can plan my availability accordingly
+Acceptance Criteria:
+Scenario: View shift schedule
+Given I am logged into the system
+When I navigate to the shift schedule page
+Then I should see a list of my upcoming shifts with dates and times
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift data, user authentication
+- Notes: Display shifts in calendar and list formats.
