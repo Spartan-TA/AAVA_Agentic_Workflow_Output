@@ -1,0 +1,20 @@
+Title: Create Review Cycles and Templates
+
+User Story: As an HR manager I want to create quarterly and annual performance review cycles and templates So that employee evaluations are standardized and repeatable
+
+Acceptance Criteria:
+Scenario: Create review template
+Given I am authenticated as HR or ADMIN
+When I create a new review template with goals, competencies, and rating scales
+Then the template is saved and available for assignment
+
+Scenario: Assign review cycle
+Given a review cycle is active
+When I assign it to employees
+Then the system notifies supervisors and employees of the upcoming review
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Templates must be versioned; review cycles must support custom timeframes.
