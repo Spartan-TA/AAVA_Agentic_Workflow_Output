@@ -1,0 +1,15 @@
+Title: Configure Database Migrations
+
+User Story: As a developer I want to set up Flyway/Liquibase for database migrations So that schema changes are versioned and applied consistently across environments
+
+Acceptance Criteria:
+Scenario: Database migration setup
+Given the project is initialized
+When I run the application
+Then Flyway/Liquibase applies the baseline migration and the database schema matches the initial model
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Spring Boot project scaffolding
+- Notes: Migration scripts must be idempotent and documented in README.
