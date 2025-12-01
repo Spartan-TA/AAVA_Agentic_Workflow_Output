@@ -1,0 +1,20 @@
+Title: ADMIN Role Can Manage All Records
+
+User Story: As an ADMIN I want to manage all employee, schedule, and asset records So that I can maintain full control and oversight of the warehouse EMS system
+
+Acceptance Criteria:
+Scenario: ADMIN access to all management endpoints
+Given a user is authenticated as ADMIN
+When they access any management endpoint (employee, schedule, asset)
+Then the system allows create, update, and delete actions
+
+Scenario: Non-ADMIN access denied
+Given a user is authenticated as HR, SUPERVISOR, or WORKER
+When they attempt to perform ADMIN-only actions
+Then the system returns a 403 Forbidden response
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: ADMIN role must be able to access all CRUD operations; ensure audit logging for all changes.
