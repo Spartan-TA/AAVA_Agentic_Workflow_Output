@@ -1,0 +1,15 @@
+Title: Metrics Dashboard Endpoints for Safety KPIs
+
+User Story: As a safety manager I want metrics dashboard endpoints for safety KPIs So that I can monitor incident rates and identify areas for improvement
+
+Acceptance Criteria:
+Scenario: Safety metrics dashboard
+Given safety incident data is available
+When I access the dashboard endpoints
+Then I see visualizations of incident rates, severity, and resolution times
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: E02, E03
+- Notes: Endpoints should support filtering by date, location, and department.
