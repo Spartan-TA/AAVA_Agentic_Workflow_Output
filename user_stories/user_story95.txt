@@ -1,0 +1,15 @@
+Title: Integrate Distributed Tracing with OpenTelemetry
+
+User Story: As a DevOps engineer I want distributed tracing integrated using OpenTelemetry So that I can track requests across services and diagnose performance issues
+
+Acceptance Criteria:
+Scenario: Distributed tracing
+Given the EMS app processes requests across services
+When tracing is enabled
+Then trace data is collected and visualized in monitoring tools
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E01
+- Notes: Trace IDs must be consistent across all services.
