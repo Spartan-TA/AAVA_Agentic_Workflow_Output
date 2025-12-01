@@ -1,0 +1,15 @@
+Title: Track Equipment Checkout and Return
+
+User Story: As an employee I want to check out and return equipment through the system So that asset usage is tracked and accountability is maintained
+
+Acceptance Criteria:
+Scenario: Equipment checkout and return
+Given I am logged in as an employee
+When I check out or return equipment
+Then the system should record the transaction and update asset status
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02 (Employee Profiles), E03 (Scheduling), E07 (Training & Certification Tracking)
+- Notes: Checkout should validate certification requirements and asset condition.
