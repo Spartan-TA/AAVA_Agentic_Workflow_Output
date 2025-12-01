@@ -1,0 +1,20 @@
+Title: Record Safety Incidents and Near-Misses with Validation
+
+User Story: As a warehouse worker I want to report safety incidents and near-misses with details and validation So that all events are documented for investigation and compliance
+
+Acceptance Criteria:
+Scenario: Submit safety incident
+Given I am authenticated as a worker or supervisor
+When I submit a new incident with severity, location, description, and involved employees
+Then the system validates the input and creates a new incident record
+
+Scenario: Missing required fields
+Given a required field is missing in the submission
+When I attempt to submit the incident
+Then the system blocks the submission and displays an error message
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: All incidents must be timestamped and assigned a unique ID; validation rules must be enforced.
