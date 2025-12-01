@@ -1,0 +1,12 @@
+Title: Employee Clocks In via Mobile
+User Story: As an employee I want to clock in and out from my mobile device So that my attendance is recorded even when I am remote
+Acceptance Criteria:
+Scenario: Clock in via mobile
+Given I have a mobile device and valid credentials
+When I select the clock in/out option
+Then my attendance is recorded and a confirmation is displayed
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Mobile app (PWA), attendance module
+- Notes: Support geolocation for remote clock-ins.
