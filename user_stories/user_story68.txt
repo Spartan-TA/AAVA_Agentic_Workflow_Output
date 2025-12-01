@@ -1,0 +1,15 @@
+Title: Link WMS for Department and Location Assignment
+
+User Story: As an operations manager I want to link WMS data for department and location assignment So that employee records reflect accurate warehouse and department information
+
+Acceptance Criteria:
+Scenario: WMS link
+Given WMS connectors are configured
+When employee records are updated
+Then department and location fields are populated from WMS data
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: E01, E02, E03
+- Notes: Support multiple warehouses and department hierarchies.
