@@ -1,0 +1,12 @@
+Title: Supervisor Approves Shift Change
+User Story: As a supervisor I want to approve or reject shift change requests So that I can ensure adequate coverage and compliance
+Acceptance Criteria:
+Scenario: Approve shift change
+Given a shift change request is pending
+When I review the request and select approve or reject
+Then the request status is updated and both employees are notified
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift swap workflow, notifications
+- Notes: Approval history should be logged for audit purposes.
