@@ -1,0 +1,15 @@
+Title: Reconcile Payroll Export Totals with Reports
+
+User Story: As a payroll administrator I want payroll export totals to reconcile with attendance and leave reports So that payroll data is accurate and discrepancies are detected early
+
+Acceptance Criteria:
+Scenario: Totals reconciliation
+Given payroll export is completed
+When I compare totals with attendance and leave reports
+Then any discrepancies are flagged and reported for review
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: E04, E06
+- Notes: Automated reconciliation and discrepancy alerts required.
