@@ -1,0 +1,15 @@
+Title: Record Safety Incident or Near-Miss
+
+User Story: As a supervisor I want to record details of safety incidents and near-misses so that investigations and OSHA reporting are accurate and complete
+
+Acceptance Criteria:
+Scenario: Submit safety incident
+  Given I am logged in as a supervisor
+  When I submit a new safety incident with required fields (severity, location, employees, description)
+  Then the incident is saved and visible in the safety dashboard
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02 (User Management), E03 (Scheduling)
+- Notes: Validation required for all mandatory fields
