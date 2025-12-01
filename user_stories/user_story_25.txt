@@ -1,0 +1,16 @@
+Title: Record Safety Incidents and Near-Misses
+User Story: As a supervisor I want to record safety incidents and near-misses with severity, location, description, and involved employees so that we can track and investigate workplace safety issues
+Acceptance Criteria:
+Scenario: Record new incident
+Given an incident occurs
+When I submit details including severity, location, description, and involved employees
+Then the incident is saved and visible in the safety dashboard
+Scenario: Validation on submission
+Given I am submitting an incident
+When required fields are missing
+Then the system displays validation errors
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Support both incidents and near-misses
