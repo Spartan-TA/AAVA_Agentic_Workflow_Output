@@ -1,0 +1,20 @@
+Title: CRUD for Shift Templates and Schedules with Conflict Detection
+
+User Story: As an HR manager I want to create, update, and delete shift templates and schedules with automatic conflict detection So that I can efficiently manage workforce scheduling without overlapping or invalid assignments
+
+Acceptance Criteria:
+Scenario: Create shift template
+Given I am authenticated as HR or ADMIN
+When I submit a new shift template
+Then the system saves the template and checks for conflicts with existing templates
+
+Scenario: Schedule conflict detected
+Given a new or updated schedule overlaps with an existing assignment
+When I attempt to save the schedule
+Then the system blocks the action and displays a conflict error
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03, E04
+- Notes: Conflict detection must cover overlapping shifts, blackout dates, and warehouse operation calendars.
