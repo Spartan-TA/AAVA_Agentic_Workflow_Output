@@ -1,0 +1,20 @@
+Title: CRUD for Certifications and Upload Proof Documents
+
+User Story: As an HR manager I want to create, update, and delete employee certifications and upload proof documents So that compliance with training requirements is tracked and auditable
+
+Acceptance Criteria:
+Scenario: Add certification with proof
+Given I am authenticated as HR or ADMIN
+When I add a new certification for an employee and upload a proof document
+Then the certification and document are saved and visible on the employee profile
+
+Scenario: Delete expired certification
+Given a certification is no longer valid
+When I delete it
+Then the system removes the certification and logs the action
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Proof documents must be stored securely and accessible only to authorized roles.
