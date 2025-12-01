@@ -1,0 +1,15 @@
+Title: Webhooks for Event Notifications and Idempotency
+
+User Story: As a third-party system I want to receive webhook notifications for key events so that I can react to changes in real time without polling
+
+Acceptance Criteria:
+Scenario: Idempotent webhook delivery
+  Given a subscribed event occurs (e.g., employee created, schedule updated)
+  When the webhook is triggered
+  Then the payload is delivered to the registered endpoint and duplicate deliveries are handled idempotently
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Webhook retries with exponential backoff; delivery logs available.
