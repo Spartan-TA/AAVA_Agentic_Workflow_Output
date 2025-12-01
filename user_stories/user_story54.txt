@@ -1,0 +1,15 @@
+Title: Supervisor and Employee Acknowledgement Workflow
+
+User Story: As a supervisor I want to acknowledge and sign-off on employee performance reviews So that both parties confirm the review outcomes
+
+Acceptance Criteria:
+Scenario: Review acknowledgement
+Given a review has been submitted by the employee
+When I review the submission and acknowledge it
+Then the review status should update to 'Acknowledged' and become immutable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Both employee and supervisor must sign-off before review is locked.
