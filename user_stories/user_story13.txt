@@ -1,0 +1,47 @@
+Title: Record Safety Incident
+
+User Story: As a supervisor I want to record safety incidents and near-misses so that investigations and corrective actions can be tracked
+
+Acceptance Criteria:
+Scenario: Incident recording
+Given an incident occurs
+When I submit a safety incident report
+Then the incident should be logged with severity, location, description, and involved employees
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Status workflow (Open, Investigating, Resolved)
+
+Title: Investigate Safety Incident
+
+User Story: As a safety manager I want to manage the investigation workflow for incidents so that corrective actions are documented
+
+Acceptance Criteria:
+Scenario: Investigation workflow
+Given an incident is logged
+When I change the status to Investigating
+Then I should be able to add investigation notes and corrective actions
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Safety Incidents
+- Notes: Workflow status management
+
+Title: Export OSHA Summary
+
+User Story: As a compliance officer I want to export OSHA 300/300A summaries so that regulatory reporting requirements are met
+
+Acceptance Criteria:
+Scenario: Exporting OSHA summary
+Given safety incident data exists
+When I request an OSHA export
+Then the summary should be generated with required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Safety Incidents
+- Notes: Metrics dashboard endpoints available
