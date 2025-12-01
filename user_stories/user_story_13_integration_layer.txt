@@ -1,0 +1,12 @@
+Title: HRIS/WMS API Integration
+User Story: As a system integrator I want REST APIs for HRIS and WMS So that employee and warehouse data can be synchronized
+Acceptance Criteria:
+Scenario: API integration
+Given HRIS/WMS endpoints are available
+When I configure integration
+Then data should flow securely between systems
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Project scaffolding, Employee domain, RBAC
+- Notes: Support SSO and webhooks
