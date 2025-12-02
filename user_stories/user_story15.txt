@@ -1,0 +1,51 @@
+Title: Create Performance Review Cycles
+User Story: As an HR manager I want to create quarterly and annual performance review cycles So that structured feedback is provided to employees
+Acceptance Criteria:
+Scenario: Create review cycle
+Given I am on the review management page
+When I define a new review cycle
+Then the cycle is created and available for assignment
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Cycle types configurable
+
+Title: Track Employee Goals and Competencies
+User Story: As a supervisor I want to track employee goals and competencies So that progress and development are monitored
+Acceptance Criteria:
+Scenario: Goal tracking
+Given a review cycle is active
+When I add or update goals for an employee
+Then the goals are saved and visible in the review
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review Cycles
+- Notes: Goals linked to competencies
+
+Title: Review Submission and Acknowledgement Workflow
+User Story: As an employee I want to submit and acknowledge my performance review So that feedback is documented and sign-off is tracked
+Acceptance Criteria:
+Scenario: Review workflow
+Given a review is assigned
+When I submit my self-assessment and acknowledge the review
+Then the workflow is completed and history is immutable
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review Cycles, Employee Profile
+- Notes: PDF export supported
+
+Title: Role-Based Visibility for Reviews
+User Story: As an admin I want reviews to be visible only to authorized roles So that privacy and compliance are maintained
+Acceptance Criteria:
+Scenario: Role-based access
+Given reviews exist
+When I access the review dashboard
+Then I see only reviews for my role and permissions
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: RBAC
+- Notes: Immutable history after sign-off
