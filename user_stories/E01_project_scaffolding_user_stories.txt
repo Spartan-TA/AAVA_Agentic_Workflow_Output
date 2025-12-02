@@ -1,0 +1,71 @@
+### EPIC E01: Project Scaffolding & Domain Setup
+
+**User Story 1**
+Title: Initialize Spring Boot Project  
+User Story: As a developer I want to initialize a Spring Boot project using Maven So that I have a standardized foundation for all modules  
+Acceptance Criteria:  
+Scenario: Project Initialization  
+Given I have access to the repository  
+When I run the Maven initialization command  
+Then a Spring Boot project is created with the correct structure  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: None  
+- Notes: Ensure README includes build/run steps
+
+**User Story 2**
+Title: Configure Base Packages  
+User Story: As a developer I want to configure base packages for core modules So that code organization is consistent across the project  
+Acceptance Criteria:  
+Scenario: Package Configuration  
+Given the project is initialized  
+When I create base packages for employee, scheduling, attendance, and safety  
+Then each module has its own package and is referenced in the README  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: User Story 1  
+- Notes: Follow naming conventions
+
+**User Story 3**
+Title: Set Up Database Migration Tool  
+User Story: As a developer I want to add Flyway or Liquibase for DB migrations So that database changes are tracked and reproducible  
+Acceptance Criteria:  
+Scenario: Migration Tool Setup  
+Given the project is initialized  
+When I add Flyway or Liquibase dependencies and configure them  
+Then baseline migration runs successfully and is logged  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: User Story 1  
+- Notes: Document migration steps in README
+
+**User Story 4**
+Title: Enable Actuator Health Endpoint  
+User Story: As a developer I want to enable the Actuator health endpoint So that system health can be monitored  
+Acceptance Criteria:  
+Scenario: Health Endpoint  
+Given the project is running  
+When I access /actuator/health  
+Then the endpoint returns UP  
+Additional Details:  
+- Priority: High  
+- Story Points: 1  
+- Dependencies: User Story 1  
+- Notes: Secure actuator endpoints
+
+**User Story 5**
+Title: Document Build and Run Steps  
+User Story: As a developer I want to document build and run steps in the README So that onboarding is easier for new team members  
+Acceptance Criteria:  
+Scenario: Documentation  
+Given the project is initialized  
+When I update the README  
+Then build and run steps are clearly described  
+Additional Details:  
+- Priority: High  
+- Story Points: 1  
+- Dependencies: User Story 1  
+- Notes: Include troubleshooting tips
