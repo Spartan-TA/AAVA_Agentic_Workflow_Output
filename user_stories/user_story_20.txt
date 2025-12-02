@@ -1,0 +1,15 @@
+Title: Assign Training Courses
+
+User Story: As a training coordinator I want to assign training courses to employees So that I can ensure compliance and skill development
+
+Acceptance Criteria:
+Scenario: Assign training course
+Given I am in the training management module
+When I select a course and assign it to employees
+Then the assignments should be saved and employees notified
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Training management module, notification system
+- Notes: Support for mandatory and optional courses.
