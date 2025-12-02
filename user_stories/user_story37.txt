@@ -1,0 +1,12 @@
+Title: Employee API Export Field Selection
+User Story: As an HR user I want to select which fields to include in exported employee lists So that reports are tailored to my needs
+Acceptance Criteria:
+Scenario: Select Export Fields
+Given employee records exist
+When I GET /employees/export?fields=name,department,status
+Then only selected fields are included in the export
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee API Bulk Export
+- Notes: Validate field names and order
