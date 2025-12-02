@@ -1,0 +1,12 @@
+Title: Employee API Search by Status
+User Story: As an HR user I want to search for employees by status (active/inactive) via API So that I can manage workforce availability
+Acceptance Criteria:
+Scenario: Search by Status
+Given employee records exist
+When I GET /employees?status=active
+Then only active employees are returned
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Employee CRUD API
+- Notes: Support multiple status filters
