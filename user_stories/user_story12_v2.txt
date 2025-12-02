@@ -1,0 +1,12 @@
+Title: Row-Level Security Constraints
+
+User Story: As a supervisor I want to access only my team's records So that I can manage my team without viewing other teams' sensitive data
+
+Acceptance Criteria:
+Scenario: Row-level access Given multiple teams exist When a supervisor accesses employee records Then only records for their assigned team are visible
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data (E02), Role Assignment
+- Notes: Ensure row-level constraints are enforced and covered by tests
