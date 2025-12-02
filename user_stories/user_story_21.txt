@@ -1,0 +1,15 @@
+Title: Track Certification Expiry
+
+User Story: As a training coordinator I want to track employee certification expiry dates So that I can ensure compliance and timely renewals
+
+Acceptance Criteria:
+Scenario: Certification expiry tracking
+Given certifications are assigned to employees
+When a certification is nearing expiry
+Then an alert should be sent to the employee and coordinator
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Training management module, notification system
+- Notes: Support for multiple certification types.
