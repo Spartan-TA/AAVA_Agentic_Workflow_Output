@@ -1,0 +1,15 @@
+Title: Support Multiple Warehouse Locations
+
+User Story: As an admin I want to configure and manage multiple warehouse locations so that operations can be tracked and reported by site
+
+Acceptance Criteria:
+Scenario: Adding a warehouse location
+Given I am logged in as an admin
+When I add a new warehouse location
+Then the location is available for assignment to employees, assets, and schedules
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee master data, asset management
+- Notes: Support for location-based permissions and reporting.
