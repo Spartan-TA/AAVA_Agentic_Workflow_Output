@@ -1,0 +1,12 @@
+Title: Employee API Bulk Update
+User Story: As an HR user I want to update multiple employee records in a single API call So that mass changes are efficient
+Acceptance Criteria:
+Scenario: Bulk Update
+Given a list of employee IDs and update data
+When I PATCH to /employees/bulk-update
+Then all specified records are updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Return summary of successful and failed updates
