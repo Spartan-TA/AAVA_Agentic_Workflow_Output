@@ -1,0 +1,15 @@
+Title: Initiate Offboarding Workflow
+
+User Story: As an HR manager I want to initiate an offboarding workflow for departing employees so that all exit tasks are tracked and compliance is ensured
+
+Acceptance Criteria:
+Scenario: Starting offboarding
+Given I am logged in as an HR manager
+When I mark an employee for offboarding
+Then the system generates a checklist and assigns tasks to relevant stakeholders
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Employee master data, task management
+- Notes: Support for custom offboarding templates by role or location.
