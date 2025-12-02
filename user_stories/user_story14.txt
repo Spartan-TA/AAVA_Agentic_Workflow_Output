@@ -1,0 +1,51 @@
+Title: Asset Registry CRUD
+User Story: As an admin I want to create, update, and delete asset records So that all equipment and PPE are tracked and managed
+Acceptance Criteria:
+Scenario: Asset CRUD
+Given I am on the asset management page
+When I add or update an asset
+Then the record is saved and visible in the registry
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Asset types configurable
+
+Title: Asset Check-In/Check-Out
+User Story: As a supervisor I want to check assets in and out to employees So that accountability and usage history are maintained
+Acceptance Criteria:
+Scenario: Asset check-out
+Given an asset is available
+When I assign it to an employee
+Then the check-out is logged and the asset status is updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset Registry, Employee Certifications
+- Notes: Check-in/out history visible
+
+Title: Certification Validation for Asset Assignment
+User Story: As a supervisor I want the system to block asset assignment if the employeeâs certification is invalid So that only qualified staff operate equipment
+Acceptance Criteria:
+Scenario: Certification validation
+Given an employee lacks a valid certification
+When I attempt to assign a restricted asset
+Then the system blocks the assignment and shows a warning
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification Status, Asset Assignment
+- Notes: Applies to forklifts and other restricted equipment
+
+Title: Overdue Asset Return Reporting
+User Story: As an admin I want to generate reports of overdue asset returns So that lost or unreturned equipment can be tracked and recovered
+Acceptance Criteria:
+Scenario: Overdue report
+Given assets are checked out past their due date
+When I request an overdue report
+Then the report lists all overdue assets and assigned employees
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Asset Check-Out, Reporting
+- Notes: Report exportable as CSV
