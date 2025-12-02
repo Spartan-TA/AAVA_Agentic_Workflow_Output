@@ -1,0 +1,71 @@
+### EPIC E05: Shift & Schedule Management
+
+**User Story 21**
+Title: Create Shift Templates  
+User Story: As an HR user I want to create recurring shift templates So that scheduling is efficient  
+Acceptance Criteria:  
+Scenario: Shift Template Creation  
+Given I have HR role  
+When I create a shift template  
+Then the template is saved and reusable  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E02, E03, E04  
+- Notes: Support rotations
+
+**User Story 22**
+Title: Assign Shifts to Employees  
+User Story: As a supervisor I want to assign shifts to employees So that staffing is adequate  
+Acceptance Criteria:  
+Scenario: Shift Assignment  
+Given shift templates exist  
+When I assign shifts  
+Then employees see their upcoming shifts  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: User Story 21  
+- Notes: Bulk-assign supported
+
+**User Story 23**
+Title: Handle Blackout Dates  
+User Story: As a scheduler I want to set blackout dates So that scheduling conflicts are avoided  
+Acceptance Criteria:  
+Scenario: Blackout Date Handling  
+Given blackout dates are configured  
+When I schedule shifts  
+Then conflicts are detected and prevented  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: User Story 21  
+- Notes: Integrate with operation calendar
+
+**User Story 24**
+Title: Audit Shift Assignments  
+User Story: As an auditor I want audit entries for shift assignments So that changes are traceable  
+Acceptance Criteria:  
+Scenario: Audit Logging  
+Given shifts are assigned  
+When an assignment is made  
+Then an audit entry is generated  
+Additional Details:  
+- Priority: High  
+- Story Points: 1  
+- Dependencies: User Story 22  
+- Notes: Include actor and timestamp
+
+**User Story 25**
+Title: Prevent Scheduling Conflicts  
+User Story: As a scheduler I want the system to prevent scheduling conflicts So that staffing is optimal  
+Acceptance Criteria:  
+Scenario: Conflict Prevention  
+Given employees have assigned shifts  
+When I attempt to assign overlapping shifts  
+Then the system blocks the assignment  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: User Story 22  
+- Notes: Show conflict details
