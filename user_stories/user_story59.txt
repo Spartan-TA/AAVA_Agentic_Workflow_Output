@@ -1,0 +1,15 @@
+Title: Collect User Feedback
+
+User Story: As a product manager I want to collect user feedback within the platform so that I can identify areas for improvement and prioritize enhancements
+
+Acceptance Criteria:
+Scenario: Submitting feedback
+Given I am logged in as a user
+When I submit feedback through the platform
+Then the feedback is logged and visible to the product team for review
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Feedback module
+- Notes: Support for anonymous and role-based feedback.
