@@ -1,0 +1,15 @@
+Title: Approve/Reject Leave
+
+User Story: As a supervisor I want to approve or reject leave requests So that I can manage team availability and workload
+
+Acceptance Criteria:
+Scenario: Approve or reject leave request
+Given a leave request is pending
+When I review and take action
+Then the employee should be notified of the decision
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Leave management module, notification system
+- Notes: Capture reason for rejection.
