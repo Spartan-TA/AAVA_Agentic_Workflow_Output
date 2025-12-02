@@ -1,0 +1,12 @@
+Title: Employee API Import Rollback
+User Story: As an HR user I want to rollback imported employee data in case of errors So that I can restore previous state
+Acceptance Criteria:
+Scenario: Import Rollback
+Given an import has completed
+When I trigger a rollback
+Then all imported records are reverted to previous state
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee API Bulk Import
+- Notes: Maintain import history for rollback
