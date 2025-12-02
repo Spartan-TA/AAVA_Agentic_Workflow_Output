@@ -1,0 +1,15 @@
+Title: Configure Database Migration Tooling
+
+User Story: As a System Administrator I want to set up Flyway/Liquibase for database migrations So that schema changes are versioned and reliably applied across environments
+
+Acceptance Criteria:
+Scenario: Baseline migration applied
+Given the migration tool is configured in the project
+When I run the migration command
+Then the baseline schema is created and future migrations are tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Migration logs should be available; rollback steps documented in runbook.
