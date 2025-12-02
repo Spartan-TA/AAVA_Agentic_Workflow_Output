@@ -1,0 +1,15 @@
+Title: Initialize Spring Boot Project
+
+User Story: As a developer I want to initialize a Spring Boot (Maven) project with standardized base packages So that all modules follow a consistent structure and onboarding is accelerated
+
+Acceptance Criteria:
+Scenario: Project scaffolding setup
+Given I have access to the code repository
+When I run the build and start the application
+Then the project builds successfully and runs on port 8080 with the base package structure created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps; base packages should cover employee, scheduling, attendance, safety modules
