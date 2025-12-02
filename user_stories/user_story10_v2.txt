@@ -1,0 +1,12 @@
+Title: OpenAPI Schema Documentation for Employee APIs
+
+User Story: As a developer I want the employee CRUD APIs documented with OpenAPI schemas and examples So that I can easily integrate and test the endpoints
+
+Acceptance Criteria:
+Scenario: View OpenAPI documentation Given the employee APIs are implemented When I access the OpenAPI UI Then I see all endpoints, request/response schemas, and example payloads for employees
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project Scaffolding (E01), Employee CRUD endpoints
+- Notes: Ensure all fields are documented and examples are provided
