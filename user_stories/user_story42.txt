@@ -1,0 +1,12 @@
+Title: Employee API Import Field Mapping
+User Story: As an HR user I want to map source fields to Employee model fields during import So that data is correctly ingested
+Acceptance Criteria:
+Scenario: Field Mapping
+Given a source file with custom columns
+When I configure field mapping
+Then employee records are imported with correct field assignments
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee API Bulk Import
+- Notes: Support mapping templates
