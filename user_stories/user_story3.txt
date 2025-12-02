@@ -1,0 +1,20 @@
+Title: Enable Actuator Health Monitoring
+
+User Story: As a System Administrator I want to enable Actuator health monitoring so that I can verify the application's operational status and troubleshoot issues quickly.
+
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+  Given the application is running
+  When I access the /actuator/health endpoint
+  Then the response status is UP
+
+Scenario: Health endpoint returns DOWN
+  Given the application is stopped or misconfigured
+  When I access the /actuator/health endpoint
+  Then the response status is DOWN with error details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Health endpoint should be secured and documented in README.
