@@ -1,0 +1,12 @@
+Title: Employee API Import Rollback Localization and Internationalization
+User Story: As a Global HR user I want import rollback error messages and reports localized So that users in different regions can understand them
+Acceptance Criteria:
+Scenario: Localized Rollback Error
+Given a user with locale preference
+When a rollback error occurs
+Then the error message is returned in the user's language
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee API Import Rollback
+- Notes: Support at least English and Spanish
