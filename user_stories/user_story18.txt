@@ -1,0 +1,15 @@
+Title: Supervisor Approve Leave Requests
+
+User Story: As a supervisor I want to review and approve or reject employee leave requests so that staffing levels are maintained and leave policies are enforced
+
+Acceptance Criteria:
+Scenario: Approving a leave request
+Given an employee has submitted a leave request
+When I review the request and select approve or reject
+Then the employee is notified and the leave calendar is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Notification module, employee schedule
+- Notes: All actions should be logged for audit and compliance.
