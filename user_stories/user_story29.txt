@@ -1,0 +1,12 @@
+Title: Employee API Search by Hire Date
+User Story: As an HR user I want to search for employees by hire date range via API So that I can analyze hiring trends
+Acceptance Criteria:
+Scenario: Search by Hire Date
+Given employee records exist
+When I GET /employees?hireDateFrom=2022-01-01&hireDateTo=2022-12-31
+Then only employees hired in 2022 are returned
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Support date range queries
