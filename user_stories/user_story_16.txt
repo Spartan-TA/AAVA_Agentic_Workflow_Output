@@ -1,0 +1,15 @@
+Title: View Shift Calendar
+
+User Story: As an employee I want to view my shift calendar So that I can plan my work and personal commitments accordingly
+
+Acceptance Criteria:
+Scenario: View personal shift calendar
+Given I am logged into the EMS
+When I access the shift calendar
+Then I should see all my assigned shifts for the selected period
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Shift scheduling module
+- Notes: Support for mobile and desktop views.
