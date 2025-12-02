@@ -1,0 +1,51 @@
+Title: Manage Employee Certifications
+User Story: As an HR manager I want to create, update, and delete employee certifications So that compliance and qualification records are maintained
+Acceptance Criteria:
+Scenario: Certification CRUD
+Given I am on the certification management page
+When I add or update a certification
+Then the record is saved and visible on the employee profile
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Certification types configurable
+
+Title: Expiry Alerts for Certifications
+User Story: As a supervisor I want to receive alerts when certifications are about to expire So that I can ensure only qualified staff are assigned to sensitive roles
+Acceptance Criteria:
+Scenario: Expiry alert
+Given a certification is expiring within 30 or 7 days
+When the system runs the alert job
+Then notifications are sent to the employee and supervisor
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Notifications
+- Notes: Alert thresholds configurable
+
+Title: Block Assignment to Tasks for Expired Certifications
+User Story: As a scheduler I want the system to block assignment of employees to equipment-sensitive tasks if their certification is expired So that safety and compliance are enforced
+Acceptance Criteria:
+Scenario: Assignment block
+Given an employeeâs certification is expired
+When I attempt to assign them to a restricted task
+Then the system prevents the assignment and shows a warning
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Scheduling, Certification Status
+- Notes: Block applies to all restricted roles
+
+Title: Upload Proof Documents for Certifications
+User Story: As an employee I want to upload proof documents for my certifications So that my qualifications are verified and stored securely
+Acceptance Criteria:
+Scenario: Upload proof
+Given I have a new certification
+When I upload the proof document
+Then it is attached to my profile and visible to HR
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Document Management
+- Notes: File types and size limits enforced
