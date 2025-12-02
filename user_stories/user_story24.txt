@@ -1,0 +1,51 @@
+Title: AI-Based Shift Assignment Suggestions
+User Story: As a scheduler I want AI-based suggestions for shift assignments So that staffing is optimized and manual effort reduced
+Acceptance Criteria:
+Scenario: AI shift suggestion
+Given open shifts exist
+When I request suggestions
+Then the system proposes assignments based on rules and historical data
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Scheduling, Employee Data
+- Notes: ML model documented
+
+Title: Automated Conflict Resolution for Scheduling
+User Story: As a scheduler I want the system to automatically resolve scheduling conflicts So that double-bookings and policy violations are prevented
+Acceptance Criteria:
+Scenario: Conflict resolution
+Given conflicting assignments exist
+When the system runs conflict resolution
+Then conflicts are resolved and notifications sent
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Scheduling, Policy Engine
+- Notes: Resolution rules configurable
+
+Title: Explainability for AI Scheduling Decisions
+User Story: As a supervisor I want to see explanations for AI scheduling decisions So that I can trust and validate the assignments
+Acceptance Criteria:
+Scenario: Explainability report
+Given AI assignments are generated
+When I review the suggestions
+Then explanations for each decision are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Scheduling, ML Model
+- Notes: Explanations include rules and data sources
+
+Title: Feedback Loop for AI Model Improvement
+User Story: As an admin I want to provide feedback on AI scheduling suggestions So that the model improves over time
+Acceptance Criteria:
+Scenario: Feedback submission
+Given AI suggestions are used
+When I submit feedback
+Then the model incorporates feedback in future suggestions
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Scheduling, ML Model
+- Notes: Feedback tracked and reported
