@@ -1,0 +1,15 @@
+Title: Custom Report Builder
+
+User Story: As a power user I want to build custom reports using selected fields and filters so that I can analyze data specific to my needs
+
+Acceptance Criteria:
+Scenario: Creating a custom report
+Given I am logged in as a power user
+When I select fields and filters and generate a report
+Then I receive a report with the chosen data in my preferred format
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: Reporting module, data warehouse
+- Notes: Support for saving and sharing custom report templates.
