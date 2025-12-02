@@ -1,0 +1,51 @@
+Title: Automated Provisioning for New Hires
+User Story: As an HR manager I want new hires to be automatically provisioned with accounts, schedules, and training tasks So that onboarding is efficient and consistent
+Acceptance Criteria:
+Scenario: New hire provisioning
+Given a new hire appears from HRIS
+When onboarding is triggered
+Then accounts, schedules, and training tasks are created
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: HRIS, Scheduling, Training
+- Notes: Provisioning workflow documented
+
+Title: Training and Certification Assignment During Onboarding
+User Story: As a supervisor I want required training and certifications to be assigned during onboarding So that compliance is ensured from day one
+Acceptance Criteria:
+Scenario: Training assignment
+Given onboarding is in progress
+When training tasks are assigned
+Then the employee receives notifications and deadlines
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Training, Notifications
+- Notes: Block asset assignment until training complete
+
+Title: Asset Assignment for New Employees
+User Story: As an admin I want assets to be assigned to new employees during onboarding So that equipment and PPE are tracked from the start
+Acceptance Criteria:
+Scenario: Asset assignment
+Given onboarding is in progress
+When assets are assigned
+Then the asset registry is updated and check-out logged
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Asset Registry, Onboarding
+- Notes: Certification validation required
+
+Title: Automated Deprovisioning on Termination
+User Story: As an HR manager I want accounts, schedules, and assets to be deprovisioned automatically on termination So that risk is reduced and compliance maintained
+Acceptance Criteria:
+Scenario: Deprovisioning workflow
+Given an employee is terminated
+When offboarding is triggered
+Then access is revoked, assets collected, and schedules updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: HRIS, Asset Registry, Scheduling
+- Notes: Deprovisioning workflow documented
