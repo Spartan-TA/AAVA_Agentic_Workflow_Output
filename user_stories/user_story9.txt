@@ -1,0 +1,15 @@
+Title: Assign Roles to Users
+
+User Story: As an admin I want to assign roles to users so that each user has appropriate access rights
+
+Acceptance Criteria:
+Scenario: Assigning a role to a user
+Given I am on the user management page
+When I select a user and assign a role
+Then the user should inherit all permissions associated with that role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Role definition
+- Notes: Users may have multiple roles if required by business rules.
