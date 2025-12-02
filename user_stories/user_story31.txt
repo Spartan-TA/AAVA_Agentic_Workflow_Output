@@ -1,0 +1,15 @@
+Title: Employee Set and Track Personal Goals
+
+User Story: As an employee I want to set and track my personal performance goals so that I can monitor my progress and prepare for reviews
+
+Acceptance Criteria:
+Scenario: Setting and updating goals
+Given I am logged in as an employee
+When I add or update a personal goal
+Then the goal is saved and visible in my performance dashboard
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee master data
+- Notes: Goals should be editable until the review cycle closes.
