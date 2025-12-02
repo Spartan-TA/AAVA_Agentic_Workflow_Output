@@ -1,0 +1,25 @@
+Title: Create Employee Records via API
+
+User Story: As an HR Manager I want to create employee records using a REST API so that new hires are accurately onboarded into the system.
+
+Acceptance Criteria:
+Scenario: Successful employee creation
+  Given valid employee details
+  When I POST to /employees
+  Then a new employee record is created and returned with a unique badgeId
+
+Scenario: Duplicate badgeId error
+  Given an existing badgeId
+  When I POST a new employee with the same badgeId
+  Then the API returns a 400 error with a message about duplicate badgeId
+
+Scenario: Missing required fields
+  Given incomplete employee details
+  When I POST to /employees
+  Then the API returns a 400 error specifying missing fields
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project scaffolding
+- Notes: API must validate required fields and enforce badgeId uniqueness.
