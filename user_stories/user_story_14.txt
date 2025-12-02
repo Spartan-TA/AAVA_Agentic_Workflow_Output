@@ -1,0 +1,15 @@
+Title: Create Shift Schedules
+
+User Story: As a shift manager I want to create shift schedules for employees So that I can ensure adequate coverage and operational efficiency
+
+Acceptance Criteria:
+Scenario: Create new shift schedule
+Given I am in the shift scheduling module
+When I create a new shift and assign employees
+Then the schedule should be saved and visible to assigned employees
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Shift scheduling module
+- Notes: Support for recurring and ad-hoc shifts.
