@@ -1,0 +1,15 @@
+Title: Track Certification Expirations
+
+User Story: As a manager I want to track employee certification expiration dates so that I can ensure compliance and schedule renewals
+
+Acceptance Criteria:
+Scenario: Viewing certification expirations
+Given I am logged in as a manager
+When I view the certification dashboard
+Then I see upcoming and expired certifications for my team
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee master data, notification module
+- Notes: System should send reminders before expiration.
