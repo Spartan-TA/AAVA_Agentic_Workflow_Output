@@ -1,0 +1,12 @@
+Title: Employee API Bulk Delete
+User Story: As an HR user I want to soft-delete multiple employee records in a single API call So that mass removals are efficient
+Acceptance Criteria:
+Scenario: Bulk Delete
+Given a list of employee IDs
+When I DELETE /employees/bulk-delete
+Then all specified records are soft-deleted
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Return summary of successful and failed deletions
