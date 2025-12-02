@@ -1,0 +1,15 @@
+Title: Role Assignment to Employees
+
+User Story: As an HR administrator I want to assign roles to employees So that I can control their access and permissions in the system
+
+Acceptance Criteria:
+Scenario: Assign role to employee
+Given I am on the employee profile page
+When I select a role and assign it to the employee
+Then the employee should have the corresponding permissions immediately
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Role management module
+- Notes: Changes should be audit logged.
