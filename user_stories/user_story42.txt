@@ -1,0 +1,15 @@
+Title: Search and Export Audit Logs
+
+User Story: As a compliance officer I want to search and export audit logs so that I can support investigations and compliance reporting
+
+Acceptance Criteria:
+Scenario: Searching and exporting logs
+Given I am logged in as a compliance officer
+When I search audit logs by user, date, or action
+Then I see matching entries and can export the results in CSV or PDF format
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Audit trail module
+- Notes: Exported logs must include all relevant metadata.
