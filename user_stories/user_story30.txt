@@ -1,0 +1,12 @@
+Title: Employee API Advanced Filtering
+User Story: As an HR user I want to combine multiple filters (department, status, shift group, hire date) in API queries So that I can generate custom employee lists
+Acceptance Criteria:
+Scenario: Combined Filters
+Given employee records exist
+When I GET /employees?department=Finance&status=active&shiftGroup=Night&hireDateFrom=2022-01-01
+Then only matching employees are returned
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Document filter combinations in OpenAPI spec
