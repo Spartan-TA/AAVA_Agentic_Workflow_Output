@@ -1,0 +1,12 @@
+Title: Employee API Import Rollback Rate Limiting
+User Story: As a System Administrator I want rate limiting on Employee API import rollback operations So that the system is protected from abuse and denial-of-service attacks
+Acceptance Criteria:
+Scenario: Rollback Rate Limit Exceeded
+Given a user exceeds the allowed number of rollback requests
+When I access /employees/import/rollback
+Then I receive a 429 Too Many Requests error
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee API Import Rollback
+- Notes: Configurable limits per user role
