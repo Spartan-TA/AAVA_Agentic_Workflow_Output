@@ -1,0 +1,15 @@
+Title: Audit User Access and Permission Changes
+
+User Story: As a compliance officer I want to view an audit log of user access and permission changes so that I can ensure regulatory compliance and investigate security incidents
+
+Acceptance Criteria:
+Scenario: Viewing audit logs
+Given I am logged in as a compliance officer
+When I access the audit log for RBAC
+Then I should see a list of all role and permission changes with timestamps and user details
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Audit trail module
+- Notes: Audit logs should be exportable for compliance reviews.
