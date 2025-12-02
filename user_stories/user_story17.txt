@@ -1,0 +1,51 @@
+Title: Multi-Channel Notifications for Shift Changes
+User Story: As a worker I want to receive notifications about shift changes via in-app, email, or SMS So that I am informed promptly and can adjust my schedule
+Acceptance Criteria:
+Scenario: Shift change notification
+Given my shift is updated
+When the change is made
+Then I receive a notification via my selected channels
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Scheduling, Notifications
+- Notes: Users opt-in/out per channel
+
+Title: Localized Notification Templates
+User Story: As an admin I want notification templates to be localized So that messages are clear and accessible to all users
+Acceptance Criteria:
+Scenario: Localized template
+Given a notification is triggered
+When the template is selected
+Then the message is sent in the userâs preferred language
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Localization, Notifications
+- Notes: Templates managed in admin panel
+
+Title: Track Delivery Status and Rate Limit Notifications
+User Story: As an admin I want to track notification delivery status and apply rate limits So that system performance and user experience are maintained
+Acceptance Criteria:
+Scenario: Delivery status tracking
+Given notifications are sent
+When I view the delivery dashboard
+Then I see status, failures, and rate limit logs
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Notifications
+- Notes: Quiet hours configurable
+
+Title: Announcements Dashboard
+User Story: As a supervisor I want to post and manage announcements visible on the dashboard So that important updates reach all relevant staff
+Acceptance Criteria:
+Scenario: Announcement posting
+Given I have an announcement
+When I post it to the dashboard
+Then it is visible to all targeted users
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Dashboard, Notifications
+- Notes: Announcements can be scheduled
