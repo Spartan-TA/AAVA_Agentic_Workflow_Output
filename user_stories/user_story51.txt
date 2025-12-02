@@ -1,0 +1,12 @@
+Title: Employee API Import OpenAPI Documentation
+User Story: As a Developer I want comprehensive OpenAPI documentation for Employee API import endpoints So that integration and testing are straightforward
+Acceptance Criteria:
+Scenario: OpenAPI Spec Availability
+Given the API is deployed
+When I access /openapi.json
+Then I see all import endpoints documented with request/response schemas and examples
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee API Bulk Import
+- Notes: Keep documentation up to date with code changes
