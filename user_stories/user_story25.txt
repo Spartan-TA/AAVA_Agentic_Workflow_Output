@@ -1,0 +1,15 @@
+Title: Generate OSHA-Compliant Reports
+
+User Story: As a compliance officer I want to generate OSHA-compliant safety incident reports so that regulatory requirements are met
+
+Acceptance Criteria:
+Scenario: Generating OSHA report
+Given I am logged in as a compliance officer
+When I select a reporting period and generate a report
+Then I receive a formatted OSHA-compliant report including all required incident data
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Incident log, reporting module
+- Notes: Reports must be exportable in PDF and Excel formats.
