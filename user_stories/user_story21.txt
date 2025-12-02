@@ -1,0 +1,15 @@
+Title: Employee Upload Training Completion Evidence
+
+User Story: As an employee I want to upload certificates or evidence of completed training so that my compliance status is updated
+
+Acceptance Criteria:
+Scenario: Uploading training evidence
+Given I have completed a training module
+When I upload a certificate or completion document
+Then my training record is updated and my manager is notified
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Notification module, document storage
+- Notes: Support for PDF, image, and document uploads.
