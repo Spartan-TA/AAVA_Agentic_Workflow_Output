@@ -1,0 +1,15 @@
+Title: Bulk Import Employees
+
+User Story: As an HR administrator I want to bulk import employee records So that I can efficiently onboard large groups of employees
+
+Acceptance Criteria:
+Scenario: Successful bulk import
+Given I have a valid CSV file with employee data
+When I upload the file and confirm import
+Then all valid records should be added to the system and errors reported for invalid entries
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee database, import validation
+- Notes: Provide import summary and error log for failed records.
