@@ -1,0 +1,15 @@
+Title: Configure Actuator Health Endpoint
+
+User Story: As a DevOps engineer I want to enable and verify the Actuator health endpoint So that I can monitor application health and readiness in production
+
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access /actuator/health
+Then the endpoint should return status UP with details of all core modules
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Spring Boot project scaffolding
+- Notes: Health endpoint must be secured and documented in README
