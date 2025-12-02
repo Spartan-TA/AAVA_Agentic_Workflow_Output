@@ -1,0 +1,15 @@
+Title: Training Completion Reporting
+
+User Story: As a training coordinator I want to generate reports on training completion So that I can monitor compliance and identify gaps
+
+Acceptance Criteria:
+Scenario: Generate training completion report
+Given training records exist
+When I run a completion report
+Then I should see a summary of completed, pending, and overdue trainings by employee
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Training management module, reporting system
+- Notes: Exportable to CSV and PDF.
