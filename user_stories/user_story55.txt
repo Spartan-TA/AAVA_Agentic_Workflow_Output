@@ -1,0 +1,15 @@
+Title: Location-Based Time Zone and Holiday Calendars
+
+User Story: As a scheduler I want to assign time zones and holiday calendars to each warehouse location so that schedules and leave calculations are accurate
+
+Acceptance Criteria:
+Scenario: Assigning time zone and holiday calendar
+Given I am logged in as a scheduler
+When I configure a warehouse location
+Then I can select the appropriate time zone and holiday calendar for that site
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Localization module, schedule management
+- Notes: Support for regional and country-specific holidays.
