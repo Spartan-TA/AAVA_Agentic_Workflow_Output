@@ -1,0 +1,15 @@
+Title: Send System Notifications
+
+User Story: As a system administrator I want to send notifications to users about important events so that they are informed and can take action as needed
+
+Acceptance Criteria:
+Scenario: Sending a notification
+Given I am logged in as a system administrator
+When I create and send a notification
+Then targeted users receive the message via their preferred channel (email, SMS, in-app)
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User preferences, notification module
+- Notes: Support for urgent and scheduled notifications.
