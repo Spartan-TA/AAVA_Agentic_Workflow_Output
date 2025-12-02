@@ -1,0 +1,15 @@
+Title: Enable Actuator Health Endpoint
+
+User Story: As a System Administrator I want to enable the Actuator health endpoint So that I can monitor the application's health status in real time
+
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access the /actuator/health endpoint
+Then the response status is UP and includes basic health details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Endpoint must be secured; health checks should cover DB and core modules.
