@@ -1,0 +1,12 @@
+Title: Employee API Export to CSV
+User Story: As an HR user I want to export employee lists to CSV via API So that I can use data in other systems
+Acceptance Criteria:
+Scenario: Export to CSV
+Given employee records exist
+When I GET /employees/export?format=csv
+Then I receive a CSV file with employee data
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee API Bulk Export
+- Notes: Support custom delimiter selection
