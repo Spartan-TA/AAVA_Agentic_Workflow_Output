@@ -1,0 +1,71 @@
+### EPIC E04: Time & Attendance (Clock In/Out)
+
+**User Story 16**
+Title: Implement Clock-In Endpoint  
+User Story: As a warehouse worker I want to clock in So that my attendance is recorded  
+Acceptance Criteria:  
+Scenario: Clock-In  
+Given I am scheduled for a shift  
+When I POST to /attendance/clock-in  
+Then my clock-in event is recorded with validation  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E02, E03  
+- Notes: Capture device info
+
+**User Story 17**
+Title: Implement Clock-Out Endpoint  
+User Story: As a warehouse worker I want to clock out So that my work hours are tracked  
+Acceptance Criteria:  
+Scenario: Clock-Out  
+Given I am clocked in  
+When I POST to /attendance/clock-out  
+Then my clock-out event is recorded and hours are calculated  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: User Story 16  
+- Notes: Validate shift association
+
+**User Story 18**
+Title: Add Geofence Validation  
+User Story: As a supervisor I want clock events to be validated by geofence So that attendance is accurate  
+Acceptance Criteria:  
+Scenario: Geofence Validation  
+Given geofence is configured  
+When a worker clocks in/out  
+Then the event is accepted only if within geofence  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: User Story 16  
+- Notes: Optional feature
+
+**User Story 19**
+Title: Handle Missed Punches and Corrections  
+User Story: As a worker I want to request corrections for missed punches So that my attendance is accurate  
+Acceptance Criteria:  
+Scenario: Correction Workflow  
+Given a missed punch is detected  
+When I submit a correction request  
+Then an approval task is created for my supervisor  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: User Story 16, User Story 17  
+- Notes: Track correction status
+
+**User Story 20**
+Title: Export Attendance Reports  
+User Story: As an HR user I want to export attendance reports So that payroll processing is efficient  
+Acceptance Criteria:  
+Scenario: Report Export  
+Given attendance data is available  
+When I request a CSV export  
+Then the report is generated with daily totals  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: User Story 17, User Story 19  
+- Notes: Support filtering by date/employee
