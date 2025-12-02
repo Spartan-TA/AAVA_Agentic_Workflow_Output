@@ -1,0 +1,15 @@
+Title: Employee View Assigned Equipment
+
+User Story: As an employee I want to view a list of my assigned equipment and assets so that I am aware of my responsibilities
+
+Acceptance Criteria:
+Scenario: Viewing assigned equipment
+Given I am logged in as an employee
+When I navigate to my equipment page
+Then I see a list of all assets currently assigned to me
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset assignment
+- Notes: Include asset details such as serial number and assignment date.
