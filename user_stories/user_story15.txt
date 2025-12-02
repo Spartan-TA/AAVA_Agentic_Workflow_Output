@@ -1,0 +1,15 @@
+Title: Employee View Schedule
+
+User Story: As an employee I want to view my assigned shifts and schedule so that I can plan my work and attendance
+
+Acceptance Criteria:
+Scenario: Viewing schedule
+Given I am logged in as an employee
+When I navigate to my schedule page
+Then I see a calendar or list of all my assigned shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Schedule should be accessible on both web and mobile.
