@@ -1,0 +1,15 @@
+Title: Create Base Modules for Core Domains
+
+User Story: As a developer I want to create base modules for core domains So that the application architecture is modular and maintainable
+
+Acceptance Criteria:
+Scenario: Base modules creation
+Given the project structure is initialized
+When I generate base modules for Employee, Attendance, and Scheduling domains
+Then each module should have its own directory, initial classes, and configuration files
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project structure initialization
+- Notes: Follow domain-driven design principles
