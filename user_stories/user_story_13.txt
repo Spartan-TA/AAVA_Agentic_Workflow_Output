@@ -1,0 +1,15 @@
+Title: Assign Roles to Users
+
+User Story: As an admin I want to assign roles to users So that access permissions are managed appropriately
+
+Acceptance Criteria:
+Scenario: Role assignment
+Given I am on the user management screen
+When I select a user and assign a role
+Then the user should have the permissions associated with that role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User and role modules
+- Notes: Support multiple roles per user
