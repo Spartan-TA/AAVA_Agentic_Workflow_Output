@@ -1,0 +1,15 @@
+Title: Mobile Access (PWA)
+
+User Story: As a warehouse worker I want responsive mobile views to clock-in/out, view schedules, request leave, and see announcements So that I can manage my work from any device, including offline via PWA.
+
+Acceptance Criteria:
+Scenario: Mobile access and offline support
+Given I am using a mobile device
+When I access the platform
+Then I can perform all key actions (clock-in/out, view schedule, request leave, see announcements) and continue using the app offline with data syncing when reconnected.
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: E04, E05, E06, E12
+- Notes: Ensure accessibility and performance on low-end devices.
