@@ -1,0 +1,73 @@
+Epic E03 â Role-Based Access Control (RBAC)
+
+===========================================
+
+Title: Implement Role-Based Endpoint Security
+
+User Story: As a System Administrator I want to restrict API endpoints based on user roles (ADMIN, HR, SUPERVISOR, WORKER) So that sensitive operations are protected
+
+Acceptance Criteria:
+Scenario: Role-Based Access Enforcement
+Given a user with a specific role
+When the user accesses a restricted endpoint
+Then access is granted or denied based on their role
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Security rules covered by tests
+
+===========================================
+
+Title: Configure API Key/OAuth2 Authentication
+
+User Story: As a System Administrator I want to toggle between API key and OAuth2 authentication via configuration So that I can adapt security to organizational needs
+
+Acceptance Criteria:
+Scenario: Authentication Toggle
+Given the security config is set
+When I switch between API key and OAuth2
+Then authentication works as configured
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Implement Role-Based Endpoint Security
+- Notes: Document configuration steps
+
+===========================================
+
+Title: Enforce Row-Level Security for Supervisors
+
+User Story: As a Supervisor I want to access only my team's employee records So that I cannot view or modify unrelated data
+
+Acceptance Criteria:
+Scenario: Row-Level Security
+Given a supervisor is logged in
+When they request employee data
+Then only records for their team are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Implement Role-Based Endpoint Security
+- Notes: Supervisor limited to team
+
+===========================================
+
+Title: Handle Unauthorized and Forbidden Requests
+
+User Story: As a Developer I want unauthorized requests to return 401 and forbidden actions to return 403 So that API responses are clear and secure
+
+Acceptance Criteria:
+Scenario: Unauthorized and Forbidden Responses
+Given a user without proper credentials or permissions
+When they attempt restricted actions
+Then the API returns 401 or 403 as appropriate
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Implement Role-Based Endpoint Security
+- Notes: Test coverage required
