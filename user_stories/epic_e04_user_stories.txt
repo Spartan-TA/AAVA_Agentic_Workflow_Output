@@ -1,0 +1,73 @@
+Epic E04 â Time & Attendance (Clock In/Out)
+
+===========================================
+
+Title: Implement Clock-In/Clock-Out Endpoints
+
+User Story: As a Warehouse Worker I want to clock in and out via API So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Clock-In/Out Event
+Given I am scheduled for a shift
+When I submit a clock-in or clock-out request
+Then the event is validated and recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Device and geofence capture optional
+
+===========================================
+
+Title: Calculate Hours Worked Per Shift
+
+User Story: As a Payroll Manager I want the system to calculate hours worked per shift So that payroll is accurate
+
+Acceptance Criteria:
+Scenario: Shift Hours Calculation
+Given clock-in and clock-out events exist
+When I view the attendance report
+Then total hours per shift are computed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Implement Clock-In/Clock-Out Endpoints
+- Notes: Automatic shift association
+
+===========================================
+
+Title: Handle Missed Punches and Corrections
+
+User Story: As a Warehouse Worker I want to request corrections for missed punches So that my attendance record is accurate
+
+Acceptance Criteria:
+Scenario: Correction Workflow
+Given a missed punch is detected
+When I submit a correction request
+Then an approval task is created for my supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Implement Clock-In/Clock-Out Endpoints
+- Notes: Approval workflow required
+
+===========================================
+
+Title: Export Attendance Reports
+
+User Story: As a Supervisor I want to export attendance reports in CSV format So that I can review and share attendance data
+
+Acceptance Criteria:
+Scenario: Attendance Report Export
+Given attendance data exists
+When I request a CSV export
+Then the system generates and delivers the report
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Calculate Hours Worked Per Shift
+- Notes: Export includes daily totals
