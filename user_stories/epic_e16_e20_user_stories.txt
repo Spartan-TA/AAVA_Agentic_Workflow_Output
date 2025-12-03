@@ -1,0 +1,355 @@
+Epic E16 - Mobile Access (PWA)
+
+===========================================
+
+Title: Clock-In/Out via Mobile PWA
+
+User Story: As a warehouse worker I want to clock-in and out using my mobile device So that I can record attendance conveniently
+
+Acceptance Criteria:
+Scenario: Mobile clock-in/out
+Given I am logged into the PWA
+When I tap clock-in or clock-out
+Then my attendance is recorded and confirmed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Support geolocation validation
+
+===========================================
+
+Title: View Schedule and Announcements on Mobile
+
+User Story: As a warehouse worker I want to view my schedule and company announcements on my mobile device So that I stay informed on the go
+
+Acceptance Criteria:
+Scenario: Mobile schedule and announcement view
+Given I am logged into the PWA
+When I access the schedule or announcements section
+Then relevant information is displayed responsively
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Support offline caching
+
+===========================================
+
+Title: Request Leave via Mobile PWA
+
+User Story: As a warehouse worker I want to request leave using my mobile device So that I can submit requests anytime, anywhere
+
+Acceptance Criteria:
+Scenario: Mobile leave request
+Given I am logged into the PWA
+When I submit a leave request
+Then the request is recorded and confirmation is shown
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Push notification for approval status
+
+===========================================
+
+Title: Offline Access to Key Features
+
+User Story: As a warehouse worker I want offline access to clock-in/out and schedule viewing So that I can use the app even with poor connectivity
+
+Acceptance Criteria:
+Scenario: Offline feature access
+Given I have previously logged in
+When I lose connectivity
+Then I can still clock-in/out and view my schedule
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E04, E05, E06, E12
+- Notes: Sync data when online
+
+
+Epic E17 - Onboarding & Offboarding Workflow
+
+===========================================
+
+Title: Automate Account Provisioning for New Hires
+
+User Story: As an HR manager I want new hire accounts to be provisioned automatically So that onboarding is efficient and error-free
+
+Acceptance Criteria:
+Scenario: Account provisioning
+Given a new hire is added to HRIS
+When onboarding is initiated
+Then the employee account is created with appropriate access
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Assign initial schedule and training
+
+===========================================
+
+Title: Assign Required Training During Onboarding
+
+User Story: As a supervisor I want required training to be assigned during onboarding So that new hires are compliant from day one
+
+Acceptance Criteria:
+Scenario: Training assignment
+Given onboarding is in progress
+When a new hire is added
+Then required training modules are assigned automatically
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Track training completion
+
+===========================================
+
+Title: Automate Offboarding and Access Deprovisioning
+
+User Story: As an HR manager I want access and assets to be deprovisioned automatically on termination So that security and compliance are maintained
+
+Acceptance Criteria:
+Scenario: Offboarding automation
+Given an employee is terminated
+When offboarding is initiated
+Then all system access and assigned assets are revoked
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Log all deprovisioning actions
+
+===========================================
+
+Title: Notify Stakeholders of Onboarding/Offboarding Events
+
+User Story: As an HR manager I want stakeholders to be notified of onboarding and offboarding events So that all relevant parties are informed
+
+Acceptance Criteria:
+Scenario: Stakeholder notification
+Given onboarding or offboarding is completed
+When the event occurs
+Then notifications are sent to relevant stakeholders
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Configurable recipient lists
+
+
+Epic E18 - Localization & Multi-Tenant
+
+===========================================
+
+Title: Support Locale-Specific Date, Time, Currency, and Language
+
+User Story: As a warehouse manager I want the system to support locale-specific date, time, currency, and language So that users in different regions have a tailored experience
+
+Acceptance Criteria:
+Scenario: Locale-specific display
+Given my locale is set
+When I access the system
+Then all dates, times, currency, and language reflect my locale
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Support user profile locale settings
+
+===========================================
+
+Title: Isolate Data and Configuration per Tenant
+
+User Story: As a system administrator I want data and configuration to be isolated per tenant So that each warehouse/region operates independently
+
+Acceptance Criteria:
+Scenario: Tenant isolation
+Given multiple tenants are configured
+When I access tenant-specific data
+Then only data for my tenant is visible and configurable
+
+Additional Details:
+- Priority: Low
+- Story Points: 4
+- Dependencies: E01, E02
+- Notes: Enforce strict access controls
+
+===========================================
+
+Title: Enable Multi-Tenant Administration
+
+User Story: As a super admin I want to manage multiple tenants from a central interface So that I can oversee all warehouses/regions efficiently
+
+Acceptance Criteria:
+Scenario: Multi-tenant admin interface
+Given I am a super admin
+When I access the admin panel
+Then I can view and manage all tenants
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Support bulk operations
+
+
+Epic E19 - Observability & Monitoring
+
+===========================================
+
+Title: Integrate Prometheus/Grafana for Metrics Dashboard
+
+User Story: As a DevOps engineer I want to integrate Prometheus and Grafana for metrics dashboards So that I can monitor system health and performance
+
+Acceptance Criteria:
+Scenario: Metrics dashboard integration
+Given Prometheus and Grafana are configured
+When I access the dashboard
+Then system metrics are displayed in real time
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E01
+- Notes: Include custom metrics
+
+===========================================
+
+Title: Implement Structured Logging in JSON Format
+
+User Story: As a developer I want structured logging in JSON format So that logs are easily parsed and analyzed
+
+Acceptance Criteria:
+Scenario: JSON logging
+Given an event occurs
+When it is logged
+Then the log entry is in valid JSON format
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Include context and correlation IDs
+
+===========================================
+
+Title: Enable Distributed Tracing with Jaeger/Zipkin
+
+User Story: As a DevOps engineer I want distributed tracing enabled with Jaeger or Zipkin So that I can trace requests across services
+
+Acceptance Criteria:
+Scenario: Distributed tracing
+Given a request flows through multiple services
+When tracing is enabled
+Then the full trace is visible in Jaeger/Zipkin
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E01
+- Notes: Support trace context propagation
+
+===========================================
+
+Title: Alert on Critical Errors and Performance Issues
+
+User Story: As a DevOps engineer I want alerts for critical errors and performance issues So that I can respond to incidents quickly
+
+Acceptance Criteria:
+Scenario: Alerting on errors
+Given a critical error or performance threshold is breached
+When monitoring detects the issue
+Then an alert is sent to the on-call engineer
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Integrate with incident management tools
+
+
+Epic E20 - CI/CD & Deployment Automation
+
+===========================================
+
+Title: Automate Build, Test, and Deployment Pipeline
+
+User Story: As a developer I want an automated pipeline for build, test, and deployment So that releases are consistent and reliable
+
+Acceptance Criteria:
+Scenario: Automated pipeline execution
+Given code is pushed to the repository
+When the pipeline runs
+Then the code is built, tested, and deployed to staging
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01
+- Notes: Support GitHub Actions or Jenkins
+
+===========================================
+
+Title: Integrate Security Scanning in CI/CD Pipeline
+
+User Story: As a security engineer I want security scanning integrated in the CI/CD pipeline So that vulnerabilities are detected early
+
+Acceptance Criteria:
+Scenario: Security scan execution
+Given the pipeline is running
+When the security scan step executes
+Then vulnerabilities are reported and the build fails if critical issues are found
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Use tools like Snyk or Trivy
+
+===========================================
+
+Title: Deploy Docker Images to Staging and Production
+
+User Story: As a DevOps engineer I want Docker images deployed to staging and production So that deployments are containerized and portable
+
+Acceptance Criteria:
+Scenario: Docker image deployment
+Given a Docker image is built
+When deployment is triggered
+Then the image is deployed to the target environment
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: E01
+- Notes: Support rollback capability
+
+===========================================
+
+Title: Enable Rollback Capability for Failed Deployments
+
+User Story: As a DevOps engineer I want rollback capability for failed deployments So that I can quickly restore service
+
+Acceptance Criteria:
+Scenario: Deployment rollback
+Given a deployment fails
+When I trigger a rollback
+Then the previous stable version is restored
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Test rollback in staging
