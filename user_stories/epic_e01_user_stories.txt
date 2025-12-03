@@ -1,0 +1,73 @@
+Epic E01 â Project Scaffolding & Domain Setup
+
+===========================================
+
+Title: Initialize Spring Boot Project Structure
+
+User Story: As a Developer I want to initialize a Spring Boot project with Maven So that I can ensure a standardized foundation for all modules
+
+Acceptance Criteria:
+Scenario: Project Initialization
+Given I have access to the repository
+When I run the Maven initialization command
+Then the project builds and runs on port 8080 with the correct base package structure
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps
+
+===========================================
+
+Title: Configure Core Modules and Packages
+
+User Story: As a Developer I want to set up core modules for employee, scheduling, attendance, and safety So that each domain is separated and maintainable
+
+Acceptance Criteria:
+Scenario: Module Configuration
+Given the project is initialized
+When I create base packages for each core module
+Then each module is accessible and follows the standard structure
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Initialize Spring Boot Project Structure
+- Notes: Enforce package naming conventions
+
+===========================================
+
+Title: Integrate Flyway/Liquibase for DB Migrations
+
+User Story: As a Developer I want to add Flyway or Liquibase for database migrations So that schema changes are versioned and repeatable
+
+Acceptance Criteria:
+Scenario: Baseline Migration
+Given Flyway/Liquibase is configured
+When I run the migration tool
+Then the baseline migration executes successfully and is logged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Configure Core Modules and Packages
+- Notes: Baseline migration must match initial schema
+
+===========================================
+
+Title: Enable Actuator Health Endpoints
+
+User Story: As a System Administrator I want to enable Actuator health endpoints So that I can monitor application health
+
+Acceptance Criteria:
+Scenario: Health Endpoint Check
+Given the application is running
+When I access the /actuator/health endpoint
+Then the response returns UP status
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Initialize Spring Boot Project Structure
+- Notes: Health endpoint must be documented
