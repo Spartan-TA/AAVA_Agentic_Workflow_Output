@@ -1,0 +1,15 @@
+Title: Edit Employee Details
+
+User Story: As an HR manager I want to edit employee details So that I can keep employee information up to date
+
+Acceptance Criteria:
+Scenario: Employee details editing
+Given I am viewing an employee record
+When I update fields and save changes
+Then the employee record should reflect the updated information
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee record creation
+- Notes: Track changes for audit purposes
