@@ -1,0 +1,51 @@
+Title: Create Shift Templates
+User Story: As an HR manager I want to create recurring shift templates so that scheduling is consistent and efficient.
+Acceptance Criteria:
+Scenario: Shift Template Creation
+Given I have HR manager access
+When I submit a new shift template
+Then the template is saved and available for assignment
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, Role-Based Access Control, Time & Attendance
+- Notes: Support for recurring and custom templates.
+
+Title: Assign Shifts to Employees
+User Story: As a supervisor I want to assign shifts to employees so that staffing levels meet operational needs.
+Acceptance Criteria:
+Scenario: Bulk Shift Assignment
+Given a list of employees and available shifts
+When I perform a bulk assignment
+Then employees are scheduled and notified
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Create Shift Templates
+- Notes: Audit entries generated for assignments.
+
+Title: Detect and Prevent Scheduling Conflicts
+User Story: As a scheduler I want the system to detect and prevent scheduling conflicts so that employees are not double-booked or assigned during blackout dates.
+Acceptance Criteria:
+Scenario: Conflict Detection
+Given existing schedules and blackout dates
+When a new shift is assigned
+Then conflicts are detected and prevented
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Assign Shifts to Employees
+- Notes: Include warehouse operation calendar checks.
+
+Title: View Personal Upcoming Shifts
+User Story: As a warehouse worker I want to view my upcoming shifts so that I can plan my work schedule.
+Acceptance Criteria:
+Scenario: Personal Shift View
+Given I am logged in as a worker
+When I access my schedule
+Then my upcoming shifts are displayed
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Assign Shifts to Employees
+- Notes: Role-based visibility for workers.
