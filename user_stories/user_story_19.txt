@@ -1,0 +1,15 @@
+Title: Employee Clock Out
+
+User Story: As an employee I want to clock out at the end of my shift So that my work hours are tracked
+
+Acceptance Criteria:
+Scenario: Successful clock out
+  Given I am logged in and clocked in
+  When I click the clock out button
+  Then my end time should be recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance module
+- Notes: Calculate total hours
