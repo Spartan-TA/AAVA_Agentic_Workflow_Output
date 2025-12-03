@@ -1,0 +1,15 @@
+Title: CI/CD & Deployment Automation
+
+User Story: As a DevOps engineer I want GitHub Actions pipelines for build, test, security scan, Docker image push, and deploy to staging/prod with rollback capability So that releases are automated, reliable, and secure.
+
+Acceptance Criteria:
+Scenario: Automated pipeline execution
+Given code is pushed to the repository
+When the pipeline runs
+Then the code is built, tested, scanned for security, Docker images are pushed, and deployments occur to staging/prod with rollback available on failure.
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E01
+- Notes: Ensure pipeline status notifications and audit logging for deployments.
