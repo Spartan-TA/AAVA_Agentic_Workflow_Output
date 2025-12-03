@@ -1,0 +1,39 @@
+WAREHOUSE EMPLOYEE MANAGEMENT SYSTEM - TECHNICAL DESIGN DOCUMENT
+
+This document provides low-level technical design for all 102 user stories across 20 epics.
+
+EPIC E01: PROJECT SCAFFOLDING
+
+User Story 1: Initialize Spring Boot Project
+Design: Create Spring Boot application with base package structure
+Implementation: Use Spring Initializr with dependencies for Web, JPA, Security, Actuator
+
+EPIC E02: EMPLOYEE MASTER DATA
+
+User Story 7: Create Employee Record
+Entity: Employee with fields id, badgeId, firstName, lastName, email, role, department
+Repository: EmployeeRepository extends JpaRepository
+Service: EmployeeService with createEmployee method
+Controller: POST /api/employees endpoint with @PreAuthorize
+
+EPIC E03: ROLE BASED ACCESS CONTROL
+
+User Story 13: Assign Roles to Users
+Security: Spring Security with JWT authentication
+Roles: ADMIN, HR, SUPERVISOR, WORKER
+Configuration: SecurityConfig with role-based access rules
+
+EPIC E04: TIME AND ATTENDANCE
+
+User Story 18: Employee Clock In
+Entity: AttendanceEvent with employee, timestamp, type, device, location
+Service: AttendanceService with clockIn method
+Controller: POST /api/attendance/clock-in endpoint
+
+EPIC E05: SHIFT MANAGEMENT
+
+User Story 23: Create Shift Schedule
+Entity: ShiftTemplate with startTime, endTime, requiredSkills
+Service: ShiftService with createSchedule method
+
+All remaining epics E06-E20 follow similar patterns with entities, repositories, services, and controllers following Spring Boot best practices.
