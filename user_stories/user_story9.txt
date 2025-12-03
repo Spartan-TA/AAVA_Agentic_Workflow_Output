@@ -1,0 +1,51 @@
+Title: Register Equipment and Assets
+User Story: As an asset manager I want to register scanners, forklifts, and PPE in the system so that all assets are tracked and managed.
+Acceptance Criteria:
+Scenario: Asset Registration
+Given I have asset manager access
+When I add a new asset with required details
+Then the asset is saved in the registry
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee Master Data, Role-Based Access Control, Training & Certification Tracking
+- Notes: Support for asset type, condition, and assignment status.
+
+Title: Assign Assets to Employees
+User Story: As a supervisor I want to assign equipment and PPE to employees so that accountability is maintained.
+Acceptance Criteria:
+Scenario: Asset Assignment
+Given an asset is available and employee is qualified
+When I assign the asset to the employee
+Then the assignment is recorded and history updated
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Register Equipment and Assets
+- Notes: Block assignment if required certification is missing.
+
+Title: Track Asset Checkout and Return
+User Story: As an employee I want to check out and return assets so that usage is logged and overdue returns are flagged.
+Acceptance Criteria:
+Scenario: Asset Checkout/Return
+Given an asset is assigned to me
+When I check out or return the asset
+Then the event is logged and overdue returns are reported
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Assign Assets to Employees
+- Notes: History log visible per asset and employee.
+
+Title: Prevent Use of Assets with Invalid Certification
+User Story: As a supervisor I want to prevent employees from using assets if their certifications are invalid so that safety is enforced.
+Acceptance Criteria:
+Scenario: Certification Validation
+Given an employee with expired or missing certification
+When I attempt to assign or check out an asset
+Then the system blocks the action
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Training & Certification Tracking
+- Notes: Automated validation before assignment.
