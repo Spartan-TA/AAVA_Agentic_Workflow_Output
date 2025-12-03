@@ -1,0 +1,15 @@
+Title: Reporting & Analytics
+
+User Story: As an operations manager I want operational reports (attendance, overtime, leave balances, certification status, safety KPIs) with export options and role-based dashboards So that I can monitor workforce metrics and make informed decisions.
+
+Acceptance Criteria:
+Scenario: Report generation and export
+Given I have access to the reporting module
+When I select a report type and filters
+Then the report is generated and can be exported as CSV or PDF, with dashboard views tailored to my role.
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Ensure data accuracy and timely refresh of dashboard metrics.
