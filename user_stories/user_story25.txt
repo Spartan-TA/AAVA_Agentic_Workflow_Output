@@ -1,0 +1,29 @@
+Title: Support Multiple Warehouses
+User Story: As an admin I want to configure multiple warehouses So that operations can be managed across locations
+Acceptance Criteria:
+Scenario: Add warehouse Given I am an admin When I add a new warehouse Then it is available for scheduling and reporting
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, Shift Management
+- Notes: Warehouse calendars supported
+
+Title: Localization of UI and Notifications
+User Story: As a user I want the UI and notifications to be localized So that I can use the system in my preferred language
+Acceptance Criteria:
+Scenario: Change language Given localization is enabled When I select my language preference Then UI and notifications are displayed accordingly
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Notifications, Announcements
+- Notes: Templates localized
+
+Title: Assign Employees to Warehouses
+User Story: As an HR manager I want to assign employees to specific warehouses So that scheduling and reporting are accurate
+Acceptance Criteria:
+Scenario: Assign warehouse Given an employee profile exists When I assign a warehouse Then the employee is linked for scheduling and reporting
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Employee Master Data, Shift Management
+- Notes: Multi-warehouse support
