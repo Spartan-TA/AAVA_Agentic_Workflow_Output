@@ -1,0 +1,12 @@
+Title: View Personal Upcoming Shifts
+User Story: As a WORKER I want to view my upcoming scheduled shifts So that I can plan my attendance and manage my time
+Acceptance Criteria:
+Scenario: View upcoming shifts
+Given I am logged in as a worker
+When I access my schedule dashboard
+Then I see a list of my upcoming shifts with dates, times, and locations
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04, E05
+- Notes: Dashboard must update in real-time with schedule changes.
