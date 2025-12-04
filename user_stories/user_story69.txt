@@ -1,0 +1,15 @@
+Title: Docker Image Tagging and Automated Staging Deployment
+
+User Story: As a DevOps engineer I want Docker images to be tagged with commit SHA and deployed automatically to staging So that builds are traceable and staging is always up-to-date
+
+Acceptance Criteria:
+Scenario: Docker image tagging and staging deployment
+Given a successful build
+When the pipeline completes
+Then the Docker image is tagged with the commit SHA and deployed to staging automatically
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01
+- Notes: Tagging must be consistent; deployment logs required
