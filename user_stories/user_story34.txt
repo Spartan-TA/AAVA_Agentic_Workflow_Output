@@ -1,0 +1,15 @@
+Title: Asset Check-In/Check-Out Endpoints
+
+User Story: As a warehouse supervisor I want to check out and return equipment and PPE to employees using system endpoints so that asset usage and availability are tracked accurately.
+
+Acceptance Criteria:
+Scenario: Asset check-in/check-out
+Given an asset is available in the registry
+When I assign it to an employee or mark it as returned
+Then the system updates the asset status and logs the transaction
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E02, E03, E07
+- Notes: Supports bulk operations; logs date/time and user for each transaction.
