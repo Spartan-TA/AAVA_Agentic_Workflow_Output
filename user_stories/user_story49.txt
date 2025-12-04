@@ -1,0 +1,15 @@
+Title: IDP SSO Integration and Event Webhooks
+
+User Story: As a system administrator I want to enable SSO via IDP and expose webhooks for key events So that users can log in securely and external systems can react to changes
+
+Acceptance Criteria:
+Scenario: SSO and webhook event delivery
+Given a user attempts to log in or a key event occurs
+When the IDP integration is configured and a webhook is subscribed
+Then SSO is available and webhooks are delivered idempotently with JWT/OAuth2 security
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E01, E02, E03
+- Notes: Webhooks must be documented and support retries
