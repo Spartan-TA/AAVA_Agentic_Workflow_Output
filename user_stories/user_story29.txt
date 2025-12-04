@@ -1,0 +1,15 @@
+Title: Record Safety Incidents
+
+User Story: As a safety officer I want to record safety incidents and near-misses with required fields so that we can track, investigate, and report workplace safety issues.
+
+Acceptance Criteria:
+Scenario: Incident record creation
+Given I am on the safety incident entry form
+When I submit incident details including severity, location, description, and involved employees
+Then the system validates required fields and saves the incident
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Validation for mandatory fields; supports attachments.
