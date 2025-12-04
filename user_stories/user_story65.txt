@@ -1,0 +1,15 @@
+Title: Structured Logging and TraceId Inclusion
+
+User Story: As a DevOps engineer I want all logs to be structured in JSON format and include traceId So that distributed tracing and troubleshooting are efficient
+
+Acceptance Criteria:
+Scenario: Structured log entry
+Given an application event occurs
+When the event is logged
+Then the log entry is in JSON format and includes a traceId
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E01
+- Notes: Logging must support OpenTelemetry standards
