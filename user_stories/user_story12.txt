@@ -1,0 +1,12 @@
+Title: Clock-In Event Recording
+User Story: As a WORKER I want to clock in at the start of my shift So that my attendance and hours worked are accurately tracked
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am scheduled for a shift and on the clock-in page
+When I submit a clock-in event with valid device and (optional) geofence
+Then my clock-in is recorded, associated with my shift, and reflected in daily totals
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Device and geofence validation must be logged for audit.
