@@ -1,0 +1,29 @@
+Title: Assign Equipment to Employee
+User Story: As a supervisor I want to assign equipment and PPE to employees So that accountability and safety are maintained
+Acceptance Criteria:
+Scenario: Assign equipment Given an employee is qualified and available When I assign equipment Then the asset is checked out and linked to the employee
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC, Certification Tracking
+- Notes: Blocks assignment if certs invalid
+
+Title: Track Asset Condition
+User Story: As a warehouse manager I want to track the condition of assets So that maintenance and replacement needs are identified
+Acceptance Criteria:
+Scenario: Update asset condition Given an asset is checked in When I update its condition Then the status is logged and visible in the registry
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Employee Master Data, RBAC
+- Notes: History log per asset
+
+Title: Report Overdue Asset Returns
+User Story: As a supervisor I want to report overdue asset returns So that assets are recovered and accountability is enforced
+Acceptance Criteria:
+Scenario: Overdue report Given assets are checked out past due When I generate a report Then overdue items and responsible employees are listed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Employee Master Data, RBAC
+- Notes: Automated notifications
