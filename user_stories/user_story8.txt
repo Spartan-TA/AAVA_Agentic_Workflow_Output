@@ -1,0 +1,12 @@
+Title: Supervisor Team Access
+User Story: As a SUPERVISOR I want to access and manage records only for my assigned team So that I can ensure privacy and compliance for other teams
+Acceptance Criteria:
+Scenario: Supervisor accesses team records
+Given I am logged in as SUPERVISOR
+When I attempt to view or edit records outside my team
+Then I should receive a 403 Forbidden error
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Row-level security must be enforced for all endpoints.
