@@ -1,0 +1,13 @@
+Title: Implement Row-Level Security Constraints
+
+User Story: As a supervisor I want to access only the employee records for my team So that privacy is maintained and data access is limited to my scope
+
+Acceptance Criteria:
+Scenario: Row-level data access
+Given a supervisor is logged in When they query employee records Then only employees assigned to their team are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Role-based endpoint security (E03), Employee domain (E02)
+- Notes: Ensure row-level constraints are enforced and tested
