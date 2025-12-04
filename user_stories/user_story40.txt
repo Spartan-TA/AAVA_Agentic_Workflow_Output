@@ -1,0 +1,15 @@
+Title: Role-Based Visibility and Immutable Review History
+
+User Story: As an HR manager I want completed performance reviews to be visible only to authorized roles and immutable after sign-off so that confidentiality and auditability are maintained.
+
+Acceptance Criteria:
+Scenario: Review visibility and immutability
+Given a review is signed off by both employee and supervisor
+When I view the review as an authorized user
+Then the review is visible and cannot be edited or deleted
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E02, E03
+- Notes: Access control enforced by role; audit log for all actions.
