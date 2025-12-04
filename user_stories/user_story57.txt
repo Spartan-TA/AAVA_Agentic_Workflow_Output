@@ -1,0 +1,15 @@
+Title: Mobile Schedule Viewing and Leave Request
+
+User Story: As a warehouse worker I want to view my schedule and request leave from my mobile device So that I can manage my work-life balance conveniently
+
+Acceptance Criteria:
+Scenario: Mobile schedule and leave request
+Given I have installed the PWA
+When I access my schedule or submit a leave request
+Then the information is displayed responsively and leave requests are queued offline if needed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E04, E05, E06, E12
+- Notes: Must support offline queue and conflict resolution
