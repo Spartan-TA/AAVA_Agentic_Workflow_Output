@@ -1,0 +1,12 @@
+Title: API Key and OAuth2 Security Toggle
+User Story: As a system administrator I want to configure authentication via API key or OAuth2 So that I can meet security requirements for different environments
+Acceptance Criteria:
+Scenario: Toggle authentication method
+Given I am in the system configuration panel
+When I select API key or OAuth2 and save changes
+Then all endpoints should enforce the selected method and unauthorized requests return 401
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02, E03
+- Notes: Method/endpoint security must be covered by automated tests.
