@@ -1,0 +1,12 @@
+Title: Admin Role Management
+User Story: As an ADMIN I want to manage all employee records So that I can maintain accurate and secure data across the organization
+Acceptance Criteria:
+Scenario: Admin manages records
+Given I am logged in as ADMIN
+When I access any employee record and perform create, update, or delete actions
+Then the action should succeed and be logged in the audit trail
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Ensure all endpoints are covered by role checks and audit logging.
