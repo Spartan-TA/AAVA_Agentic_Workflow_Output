@@ -1,0 +1,15 @@
+Title: HRIS REST API and Employee Sync
+
+User Story: As an HR manager I want a secure REST API to sync new hires and terminations from the HRIS So that employee data is always up-to-date in the system
+
+Acceptance Criteria:
+Scenario: Employee sync via HRIS API
+Given a new hire or termination event in the HRIS
+When the sync job runs
+Then the employee record is created or updated in the system and the API is secured with JWT/OAuth2
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E01, E02, E03
+- Notes: API must be documented in OpenAPI format
