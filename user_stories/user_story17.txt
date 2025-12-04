@@ -1,0 +1,12 @@
+Title: Bulk Shift Assignment and Conflict Detection
+User Story: As a SUPERVISOR I want to assign shifts to multiple workers and detect scheduling conflicts So that I can efficiently manage team schedules and avoid overlaps
+Acceptance Criteria:
+Scenario: Bulk assign shifts
+Given I am on the shift assignment page
+When I select multiple workers and assign shifts
+Then any conflicts are detected and prevented, and audit entries are generated
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03, E04, E05
+- Notes: Audit trail must log all bulk assignments and conflict resolutions.
