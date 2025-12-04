@@ -1,0 +1,15 @@
+Title: CI/CD Pipeline on Every PR
+
+User Story: As a developer I want a CI/CD pipeline to run build, test, and security scan on every pull request So that code quality and security are maintained before merging
+
+Acceptance Criteria:
+Scenario: CI/CD pipeline execution
+Given a pull request is opened
+When the pipeline runs
+Then build, test, and security scan complete successfully before merge
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E01
+- Notes: Pipeline must use GitHub Actions or Jenkins
