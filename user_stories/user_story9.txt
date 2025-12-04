@@ -1,0 +1,13 @@
+Title: Enforce Method-Level Security
+
+User Story: As a developer I want to enforce method-level security based on user roles So that only authorized users can perform sensitive actions within the application
+
+Acceptance Criteria:
+Scenario: Method security enforcement
+Given a secured method When a user with insufficient privileges calls the method Then access is denied and a 403 error is returned
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role-based endpoint security (E03)
+- Notes: Cover all sensitive methods with security annotations and tests
