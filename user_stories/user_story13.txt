@@ -1,0 +1,29 @@
+Title: Request Leave
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that my time off is tracked and approved
+Acceptance Criteria:
+Scenario: Request leave Given I am logged in When I submit a leave request Then my supervisor is notified for approval
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC, Shift Management
+- Notes: Leave types and balances enforced
+
+Title: Approve/Deny Leave
+User Story: As a supervisor I want to approve or deny leave requests So that staffing plans remain accurate
+Acceptance Criteria:
+Scenario: Approve leave Given a pending leave request When I approve or deny Then the employee's leave balance and schedule are updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC, Shift Management
+- Notes: Scheduled shifts auto-flagged for coverage
+
+Title: Export Approved Leaves
+User Story: As an HR manager I want to export approved leaves So that payroll and compliance reports are accurate
+Acceptance Criteria:
+Scenario: Export leaves Given approved leave records exist When I export leaves Then a report is generated showing all approved leaves and coverage status
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Employee Master Data, RBAC, Shift Management
+- Notes: Export includes leave type, dates, and approval status
