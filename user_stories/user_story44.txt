@@ -1,0 +1,15 @@
+Title: Shift Change Notification
+
+User Story: As an employee I want to receive notifications for shift changes via my preferred channel So that I am always aware of updates to my schedule
+
+Acceptance Criteria:
+Scenario: Shift change notification delivery
+Given my shift has been changed
+When the change is approved
+Then I receive a notification via my selected channel (in-app, email, SMS) and delivery status is tracked
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E03, E05, E06, E07
+- Notes: Users can opt-in/out per channel; templates must be localized
