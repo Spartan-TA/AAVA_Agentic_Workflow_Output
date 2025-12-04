@@ -1,0 +1,16 @@
+Title: Set Up Flyway/Liquibase for DB Migrations
+
+User Story: As a backend developer I want to configure Flyway or Liquibase for database migrations So that schema changes are versioned and applied consistently across environments
+
+Acceptance Criteria:
+Scenario: Baseline migration setup
+Given the project is initialized
+When Flyway or Liquibase is configured
+Then the baseline migration runs successfully on application startup
+And the database schema is created as per initial requirements
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: user_story1.txt, user_story2.txt
+- Notes: Document migration process in README
