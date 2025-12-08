@@ -1,0 +1,51 @@
+Title: Request Leave
+
+User Story: As a Warehouse Worker I want to request PTO, sick, or unpaid leave So that my absence is recorded and approved
+
+Acceptance Criteria:
+Scenario: Request leave
+Given leave balances
+When I submit a leave request
+Then my supervisor should be notified for approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD APIs (E02), RBAC (E03), Shift Management (E05)
+- Notes: Show available balances
+
+---
+
+Title: Approve Leave Requests
+
+User Story: As a Supervisor I want to approve or reject leave requests So that staffing levels are maintained
+
+Acceptance Criteria:
+Scenario: Approve leave
+Given a pending leave request
+When I approve it
+Then the employee's schedule and leave balance should be updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave Request
+- Notes: Track approval history
+
+---
+
+Title: Accrual Policy Management
+
+User Story: As an HR Manager I want to configure leave accrual policies So that leave balances are updated automatically
+
+Acceptance Criteria:
+Scenario: Accrual policy setup
+Given policy details
+When I configure accrual rules
+Then leave balances should update per policy
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave Request
+- Notes: Support multiple accrual types
