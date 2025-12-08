@@ -1,0 +1,20 @@
+Title: Enable Actuator Health Endpoints
+
+User Story: As a DevOps engineer I want to enable Spring Boot Actuator health endpoints So that I can monitor the application's health status in production
+
+Acceptance Criteria:
+Scenario: Health endpoint enabled
+  Given the application is running
+  When I access /actuator/health
+  Then the endpoint should return status UP if the app is healthy
+
+Scenario: Health endpoint documentation
+  Given the README is available
+  When I review the documentation
+  Then instructions for accessing and using the health endpoint are included
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: user_story_1.txt
+- Notes: Ensure only necessary Actuator endpoints are exposed for security
