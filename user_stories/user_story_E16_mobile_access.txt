@@ -1,0 +1,51 @@
+Title: Mobile Clock In/Out
+
+User Story: As a Warehouse Worker I want to clock in and out from my mobile device So that I can record attendance conveniently
+
+Acceptance Criteria:
+Scenario: Mobile clock in
+Given I am using a mobile device
+When I access the clock-in feature
+Then I should be able to clock in with location capture
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Attendance (E04), Shift Management (E05), Leave Management (E06), Notifications (E12)
+- Notes: Responsive design
+
+---
+
+Title: Offline PWA Support
+
+User Story: As a Warehouse Worker I want the app to work offline So that I can clock in even without internet connectivity
+
+Acceptance Criteria:
+Scenario: Offline clock in
+Given I am offline
+When I clock in
+Then the event should be queued and synced when online
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Mobile Clock In/Out
+- Notes: Conflict resolution required
+
+---
+
+Title: View Schedule on Mobile
+
+User Story: As a Warehouse Worker I want to view my schedule on mobile So that I know my upcoming shifts
+
+Acceptance Criteria:
+Scenario: Schedule view
+Given I am logged in on mobile
+When I access my schedule
+Then I should see my upcoming shifts
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Shift Management (E05)
+- Notes: Calendar view
