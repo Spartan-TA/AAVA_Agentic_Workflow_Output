@@ -1,0 +1,15 @@
+Title: Restrict Supervisor Access to Team Records
+
+User Story: As a SUPERVISOR I want to access only my team's employee records So that I can manage my team without viewing unrelated data
+
+Acceptance Criteria:
+Scenario: SUPERVISOR requests employee data
+Given I am logged in as SUPERVISOR
+When I request employee records
+Then I should only see employees assigned to my team
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Row-level security enforced for SUPERVISOR role
