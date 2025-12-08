@@ -1,0 +1,33 @@
+Title: Automate New Hire Onboarding
+
+User Story: As an HR Manager I want to automate provisioning of accounts and initial schedules for new hires So that onboarding is efficient
+
+Acceptance Criteria:
+Scenario: New hire provisioning
+Given a new hire record from HRIS
+When the record is synced
+Then accounts, initial schedule, and training tasks should be created
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee CRUD APIs (E02), RBAC (E03), Shift Management (E05), Certification Tracking (E07), Equipment Assignment (E09), Integration Layer (E13)
+- Notes: Trigger from HRIS webhook
+
+---
+
+Title: Offboarding Workflow
+
+User Story: As an HR Manager I want to automate offboarding tasks So that access is revoked and assets are collected
+
+Acceptance Criteria:
+Scenario: Employee termination
+Given an employee termination
+When the offboarding workflow is triggered
+Then access should be revoked, assets collected, and schedules updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee CRUD APIs (E02), RBAC (E03), Equipment Assignment (E09)
+- Notes: Generate offboarding checklist
