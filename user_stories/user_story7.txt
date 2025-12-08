@@ -1,0 +1,15 @@
+Title: Secure Endpoint Access by Role
+
+User Story: As an ADMIN I want to access all employee management endpoints So that I can perform administrative tasks securely
+
+Acceptance Criteria:
+Scenario: ADMIN accesses restricted endpoint
+Given I am logged in as ADMIN
+When I request any employee management endpoint
+Then I should receive a successful response and access all data
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Ensure endpoint security is enforced via Spring Security roles
