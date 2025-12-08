@@ -1,0 +1,65 @@
+EPIC 07: TRAINING & CERTIFICATION TRACKING
+
+===========================================
+
+Title: Track Employee Certifications
+User Story: As a supervisor I want to track employee certifications and expirations So that only qualified staff are assigned to tasks
+Acceptance Criteria:
+Scenario: Certification CRUD
+Given certification data
+When I add, update, or remove a certification
+Then the employee profile reflects the current status
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC
+- Notes: Block assignment if expired
+
+---
+
+Title: Alert on Expiring Certifications
+User Story: As an employee I want to receive alerts before my certifications expire So that I can renew them in time
+Acceptance Criteria:
+Scenario: Certification expiry alert
+Given a certification nearing expiry
+When the threshold is reached (30/7 days)
+Then an alert is sent to the employee
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Track Employee Certifications
+- Notes: Alerts via in-app/email/SMS
+
+---
+
+Title: Block Unqualified Assignments
+User Story: As a scheduler I want to block assignment of tasks to employees with expired certifications So that safety and compliance are maintained
+Acceptance Criteria:
+Scenario: Assignment validation
+Given an expired certification
+When I assign a task requiring certification
+Then the system blocks the assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Track Employee Certifications
+- Notes: Scheduling checks required
+
+---
+
+Title: Upload Certification Proof Documents
+User Story: As an employee I want to upload proof documents for certifications So that compliance records are complete
+Acceptance Criteria:
+Scenario: Document upload
+Given a valid certification
+When I upload a proof document
+Then the document is stored and linked to the certification
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Track Employee Certifications
+- Notes: File type validation
