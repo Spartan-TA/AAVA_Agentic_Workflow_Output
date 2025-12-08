@@ -1,0 +1,51 @@
+Title: Track Certifications
+
+User Story: As a Supervisor I want to track employee certifications and expirations So that only qualified staff are assigned to tasks
+
+Acceptance Criteria:
+Scenario: Certification tracking
+Given employee certification data
+When a certification expires
+Then the employee should be flagged for renewal
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD APIs (E02), RBAC (E03)
+- Notes: Block assignment for expired certs
+
+---
+
+Title: Certification Renewal Workflow
+
+User Story: As a Warehouse Worker I want to submit certification renewal requests So that my qualifications remain valid
+
+Acceptance Criteria:
+Scenario: Renewal request
+Given an expiring certification
+When I submit a renewal request
+Then HR should be notified for processing
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification Tracking
+- Notes: Track renewal status
+
+---
+
+Title: Block Assignment for Expired Certifications
+
+User Story: As a Supervisor I want to prevent assignment of tasks to employees with expired certifications So that compliance is maintained
+
+Acceptance Criteria:
+Scenario: Assignment blocked
+Given an expired certification
+When I try to assign a task
+Then the system should prevent the assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Certification Tracking
+- Notes: Alert supervisor
