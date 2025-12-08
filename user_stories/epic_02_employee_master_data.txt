@@ -1,0 +1,65 @@
+EPIC 02: EMPLOYEE MASTER DATA (CRUD)
+
+===========================================
+
+Title: Create Employee CRUD API
+User Story: As an HR user I want to create, read, update, and delete employee records So that I can manage employee master data
+Acceptance Criteria:
+Scenario: Employee CRUD operations
+Given I am authenticated as HR
+When I perform POST/GET/PUT/PATCH/DELETE on /employees
+Then the operations succeed and data is persisted
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project Scaffolding & Domain Setup
+- Notes: OpenAPI schemas must be provided
+
+---
+
+Title: Enforce Unique Badge ID
+User Story: As an HR user I want to ensure each employee has a unique badge ID So that duplicate records are prevented
+Acceptance Criteria:
+Scenario: Badge ID uniqueness
+Given I am creating a new employee
+When I enter a badge ID that already exists
+Then the system rejects the entry with an error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Error message must be clear
+
+---
+
+Title: Support Soft-Delete for Employees
+User Story: As an HR user I want to soft-delete employee records So that historical data is retained for compliance
+Acceptance Criteria:
+Scenario: Soft-delete operation
+Given an employee exists
+When I delete the employee
+Then the status is updated to inactive and record remains in the database
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Soft-deleted employees excluded from active lists
+
+---
+
+Title: Implement Pagination and Filtering
+User Story: As an HR user I want to paginate and filter employee records So that I can efficiently manage large datasets
+Acceptance Criteria:
+Scenario: Pagination and filtering
+Given there are many employees
+When I request a paginated and filtered list
+Then the response contains only the requested subset
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee CRUD API
+- Notes: Filtering by department, role, status
