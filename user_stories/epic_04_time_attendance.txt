@@ -1,0 +1,65 @@
+EPIC 04: TIME & ATTENDANCE (CLOCK IN/OUT)
+
+===========================================
+
+Title: Clock In/Out with Geofence
+User Story: As a WORKER I want to clock in and out with geofence validation So that attendance is accurately recorded
+Acceptance Criteria:
+Scenario: Clock in with geofence
+Given I am at the warehouse location
+When I clock in
+Then my location is validated and attendance is recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD API, Role-Based Access Control
+- Notes: Geofence optional, device capture required
+
+---
+
+Title: Calculate Hours Worked per Shift
+User Story: As a SUPERVISOR I want to view hours worked per shift for each employee So that payroll and compliance are accurate
+Acceptance Criteria:
+Scenario: Shift hours calculation
+Given attendance records exist
+When I view shift details
+Then total hours worked are displayed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock In/Out
+- Notes: Automatic shift association
+
+---
+
+Title: Handle Missed Punches and Corrections
+User Story: As a WORKER I want to request corrections for missed punches So that my attendance record is accurate
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch is detected
+When I submit a correction request
+Then an approval task is created for my supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Clock In/Out
+- Notes: Corrections must be tracked
+
+---
+
+Title: Export Attendance Reports
+User Story: As an HR user I want to export attendance reports in CSV format So that I can process payroll and audits
+Acceptance Criteria:
+Scenario: Attendance report export
+Given attendance data exists
+When I request an export
+Then a CSV file is generated with daily totals
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Clock In/Out
+- Notes: Export must match report schema
