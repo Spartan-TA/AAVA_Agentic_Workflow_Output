@@ -1,0 +1,12 @@
+Title: Configure Core Modules
+User Story: As a developer I want to set up core modules for employee, scheduling, attendance, and safety So that each domain is isolated and maintainable from the start
+Acceptance Criteria:
+Scenario: Core module configuration
+Given the project is initialized
+When I create base packages for each module
+Then the package structure should reflect separation of concerns and allow for future expansion
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: Modules should follow naming conventions and be documented in the README.
