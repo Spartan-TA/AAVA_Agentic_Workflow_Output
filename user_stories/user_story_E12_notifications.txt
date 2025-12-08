@@ -1,0 +1,51 @@
+Title: Notify Shift Changes
+
+User Story: As a Warehouse Worker I want to receive notifications for shift changes So that I am aware of my updated schedule
+
+Acceptance Criteria:
+Scenario: Shift change notification
+Given a shift is updated
+When the change is saved
+Then affected employees should receive notifications
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Shift Management (E05), Notification System
+- Notes: Support in-app and email/SMS
+
+---
+
+Title: Notify Expiring Certifications
+
+User Story: As a Warehouse Worker I want to be notified when my certifications are expiring So that I can renew them in time
+
+Acceptance Criteria:
+Scenario: Certification expiry notification
+Given a certification is nearing expiry
+When the threshold is reached
+Then the employee should receive a notification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Certification Tracking (E07), Notification System
+- Notes: Notify supervisor as well
+
+---
+
+Title: Announcements to Employees
+
+User Story: As an HR Manager I want to send announcements to all employees So that important information is communicated
+
+Acceptance Criteria:
+Scenario: Announcement delivery
+Given an announcement is created
+When I send it
+Then all employees should receive notifications
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Notification System
+- Notes: Support attachments
