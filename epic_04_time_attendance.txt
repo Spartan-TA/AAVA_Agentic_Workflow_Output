@@ -1,0 +1,65 @@
+EPIC 04: TIME & ATTENDANCE (CLOCK IN/OUT)
+
+===========================================
+
+Title: Clock-In/Out Endpoints
+User Story: As a warehouse worker I want to clock in and out via endpoints So that my attendance is accurately tracked
+Acceptance Criteria:
+Scenario: Clock-in/out event
+Given a valid employee and device
+When I submit a clock-in or clock-out request
+Then the event is recorded with timestamp and device info
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC
+- Notes: Geofence optional
+
+---
+
+Title: Calculate Hours Worked Per Shift
+User Story: As a supervisor I want the system to calculate hours worked per shift So that payroll and compliance are accurate
+Acceptance Criteria:
+Scenario: Shift hours calculation
+Given clock-in and clock-out events
+When the shift ends
+Then total hours worked are computed and stored
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock-In/Out Endpoints
+- Notes: Handle overnight shifts
+
+---
+
+Title: Handle Missed Punches and Corrections
+User Story: As a worker I want to request corrections for missed punches So that my attendance records are accurate
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch
+When I submit a correction request
+Then an approval task is generated for my supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock-In/Out Endpoints
+- Notes: Approval workflow required
+
+---
+
+Title: Export Attendance Reports
+User Story: As an HR manager I want to export attendance reports in CSV format So that I can analyze and share attendance data
+Acceptance Criteria:
+Scenario: Attendance report export
+Given attendance data
+When I request an export
+Then a CSV file is generated with daily totals
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Clock-In/Out Endpoints
+- Notes: Include shift association
