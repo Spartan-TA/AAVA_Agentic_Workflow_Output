@@ -1,0 +1,20 @@
+Title: Provide Developer Onboarding Documentation
+
+User Story: As a new developer I want clear onboarding documentation So that I can quickly set up the project and understand the codebase structure
+
+Acceptance Criteria:
+Scenario: README includes setup steps
+  Given I have access to the repository
+  When I open the README
+  Then I should find instructions for building, running, and testing the project
+
+Scenario: Codebase overview
+  Given I am reviewing the documentation
+  When I look for module descriptions
+  Then I should find a summary of each core module (employee, scheduling, attendance, safety)
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story_1.txt
+- Notes: Keep documentation up to date with code changes
