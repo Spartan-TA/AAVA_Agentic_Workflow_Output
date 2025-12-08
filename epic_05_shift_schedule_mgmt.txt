@@ -1,0 +1,65 @@
+EPIC 05: SHIFT & SCHEDULE MANAGEMENT
+
+===========================================
+
+Title: Create Shift Templates
+User Story: As an HR manager I want to create recurring shift templates So that scheduling is efficient and consistent
+Acceptance Criteria:
+Scenario: Shift template CRUD
+Given shift template data
+When I create, update, or delete a template
+Then the template is stored and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC, Attendance
+- Notes: Support rotations and overtime rules
+
+---
+
+Title: Assign Shifts to Employees
+User Story: As a supervisor I want to assign shifts to employees So that coverage is ensured for warehouse operations
+Acceptance Criteria:
+Scenario: Shift assignment
+Given available shift templates
+When I assign shifts to employees
+Then assignments are validated and conflicts prevented
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift Templates
+- Notes: Bulk-assign supported
+
+---
+
+Title: Detect and Prevent Schedule Conflicts
+User Story: As a scheduler I want the system to detect and prevent scheduling conflicts So that employees are not double-booked
+Acceptance Criteria:
+Scenario: Conflict detection
+Given existing assignments
+When I assign a new shift
+Then the system checks for conflicts and blocks invalid assignments
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift Templates, Assign Shifts
+- Notes: Audit entries generated
+
+---
+
+Title: Personal Upcoming Shifts View
+User Story: As a worker I want to view my upcoming shifts So that I can plan my work schedule
+Acceptance Criteria:
+Scenario: Upcoming shifts display
+Given assigned shifts
+When I access my schedule
+Then my personal upcoming shifts are listed
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Shift Templates, Assign Shifts
+- Notes: Accessible via web/mobile
