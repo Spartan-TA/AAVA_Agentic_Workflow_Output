@@ -1,0 +1,65 @@
+EPIC 03: ROLE-BASED ACCESS CONTROL (RBAC)
+
+===========================================
+
+Title: Implement Role-Based Access Control
+User Story: As a system administrator I want to restrict access to endpoints based on user roles So that sensitive data and actions are protected
+Acceptance Criteria:
+Scenario: Endpoint security by role
+Given a user with a specific role
+When the user accesses an endpoint
+Then permissions are enforced and unauthorized actions return 401/403
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project Scaffolding, Employee CRUD
+- Notes: Roles: ADMIN, HR, SUPERVISOR, WORKER
+
+---
+
+Title: Row-Level Security for Employee Data
+User Story: As a supervisor I want to access only my team's employee records So that privacy and security are maintained
+Acceptance Criteria:
+Scenario: Row-level data access
+Given a supervisor user
+When accessing employee records
+Then only records for their team are visible
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role-Based Access Control
+- Notes: Enforce via query filters
+
+---
+
+Title: API Key/OAuth2 Toggle
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication So that I can adapt security to organizational needs
+Acceptance Criteria:
+Scenario: Authentication mode switch
+Given the configuration setting
+When I change the auth mode
+Then endpoints require the selected authentication method
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role-Based Access Control
+- Notes: Document configuration steps
+
+---
+
+Title: Security Rules Test Coverage
+User Story: As a QA engineer I want automated tests for security rules So that access control is reliably enforced
+Acceptance Criteria:
+Scenario: Security tests run
+Given defined security rules
+When I run the test suite
+Then all rules are validated and unauthorized actions are blocked
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role-Based Access Control
+- Notes: Use integration tests
