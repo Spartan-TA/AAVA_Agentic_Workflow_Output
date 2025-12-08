@@ -1,0 +1,333 @@
+EPIC 16: MOBILE ACCESS (PWA)
+
+===========================================
+
+Title: Mobile Clock-In/Out
+User Story: As a worker I want to clock in and out from my mobile device So that I can record attendance conveniently
+Acceptance Criteria:
+Scenario: Mobile clock-in/out
+Given I have a mobile device
+When I access the PWA and clock in/out
+Then my attendance is recorded in real time
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Attendance module, PWA
+- Notes: Offline support
+
+---
+
+Title: View Schedule on Mobile
+User Story: As a worker I want to view my schedule on my mobile device So that I can plan my work
+Acceptance Criteria:
+Scenario: Mobile schedule view
+Given I am logged into the PWA
+When I navigate to my schedule
+Then my upcoming shifts are displayed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Scheduling module
+- Notes: Responsive design
+
+---
+
+Title: Request Leave via Mobile
+User Story: As a worker I want to request leave from my mobile device So that I can manage time off easily
+Acceptance Criteria:
+Scenario: Mobile leave request
+Given I am logged into the PWA
+When I submit a leave request
+Then my request is recorded and routed for approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave module
+- Notes: Push notification on status
+
+---
+
+Title: Offline Access to Announcements
+User Story: As a worker I want to view announcements even when offline So that I stay informed at all times
+Acceptance Criteria:
+Scenario: Offline announcement access
+Given I have previously accessed announcements
+When I am offline
+Then I can still view cached announcements
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: PWA caching
+- Notes: Sync when online
+
+
+===========================================
+EPIC 17: ONBOARDING & OFFBOARDING WORKFLOW
+===========================================
+
+Title: Automated Account Provisioning
+User Story: As an HR manager I want new employee accounts provisioned automatically So that onboarding is efficient
+Acceptance Criteria:
+Scenario: Account provisioning
+Given a new hire is added
+When onboarding is initiated
+Then user accounts are created with appropriate permissions
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: HRIS integration
+- Notes: Notify IT on completion
+
+---
+
+Title: Assign Initial Schedule on Onboarding
+User Story: As an HR manager I want initial schedules assigned during onboarding So that new hires know when to start
+Acceptance Criteria:
+Scenario: Initial schedule assignment
+Given onboarding is in progress
+When the new hire is provisioned
+Then an initial schedule is assigned and communicated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Scheduling module
+- Notes: Notify supervisor
+
+---
+
+Title: Required Training Assignment
+User Story: As an HR manager I want required training assigned during onboarding So that compliance is ensured
+Acceptance Criteria:
+Scenario: Training assignment
+Given onboarding is initiated
+When the new hire is provisioned
+Then required training modules are assigned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Training module
+- Notes: Track completion
+
+---
+
+Title: Automated Deprovisioning on Termination
+User Story: As an HR manager I want accounts and assets deprovisioned automatically on termination So that security is maintained
+Acceptance Criteria:
+Scenario: Deprovisioning
+Given an employee is terminated
+When offboarding is initiated
+Then user accounts and asset access are revoked
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: IT asset management
+- Notes: Log all actions
+
+
+===========================================
+EPIC 18: LOCALIZATION & MULTI-TENANT
+===========================================
+
+Title: Locale-Specific Date/Time Formatting
+User Story: As a user I want date and time displayed in my local format So that information is clear and familiar
+Acceptance Criteria:
+Scenario: Locale date/time
+Given my locale is set
+When I view dates/times
+Then they are formatted per my region
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Localization library
+- Notes: Support all active regions
+
+---
+
+Title: Multi-Tenant Data Isolation
+User Story: As a system admin I want tenant data to be isolated So that each warehouse/region's data is secure and private
+Acceptance Criteria:
+Scenario: Data isolation
+Given multiple tenants exist
+When users access data
+Then they only see data for their tenant
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Database architecture
+- Notes: Enforce at all layers
+
+---
+
+Title: Language Selection Support
+User Story: As a user I want to select my preferred language So that I can use the app comfortably
+Acceptance Criteria:
+Scenario: Language selection
+Given multiple languages are supported
+When I choose a language
+Then the UI updates to my preference
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Translation files
+- Notes: Cover all major languages
+
+---
+
+Title: Tenant-Specific Configuration
+User Story: As a system admin I want each tenant to have custom configuration So that regional requirements are met
+Acceptance Criteria:
+Scenario: Tenant config
+Given multiple tenants
+When I update configuration for one
+Then only that tenant is affected
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Config management
+- Notes: Support custom branding
+
+
+===========================================
+EPIC 19: OBSERVABILITY & MONITORING
+===========================================
+
+Title: Integrate Prometheus Metrics
+User Story: As a DevOps engineer I want application metrics exposed to Prometheus So that I can monitor system health
+Acceptance Criteria:
+Scenario: Prometheus integration
+Given Prometheus is configured
+When the app is running
+Then metrics are available for scraping
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Prometheus setup
+- Notes: Include custom business metrics
+
+---
+
+Title: Structured JSON Logging
+User Story: As a developer I want logs in structured JSON format So that log analysis is easier
+Acceptance Criteria:
+Scenario: JSON logging
+Given the app is running
+When events occur
+Then logs are written in JSON format
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Logging library
+- Notes: Include request IDs
+
+---
+
+Title: Distributed Tracing with Jaeger
+User Story: As a DevOps engineer I want distributed tracing enabled via Jaeger So that I can troubleshoot performance issues
+Acceptance Criteria:
+Scenario: Jaeger tracing
+Given Jaeger is integrated
+When requests flow through services
+Then traces are recorded and viewable in Jaeger
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Jaeger setup
+- Notes: Trace all critical paths
+
+---
+
+Title: Alerting for Critical Errors
+User Story: As a DevOps engineer I want alerts for critical errors So that I can respond quickly to issues
+Acceptance Criteria:
+Scenario: Error alerting
+Given a critical error occurs
+When it is logged
+Then an alert is sent to the on-call team
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Alerting system
+- Notes: Integrate with Slack/Email
+
+
+===========================================
+EPIC 20: DEPLOYMENT & CI/CD
+===========================================
+
+Title: Dockerize Application
+User Story: As a developer I want the application packaged in Docker containers So that deployment is consistent across environments
+Acceptance Criteria:
+Scenario: Docker packaging
+Given application code
+When I build the Docker image
+Then the app runs in a container with all dependencies
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Dockerfile
+- Notes: Multi-stage builds
+
+---
+
+Title: Kubernetes Manifests for Deployment
+User Story: As a DevOps engineer I want Kubernetes manifests for app deployment So that scaling and management are automated
+Acceptance Criteria:
+Scenario: Kubernetes deployment
+Given manifests are created
+When I apply them
+Then the app is deployed to the cluster
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Kubernetes setup
+- Notes: Include resource limits
+
+---
+
+Title: CI/CD Pipeline with GitHub Actions
+User Story: As a developer I want a CI/CD pipeline using GitHub Actions So that builds, tests, and deployments are automated
+Acceptance Criteria:
+Scenario: CI/CD pipeline
+Given code changes are pushed
+When the pipeline runs
+Then builds, tests, and deployments are executed automatically
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: GitHub Actions
+- Notes: Notify on failure
+
+---
+
+Title: Blue-Green or Canary Deployment Strategy
+User Story: As a DevOps engineer I want blue-green or canary deployment options So that releases are safe and rollback is easy
+Acceptance Criteria:
+Scenario: Safe deployment
+Given a new release
+When deployment is triggered
+Then traffic is routed per strategy and rollback is possible
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Load balancer
+- Notes: Document rollback procedure
