@@ -1,0 +1,74 @@
+Title: Clock In/Out Event Capture
+
+User Story: As a Warehouse Worker I want to clock in and out using my device So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Clock in
+Given I am at the warehouse
+When I clock in using the app
+Then my clock-in time and location should be recorded
+
+Scenario: Clock out
+Given I am clocked in
+When I clock out
+Then my clock-out time and location should be recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD APIs (E02), RBAC (E03)
+- Notes: Capture device info
+
+---
+
+Title: Geofence Validation for Attendance
+
+User Story: As a Supervisor I want to ensure clock-in/out events occur within the warehouse geofence So that only valid attendance is recorded
+
+Acceptance Criteria:
+Scenario: Geofence validation
+Given a clock-in request
+When the device location is outside the geofence
+Then the clock-in should be rejected
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock In/Out Event Capture
+- Notes: Configure geofence boundaries
+
+---
+
+Title: Handle Missed Punches
+
+User Story: As a Warehouse Worker I want to report missed punches So that my attendance record can be corrected
+
+Acceptance Criteria:
+Scenario: Missed punch report
+Given I missed a clock-in/out
+When I submit a missed punch request
+Then a supervisor should be notified for approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Clock In/Out Event Capture
+- Notes: Track approval status
+
+---
+
+Title: Calculate Hours Worked
+
+User Story: As a Payroll Specialist I want to calculate hours worked from clock-in/out events So that payroll can be processed accurately
+
+Acceptance Criteria:
+Scenario: Calculate hours
+Given valid clock-in/out records
+When I run the calculation
+Then total hours worked should be computed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock In/Out Event Capture
+- Notes: Handle overtime rules
