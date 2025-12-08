@@ -1,0 +1,20 @@
+Title: Set Up Database Migration Framework
+
+User Story: As a developer I want to configure Flyway or Liquibase for database migrations So that schema changes are versioned and applied consistently across environments
+
+Acceptance Criteria:
+Scenario: Migration framework enabled
+  Given the project is built
+  When the application starts
+  Then baseline migration scripts should be applied to the database automatically
+
+Scenario: Migration validation
+  Given a new migration is added
+  When I run the migration
+  Then the schema should update without errors and the migration history should be tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story_1.txt
+- Notes: Migration scripts must be idempotent and support rollback where possible
