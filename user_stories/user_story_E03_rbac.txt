@@ -1,0 +1,51 @@
+Title: Add Role-Based Access Control
+
+User Story: As a System Administrator I want to configure roles and permissions So that only authorized users can access sensitive endpoints
+
+Acceptance Criteria:
+Scenario: Role-based endpoint protection
+Given defined roles (ADMIN, HR, SUPERVISOR, WORKER)
+When a user accesses a protected endpoint
+Then access should be granted or denied based on role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding (E01), Employee CRUD APIs (E02)
+- Notes: Use Spring Security
+
+---
+
+Title: Secure Method-Level Access
+
+User Story: As a Developer I want to annotate service methods with security constraints So that business logic is protected from unauthorized access
+
+Acceptance Criteria:
+Scenario: Method security enforced
+Given a secured service method
+When a user without required role calls the method
+Then access should be denied
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: RBAC setup
+- Notes: Use @PreAuthorize annotations
+
+---
+
+Title: Manage User Roles
+
+User Story: As an HR Manager I want to assign and update user roles So that employees have appropriate access
+
+Acceptance Criteria:
+Scenario: Assign role
+Given an employee record
+When I assign a role
+Then the employee's permissions should be updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD APIs (E02), RBAC
+- Notes: Audit role changes
