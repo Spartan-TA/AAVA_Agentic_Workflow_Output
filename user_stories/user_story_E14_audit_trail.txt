@@ -1,0 +1,33 @@
+Title: Centralized Audit Logging
+
+User Story: As a Compliance Manager I want to log all sensitive changes centrally So that audit trails are complete and tamper-evident
+
+Acceptance Criteria:
+Scenario: Audit log creation
+Given a sensitive change occurs
+When the change is saved
+Then an audit entry should be created with actor, timestamp, and before/after values
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC (E03)
+- Notes: Immutable log table
+
+---
+
+Title: Export Audit Logs
+
+User Story: As a Compliance Manager I want to export audit logs by date, user, or entity So that I can provide evidence for audits
+
+Acceptance Criteria:
+Scenario: Audit log export
+Given audit log data
+When I request an export
+Then the logs should be exported in CSV/PDF format
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Audit Logging
+- Notes: Filter by date range and entity type
