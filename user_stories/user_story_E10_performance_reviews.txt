@@ -1,0 +1,51 @@
+Title: Create Performance Review Templates
+
+User Story: As an HR Manager I want to create review templates with goals and competencies So that performance reviews are standardized
+
+Acceptance Criteria:
+Scenario: Template creation
+Given review criteria
+When I create a template
+Then it should be available for reviews
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD APIs (E02), RBAC (E03)
+- Notes: Support quarterly and annual cycles
+
+---
+
+Title: Conduct Performance Reviews
+
+User Story: As a Supervisor I want to conduct performance reviews for my team So that feedback and ratings are documented
+
+Acceptance Criteria:
+Scenario: Review process
+Given a review template
+When I complete a review
+Then the ratings and comments should be saved
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review Templates
+- Notes: Require employee acknowledgement
+
+---
+
+Title: Set Employee Goals
+
+User Story: As a Supervisor I want to set individual goals for employees So that performance can be tracked
+
+Acceptance Criteria:
+Scenario: Goal setting
+Given an employee record
+When I set goals
+Then they should be visible in the review cycle
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Review Templates
+- Notes: Track goal progress
