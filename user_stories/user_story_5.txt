@@ -1,0 +1,12 @@
+Title: Document Build and Run Steps in README
+User Story: As a developer I want the README to include clear build and run instructions So that new team members can quickly set up and run the project
+Acceptance Criteria:
+Scenario: README documentation
+Given the repository is initialized
+When I open the README file
+Then I see step-by-step instructions for building and running the project
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: README should be kept up to date with any changes to build/run processes.
