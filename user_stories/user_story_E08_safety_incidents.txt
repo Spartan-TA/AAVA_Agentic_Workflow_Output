@@ -1,0 +1,51 @@
+Title: Record Safety Incidents
+
+User Story: As a Warehouse Worker I want to report safety incidents and near-misses So that hazards are documented and investigated
+
+Acceptance Criteria:
+Scenario: Incident report
+Given an incident occurs
+When I submit a report
+Then the incident should be logged with severity and location
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD APIs (E02), RBAC (E03)
+- Notes: Support photo uploads
+
+---
+
+Title: Investigate Safety Incidents
+
+User Story: As a Safety Officer I want to manage incident investigations So that root causes are identified and corrective actions tracked
+
+Acceptance Criteria:
+Scenario: Investigation workflow
+Given a reported incident
+When I start an investigation
+Then I can record findings and actions
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Incident Reporting
+- Notes: Track investigation status
+
+---
+
+Title: Generate OSHA Summary Reports
+
+User Story: As a Compliance Manager I want to generate OSHA summary reports So that regulatory requirements are met
+
+Acceptance Criteria:
+Scenario: OSHA report generation
+Given incident data
+When I generate a report
+Then the summary should match OSHA format
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Incident Reporting
+- Notes: Export to PDF/Excel
