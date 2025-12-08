@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    image: warehouse-employee-management:latest
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/wms
+      SPRING_DATASOURCE_USERNAME: wmsuser
+      SPRING_DATASOURCE_PASSWORD: wmspass
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: wms
+      POSTGRES_USER: wmsuser
+      POSTGRES_PASSWORD: wmspass
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
