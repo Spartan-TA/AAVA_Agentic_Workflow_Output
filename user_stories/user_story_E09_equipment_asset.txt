@@ -1,0 +1,56 @@
+Title: Assign Equipment to Employees
+
+User Story: As a Supervisor I want to assign equipment and assets to employees So that usage is tracked and compliance maintained
+
+Acceptance Criteria:
+Scenario: Equipment assignment
+Given available equipment
+When I assign it to an employee
+Then the checkout should be recorded
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD APIs (E02), RBAC (E03), Certification Tracking (E07)
+- Notes: Prevent assignment if certification missing
+
+---
+
+Title: Track Equipment Checkout/Return
+
+User Story: As a Warehouse Worker I want to check out and return equipment So that asset usage is logged
+
+Acceptance Criteria:
+Scenario: Checkout equipment
+Given available equipment
+When I check it out
+Then the system should record the checkout
+
+Scenario: Return equipment
+Given checked out equipment
+When I return it
+Then the system should record the return
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Equipment Assignment
+- Notes: Notify supervisor on overdue returns
+
+---
+
+Title: Prevent Use of Equipment Without Certification
+
+User Story: As a System Administrator I want to block equipment checkout for employees lacking required certifications So that safety compliance is enforced
+
+Acceptance Criteria:
+Scenario: Certification check
+Given an equipment checkout request
+When the employee lacks certification
+Then the checkout should be denied
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Equipment Assignment, Certification Tracking (E07)
+- Notes: Alert employee and supervisor
