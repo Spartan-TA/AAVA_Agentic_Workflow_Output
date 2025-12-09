@@ -1,0 +1,20 @@
+Title: Clock-In via Geofenced Endpoint
+
+User Story: As a Warehouse Worker I want to clock in using a geofenced endpoint So that my attendance is accurately recorded only when I am physically at the warehouse.
+
+Acceptance Criteria:
+Scenario: Successful clock-in within geofence
+Given I am at the warehouse location
+When I POST to /attendance/clock-in with valid device data
+Then my clock-in event is recorded and associated with my shift
+
+Scenario: Attempt to clock-in outside geofence
+Given I am outside the warehouse location
+When I POST to /attendance/clock-in
+Then the API returns a validation error and no attendance is recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee domain, Role-based security
+- Notes: Device capture and geofence validation must be documented in API schema.
