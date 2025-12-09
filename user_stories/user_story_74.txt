@@ -1,0 +1,15 @@
+Title: Onboard New Employees
+
+User Story: As an HR manager I want to onboard new employees So that they have access to required systems, training, and resources from day one
+
+Acceptance Criteria:
+Scenario: Employee onboarding
+Given a new employee is hired
+When I initiate the onboarding process
+Then the employee should receive access credentials, training assignments, and equipment as needed
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: User management, training, equipment assignment
+- Notes: Support for onboarding checklist
