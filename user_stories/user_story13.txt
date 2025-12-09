@@ -1,0 +1,15 @@
+Title: Manage Leave & Absence Requests
+
+User Story: As an employee I want to submit PTO and sick leave requests So that my absences are tracked and approved efficiently
+
+Acceptance Criteria:
+Scenario: Submit and approve leave request
+Given I am logged into the system
+When I submit a PTO request
+Then my manager is notified and can approve or reject the request
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02 (Employee Master Data CRUD), E03 (RBAC), E05 (Shift & Schedule Management)
+- Notes: Include leave balance validation and approval workflow.
