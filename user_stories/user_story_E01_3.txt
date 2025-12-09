@@ -1,0 +1,20 @@
+Title: Enable Actuator Health Endpoint
+
+User Story: As a System Administrator I want to enable the Actuator health endpoint so that I can monitor the application's health status in real time.
+
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access /actuator/health
+Then the endpoint should return status UP if all dependencies are healthy
+
+Scenario: Health endpoint reflects failures
+Given a critical dependency is down
+When I access /actuator/health
+Then the endpoint should return status DOWN and indicate the failing component
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Ensure Actuator endpoints are secured and documented in README.
