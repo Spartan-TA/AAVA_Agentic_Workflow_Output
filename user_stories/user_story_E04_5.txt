@@ -1,0 +1,15 @@
+Title: Export Attendance Data
+
+User Story: As a payroll manager I want to export attendance data So that I can process payroll efficiently
+
+Acceptance Criteria:
+Scenario: Attendance data export
+Given attendance records are available
+When I choose to export data
+Then a file should be generated in the required format (CSV, XLSX)
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance module
+- Notes: Support date range selection
