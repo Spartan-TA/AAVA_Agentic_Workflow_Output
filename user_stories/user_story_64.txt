@@ -1,0 +1,15 @@
+Title: Generate Standard Reports
+
+User Story: As a manager I want to generate standard reports (e.g., attendance, leave, performance) So that I can monitor team metrics and make informed decisions
+
+Acceptance Criteria:
+Scenario: Standard report generation
+Given I am logged in as a manager
+When I select a report type and date range
+Then the system should generate the report with relevant data
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Data modules
+- Notes: Support for export to PDF/CSV
