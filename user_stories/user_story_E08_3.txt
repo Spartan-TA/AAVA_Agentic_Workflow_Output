@@ -1,0 +1,15 @@
+Title: Generate OSHA Summary Reports
+
+User Story: As a compliance manager I want to generate OSHA summary reports So that regulatory reporting requirements are met
+
+Acceptance Criteria:
+Scenario: Generating OSHA report
+Given incidents are logged in the system
+When I request an OSHA summary
+Then the report should be generated with required fields and export options
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Reporting engine
+- Notes: Support PDF and CSV export formats.
