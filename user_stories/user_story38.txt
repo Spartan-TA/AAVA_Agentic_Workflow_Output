@@ -1,0 +1,15 @@
+Title: Automated Restock Requests
+
+User Story: As an inventory manager I want the system to automatically generate restock requests when inventory falls below reorder points So that supply levels are maintained without manual intervention
+
+Acceptance Criteria:
+Scenario: Restock request generation
+Given inventory levels fall below reorder point
+When the system detects the change
+Then a restock request should be generated and sent to the supplier
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Real-Time Inventory Alerts
+- Notes: Support supplier selection and approval workflow.
