@@ -1,0 +1,51 @@
+Title: Employee Profile Management
+User Story: As an employee I want to view and update my profile information so that my records are accurate
+Acceptance Criteria:
+Scenario: Profile update
+Given I am logged in
+When I edit my profile
+Then changes are saved and visible to HR
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02
+- Notes: Editable fields validated
+
+Title: View Attendance and Leave History
+User Story: As an employee I want to view my attendance and leave history so that I can track my work and time off
+Acceptance Criteria:
+Scenario: History view
+Given I am logged in
+When I access my attendance or leave history
+Then all records are displayed with status
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E06
+- Notes: Exportable
+
+Title: Submit Requests via Portal
+User Story: As an employee I want to submit requests (leave, corrections, asset) via the portal so that workflows are streamlined
+Acceptance Criteria:
+Scenario: Request submission
+Given I am logged in
+When I submit a request
+Then the appropriate workflow is triggered and tracked
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E06, E09
+- Notes: Workflow status visible
+
+Title: Access Announcements and Notifications
+User Story: As an employee I want to access all announcements and notifications in the portal so that I am informed of updates
+Acceptance Criteria:
+Scenario: Announcement access
+Given I am logged in
+When I view the portal dashboard
+Then all relevant announcements and notifications are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E12
+- Notes: Dashboard widget
