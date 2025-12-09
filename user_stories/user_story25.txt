@@ -1,0 +1,51 @@
+Title: Automated Shift Optimization
+User Story: As a scheduler I want the system to optimize shift assignments based on staffing rules so that coverage and overtime are balanced
+Acceptance Criteria:
+Scenario: Shift optimization
+Given staffing rules and employee availability
+When I run the optimizer
+Then shifts are assigned to minimize overtime and conflicts
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E05
+- Notes: Handles blackout dates and rotations
+
+Title: Conflict Detection and Resolution
+User Story: As a supervisor I want scheduling conflicts detected and resolution suggestions provided so that I can quickly address issues
+Acceptance Criteria:
+Scenario: Conflict detection
+Given a schedule is created
+When conflicts are detected
+Then the system suggests resolution options
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E05
+- Notes: Includes shift overlaps and leave conflicts
+
+Title: Overtime Rule Enforcement
+User Story: As an HR manager I want overtime rules enforced during scheduling so that labor costs are controlled
+Acceptance Criteria:
+Scenario: Overtime enforcement
+Given overtime rules are defined
+When shifts are assigned
+Then overtime is calculated and flagged
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E05
+- Notes: Policy-driven
+
+Title: Optimization Metrics Dashboard
+User Story: As a manager I want to view optimization metrics on a dashboard so that scheduling efficiency is tracked
+Acceptance Criteria:
+Scenario: Metrics dashboard
+Given optimization runs have occurred
+When I view the dashboard
+Then metrics such as coverage, overtime, and conflicts are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E05
+- Notes: Metrics endpoint available
