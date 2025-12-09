@@ -1,0 +1,12 @@
+Title: Review and Resolve Safety Incident
+User Story: As a safety officer I want to review and resolve reported safety incidents So that workplace hazards are mitigated
+Acceptance Criteria:
+Scenario: Incident resolution
+Given I am logged in as safety officer
+When I review a reported incident and mark it as resolved
+Then the reporting employee should be notified and the incident status updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Notifications, Incident module
+- Notes: Resolution actions must be logged for audit.
