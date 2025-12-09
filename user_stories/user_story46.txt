@@ -1,0 +1,15 @@
+Title: Multi-Warehouse Transfer Requests
+
+User Story: As an inventory manager I want to request and track transfers of inventory between multiple warehouses So that stock levels are balanced across locations
+
+Acceptance Criteria:
+Scenario: Transfer request creation
+Given multiple warehouse locations
+When I request a transfer
+Then the system should create a transfer order and notify relevant personnel
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Equipment Asset Registry CRUD
+- Notes: Support approval workflow and transfer tracking.
