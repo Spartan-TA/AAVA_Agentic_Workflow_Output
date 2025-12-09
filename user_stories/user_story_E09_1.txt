@@ -1,0 +1,15 @@
+Title: CRUD for Asset Registry
+
+User Story: As an asset manager I want to create, read, update, and delete assets in the registry So that all equipment and assets are tracked accurately
+
+Acceptance Criteria:
+Scenario: Managing asset registry
+Given I am on the asset management page
+When I add, edit, or remove an asset
+Then the changes should be reflected in the registry and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Asset database
+- Notes: Support asset types, serial numbers, and location tracking.
