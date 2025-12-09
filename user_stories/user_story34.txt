@@ -1,0 +1,12 @@
+Title: Access EMS via Mobile App
+User Story: As an employee I want to access the EMS via a mobile app So that I can manage my work information on the go
+Acceptance Criteria:
+Scenario: Mobile app access
+Given I have installed the EMS mobile app
+When I log in with my credentials
+Then I should be able to view and update my profile, attendance, and leave requests
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Authentication module, Mobile UI
+- Notes: Support iOS and Android platforms.
