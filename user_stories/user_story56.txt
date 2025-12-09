@@ -1,0 +1,15 @@
+Title: Automated Compliance Checks
+
+User Story: As a compliance officer I want the system to perform automated compliance checks on key processes So that regulatory requirements are met proactively
+
+Acceptance Criteria:
+Scenario: Compliance check execution
+Given a scheduled compliance check
+When the system runs the check
+Then any violations should be flagged and reported to relevant personnel
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Audit Trail for Transactions
+- Notes: Support scheduling and custom compliance rules.
