@@ -1,0 +1,15 @@
+Title: Barcode Scanning for Receiving
+
+User Story: As a warehouse associate I want to scan barcodes when receiving shipments So that inventory is updated quickly and accurately
+
+Acceptance Criteria:
+Scenario: Barcode scan on receiving
+Given a shipment arrives
+When I scan its barcode
+Then the system should update inventory and confirm receipt
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Equipment Asset Registry CRUD
+- Notes: Support integration with mobile devices and handheld scanners.
