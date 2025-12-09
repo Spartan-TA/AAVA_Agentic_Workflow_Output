@@ -1,0 +1,15 @@
+Title: Edit Roles and Permissions
+
+User Story: As a system administrator I want to edit roles and permissions So that I can update access controls as requirements change
+
+Acceptance Criteria:
+Scenario: Edit role permissions
+Given I am on the role management page
+When I modify the permissions for a role
+Then all users assigned to that role should have updated access
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: RBAC module
+- Notes: Changes should be logged for audit purposes.
