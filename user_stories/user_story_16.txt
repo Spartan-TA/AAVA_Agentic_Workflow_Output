@@ -1,0 +1,9 @@
+Title: Shift Template Creation
+User Story: As an HR manager I want to create and manage recurring shift templates So that scheduling is efficient and consistent across the warehouse
+Acceptance Criteria:
+Scenario: Create shift template Given I am on the shift management page When I enter shift details and save Then the template is available for assignment and visible in the schedule list
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee master data, scheduling module
+- Notes: Templates should support rotations and overtime rules.
