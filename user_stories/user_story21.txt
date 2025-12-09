@@ -1,0 +1,12 @@
+Title: Return Asset
+User Story: As an employee I want to return an assigned asset So that inventory records are updated and assets are available for reassignment
+Acceptance Criteria:
+Scenario: Asset return
+Given I am logged in as an employee
+When I initiate a return for an assigned asset
+Then the asset manager should be notified and the asset status updated to available
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Notifications, Asset module
+- Notes: Record asset condition upon return.
