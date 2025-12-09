@@ -1,0 +1,20 @@
+Title: Automated Label Printing
+
+User Story: As a warehouse associate I want the system to automatically print labels for received and shipped goods So that inventory is organized and traceable
+
+Acceptance Criteria:
+Scenario: Label printing on receiving
+Given a received shipment
+When I confirm receipt
+Then the system should print a label with item details
+
+Scenario: Label printing on shipping
+Given a shipment is ready to ship
+When I confirm shipment
+Then the system should print a label with destination and tracking info
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Barcode Scanning for Receiving
+- Notes: Support integration with networked and USB label printers.
