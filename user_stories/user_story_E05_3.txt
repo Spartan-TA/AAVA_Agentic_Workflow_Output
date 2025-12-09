@@ -1,0 +1,15 @@
+Title: Define Overtime Rules
+
+User Story: As an operations manager I want to define overtime rules So that overtime is calculated and applied consistently
+
+Acceptance Criteria:
+Scenario: Setting overtime rules
+Given I am on the scheduling settings page
+When I configure overtime thresholds and rates
+Then the system should apply these rules to shift assignments and payroll calculations
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Payroll module
+- Notes: Support daily, weekly, and holiday overtime.
