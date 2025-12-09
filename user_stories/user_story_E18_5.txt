@@ -1,0 +1,15 @@
+Title: Tenant-Specific Configuration
+
+User Story: As a tenant admin I want to customize operational settings for my warehouse So that my workflows match local requirements
+
+Acceptance Criteria:
+Scenario: Custom config
+Given I am a tenant admin
+When I update operational settings
+Then only my tenant's configuration is affected
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Core config module
+- Notes: Examples include shift rules, holidays
