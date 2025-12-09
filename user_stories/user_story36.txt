@@ -1,0 +1,12 @@
+Title: Initiate Employee Onboarding
+User Story: As an HR manager I want to initiate onboarding for new employees So that they are set up with required accounts and resources
+Acceptance Criteria:
+Scenario: Onboarding initiation
+Given I am logged in as HR manager
+When I create a new employee record and start onboarding
+Then the employee should receive a welcome email and onboarding checklist
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD, Notifications
+- Notes: Checklist items configurable per role.
