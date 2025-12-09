@@ -1,0 +1,31 @@
+Title: Implement Time & Attendance Clock-In/Out
+
+User Story: As a Warehouse Worker I want to clock in and out using my device so that my working hours are accurately recorded for payroll and compliance.
+
+Acceptance Criteria:
+Scenario: Clock-in event
+  Given I am scheduled for a shift
+  When I submit a clock-in event via my device
+  Then my attendance is recorded and associated with the correct shift
+Scenario: Clock-out event
+  Given I am clocked in
+  When I submit a clock-out event
+  Then my attendance record is updated with total hours worked
+Scenario: Geofence validation
+  Given geofence is enabled
+  When I clock in/out outside the allowed location
+  Then the event is rejected with an error
+Scenario: Missed punch correction
+  Given I missed a punch
+  When I submit a correction request
+  Then an approval task is created for my supervisor
+Scenario: Attendance report export
+  Given attendance data exists
+  When I request a CSV export
+  Then I receive a file with daily totals
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee CRUD (E02), RBAC (E03)
+- Notes: Device capture required for clock events; support corrections workflow.
