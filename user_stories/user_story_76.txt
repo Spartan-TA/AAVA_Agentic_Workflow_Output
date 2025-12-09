@@ -1,0 +1,15 @@
+Title: Track Onboarding/Offboarding Status
+
+User Story: As an HR manager I want to track the status of onboarding and offboarding tasks So that I can ensure all steps are completed for each employee
+
+Acceptance Criteria:
+Scenario: Onboarding/offboarding status tracking
+Given onboarding or offboarding is in progress
+When I view the employee's status dashboard
+Then I should see a checklist of completed and pending tasks
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Onboarding/offboarding module
+- Notes: Support for automated reminders
