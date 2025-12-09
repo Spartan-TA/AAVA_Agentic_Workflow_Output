@@ -1,0 +1,108 @@
+EPIC 05: SHIFT & SCHEDULE MANAGEMENT
+
+---
+
+Title: Shift Template Management
+
+User Story: As an ADMIN I want to create and manage recurring shift templates So that scheduling is efficient and standardized
+
+Acceptance Criteria:
+
+Scenario: Create Shift Template
+Given I have ADMIN role
+When I POST to /shifts/templates with valid data
+Then a new shift template should be created
+
+Scenario: Edit/Delete Template
+Given an existing template
+When I update or delete it
+Then changes should be reflected in the system
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC, Attendance
+- Notes: Support weekly, monthly, and custom rotations
+
+---
+
+Title: Assign Shifts to Employees
+
+User Story: As a SUPERVISOR I want to assign shifts to employees in bulk So that staffing is managed efficiently
+
+Acceptance Criteria:
+
+Scenario: Bulk Assignment
+Given I have a list of employees
+When I assign a shift template
+Then all selected employees should be scheduled accordingly
+
+Scenario: Conflict Detection
+Given an employee has overlapping shifts
+When I attempt to assign a new shift
+Then the system should prevent the conflict
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Shift Templates, RBAC, Attendance
+- Notes: Audit entries for all assignments
+
+---
+
+Title: Overtime Rule Configuration
+
+User Story: As an ADMIN I want to configure overtime rules So that overtime is calculated and managed per company policy
+
+Acceptance Criteria:
+
+Scenario: Overtime Rule Setup
+Given I have ADMIN role
+When I create or update overtime rules
+Then overtime should be calculated for eligible shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift Templates, Attendance
+- Notes: Support daily and weekly overtime
+
+---
+
+Title: Blackout Dates and Operation Calendar
+
+User Story: As an ADMIN I want to define blackout dates and operation calendars So that scheduling avoids non-working days
+
+Acceptance Criteria:
+
+Scenario: Blackout Date Setup
+Given I have ADMIN role
+When I add blackout dates to the calendar
+Then shifts should not be scheduled on those dates
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift Templates
+- Notes: Integrate with warehouse holiday schedule
+
+---
+
+Title: Personal Shift View
+
+User Story: As a WORKER I want to view my upcoming shifts So that I can plan my work schedule
+
+Acceptance Criteria:
+
+Scenario: Upcoming Shifts
+Given I am logged in as WORKER
+When I access my schedule
+Then I should see all upcoming assigned shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift Assignment
+- Notes: Mobile-friendly view
+
+---
