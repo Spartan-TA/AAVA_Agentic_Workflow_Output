@@ -1,0 +1,15 @@
+Title: Audit Entries for Schedule Changes
+
+User Story: As a compliance officer I want all schedule changes to generate audit entries so that we can track who made changes and ensure accountability
+
+Acceptance Criteria:
+Scenario: Auditing a schedule change
+Given a shift assignment is created, updated, or deleted
+When the change is saved
+Then an audit entry should be generated with actor, timestamp, and before/after details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Audit log must be immutable and exportable by date/user/entity.
