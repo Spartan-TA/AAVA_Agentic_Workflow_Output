@@ -1,0 +1,46 @@
+Title: Assign Equipment to Employee
+User Story: As an asset manager I want to assign equipment to employees so that asset usage is tracked
+Acceptance Criteria:
+Scenario: Assign equipment
+  Given I am logged in as an asset manager
+  When I select equipment and assign it to an employee
+  Then the assignment is recorded and visible in the employee profile
+Scenario: Prevent double assignment
+  Given equipment is already assigned
+  When I attempt to assign it to another employee
+  Then I receive a warning and cannot proceed
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data CRUD
+- Notes: Equipment status must be updated
+
+Title: Return Equipment
+User Story: As an employee I want to return assigned equipment so that asset inventory is updated
+Acceptance Criteria:
+Scenario: Return equipment
+  Given equipment is assigned to me
+  When I initiate a return
+  Then the equipment status is updated and removed from my profile
+Scenario: Attempt to return unassigned equipment
+  Given equipment is not assigned to me
+  When I attempt to return it
+  Then I receive an error message
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Equipment & Asset Assignment
+- Notes: Inventory should reflect real-time status
+
+Title: Equipment Assignment Report
+User Story: As an asset manager I want to generate reports of equipment assignments so that audits can be performed
+Acceptance Criteria:
+Scenario: Generate assignment report
+  Given I am logged in as an asset manager
+  When I select 'Generate Report'
+  Then a report of all current assignments is produced
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Reporting & Analytics
+- Notes: Report should be exportable
