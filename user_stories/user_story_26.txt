@@ -1,0 +1,15 @@
+Title: Report Shift Attendance
+
+User Story: As a manager I want to report attendance for each shift So that payroll and compliance records are accurate
+
+Acceptance Criteria:
+Scenario: Shift attendance reporting
+Given a shift has ended
+When I submit attendance for the shift
+Then the system should update attendance records and notify payroll
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance module, shift schedule
+- Notes: Support for bulk attendance reporting
