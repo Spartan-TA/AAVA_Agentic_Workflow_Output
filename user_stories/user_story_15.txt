@@ -1,0 +1,15 @@
+Title: Audit Role Changes
+
+User Story: As a compliance officer I want to audit all role changes So that I can ensure regulatory compliance and traceability
+
+Acceptance Criteria:
+Scenario: Role change audit
+Given role changes occur in the system
+When I access the audit log
+Then I should see details of who made the change, when, and what was changed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Role management, audit trail module
+- Notes: Audit logs should be immutable
