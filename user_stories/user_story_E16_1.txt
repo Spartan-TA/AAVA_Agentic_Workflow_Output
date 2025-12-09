@@ -1,0 +1,15 @@
+Title: Responsive Mobile Views for Clock-In/Out, Schedules, Leave Requests, and Announcements
+
+User Story: As a warehouse worker I want to access clock-in/out, schedules, leave requests, and announcements from my mobile device So that I can manage my work easily on the go
+
+Acceptance Criteria:
+Scenario: Mobile usability
+Given I am using a mobile device
+When I navigate to the EMS web app
+Then all core flows are responsive and usable without zooming or scrolling horizontally
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E04, E05, E06, E12
+- Notes: Must pass Lighthouse mobile usability checks.
