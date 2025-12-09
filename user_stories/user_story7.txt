@@ -1,0 +1,15 @@
+Title: Assign Roles to Users
+
+User Story: As a system administrator I want to assign roles to users So that access permissions are managed appropriately
+
+Acceptance Criteria:
+Scenario: Assign role
+Given I am on the user management page
+When I select a user and assign a role
+Then the user should have the permissions associated with that role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC module
+- Notes: Roles should be configurable and auditable.
