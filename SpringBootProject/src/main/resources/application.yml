@@ -1,0 +1,60 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/warehouse_ems
+    username: ems_user
+    password: ems_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+security:
+  jwt:
+    secret: "supersecretkeyforjwt"
+    expiration: 3600000
+  oauth2:
+    enabled: false
+    client-id: "warehouse-ems-client"
+    client-secret: "warehouse-ems-secret"
+
+notification:
+  email:
+    enabled: true
+    host: smtp.mailtrap.io
+    port: 2525
+    username: mailtrap_user
+    password: mailtrap_password
+    from: "noreply@warehouse-ems.com"
+  sms:
+    enabled: true
+    provider: "twilio"
+    account-sid: "your_twilio_sid"
+    auth-token: "your_twilio_token"
+    from: "+1234567890"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  health:
+    mail:
+      enabled: true
+    db:
+      enabled: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    com.warehouse.ems: DEBUG
