@@ -1,0 +1,15 @@
+Title: Row-Level Security Constraints
+
+User Story: As a supervisor I want to access only the records of my team so that sensitive information is protected and access is limited to relevant data
+
+Acceptance Criteria:
+Scenario: Supervisor accessing team records
+Given I am logged in as a supervisor
+When I view employee records
+Then I should only see records for employees assigned to my team
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Row-level filtering must be enforced in both UI and API responses.
