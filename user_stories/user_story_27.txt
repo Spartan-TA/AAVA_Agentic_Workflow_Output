@@ -1,0 +1,9 @@
+Title: Safety Incident Workflow
+User Story: As a safety officer I want to manage the investigation and resolution workflow for reported incidents So that corrective actions are tracked and compliance is maintained
+Acceptance Criteria:
+Scenario: Incident workflow Given an incident is reported When I update the status to Investigating or Resolved Then the workflow history is logged and visible for audit
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Safety incident recording
+- Notes: Workflow should support status changes and corrective action documentation.
