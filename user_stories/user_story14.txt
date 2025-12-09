@@ -1,0 +1,15 @@
+Title: Track Training & Certifications
+
+User Story: As a compliance manager I want to track employee certifications and expirations So that only qualified employees are assigned to tasks and compliance is maintained
+
+Acceptance Criteria:
+Scenario: Block assignment for expired certification
+Given an employee's certification has expired
+When a scheduler attempts to assign the employee to a restricted task
+Then the system blocks the assignment and notifies the scheduler
+
+Additional Details:
+- Priority: High
+- Story Points: 6
+- Dependencies: E02 (Employee Master Data CRUD), E03 (RBAC)
+- Notes: Include automated reminders for upcoming expirations.
