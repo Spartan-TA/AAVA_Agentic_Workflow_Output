@@ -1,0 +1,15 @@
+Title: Locale-Specific Date/Time Formatting
+
+User Story: As a warehouse supervisor I want the system to display dates and times in my local format So that I can easily interpret schedules and reports
+
+Acceptance Criteria:
+Scenario: Display local date/time
+Given my user profile is set to a specific locale
+When I view schedules or reports
+Then all date/time fields are formatted according to my locale
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User profile, reporting module
+- Notes: Must support at least US, EU, and APAC formats
