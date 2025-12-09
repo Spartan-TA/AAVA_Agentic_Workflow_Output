@@ -1,9 +1,0 @@
-Title: Leave Approval Workflow
-User Story: As a supervisor I want to review and approve or deny employee leave requests So that staffing levels are maintained and leave policies are enforced
-Acceptance Criteria:
-Scenario: Approve leave request Given a pending leave request is assigned to me When I review the request and take action Then the employee is notified and balances are updated accordingly
-Additional Details:
-- Priority: Medium
-- Story Points: 2
-- Dependencies: Leave request submission, notification system
-- Notes: Approval actions should be logged and auditable.

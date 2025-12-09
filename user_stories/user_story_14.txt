@@ -1,9 +1,0 @@
-Title: Attendance Correction Workflow
-User Story: As a supervisor I want to review and approve attendance corrections So that missed punches and errors are properly handled for payroll accuracy
-Acceptance Criteria:
-Scenario: Correction approval Given an employee submits a correction request When I review and approve or reject the request Then the attendance record is updated and the employee is notified
-Additional Details:
-- Priority: High
-- Story Points: 3
-- Dependencies: Attendance module, approval workflow
-- Notes: Correction requests should be logged and auditable.

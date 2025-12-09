@@ -1,9 +1,0 @@
-Title: Personal Shift View
-User Story: As a warehouse worker I want to view my upcoming shifts So that I can plan my work schedule and avoid conflicts
-Acceptance Criteria:
-Scenario: View personal shifts Given I am logged into the system When I navigate to my schedule page Then I see a list of all upcoming assigned shifts with details
-Additional Details:
-- Priority: Medium
-- Story Points: 1
-- Dependencies: Shift assignment, employee master data
-- Notes: View should be mobile-friendly and filterable by date.

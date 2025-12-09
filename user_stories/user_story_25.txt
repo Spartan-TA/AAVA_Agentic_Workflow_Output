@@ -1,9 +1,0 @@
-Title: Certification Assignment Blocking
-User Story: As a supervisor I want the system to block assignment of employees to equipment-sensitive tasks if their certifications are expired So that safety and compliance are maintained
-Acceptance Criteria:
-Scenario: Block unqualified assignment Given I attempt to assign an employee with an expired certification to a forklift shift When the system validates the assignment Then the action is blocked and a warning is displayed
-Additional Details:
-- Priority: High
-- Story Points: 2
-- Dependencies: Certification records, shift assignment
-- Notes: Blocking logic should be enforced for all equipment-sensitive roles.

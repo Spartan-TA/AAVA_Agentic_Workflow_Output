@@ -1,9 +1,0 @@
-Title: Certification CRUD
-User Story: As an HR manager I want to create, update, and delete employee certifications So that compliance records are accurate and up to date
-Acceptance Criteria:
-Scenario: Manage certifications Given I am on the employee profile page When I add, edit, or remove a certification Then the changes are saved and visible on the profile
-Additional Details:
-- Priority: High
-- Story Points: 2
-- Dependencies: Employee master data
-- Notes: Certification records should support document uploads and expiry dates.

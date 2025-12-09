@@ -1,9 +1,0 @@
-Title: Shift Conflict Detection
-User Story: As a supervisor I want the system to detect and prevent scheduling conflicts So that employees are not double-booked and staffing is adequate
-Acceptance Criteria:
-Scenario: Schedule conflict Given I attempt to assign an employee to overlapping shifts When the system validates the schedule Then a conflict warning is displayed and the assignment is blocked
-Additional Details:
-- Priority: High
-- Story Points: 2
-- Dependencies: Shift templates, employee master data
-- Notes: Conflict detection should consider blackout dates and warehouse calendars.
