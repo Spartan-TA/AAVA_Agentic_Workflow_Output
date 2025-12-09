@@ -1,0 +1,25 @@
+Title: Automated Security Test Coverage
+
+User Story: As a Developer I want automated tests to verify role-based access and endpoint security So that unauthorized actions are reliably prevented and regressions are detected early.
+
+Acceptance Criteria:
+Scenario: Test unauthorized access
+Given a test user with no authentication
+When the test suite runs
+Then all protected endpoints return 401
+
+Scenario: Test forbidden actions
+Given a test user with SUPERVISOR role
+When the test suite runs
+Then forbidden endpoints return 403
+
+Scenario: Test ADMIN access
+Given a test user with ADMIN role
+When the test suite runs
+Then all endpoints are accessible
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Role-based endpoint security
+- Notes: Security tests must run in CI/CD pipeline and cover all roles.
