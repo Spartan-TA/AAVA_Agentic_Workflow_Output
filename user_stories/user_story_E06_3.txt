@@ -1,0 +1,15 @@
+Title: Leave Accrual and Balance Management
+
+User Story: As an HR manager I want leave balances to automatically accrue and update based on company policies so that employees and supervisors have accurate, real-time information
+
+Acceptance Criteria:
+Scenario: Accrual and balance update
+Given an employee's leave accrual policy is set
+When a leave request is approved or a new accrual period begins
+Then the employee's leave balance should be updated and visible in their profile
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Accrual rules configurable per department; audit log for changes to balances.
