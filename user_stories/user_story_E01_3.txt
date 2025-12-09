@@ -1,0 +1,15 @@
+Title: Enable Actuator Health Endpoint
+
+User Story: As a DevOps engineer I want to enable the actuator health endpoint So that I can monitor application health and readiness
+
+Acceptance Criteria:
+Scenario: Health endpoint exposure
+Given the application is running
+When I access the /actuator/health endpoint
+Then I should receive a status response indicating health
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Spring Boot project
+- Notes: Secure endpoint with appropriate role
