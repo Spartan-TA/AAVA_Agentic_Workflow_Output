@@ -1,0 +1,9 @@
+Title: Safety Incident Recording
+User Story: As a supervisor I want to record safety incidents and near-misses with details So that investigations and corrective actions can be tracked for compliance
+Acceptance Criteria:
+Scenario: Record incident Given I am on the safety module When I enter incident details and submit Then the incident is logged and assigned a status for follow-up
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee master data, safety module
+- Notes: Incident records should support severity, location, and involved employees.
