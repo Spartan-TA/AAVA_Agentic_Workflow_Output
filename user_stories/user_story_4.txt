@@ -1,0 +1,20 @@
+Title: Provide Project Documentation
+
+User Story: As a developer I want a README with build and run instructions so that new contributors can quickly set up and understand the EMS project.
+
+Acceptance Criteria:
+Scenario: Documentation Availability
+  Given the EMS repository is cloned
+  When I open the README file
+  Then it should contain clear build and run steps for the application
+
+Scenario: Health Endpoint Documentation
+  Given the README is available
+  When I review the documentation
+  Then it should describe the Actuator health endpoint and its usage
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: README must be kept up to date with every major change; include troubleshooting section.
