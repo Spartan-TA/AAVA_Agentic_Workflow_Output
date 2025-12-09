@@ -1,0 +1,38 @@
+Title: Generate Payroll Export File
+User Story: As a payroll administrator I want to generate payroll files based on attendance and leave data So that payroll processing is accurate and efficient
+Acceptance Criteria:
+Scenario: Payroll file generation
+  Given attendance and leave data are available
+  When I initiate payroll export
+  Then the system should generate a payroll file in the required format
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Attendance, leave management modules
+- Notes: File format configurable (CSV, XLSX)
+
+Title: Deliver Payroll File via SFTP
+User Story: As a payroll administrator I want to deliver payroll files securely via SFTP So that payroll data reaches the external payroll system safely
+Acceptance Criteria:
+Scenario: SFTP delivery
+  Given a payroll file is generated
+  When I select SFTP delivery
+  Then the file should be transferred to the configured SFTP endpoint
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Payroll export, SFTP integration
+- Notes: SFTP credentials must be securely stored
+
+Title: Deliver Payroll File via API
+User Story: As a payroll administrator I want to deliver payroll files via API integration So that payroll data is automatically sent to external systems
+Acceptance Criteria:
+Scenario: API delivery
+  Given a payroll file is generated
+  When I select API delivery
+  Then the file should be sent to the external payroll system via API
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Payroll export, API integration
+- Notes: API endpoint and authentication must be configurable
