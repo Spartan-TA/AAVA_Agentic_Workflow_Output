@@ -1,0 +1,12 @@
+Title: Complete Employee Offboarding
+User Story: As an HR manager I want to complete offboarding for departing employees So that access is revoked and exit procedures are followed
+Acceptance Criteria:
+Scenario: Offboarding completion
+Given I am logged in as HR manager
+When I mark an employee as departing and complete offboarding steps
+Then the employee's system access should be revoked and exit checklist completed
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD, Access Control
+- Notes: Checklist items configurable per role.
