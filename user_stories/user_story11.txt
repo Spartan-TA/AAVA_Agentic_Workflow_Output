@@ -1,0 +1,51 @@
+Title: Create Shift Templates
+User Story: As an HR manager I want to create recurring shift templates so that scheduling is efficient and consistent
+Acceptance Criteria:
+Scenario: Shift template creation
+Given I am on the shift management page
+When I create a new shift template
+Then it is available for assignment to employees
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Supports rotations and overtime rules
+
+Title: Assign Shifts to Employees
+User Story: As a supervisor I want to bulk-assign shifts to my team so that staffing needs are met
+Acceptance Criteria:
+Scenario: Bulk assignment
+Given I have selected multiple employees
+When I assign them to a shift
+Then their schedules are updated and conflicts are checked
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Audit entries generated
+
+Title: Blackout Dates and Operation Calendar
+User Story: As a scheduler I want to set blackout dates and operation calendars so that shifts are not assigned during warehouse closures
+Acceptance Criteria:
+Scenario: Blackout date enforcement
+Given blackout dates are defined
+When I attempt to assign a shift on a blackout date
+Then the system prevents the assignment
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Calendar visible to all users
+
+Title: Personal Upcoming Shifts View
+User Story: As a worker I want to view my upcoming shifts so that I can plan my attendance
+Acceptance Criteria:
+Scenario: Upcoming shifts display
+Given I am logged in
+When I navigate to my schedule
+Then I see all upcoming assigned shifts
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E04
+- Notes: Mobile-friendly view
