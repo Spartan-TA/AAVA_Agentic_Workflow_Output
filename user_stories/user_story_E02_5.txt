@@ -1,0 +1,20 @@
+Title: Document Employee CRUD APIs in OpenAPI
+
+User Story: As a System Administrator I want all employee CRUD endpoints documented in OpenAPI with request/response examples so that integration and testing are streamlined.
+
+Acceptance Criteria:
+Scenario: Schema completeness
+Given all CRUD endpoints are implemented
+When I view the OpenAPI documentation
+Then each endpoint should have request and response schemas with examples
+
+Scenario: Example coverage
+Given the documentation is generated
+When I review examples
+Then each field should have a realistic sample value
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD endpoints (E02_1-E02_4)
+- Notes: Ensure documentation is published and updated with every API change.
