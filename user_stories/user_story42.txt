@@ -1,0 +1,15 @@
+Title: Automated Putaway Suggestions
+
+User Story: As a warehouse associate I want the system to suggest optimal putaway locations for received goods So that storage is efficient and retrieval is streamlined
+
+Acceptance Criteria:
+Scenario: Putaway suggestion
+Given a received shipment
+When I scan its barcode
+Then the system should suggest a location based on available space and item type
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Barcode Scanning for Receiving
+- Notes: Support override and manual location entry.
