@@ -1,0 +1,51 @@
+Title: Automate Employee Provisioning
+User Story: As an HR manager I want new employees to be automatically provisioned with accounts and access So that onboarding is efficient and error-free
+Acceptance Criteria:
+Scenario: Automated provisioning
+  Given a new employee is added
+  When onboarding is initiated
+  Then the system should create accounts, assign roles, and notify relevant departments
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: HRIS integration, user management
+- Notes: Role-based access assignment
+
+Title: Assign Training Tasks During Onboarding
+User Story: As a supervisor I want to assign required training tasks to new employees during onboarding So that compliance and readiness are ensured
+Acceptance Criteria:
+Scenario: Training task assignment
+  Given onboarding is in progress
+  When I assign training modules
+  Then the employee should receive notifications and track completion
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Training module, notification service
+- Notes: Training completion tracked in profile
+
+Title: Automate Asset Assignment for New Employees
+User Story: As a warehouse manager I want assets (PPE, scanners) automatically assigned to new employees during onboarding So that they have necessary tools from day one
+Acceptance Criteria:
+Scenario: Asset assignment
+  Given onboarding is initiated
+  When asset assignment rules are applied
+  Then assets should be assigned and logged in the employee profile
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset management, onboarding workflow
+- Notes: Asset availability checked before assignment
+
+Title: Automate Employee Deprovisioning
+User Story: As an HR manager I want departing employees to be automatically deprovisioned So that access and assets are revoked securely
+Acceptance Criteria:
+Scenario: Automated deprovisioning
+  Given an employee is marked for offboarding
+  When offboarding is initiated
+  Then the system should revoke access, recover assets, and notify departments
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User management, asset management
+- Notes: Checklist for offboarding tasks
