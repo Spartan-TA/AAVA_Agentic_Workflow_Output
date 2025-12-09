@@ -1,0 +1,12 @@
+Title: Automate Regression Testing
+User Story: As a QA engineer I want to automate regression testing So that new releases do not break existing functionality
+Acceptance Criteria:
+Scenario: Automated regression test
+Given a new release candidate is available
+When regression tests are executed
+Then all tests should pass or failures be reported for resolution
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Testing framework
+- Notes: Integrate with CI/CD pipeline.
