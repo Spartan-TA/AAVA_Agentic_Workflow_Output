@@ -1,0 +1,12 @@
+Title: Schedule Automated Report Delivery
+User Story: As a manager I want to schedule automated report delivery So that I receive regular updates without manual intervention
+Acceptance Criteria:
+Scenario: Automated report scheduling
+Given I am logged in as manager
+When I configure report delivery schedule
+Then reports should be generated and sent to my email at the specified intervals
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Reporting module, Notifications
+- Notes: Support daily, weekly, and monthly schedules.
