@@ -1,0 +1,15 @@
+Title: Leave Integration with Scheduling and Payroll
+
+User Story: As a payroll manager I want leave requests and approvals to integrate with scheduling and payroll So that employee absences are reflected in shift assignments and pay calculations
+
+Acceptance Criteria:
+Scenario: Leave integration
+Given an approved leave request
+When payroll and scheduling are processed
+Then the employee's shifts and pay should be adjusted accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Leave Approval and Balances Update
+- Notes: Support retroactive adjustments and reporting.
