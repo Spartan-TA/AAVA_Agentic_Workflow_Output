@@ -1,0 +1,15 @@
+Title: Investigate Safety Incidents
+
+User Story: As a safety officer I want to investigate reported safety incidents So that I can determine root causes and recommend corrective actions
+
+Acceptance Criteria:
+Scenario: Safety incident investigation
+Given a safety incident is reported
+When I review the incident details
+Then I should be able to document findings and assign corrective actions
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Incident reporting
+- Notes: Support for attaching evidence and notes
