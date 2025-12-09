@@ -1,0 +1,15 @@
+Title: Implement Automated Testing & CI/CD
+
+User Story: As a developer I want automated unit and integration tests with CI/CD pipelines So that code quality is maintained and deployments are reliable
+
+Acceptance Criteria:
+Scenario: Run CI/CD pipeline on commit
+Given new code is pushed to the repository
+When the CI/CD pipeline is triggered
+Then all tests are executed and the build is deployed if tests pass
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E01 (Project Scaffolding & Domain Setup)
+- Notes: Use GitHub Actions for pipeline automation and test coverage reporting.
