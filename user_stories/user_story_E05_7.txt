@@ -1,0 +1,15 @@
+Title: Generate Audit Entries for Scheduling Changes
+
+User Story: As a compliance officer I want audit entries generated for all scheduling changes So that there is a traceable history of who made what changes and when
+
+Acceptance Criteria:
+Scenario: Auditing scheduling changes
+Given a scheduling change is made
+When the change is saved
+Then an audit entry should be created with user, timestamp, and change details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Audit trail module
+- Notes: Support export and filtering by user/date.
