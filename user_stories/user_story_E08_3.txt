@@ -1,0 +1,15 @@
+Title: OSHA Summary Report Generation
+
+User Story: As an HR manager I want to generate OSHA 300/300A summary reports from recorded safety incidents so that regulatory reporting requirements are met
+
+Acceptance Criteria:
+Scenario: Generate OSHA report
+Given safety incidents are logged in the system
+When I select a reporting period and request an OSHA summary
+Then the system generates a compliant report with required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Export formats include PDF and CSV; report includes incident metrics and status breakdown.
