@@ -1,0 +1,15 @@
+Title: Lighthouse PWA Score Validation
+
+User Story: As a QA engineer I want the EMS web app to achieve a high Lighthouse PWA score So that I can ensure optimal performance, accessibility, and offline capabilities for mobile users
+
+Acceptance Criteria:
+Scenario: Lighthouse audit
+Given the EMS web app is deployed
+When I run a Lighthouse PWA audit
+Then the app scores at least 90/100 for PWA criteria
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Audit must cover installability, offline support, and accessibility.
