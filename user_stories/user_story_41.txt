@@ -1,0 +1,15 @@
+Title: View Assigned Equipment
+
+User Story: As an employee I want to view the equipment assigned to me So that I can manage my responsibilities and report any issues
+
+Acceptance Criteria:
+Scenario: Assigned equipment viewing
+Given equipment is assigned to me
+When I access my equipment dashboard
+Then I should see a list of all assigned equipment with details
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Equipment assignment
+- Notes: Support for reporting equipment issues
