@@ -1,0 +1,12 @@
+Title: Configure Notification Preferences
+User Story: As a user I want to configure my notification preferences So that I receive relevant alerts via my preferred channels
+Acceptance Criteria:
+Scenario: Notification preference configuration
+Given I am logged in as a user
+When I access notification settings and select my preferences
+Then I should receive alerts only for selected events and channels
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Notifications module
+- Notes: Support email, SMS, and in-app notifications.
