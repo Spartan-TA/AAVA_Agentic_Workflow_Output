@@ -1,0 +1,9 @@
+Title: Leave Balance Update
+User Story: As an employee I want my leave balance to update automatically after requests are approved or denied So that I always see my current available time off
+Acceptance Criteria:
+Scenario: Balance update Given a leave request is approved or denied When the action is completed Then my leave balance reflects the change and is visible on my profile
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Leave approval workflow
+- Notes: Balances should be recalculated in real time and support accrual policies.
