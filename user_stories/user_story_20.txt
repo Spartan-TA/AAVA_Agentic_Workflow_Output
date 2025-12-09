@@ -1,0 +1,15 @@
+Title: Set Up Attendance Policies
+
+User Story: As an HR manager I want to set up attendance policies So that attendance rules are consistently enforced across the organization
+
+Acceptance Criteria:
+Scenario: Attendance policy configuration
+Given I am logged in as an HR manager
+When I configure attendance policies (e.g., grace period, overtime)
+Then the system should apply these rules to all attendance records
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Attendance module
+- Notes: Policies should be editable and versioned
