@@ -1,0 +1,15 @@
+Title: Employee Clock-In
+
+User Story: As a warehouse worker I want to clock in at the start of my shift so that my working hours are accurately recorded for payroll and compliance
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am scheduled for a shift and at the warehouse location
+When I submit a clock-in event via the app
+Then my attendance record should show the clock-in time and associate it with my shift
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Geofence validation optional; device ID captured for audit.
