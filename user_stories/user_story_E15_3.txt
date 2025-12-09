@@ -1,0 +1,15 @@
+Title: CSV/PDF Export of Reports Within 10 Seconds for Up to 50,000 Rows
+
+User Story: As a business analyst I want to export operational reports to CSV or PDF formats within 10 seconds for up to 50,000 rows So that I can share and analyze data externally without delays
+
+Acceptance Criteria:
+Scenario: Fast report export
+Given a report contains up to 50,000 rows
+When I request a CSV or PDF export
+Then the file is generated and available for download within 10 seconds
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Export must preserve all report filters and formatting.
