@@ -1,0 +1,15 @@
+Title: Create Employee Record
+
+User Story: As an HR manager I want to create a new employee record So that I can onboard staff and maintain accurate personnel data
+
+Acceptance Criteria:
+Scenario: Employee creation
+Given I am on the employee creation form
+When I enter valid employee details and submit
+Then a new employee record should be saved and visible in the employee list
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Database, API
+- Notes: Validate required fields
