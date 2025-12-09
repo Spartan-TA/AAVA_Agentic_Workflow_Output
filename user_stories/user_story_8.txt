@@ -1,0 +1,38 @@
+Title: Record Safety Incident
+User Story: As a warehouse supervisor I want to record safety incidents with details on location, severity, and involved personnel So that incidents are documented for compliance and follow-up
+Acceptance Criteria:
+Scenario: Incident recording
+  Given I am logged in as a supervisor
+  When I submit a new safety incident with all required fields
+  Then the incident should be saved and visible in the incident log
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Incident management module
+- Notes: Required fields include date, time, location, severity, personnel
+
+Title: Incident Investigation Workflow
+User Story: As a safety manager I want to initiate and track investigations for reported incidents So that corrective actions are documented and compliance is maintained
+Acceptance Criteria:
+Scenario: Investigation initiation
+  Given a recorded incident exists
+  When I assign an investigator and set a due date
+  Then the investigation workflow should be started and tracked until closure
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Incident management, notification module
+- Notes: Investigation status should be visible to relevant stakeholders
+
+Title: OSHA 300/300A Export
+User Story: As a compliance officer I want to export incident data in OSHA 300/300A format So that regulatory reporting requirements are met
+Acceptance Criteria:
+Scenario: Export OSHA report
+  Given incidents are recorded in the system
+  When I select the OSHA export option
+  Then the system should generate a compliant 300/300A file for download
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Incident management, reporting module
+- Notes: File format must meet OSHA specifications
