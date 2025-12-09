@@ -1,0 +1,15 @@
+Title: Mobile Access
+
+User Story: As a warehouse employee I want to access EMS features from my mobile device So that I can perform tasks on the go
+
+Acceptance Criteria:
+Scenario: Mobile login
+Given I have the EMS mobile app installed
+When I log in with valid credentials
+Then I can view and update my schedule, attendance, and notifications
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Mobile app, authentication module
+- Notes: Support for push notifications and offline access
