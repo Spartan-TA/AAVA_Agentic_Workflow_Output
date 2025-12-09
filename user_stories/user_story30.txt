@@ -1,0 +1,12 @@
+Title: Record User Actions in Audit Trail
+User Story: As a compliance officer I want all user actions to be recorded in an audit trail So that system activity is traceable and meets regulatory requirements
+Acceptance Criteria:
+Scenario: Audit trail recording
+Given a user performs an action (e.g., create, update, delete)
+When the action is completed
+Then the audit trail should log the user, timestamp, action, and affected data
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: All modules
+- Notes: Audit logs must be immutable and exportable.
