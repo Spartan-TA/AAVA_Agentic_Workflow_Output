@@ -1,0 +1,15 @@
+Title: Certification Blocking for Assignments
+
+User Story: As a scheduler I want to prevent shift or asset assignments to employees with expired or missing certifications So that compliance and safety standards are enforced
+
+Acceptance Criteria:
+Scenario: Assignment blocking
+Given an employee with an expired certification
+When I attempt to assign a shift or asset
+Then the system should block the assignment and display a warning
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Certification CRUD and Expiry Alerts
+- Notes: Support override by authorized personnel with justification.
