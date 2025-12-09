@@ -1,0 +1,38 @@
+Title: Attendance Report Generation
+User Story: As an operations manager I want to generate attendance reports for all employees So that I can monitor workforce presence and punctuality
+Acceptance Criteria:
+Scenario: Attendance report
+  Given attendance data is available
+  When I request an attendance report
+  Then the system should generate and display the report with filtering options
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance module, reporting engine
+- Notes: Export to CSV/PDF supported
+
+Title: Overtime and Leave Analytics
+User Story: As an HR analyst I want to view overtime and leave trends So that I can identify patterns and optimize staffing
+Acceptance Criteria:
+Scenario: Overtime/leave analytics
+  Given overtime and leave data are available
+  When I access analytics dashboard
+  Then I should see visualizations and summary statistics
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance, leave modules, analytics engine
+- Notes: Time range selection supported
+
+Title: Certification and Safety KPI Reports
+User Story: As a safety manager I want to generate reports on certification status and safety KPIs So that compliance and safety performance are tracked
+Acceptance Criteria:
+Scenario: Certification/safety report
+  Given certification and safety data are available
+  When I request a KPI report
+  Then the system should generate the report with relevant metrics
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification, safety modules, reporting engine
+- Notes: KPI definitions configurable
