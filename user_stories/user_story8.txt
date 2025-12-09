@@ -1,0 +1,15 @@
+Title: Row-Level Security Enforcement
+
+User Story: As a system administrator I want to enforce row-level security on sensitive tables So that only authorized users can view or modify specific records
+
+Acceptance Criteria:
+Scenario: Row-level access validation
+Given a user with limited permissions
+When the user queries a sensitive table
+Then only records permitted by their role should be returned
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Role-Based Access Control Setup
+- Notes: Audit all access attempts for compliance.
