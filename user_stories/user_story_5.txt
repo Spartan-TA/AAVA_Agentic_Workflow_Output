@@ -1,0 +1,20 @@
+Title: Create Employee Record via API
+
+User Story: As an HR Manager I want to create a new employee record using the API So that employee onboarding is streamlined and data is consistent across systems.
+
+Acceptance Criteria:
+Scenario: Successful employee creation
+Given I have valid employee data
+When I POST to /employees
+Then a new employee record is created and badgeId is unique
+
+Scenario: Duplicate badgeId
+Given an employee with badgeId already exists
+When I POST another employee with the same badgeId
+Then the API returns a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Ensure OpenAPI schema includes examples and required fields.
