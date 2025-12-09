@@ -1,0 +1,15 @@
+Title: Employee Badge ID Uniqueness
+
+User Story: As an HR manager I want to ensure each employee has a unique badge ID So that there are no conflicts in identification and access control
+
+Acceptance Criteria:
+Scenario: Badge ID uniqueness enforcement
+Given a new employee record
+When I attempt to assign a badge ID
+Then the system should validate that the badge ID is not already in use
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Return a clear error message if a duplicate badge ID is detected.
