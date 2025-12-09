@@ -1,0 +1,15 @@
+Title: Approve or Reject Leave Requests
+
+User Story: As a manager I want to approve or reject leave requests So that I can ensure adequate staffing and fairness
+
+Acceptance Criteria:
+Scenario: Leave request approval/rejection
+Given I am logged in as a manager
+When I review a leave request
+Then I should be able to approve or reject it and the employee should be notified
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Leave request submission, notifications
+- Notes: Include reason for rejection
