@@ -1,0 +1,15 @@
+Title: Test User Story
+
+User Story: As a tester I want to upload a test user story So that I can verify the GitHub upload functionality
+
+Acceptance Criteria:
+Scenario: Test upload
+Given the GitHub uploader tool
+When I upload a test file
+Then the file should appear in the repository
+
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: None
+- Notes: This is a test file.
