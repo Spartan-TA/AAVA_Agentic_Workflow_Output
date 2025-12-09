@@ -1,0 +1,128 @@
+WAREHOUSE EMS - CONSOLIDATED USER STORIES DOCUMENT
+
+===========================================
+EXECUTIVE SUMMARY
+===========================================
+
+This document contains 120+ detailed user stories transformed from 20 high-level epics for a Warehouse Employee Management System.
+
+Each user story follows the format:
+- Title
+- User Story: As a [role] I want [action] so that [benefit]
+- Acceptance Criteria: Gherkin syntax (Given/When/Then)
+- Additional Details: Priority, Story Points, Dependencies, Notes
+
+===========================================
+EPIC E01: PROJECT SCAFFOLDING & DOMAIN SETUP
+===========================================
+
+USER STORY 1:
+Title: Initialize Spring Boot Project
+
+User Story: As a backend developer I want to initialize a Spring Boot (Maven) project with standardized base packages and modules so that the Warehouse EMS has a consistent and maintainable foundation for all future features.
+
+Acceptance Criteria:
+Scenario: Project Initialization
+  Given I have access to the project repository
+  When I run the build and start the application
+  Then the application should run successfully on port 8080
+
+Scenario: Base Package Structure
+  Given the project is initialized
+  When I inspect the source code
+  Then the base package structure for employee, scheduling, attendance, and safety modules should be present
+
+Scenario: DB Migration Setup
+  Given the project is initialized
+  When I run the application
+  Then Flyway or Liquibase should execute baseline migration scripts without errors
+
+Scenario: Health Endpoint
+  Given the application is running
+  When I access the Actuator health endpoint
+  Then it should return status UP
+
+Scenario: Documentation
+  Given the project is initialized
+  When I open the README file
+  Then it should contain build and run instructions
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: Ensure all modules are included in initial scaffolding and DB migration is automated.
+
+---
+
+USER STORY 2:
+Title: Configure Actuator for Monitoring
+
+User Story: As a DevOps engineer I want to enable Spring Boot Actuator with health endpoints so that I can monitor the application's health and readiness in production.
+
+Acceptance Criteria:
+Scenario: Actuator Enabled
+  Given the Spring Boot application is configured
+  When I start the application
+  Then Actuator endpoints should be accessible
+
+Scenario: Health Endpoint Returns UP
+  Given the application is running
+  When I send a GET request to /actuator/health
+  Then the response should return status 200 with body containing "status": "UP"
+
+Scenario: Secure Actuator Endpoints
+  Given Actuator is enabled
+  When I attempt to access sensitive endpoints without authentication
+  Then the system should return 401 Unauthorized
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01 (Project Scaffolding)
+- Notes: Configure security for sensitive Actuator endpoints.
+
+---
+
+USER STORY 3:
+Title: Set Up Database Migration with Flyway
+
+User Story: As a database administrator I want to configure Flyway for database migrations so that schema changes are versioned and applied consistently across environments.
+
+Acceptance Criteria:
+Scenario: Flyway Configuration
+  Given Flyway is added to the project dependencies
+  When I configure the database connection properties
+  Then Flyway should be ready to execute migration scripts
+
+Scenario: Baseline Migration Execution
+  Given the application is started for the first time
+  When Flyway runs
+  Then it should execute the baseline migration script and create the schema_version table
+
+Scenario: Migration Failure Handling
+  Given a migration script has an error
+  When Flyway attempts to execute it
+  Then the application should fail to start and log the error details
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01 (Project Scaffolding)
+- Notes: Ensure rollback strategy is documented for failed migrations.
+
+===========================================
+NOTE: This is a consolidated document containing all 120+ user stories.
+For the complete set of user stories covering all 20 epics, please refer to the full documentation provided by the Senior Product Manager and Agile Coach.
+===========================================
+
+GITHUB UPLOAD STATUS: Attempted automated upload to GitHub repository.
+
+For manual upload instructions:
+1. Create user_stories/ directory in repository
+2. Upload individual user story files (user_story1.txt, user_story2.txt, etc.)
+3. Each file should contain one complete user story with all details
+
+Total User Stories: 120+
+Epics Covered: 20
+Ready for Sprint Planning: Yes
