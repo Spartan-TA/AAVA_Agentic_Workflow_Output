@@ -1,0 +1,15 @@
+Title: Asset History Log
+
+User Story: As an asset manager I want to view the complete history of each asset So that I can track usage, maintenance, and incidents over time
+
+Acceptance Criteria:
+Scenario: Asset history retrieval
+Given an asset record
+When I request its history
+Then the system should display all checkouts, returns, maintenance, and incident records
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Asset Checkout/Return Workflow
+- Notes: Support export of asset history for audits.
