@@ -1,0 +1,15 @@
+Title: Metrics Dashboard for Safety KPIs
+
+User Story: As a safety manager I want a metrics dashboard for safety KPIs So that I can monitor trends and take proactive action
+
+Acceptance Criteria:
+Scenario: Viewing safety dashboard
+Given incidents and investigations are logged
+When I access the dashboard
+Then I should see charts and metrics for key safety indicators
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Analytics engine
+- Notes: Support filtering by date, location, and incident type.
