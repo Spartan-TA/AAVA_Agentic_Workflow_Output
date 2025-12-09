@@ -1,0 +1,15 @@
+Title: Supplier Performance Tracking
+
+User Story: As an inventory manager I want to track supplier performance metrics So that I can make informed decisions about sourcing and restock requests
+
+Acceptance Criteria:
+Scenario: Performance metric recording
+Given a completed restock request
+When the supplier delivers
+Then the system should record delivery time, quality, and accuracy
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Automated Restock Requests
+- Notes: Support supplier rating and reporting.
