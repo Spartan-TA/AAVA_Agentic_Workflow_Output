@@ -1,0 +1,15 @@
+Title: Handle Unauthorized Access (401)
+
+User Story: As an API consumer I want to receive a clear 401 response when unauthorized So that I understand authentication is required
+
+Acceptance Criteria:
+Scenario: Unauthorized access
+Given I make a request without valid credentials
+When the endpoint is secured
+Then I should receive a 401 Unauthorized response
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Endpoint security
+- Notes: Include WWW-Authenticate header
