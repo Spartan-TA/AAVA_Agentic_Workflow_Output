@@ -1,0 +1,15 @@
+Title: Endpoint Security Enforcement
+
+User Story: As a developer I want to enforce security on API endpoints so that only authorized roles can access sensitive data and actions
+
+Acceptance Criteria:
+Scenario: Accessing protected endpoints
+Given an endpoint is secured by role-based access
+When a user with insufficient privileges attempts access
+Then the system should return a 403 Forbidden response
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Coverage for all sensitive endpoints; automated tests required for each role.
