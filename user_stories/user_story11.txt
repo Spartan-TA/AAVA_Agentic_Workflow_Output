@@ -1,0 +1,15 @@
+Title: Record Employee Clock-Out
+
+User Story: As an employee I want to clock out at the end of my shift So that my working hours are accurately tracked
+
+Acceptance Criteria:
+Scenario: Clock-out
+Given I am on the time & attendance page
+When I click the clock-out button
+Then my clock-out time should be recorded in the system
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Time & Attendance module
+- Notes: Prevent clock-out without prior clock-in.
