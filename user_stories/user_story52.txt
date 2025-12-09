@@ -1,0 +1,15 @@
+Title: Automated Task Assignment
+
+User Story: As a supervisor I want the system to automatically assign tasks to available employees based on role and workload So that operational efficiency is improved
+
+Acceptance Criteria:
+Scenario: Task assignment
+Given a new operational task
+When I initiate assignment
+Then the system should select an available employee and assign the task
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: User Role Management
+- Notes: Support manual override and assignment rules.
