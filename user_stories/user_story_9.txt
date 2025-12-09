@@ -1,0 +1,20 @@
+Title: Document Employee CRUD OpenAPI Schemas
+
+User Story: As a developer I want the employee CRUD endpoints documented in OpenAPI with example payloads So that integrators and frontend developers can easily understand and use the APIs
+
+Acceptance Criteria:
+Scenario: OpenAPI documentation
+Given employee CRUD endpoints are implemented
+When I view the OpenAPI spec
+Then all endpoints have request/response schemas and example payloads
+
+Scenario: Schema validation
+Given the OpenAPI spec is available
+When I generate client code from the spec
+Then the generated code matches the API contract
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD endpoints
+- Notes: Ensure documentation is published and updated with each API change.
