@@ -1,0 +1,51 @@
+Title: Mobile Clock-In/Out
+User Story: As a warehouse employee I want to clock in and out using my mobile device So that my attendance is recorded conveniently
+Acceptance Criteria:
+Scenario: Mobile clock-in/out
+  Given I am logged in on my mobile device
+  When I clock in or out
+  Then the system should record my attendance and confirm success
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance module, mobile UI
+- Notes: Geolocation capture optional
+
+Title: View Schedules on Mobile
+User Story: As an employee I want to view my work schedule on my mobile device So that I can plan my shifts easily
+Acceptance Criteria:
+Scenario: Mobile schedule view
+  Given my schedule is available
+  When I access the schedule on mobile
+  Then I should see my upcoming shifts in a responsive layout
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Scheduling module, mobile UI
+- Notes: Calendar integration optional
+
+Title: Submit Leave Requests via Mobile
+User Story: As an employee I want to submit leave requests from my mobile device So that I can manage time off remotely
+Acceptance Criteria:
+Scenario: Mobile leave request
+  Given I am logged in on mobile
+  When I submit a leave request
+  Then the system should record the request and notify my supervisor
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave management, notification module
+- Notes: Confirmation via push notification
+
+Title: Offline Access for Mobile PWA
+User Story: As an employee I want to use key EMS features offline on my mobile device So that I can clock in/out and view schedules even without connectivity
+Acceptance Criteria:
+Scenario: Offline access
+  Given I am offline
+  When I access EMS mobile PWA
+  Then I should be able to clock in/out and view schedules, with data synced when online
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Mobile PWA, sync engine
+- Notes: Offline mode for core features only
