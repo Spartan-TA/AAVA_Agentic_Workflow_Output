@@ -1,0 +1,15 @@
+Title: Swap Shifts Between Employees
+
+User Story: As an employee I want to request a shift swap with a colleague So that I can manage personal commitments without affecting coverage
+
+Acceptance Criteria:
+Scenario: Shift swap request
+Given I am scheduled for a shift
+When I request a swap and my colleague accepts
+Then the schedule should update to reflect the change and notify the manager
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Shift schedule, notifications
+- Notes: Swaps must be approved by manager
