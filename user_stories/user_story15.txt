@@ -1,0 +1,51 @@
+Title: Asset Registry CRUD
+User Story: As an asset manager I want to add, update, and remove equipment records so that asset tracking is accurate
+Acceptance Criteria:
+Scenario: Asset registry management
+Given I am on the asset management page
+When I add or update an asset
+Then the asset is visible in the registry with condition status
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Includes PPE, forklifts, scanners
+
+Title: Asset Check-In/Check-Out
+User Story: As a supervisor I want to assign and track equipment check-in/out for employees so that accountability is maintained
+Acceptance Criteria:
+Scenario: Check-in/out workflow
+Given an asset is available
+When I assign it to an employee
+Then the system records the checkout and expected return date
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: History log per asset and employee
+
+Title: Certification Validation for Asset Use
+User Story: As a system I want to block asset assignment if required certifications are missing or expired so that safety is enforced
+Acceptance Criteria:
+Scenario: Certification validation
+Given an employee lacks a valid certification
+When I attempt to assign a restricted asset
+Then the system blocks the assignment and notifies the supervisor
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Applies to equipment-sensitive assets
+
+Title: Overdue Asset Return Report
+User Story: As an asset manager I want to generate reports of overdue asset returns so that follow-up actions can be taken
+Acceptance Criteria:
+Scenario: Overdue report
+Given assets are checked out
+When the return date passes without check-in
+Then the asset appears in the overdue report
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E07
+- Notes: Report exportable
