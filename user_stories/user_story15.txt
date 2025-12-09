@@ -1,0 +1,15 @@
+Title: Record Safety Incidents & OSHA Reporting
+
+User Story: As a safety officer I want to record workplace incidents and manage investigation workflows So that compliance with OSHA regulations is maintained and corrective actions are tracked
+
+Acceptance Criteria:
+Scenario: Record and investigate safety incident
+Given an incident is reported
+When the safety officer logs the incident and initiates an investigation
+Then the workflow tracks progress and generates OSHA-compliant reports
+
+Additional Details:
+- Priority: High
+- Story Points: 7
+- Dependencies: E02 (Employee Master Data CRUD), E03 (RBAC)
+- Notes: Must support attachments and incident categorization.
