@@ -1,0 +1,42 @@
+Title: Upload Employee Documents
+User Story: As an HR manager I want to upload documents to employee profiles so that records are complete and accessible
+Acceptance Criteria:
+Scenario: Upload document
+  Given I am logged in as an HR manager
+  When I select an employee and upload a document
+  Then the document is saved and linked to the profile
+Scenario: Validate document type
+  Given I am uploading a document
+  When the file type is unsupported
+  Then I receive an error and cannot proceed
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data CRUD
+- Notes: Support PDF, DOCX, and image formats
+
+Title: Employee Document Access
+User Story: As an employee I want to access my documents online so that I can review my records
+Acceptance Criteria:
+Scenario: View documents
+  Given documents are uploaded to my profile
+  When I log in and access my documents
+  Then I see a list of available files
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Document Management
+- Notes: Access should be secure
+
+Title: Document Expiry Notification
+User Story: As an HR manager I want to receive notifications when documents are expiring so that renewals are managed
+Acceptance Criteria:
+Scenario: Document expiry alert
+  Given a document is nearing expiry
+  When the expiry date is within 30 days
+  Then I receive a notification
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Notifications & Announcements
+- Notes: Notification timing configurable
