@@ -1,0 +1,20 @@
+Title: Soft-Delete Employee Record via API
+
+User Story: As an HR manager I want to soft-delete employee records So that I can retain historical data while removing inactive employees from active lists
+
+Acceptance Criteria:
+Scenario: Soft-delete operation
+Given an employee record exists
+When I send a DELETE request to /employees/{id}
+Then the employee status is updated to 'inactive' and record is excluded from active queries
+
+Scenario: Restore soft-deleted employee
+Given an employee record is soft-deleted
+When I send a PATCH request to restore status
+Then the employee is returned to active lists
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee domain
+- Notes: Ensure audit log captures delete and restore actions.
