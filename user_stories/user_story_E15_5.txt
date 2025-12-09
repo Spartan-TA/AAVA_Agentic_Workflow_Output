@@ -1,0 +1,15 @@
+Title: Metrics Endpoints for BI Integration
+
+User Story: As a data engineer I want metrics endpoints that expose operational data for BI tools So that I can integrate warehouse KPIs into enterprise dashboards
+
+Acceptance Criteria:
+Scenario: Metrics API access
+Given metrics endpoints are available
+When a BI tool queries the endpoint
+Then it receives up-to-date, structured data for attendance, overtime, leave, certifications, and safety KPIs
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Endpoints must be documented and secured by role.
