@@ -1,0 +1,15 @@
+Title: Leave Request Submission
+
+User Story: As an employee I want to submit leave requests through the system So that my time off is tracked and approved efficiently
+
+Acceptance Criteria:
+Scenario: Leave request submission
+Given I am authenticated
+When I submit a leave request
+Then the request should be routed to my supervisor for approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Personal Upcoming Shifts View
+- Notes: Support multiple leave types and partial day requests.
