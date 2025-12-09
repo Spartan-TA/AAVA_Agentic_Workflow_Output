@@ -1,0 +1,20 @@
+Title: List and Filter Employee Records
+
+User Story: As an HR Manager I want to list and filter employee records by department, role, and status so that I can quickly find relevant employees for HR actions.
+
+Acceptance Criteria:
+Scenario: Filter by department
+Given multiple employee records exist
+When I filter by department
+Then only employees in the selected department should be shown
+
+Scenario: Pagination
+Given more than 50 employee records
+When I view the list
+Then results should be paginated and load within 2 seconds
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee record creation (E02_1)
+- Notes: Filtering and pagination parameters must be documented in OpenAPI.
