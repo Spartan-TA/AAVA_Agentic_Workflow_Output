@@ -1,0 +1,15 @@
+Title: Generate Operational Reports & Analytics
+
+User Story: As an operations manager I want to view reports on attendance, overtime, and safety KPIs So that I can monitor workforce trends and make data-driven decisions
+
+Acceptance Criteria:
+Scenario: View overtime report
+Given attendance and shift data are available
+When the manager requests an overtime report
+Then the system displays aggregated overtime hours by employee and department
+
+Additional Details:
+- Priority: Medium
+- Story Points: 7
+- Dependencies: E04 (Time & Attendance), E05 (Shift & Schedule Management), E06 (Leave & Absence Management), E07 (Training & Certification Tracking), E08 (Safety Incidents & OSHA Reporting), E14 (Audit Trail & Compliance)
+- Notes: Support export to CSV and scheduled report delivery.
