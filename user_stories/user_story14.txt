@@ -1,0 +1,51 @@
+Title: Record Safety Incident
+User Story: As a supervisor I want to record safety incidents with details so that investigations and compliance reporting are possible
+Acceptance Criteria:
+Scenario: Incident recording
+Given I am on the safety module
+When I submit a new incident
+Then the system saves severity, location, description, and involved employees
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Validation required
+
+Title: Incident Investigation Workflow
+User Story: As a safety officer I want to manage investigation status and corrective actions so that incidents are resolved and tracked
+Acceptance Criteria:
+Scenario: Investigation workflow
+Given an incident is open
+When I update the status to Investigating or Resolved
+Then the workflow and corrective actions are logged
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Status transitions tracked
+
+Title: OSHA Summary Export
+User Story: As an admin I want to export OSHA 300/300A summaries so that regulatory reporting is streamlined
+Acceptance Criteria:
+Scenario: OSHA export
+Given incident data is available
+When I request an OSHA summary
+Then the export includes all required fields
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Export format matches OSHA requirements
+
+Title: Safety Metrics Dashboard
+User Story: As a manager I want to view safety KPIs on a dashboard so that I can monitor trends and take action
+Acceptance Criteria:
+Scenario: Dashboard metrics
+Given incidents are recorded
+When I view the safety dashboard
+Then KPIs and metrics are displayed with filtering options
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Metrics endpoint available
