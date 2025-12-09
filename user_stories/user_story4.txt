@@ -1,0 +1,20 @@
+Title: Employee CRUD API
+
+User Story: As an HR manager I want to create, read, update, and delete employee records via an API So that employee data can be managed efficiently
+
+Acceptance Criteria:
+Scenario: Employee record creation
+Given valid employee data
+When I send a POST request to the API
+Then a new employee record should be created and returned
+
+Scenario: Employee record update
+Given an existing employee ID
+When I send a PUT request with updated data
+Then the employee record should be updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Database migration setup
+- Notes: Include validation for required fields and error handling for duplicate badge IDs.
