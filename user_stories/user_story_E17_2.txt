@@ -1,0 +1,15 @@
+Title: Generate Onboarding Tasks for Training and Asset Assignment
+
+User Story: As a supervisor I want onboarding tasks for training and asset assignment to be automatically generated for new hires So that all compliance and operational requirements are met
+
+Acceptance Criteria:
+Scenario: Onboarding task generation
+Given a new employee record is created
+When onboarding is initiated
+Then tasks for required training and asset assignment are generated and tracked until completion
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Task completion status must be visible to HR and supervisors.
