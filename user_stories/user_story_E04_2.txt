@@ -1,0 +1,15 @@
+Title: Record Employee Clock-Out
+
+User Story: As an employee I want to clock out at the end of my shift So that my work hours are accurately tracked
+
+Acceptance Criteria:
+Scenario: Employee clock-out
+Given I am scheduled for a shift
+When I clock out using the system
+Then my attendance should be updated with end timestamp
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift schedule
+- Notes: Prevent early clock-out
