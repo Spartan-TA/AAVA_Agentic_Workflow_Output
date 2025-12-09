@@ -1,0 +1,23 @@
+Title: Set Up Core Modules and Database Migration
+
+User Story: As a developer I want to configure core modules (employee, scheduling, attendance, safety) and enable Flyway/Liquibase for DB migrations So that all foundational EMS domains are ready and database changes are versioned
+
+Acceptance Criteria:
+Scenario: Core modules present
+  Given the project is initialized
+  When I inspect the codebase
+  Then I should see base packages for employee, scheduling, attendance, and safety modules
+Scenario: Database migration
+  Given Flyway/Liquibase is configured
+  When I start the application
+  Then baseline migration should run and create initial tables
+Scenario: Migration validation
+  Given the database is migrated
+  When I check the migration history
+  Then all migrations should be tracked and repeatable
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Ensure modules are separated by package; Flyway/Liquibase must be enabled and tested.
