@@ -1,0 +1,15 @@
+Title: Enable Actuator Health Endpoint
+
+User Story: As a DevOps engineer I want to expose a health endpoint using Spring Boot Actuator So that monitoring tools can verify the application's status
+
+Acceptance Criteria:
+Scenario: Health endpoint availability
+Given the application is running
+When I access the /actuator/health endpoint
+Then the endpoint should return status UP with HTTP 200
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Endpoint must be secured; documentation must specify usage for monitoring
