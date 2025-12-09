@@ -1,0 +1,15 @@
+Title: Leave Management
+
+User Story: As an employee I want to request leave and view my leave balance So that I can plan my time off and ensure compliance with company policies
+
+Acceptance Criteria:
+Scenario: Requesting leave
+Given I am logged into the system
+When I submit a leave request
+Then my manager is notified and my leave balance is updated upon approval
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Notification module, approval workflow
+- Notes: Support for multiple leave types and accrual policies
