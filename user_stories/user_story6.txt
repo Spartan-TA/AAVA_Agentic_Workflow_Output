@@ -1,0 +1,15 @@
+Title: Delete Employee Record
+
+User Story: As an HR manager I want to delete an employee record So that I can remove employees who have left the organization
+
+Acceptance Criteria:
+Scenario: Delete employee record
+Given I am on the employee profile page
+When I click the delete button and confirm
+Then the employee record should be removed from the system
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD module
+- Notes: Ensure deletion is irreversible and audit log is updated.
