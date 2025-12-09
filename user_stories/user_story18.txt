@@ -1,0 +1,51 @@
+Title: In-App Notification Delivery
+User Story: As a worker I want to receive in-app notifications for shift changes and announcements so that I am always informed
+Acceptance Criteria:
+Scenario: Notification delivery
+Given I am logged in
+When a shift change or announcement occurs
+Then I receive a notification in the app
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Delivery status tracked
+
+Title: Email/SMS Notification Opt-In
+User Story: As a user I want to opt-in or out of email/SMS notifications so that I control my communication preferences
+Acceptance Criteria:
+Scenario: Opt-in/out
+Given I am on my profile settings
+When I change notification preferences
+Then notifications are sent only to selected channels
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Rate limits applied
+
+Title: Localized Notification Templates
+User Story: As an admin I want to manage localized notification templates so that messages are clear for all users
+Acceptance Criteria:
+Scenario: Template management
+Given I am on the notification settings page
+When I edit a template
+Then the localized version is used for delivery
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Supports multiple languages
+
+Title: Announcements Dashboard Widget
+User Story: As a supervisor I want to post announcements visible on the dashboard so that my team is updated in real time
+Acceptance Criteria:
+Scenario: Announcement posting
+Given I am on the dashboard
+When I post an announcement
+Then it appears for all relevant users
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Quiet hours configuration
