@@ -1,0 +1,94 @@
+EPIC 02: EMPLOYEE MASTER DATA (CRUD)
+
+---
+
+Title: Create Employee CRUD Endpoints
+
+User Story: As an HR user I want to create, read, update, and delete employee records So that I can manage employee master data efficiently
+
+Acceptance Criteria:
+
+Scenario: Create Employee
+Given I have HR role and valid employee data
+When I POST to /employees
+Then a new employee record should be created with a unique badgeId
+
+Scenario: Update Employee
+Given an existing employee record
+When I PUT or PATCH to /employees/{id}
+Then the employee data should be updated
+
+Scenario: Delete Employee
+Given an existing employee record
+When I DELETE /employees/{id}
+Then the employee should be soft-deleted
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project Scaffolding
+- Notes: Enforce unique badgeId, support soft-delete
+
+---
+
+Title: Employee Data Pagination and Filtering
+
+User Story: As an HR user I want to paginate and filter employee records So that I can efficiently search and manage large datasets
+
+Acceptance Criteria:
+
+Scenario: Paginated Results
+Given there are more than 20 employees
+When I GET /employees?page=1&size=20
+Then I should receive 20 employee records and pagination metadata
+
+Scenario: Filter by Department
+Given employees belong to different departments
+When I GET /employees?department=Shipping
+Then only employees from Shipping department should be returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD
+- Notes: Support filtering by role, status, shiftGroup
+
+---
+
+Title: Enforce Unique Badge ID
+
+User Story: As a System Administrator I want to enforce unique badge IDs for employees So that duplicate badge assignments are prevented
+
+Acceptance Criteria:
+
+Scenario: Duplicate Badge ID
+Given an existing employee with badgeId 12345
+When I attempt to create another employee with badgeId 12345
+Then the system should reject the request with a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD
+- Notes: Validation at API and DB level
+
+---
+
+Title: Employee API Documentation
+
+User Story: As a Developer I want OpenAPI documentation for employee endpoints So that integration and testing are streamlined
+
+Acceptance Criteria:
+
+Scenario: OpenAPI Schema
+Given the application is running
+When I access the OpenAPI docs
+Then all employee CRUD endpoints should be documented with request/response examples
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Employee CRUD
+- Notes: Include example payloads for each endpoint
+
+---
