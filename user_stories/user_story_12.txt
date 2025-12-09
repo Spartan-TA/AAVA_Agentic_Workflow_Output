@@ -1,0 +1,38 @@
+Title: Send Shift Change Notification
+User Story: As a warehouse employee I want to receive notifications for shift changes So that I am informed of schedule updates in real time
+Acceptance Criteria:
+Scenario: Shift change notification
+  Given my shift has been updated
+  When the change is saved in the system
+  Then I should receive a notification via in-app, email, or SMS
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Scheduling module, notification service
+- Notes: Notification channel configurable by user
+
+Title: Notify Expiring Certifications
+User Story: As an employee I want to be notified when my certifications are about to expire So that I can renew them and remain compliant
+Acceptance Criteria:
+Scenario: Certification expiry notification
+  Given my certification is expiring within 30 days
+  When the system detects the upcoming expiry
+  Then I should receive a notification with renewal instructions
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Certification management, notification service
+- Notes: Notification frequency configurable
+
+Title: Approval Request Notification
+User Story: As a supervisor I want to receive notifications for pending approval requests So that I can act on them promptly
+Acceptance Criteria:
+Scenario: Approval notification
+  Given an approval request is submitted
+  When the request is assigned to me
+  Then I should receive a notification via my preferred channel
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Approval workflow, notification service
+- Notes: Notification should include actionable link
