@@ -1,0 +1,15 @@
+Title: Daily Attendance Totals Calculation
+
+User Story: As a payroll manager I want the system to calculate daily attendance totals for each employee So that payroll processing is accurate and efficient
+
+Acceptance Criteria:
+Scenario: Attendance total calculation
+Given attendance records for a day
+When the payroll manager requests totals
+Then the system should sum clocked hours and flag any discrepancies
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Clock In/Out Endpoint
+- Notes: Support overtime and absence detection.
