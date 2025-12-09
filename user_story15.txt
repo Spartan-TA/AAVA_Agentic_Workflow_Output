@@ -1,0 +1,15 @@
+Title: Reporting & Analytics
+
+User Story: As a warehouse manager I want to generate and view operational reports and analytics So that I can make data-driven decisions
+
+Acceptance Criteria:
+Scenario: Generating a report
+Given I select report parameters
+When I generate the report
+Then the system displays relevant data and insights
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Data warehouse, analytics module
+- Notes: Support for export and visualization
