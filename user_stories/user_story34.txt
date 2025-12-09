@@ -1,0 +1,15 @@
+Title: Payroll Export File Generation
+
+User Story: As a payroll manager I want to generate payroll export files from the system So that payroll data can be processed by external systems
+
+Acceptance Criteria:
+Scenario: Payroll export generation
+Given completed attendance and leave records
+When I request a payroll export
+Then the system should generate a file in the required format
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Daily Attendance Totals Calculation, Leave Integration with Scheduling and Payroll
+- Notes: Support CSV and Excel formats.
