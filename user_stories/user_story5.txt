@@ -1,0 +1,23 @@
+Title: Update and Delete Employee Records
+
+User Story: As an HR manager I want to update and soft-delete employee records So that I can maintain accurate and current employee data without losing historical information
+
+Acceptance Criteria:
+Scenario: Update employee
+  Given an employee exists
+  When I send a PUT or PATCH request to /employees/{id} with updated details
+  Then the employee record should be updated accordingly
+Scenario: Soft-delete employee
+  Given an employee exists
+  When I send a DELETE request to /employees/{id}
+  Then the employee status should be set to inactive and the record should not be physically removed
+Scenario: Filtering and pagination
+  Given there are multiple employees
+  When I GET /employees with filters and pagination parameters
+  Then I should receive the correct filtered and paginated results
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01
+- Notes: Soft-delete must not remove records from the database; filtering and pagination required for large datasets.
