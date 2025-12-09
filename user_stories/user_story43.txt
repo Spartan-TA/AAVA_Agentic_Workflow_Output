@@ -1,0 +1,15 @@
+Title: Cycle Count Scheduling
+
+User Story: As an inventory manager I want to schedule cycle counts for specific items and locations So that inventory accuracy is maintained throughout the year
+
+Acceptance Criteria:
+Scenario: Cycle count scheduling
+Given the scheduling interface
+When I select items and locations for cycle count
+Then the system should create a schedule and notify relevant personnel
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Equipment Asset Registry CRUD
+- Notes: Support recurring and ad-hoc cycle counts.
