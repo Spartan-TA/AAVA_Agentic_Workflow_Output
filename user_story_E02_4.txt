@@ -1,0 +1,15 @@
+Title: Pagination and Filtering for Employee Records
+
+User Story: As an HR manager I want to paginate and filter employee records So that I can efficiently search and manage large employee datasets
+
+Acceptance Criteria:
+Scenario: Paginated and filtered employee list
+Given a large number of employee records
+When I send a GET request to /employees with pagination and filter parameters
+Then I receive a paginated and filtered list of employees matching the criteria
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Support filtering by department, role, status, and shiftGroup.
