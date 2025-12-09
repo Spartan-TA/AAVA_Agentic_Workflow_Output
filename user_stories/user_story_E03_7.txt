@@ -1,0 +1,15 @@
+Title: API Key/OAuth2 Toggle via Config
+
+User Story: As a system administrator I want to toggle between API Key and OAuth2 authentication via configuration So that I can adapt security to integration requirements
+
+Acceptance Criteria:
+Scenario: Authentication toggle
+Given the system is deployed
+When I change the authentication mode in config
+Then the system should enforce the selected authentication method
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Security module
+- Notes: Document configuration options
