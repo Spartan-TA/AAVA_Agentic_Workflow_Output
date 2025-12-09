@@ -1,0 +1,20 @@
+Title: Update Employee Record via API
+
+User Story: As an HR manager I want to update employee details using PUT/PATCH So that I can keep employee information current and accurate
+
+Acceptance Criteria:
+Scenario: Successful update
+Given an employee record exists
+When I send a PUT or PATCH request with updated details
+Then the employee record is updated and changes are reflected in subsequent queries
+
+Scenario: Validation on update
+Given an employee record exists
+When I update with invalid data (e.g., duplicate badgeId)
+Then the API returns a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee domain
+- Notes: Ensure partial updates are supported via PATCH.
