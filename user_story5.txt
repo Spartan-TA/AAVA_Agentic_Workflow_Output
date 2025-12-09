@@ -1,0 +1,21 @@
+Title: Create Employee Record via API
+
+User Story: As an HR manager I want to create employee records using a REST API So that new hires are registered in the system efficiently
+
+Acceptance Criteria:
+
+Scenario: Successful Employee Creation
+Given valid employee data (name, badgeId, role, department, etc.)
+When I POST to /employees
+Then a new employee record should be created and returned with a unique badgeId
+
+Scenario: Duplicate Badge ID
+Given an existing employee with a badgeId
+When I POST a new employee with the same badgeId
+Then the API should return a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: OpenAPI schema must include examples
