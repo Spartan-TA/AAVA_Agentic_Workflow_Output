@@ -1,0 +1,20 @@
+Title: Create Employee Record
+
+User Story: As an HR Manager I want to create a new employee record with all required fields so that employee data is accurately captured and available for downstream processes.
+
+Acceptance Criteria:
+Scenario: Valid employee creation
+Given I have filled all required fields (name, badgeId, role, department, shiftGroup, hireDate, status)
+When I submit the employee creation form
+Then a new employee record should be created and badgeId must be unique
+
+Scenario: Invalid badgeId
+Given I enter a duplicate badgeId
+When I submit the form
+Then I should see a validation error and the record should not be created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding (E01)
+- Notes: Ensure OpenAPI schema is updated and examples are provided.
