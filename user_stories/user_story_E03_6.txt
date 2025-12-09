@@ -1,0 +1,15 @@
+Title: Handle Forbidden Access (403)
+
+User Story: As an API consumer I want to receive a clear 403 response when access is forbidden So that I understand my permissions are insufficient
+
+Acceptance Criteria:
+Scenario: Forbidden access
+Given I make a request with valid credentials
+When my role lacks required permissions
+Then I should receive a 403 Forbidden response
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Endpoint security
+- Notes: Log forbidden attempts
