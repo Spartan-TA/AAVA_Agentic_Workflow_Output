@@ -1,0 +1,15 @@
+Title: OpenAPI Schema for Employee APIs
+
+User Story: As a developer I want to generate an OpenAPI schema for employee APIs So that I can enable integration and documentation for external systems
+
+Acceptance Criteria:
+Scenario: OpenAPI schema generation
+Given employee APIs are implemented
+When I access the OpenAPI endpoint
+Then the schema should describe all employee operations and models
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee APIs
+- Notes: Ensure schema is up-to-date
