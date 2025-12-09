@@ -1,0 +1,15 @@
+Title: Deliver Notifications & Announcements
+
+User Story: As an employee I want to receive in-app and email/SMS notifications for important events So that I am always informed about schedule changes, approvals, and announcements
+
+Acceptance Criteria:
+Scenario: Receive notification for schedule change
+Given my shift schedule is updated
+When the scheduler publishes the change
+Then I receive a notification via my preferred channel
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E03 (RBAC), E05 (Shift & Schedule Management), E06 (Leave & Absence Management), E07 (Training & Certification Tracking)
+- Notes: Support notification preferences and announcement broadcasts.
