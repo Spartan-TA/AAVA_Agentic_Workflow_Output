@@ -1,0 +1,15 @@
+Title: Equipment Assignment
+
+User Story: As a warehouse supervisor I want to assign equipment to employees So that asset usage is tracked and accountability is maintained
+
+Acceptance Criteria:
+Scenario: Assigning equipment
+Given I am logged in as a supervisor
+When I assign equipment to an employee
+Then the assignment is recorded and the employee is notified
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Asset management module, notification module
+- Notes: Support for equipment return and maintenance tracking
