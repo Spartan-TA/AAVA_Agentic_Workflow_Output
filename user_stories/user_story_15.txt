@@ -1,0 +1,9 @@
+Title: Missed Punch Notification
+User Story: As an employee I want to receive notifications when I miss a clock-in or clock-out So that I can promptly correct my attendance records
+Acceptance Criteria:
+Scenario: Missed punch alert Given I fail to clock-in or clock-out for a scheduled shift When the system detects the missed punch Then I receive an in-app and email notification with instructions to submit a correction
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance module, notification system
+- Notes: Notifications should be configurable by channel.
