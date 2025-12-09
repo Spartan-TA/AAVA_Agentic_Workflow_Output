@@ -1,0 +1,15 @@
+Title: OpenAPI Schema Documentation for Employee Endpoints
+
+User Story: As a developer I want comprehensive OpenAPI schemas for all employee endpoints So that I can easily integrate and validate requests/responses
+
+Acceptance Criteria:
+Scenario: OpenAPI schema availability
+Given all employee CRUD endpoints
+When I view the API documentation
+Then each endpoint has an example request/response schema and field descriptions
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01
+- Notes: Ensure schema examples cover all required and optional fields.
