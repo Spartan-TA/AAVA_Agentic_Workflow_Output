@@ -1,0 +1,15 @@
+Title: Schedule Performance Reviews
+
+User Story: As an HR manager I want to schedule performance reviews for employees So that feedback and development plans are provided regularly
+
+Acceptance Criteria:
+Scenario: Performance review scheduling
+Given I am logged in as an HR manager
+When I schedule a performance review
+Then the employee and manager should be notified and the review added to the calendar
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee database, notifications
+- Notes: Support for recurring and ad-hoc reviews
