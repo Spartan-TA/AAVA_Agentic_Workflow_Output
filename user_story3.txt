@@ -1,0 +1,15 @@
+Title: Set Up Database Migration Tool
+
+User Story: As a developer I want to integrate Flyway/Liquibase into the project So that database schema changes are versioned and reliably applied across environments
+
+Acceptance Criteria:
+Scenario: Database migration tool setup
+Given a new project scaffold
+When Flyway/Liquibase is configured and baseline migration is run
+Then the database schema is created and migration history is tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Ensure migration scripts are idempotent and documented
