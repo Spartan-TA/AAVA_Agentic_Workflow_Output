@@ -1,0 +1,15 @@
+Title: View Audit Logs
+
+User Story: As a compliance officer I want to view audit logs So that I can investigate incidents and verify compliance
+
+Acceptance Criteria:
+Scenario: Audit log viewing
+Given audit logs are recorded
+When I access the audit dashboard
+Then I should see a list of all logged activities with filters for date, user, and action
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Audit trail module
+- Notes: Support for exporting logs
