@@ -1,0 +1,51 @@
+Title: Mobile Clock In/Out
+User Story: As a warehouse worker I want to clock in and out using my mobile device so that attendance is convenient
+Acceptance Criteria:
+Scenario: Mobile clock event
+Given I am logged in on mobile
+When I clock in or out
+Then my attendance is recorded and synced
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Offline queue supported
+
+Title: View Personal Schedule on Mobile
+User Story: As a worker I want to view my upcoming shifts on my mobile device so that I can plan my attendance
+Acceptance Criteria:
+Scenario: Mobile schedule view
+Given I am logged in on mobile
+When I access my schedule
+Then all upcoming shifts are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E05, E06, E12
+- Notes: Responsive design
+
+Title: Request Leave via Mobile
+User Story: As an employee I want to request leave from my mobile device so that time off is easy to manage
+Acceptance Criteria:
+Scenario: Mobile leave request
+Given I am logged in on mobile
+When I submit a leave request
+Then my supervisor is notified and workflow proceeds
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E05, E06, E12
+- Notes: Mobile-friendly forms
+
+Title: Announcements on Mobile Dashboard
+User Story: As a worker I want to see announcements on my mobile dashboard so that I am informed in real time
+Acceptance Criteria:
+Scenario: Mobile announcement
+Given I am logged in on mobile
+When an announcement is posted
+Then it appears on my dashboard
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E05, E06, E12
+- Notes: PWA manifest installable
