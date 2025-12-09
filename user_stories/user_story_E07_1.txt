@@ -1,0 +1,15 @@
+Title: Certification CRUD and Assignment
+
+User Story: As an HR manager I want to create, update, and assign certifications to employees so that compliance and qualification records are maintained
+
+Acceptance Criteria:
+Scenario: Manage certifications
+Given I am logged in as HR
+When I create, update, or assign a certification to an employee
+Then the certification record is saved and visible on the employee profile
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Certification types configurable; assignment triggers notification to employee.
