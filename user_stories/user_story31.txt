@@ -1,0 +1,15 @@
+Title: Performance Review Cycle Creation
+
+User Story: As an HR manager I want to create performance review cycles So that employee evaluations are scheduled and tracked systematically
+
+Acceptance Criteria:
+Scenario: Review cycle creation
+Given the review management interface
+When I create a new review cycle
+Then it should be saved and available for employee assignments
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: Employee CRUD API
+- Notes: Support annual, semi-annual, and custom review cycles.
