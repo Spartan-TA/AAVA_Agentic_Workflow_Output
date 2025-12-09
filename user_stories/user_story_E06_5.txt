@@ -1,0 +1,15 @@
+Title: Export Approved Leaves for Payroll
+
+User Story: As a payroll administrator I want to export approved leaves for payroll processing So that leave data is accurately reflected in payroll calculations
+
+Acceptance Criteria:
+Scenario: Exporting leave data
+Given there are approved leave requests
+When I initiate a payroll export
+Then the leave data should be included in the export file in the required format
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Payroll export module
+- Notes: Support CSV and API export formats.
