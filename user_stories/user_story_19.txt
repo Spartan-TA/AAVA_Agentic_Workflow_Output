@@ -1,0 +1,15 @@
+Title: Export Attendance Data
+
+User Story: As a payroll administrator I want to export attendance data So that I can process payroll accurately
+
+Acceptance Criteria:
+Scenario: Attendance data export
+Given I am logged in as a payroll administrator
+When I select a date range and export attendance data
+Then I should receive a file in the required format (e.g., CSV)
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance records
+- Notes: Export should include all relevant fields for payroll
