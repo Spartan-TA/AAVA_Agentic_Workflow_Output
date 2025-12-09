@@ -1,0 +1,20 @@
+Title: Implement Role-Based Access Control
+
+User Story: As a system administrator I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users so that access to sensitive operations is restricted appropriately.
+
+Acceptance Criteria:
+Scenario: Role Assignment
+  Given a user account exists
+  When I assign a role to the user
+  Then the user should have access only to endpoints permitted for that role
+
+Scenario: Unauthorized Access
+  Given a user without the required role
+  When the user attempts to access a restricted endpoint
+  Then the API should return a 403 Forbidden error
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Roles must be configurable; security rules covered by automated tests.
