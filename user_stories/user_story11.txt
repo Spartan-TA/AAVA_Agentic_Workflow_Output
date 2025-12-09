@@ -1,0 +1,20 @@
+Title: Clock In/Out Endpoint
+
+User Story: As an employee I want to clock in and out via a dedicated API endpoint So that my attendance is accurately recorded in real time
+
+Acceptance Criteria:
+Scenario: Successful clock in
+Given I am authenticated
+When I send a clock in request
+Then my attendance record should be updated with the current timestamp
+
+Scenario: Successful clock out
+Given I am authenticated
+When I send a clock out request
+Then my attendance record should be updated with the current timestamp
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD API, Role-Based Access Control
+- Notes: Prevent duplicate clock in/out actions for the same shift.
