@@ -1,0 +1,20 @@
+Title: Certification CRUD and Expiry Alerts
+
+User Story: As an HR manager I want to manage employee certifications and receive alerts for upcoming expiries So that compliance is maintained and renewals are not missed
+
+Acceptance Criteria:
+Scenario: Certification record creation
+Given valid certification data
+When I add a certification to an employee
+Then it should be saved and tracked for expiry
+
+Scenario: Expiry alert
+Given a certification nearing expiry
+When the threshold is reached
+Then the system should send an alert to the employee and HR manager
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD API
+- Notes: Support bulk import and export of certifications.
