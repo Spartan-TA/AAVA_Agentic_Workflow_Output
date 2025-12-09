@@ -1,0 +1,15 @@
+Title: View Attendance History
+
+User Story: As an employee I want to view my attendance history So that I can verify my working hours and absences
+
+Acceptance Criteria:
+Scenario: View attendance
+Given I am on the attendance history page
+When I select a date range
+Then I should see a list of my clock-in and clock-out records for that period
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Time & Attendance module
+- Notes: Records should be exportable to CSV.
