@@ -1,0 +1,20 @@
+Title: Enforce Row-Level Security for Employee Data
+
+User Story: As a Supervisor I want to access only the employee records for my team So that I cannot view or modify data outside my scope of responsibility.
+
+Acceptance Criteria:
+Scenario: Supervisor accesses team records
+Given I am authenticated as SUPERVISOR
+When I GET /employees
+Then only records for my assigned team are returned
+
+Scenario: Supervisor attempts to access other teams
+Given I am authenticated as SUPERVISOR
+When I GET /employees for another team
+Then I am denied with a 403 error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee domain, Role-based endpoint security
+- Notes: Row-level constraints must be enforced in all relevant queries.
