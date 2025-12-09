@@ -1,0 +1,15 @@
+Title: Create New Shift
+
+User Story: As a shift manager I want to create new shifts So that I can schedule employees according to operational needs
+
+Acceptance Criteria:
+Scenario: Create shift
+Given I am on the shift management page
+When I enter shift details and save
+Then a new shift should be added to the schedule
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift Management module
+- Notes: Validate shift overlaps and employee availability.
