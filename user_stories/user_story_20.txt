@@ -1,0 +1,9 @@
+Title: Leave Request Submission
+User Story: As an employee I want to submit leave requests for PTO, sick, or unpaid leave So that my time off is tracked and approved according to company policy
+Acceptance Criteria:
+Scenario: Submit leave request Given I am logged in and have available leave balance When I fill out and submit a leave request form Then the request is recorded and routed for supervisor approval
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee master data, leave policies
+- Notes: Request form should validate leave type and balance.
