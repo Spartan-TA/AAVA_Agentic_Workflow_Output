@@ -1,0 +1,12 @@
+Title: Generate Custom Reports
+User Story: As a manager I want to generate custom reports So that I can analyze workforce data and make informed decisions
+Acceptance Criteria:
+Scenario: Custom report generation
+Given I am logged in as manager
+When I select report criteria and generate a report
+Then the report should display relevant data and be available for download
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: All modules
+- Notes: Support PDF and Excel export.
