@@ -1,0 +1,15 @@
+Title: Handle Blackout Dates and Operation Calendars
+
+User Story: As a scheduler I want to define blackout dates and operation calendars So that shifts are not assigned on non-working days
+
+Acceptance Criteria:
+Scenario: Adding blackout dates
+Given I am on the calendar settings page
+When I add a blackout date
+Then the system should prevent shift assignments on those dates
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Calendar module
+- Notes: Support holidays, maintenance days, and custom events.
