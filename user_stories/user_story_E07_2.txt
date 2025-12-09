@@ -1,0 +1,15 @@
+Title: Alert for Expiring Certifications
+
+User Story: As an employee I want to receive alerts for expiring certifications So that I can renew them before they lapse
+
+Acceptance Criteria:
+Scenario: Certification expiration alert
+Given my certification is nearing expiration
+When the threshold date is reached
+Then I should receive a notification via my preferred channel
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Notification system
+- Notes: Support configurable alert windows and escalation.
