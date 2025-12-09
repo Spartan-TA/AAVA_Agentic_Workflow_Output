@@ -1,0 +1,20 @@
+Title: Update Employee Record
+
+User Story: As an HR Manager I want to update employee details so that records remain accurate and reflect current assignments and statuses.
+
+Acceptance Criteria:
+Scenario: Valid update
+Given an existing employee record
+When I modify fields (role, department, shiftGroup, status) and submit
+Then the changes should be saved and reflected in the employee profile
+
+Scenario: Invalid update
+Given I attempt to change badgeId to a duplicate
+When I submit the update
+Then I should see a validation error and the update should not be applied
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee record creation (E02_1)
+- Notes: PATCH and PUT endpoints must be covered in OpenAPI documentation.
