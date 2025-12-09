@@ -1,0 +1,51 @@
+Title: Attendance and Overtime Reports
+User Story: As an HR manager I want to generate attendance and overtime reports so that staffing and payroll decisions are data-driven
+Acceptance Criteria:
+Scenario: Attendance report generation
+Given attendance data is available
+When I request a report
+Then the system generates a CSV or PDF with filters for date, department, and shift
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Export within 10s for 50k rows
+
+Title: Certification Status Dashboard
+User Story: As a supervisor I want to view certification status for my team so that compliance gaps are addressed
+Acceptance Criteria:
+Scenario: Certification dashboard
+Given certification data is available
+When I view the dashboard
+Then all team membersâ certification statuses are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Access controlled
+
+Title: Safety KPI Metrics Endpoint
+User Story: As a safety officer I want to access safety KPIs via metrics endpoint so that I can integrate with BI tools
+Acceptance Criteria:
+Scenario: Metrics endpoint
+Given safety data is available
+When I call the metrics endpoint
+Then KPIs are returned in a format suitable for BI integration
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Endpoint documented
+
+Title: Role-Based Analytics Dashboard
+User Story: As a manager I want a role-based analytics dashboard so that I see only relevant operational data
+Acceptance Criteria:
+Scenario: Dashboard access
+Given I am logged in
+When I access the analytics dashboard
+Then I see reports and metrics relevant to my role
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Role-based filtering
