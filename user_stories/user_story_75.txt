@@ -1,0 +1,15 @@
+Title: Offboard Employees
+
+User Story: As an HR manager I want to offboard employees So that access is revoked and company assets are returned promptly
+
+Acceptance Criteria:
+Scenario: Employee offboarding
+Given an employee is leaving the organization
+When I initiate the offboarding process
+Then the employee's access should be revoked and a checklist generated for asset return and exit tasks
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User management, equipment assignment
+- Notes: Support for offboarding checklist and notifications
