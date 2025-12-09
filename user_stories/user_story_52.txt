@@ -1,0 +1,15 @@
+Title: Configure Notification Preferences
+
+User Story: As an employee I want to configure my notification preferences So that I receive important updates in my preferred format
+
+Acceptance Criteria:
+Scenario: Notification preference configuration
+Given I am logged in as an employee
+When I set my notification preferences (e.g., email, SMS, push)
+Then the system should deliver notifications accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Notifications module
+- Notes: Support for multiple channels
