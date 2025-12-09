@@ -1,0 +1,15 @@
+Title: Bulk Import of Inventory Data
+
+User Story: As an inventory manager I want to bulk import inventory data from external files So that initial setup and large updates are efficient
+
+Acceptance Criteria:
+Scenario: Bulk import execution
+Given a valid inventory file
+When I upload it to the system
+Then the inventory records should be created or updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Equipment Asset Registry CRUD
+- Notes: Support CSV and Excel formats, validate data before import.
