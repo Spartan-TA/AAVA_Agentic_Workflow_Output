@@ -1,0 +1,15 @@
+Title: Configure Safety Incident Categories
+
+User Story: As a safety officer I want to configure safety incident categories So that incidents are classified consistently for reporting and analysis
+
+Acceptance Criteria:
+Scenario: Safety incident category configuration
+Given I am logged in as a safety officer
+When I add or modify incident categories
+Then the system should apply these categories to all new incident reports
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Incident management
+- Notes: Support for custom and standard categories
