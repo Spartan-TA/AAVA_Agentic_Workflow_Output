@@ -1,0 +1,15 @@
+Title: Personal Upcoming Shifts View
+
+User Story: As an employee I want to view my upcoming shifts on a dashboard So that I can plan my work schedule in advance
+
+Acceptance Criteria:
+Scenario: Upcoming shifts display
+Given I am authenticated
+When I access my dashboard
+Then my scheduled shifts for the next 30 days should be displayed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Shift Assignment and Conflict Detection
+- Notes: Support mobile and desktop views.
