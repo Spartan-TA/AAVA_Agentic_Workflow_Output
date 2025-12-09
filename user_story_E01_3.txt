@@ -1,0 +1,20 @@
+Title: Actuator Health Endpoint Setup
+
+User Story: As a System Administrator I want to enable the Actuator health endpoint So that I can monitor the EMS application's health status
+
+Acceptance Criteria:
+Scenario: Health Endpoint Availability
+  Given the application is running
+  When I access /actuator/health
+  Then the endpoint should return status UP
+
+Scenario: Health Check Documentation
+  Given the health endpoint is enabled
+  When I review the README
+  Then instructions for accessing the health endpoint should be present
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Spring Boot project initialization
+- Notes: Ensure health endpoint is secured for admin access
