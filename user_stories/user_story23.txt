@@ -1,0 +1,15 @@
+Title: Enable Mobile Access via PWA
+
+User Story: As an employee I want to access the system on my mobile device with offline support So that I can clock in/out and view schedules even without internet connectivity
+
+Acceptance Criteria:
+Scenario: Use PWA offline
+Given I have installed the PWA on my mobile device
+When I lose internet connectivity
+Then I can still view my schedule and clock in/out, with data syncing when connection is restored
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: E04 (Time & Attendance), E05 (Shift & Schedule Management), E06 (Leave & Absence Management), E12 (Notifications & Announcements)
+- Notes: Must be responsive and support push notifications.
