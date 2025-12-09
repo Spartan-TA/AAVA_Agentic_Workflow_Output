@@ -1,0 +1,15 @@
+Title: Configure Leave Policies
+
+User Story: As an HR manager I want to configure leave policies So that leave rules are enforced consistently across the organization
+
+Acceptance Criteria:
+Scenario: Leave policy configuration
+Given I am logged in as an HR manager
+When I set up or modify leave policies
+Then the system should apply these rules to all leave requests and balances
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Leave module
+- Notes: Support for policy versioning and audit
