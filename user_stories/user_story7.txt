@@ -1,0 +1,15 @@
+Title: Soft-Delete Employee Record via API
+
+User Story: As an HR manager I want to soft-delete employee records So that terminated employees are excluded from active lists but historical data is retained
+
+Acceptance Criteria:
+Scenario: Employee soft-delete
+Given an existing employee record
+When I submit a DELETE request to /employees/{id}
+Then the employee status should be updated to inactive and the record should not appear in active queries
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API (E02)
+- Notes: Soft-deleted records must be filterable; badgeId must remain unique; OpenAPI schema must include examples
