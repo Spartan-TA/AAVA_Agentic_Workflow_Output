@@ -1,0 +1,15 @@
+Title: Configure Audit Retention Policies
+
+User Story: As a compliance officer I want to configure audit retention policies So that audit logs are retained according to legal and organizational requirements
+
+Acceptance Criteria:
+Scenario: Audit retention policy configuration
+Given I am logged in as a compliance officer
+When I set up or modify retention policies
+Then the system should retain or purge audit logs according to the policy
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Audit trail module
+- Notes: Support for policy versioning
