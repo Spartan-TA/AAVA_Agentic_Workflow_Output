@@ -1,0 +1,15 @@
+Title: Record Safety Incident Workflow
+
+User Story: As a supervisor I want to record safety incidents and near-misses with severity, location, and involved employees so that the organization can track and investigate workplace safety issues
+
+Acceptance Criteria:
+Scenario: Submit safety incident
+Given I am logged in as supervisor
+When I submit a safety incident form with required details
+Then the incident is logged and assigned a status of Open
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Required fields validated; incident ID generated automatically.
