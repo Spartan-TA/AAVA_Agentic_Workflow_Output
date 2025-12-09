@@ -1,0 +1,15 @@
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor I want to assign shifts to employees so that staffing needs are met and schedules are visible to all team members
+
+Acceptance Criteria:
+Scenario: Assigning a shift
+Given I am logged in as supervisor
+When I select employees and assign them to a shift template
+Then the schedule should reflect the assignments and notify affected employees
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Bulk assignment supported; notifications triggered upon assignment.
