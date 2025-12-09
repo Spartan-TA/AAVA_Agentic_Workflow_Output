@@ -1,0 +1,15 @@
+Title: Notification Preferences Management
+
+User Story: As a user I want to manage my notification preferences So that I only receive alerts relevant to my role and interests
+
+Acceptance Criteria:
+Scenario: Preference update
+Given the notification settings interface
+When I update my preferences
+Then the system should save my choices and adjust alert delivery accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Role-Based Access Control Setup
+- Notes: Support email, SMS, and push notifications.
