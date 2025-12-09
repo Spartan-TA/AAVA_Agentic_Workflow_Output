@@ -1,0 +1,15 @@
+Title: View Safety Incident History
+
+User Story: As a manager I want to view the history of safety incidents So that I can identify trends and take preventive measures
+
+Acceptance Criteria:
+Scenario: Safety incident history viewing
+Given safety incidents are reported
+When I access the incident history dashboard
+Then I should see a list of incidents with details and status
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Incident reporting
+- Notes: Support for filtering by date, type, and location
