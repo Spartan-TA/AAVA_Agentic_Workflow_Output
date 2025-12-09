@@ -1,0 +1,15 @@
+Title: Customizable Dashboard Widgets
+
+User Story: As a user I want to customize my dashboard with widgets relevant to my role So that I have quick access to important information
+
+Acceptance Criteria:
+Scenario: Widget customization
+Given the dashboard interface
+When I add, remove, or rearrange widgets
+Then my dashboard should update accordingly and save my preferences
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Role-Based Access Control Setup
+- Notes: Support drag-and-drop and widget library.
