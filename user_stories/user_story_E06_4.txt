@@ -1,0 +1,15 @@
+Title: Exclude Approved Leave from Scheduling
+
+User Story: As a scheduler I want approved leave to be excluded from shift assignments So that employees are not scheduled when unavailable
+
+Acceptance Criteria:
+Scenario: Scheduling with approved leave
+Given an employee has approved leave
+When I assign shifts for that period
+Then the system should prevent assignment and alert me
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Leave approval workflow
+- Notes: Support override with justification and audit entry.
