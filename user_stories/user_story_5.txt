@@ -1,0 +1,31 @@
+Title: Implement Shift & Schedule Management
+
+User Story: As a Supervisor I want to create and assign recurring shift templates and schedules so that warehouse staffing is optimized and scheduling conflicts are minimized.
+
+Acceptance Criteria:
+Scenario: Create shift template
+  Given I have access to scheduling
+  When I create a new shift template
+  Then the template is saved and available for assignment
+Scenario: Assign shifts to employees
+  Given shift templates exist
+  When I assign shifts to employees
+  Then assignments are reflected in their personal schedules
+Scenario: Detect scheduling conflicts
+  Given employees have assigned shifts
+  When I attempt to assign overlapping shifts
+  Then the system prevents the conflict and notifies me
+Scenario: Bulk-assign shifts
+  Given multiple employees
+  When I use bulk-assign
+  Then all selected employees receive the assigned shifts
+Scenario: Audit entry generation
+  Given a shift assignment is made
+  When I review the audit log
+  Then the assignment action is recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee CRUD (E02), RBAC (E03), Attendance (E04)
+- Notes: Support blackout dates and warehouse operation calendars.
