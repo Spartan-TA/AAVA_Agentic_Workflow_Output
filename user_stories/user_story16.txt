@@ -1,0 +1,12 @@
+Title: Track Employee Certifications
+User Story: As an HR manager I want to track employee certifications So that compliance and renewal deadlines are managed
+Acceptance Criteria:
+Scenario: Certification tracking
+Given I am logged in as HR manager
+When I view an employee profile
+Then I should see all certifications, expiry dates, and renewal status
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD
+- Notes: Include automated reminders for expiring certifications.
