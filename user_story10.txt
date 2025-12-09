@@ -1,0 +1,15 @@
+Title: Performance Reviews
+
+User Story: As a manager I want to conduct and record employee performance reviews So that feedback and development plans are documented
+
+Acceptance Criteria:
+Scenario: Completing a review
+Given I am logged in as a manager
+When I submit a performance review for an employee
+Then the review is stored and accessible to HR and the employee
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Employee profile, HR module
+- Notes: Support for review templates and goal tracking
