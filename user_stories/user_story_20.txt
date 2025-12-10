@@ -1,0 +1,15 @@
+Title: Automate CI/CD Pipeline
+
+User Story: As a developer I want automated build, test, and deployment pipelines So that releases are reliable and fast
+
+Acceptance Criteria:
+Scenario: CI/CD workflow
+Given a code change is pushed
+When the pipeline runs
+Then builds, tests, and deployments are executed automatically
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E01
+- Notes: Rollback on failure and deployment notifications
