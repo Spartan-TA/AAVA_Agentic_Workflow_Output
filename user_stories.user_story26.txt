@@ -1,0 +1,15 @@
+Title: Certification Validation for Asset Assignment
+
+User Story: As an asset manager I want to validate user certifications before assigning certain equipment So that only qualified personnel can access restricted assets
+
+Acceptance Criteria:
+Scenario: Assigning restricted asset
+Given an asset requires a specific certification
+When I attempt to assign the asset to a user
+Then the system should verify the user's certification and allow assignment only if valid
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Asset registry, user profile, certification records
+- Notes: System should display clear error messages if certification is missing or expired.
