@@ -1,0 +1,12 @@
+Title: Assign Required Training
+User Story: As a training coordinator I want to assign required training to employees So that compliance and skill requirements are met
+Acceptance Criteria:
+Scenario: Training assignment
+Given I am on the training management page
+When I assign a training to an employee
+Then the employee should be notified and the assignment tracked
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Notification module, training catalog
+- Notes: Support recurring and one-time trainings.
