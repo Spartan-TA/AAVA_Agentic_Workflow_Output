@@ -1,0 +1,59 @@
+EPIC E03: Role-Based Access Control (RBAC)
+
+Title: Implement Role-Based Endpoint Security
+User Story: As a system I want to restrict endpoints based on user roles So that sensitive operations are protected
+Acceptance Criteria:
+Scenario: Endpoint security
+Given a user is authenticated
+When they access a restricted endpoint
+Then access is allowed or denied based on role
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Roles: ADMIN, HR, SUPERVISOR, WORKER
+
+---
+
+Title: Enforce Row-Level Security
+User Story: As a supervisor I want to access only my team's records So that privacy is maintained
+Acceptance Criteria:
+Scenario: Row-level security
+Given a supervisor is logged in
+When they query employee records
+Then only their team's records are returned
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Map supervisor to team
+
+---
+
+Title: API Key/OAuth2 Toggle
+User Story: As a system admin I want to toggle between API key and OAuth2 authentication So that integration flexibility is provided
+Acceptance Criteria:
+Scenario: Auth toggle
+Given the config is set
+When I switch authentication mode
+Then endpoints require the selected method
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Document config options
+
+---
+
+Title: Unauthorized and Forbidden Responses
+User Story: As a user I want to receive clear error codes for unauthorized and forbidden actions So that I understand access issues
+Acceptance Criteria:
+Scenario: Error responses
+Given a user is not authorized
+When they access a restricted endpoint
+Then a 401 or 403 is returned
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01, E02
+- Notes: Standardize error messages
