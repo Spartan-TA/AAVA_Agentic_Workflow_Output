@@ -1,0 +1,12 @@
+Title: View Leave Balance
+User Story: As an employee I want to view my current leave balance So that I can plan my time off responsibly
+Acceptance Criteria:
+Scenario: Viewing leave balance
+Given I am logged in
+When I navigate to my leave balance page
+Then I should see my available leave days by type
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave accrual module
+- Notes: Display real-time updates after approvals or requests.
