@@ -1,0 +1,20 @@
+Title: Update Employee Record
+
+User Story: As an HR Manager I want to update employee details such as role, department, shiftGroup, and status so that employee information remains accurate and up to date.
+
+Acceptance Criteria:
+Scenario: Successful Update
+Given an existing employee record
+When I send a PUT or PATCH request with updated details to /employees/{id}
+Then the employee record should be updated and changes reflected in the response
+
+Scenario: Invalid Update
+Given an invalid field value (e.g., non-existent department)
+When I attempt to update the employee record
+Then the system should return a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee creation
+- Notes: API must support partial updates and validate all fields.
