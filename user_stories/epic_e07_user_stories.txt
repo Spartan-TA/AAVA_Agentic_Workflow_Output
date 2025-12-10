@@ -1,0 +1,44 @@
+EPIC E07: Training & Certification Tracking
+
+Title: Track Certifications
+User Story: As a safety officer I want to track employee certifications and expirations So that compliance is maintained
+Acceptance Criteria:
+Scenario: Certification tracking
+Given certifications are entered
+When I view employee profiles
+Then certification status and expiry are visible
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Block expired assignments
+
+---
+
+Title: Alert on Expiring Certifications
+User Story: As a supervisor I want alerts for certifications expiring soon So that renewals are managed proactively
+Acceptance Criteria:
+Scenario: Expiry alerts
+Given a certification is expiring in 30/7 days
+When I view alerts
+Then I am notified to renew
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Email/SMS notification
+
+---
+
+Title: Upload Proof Documents
+User Story: As an employee I want to upload proof of certification So that my qualifications are validated
+Acceptance Criteria:
+Scenario: Document upload
+Given I have a certification
+When I upload proof
+Then it is stored and linked to my profile
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Secure storage
