@@ -1,0 +1,15 @@
+Title: Update Employee Record
+
+User Story: As an HR manager I want to update employee details So that I can keep employee information accurate and current
+
+Acceptance Criteria:
+Scenario: Employee Update
+Given an existing employee record
+When I submit updated information
+Then the employee record is updated and changes are reflected in the system
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee record exists
+- Notes: Support PATCH/PUT and validate badgeId uniqueness on update.
