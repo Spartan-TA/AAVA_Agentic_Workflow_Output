@@ -1,0 +1,79 @@
+### EPIC E04 - Time & Attendance (Clock In/Out)
+
+**User Story 1**
+Title: Clock-In Endpoint with Validation
+
+User Story: As a Warehouse Worker I want to clock in via an endpoint So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Valid clock-in
+Given I am scheduled for a shift
+When I POST to /attendance/clock-in with valid data
+Then my clock-in is recorded and associated with my shift
+
+Scenario: Invalid clock-in
+Given I am not scheduled
+When I POST to /attendance/clock-in
+Then the API returns a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Optionally capture geofence/device info
+
+**User Story 2**
+Title: Clock-Out Endpoint with Validation
+
+User Story: As a Warehouse Worker I want to clock out via an endpoint So that my worked hours are tracked
+
+Acceptance Criteria:
+Scenario: Valid clock-out
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out is recorded and hours are calculated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Handle missed punches
+
+**User Story 3**
+Title: Corrections Workflow for Missed Punches
+
+User Story: As a Supervisor I want to approve corrections for missed punches So that attendance records remain accurate
+
+Acceptance Criteria:
+Scenario: Correction request
+Given a missed punch
+When a worker submits a correction
+Then a task is created for supervisor approval
+
+Scenario: Approval
+Given a pending correction
+When supervisor approves
+Then the attendance record is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 1, User Story 2
+- Notes: Track correction history
+
+**User Story 4**
+Title: Export Attendance Reports
+
+User Story: As an HR Manager I want to export attendance reports in CSV So that payroll and compliance processes are supported
+
+Acceptance Criteria:
+Scenario: Report export
+Given attendance data
+When I request a CSV export
+Then the report is generated and downloadable
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1, User Story 2
+- Notes: Include daily totals
