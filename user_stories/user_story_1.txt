@@ -1,0 +1,15 @@
+Title: Initialize Spring Boot Project Scaffolding
+
+User Story: As a developer I want to initialize a Spring Boot (Maven) project with base packages and core modules So that the team has a standardized foundation for further development
+
+Acceptance Criteria:
+Scenario: Project scaffolding and health endpoint setup
+Given a clean repository
+When I run the build and start the application
+Then the application runs on port 8080 and the Actuator health endpoint returns UP
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build and run steps; base package structure must be created.
