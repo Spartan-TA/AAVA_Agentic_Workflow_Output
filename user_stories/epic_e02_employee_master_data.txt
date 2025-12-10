@@ -1,0 +1,67 @@
+### EPIC E02 - Employee Master Data (CRUD)
+
+**User Story 1**
+Title: Create Employee Entity and CRUD APIs
+
+User Story: As an HR Manager I want to manage employee records via CRUD APIs So that employee data is accurate and up-to-date
+
+Acceptance Criteria:
+Scenario: Employee creation
+Given valid employee data
+When I POST to /employees
+Then a new employee record is created
+
+Scenario: Employee update
+Given an existing employee
+When I PUT/PATCH to /employees/{id}
+Then the record is updated
+
+Scenario: Employee deletion
+Given an employee to remove
+When I DELETE /employees/{id}
+Then the record is soft-deleted
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01
+- Notes: Support pagination and filtering
+
+**User Story 2**
+Title: Enforce Unique Badge ID
+
+User Story: As an HR Manager I want each employee to have a unique badgeId So that duplicate entries are prevented
+
+Acceptance Criteria:
+Scenario: Badge ID uniqueness
+Given an existing badgeId
+When I try to create another employee with the same badgeId
+Then the API returns a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Return clear error messages
+
+**User Story 3**
+Title: Provide Employee Filtering and Pagination
+
+User Story: As an HR Manager I want to filter and paginate employee records So that I can efficiently search and manage large datasets
+
+Acceptance Criteria:
+Scenario: Filtering by department
+Given multiple employees
+When I GET /employees?department=Shipping
+Then only employees in Shipping are returned
+
+Scenario: Pagination
+Given more than 50 employees
+When I GET /employees?page=2&size=20
+Then the correct page of results is returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 1
+- Notes: Document OpenAPI schemas with examples
