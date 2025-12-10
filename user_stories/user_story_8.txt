@@ -1,0 +1,15 @@
+Title: Clock-In/Out Endpoints with Validation and Shift Association
+
+User Story: As a warehouse worker I want to clock in and out using validated endpoints So that my attendance and shift hours are accurately recorded
+
+Acceptance Criteria:
+Scenario: Clock-in/out event capture
+Given I am scheduled for a shift
+When I POST a clock-in or clock-out event with required validation
+Then my attendance is recorded and associated with the correct shift
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC
+- Notes: Device and geofence capture optional; automatic shift association required.
