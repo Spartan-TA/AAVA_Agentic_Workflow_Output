@@ -1,0 +1,12 @@
+Title: View Personal Shift Schedule
+User Story: As an employee I want to view my upcoming shift schedule So that I can plan my availability and attendance
+Acceptance Criteria:
+Scenario: Viewing shift schedule
+Given I am logged in
+When I navigate to my schedule page
+Then I should see all my assigned shifts with dates and times
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift assignment module
+- Notes: Include mobile-friendly calendar view.
