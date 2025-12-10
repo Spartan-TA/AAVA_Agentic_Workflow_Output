@@ -1,0 +1,20 @@
+Title: Employee Creation API
+
+User Story: As an HR administrator I want to create new employee records with all required fields So that employee data is accurately captured in the system
+
+Acceptance Criteria:
+Scenario: Successful employee creation
+  Given I am authenticated as an HR administrator
+  When I submit a POST request to /employees with valid name, badgeId, role, department, shiftGroup, hireDate, and status
+  Then the employee record is created and a unique badgeId is enforced
+
+Scenario: Duplicate badgeId
+  Given an employee with badgeId '12345' exists
+  When I attempt to create another employee with badgeId '12345'
+  Then the API returns a validation error indicating badgeId must be unique
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: OpenAPI schema must include examples for all fields.
