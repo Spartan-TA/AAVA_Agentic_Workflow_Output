@@ -1,0 +1,15 @@
+Title: Enable Mobile Access via PWA
+
+User Story: As a warehouse worker I want to access core features on mobile devices So that I can clock in/out and view schedules conveniently
+
+Acceptance Criteria:
+Scenario: Mobile usability
+Given a mobile device
+When I use the PWA
+Then I can perform core flows and offline events are queued
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: E04, E05, E06, E12
+- Notes: Lighthouse PWA score â¥ 80
