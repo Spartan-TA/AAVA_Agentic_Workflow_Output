@@ -1,0 +1,25 @@
+Title: Clock-In Event API
+
+User Story: As a warehouse worker I want to clock in for my shift using a secure endpoint with optional geofence and device capture So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+  Given I am authenticated and at the warehouse location
+  When I submit a POST request to /attendance/clock-in with my device info
+  Then my clock-in event is recorded and associated with my shift
+
+Scenario: Geofence validation
+  Given geofence is enabled
+  When I attempt to clock in outside the allowed area
+  Then the request is rejected with an error
+
+Scenario: Device capture
+  Given device capture is required
+  When I clock in
+  Then my device information is stored with the event
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: API must validate location and device if configured.
