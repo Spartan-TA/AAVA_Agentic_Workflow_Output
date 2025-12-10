@@ -1,0 +1,12 @@
+Title: Leave Request and Approval
+
+User Story: As an employee I want to request leave and have it approved or denied by my supervisor So that my time off is managed compliantly
+
+Acceptance Criteria:
+Scenario: Leave workflow Given I submit a leave request When my supervisor reviews and approves/denies Then my leave balance updates and scheduled shifts are flagged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC, Shift Management
+- Notes: PTO, sick, unpaid leave supported; exports show approved leaves
