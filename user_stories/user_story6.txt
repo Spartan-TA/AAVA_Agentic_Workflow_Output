@@ -1,0 +1,15 @@
+Title: Leave & Absence Management
+
+User Story: As a warehouse employee I want to request and track leave (PTO, sick, unpaid) so that my time off is managed compliantly and staffing plans remain accurate.
+
+Acceptance Criteria:
+Scenario: Leave request and approval
+Given I am an employee
+When I submit a leave request
+Then supervisors can approve or deny, balances update automatically, scheduled shifts are flagged for coverage, and exports show approved leaves.
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee Master Data (E02), Role-Based Access Control (E03), Shift & Schedule Management (E05)
+- Notes: Accrual balances and policies must be enforced, and integration hooks should exclude leave from scheduling and payroll hours.
