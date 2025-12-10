@@ -1,0 +1,15 @@
+Title: Document Access Control
+
+User Story: As an administrator I want to set access permissions for documents So that only authorized users can view or edit sensitive files
+
+Acceptance Criteria:
+Scenario: Setting document permissions
+Given a document is uploaded
+When I assign access roles or user groups
+Then only those users can access or modify the document
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: User management, document storage
+- Notes: Support for read, write, and admin permissions.
