@@ -1,0 +1,15 @@
+Title: HRIS Data Sync
+
+User Story: As a system integrator I want to synchronize employee data with the HRIS So that personnel records are always up to date across systems
+
+Acceptance Criteria:
+Scenario: Syncing HRIS data
+Given new or updated employee records in the HRIS
+When the integration job runs
+Then the system should update local records to match the HRIS
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: HRIS API, integration scheduler
+- Notes: Support for both scheduled and on-demand syncs.
