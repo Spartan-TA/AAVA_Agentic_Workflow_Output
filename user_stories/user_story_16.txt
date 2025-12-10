@@ -1,0 +1,12 @@
+Title: Create and Manage Employee Shifts
+User Story: As a shift supervisor I want to create and manage employee shifts So that I can ensure optimal coverage and operational efficiency
+Acceptance Criteria:
+Scenario: Shift creation and assignment
+Given I am on the shift management page
+When I create a new shift and assign employees
+Then the shift should be visible in the schedule and employees notified
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee database, notification module
+- Notes: Support recurring and ad-hoc shifts.
