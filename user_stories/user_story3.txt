@@ -1,0 +1,20 @@
+Title: Enable Spring Boot Actuator and Health Endpoints
+
+User Story: As a DevOps engineer I want to enable Spring Boot Actuator and expose health endpoints So that I can monitor application health and readiness in production environments.
+
+Acceptance Criteria:
+Scenario: Actuator enabled
+  Given the application is running
+  When I access the /actuator/health endpoint
+  Then the response should be 'UP' and include basic health indicators
+
+Scenario: Health endpoint security
+  Given the application is running in a non-local environment
+  When an unauthorized user accesses /actuator/health
+  Then access should be restricted as per security policy
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Document actuator endpoints and security configuration in README.
