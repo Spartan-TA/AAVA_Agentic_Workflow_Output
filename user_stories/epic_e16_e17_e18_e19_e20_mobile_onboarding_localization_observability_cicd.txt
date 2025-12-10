@@ -1,0 +1,323 @@
+### EPIC E16 - Mobile Access (PWA)
+
+**User Story 1**
+Title: Mobile Clock-In/Out
+
+User Story: As a warehouse worker I want to clock in and out using my mobile device So that I can record attendance conveniently
+
+Acceptance Criteria:
+Scenario: Mobile clock-in/out
+Given I am logged into the mobile app
+When I clock in or out
+Then my attendance is recorded and synced
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Offline support required
+
+**User Story 2**
+Title: View Schedules on Mobile
+
+User Story: As a warehouse worker I want to view my schedule on my mobile device So that I can plan my work
+
+Acceptance Criteria:
+Scenario: Mobile schedule view
+Given my schedule is published
+When I access the mobile app
+Then I see my upcoming shifts
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E05, E06, E12
+- Notes: Responsive design
+
+**User Story 3**
+Title: Request Leave via Mobile
+
+User Story: As a warehouse worker I want to request leave from my mobile device So that I can manage absences easily
+
+Acceptance Criteria:
+Scenario: Mobile leave request
+Given I am logged into the mobile app
+When I submit a leave request
+Then my supervisor is notified for approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Offline submission queues
+
+**User Story 4**
+Title: Receive Announcements on Mobile
+
+User Story: As a warehouse worker I want to receive announcements on my mobile device So that I stay informed
+
+Acceptance Criteria:
+Scenario: Mobile announcement notification
+Given an announcement is sent
+When I open the mobile app
+Then I see the latest messages
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E05, E06, E12
+- Notes: Push notifications supported
+
+---
+
+### EPIC E17 - Onboarding & Offboarding Workflow
+
+**User Story 1**
+Title: Automated Account Provisioning
+
+User Story: As an HR manager I want new employee accounts provisioned automatically So that onboarding is efficient
+
+Acceptance Criteria:
+Scenario: Account provisioning
+Given a new hire is entered
+When onboarding is triggered
+Then the employee account is created and credentials sent
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Integration with IDP
+
+**User Story 2**
+Title: Initial Schedule Assignment
+
+User Story: As an HR manager I want initial schedules assigned during onboarding So that new employees know when to report
+
+Acceptance Criteria:
+Scenario: Schedule assignment
+Given onboarding is in progress
+When the employee is provisioned
+Then an initial schedule is assigned and communicated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Schedule based on role/location
+
+**User Story 3**
+Title: Required Training Assignment
+
+User Story: As a supervisor I want required training assigned during onboarding So that compliance is maintained
+
+Acceptance Criteria:
+Scenario: Training assignment
+Given onboarding is in progress
+When the employee is provisioned
+Then required training modules are assigned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Track completion status
+
+**User Story 4**
+Title: Automated Offboarding and Deprovisioning
+
+User Story: As an HR manager I want accounts and assets deprovisioned automatically upon termination So that security and asset recovery are ensured
+
+Acceptance Criteria:
+Scenario: Offboarding
+Given an employee is terminated
+When offboarding is triggered
+Then access is revoked and assets are flagged for recovery
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Notify IT and facilities
+
+---
+
+### EPIC E18 - Localization & Multi-Tenant
+
+**User Story 1**
+Title: Locale-Specific Date, Time, Currency, and Language
+
+User Story: As a warehouse manager I want locale-specific date, time, currency, and language settings So that the system is usable in different regions
+
+Acceptance Criteria:
+Scenario: Locale configuration
+Given multiple locales are supported
+When I select a locale
+Then all relevant formats and translations are applied
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Support for right-to-left languages
+
+**User Story 2**
+Title: Tenant Isolation for Data and Configuration
+
+User Story: As a system administrator I want tenant isolation for data and configuration So that each warehouse's data is secure and independent
+
+Acceptance Criteria:
+Scenario: Tenant isolation
+Given multiple tenants are configured
+When I access tenant-specific data
+Then only data for my tenant is visible
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Support for cross-tenant admin roles
+
+---
+
+### EPIC E19 - Observability & Monitoring
+
+**User Story 1**
+Title: Structured Logging in JSON Format
+
+User Story: As a DevOps engineer I want structured logging in JSON format So that logs are easy to parse and analyze
+
+Acceptance Criteria:
+Scenario: Structured log output
+Given an application event occurs
+When it is logged
+Then the log entry is in JSON format
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Include correlation IDs
+
+**User Story 2**
+Title: Distributed Tracing with OpenTelemetry
+
+User Story: As a DevOps engineer I want distributed tracing with OpenTelemetry So that I can track requests across services
+
+Acceptance Criteria:
+Scenario: Distributed trace
+Given a request spans multiple services
+When tracing is enabled
+Then I can view the complete trace in the monitoring tool
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Trace context propagation required
+
+**User Story 3**
+Title: Metrics Collection with Micrometer
+
+User Story: As a DevOps engineer I want metrics collected with Micrometer So that I can monitor application health
+
+Acceptance Criteria:
+Scenario: Metrics reporting
+Given metrics are configured
+When the application runs
+Then metrics are available for dashboards and alerts
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Support for Prometheus/Grafana
+
+**User Story 4**
+Title: Alerting on Errors and Latency
+
+User Story: As a DevOps engineer I want alerts on errors and latency So that I can respond to issues proactively
+
+Acceptance Criteria:
+Scenario: Alert trigger
+Given an error or latency threshold is breached
+When the condition is detected
+Then an alert is sent to the on-call team
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Runbooks linked to alerts
+
+---
+
+### EPIC E20 - CI/CD & Deployment Automation
+
+**User Story 1**
+Title: Automated Build and Test Pipeline
+
+User Story: As a developer I want an automated build and test pipeline So that code quality is maintained
+
+Acceptance Criteria:
+Scenario: Pipeline execution
+Given a pull request is submitted
+When the pipeline runs
+Then the code is built and tests are executed
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Fail fast on test failures
+
+**User Story 2**
+Title: Security Scanning in CI/CD
+
+User Story: As a security engineer I want security scanning in the CI/CD pipeline So that vulnerabilities are detected early
+
+Acceptance Criteria:
+Scenario: Security scan
+Given a build is triggered
+When the security scan runs
+Then vulnerabilities are reported and builds fail if critical issues are found
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Integrate with SAST/DAST tools
+
+**User Story 3**
+Title: Docker Image Build and Tagging
+
+User Story: As a DevOps engineer I want Docker images built and tagged with commit SHA So that deployments are traceable
+
+Acceptance Criteria:
+Scenario: Docker image creation
+Given a successful build
+When the Docker image is created
+Then it is tagged with the commit SHA
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Push to container registry
+
+**User Story 4**
+Title: Blue-Green or Canary Deployment
+
+User Story: As a DevOps engineer I want blue-green or canary deployment strategies So that releases are safe and reversible
+
+Acceptance Criteria:
+Scenario: Deployment strategy
+Given a new version is ready
+When deployment is triggered
+Then the strategy is applied and health checks validate the release
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Automated rollback on failure
