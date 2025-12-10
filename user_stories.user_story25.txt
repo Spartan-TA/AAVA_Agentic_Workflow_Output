@@ -1,0 +1,15 @@
+Title: Asset Check-In/Check-Out
+
+User Story: As a warehouse staff member I want to check equipment in and out of the system So that asset usage and responsibility are tracked in real time
+
+Acceptance Criteria:
+Scenario: Checking out an asset
+Given an asset is available in the registry
+When I select the asset and check it out
+Then the system should record the transaction and update the asset status to 'checked out'
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Asset registry, user authentication
+- Notes: System should log user, date, and expected return date for each transaction.
