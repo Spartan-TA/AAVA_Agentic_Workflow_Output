@@ -1,0 +1,15 @@
+Title: Employee Offboarding
+
+User Story: As an HR manager I want to automate the offboarding process So that departing employees return assets, complete exit tasks, and have access revoked in a timely manner
+
+Acceptance Criteria:
+Scenario: Offboarding an employee
+Given an employee is marked for offboarding
+When the offboarding workflow is initiated
+Then the system should generate an exit checklist, notify departments, and revoke system access on the last day
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Asset registry, user management, notification module
+- Notes: Track completion of all offboarding steps for compliance.
