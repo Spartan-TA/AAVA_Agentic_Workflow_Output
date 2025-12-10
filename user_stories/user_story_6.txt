@@ -1,0 +1,25 @@
+Title: Employee Data Update and Soft-Delete API
+
+User Story: As an HR administrator I want to update employee records and perform soft-deletes So that employee data remains accurate and historical records are preserved
+
+Acceptance Criteria:
+Scenario: Update employee details
+  Given an employee record exists
+  When I send a PUT or PATCH request to /employees/{id} with updated fields
+  Then the employee record is updated and changes are reflected
+
+Scenario: Soft-delete employee
+  Given an active employee record exists
+  When I send a DELETE request to /employees/{id}
+  Then the employee status is set to inactive and the record is not physically removed
+
+Scenario: Retrieve soft-deleted employees
+  Given multiple employees exist, some soft-deleted
+  When I send a GET request with a filter for status=inactive
+  Then only soft-deleted employees are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Audit log entry must be generated for every update and delete.
