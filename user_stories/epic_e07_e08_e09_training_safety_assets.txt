@@ -1,0 +1,172 @@
+### EPIC E07 - Training & Certification Tracking
+
+**User Story 1**
+Title: Manage Employee Certifications
+
+User Story: As a Safety Officer I want to CRUD employee certifications So that compliance and qualification records are maintained
+
+Acceptance Criteria:
+Scenario: Certification creation
+Given valid certification data
+When I POST to /certifications
+Then a new certification is added to the employee profile
+
+Scenario: Certification update
+Given an existing certification
+When I PATCH /certifications/{id}
+Then the record is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Support proof document uploads
+
+**User Story 2**
+Title: Alert on Expiring Certifications
+
+User Story: As a Supervisor I want alerts for certifications expiring in 30/7 days So that renewals are not missed
+
+Acceptance Criteria:
+Scenario: Expiry alert
+Given a certification expiring soon
+When the system detects the expiry window
+Then an alert is sent to the employee and supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Integrate with notification system
+
+**User Story 3**
+Title: Block Assignment to Tasks Requiring Valid Certification
+
+User Story: As a Scheduler I want to block assignment of employees to tasks if their certification is expired So that only qualified staff are assigned
+
+Acceptance Criteria:
+Scenario: Assignment block
+Given an expired certification
+When I assign a task requiring certification
+Then the system prevents assignment and returns an error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1, User Story 2
+- Notes: Show certification status on employee profile
+
+---
+
+### EPIC E08 - Safety Incidents & OSHA Reporting
+
+**User Story 1**
+Title: Record Safety Incidents and Near-Misses
+
+User Story: As a Safety Officer I want to record incidents and near-misses with severity, location, and involved employees So that safety data is tracked and analyzed
+
+Acceptance Criteria:
+Scenario: Incident recording
+Given valid incident data
+When I POST to /safety/incidents
+Then the incident is recorded and validated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Support attachment uploads
+
+**User Story 2**
+Title: Incident Investigation Workflow
+
+User Story: As a Safety Officer I want to manage incident status from Open to Investigating to Resolved So that corrective actions are tracked
+
+Acceptance Criteria:
+Scenario: Status workflow
+Given an open incident
+When I update status to Investigating or Resolved
+Then the workflow is updated and history logged
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Track corrective actions
+
+**User Story 3**
+Title: Export OSHA Summary Reports
+
+User Story: As a Compliance Manager I want to export OSHA 300/300A summary fields So that regulatory reporting is supported
+
+Acceptance Criteria:
+Scenario: OSHA export
+Given incident data
+When I request an OSHA report
+Then the summary is generated and downloadable
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1, User Story 2
+- Notes: Provide metrics dashboard endpoints
+
+---
+
+### EPIC E09 - Equipment & Asset Assignment
+
+**User Story 1**
+Title: Manage Asset Registry (CRUD)
+
+User Story: As an Asset Manager I want to CRUD asset records So that equipment and PPE are tracked
+
+Acceptance Criteria:
+Scenario: Asset creation
+Given valid asset data
+When I POST to /assets
+Then a new asset is registered
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Track asset condition state
+
+**User Story 2**
+Title: Assign and Track Asset Check-In/Out
+
+User Story: As a Supervisor I want to assign assets to employees and track check-in/out So that accountability is maintained
+
+Acceptance Criteria:
+Scenario: Asset assignment
+Given an available asset
+When I assign to an employee
+Then the asset is marked as checked out
+
+Scenario: Asset return
+Given a checked-out asset
+When I mark as returned
+Then the asset is available for reassignment
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: User Story 1
+- Notes: Block assignment if certification is invalid
+
+**User Story 3**
+Title: Report Overdue Asset Returns
+
+User Story: As an Asset Manager I want to report overdue asset returns So that lost or unreturned equipment is flagged
+
+Acceptance Criteria:
+Scenario: Overdue report
+Given assets past due date
+When I generate a report
+Then overdue assets are listed with employee history
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: User Story 1, User Story 2
+- Notes: Show history log per asset and employee
