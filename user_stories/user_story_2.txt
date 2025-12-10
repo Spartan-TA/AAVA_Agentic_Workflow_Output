@@ -1,0 +1,15 @@
+Title: Set Up Database Migration and Documentation
+
+User Story: As a developer I want Flyway/Liquibase configured for baseline database migration and a README with build/run steps So that database changes are versioned and onboarding is easy
+
+Acceptance Criteria:
+Scenario: Database migration and documentation
+Given the project is initialized
+When I run the migration tool
+Then baseline migration is applied and the README contains clear build/run instructions
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: README must be kept up to date with migration steps; Flyway/Liquibase must be integrated in build.
