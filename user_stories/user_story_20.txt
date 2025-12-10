@@ -1,0 +1,12 @@
+Title: Submit Leave Request
+User Story: As an employee I want to submit a leave request So that my absence is properly documented and approved
+Acceptance Criteria:
+Scenario: Leave request submission
+Given I am logged in
+When I fill out and submit a leave request form
+Then my supervisor should be notified and the request tracked in the system
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Notification module, approval workflow
+- Notes: Support multiple leave types (sick, vacation, etc.).
