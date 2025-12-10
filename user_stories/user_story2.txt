@@ -1,0 +1,20 @@
+Title: Set Up Database Migration Tooling
+
+User Story: As a backend developer I want to configure Flyway or Liquibase for database migrations So that schema changes are versioned and applied consistently across environments.
+
+Acceptance Criteria:
+Scenario: Migration tool configuration
+  Given a new Spring Boot project
+  When I add Flyway or Liquibase dependencies and configuration
+  Then the migration tool should run baseline migration on application startup
+
+Scenario: Migration history tracking
+  Given the migration tool is configured
+  When I apply new migration scripts
+  Then the migration history should be tracked in the database
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Ensure migration scripts are idempotent and baseline is documented in README.
