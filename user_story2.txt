@@ -1,0 +1,12 @@
+Title: Set Up Core Modules and DB Migration
+
+User Story: As a developer I want to configure core modules and enable Flyway/Liquibase So that database migrations are managed and consistent across environments
+
+Acceptance Criteria:
+Scenario: Module and migration setup Given the project is scaffolded When I add core modules and configure Flyway/Liquibase Then baseline migration should execute and modules should be available
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Actuator enabled for health checks
