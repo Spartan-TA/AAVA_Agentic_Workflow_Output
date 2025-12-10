@@ -1,0 +1,15 @@
+Title: Update Employee Details
+
+User Story: As an HR manager I want to update employee details so that records remain accurate and up-to-date.
+
+Acceptance Criteria:
+Scenario: Update employee
+Given an existing employee record
+When I send a PATCH request with updated details
+Then the employee record reflects the changes and audit logs are generated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee domain model
+- Notes: Unique badgeId must be enforced.
