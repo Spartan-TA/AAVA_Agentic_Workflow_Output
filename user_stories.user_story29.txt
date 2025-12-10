@@ -1,0 +1,15 @@
+Title: Export Performance Reviews to PDF
+
+User Story: As an HR manager I want to export completed performance reviews as PDF documents So that records can be archived and shared securely
+
+Acceptance Criteria:
+Scenario: Exporting a review
+Given a performance review is completed
+When I select the review and choose 'Export to PDF'
+Then the system should generate a PDF file with all review details and comments
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review module, PDF generation library
+- Notes: PDF should include employee name, review period, ratings, and comments.
