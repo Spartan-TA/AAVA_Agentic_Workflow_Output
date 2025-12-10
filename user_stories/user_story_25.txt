@@ -1,0 +1,12 @@
+Title: View Training and Certification Status
+User Story: As an employee I want to view my training and certification status So that I am aware of compliance and renewal deadlines
+Acceptance Criteria:
+Scenario: Viewing training status
+Given I am logged in
+When I navigate to my training dashboard
+Then I should see all completed, pending, and expired certifications
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Training records module
+- Notes: Include alerts for upcoming expirations.
