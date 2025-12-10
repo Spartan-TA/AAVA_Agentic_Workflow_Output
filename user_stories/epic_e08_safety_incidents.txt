@@ -1,0 +1,73 @@
+EPIC E08: Safety Incidents & OSHA Reporting
+
+---
+
+Title: Record Safety Incidents and Near-Misses
+
+User Story: As a safety officer I want to record incidents and near-misses So that safety data is captured for analysis
+
+Acceptance Criteria:
+Scenario: Incident recording
+Given an incident occurs
+When I POST to /safety/incidents
+Then the event is validated and stored
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Severity, location, description required
+
+---
+
+Title: Workflow for Investigation and Corrective Actions
+
+User Story: As a safety officer I want a workflow for investigating incidents So that corrective actions are tracked
+
+Acceptance Criteria:
+Scenario: Investigation workflow
+Given an incident is recorded
+When I change status from Open to Investigating to Resolved
+Then each step is logged
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Record Safety Incidents and Near-Misses
+- Notes: Status transitions
+
+---
+
+Title: Generate OSHA Summary Reports
+
+User Story: As a compliance officer I want to generate OSHA summary reports So that regulatory requirements are met
+
+Acceptance Criteria:
+Scenario: OSHA report export
+Given incidents are recorded
+When I export OSHA 300/300A fields
+Then the report matches required format
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Record Safety Incidents and Near-Misses
+- Notes: Exportable CSV/PDF
+
+---
+
+Title: Metrics Dashboard for Safety KPIs
+
+User Story: As a manager I want a dashboard for safety KPIs So that I can monitor trends
+
+Acceptance Criteria:
+Scenario: Dashboard view
+Given incidents are logged
+When I access the dashboard
+Then metrics are displayed by severity, location, and time
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Record Safety Incidents and Near-Misses
+- Notes: Filterable by date
