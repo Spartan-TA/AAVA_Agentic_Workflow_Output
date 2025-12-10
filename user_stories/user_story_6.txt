@@ -1,0 +1,15 @@
+Title: API Key/OAuth2 Toggle
+
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication so that the system can adapt to different security requirements.
+
+Acceptance Criteria:
+Scenario: Authentication method toggle
+Given the system configuration
+When I switch the authentication method
+Then all endpoints enforce the selected method and unauthorized requests are rejected
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: RBAC
+- Notes: Configuration must be documented.
