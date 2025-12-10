@@ -1,0 +1,15 @@
+Title: Operational Reports
+
+User Story: As an operations manager I want to generate operational reports on key metrics So that I can monitor performance and make informed decisions
+
+Acceptance Criteria:
+Scenario: Generating a report
+Given I have access to the reporting module
+When I select report parameters and run the report
+Then the system should display the results with options to filter and sort
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Data warehouse, reporting module
+- Notes: Include standard reports for attendance, productivity, and incidents.
