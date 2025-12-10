@@ -1,0 +1,59 @@
+EPIC E04: Time & Attendance (Clock In/Out)
+
+Title: Clock-In Endpoint
+User Story: As a warehouse worker I want to clock in at the start of my shift So that my attendance is accurately recorded
+Acceptance Criteria:
+Scenario: Clock-in
+Given I am scheduled for a shift
+When I POST to /attendance/clock-in
+Then my clock-in event is recorded with timestamp and device info
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Optional geofence validation
+
+---
+
+Title: Clock-Out Endpoint
+User Story: As a warehouse worker I want to clock out at the end of my shift So that my worked hours are tracked
+Acceptance Criteria:
+Scenario: Clock-out
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded and hours are calculated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Validate shift association
+
+---
+
+Title: Handle Missed Punches
+User Story: As a worker I want to request corrections for missed punches So that my attendance record is accurate
+Acceptance Criteria:
+Scenario: Correction request
+Given I missed a punch
+When I submit a correction
+Then an approval task is created for my supervisor
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Correction workflow
+
+---
+
+Title: Attendance Reports Export
+User Story: As a payroll admin I want to export attendance reports in CSV So that payroll processing is streamlined
+Acceptance Criteria:
+Scenario: Report export
+Given attendance data exists
+When I request a CSV export
+Then the file is generated with daily totals
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Include corrections
