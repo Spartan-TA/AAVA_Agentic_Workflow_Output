@@ -1,0 +1,15 @@
+Title: Initialize Spring Boot Project
+
+User Story: As a developer I want to initialize a Spring Boot project with Maven and configure base packages so that all modules have a standardized foundation for development.
+
+Acceptance Criteria:
+Scenario: Project Initialization
+Given I have access to the project repository
+When I run the build and start the application
+Then the application should run on port 8080 and the base package structure should be present
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: Include README with build/run steps and enable Actuator health endpoint.
