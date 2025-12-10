@@ -1,0 +1,91 @@
+EPIC E01: Project Scaffolding & Domain Setup
+
+---
+
+Title: Initialize Spring Boot Project
+
+User Story: As a developer I want to initialize a Spring Boot project with Maven So that I have a standardized foundation for all modules
+
+Acceptance Criteria:
+Scenario: Project initialization
+Given I have access to the repository
+When I run the Maven build
+Then the project builds successfully and runs on port 8080
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps
+
+---
+
+Title: Configure Base Packages and Core Modules
+
+User Story: As a developer I want to configure base packages and set up core modules (employee, scheduling, attendance, safety) So that the codebase is organized and ready for feature development
+
+Acceptance Criteria:
+Scenario: Base package setup
+Given the Spring Boot project is initialized
+When I create base packages for each core module
+Then the package structure matches the domain requirements and is documented in the README
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Initialize Spring Boot Project
+- Notes: Follow standard naming conventions for packages
+
+---
+
+Title: Add Flyway/Liquibase for Database Migrations
+
+User Story: As a developer I want to integrate Flyway or Liquibase for database migrations So that schema changes are versioned and reproducible
+
+Acceptance Criteria:
+Scenario: Baseline migration setup
+Given the database connection is configured
+When I run the migration tool
+Then the baseline schema is created and migration history is tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Configure Base Packages and Core Modules
+- Notes: Document migration steps in README
+
+---
+
+Title: Enable Actuator Health Endpoint
+
+User Story: As a System Administrator I want to enable the Actuator health endpoint So that I can monitor the application's health status
+
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns status UP
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Initialize Spring Boot Project
+- Notes: Ensure actuator endpoints are secured
+
+---
+
+Title: Document Build and Run Steps
+
+User Story: As a developer I want to document build and run steps in the README So that new team members can easily set up the project
+
+Acceptance Criteria:
+Scenario: README documentation
+Given the project is initialized
+When I update the README with build and run instructions
+Then the steps are clear and allow anyone to build and run the project
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Initialize Spring Boot Project
+- Notes: Include troubleshooting tips for common issues
