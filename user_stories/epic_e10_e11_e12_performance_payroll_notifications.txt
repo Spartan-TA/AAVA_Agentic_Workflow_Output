@@ -1,0 +1,235 @@
+### EPIC E10 - Performance Reviews & Goals
+
+**User Story 1**
+Title: Create Review Templates and Cycles
+
+User Story: As an HR Manager I want to create quarterly and annual review templates and cycles So that performance reviews are standardized
+
+Acceptance Criteria:
+Scenario: Template creation
+Given valid review criteria
+When I POST to /reviews/templates
+Then a new template is created
+
+Scenario: Cycle creation
+Given a template
+When I POST to /reviews/cycles
+Then a new review cycle is started
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Support competencies and goals
+
+**User Story 2**
+Title: Supervisor and Employee Acknowledgement of Reviews
+
+User Story: As a supervisor I want to acknowledge completion of a performance review So that both parties confirm the review process is complete
+
+Acceptance Criteria:
+Scenario: Review acknowledgement
+Given a completed performance review
+When the supervisor and employee both acknowledge the review
+Then the review status is updated to "Acknowledged" and locked for further edits
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Acknowledgement must be logged for audit purposes
+
+**User Story 3**
+Title: Goal Tracking and Progress Updates
+
+User Story: As an employee I want to update progress on my performance goals So that my supervisor can monitor my development throughout the review period
+
+Acceptance Criteria:
+Scenario: Updating goal progress
+Given I have assigned goals for the review period
+When I submit a progress update
+Then the update is visible to my supervisor and timestamped
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Progress history should be retained for each goal
+
+**User Story 4**
+Title: Competency Ratings and Comments
+
+User Story: As a supervisor I want to rate employee competencies and leave comments So that I can provide actionable feedback during reviews
+
+Acceptance Criteria:
+Scenario: Rating and commenting on competencies
+Given a review template with competencies
+When I enter ratings and comments
+Then the employee can view them and respond if needed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Ratings should be standardized (e.g., 1-5 scale)
+
+**User Story 5**
+Title: Review Template Configuration
+
+User Story: As an HR manager I want to configure quarterly and annual review templates So that reviews are tailored to different roles and periods
+
+Acceptance Criteria:
+Scenario: Template creation
+Given access to the review template configuration
+When I create or edit a template
+Then it is available for supervisors to use in future reviews
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Templates should support custom fields and competencies
+
+---
+
+### EPIC E11 - Payroll Export Integration
+
+**User Story 1**
+Title: Generate Payroll-Ready Files
+
+User Story: As a payroll administrator I want to generate payroll-ready files from approved attendance and leave So that payroll processing is accurate and efficient
+
+Acceptance Criteria:
+Scenario: Payroll file generation
+Given all attendance and leave records are approved
+When I initiate payroll export
+Then a payroll-ready file is generated in the required format
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04, E06
+- Notes: File format should be configurable per provider
+
+**User Story 2**
+Title: Map Data to External Payroll Provider Formats
+
+User Story: As a payroll administrator I want to map internal data to external payroll provider formats So that exported files are compatible with third-party systems
+
+Acceptance Criteria:
+Scenario: Data mapping
+Given provider mapping rules are configured
+When I export payroll data
+Then the file matches the provider's required format
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Support for multiple providers
+
+**User Story 3**
+Title: Secure Delivery of Payroll Files
+
+User Story: As a payroll administrator I want to securely deliver payroll files via SFTP or API So that sensitive payroll data is protected during transfer
+
+Acceptance Criteria:
+Scenario: Secure file delivery
+Given a payroll file is ready for export
+When I choose SFTP or API delivery
+Then the file is securely transmitted to the provider
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Delivery logs and error handling required
+
+---
+
+### EPIC E12 - Notifications & Announcements
+
+**User Story 1**
+Title: Shift Change Notifications
+
+User Story: As an employee I want to receive notifications for shift changes So that I am always aware of my current schedule
+
+Acceptance Criteria:
+Scenario: Shift change notification
+Given my shift is changed
+When the change is approved
+Then I receive an in-app and email/SMS notification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Notification preferences configurable
+
+**User Story 2**
+Title: Expiring Certification Alerts
+
+User Story: As an employee I want to be notified when my certifications are about to expire So that I can renew them in time
+
+Acceptance Criteria:
+Scenario: Certification expiry notification
+Given a certification is expiring within 30 days
+When the system detects the expiry
+Then I receive a notification with renewal instructions
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Escalation for critical certifications
+
+**User Story 3**
+Title: Approval Notifications
+
+User Story: As a supervisor I want to receive notifications when leave or attendance requests require my approval So that I can respond promptly
+
+Acceptance Criteria:
+Scenario: Approval required notification
+Given a request is submitted
+When I am the approver
+Then I receive a notification to review and act
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Include actionable links in notifications
+
+**User Story 4**
+Title: Announcements Delivery
+
+User Story: As an HR manager I want to send announcements to all employees So that important information is communicated efficiently
+
+Acceptance Criteria:
+Scenario: Announcement broadcast
+Given an announcement is created
+When I send it
+Then all employees receive the message via in-app and email/SMS
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Support for attachments
+
+**User Story 5**
+Title: Quiet Hours Configuration
+
+User Story: As an employee I want to configure quiet hours for notifications So that I am not disturbed outside working hours
+
+Acceptance Criteria:
+Scenario: Quiet hours setup
+Given I set my quiet hours
+When a notification is triggered during quiet hours
+Then it is deferred until quiet hours end
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Emergency notifications override quiet hours
