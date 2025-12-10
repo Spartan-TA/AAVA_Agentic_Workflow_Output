@@ -1,0 +1,12 @@
+Title: Bulk Assign Shifts to Employees
+
+User Story: As a supervisor I want to bulk assign shifts to multiple employees So that scheduling is streamlined
+
+Acceptance Criteria:
+Scenario: Bulk assignment Given I select multiple employees and a shift template When I assign the shift Then all selected employees are scheduled and conflicts are detected
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift templates
+- Notes: Conflict detection and prevention
