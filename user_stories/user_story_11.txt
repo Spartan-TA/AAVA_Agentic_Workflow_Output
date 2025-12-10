@@ -1,0 +1,25 @@
+Title: Automated Security Testing Coverage
+
+User Story: As a QA engineer I want automated tests to verify all RBAC and security rules So that unauthorized access and privilege escalation are prevented
+
+Acceptance Criteria:
+Scenario: Test unauthorized access
+  Given test cases for each protected endpoint
+  When tests are run without authentication
+  Then all endpoints return 401 Unauthorized
+
+Scenario: Test forbidden actions
+  Given test cases for role-based restrictions
+  When tests are run with insufficient privileges
+  Then endpoints return 403 Forbidden
+
+Scenario: Supervisor row-level access
+  Given test cases for SUPERVISOR role
+  When tests are run
+  Then only team-specific data is accessible
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Coverage reports must be generated for all security rules.
