@@ -1,0 +1,15 @@
+Title: Record Safety Incidents
+
+User Story: As a safety manager I want to record safety incidents in the system So that all incidents are tracked and can be analyzed for trends
+
+Acceptance Criteria:
+Scenario: Recording a new incident
+Given I am on the safety incident entry page
+When I enter all required incident details and submit
+Then the incident should be saved and visible in the incident log
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User authentication, incident database
+- Notes: Required fields include date, location, description, and involved personnel.
