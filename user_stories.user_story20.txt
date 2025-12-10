@@ -1,0 +1,15 @@
+Title: Block Unqualified Assignments
+
+User Story: As a scheduler I want the system to prevent assignment of tasks to employees with expired or missing certifications So that safety and compliance are enforced
+
+Acceptance Criteria:
+Scenario: Assignment Validation
+Given a task requires a specific certification
+When I attempt to assign an unqualified employee
+Then the system blocks the assignment and displays an error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Certification tracking
+- Notes: Certification status visible on employee profile; scheduling checks enforced.
