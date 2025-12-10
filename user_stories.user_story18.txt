@@ -1,0 +1,15 @@
+Title: Export Approved Leave Data
+
+User Story: As a payroll specialist I want to export approved leave records So that I can ensure accurate payroll processing and compliance
+
+Acceptance Criteria:
+Scenario: Leave Data Export
+Given approved leave records exist for a period
+When I request an export
+Then a file is generated showing leave type, dates, employee, and approval status
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave approval workflow
+- Notes: Export format matches payroll integration requirements.
