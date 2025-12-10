@@ -1,0 +1,15 @@
+Title: Create Shift Templates
+
+User Story: As a scheduler I want to create recurring shift templates So that I can efficiently assign standard schedules to employees
+
+Acceptance Criteria:
+Scenario: Shift Template Creation
+Given I have scheduler access
+When I define a new shift template
+Then it is saved and available for assignment to employees
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC, Attendance
+- Notes: Support for rotations, overtime rules, and blackout dates.
