@@ -1,0 +1,15 @@
+Title: Audit Logging
+
+User Story: As a compliance officer I want all user actions and system changes to be logged So that I can review activity for security and compliance audits
+
+Acceptance Criteria:
+Scenario: Logging user actions
+Given a user performs an action (e.g., create, update, delete)
+When the action is completed
+Then the system should record the action, user, timestamp, and affected records in the audit log
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Logging module, user authentication
+- Notes: Audit log must be tamper-evident and searchable.
