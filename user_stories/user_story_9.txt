@@ -1,0 +1,25 @@
+Title: Endpoint and Method Security Enforcement
+
+User Story: As a system administrator I want to enforce security rules on API endpoints and methods So that only authorized users can access or modify sensitive data
+
+Acceptance Criteria:
+Scenario: Unauthorized request
+  Given I am not authenticated
+  When I attempt to access a protected endpoint
+  Then I receive a 401 Unauthorized response
+
+Scenario: Forbidden action
+  Given I am authenticated as a WORKER
+  When I attempt to access an ADMIN-only endpoint
+  Then I receive a 403 Forbidden response
+
+Scenario: Supervisor row-level constraints
+  Given I am authenticated as a SUPERVISOR
+  When I access employee records
+  Then I can only view and modify records for my assigned team
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Security rules must be covered by automated tests.
