@@ -1,0 +1,15 @@
+Title: View Schedules on Mobile
+
+User Story: As an employee I want to view my shift schedule on my mobile device So that I can plan my work and personal time easily
+
+Acceptance Criteria:
+Scenario: View schedule on mobile
+Given I am logged into the mobile app
+When I access the schedule section
+Then I should see my upcoming shifts and details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Mobile app, scheduling module
+- Notes: Support calendar integration and offline access.
