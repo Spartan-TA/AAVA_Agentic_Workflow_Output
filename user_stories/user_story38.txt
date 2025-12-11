@@ -1,0 +1,15 @@
+Title: Expiring Certification Notification
+
+User Story: As an employee I want to be notified when my certifications are about to expire So that I can renew them and remain compliant
+
+Acceptance Criteria:
+Scenario: Certification expiry notification
+Given my certification is expiring within 30 days
+When the system checks certification statuses
+Then I should receive a notification with renewal instructions
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification tracking, notification module
+- Notes: Configurable notification lead time.
