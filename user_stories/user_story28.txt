@@ -1,0 +1,23 @@
+Title: Safety Incident Workflow
+
+User Story: As a safety officer I want a workflow for incident review and follow-up So that incidents are investigated, resolved, and tracked to closure
+
+Acceptance Criteria:
+Scenario: Assign incident for review
+  Given an incident is recorded
+  When I assign it to a reviewer
+  Then the reviewer should be notified and the assignment logged
+Scenario: Record follow-up actions
+  Given an incident is under review
+  When follow-up actions are taken
+  Then they should be documented in the incident record
+Scenario: Close incident
+  Given all actions are complete
+  When I mark the incident as closed
+  Then its status should be updated and archived
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Safety module, workflow engine
+- Notes: Support for notifications and audit trail
