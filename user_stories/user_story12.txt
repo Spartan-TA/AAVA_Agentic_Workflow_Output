@@ -1,0 +1,19 @@
+Title: Row-Level Security for Employee Data
+
+User Story: As a compliance officer I want row-level security on employee data So that only authorized users can view or modify specific employee records
+
+Acceptance Criteria:
+Scenario: Access permitted by row-level security
+  Given a user has permission for certain employee records
+  When the user queries or edits employee data
+  Then only permitted records should be accessible
+Scenario: Access denied by row-level security
+  Given a user lacks permission for certain employee records
+  When the user attempts to access those records
+  Then access should be denied
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Permissions engine
+- Notes: Security rules must be auditable
