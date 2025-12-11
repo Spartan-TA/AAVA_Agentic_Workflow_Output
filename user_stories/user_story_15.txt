@@ -1,0 +1,15 @@
+Title: Handle Missed Punches and Corrections Workflow
+
+User Story: As a warehouse employee I want to request corrections for missed clock-in/out events so that my attendance records are accurate and payroll is correct
+
+Acceptance Criteria:
+Scenario: Employee requests correction
+Given an employee notices a missed punch
+When they submit a correction request
+Then a supervisor is notified to approve or deny the correction and the attendance record is updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock-in/out event recording, RBAC
+- Notes: Corrections must create approval tasks and be auditable.
