@@ -1,0 +1,19 @@
+Title: Attendance Reports Export
+
+User Story: As an HR manager I want to export attendance reports So that I can analyze and share attendance data externally
+
+Acceptance Criteria:
+Scenario: Export attendance report
+  Given I am authenticated and have access to attendance data
+  When I request an export
+  Then a downloadable file (CSV, XLSX) containing attendance records should be generated
+Scenario: Export with filters
+  Given I have applied filters (e.g., date range, department)
+  When I export the report
+  Then only filtered records should be included
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Reporting module
+- Notes: Support for multiple export formats
