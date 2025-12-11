@@ -1,0 +1,15 @@
+Title: Export OSHA Summary
+
+User Story: As an administrator I want to export OSHA summary reports So that regulatory compliance can be demonstrated and audits are simplified
+
+Acceptance Criteria:
+Scenario: Export OSHA report
+Given I am on the OSHA reporting page
+When I select a date range and export
+Then the system should generate a compliant summary file
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Incident tracking, reporting module
+- Notes: Support PDF and CSV formats.
