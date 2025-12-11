@@ -1,0 +1,15 @@
+Title: Update Leave Balances
+
+User Story: As an HR administrator I want leave balances to update automatically after approvals So that employee records remain accurate
+
+Acceptance Criteria:
+Scenario: Automatic leave balance update
+Given a leave request is approved
+When the approval is processed
+Then the employeeâs leave balance should decrease by the approved amount
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave approval workflow
+- Notes: Should handle partial day leaves and accruals.
