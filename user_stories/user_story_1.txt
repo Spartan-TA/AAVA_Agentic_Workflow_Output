@@ -1,0 +1,15 @@
+Title: Initialize Spring Boot Project
+
+User Story: As a System Administrator I want to initialize a Spring Boot project with Maven So that the foundation is standardized and ready for module development
+
+Acceptance Criteria:
+Scenario: Project Initialization
+Given I have access to the repository
+When I run the Maven build command
+Then the project builds successfully and runs on port 8080
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Ensure README includes build/run instructions.
