@@ -1,0 +1,19 @@
+Title: Leave Balance Management
+
+User Story: As an employee I want to view my leave balances So that I can plan my time off and avoid exceeding available leave
+
+Acceptance Criteria:
+Scenario: View leave balance
+  Given I am authenticated
+  When I access my leave dashboard
+  Then I should see my current leave balances by type
+Scenario: Balance update after leave
+  Given I have taken approved leave
+  When the leave period ends
+  Then my leave balance should be updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Leave management module
+- Notes: Support for multiple leave types and accrual policies
