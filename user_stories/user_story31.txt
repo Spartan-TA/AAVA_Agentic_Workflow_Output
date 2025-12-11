@@ -1,0 +1,23 @@
+Title: Asset Condition Tracking
+
+User Story: As a supervisor I want to track the condition of assets So that maintenance needs are identified and assets remain safe for use
+
+Acceptance Criteria:
+Scenario: Record asset condition
+  Given I am authenticated as a supervisor
+  When I update the condition of an asset (e.g., good, needs repair)
+  Then the condition should be saved and timestamped
+Scenario: View asset condition history
+  Given an asset has condition updates
+  When I view its record
+  Then I should see a history of all condition changes
+Scenario: Notify maintenance
+  Given an asset is marked as needing repair
+  When the condition is updated
+  Then a notification should be sent to the maintenance team
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset management module, notification system
+- Notes: Support for attachments and comments
