@@ -1,0 +1,25 @@
+Title: Create Employee Records via CRUD API
+
+User Story: As an HR Manager I want to create, view, update, and delete employee records using a REST API so that employee master data is accurate and up-to-date across systems.
+
+Acceptance Criteria:
+Scenario: Create employee
+Given I have HR Manager role
+When I POST a valid employee payload to /employees
+Then the employee record is created and returned with a unique badgeId
+
+Scenario: Update employee
+Given an existing employee record
+When I PUT updated details to /employees/{id}
+Then the employee record is updated
+
+Scenario: Delete employee
+Given an existing employee record
+When I DELETE /employees/{id}
+Then the employee record is soft-deleted and excluded from active queries
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project scaffolding (E01)
+- Notes: API must support pagination and filtering; OpenAPI schemas with examples required.
