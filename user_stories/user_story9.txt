@@ -1,0 +1,19 @@
+Title: Employee OpenAPI Schema Documentation
+
+User Story: As a developer I want the employee API to be documented in OpenAPI schema So that integration partners can easily understand and consume the endpoints
+
+Acceptance Criteria:
+Scenario: Generate OpenAPI schema
+  Given the employee API endpoints are defined
+  When I request the OpenAPI documentation
+  Then I should receive a valid OpenAPI 3.0 schema covering all endpoints, parameters, and responses
+Scenario: Schema validation
+  Given the OpenAPI schema is generated
+  When I validate it using an OpenAPI validator
+  Then there should be no errors or missing fields
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: API documentation tooling
+- Notes: Schema must be kept up-to-date with endpoint changes
