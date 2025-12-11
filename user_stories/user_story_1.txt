@@ -1,0 +1,20 @@
+Title: Initialize Spring Boot Project
+
+User Story: As a System Administrator I want to initialize a Spring Boot (Maven) project with standardized base packages So that all modules follow a consistent structure and delivery is accelerated
+
+Acceptance Criteria:
+Scenario: Project Initialization
+Given I have access to the repository
+When I run the build command
+Then the project builds and runs successfully on port 8080
+
+Scenario: Health Check Endpoint
+Given the project is running
+When I access the Actuator health endpoint
+Then it should return status UP
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Ensure README includes build/run steps and base package structure is created
