@@ -1,0 +1,15 @@
+Title: Announcements Dashboard
+
+User Story: As an employee I want to view company-wide announcements on my dashboard So that I am informed of important updates and events
+
+Acceptance Criteria:
+Scenario: View announcements
+Given I am logged in
+When I access my dashboard
+Then I should see a list of current announcements
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Announcement module
+- Notes: Support rich text and attachments.
