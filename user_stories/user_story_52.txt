@@ -1,0 +1,15 @@
+Title: Announcements on Mobile
+
+User Story: As an employee I want to receive company announcements on my mobile device So that I am informed of important updates wherever I am
+
+Acceptance Criteria:
+Scenario: View announcements on mobile
+Given I am logged into the mobile app
+When I access the announcements section
+Then I should see a list of current company announcements
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Mobile app, announcement module
+- Notes: Support push notifications and attachments.
