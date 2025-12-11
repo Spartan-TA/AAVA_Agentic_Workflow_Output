@@ -1,0 +1,15 @@
+Title: Blackout Dates
+
+User Story: As a scheduler I want to define blackout dates So that no shifts can be assigned on holidays or restricted days
+
+Acceptance Criteria:
+Scenario: Add blackout date
+Given I am on the blackout dates configuration page
+When I add a new blackout date
+Then the system should prevent shift assignments on that date
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Shift assignment logic
+- Notes: Should support recurring blackout dates (e.g., annual holidays).
