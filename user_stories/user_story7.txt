@@ -1,0 +1,39 @@
+Title: Record Clock-In Event
+User Story: As a warehouse worker I want to clock in at the start of my shift So that my working hours are accurately tracked
+Acceptance Criteria:
+Scenario: Successful clock-in Given I am scheduled for a shift When I clock in via the system Then my clock-in time is recorded and associated with my shift
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data CRUD (E02), RBAC (E03)
+- Notes: Geofence/device capture optional
+
+Title: Record Clock-Out Event
+User Story: As a warehouse worker I want to clock out at the end of my shift So that my shift completion is logged for payroll
+Acceptance Criteria:
+Scenario: Successful clock-out Given I am clocked in When I clock out via the system Then my clock-out time is recorded and hours worked are calculated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Time & Attendance (E04)
+- Notes: Automatic shift association
+
+Title: Handle Missed Punches & Corrections
+User Story: As a supervisor I want to correct missed clock-in/out events So that attendance data remains accurate
+Acceptance Criteria:
+Scenario: Correction workflow Given a missed punch is detected When I submit a correction request Then an approval task is created and the record is updated upon approval
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Time & Attendance (E04)
+- Notes: Approval workflow required
+
+Title: Export Attendance Reports
+User Story: As a payroll administrator I want to export attendance data in CSV format So that I can process payroll efficiently
+Acceptance Criteria:
+Scenario: Export attendance Given attendance records exist When I request a report export Then a CSV file is generated with daily totals and corrections
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Time & Attendance (E04)
+- Notes: Totals computed; exportable format
