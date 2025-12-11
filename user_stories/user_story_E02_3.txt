@@ -1,0 +1,20 @@
+Title: Support Pagination and Filtering of Employee Records
+
+User Story: As an HR Manager I want to paginate and filter employee records via API so that I can efficiently manage large datasets and quickly find relevant employees.
+
+Acceptance Criteria:
+Scenario: Paginate employee records
+Given there are more than 50 employee records
+When I GET /employees?page=1&size=20
+Then the API returns 20 records and pagination metadata
+
+Scenario: Filter employee records
+Given employee records exist with various departments and statuses
+When I GET /employees?department=Shipping&status=Active
+Then only active employees in Shipping are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD API
+- Notes: Filtering should support department, role, shiftGroup, and status fields.
