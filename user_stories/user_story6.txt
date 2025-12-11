@@ -1,0 +1,39 @@
+Title: Implement Role-Based Permissions
+User Story: As a system administrator I want to assign roles to users So that only authorized personnel can access sensitive features
+Acceptance Criteria:
+Scenario: Assign roles Given a user account exists When I assign a role Then the user receives permissions associated with that role
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project Scaffolding & Domain Setup (E01), Employee Master Data CRUD (E02)
+- Notes: Roles include ADMIN, HR, SUPERVISOR, WORKER
+
+Title: Enforce Endpoint Security
+User Story: As a developer I want to restrict API endpoints based on user roles So that unauthorized access is prevented
+Acceptance Criteria:
+Scenario: Access protected endpoint Given an endpoint requires ADMIN role When a non-ADMIN user requests access Then a 403 Forbidden error is returned
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role-Based Access Control (E03)
+- Notes: Method/row-level security required
+
+Title: Support API Key/OAuth2 Toggle
+User Story: As a DevOps engineer I want to toggle between API key and OAuth2 authentication So that I can adapt security to integration needs
+Acceptance Criteria:
+Scenario: Change auth mode Given the system is running When I update the config to switch auth mode Then endpoints enforce the selected authentication method
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Role-Based Access Control (E03)
+- Notes: Configurable via properties
+
+Title: Test Security Rules
+User Story: As a QA engineer I want automated tests for security rules So that unauthorized actions are reliably blocked
+Acceptance Criteria:
+Scenario: Run security tests Given test cases for each role and endpoint When I execute the tests Then unauthorized actions return 401/403 and authorized actions succeed
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role-Based Access Control (E03)
+- Notes: Coverage for all roles and endpoints
