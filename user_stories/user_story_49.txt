@@ -1,0 +1,15 @@
+Title: Mobile Clock-In/Out
+
+User Story: As an employee I want to clock in and out using my mobile device So that attendance is tracked conveniently
+
+Acceptance Criteria:
+Scenario: Mobile clock-in
+Given I am scheduled for a shift
+When I open the mobile app and clock in
+Then my attendance should be recorded in the system
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Mobile app, time tracking
+- Notes: Support geolocation and offline mode.
