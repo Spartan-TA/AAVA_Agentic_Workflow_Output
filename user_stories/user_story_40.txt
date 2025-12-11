@@ -1,0 +1,15 @@
+Title: Notify Expiring Certifications
+
+User Story: As an employee I want to receive notifications when my certifications are about to expire So that I can renew them and remain eligible for assignments
+
+Acceptance Criteria:
+Scenario: Notify certification expiration
+Given my certification is nearing expiration
+When the expiration date is within the notification window
+Then I should receive a reminder via email and/or mobile app
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Certification tracking, notification system
+- Notes: Support configurable notification windows.
