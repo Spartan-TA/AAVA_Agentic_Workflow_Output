@@ -1,0 +1,15 @@
+Title: Onboarding Task Automation
+
+User Story: As an HR manager I want onboarding tasks to be automatically assigned to new hires So that the onboarding process is streamlined and consistent
+
+Acceptance Criteria:
+Scenario: Automating onboarding tasks
+Given a new hire is added to the system
+When onboarding is initiated
+Then the system should assign required tasks and notify responsible parties
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Onboarding module, notification system
+- Notes: Support for custom task templates and progress tracking.
