@@ -1,0 +1,15 @@
+Title: CI/CD Pipeline for Build and Test
+
+User Story: As a DevOps engineer I want automated pipelines for building and testing code So that releases are reliable and fast
+
+Acceptance Criteria:
+Scenario: Automated build and test
+Given new code is pushed to the repository
+When the pipeline runs
+Then code should be built, tested, and results reported automatically
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: CI/CD platform, test suite
+- Notes: Support for rollback on test failure.
