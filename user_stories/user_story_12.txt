@@ -1,0 +1,15 @@
+Title: Enforce Row-Level Security for Supervisors
+
+User Story: As a supervisor I want to access only the records of my assigned team so that I cannot view or modify data outside my responsibility
+
+Acceptance Criteria:
+Scenario: Supervisor accessing employee records
+Given a supervisor is logged in
+When they request employee data
+Then only records for their assigned team are returned; access to other teams is forbidden (403)
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC core
+- Notes: Must be covered by automated security tests and documented in OpenAPI.
