@@ -1,0 +1,15 @@
+Title: Set Up Database Migration Tool
+
+User Story: As a System Administrator I want to set up Flyway or Liquibase for database migrations So that schema changes are versioned and repeatable across environments
+
+Acceptance Criteria:
+Scenario: Database Migration Setup
+Given the Spring Boot project is initialized
+When I configure Flyway or Liquibase
+Then baseline migration runs successfully and future migrations are tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: user_story_1.txt
+- Notes: Document migration process in README and validate on local/dev environments.
