@@ -1,0 +1,15 @@
+Title: Performance Review Cycle Creation
+
+User Story: As an HR manager I want to create performance review cycles So that employees and managers can participate in structured evaluations
+
+Acceptance Criteria:
+Scenario: Creating a new review cycle
+Given I am on the performance review admin panel
+When I enter the cycle details and select participants
+Then a new review cycle should be created and notifications sent to involved parties
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: User management, notification module
+- Notes: Support for custom review periods and participant selection.
