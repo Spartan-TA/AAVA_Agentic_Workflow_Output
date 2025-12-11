@@ -1,0 +1,15 @@
+Title: Offboarding Task Automation
+
+User Story: As an HR manager I want offboarding tasks to be automatically assigned when an employee leaves So that the exit process is thorough and compliant
+
+Acceptance Criteria:
+Scenario: Automating offboarding tasks
+Given an employee is marked for offboarding
+When the process is initiated
+Then the system should assign required tasks and notify responsible parties
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Offboarding module, notification system
+- Notes: Support for custom task templates and completion tracking.
