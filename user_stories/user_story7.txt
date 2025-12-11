@@ -1,0 +1,19 @@
+Title: Employee Soft-Delete Functionality
+
+User Story: As an HR manager I want to soft-delete employee records So that I can remove employees from active lists without losing historical data
+
+Acceptance Criteria:
+Scenario: Soft-delete employee
+  Given I am viewing an employee record
+  When I choose to delete the employee
+  Then the employee should be marked as inactive and hidden from active lists but retained in the database
+Scenario: Restore soft-deleted employee
+  Given an employee is soft-deleted
+  When I choose to restore the employee
+  Then the employee should reappear in active lists
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee database
+- Notes: Ensure audit trail for delete/restore actions
