@@ -1,0 +1,15 @@
+Title: Mobile Schedule Viewing
+
+User Story: As an employee I want to view my work schedule on my mobile device So that I can plan my time and stay informed of shift changes
+
+Acceptance Criteria:
+Scenario: Viewing schedule on mobile
+Given I am logged into the mobile app
+When I access the schedule section
+Then I should see my upcoming shifts and any changes
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Mobile app, scheduling module
+- Notes: Support for push notifications on schedule changes.
