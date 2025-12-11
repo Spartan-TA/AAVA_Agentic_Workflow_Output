@@ -1,0 +1,15 @@
+Title: Automate Offboarding
+
+User Story: As an HR administrator I want offboarding tasks to be automated So that departing employees are processed efficiently and securely
+
+Acceptance Criteria:
+Scenario: Automated offboarding
+Given an employee is marked for departure
+When offboarding is initiated
+Then the system should assign tasks, revoke access, and archive records automatically
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: HRIS, task management, access control
+- Notes: Support exit checklist and document retention.
