@@ -1,0 +1,23 @@
+Title: Set Up Database Migration Tool
+
+User Story: As a backend developer I want to configure Flyway or Liquibase for database migrations So that schema changes are versioned and reliably applied across environments
+
+Acceptance Criteria:
+Scenario: Baseline migration runs
+  Given the application is started for the first time
+  When Flyway or Liquibase is configured
+  Then the baseline migration should run and create initial tables
+Scenario: Migration failure
+  Given a migration script has an error
+  When I start the application
+  Then the application should fail to start and log the error
+Scenario: Migration documentation
+  Given the project is initialized
+  When I review the README
+  Then I should find instructions for adding new migrations and troubleshooting failures
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Ensure migration scripts are included and tested in CI pipeline
