@@ -1,0 +1,19 @@
+Title: Bulk Shift Assignment
+
+User Story: As a scheduler I want to assign shifts to multiple employees in bulk So that I can efficiently manage large teams and recurring schedules
+
+Acceptance Criteria:
+Scenario: Bulk assign shifts
+  Given I have selected multiple employees
+  When I apply a shift template
+  Then all selected employees should be assigned the shift
+Scenario: Bulk assignment validation
+  Given some employees have conflicting assignments
+  When I attempt bulk assignment
+  Then the system should notify me of conflicts and prevent double-booking
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Scheduling module, shift templates
+- Notes: Support for CSV upload and UI selection
