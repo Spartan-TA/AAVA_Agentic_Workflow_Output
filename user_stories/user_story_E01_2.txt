@@ -1,0 +1,20 @@
+Title: Enable Actuator Health Endpoint and DB Migration
+
+User Story: As a developer I want to enable the Actuator health endpoint and configure Flyway/Liquibase for database migrations so that the application health and schema changes are easily monitored and managed.
+
+Acceptance Criteria:
+Scenario: Actuator health endpoint
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns status UP
+
+Scenario: DB migration
+Given the database is empty
+When I start the application
+Then Flyway/Liquibase runs baseline migration successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Ensure health endpoint is accessible and DB migration logs are captured.
