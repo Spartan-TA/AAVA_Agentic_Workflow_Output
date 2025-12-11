@@ -1,0 +1,15 @@
+Title: Update Employee Record
+
+User Story: As an HR Manager I want to update employee details via API So that employee information remains current and accurate
+
+Acceptance Criteria:
+Scenario: Employee Update
+Given an existing employee record
+When I send a PUT or PATCH request to /employees/{id}
+Then the employee record is updated with the new details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story_5.txt
+- Notes: Validate input and maintain audit trail for changes.
