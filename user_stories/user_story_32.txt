@@ -1,0 +1,15 @@
+Title: Track Asset Checkout
+
+User Story: As an asset manager I want to track asset check-in and check-out for each shift So that loss and misuse are minimized
+
+Acceptance Criteria:
+Scenario: Record asset checkout
+Given an asset is assigned to a shift
+When the employee checks out the asset
+Then the system should log the transaction with time and user details
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset management, shift scheduling
+- Notes: Should support barcode scanning and manual entry.
