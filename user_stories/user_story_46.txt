@@ -1,0 +1,15 @@
+Title: Export Audit Logs
+
+User Story: As a compliance officer I want to export audit logs for selected periods So that investigations and regulatory reviews are supported
+
+Acceptance Criteria:
+Scenario: Export audit logs
+Given I am on the audit log page
+When I select a date range and export
+Then the system should generate a file with all relevant log entries
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Audit logging module
+- Notes: Support CSV and PDF formats.
