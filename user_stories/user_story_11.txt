@@ -1,0 +1,15 @@
+Title: Support API Key and OAuth2 Authentication Toggle
+
+User Story: As a system administrator I want to configure authentication methods (API key or OAuth2) so that the system can meet different security requirements
+
+Acceptance Criteria:
+Scenario: Switching authentication methods
+Given the system is running
+When the administrator changes the authentication config to API key or OAuth2
+Then all endpoints should enforce the selected authentication method and unauthorized requests are rejected
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding, Employee Master Data
+- Notes: Must be covered by automated security tests.
