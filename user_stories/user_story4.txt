@@ -1,0 +1,15 @@
+Title: Record Time & Attendance Events
+
+User Story: As a warehouse worker I want to clock in and out using secure endpoints So that my working hours are accurately captured for payroll and compliance
+
+Acceptance Criteria:
+Scenario: Clock-in and clock-out event
+Given I am scheduled for a shift and have access to the attendance system
+When I clock in or out using the provided endpoint
+Then my event is validated, associated with my shift, and daily totals are computed; missed punches trigger a correction workflow
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee Master Data, Role-Based Access Control
+- Notes: Geofence and device capture optional; corrections create approval tasks; reports exportable in CSV format.
