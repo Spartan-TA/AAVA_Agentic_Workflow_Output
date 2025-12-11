@@ -1,0 +1,15 @@
+Title: Immutable Review History
+
+User Story: As an HR administrator I want completed performance reviews to be immutable So that historical records are preserved for compliance and audits
+
+Acceptance Criteria:
+Scenario: Lock completed review
+Given a performance review is marked complete
+When I view the review history
+Then the review should be read-only and show a timestamp of completion
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Performance management, audit logging
+- Notes: Support digital signatures for completed reviews.
