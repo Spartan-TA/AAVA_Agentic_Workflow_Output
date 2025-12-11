@@ -1,0 +1,15 @@
+Title: Provide OpenAPI Schemas with Examples
+
+User Story: As a System Administrator I want to provide OpenAPI schemas with examples for employee APIs So that developers and integrators can easily understand and use the endpoints
+
+Acceptance Criteria:
+Scenario: OpenAPI Schema Availability
+Given employee APIs are implemented
+When I view the OpenAPI documentation
+Then all endpoints are documented with request/response schemas and example payloads
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story_5.txt
+- Notes: Ensure documentation is accessible and kept up to date with API changes.
