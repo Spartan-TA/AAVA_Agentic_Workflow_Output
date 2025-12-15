@@ -1,0 +1,15 @@
+Title: Record Employee Clock-In
+
+User Story: As an employee I want to record my clock-in time So that my attendance is accurately tracked
+
+Acceptance Criteria:
+Scenario: Employee clock-in
+Given I am scheduled to work
+When I clock in via the time & attendance module
+Then my clock-in time should be recorded and visible to HR
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Time & attendance module
+- Notes: Support multiple clock-in methods (web, mobile, kiosk).
