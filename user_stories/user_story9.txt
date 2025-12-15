@@ -1,0 +1,14 @@
+Title: Create Shift Templates
+User Story: As a shift manager I want to create shift templates So that I can standardize shift scheduling
+
+Acceptance Criteria:
+Scenario: Shift template creation
+Given I am a shift manager
+When I create a new shift template
+Then the template is saved and available for scheduling
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (CRUD)
+- Notes: Include start/end time, break duration
