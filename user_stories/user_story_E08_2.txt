@@ -1,0 +1,25 @@
+Title: Safety Incident Investigation Workflow
+
+User Story: As a Safety Officer I want to manage the investigation workflow for reported incidents so that corrective actions can be tracked and resolved
+
+Acceptance Criteria:
+Scenario: Start investigation
+Given an incident is reported and status is Open
+When I assign an investigator and change status to Investigating
+Then the incident is updated and visible in the investigation queue
+
+Scenario: Add corrective actions
+Given an incident is under investigation
+When I add corrective actions and assign responsible parties
+Then actions are tracked and marked complete when resolved
+
+Scenario: Resolve incident
+Given all corrective actions are completed
+When I change status to Resolved
+Then the incident is closed and archived
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Employee Master Data (E02), RBAC (E03)
+- Notes: Status transitions must be logged; corrective actions should be auditable
