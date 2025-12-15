@@ -1,0 +1,20 @@
+Title: Safety Incidents & OSHA Reporting
+
+User Story: As a safety officer I want to record incidents and generate OSHA reports So that we improve safety culture and meet regulatory requirements.
+
+Acceptance Criteria:
+Scenario: Incident recording
+Given an incident occurs
+When I submit details via the safety module
+Then the incident is logged with severity, location, and involved employees
+
+Scenario: OSHA report export
+Given incidents are recorded
+When I request an OSHA summary
+Then the system exports OSHA 300/300A fields
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E02, E03
+- Notes: Status workflow (Open, Investigating, Resolved); metrics dashboard endpoints.
