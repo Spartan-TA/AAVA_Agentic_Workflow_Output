@@ -1,0 +1,30 @@
+Title: Shift & Schedule Management
+
+User Story: As a supervisor I want to create and assign shift schedules to employees So that staffing levels are maintained and scheduling conflicts are minimized
+
+Acceptance Criteria:
+Scenario: Create shift template
+Given I am a supervisor
+When I define a recurring shift template
+Then the template is saved and available for assignment
+
+Scenario: Assign shifts to employees
+Given a shift template exists
+When I bulk-assign shifts to employees
+Then the assignments are created and conflicts are detected/prevented
+
+Scenario: View personal schedule
+Given I am a worker
+When I view my schedule
+Then I see my upcoming shifts and blackout dates
+
+Scenario: Audit shift assignments
+Given shifts are assigned
+When I review the audit log
+Then I see entries for all assignments and changes
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee Master Data CRUD APIs, Role Based Access Control (RBAC), Time & Attendance (Clock In/Out)
+- Notes: Support recurring templates, rotations, overtime rules, blackout dates, and operation calendars.
