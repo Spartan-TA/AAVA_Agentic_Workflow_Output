@@ -1,0 +1,14 @@
+Title: Assign Equipment to Employees
+User Story: As an asset manager I want to assign equipment to employees So that asset tracking is accurate
+
+Acceptance Criteria:
+Scenario: Equipment assignment
+Given equipment inventory exists
+When I assign equipment to an employee
+Then the assignment is logged and visible in the employee profile
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data (CRUD)
+- Notes: Track assignment and return dates
