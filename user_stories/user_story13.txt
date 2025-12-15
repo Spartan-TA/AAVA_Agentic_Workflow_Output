@@ -1,0 +1,20 @@
+Title: Attendance Reporting and Export
+
+User Story: As an HR manager I want to generate and export attendance reports so that payroll and compliance requirements are met efficiently
+
+Acceptance Criteria:
+Scenario: Generate attendance report
+Given attendance data exists for a selected period
+When I request a report for a department or shift group
+Then a summary of clock-in/out events and total hours is generated
+
+Scenario: Export report
+Given a report is generated
+When I choose export as CSV
+Then the report is downloaded in CSV format
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance data, Corrections workflow
+- Notes: Reports must support filtering and pagination; exports must match payroll schema.
