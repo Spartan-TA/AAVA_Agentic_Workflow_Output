@@ -1,0 +1,16 @@
+Title: Record Safety Incidents
+User Story: As a supervisor I want to record safety incidents with severity and investigation workflow So that OSHA compliance is ensured
+Acceptance Criteria:
+Scenario: Log incident
+  Given an incident occurs
+  When I submit a report
+  Then the incident is logged with severity and details
+Scenario: Investigation workflow
+  Given an incident is logged
+  When I assign an investigator
+  Then the workflow should track status and resolution
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD, RBAC
+- Notes: Generate OSHA reports
