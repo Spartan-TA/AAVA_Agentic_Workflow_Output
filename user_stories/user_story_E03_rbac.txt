@@ -1,0 +1,35 @@
+Title: Add Role-Based Access Control (RBAC)
+User Story: As an admin I want to assign roles to users and restrict access to endpoints So that only authorized users can perform sensitive actions
+Acceptance Criteria:
+Scenario: Role assignment
+  Given a user exists
+  When I assign a role
+  Then the user should have permissions according to their role
+Scenario: Endpoint security
+  Given endpoints are secured
+  When a user without permission accesses an endpoint
+  Then access should be denied
+Scenario: Role enforcement
+  Given a user with HR role
+  When accessing employee management endpoints
+  Then access should be granted
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD APIs
+- Notes: Use Spring Security for implementation
+
+---
+
+Title: Implement Method-Level Security
+User Story: As a developer I want to secure service methods based on user roles So that business logic is protected from unauthorized access
+Acceptance Criteria:
+Scenario: Method security annotation
+  Given a service method
+  When I annotate with role restrictions
+  Then only users with the required role can invoke the method
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC
+- Notes: Use @PreAuthorize annotations
