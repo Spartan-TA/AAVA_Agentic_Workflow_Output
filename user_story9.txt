@@ -1,0 +1,30 @@
+Title: Equipment & Asset Assignment
+
+User Story: As an asset manager I want to assign and track equipment and PPE to employees So that accountability and safe operation are ensured
+
+Acceptance Criteria:
+Scenario: Assign asset to employee
+Given an asset is available and employee is certified
+When I assign the asset
+Then the assignment is recorded and asset status is updated
+
+Scenario: Block assignment for missing certification
+Given an employee lacks required certification
+When I attempt to assign an asset
+Then the system blocks the assignment and notifies me
+
+Scenario: Track asset condition
+Given an asset is assigned
+When I update its condition
+Then the condition is logged and visible in asset history
+
+Scenario: Overdue asset return report
+Given assets are overdue for return
+When I request a report
+Then I see a list of overdue assets and responsible employees
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee Master Data CRUD APIs, Role Based Access Control (RBAC), Training & Certification Tracking
+- Notes: Asset registry CRUD; check-in/out endpoints; blocks when certs invalid; history log per asset and employee.
