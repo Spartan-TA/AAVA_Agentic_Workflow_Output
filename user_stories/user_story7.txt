@@ -1,0 +1,14 @@
+Title: Clock In/Out Endpoint for Employees
+User Story: As a warehouse employee I want to clock in and out via an endpoint So that my attendance is recorded
+
+Acceptance Criteria:
+Scenario: Clock in/out event
+Given I am authenticated
+When I submit a clock in or out request
+Then my attendance event is recorded with timestamp
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (CRUD)
+- Notes: Prevent duplicate clock-ins without clock-out
