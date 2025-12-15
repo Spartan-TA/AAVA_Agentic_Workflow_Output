@@ -1,0 +1,15 @@
+Title: Bulk Import Employee Master Data
+
+User Story: As an HR manager I want to bulk import employee master data So that large numbers of employee records can be added efficiently
+
+Acceptance Criteria:
+Scenario: Bulk import
+Given I have a CSV file with employee data
+When I upload the file via the HR module
+Then all valid employee records should be created in the system
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee master data, file upload
+- Notes: Validate file format and handle errors gracefully.
