@@ -1,0 +1,23 @@
+Title: Implement Clock-In API Endpoint
+
+User Story: As a warehouse worker I want to clock in using a secure API endpoint So that my shift start time is accurately recorded for payroll and compliance
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+  Given I am authenticated and at the warehouse location
+  When I submit a clock-in request via the API
+  Then my clock-in event is recorded with timestamp, device ID, and geolocation
+Scenario: Invalid clock-in attempt
+  Given I am not at the geofenced location
+  When I attempt to clock in
+  Then the request is rejected with an error message
+Scenario: Duplicate clock-in
+  Given I have already clocked in for the current shift
+  When I attempt to clock in again
+  Then the request is rejected and no duplicate event is created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Ensure geofence validation and device capture are implemented.
