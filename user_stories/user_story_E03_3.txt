@@ -1,0 +1,15 @@
+Title: Configure Permissions for Roles
+
+User Story: As a system administrator I want to configure permissions for roles So that each role has appropriate access to system features
+
+Acceptance Criteria:
+Scenario: Permission configuration
+Given I have access to the admin console
+When I edit a role's permissions
+Then the changes should be applied and enforced for all users with that role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC module
+- Notes: Support granular permission settings.
