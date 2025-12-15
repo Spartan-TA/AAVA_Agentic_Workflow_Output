@@ -1,0 +1,15 @@
+Title: Secure Endpoints with Method/Row-Level Constraints
+
+User Story: As a developer I want to secure endpoints and apply row-level constraints So that users only access permitted data
+
+Acceptance Criteria:
+Scenario: Unauthorized access
+Given a user with limited permissions
+When they attempt a forbidden action
+Then the system returns 401 or 403
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role assignment
+- Notes: Test coverage for all security rules
