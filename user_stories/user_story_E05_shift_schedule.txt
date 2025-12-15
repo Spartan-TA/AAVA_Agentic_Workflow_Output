@@ -1,0 +1,35 @@
+Title: Manage Shift Templates
+User Story: As an HR user I want to create and manage shift templates So that scheduling is efficient and consistent
+Acceptance Criteria:
+Scenario: Create shift template
+  Given I provide shift details
+  When I submit the template
+  Then a new shift template should be created
+Scenario: Edit shift template
+  Given a template exists
+  When I update details
+  Then the template should reflect changes
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC
+- Notes: Support multiple shift types
+
+---
+
+Title: Assign Shifts to Employees
+User Story: As a supervisor I want to assign employees to shifts and rotations So that coverage and compliance are maintained
+Acceptance Criteria:
+Scenario: Assign shift
+  Given employees and templates exist
+  When I assign a shift
+  Then the employee's schedule should be updated
+Scenario: Overtime rule enforcement
+  Given overtime rules are defined
+  When assigning shifts
+  Then overtime limits should be enforced
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Shift templates, Employee CRUD
+- Notes: Integrate with attendance module
