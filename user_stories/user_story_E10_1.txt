@@ -1,0 +1,20 @@
+Title: Create Quarterly and Annual Review Templates
+
+User Story: As a Performance Manager I want to create standardized quarterly and annual review templates so that supervisors and employees can conduct consistent and structured performance reviews.
+
+Acceptance Criteria:
+Scenario: Template Creation
+Given I am a Performance Manager
+When I access the review template management interface and create a new template
+Then the template should be available for supervisors to use in performance reviews
+
+Scenario: Template Versioning
+Given a template exists
+When I update the template
+Then a new version is created and previous reviews retain the original template structure
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Templates must support customizable sections for goals, competencies, ratings, and comments.
