@@ -1,0 +1,23 @@
+Title: Shift Template CRUD Operations
+
+User Story: As a scheduling administrator I want to create, update, and delete shift templates So that I can efficiently manage recurring shift patterns for warehouse operations
+
+Acceptance Criteria:
+Scenario: Create shift template
+  Given I am authenticated as an administrator
+  When I submit a new shift template with required details
+  Then the template is saved and available for assignment
+Scenario: Update shift template
+  Given a shift template exists
+  When I modify its details
+  Then the changes are saved and reflected in future assignments
+Scenario: Delete shift template
+  Given a shift template is no longer needed
+  When I delete it
+  Then it is removed from the system and cannot be assigned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Templates should support start/end times, break periods, and recurrence rules.
