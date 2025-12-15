@@ -1,0 +1,15 @@
+Title: Generate Audit Entries for Schedule Changes
+
+User Story: As an administrator I want audit entries generated for all schedule changes So that I can track who made changes and ensure compliance
+
+Acceptance Criteria:
+Scenario: Changing a shift assignment
+Given a supervisor updates an employee's shift
+When the change is saved
+Then an audit entry should be created with actor, timestamp, before/after values
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Audit Trail & Compliance, Shift Assignment
+- Notes: Audit entries should be exportable and filterable by date, user, and action type.
