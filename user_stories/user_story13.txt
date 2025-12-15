@@ -1,0 +1,14 @@
+Title: Track Employee Training and Certifications
+User Story: As an HR manager I want to track employee training and certifications So that compliance is ensured
+
+Acceptance Criteria:
+Scenario: Certification tracking
+Given an employee completes training
+When I update their record
+Then the certification and expiration date are saved
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee Master Data (CRUD)
+- Notes: Notify before expiration
