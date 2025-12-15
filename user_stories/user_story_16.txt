@@ -1,0 +1,20 @@
+Title: Employee Clock-In Event Capture
+
+User Story: As an employee I want to clock in at the start of my shift So that my working hours are accurately recorded for payroll and compliance
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am on the clock-in page and my shift is scheduled
+When I submit my clock-in event
+Then the system records my start time and associates it with my shift
+
+Scenario: Geofence validation
+Given geofence is enabled
+When I attempt to clock in outside the allowed location
+Then the system rejects the clock-in and displays an error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Device capture and location validation must be logged.
