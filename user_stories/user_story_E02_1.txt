@@ -1,0 +1,27 @@
+Title: Create Employee CRUD API
+
+User Story: As an HR Manager I want to manage employee records using CRUD APIs So that I can maintain an accurate and up-to-date employee master data
+
+Acceptance Criteria:
+Scenario: Employee creation
+  Given I have HR Manager role
+  When I POST a new employee to /employees
+  Then the employee is created and returned with a unique badgeId
+Scenario: Employee update
+  Given an employee exists
+  When I PUT or PATCH updated data to /employees/{id}
+  Then the employee record is updated
+Scenario: Employee deletion
+  Given an employee exists
+  When I DELETE /employees/{id}
+  Then the employee is soft-deleted and excluded from active queries
+Scenario: Employee retrieval
+  Given employees exist
+  When I GET /employees with filters
+  Then I receive paginated and filtered results
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E01
+- Notes: OpenAPI schemas must include examples
