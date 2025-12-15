@@ -1,0 +1,20 @@
+Title: Generate Payroll-Ready Files from Approved Attendance and Leave
+
+User Story: As a Payroll Administrator I want to generate payroll-ready files from approved attendance and leave records so that payroll processing is accurate and efficient.
+
+Acceptance Criteria:
+Scenario: File Generation
+Given attendance and leave records are approved
+When I initiate payroll export
+Then a payroll-ready file is generated containing all relevant data
+
+Scenario: Data Validation
+Given records are incomplete or unapproved
+When I attempt to export
+Then the system prevents export and displays an error message
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E04, E06
+- Notes: Exported files must comply with payroll provider format specifications.
