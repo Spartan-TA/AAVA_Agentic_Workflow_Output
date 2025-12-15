@@ -1,0 +1,15 @@
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor I want to assign shifts to employees So that I can ensure adequate staffing for each warehouse operation
+
+Acceptance Criteria:
+Scenario: Assigning a shift
+Given I have created a shift template
+When I select employees and assign them to a shift
+Then the system should notify the employees and update their schedules
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Employee Master Data, Shift Templates
+- Notes: Bulk assignment should be supported for efficiency.
