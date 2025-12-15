@@ -1,0 +1,14 @@
+Title: Record Safety Incidents
+User Story: As a safety officer I want to record safety incidents So that OSHA compliance is maintained
+
+Acceptance Criteria:
+Scenario: Incident recording
+Given a safety incident occurs
+When I submit an incident report
+Then the incident is logged with all required details
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (CRUD)
+- Notes: Include location, time, involved employees
