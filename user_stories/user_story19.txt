@@ -1,0 +1,27 @@
+Title: Missed Punch Handling and Corrections Workflow
+
+User Story: As a warehouse worker I want to request corrections for missed clock-in or clock-out events So that my attendance record is accurate and payroll is not affected
+
+Acceptance Criteria:
+Scenario: Submit missed punch correction
+  Given I notice a missed clock-in or clock-out event
+  When I submit a correction request with details
+  Then the request is routed to my supervisor for approval
+Scenario: Supervisor approval
+  Given a correction request is pending
+  When my supervisor reviews and approves it
+  Then the attendance record is updated accordingly
+Scenario: Supervisor rejection
+  Given a correction request is pending
+  When my supervisor rejects it
+  Then I am notified and the record remains unchanged
+Scenario: Audit trail
+  Given a correction is made
+  When the record is updated
+  Then an audit entry is created with before/after values
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: E02, E03
+- Notes: Correction workflow should be tracked and auditable.
