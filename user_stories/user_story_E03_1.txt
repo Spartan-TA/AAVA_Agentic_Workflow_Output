@@ -1,0 +1,15 @@
+Title: Define Roles for RBAC
+
+User Story: As a system administrator I want to define roles for role-based access control So that user permissions are managed according to organizational policies
+
+Acceptance Criteria:
+Scenario: Role definition
+Given I have access to the admin console
+When I create or edit a role
+Then the role should be available for assignment to users
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: RBAC module
+- Notes: Support custom and default roles.
