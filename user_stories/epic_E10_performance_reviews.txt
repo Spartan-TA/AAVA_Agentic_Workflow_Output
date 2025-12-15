@@ -1,0 +1,73 @@
+EPIC E10: PERFORMANCE REVIEWS & GOALS
+
+===========================================
+
+Title: Create Performance Review Template
+
+User Story: As an HR manager I want to create performance review templates So that reviews are standardized
+
+Acceptance Criteria:
+Scenario: Creating review template
+Given I am in the review settings
+When I define criteria and save the template
+Then it should be available for future reviews
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data
+- Notes: Support multiple template types
+
+===========================================
+
+Title: Schedule Performance Reviews
+
+User Story: As a supervisor I want to schedule performance reviews for my team So that feedback is timely
+
+Acceptance Criteria:
+Scenario: Scheduling review
+Given a review template exists
+When I schedule a review for an employee
+Then the employee should receive a notification and due date
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Notifications & Announcements
+- Notes: Allow rescheduling
+
+===========================================
+
+Title: Track Goal Progress
+
+User Story: As an employee I want to track progress toward my goals So that I can improve performance
+
+Acceptance Criteria:
+Scenario: Tracking goals
+Given goals are assigned
+When I update my progress
+Then the system should reflect changes and notify my supervisor
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Reporting & Analytics
+- Notes: Support comments and attachments
+
+===========================================
+
+Title: Provide Review Feedback
+
+User Story: As a supervisor I want to provide feedback during reviews So that employees receive actionable insights
+
+Acceptance Criteria:
+Scenario: Providing feedback
+Given a review is in progress
+When I enter feedback and submit
+Then the employee should receive the feedback and it should be logged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data
+- Notes: Feedback is visible in employee profile
