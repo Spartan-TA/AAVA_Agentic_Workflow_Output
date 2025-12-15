@@ -1,0 +1,20 @@
+Title: Shift & Schedule Management
+
+User Story: As a supervisor I want to create and assign recurring shift templates and manage blackout dates So that staffing is optimized and scheduling conflicts are minimized.
+
+Acceptance Criteria:
+Scenario: Shift template creation
+Given I am a supervisor
+When I create a new shift template
+Then the template is saved and available for assignment
+
+Scenario: Conflict detection
+Given overlapping shifts are assigned
+When I save the schedule
+Then the system detects and prevents conflicts
+
+Additional Details:
+- Priority: High
+- Story Points: 13
+- Dependencies: E02, E03, E04
+- Notes: Bulk-assign capability; audit entries generated.
