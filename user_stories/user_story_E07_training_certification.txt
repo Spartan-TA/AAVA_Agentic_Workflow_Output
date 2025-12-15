@@ -1,0 +1,16 @@
+Title: Track Training & Certifications
+User Story: As an HR user I want to record employee certifications and expirations So that compliance is maintained
+Acceptance Criteria:
+Scenario: Add certification
+  Given an employee exists
+  When I add a certification
+  Then it should be linked to the employee with expiration date
+Scenario: Block assignment for expired cert
+  Given a certification is expired
+  When assigning to a restricted task
+  Then the system should block the assignment
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Employee CRUD, RBAC
+- Notes: Notify on upcoming expirations
