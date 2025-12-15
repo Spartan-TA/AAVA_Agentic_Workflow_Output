@@ -1,0 +1,20 @@
+Title: Implement Employee Creation API
+
+User Story: As an HR admin I want to create new employee records via API So that employee onboarding is efficient and accurate
+
+Acceptance Criteria:
+Scenario: Employee creation
+Given valid employee details (name, badgeId, role, department, shiftGroup, hireDate, status)
+When I POST to /employees
+Then a new employee record is created and badgeId is unique
+
+Scenario: OpenAPI documentation
+Given the API is available
+When I review the OpenAPI schema
+Then employee creation is documented with examples
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: user_story1.txt, user_story2.txt
+- Notes: Validate required fields and enforce badgeId uniqueness
