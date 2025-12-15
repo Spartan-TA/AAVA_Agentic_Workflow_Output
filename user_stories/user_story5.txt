@@ -1,0 +1,14 @@
+Title: Add Role-Based Access Control (RBAC)
+User Story: As an admin I want to assign roles to users So that access to features is restricted appropriately
+
+Acceptance Criteria:
+Scenario: Role assignment and enforcement
+Given I am an admin
+When I assign a role to a user
+Then the user should only access features permitted by their role
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee Master Data (CRUD)
+- Notes: Roles include Admin, Manager, Employee
