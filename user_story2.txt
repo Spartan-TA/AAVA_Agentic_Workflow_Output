@@ -1,0 +1,15 @@
+Title: Set Up Database Migration Tool
+
+User Story: As a developer I want to add Flyway/Liquibase for database migrations So that database changes are versioned and repeatable
+
+Acceptance Criteria:
+Scenario: Baseline migration
+Given the project is built
+When I start the application
+Then Flyway/Liquibase runs the baseline migration and the schema is created
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Migration scripts must be idempotent
