@@ -1,0 +1,12 @@
+Title: Create Performance Review Templates
+User Story: As an HR user I want to create templates for performance reviews So that evaluations are standardized
+Acceptance Criteria:
+Scenario: Create template
+  Given I provide review criteria
+  When I save the template
+  Then it is available for future reviews
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC
+- Notes: Support multiple competencies
