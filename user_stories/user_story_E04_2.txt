@@ -1,0 +1,20 @@
+Title: Automated Hours Calculation and Reporting
+
+User Story: As a Supervisor I want the system to automatically calculate total hours worked for each employee so that payroll and compliance reporting are accurate and efficient.
+
+Acceptance Criteria:
+Scenario: Accurate calculation of hours
+Given employees have clocked in and out for their shifts
+When the Supervisor views the attendance report
+Then the total hours worked for each employee are displayed correctly
+
+Scenario: Handling missed punches
+Given an employee missed a clock-in or clock-out
+When the Supervisor reviews the attendance
+Then the system flags the record for manual correction
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Attendance module, Payroll integration
+- Notes: Include overtime and break deductions in calculations.
