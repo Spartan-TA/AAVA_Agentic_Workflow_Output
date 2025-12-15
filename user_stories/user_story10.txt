@@ -1,0 +1,14 @@
+Title: Assign Employees to Shifts
+User Story: As a shift manager I want to assign employees to shifts So that staffing is planned
+
+Acceptance Criteria:
+Scenario: Employee shift assignment
+Given shift templates exist
+When I assign employees to shifts
+Then assignments are saved and visible to employees
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Create Shift Templates
+- Notes: Prevent overlapping assignments
