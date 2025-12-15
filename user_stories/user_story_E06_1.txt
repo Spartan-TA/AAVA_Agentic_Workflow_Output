@@ -1,0 +1,12 @@
+Title: Request Paid Time Off (PTO)
+User Story: As an employee I want to request paid time off So that I can plan my leave and ensure coverage
+Acceptance Criteria:
+Scenario: PTO request submission
+Given I have available PTO balance
+When I submit a leave request for specific dates
+Then the request should be sent to my supervisor for approval and my balance updated upon approval
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee module, leave policy
+- Notes: Requests should trigger notifications and auto-flag scheduled shifts for coverage.
