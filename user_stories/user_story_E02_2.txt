@@ -1,0 +1,15 @@
+Title: Edit Employee Master Data
+
+User Story: As an HR manager I want to edit employee master data So that employee records can be updated when information changes
+
+Acceptance Criteria:
+Scenario: Employee data update
+Given I have access to the HR module
+When I select an employee and update their details
+Then the changes should be saved and reflected in the employee record
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee master data
+- Notes: Audit changes for compliance.
