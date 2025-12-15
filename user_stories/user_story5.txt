@@ -1,0 +1,15 @@
+Title: Implement Employee CRUD API
+
+User Story: As an HR manager I want to create, read, update, and delete employee records via API so that employee data is always accurate and up to date.
+
+Acceptance Criteria:
+Scenario: Employee CRUD operations
+  Given I have valid HR credentials
+  When I call the POST/GET/PUT/PATCH/DELETE /employees endpoints
+  Then the employee data is created, retrieved, updated, or soft-deleted as requested
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project scaffolding
+- Notes: badgeId must be unique; soft-delete supported; API documented with OpenAPI schemas.
