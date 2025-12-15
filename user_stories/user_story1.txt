@@ -1,0 +1,20 @@
+Title: Initialize Spring Boot Project Structure
+
+User Story: As a developer I want to initialize the Spring Boot project with standardized base modules So that all future development is consistent and maintainable
+
+Acceptance Criteria:
+Scenario: Project initialization
+  Given I have cloned the repository
+  When I run the build command
+  Then the project builds successfully and runs on port 8080
+
+Scenario: Base package structure
+  Given the project is initialized
+  When I inspect the source code
+  Then the base package structure for employee, scheduling, attendance, and safety modules is present
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: README must include build and run instructions.
