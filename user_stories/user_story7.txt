@@ -1,0 +1,20 @@
+Title: List and Filter Employee Records via API
+
+User Story: As an HR manager I want to list and filter employee records via API So that I can quickly find employees by department, role, or status
+
+Acceptance Criteria:
+Scenario: List employees
+  Given employee records exist
+  When I GET /employees
+  Then I receive a paginated list of employees
+
+Scenario: Filter employees
+  Given employee records exist
+  When I GET /employees?department=Shipping&role=Worker
+  Then I receive a filtered list of employees matching the criteria
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story4.txt, user_story5.txt, user_story6.txt
+- Notes: API must support pagination and filtering by multiple fields.
