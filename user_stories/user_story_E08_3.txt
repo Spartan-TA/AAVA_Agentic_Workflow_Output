@@ -1,0 +1,25 @@
+Title: OSHA 300/300A Report Generation
+
+User Story: As a Safety Officer I want to generate OSHA 300 and 300A summary reports from recorded incidents so that we can meet regulatory reporting requirements
+
+Acceptance Criteria:
+Scenario: Generate OSHA 300 report
+Given incidents have been recorded with all required OSHA fields
+When I select a date range and generate the report
+Then the system produces a compliant OSHA 300 file for download
+
+Scenario: Generate OSHA 300A summary
+Given incidents are available for the year
+When I generate the 300A summary
+Then the summary is accurate and formatted per OSHA standards
+
+Scenario: Missing required fields
+Given an incident is missing OSHA-required data
+When I attempt to generate the report
+Then the system highlights missing data and blocks report generation
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (E02), RBAC (E03)
+- Notes: Reports must be exportable as PDF and CSV
