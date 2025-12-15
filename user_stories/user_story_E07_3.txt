@@ -1,0 +1,25 @@
+Title: Block Assignment for Expired Certifications
+
+User Story: As a Scheduler I want the system to prevent assignment of employees to tasks requiring expired certifications so that only qualified staff are scheduled for sensitive roles
+
+Acceptance Criteria:
+Scenario: Assignment blocked for expired certification
+Given an employee's required certification is expired
+When I attempt to assign them to a forklift shift
+Then the system blocks the assignment and displays an error message
+
+Scenario: Assignment allowed for valid certification
+Given an employee's required certification is valid
+When I assign them to a forklift shift
+Then the assignment is successful
+
+Scenario: Certification renewed
+Given an employee's certification was expired and is now renewed
+When I update the certification
+Then the employee becomes eligible for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (E02), RBAC (E03), Scheduling (E05)
+- Notes: Block logic must be enforced in both UI and API
