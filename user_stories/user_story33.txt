@@ -1,0 +1,15 @@
+Title: Auto-Flag Scheduled Shifts for Coverage When Leave is Approved
+
+User Story: As a supervisor I want scheduled shifts to be auto-flagged for coverage when leave is approved So that I can quickly identify and fill gaps in the schedule
+
+Acceptance Criteria:
+Scenario: Leave approval triggers coverage flag
+Given an employee's leave request is approved
+When their scheduled shifts overlap with the leave dates
+Then those shifts should be flagged for coverage and notifications sent to supervisors
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: Leave Request, Shift Assignment
+- Notes: Coverage flags should be visible in the scheduling dashboard and support bulk reassignment.
