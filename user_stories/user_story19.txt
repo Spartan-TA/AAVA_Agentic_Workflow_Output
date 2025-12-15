@@ -1,0 +1,20 @@
+Title: Certification CRUD and Expiry Alerts
+
+User Story: As an HR manager I want to create, update, and delete employee certifications and receive alerts before they expire so that compliance and safety requirements are met
+
+Acceptance Criteria:
+Scenario: Create certification
+Given an employee profile exists
+When I add a new certification with expiry date
+Then the certification is saved and tracked
+
+Scenario: Expiry alert
+Given a certification is expiring in 30 or 7 days
+When the system detects the upcoming expiry
+Then an alert is sent to the employee and supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Certification status must be visible on employee profile; alerts sent via preferred channels.
