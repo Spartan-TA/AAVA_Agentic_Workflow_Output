@@ -1,0 +1,20 @@
+Title: Block Unqualified Assignments and Upload Proof Documents
+
+User Story: As a supervisor I want the system to block assignment of tasks to employees with expired certifications and allow uploading of proof documents so that only qualified staff operate equipment and compliance is documented
+
+Acceptance Criteria:
+Scenario: Block assignment
+Given an employee's certification is expired
+When I attempt to assign them to a task requiring certification
+Then the system prevents the assignment and notifies me
+
+Scenario: Upload proof document
+Given a certification record exists
+When I upload a proof document
+Then the document is stored and linked to the certification
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Certification CRUD, Employee Master Data
+- Notes: Scheduling checks must enforce qualification; document uploads must be auditable.
