@@ -1,0 +1,20 @@
+Title: Clock In/Out Endpoints for Attendance
+
+User Story: As a warehouse worker I want to clock in and out using a secure endpoint so that my work hours are accurately recorded for payroll and compliance
+
+Acceptance Criteria:
+Scenario: Successful clock in
+Given I am authenticated and within my scheduled shift
+When I submit a clock-in request with valid credentials
+Then my clock-in event is recorded with timestamp and device details
+
+Scenario: Successful clock out
+Given I am authenticated and have clocked in
+When I submit a clock-out request
+Then my clock-out event is recorded and my shift hours are calculated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Support optional geofence and device capture; validate shift association.
