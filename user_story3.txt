@@ -1,0 +1,25 @@
+Title: Role Based Access Control (RBAC)
+
+User Story: As a system administrator I want to assign roles and permissions to users So that sensitive operations are restricted to authorized personnel
+
+Acceptance Criteria:
+Scenario: Unauthorized access attempt
+Given a user without required permissions
+When they attempt to access a protected endpoint
+Then the system returns a 401 or 403 error
+
+Scenario: Role assignment
+Given an ADMIN user
+When they assign roles to other users
+Then the roles are updated and enforced at endpoint and method level
+
+Scenario: Row-level security
+Given a SUPERVISOR user
+When they access employee records
+Then they only see records for their assigned team
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Project Scaffolding & Domain Setup, Employee Master Data CRUD APIs
+- Notes: Support API key/OAuth2 toggle via config; security rules covered by automated tests.
