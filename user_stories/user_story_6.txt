@@ -1,0 +1,20 @@
+Title: Update Employee Record via API
+
+User Story: As an HR manager I want to update employee details using a REST API so that employee information remains accurate and up to date
+
+Acceptance Criteria:
+Scenario: Employee update
+  Given an existing employee record
+  When I send a PUT or PATCH request to /employees/{id} with updated details
+  Then the employee record should be updated and changes reflected in the response
+
+Scenario: Validation of updates
+  Given I provide invalid data (e.g., missing required fields)
+  When I attempt to update an employee record
+  Then the request should fail with a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: API should support partial updates and enforce business rules
