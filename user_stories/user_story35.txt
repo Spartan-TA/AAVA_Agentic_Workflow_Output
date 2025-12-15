@@ -1,0 +1,30 @@
+Title: Certification CRUD Operations
+
+User Story: As an HR administrator I want to create, update, view, and delete employee certifications so that I can maintain accurate records of required qualifications.
+
+Acceptance Criteria:
+Scenario: Create certification
+Given I am on the certification management page
+When I enter certification details and submit
+Then the certification should be saved and visible on the employee profile
+
+Scenario: Update certification
+Given a certification exists for an employee
+When I edit the certification details and save
+Then the updated details should be reflected on the employee profile
+
+Scenario: Delete certification
+Given a certification exists for an employee
+When I delete the certification
+Then it should be removed from the employee profile and audit log should record the deletion
+
+Scenario: View certifications
+Given I am viewing an employee profile
+When I access the certifications section
+Then I should see all current and expired certifications for that employee
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (E02), RBAC (E03)
+- Notes: Certification types and expiry dates must be configurable.
