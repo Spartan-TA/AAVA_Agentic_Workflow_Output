@@ -1,0 +1,15 @@
+Title: Track Leave Accrual Balances and Policies
+
+User Story: As an HR manager I want to track leave accrual balances and policies So that employees' time off is calculated accurately and complies with company rules
+
+Acceptance Criteria:
+Scenario: Updating leave accrual
+Given an employee earns leave based on tenure
+When a leave request is approved
+Then the system should deduct the appropriate amount from their accrual balance and update their record
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: Employee Master Data, Leave Request
+- Notes: Accrual policies should support carryover, caps, and pro-rated calculations.
