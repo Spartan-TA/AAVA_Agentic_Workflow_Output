@@ -1,0 +1,15 @@
+Title: Employees Request Leave
+
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that my time off is tracked and approved according to company policy
+
+Acceptance Criteria:
+Scenario: Requesting leave
+Given I am logged into the employee portal
+When I submit a leave request with dates and type
+Then the system should route the request to my supervisor for approval
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, Shift Assignment
+- Notes: Leave types should be configurable by HR.
