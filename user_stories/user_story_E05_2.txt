@@ -1,0 +1,15 @@
+Title: Assign Shifts to Employees
+
+User Story: As a shift manager I want to assign shifts to employees So that work schedules are clearly communicated and managed
+
+Acceptance Criteria:
+Scenario: Shift assignment
+Given I have created shift templates
+When I assign shifts to employees
+Then the assignments should be visible to employees and managers
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift management module, employee master data
+- Notes: Support bulk assignment and conflict detection.
