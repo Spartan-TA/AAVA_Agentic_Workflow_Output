@@ -1,0 +1,20 @@
+Title: Role-Based Visibility and Immutable History After Sign-Off
+
+User Story: As a System Administrator I want performance reviews to have role-based visibility and become immutable after sign-off so that only authorized users can view reviews and signed-off reviews cannot be altered.
+
+Acceptance Criteria:
+Scenario: Role-Based Visibility
+Given a performance review exists
+When a user accesses the review
+Then only users with appropriate roles (HR Manager, Supervisor, Employee) can view relevant sections
+
+Scenario: Immutable History
+Given a review is signed off by both supervisor and employee
+When any user attempts to edit the review
+Then the system prevents changes and displays a read-only view
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: E02, E03
+- Notes: All changes prior to sign-off must be tracked in an audit log.
