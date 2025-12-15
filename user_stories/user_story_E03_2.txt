@@ -1,0 +1,20 @@
+Title: Enforce Endpoint Security
+
+User Story: As a System Administrator I want to secure API endpoints based on user roles so that sensitive operations are protected from unauthorized access.
+
+Acceptance Criteria:
+Scenario: Accessing a protected endpoint
+Given an endpoint is restricted to ADMIN role
+When a Supervisor attempts to access the endpoint
+Then access is denied and an audit log entry is created
+
+Scenario: Successful access by authorized role
+Given an endpoint is restricted to HR role
+When an HR Manager accesses the endpoint
+Then access is granted and the action is logged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Spring Security, Audit Trail
+- Notes: Ensure method-level security annotations are used.
