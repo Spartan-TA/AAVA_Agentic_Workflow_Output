@@ -1,0 +1,20 @@
+Title: Enforce Unauthorized and Forbidden Access Responses
+
+User Story: As a user I want to receive clear error responses when I attempt unauthorized or forbidden actions so that I understand my access limitations
+
+Acceptance Criteria:
+Scenario: Unauthorized access attempt
+Given I am not authenticated
+When I attempt to access a protected endpoint
+Then I receive a 401 Unauthorized response
+
+Scenario: Forbidden action attempt
+Given I am authenticated but lack required role
+When I attempt to perform a restricted action
+Then I receive a 403 Forbidden response
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: RBAC implementation
+- Notes: Must be covered by automated security tests.
