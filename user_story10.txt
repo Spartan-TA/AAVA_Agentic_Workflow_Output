@@ -1,0 +1,30 @@
+Title: Performance Reviews & Goals
+
+User Story: As a supervisor I want to conduct performance reviews and set goals for employees So that feedback is structured and productivity is improved
+
+Acceptance Criteria:
+Scenario: Create review cycle
+Given review templates exist
+When I initiate a quarterly or annual review cycle
+Then employees are assigned reviews and notified
+
+Scenario: Submit review and acknowledge
+Given a review is assigned
+When supervisor and employee submit ratings and comments
+Then both parties acknowledge and the review is finalized
+
+Scenario: Export review to PDF
+Given a review is completed
+When I request an export
+Then I receive a PDF of the review and ratings
+
+Scenario: Immutable history after sign-off
+Given a review is signed off
+When I attempt to edit
+Then the review remains immutable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Employee Master Data CRUD APIs, Role Based Access Control (RBAC)
+- Notes: Role-based visibility; structured feedback loop; immutable history after sign-off.
