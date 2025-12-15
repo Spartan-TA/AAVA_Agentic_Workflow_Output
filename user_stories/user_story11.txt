@@ -1,0 +1,20 @@
+Title: Document Employee CRUD Endpoints in OpenAPI
+
+User Story: As a developer I want comprehensive OpenAPI documentation for all Employee CRUD endpoints So that consumers can easily integrate and test the APIs
+
+Acceptance Criteria:
+Scenario: OpenAPI schema availability
+Given the Employee CRUD endpoints are implemented
+When I review the OpenAPI documentation
+Then all endpoints (POST/GET/PUT/PATCH/DELETE) are documented with request/response examples
+
+Scenario: Example data
+Given the OpenAPI documentation is available
+When I view the examples
+Then each endpoint includes valid example payloads
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story6.txt, user_story7.txt, user_story8.txt, user_story9.txt, user_story10.txt
+- Notes: Ensure documentation is updated with every API change
