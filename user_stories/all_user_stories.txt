@@ -1,0 +1,26 @@
+User Story 1
+---
+Epic: Project Scaffolding & Domain Setup
+Title: Initialize Spring Boot Project
+User Story: As a developer I want to initialize a Spring Boot project with Maven so that I have a standardized foundation for all modules.
+Acceptance Criteria:
+Scenario: Project Initialization
+Given I have access to the repository
+When I run the build command
+Then the project builds and runs on port 8080
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: README must include build/run steps
+
+User Story 2
+---
+Epic: Project Scaffolding & Domain Setup
+Title: Configure Base Packages
+User Story: As a developer I want to configure base packages for core modules so that code organization is consistent.
+Acceptance Criteria:
+Scenario: Package Structure
+Given the project is initialized
+When I inspect the source code
+Then base package structure for employee
