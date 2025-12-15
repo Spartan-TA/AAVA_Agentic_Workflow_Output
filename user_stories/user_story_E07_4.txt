@@ -1,0 +1,25 @@
+Title: Upload Proof of Certification Documents
+
+User Story: As a Warehouse Worker I want to upload proof documents for my certifications so that my compliance status can be verified by management
+
+Acceptance Criteria:
+Scenario: Upload proof document
+Given I have a new or renewed certification
+When I upload a PDF or image as proof
+Then the document is attached to my certification record and visible to authorized roles
+
+Scenario: View proof document
+Given a certification has a proof document
+When a Training Coordinator or Supervisor views the employee profile
+Then they can download and review the document
+
+Scenario: Invalid file type
+Given I attempt to upload a non-supported file type
+When I submit the upload
+Then the system rejects the file and displays an error message
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data (E02), RBAC (E03)
+- Notes: Supported file types: PDF, JPG, PNG; documents stored securely
