@@ -1,0 +1,25 @@
+Title: Asset Checkout and Return Tracking
+
+User Story: As an Asset Manager I want to track the checkout and return of assets to employees so that equipment accountability and usage history are maintained
+
+Acceptance Criteria:
+Scenario: Checkout asset
+Given an asset is available and employee is certified
+When I assign the asset to the employee
+Then the checkout is logged with timestamp and employee details
+
+Scenario: Return asset
+Given an asset is checked out
+When the employee returns the asset
+Then the return is logged and asset status is updated
+
+Scenario: Overdue asset return
+Given an asset is overdue for return
+When the due date passes
+Then the system sends alerts to the employee and Asset Manager
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: Employee Master Data (E02), RBAC (E03), Certification Tracking (E07)
+- Notes: Checkout/return history must be auditable
