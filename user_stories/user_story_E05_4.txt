@@ -1,0 +1,12 @@
+Title: Audit Shift Assignment Actions
+User Story: As an admin I want all shift assignment actions to be audited So that I can ensure compliance and traceability for staffing decisions
+Acceptance Criteria:
+Scenario: Audit entry creation
+Given a shift assignment or modification occurs
+When the action is completed
+Then an audit entry should be generated with actor, timestamp, before/after state
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift assignment module, audit trail
+- Notes: Audit entries must be immutable and exportable for compliance review.
