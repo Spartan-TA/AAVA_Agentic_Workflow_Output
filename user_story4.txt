@@ -1,0 +1,15 @@
+Title: Create Employee Domain Model
+
+User Story: As an HR admin I want to create an employee domain model with fields like name, badgeId, role, department, shiftGroup, hireDate, and status So that employee data is standardized
+
+Acceptance Criteria:
+Scenario: Employee creation
+Given I have valid employee data
+When I submit a create request
+Then the employee is saved with all required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: badgeId must be unique
