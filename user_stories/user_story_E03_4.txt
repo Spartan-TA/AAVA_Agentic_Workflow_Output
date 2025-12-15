@@ -1,0 +1,15 @@
+Title: Audit Role Assignments and Changes
+
+User Story: As a compliance officer I want to audit role assignments and changes So that all access modifications are tracked for security and compliance
+
+Acceptance Criteria:
+Scenario: Role assignment audit
+Given role assignments or changes occur
+When I review the audit log
+Then I should see details of who made the change, when, and what was changed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: RBAC module, audit log
+- Notes: Ensure logs are immutable and exportable.
