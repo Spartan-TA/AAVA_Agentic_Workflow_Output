@@ -1,0 +1,16 @@
+Title: Generate Payroll Export
+User Story: As a payroll admin I want to generate payroll files from attendance and leave data So that payroll processing is accurate
+Acceptance Criteria:
+Scenario: Export payroll
+  Given attendance and leave records exist
+  When I generate payroll
+  Then a file is created with all required data
+Scenario: Secure delivery
+  Given a payroll file is generated
+  When I send it to payroll system
+  Then the transfer is secure
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Attendance, Leave management
+- Notes: Support CSV and secure transfer
