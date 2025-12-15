@@ -1,0 +1,20 @@
+Title: Initialize Spring Boot Project Scaffolding
+
+User Story: As a developer I want to set up a standardized Spring Boot project with core modules and database migration tools So that we have a consistent foundation for all EMS features and can accelerate delivery.
+
+Acceptance Criteria:
+Scenario: Project scaffolding setup
+Given I have cloned the repository
+When I build and run the project on port 8080
+Then the application starts successfully and exposes the Actuator health endpoint returning UP
+
+Scenario: Database migration baseline
+Given the project is running
+When I execute Flyway/Liquibase migrations
+Then the baseline schema is applied without errors
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: README must include build/run steps; base package structure must be created; Actuator enabled for health checks.
