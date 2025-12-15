@@ -1,0 +1,16 @@
+Title: Centralized Audit Logging
+User Story: As a compliance officer I want all sensitive changes to be logged centrally So that audit trails are available for review
+Acceptance Criteria:
+Scenario: Log sensitive action
+  Given a sensitive action occurs
+  When the action is performed
+  Then an audit log entry is created with user, timestamp, and details
+Scenario: View audit logs
+  Given I have compliance role
+  When I access logs
+  Then I can filter and review entries
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: RBAC
+- Notes: Retain logs per compliance requirements
