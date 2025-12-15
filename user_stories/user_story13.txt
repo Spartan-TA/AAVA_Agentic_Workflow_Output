@@ -1,0 +1,20 @@
+Title: Enforce Method and Endpoint Security
+
+User Story: As a system administrator I want to enforce method and endpoint security So that only authorized users can perform sensitive operations
+
+Acceptance Criteria:
+Scenario: Endpoint protection
+Given endpoints are defined
+When a user without required role accesses an endpoint
+Then they receive a 403 Forbidden response
+
+Scenario: Method-level security
+Given service methods are annotated
+When a user invokes a method without permission
+Then access is denied and logged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: user_story12.txt
+- Notes: Cover all sensitive endpoints and methods
