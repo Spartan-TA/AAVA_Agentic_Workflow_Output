@@ -1,0 +1,23 @@
+Title: Geofence Validation for Clock-In/Out
+
+User Story: As a warehouse supervisor I want clock-in and clock-out events to be validated against a geofence So that only employees physically present at the warehouse can record attendance
+
+Acceptance Criteria:
+Scenario: Valid geofence
+  Given the employee is within the defined geofence
+  When a clock-in or clock-out request is submitted
+  Then the event is accepted and recorded
+Scenario: Invalid geofence
+  Given the employee is outside the defined geofence
+  When a clock-in or clock-out request is submitted
+  Then the event is rejected with an error message
+Scenario: Geofence configuration
+  Given I am an admin
+  When I update the geofence boundaries for a warehouse
+  Then future clock-in/out events use the updated boundaries
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Geofence boundaries should be configurable per warehouse.
