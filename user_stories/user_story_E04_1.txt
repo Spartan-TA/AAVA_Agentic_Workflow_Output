@@ -1,0 +1,20 @@
+Title: Clock-In/Out with Geofence Validation
+
+User Story: As a Warehouse Worker I want to clock in and out only when I am within the designated geofence so that attendance records are accurate and compliant.
+
+Acceptance Criteria:
+Scenario: Clock-in within geofence
+Given I am physically present within the warehouse geofence
+When I attempt to clock in
+Then my attendance is recorded successfully
+
+Scenario: Clock-in outside geofence
+Given I am outside the warehouse geofence
+When I attempt to clock in
+Then the system denies the clock-in and displays an error message
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Geolocation service, Attendance module
+- Notes: Geofence boundaries must be configurable by ADMIN.
