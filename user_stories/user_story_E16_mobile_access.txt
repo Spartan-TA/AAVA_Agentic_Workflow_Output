@@ -1,0 +1,16 @@
+Title: Mobile Access via PWA
+User Story: As a worker I want to access the system on my mobile device with offline support So that I can clock in/out and view my schedule anywhere
+Acceptance Criteria:
+Scenario: Responsive UI
+  Given I access the app on mobile
+  When I navigate
+  Then the UI adapts to my device
+Scenario: Offline clock in
+  Given I am offline
+  When I clock in
+  Then the action is queued and synced when online
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Attendance, Shift management, Notification module
+- Notes: Use PWA standards
