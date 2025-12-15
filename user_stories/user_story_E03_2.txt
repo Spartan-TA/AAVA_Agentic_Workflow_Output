@@ -1,0 +1,15 @@
+Title: Assign Roles to Users
+
+User Story: As a system administrator I want to assign roles to users So that access permissions are enforced according to role definitions
+
+Acceptance Criteria:
+Scenario: Role assignment
+Given I have access to the admin console
+When I select a user and assign a role
+Then the user should inherit the permissions of that role
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: RBAC module, user management
+- Notes: Support bulk assignment and role changes.
