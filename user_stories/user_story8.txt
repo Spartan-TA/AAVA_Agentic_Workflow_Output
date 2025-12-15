@@ -1,0 +1,12 @@
+Title: Role-Based Access Control Implementation
+User Story: As a system administrator I want to implement role-based access control So that sensitive operations are restricted to authorized users
+Acceptance Criteria:
+Scenario: Role-Based Access Enforcement
+Given a user is authenticated
+When they attempt to access a restricted endpoint
+Then access should be granted or denied based on their role (ADMIN, HR, SUPERVISOR, WORKER)
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD API
+- Notes: Cover endpoint and method-level security
