@@ -1,0 +1,73 @@
+EPIC E05: SHIFT & SCHEDULE MANAGEMENT
+
+===========================================
+
+Title: Create Recurring Shift Templates
+
+User Story: As a scheduler I want to create recurring shift templates So that I can efficiently assign shifts for multiple weeks
+
+Acceptance Criteria:
+Scenario: Creating a recurring shift template
+Given I am on the shift management page
+When I select "Create Template" and define recurrence rules
+Then the system should save the template and display it in the template list
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee Master Data
+- Notes: Support daily, weekly, and custom recurrence
+
+===========================================
+
+Title: Assign Shift Rotations
+
+User Story: As a supervisor I want to assign shift rotations to teams So that coverage is maintained and fatigue is minimized
+
+Acceptance Criteria:
+Scenario: Assigning shift rotation
+Given a shift template exists
+When I assign it to a team for a defined period
+Then the system should update the schedule and notify affected employees
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Notifications & Announcements
+- Notes: Include rotation preview before confirmation
+
+===========================================
+
+Title: Configure Overtime Rules
+
+User Story: As an admin I want to configure overtime rules So that overtime is calculated accurately for payroll
+
+Acceptance Criteria:
+Scenario: Setting overtime rules
+Given I am in the schedule settings
+When I define overtime thresholds and rates
+Then overtime should be flagged in the schedule and exported for payroll
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Payroll Export Integration
+- Notes: Support state and federal compliance
+
+===========================================
+
+Title: View Shift Coverage Calendar
+
+User Story: As a manager I want to view a calendar of shift coverage So that I can identify gaps and overlaps
+
+Acceptance Criteria:
+Scenario: Viewing shift coverage
+Given shifts are assigned
+When I open the coverage calendar
+Then I should see color-coded coverage and alerts for gaps
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Time & Attendance
+- Notes: Export calendar as PDF
