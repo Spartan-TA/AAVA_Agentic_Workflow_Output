@@ -1,0 +1,20 @@
+Title: Overtime Calculation and Approval Workflow
+
+User Story: As a Payroll Administrator I want overtime hours to be calculated and routed for approval so that payroll processing is accurate and compliant with labor regulations.
+
+Acceptance Criteria:
+Scenario: Calculating overtime
+Given employees work beyond their scheduled hours
+When the system processes attendance data
+Then overtime hours are calculated and flagged for approval
+
+Scenario: Approving overtime
+Given overtime hours are pending
+When the Supervisor reviews and approves them
+Then the approved hours are included in payroll export
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Attendance module, Payroll integration
+- Notes: Overtime rules must be configurable by HR.
