@@ -1,0 +1,25 @@
+Title: Record Safety Incidents
+
+User Story: As a Safety Officer I want to record safety incidents and near-misses with severity, location, and involved employees so that we can track and investigate workplace hazards
+
+Acceptance Criteria:
+Scenario: Record new incident
+Given I am logged in as Safety Officer
+When I submit a new incident with all required fields
+Then the incident is saved and visible in the safety dashboard
+
+Scenario: Validation of required fields
+Given I attempt to submit an incident without severity or location
+When I submit the form
+Then the system displays validation errors and does not save the incident
+
+Scenario: Link involved employees
+Given an incident involves multiple employees
+When I add them to the incident record
+Then each employee is linked and notified
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (E02), RBAC (E03)
+- Notes: Severity levels and locations should be configurable
