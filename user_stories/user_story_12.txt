@@ -1,0 +1,20 @@
+Title: Enforce Row-Level Security
+
+User Story: As a supervisor I want to access only the records of my assigned team So that I do not see or modify data outside my responsibility
+
+Acceptance Criteria:
+Scenario: Team data restriction
+Given I am logged in as a supervisor
+When I view employee records
+Then I should only see records for employees in my team
+
+Scenario: Unauthorized access attempt
+Given I am logged in as a supervisor
+When I attempt to access or modify records outside my team
+Then the system should return a 403 Forbidden error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC core
+- Notes: Row-level constraints must be covered by automated tests.
