@@ -1,0 +1,15 @@
+Title: Generate Attendance Reports
+
+User Story: As an HR manager I want to generate attendance reports So that I can analyze employee attendance trends and compliance
+
+Acceptance Criteria:
+Scenario: Attendance report generation
+Given attendance data is available
+When I request a report via the HR module
+Then the report should be generated with relevant metrics and export options
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Time & attendance module, reporting
+- Notes: Support PDF and CSV export formats.
