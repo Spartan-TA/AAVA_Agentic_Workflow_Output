@@ -1,0 +1,25 @@
+Title: Asset Registry CRUD
+
+User Story: As an Asset Manager I want to create, update, and delete asset records for scanners, forklifts, and PPE so that all equipment is tracked and managed centrally
+
+Acceptance Criteria:
+Scenario: Add asset
+Given I am logged in as Asset Manager
+When I add a new asset with type, serial number, and condition
+Then the asset appears in the registry and is available for assignment
+
+Scenario: Update asset
+Given an asset exists
+When I update its condition or location
+Then the changes are saved and visible in the registry
+
+Scenario: Delete asset
+Given an asset is no longer in use
+When I delete the asset
+Then it is removed from the registry and audit log records the deletion
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee Master Data (E02), RBAC (E03), Certification Tracking (E07)
+- Notes: Asset types should be configurable; deletion must be logged
