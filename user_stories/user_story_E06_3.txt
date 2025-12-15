@@ -1,0 +1,12 @@
+Title: Update Leave Accrual Balances
+User Story: As an HR admin I want leave accrual balances to update automatically So that employee records remain accurate and compliant
+Acceptance Criteria:
+Scenario: Accrual balance update
+Given an approved leave request
+When the leave period starts
+Then the employee's accrual balance should decrease by the appropriate amount
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave policy engine, payroll integration
+- Notes: Balance updates must be reflected in exports and employee profiles.
