@@ -1,0 +1,51 @@
+Title: Mobile Clock-In/Out
+User Story: As a warehouse worker I want to clock in and out using my mobile device so that my attendance is recorded conveniently
+Acceptance Criteria:
+Scenario: Mobile clock event
+Given I am scheduled for a shift
+When I use the mobile app to clock in or out
+Then my attendance is recorded and synced with the system
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance module, PWA
+- Notes: Offline queue supported
+
+Title: View Schedules on Mobile
+User Story: As a warehouse worker I want to view my upcoming shifts on my mobile device so that I can plan my work
+Acceptance Criteria:
+Scenario: Mobile schedule view
+Given I am logged into the mobile app
+When I access my schedule
+Then I see all upcoming shifts
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Scheduling module, PWA
+- Notes: Responsive design required
+
+Title: Request Leave via Mobile
+User Story: As a warehouse worker I want to request leave using my mobile device so that I can manage time off easily
+Acceptance Criteria:
+Scenario: Mobile leave request
+Given I am logged into the mobile app
+When I submit a leave request
+Then the request is sent for approval
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Leave module, PWA
+- Notes: Accrual balances visible
+
+Title: Installable PWA Manifest
+User Story: As an employee I want the mobile app to be installable as a PWA so that I can access it offline
+Acceptance Criteria:
+Scenario: PWA installation
+Given I access the app on my device
+When I choose to install
+Then the app is added to my home screen and works offline
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: PWA module
+- Notes: Lighthouse PWA score â¥ 80
