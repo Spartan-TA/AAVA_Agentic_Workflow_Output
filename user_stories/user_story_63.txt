@@ -1,0 +1,15 @@
+Title: Installable PWA Manifest
+
+User Story: As a worker I want to install the application on my mobile device as a PWA so that I can access it quickly like a native app
+
+Acceptance Criteria:
+Scenario: Installing the PWA
+Given I am using a supported browser
+When I visit the application
+Then I am prompted to install it and the app icon appears on my home screen
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: PWA manifest, service worker
+- Notes: Manifest must include icons, theme color, and offline support
