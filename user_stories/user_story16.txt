@@ -1,0 +1,15 @@
+Title: Restrict Feature Access by Role
+
+User Story: As a user I want my access to system features to be restricted based on my assigned role So that I only see and use functionalities relevant to my responsibilities
+
+Acceptance Criteria:
+Scenario: Accessing a restricted feature
+Given I am logged in with a non-admin role
+When I attempt to access an admin-only feature
+Then I should receive an access denied message
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Role assignment
+- Notes: Ensure permissions are enforced across all modules.
