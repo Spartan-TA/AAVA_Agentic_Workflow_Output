@@ -1,0 +1,15 @@
+Title: Report Safety Incident
+
+User Story: As an employee I want to report a safety incident So that hazards and injuries are documented and addressed promptly
+
+Acceptance Criteria:
+Scenario: Reporting an incident
+Given I witness or experience a safety incident
+When I submit an incident report with details
+Then the safety officer should be notified and the report logged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Notification system, incident log
+- Notes: Support attachments (photos, documents) in reports.
