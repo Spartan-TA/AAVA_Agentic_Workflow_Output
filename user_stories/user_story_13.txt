@@ -1,0 +1,15 @@
+Title: Create Shift Templates
+
+User Story: As a scheduler I want to create reusable shift templates so that I can quickly assign standard shifts to employees
+
+Acceptance Criteria:
+Scenario: Create new shift template
+Given I am on the shift templates page
+When I enter shift details and save the template
+Then the template should be available for future scheduling
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Scheduling module
+- Notes: Allow editing and deletion of templates.
