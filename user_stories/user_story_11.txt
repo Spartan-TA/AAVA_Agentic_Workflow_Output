@@ -1,0 +1,15 @@
+Title: Support API Key and OAuth2 Security Toggle
+
+User Story: As a system administrator I want to configure the authentication method (API key or OAuth2) via application settings So that the system can integrate securely with different environments
+
+Acceptance Criteria:
+Scenario: Changing authentication method
+Given the system is running
+When the admin updates the security configuration to use API key or OAuth2
+Then all endpoints enforce the selected authentication method
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Document configuration steps in README; add automated tests for both modes.
