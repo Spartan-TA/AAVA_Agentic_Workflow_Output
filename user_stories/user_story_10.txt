@@ -1,0 +1,51 @@
+Title: Request Leave
+User Story: As a warehouse worker I want to request PTO, sick, or unpaid leave so that my time off is properly recorded and approved
+Acceptance Criteria:
+Scenario: Leave request submission
+Given I am logged into the system
+When I submit a leave request with required details
+Then the request is sent for supervisor approval and my accrual balance is checked
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC, Scheduling
+- Notes: Accrual policies enforced
+
+Title: Approve or Deny Leave Requests
+User Story: As a supervisor I want to approve or deny leave requests so that staffing plans remain accurate
+Acceptance Criteria:
+Scenario: Leave approval workflow
+Given a leave request is pending
+When I review and approve/deny the request
+Then the employee's leave balance is updated and scheduled shifts are flagged for coverage
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Scheduling, Employee Master Data
+- Notes: Approved leaves update exports
+
+Title: Update Leave Balances
+User Story: As an HR manager I want leave balances to update automatically after requests are processed so that records remain accurate
+Acceptance Criteria:
+Scenario: Automatic balance update
+Given a leave request is approved or denied
+When the system processes the request
+Then the employee's leave balance reflects the change
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Leave module
+- Notes: Balances visible to employees and supervisors
+
+Title: Export Approved Leave Data
+User Story: As a payroll administrator I want to export approved leave data for payroll processing so that time off is accurately reflected
+Acceptance Criteria:
+Scenario: Export leave data
+Given approved leave records exist for a pay period
+When I request an export
+Then a file is generated with all approved leaves for payroll
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Leave module, Payroll integration
+- Notes: Export format matches payroll provider
