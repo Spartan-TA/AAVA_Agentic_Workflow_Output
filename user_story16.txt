@@ -1,0 +1,12 @@
+Title: Mobile Access (PWA)
+User Story: As a warehouse worker I want to use the system on my mobile device So that I can clock in/out, view schedules, and request leave easily
+Acceptance Criteria:
+Scenario: Mobile usability and offline support
+Given I access the app on mobile
+When I perform core flows
+Then the PWA is installable, offline queue works, and Lighthouse score is â¥ 80
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Time & Attendance, Shift & Schedule Management, Leave & Absence Management, Notifications & Announcements
+- Notes: Responsive views required
