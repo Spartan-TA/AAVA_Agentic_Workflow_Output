@@ -1,0 +1,15 @@
+Title: User Notification Channel Preferences
+
+User Story: As a worker I want to opt-in or opt-out of in-app, email, and SMS notifications so that I only receive relevant communications through my preferred channels
+
+Acceptance Criteria:
+Scenario: Managing notification preferences
+Given I am on the notification settings page
+When I select or deselect notification channels for shift changes, approvals, or announcements
+Then my preferences are saved and only selected channels are used for notifications
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Notification service, user profile module
+- Notes: Preferences must be respected for all notification types; default is all channels enabled
