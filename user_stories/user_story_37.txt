@@ -1,0 +1,15 @@
+Title: Initiate Performance Review
+
+User Story: As a manager I want to initiate a performance review for my direct reports So that I can provide structured feedback and set goals
+
+Acceptance Criteria:
+Scenario: Manager initiates review
+Given I am logged in as a manager
+When I select an employee and start a review cycle
+Then the employee should be notified and the review form should be available for input
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Notifications module, Employee Master Data
+- Notes: Review cycle should be configurable (annual, semi-annual, etc.).
