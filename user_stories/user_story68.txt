@@ -1,0 +1,15 @@
+Title: Automate Build and Deployment Pipeline
+
+User Story: As a DevOps engineer I want to automate the build and deployment pipeline So that new releases are delivered quickly and reliably
+
+Acceptance Criteria:
+Scenario: Running automated pipeline
+Given new code is committed to the repository
+When the pipeline is triggered
+Then the system should build, test, and deploy the release to the target environment
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: CI/CD tool, test suite
+- Notes: Support rollback and notification on failure.
