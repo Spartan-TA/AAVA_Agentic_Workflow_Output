@@ -1,0 +1,15 @@
+Title: Assign Training to Employee
+
+User Story: As a manager I want to assign mandatory training to employees So that compliance and skill requirements are met
+
+Acceptance Criteria:
+Scenario: Manager assigns training
+Given I am logged in as a manager
+When I select an employee and assign a training module
+Then the employee should receive a notification and the assignment should be tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Notifications module, Employee Master Data
+- Notes: Training assignments should be visible in employee profiles.
