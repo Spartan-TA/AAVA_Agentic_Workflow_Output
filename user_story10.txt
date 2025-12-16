@@ -1,0 +1,19 @@
+Title: Delete Employee Record (Soft Delete)
+
+User Story: As an HR manager I want to soft-delete employee records So that I can retain historical data while removing inactive employees from active lists
+
+Acceptance Criteria:
+Scenario: Successful soft-delete
+Given an employee record exists
+When I submit a DELETE request to /employees/{id}
+Then the employee status is updated to inactive and record is not permanently removed
+Scenario: Attempt to delete non-existent employee
+Given no employee record exists for the provided id
+When I submit a DELETE request
+Then the request returns a not found error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee record exists
+- Notes: Soft-deleted employees should not appear in active lists but remain in the database.
