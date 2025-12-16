@@ -1,0 +1,15 @@
+Title: Offboarding Workflow for Access and Asset Revocation
+
+User Story: As an HR manager I want terminated employees to have their access revoked and assets collected automatically so that offboarding is secure and complete
+
+Acceptance Criteria:
+Scenario: Processing a termination
+Given an employee is marked as terminated in the HRIS
+When the offboarding workflow runs
+Then all system access is revoked, assets are flagged for collection, and schedules are updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: HRIS integration, access management, asset management, scheduling
+- Notes: Offboarding actions must be auditable
