@@ -1,0 +1,15 @@
+Title: View Safety Dashboard
+
+User Story: As a safety officer I want to view a dashboard of open and closed safety incidents So that I can monitor trends and prioritize follow-up actions
+
+Acceptance Criteria:
+Scenario: Safety officer views dashboard
+Given I am logged into the system
+When I access the safety dashboard
+Then I should see a summary of incidents by status, location, and type
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Reporting & Analytics module
+- Notes: Dashboard should support filtering and export.
