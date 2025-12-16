@@ -1,0 +1,15 @@
+Title: Update Employee Record
+
+User Story: As an HR manager I want to update employee details So that I can maintain accurate and current employee information
+
+Acceptance Criteria:
+Scenario: Successful employee update
+Given an existing employee record
+When I modify details and submit changes
+Then the updated information should be saved and reflected in the employee profile
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data (E02)
+- Notes: Validate badgeId uniqueness and audit changes.
