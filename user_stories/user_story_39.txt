@@ -1,0 +1,15 @@
+Title: Set and Track Employee Goals
+
+User Story: As a manager I want to set and track goals for my direct reports So that performance expectations are clear and progress can be measured
+
+Acceptance Criteria:
+Scenario: Manager sets goals
+Given a performance review is in progress
+When I add goals to an employee's review
+Then the employee should be able to view and update progress on those goals
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data
+- Notes: Goals should be SMART and support status updates.
