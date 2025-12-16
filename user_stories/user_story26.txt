@@ -1,0 +1,15 @@
+Title: Supervisor Approves Leave Requests
+
+User Story: As a supervisor I want to review and approve employee leave requests So that absences are managed and do not disrupt operations
+
+Acceptance Criteria:
+Scenario: Approving a leave request
+Given I am a supervisor and there are pending leave requests
+When I review and approve a request
+Then the employee should be notified and the schedule updated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Leave request workflow
+- Notes: Approval actions should be logged for audit.
