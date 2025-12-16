@@ -1,0 +1,15 @@
+Title: Role Assignment and Permissions
+
+User Story: As an admin I want to assign roles to users and enforce permissions So that only authorized personnel can access sensitive features
+
+Acceptance Criteria:
+Scenario: Assign and enforce roles
+Given a user account exists
+When I assign a role (ADMIN, HR, SUPERVISOR, WORKER)
+Then the user should have access only to permitted actions and endpoints
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project Scaffolding (E01), Employee Master Data (E02)
+- Notes: Method and endpoint security must be covered by automated tests.
