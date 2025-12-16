@@ -1,0 +1,51 @@
+Title: Record Clock-In Event
+User Story: As a warehouse worker I want to clock in at the start of my shift so that my working hours are accurately tracked for payroll and compliance
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am scheduled for a shift and at the warehouse location
+When I submit a clock-in event via the system
+Then my clock-in time is recorded and associated with my shift
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Geofence validation optional; device capture for audit
+
+Title: Record Clock-Out Event
+User Story: As a warehouse worker I want to clock out at the end of my shift so that my total hours worked are calculated correctly
+Acceptance Criteria:
+Scenario: Successful clock-out
+Given I am clocked in for a shift
+When I submit a clock-out event via the system
+Then my clock-out time is recorded and my daily total is computed
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Automatic shift association
+
+Title: Handle Missed Punches and Corrections
+User Story: As a supervisor I want to approve corrections for missed clock-in/out events so that attendance records remain accurate
+Acceptance Criteria:
+Scenario: Correction approval
+Given a worker submits a correction request for a missed punch
+When I review and approve the correction
+Then the attendance record is updated and an approval task is logged
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Corrections create approval workflow
+
+Title: Export Attendance Reports
+User Story: As a payroll administrator I want to export attendance reports in CSV format so that payroll processing is streamlined
+Acceptance Criteria:
+Scenario: Export attendance report
+Given attendance data is available for a pay period
+When I request a report export
+Then a CSV file is generated with daily totals and corrections
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance module
+- Notes: Reports must include corrections and approval status
