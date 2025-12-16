@@ -1,0 +1,15 @@
+Title: Implement Role-Based Endpoint Security
+
+User Story: As a system administrator I want to restrict API endpoints based on user roles So that only authorized users can access sensitive operations
+
+Acceptance Criteria:
+Scenario: Endpoint access control
+Given a user with a specific role
+When the user attempts to access a protected endpoint
+Then access should be granted or denied based on their role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, Project scaffolding
+- Notes: Cover all endpoints with security annotations.
