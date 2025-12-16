@@ -1,0 +1,15 @@
+Title: Timezone-Aware Scheduling
+
+User Story: As a supervisor I want schedules to display in the local time zone of each warehouse so that shift times are accurate for all users
+
+Acceptance Criteria:
+Scenario: Viewing schedules in local time
+Given I am assigned to a warehouse in a specific timezone
+When I view my schedule
+Then all shift times are displayed in my local timezone
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Scheduling module, timezone library
+- Notes: Timezone must be set per tenant and respected in all scheduling views
