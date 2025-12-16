@@ -1,0 +1,51 @@
+Title: Create Shift Templates
+User Story: As an HR manager I want to create recurring shift templates so that scheduling is efficient and consistent
+Acceptance Criteria:
+Scenario: Shift template creation
+Given I have access to the scheduling module
+When I create a new shift template with required fields
+Then the template is saved and available for assignment
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Templates support rotations and overtime rules
+
+Title: Assign Shifts to Employees
+User Story: As a supervisor I want to assign shifts to employees so that staffing needs are met
+Acceptance Criteria:
+Scenario: Bulk shift assignment
+Given a list of employees and available shifts
+When I assign shifts in bulk
+Then employees receive their schedules and conflicts are detected/prevented
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC, Attendance
+- Notes: Audit entries generated for assignments
+
+Title: View Upcoming Shifts
+User Story: As a warehouse worker I want to view my upcoming shifts so that I can plan my work schedule
+Acceptance Criteria:
+Scenario: View personal schedule
+Given I am logged into the system
+When I navigate to my schedule
+Then I see all upcoming assigned shifts
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Scheduling module
+- Notes: Blackout dates and warehouse calendar respected
+
+Title: Prevent Scheduling Conflicts
+User Story: As a supervisor I want the system to detect and prevent scheduling conflicts so that no employee is double-booked
+Acceptance Criteria:
+Scenario: Conflict detection
+Given I attempt to assign overlapping shifts
+When the system checks for conflicts
+Then I am notified and the assignment is blocked
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Scheduling module
+- Notes: Conflict logic covers blackout dates and overtime
