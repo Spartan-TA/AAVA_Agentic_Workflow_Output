@@ -1,0 +1,13 @@
+Title: Set Up Database Migration with Flyway/Liquibase
+
+User Story: As a backend developer I want automated baseline database migrations So that schema changes are versioned and repeatable across environments
+
+Acceptance Criteria:
+Scenario: Baseline migration runs
+Given a new environment When I start the application Then Flyway/Liquibase runs the baseline migration and the database schema is created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Migration scripts must be idempotent and documented
