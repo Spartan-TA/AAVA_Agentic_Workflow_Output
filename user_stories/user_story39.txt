@@ -1,0 +1,15 @@
+Title: Manager Evaluation Submission
+
+User Story: As a manager I want to submit my evaluation of direct reports during the review cycle So that HR can aggregate performance data for organizational insights
+
+Acceptance Criteria:
+Scenario: Submitting manager evaluation
+Given the review cycle is active and my direct reports have submitted self-assessments
+When I complete and submit my evaluations
+Then the results should be recorded and accessible to HR
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Employee self-assessment, review cycle initiation
+- Notes: Allow managers to provide qualitative and quantitative feedback.
