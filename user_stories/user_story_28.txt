@@ -1,0 +1,15 @@
+Title: Report on Training Completion Rates
+
+User Story: As an HR administrator I want to generate reports on training completion rates So that I can monitor compliance and identify gaps
+
+Acceptance Criteria:
+Scenario: Generate training completion report
+Given I am logged in as an HR administrator
+When I select a training module and reporting period
+Then I should see a report of assigned, completed, and overdue trainings by department
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Reporting & Analytics module
+- Notes: Reports should be exportable to CSV.
