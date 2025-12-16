@@ -1,0 +1,15 @@
+Title: Assign Asset to Employee
+
+User Story: As an asset manager I want to assign equipment or assets to employees So that asset responsibility and tracking are maintained
+
+Acceptance Criteria:
+Scenario: Assign asset
+Given I am logged in as an asset manager
+When I select an asset and assign it to an employee
+Then the assignment should be recorded and the employee notified
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Notifications module, Employee Master Data
+- Notes: Asset assignment history should be auditable.
