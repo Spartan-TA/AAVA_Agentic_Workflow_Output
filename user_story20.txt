@@ -1,0 +1,12 @@
+Title: CI/CD & Deployment Automation
+User Story: As a developer I want automated CI/CD pipelines So that deployments are reliable and repeatable
+Acceptance Criteria:
+Scenario: Pipeline execution and deployment
+Given code is pushed
+When the pipeline runs
+Then builds, tests, and deployments are automated with rollback on failure
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: None
+- Notes: Supports blue/green or canary deployments
