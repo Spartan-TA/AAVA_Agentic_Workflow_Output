@@ -1,0 +1,15 @@
+Title: Detect and Prevent Shift Scheduling Conflicts
+
+User Story: As a scheduler I want the system to automatically detect and prevent overlapping or conflicting shift assignments So that employees are not double-booked
+
+Acceptance Criteria:
+Scenario: Assigning a conflicting shift
+Given an employee already has a scheduled shift
+When I attempt to assign an overlapping shift
+Then the system blocks the assignment and displays a conflict warning
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC, Time & Attendance
+- Notes: Conflicts should be logged for review and reporting.
