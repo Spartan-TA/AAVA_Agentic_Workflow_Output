@@ -1,0 +1,15 @@
+Title: Employee Clock-In
+
+User Story: As an employee I want to clock in at the start of my shift So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am scheduled for a shift
+When I clock in via the web or mobile app
+Then my clock-in time is recorded and visible to my manager
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance module, user authentication
+- Notes: Prevent multiple clock-ins for the same shift.
