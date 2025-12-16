@@ -1,0 +1,15 @@
+Title: Generate Custom Reports
+
+User Story: As a business analyst I want to generate custom reports based on selected criteria So that I can analyze workforce trends and make data-driven decisions
+
+Acceptance Criteria:
+Scenario: Creating a custom report
+Given I have access to reporting tools
+When I select filters and fields for my report
+Then the system should generate a report with the requested data
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Reporting engine, data warehouse
+- Notes: Support saving report templates and exporting results.
