@@ -1,0 +1,15 @@
+Title: Enforce Row-Level Security for Supervisors
+
+User Story: As a supervisor I want to access only the records of my assigned team So that I cannot view or modify data outside my scope
+
+Acceptance Criteria:
+Scenario: Supervisor data access
+Given a supervisor is logged in
+When they attempt to view employee records
+Then only records for their team are visible and editable
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data
+- Notes: Team assignments must be up-to-date for correct filtering.
