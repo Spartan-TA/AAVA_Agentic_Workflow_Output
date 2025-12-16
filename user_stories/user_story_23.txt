@@ -1,0 +1,15 @@
+Title: View Leave Balance
+
+User Story: As an employee I want to view my current leave balance So that I can plan my absences accordingly
+
+Acceptance Criteria:
+Scenario: Employee checks leave balance
+Given I am logged into the system
+When I navigate to the leave balance section
+Then I should see an up-to-date summary of my available leave types and balances
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data
+- Notes: Balances should update in real-time after approvals or new requests.
