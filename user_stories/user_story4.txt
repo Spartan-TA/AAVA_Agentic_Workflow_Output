@@ -1,0 +1,12 @@
+Title: Create Employee Record
+User Story: As an HR manager I want to create new employee records via an API So that all warehouse staff are accurately tracked in the system
+Acceptance Criteria:
+Scenario: Employee record creation
+Given valid employee details
+When I submit a POST request to /employees
+Then a new employee record is created with a unique badgeId
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Ensure OpenAPI schema includes examples
