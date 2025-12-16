@@ -1,3 +1,0 @@
-Title: Initialize Spring Boot Project Structure
-
-User Story: As a System Administrator I want to initialize the Spring Boot project with standardized base modules So that all teams have a consis
