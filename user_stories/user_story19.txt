@@ -1,0 +1,15 @@
+Title: Request Missed Punch Correction
+
+User Story: As an employee I want to request a correction for missed clock in/out punches So that my attendance record is accurate
+
+Acceptance Criteria:
+Scenario: Submitting a missed punch request
+Given I notice a missing punch in my attendance log
+When I submit a correction request with the correct time
+Then my supervisor should be notified for approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Notification system, supervisor role
+- Notes: Correction requests should be tracked and auditable.
