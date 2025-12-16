@@ -1,0 +1,15 @@
+Title: Implement Role-Based Access Control
+
+User Story: As a system administrator I want to configure roles (ADMIN, HR, SUPERVISOR, WORKER) in Spring Security So that access to sensitive operations is restricted by role
+
+Acceptance Criteria:
+Scenario: Role-based access enforcement
+Given a user with a specific role
+When they access protected endpoints
+Then only authorized actions are permitted and unauthorized requests return 401 or 403
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project scaffolding (E01), Employee CRUD (E02)
+- Notes: Cover method/endpoint security and row-level constraints
