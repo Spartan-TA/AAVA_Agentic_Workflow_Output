@@ -1,0 +1,15 @@
+Title: Delete Employee Record (Soft Delete)
+
+User Story: As an HR manager I want to soft-delete employee records So that I can retain historical data while removing inactive employees from active lists
+
+Acceptance Criteria:
+Scenario: Successful soft-delete
+Given an employee record exists
+When I choose to delete the employee
+Then the record should be marked as inactive and excluded from active queries, but retained in the database
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data (E02)
+- Notes: Ensure soft-deleted records are not shown in active lists but are available for audit.
