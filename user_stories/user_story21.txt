@@ -1,0 +1,15 @@
+Title: Initialize Spring Boot Project
+
+User Story: As a developer I want to initialize a Spring Boot (Maven) project with core modules So that the foundation is standardized for all future development
+
+Acceptance Criteria:
+Scenario: Project initialization
+Given a clean development environment
+When I run the build and start the application
+Then the project runs on port 8080 and the base package structure is created
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: Ensure README includes build/run steps; base modules include employee, scheduling, attendance, safety
