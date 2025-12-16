@@ -1,0 +1,15 @@
+Title: Automated Certification Expiry Reminders
+
+User Story: As an employee I want to receive automated reminders before my certifications expire So that I can renew them on time and remain compliant
+
+Acceptance Criteria:
+Scenario: Receiving expiry reminders
+Given my certification is expiring soon
+When the system detects the expiry date
+Then I should receive a notification with renewal instructions
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Notification system, certification tracking
+- Notes: Reminders should be sent at configurable intervals.
