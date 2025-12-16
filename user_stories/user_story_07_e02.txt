@@ -1,0 +1,15 @@
+Title: Delete (Soft-Delete) Employee
+
+User Story: As an HR manager I want to soft-delete employee records So that terminated employees are deactivated but their history is retained for compliance
+
+Acceptance Criteria:
+Scenario: Employee soft-deletion
+Given an active employee record
+When I choose to delete the employee
+Then the record is marked as inactive and hidden from active lists but retained in the database
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee domain module, audit logging
+- Notes: Ensure deleted employees cannot log in or be assigned shifts.
