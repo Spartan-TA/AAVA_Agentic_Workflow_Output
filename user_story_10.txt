@@ -1,0 +1,15 @@
+Title: List and Filter Employees
+
+User Story: As an HR Manager I want to list and filter employees by various criteria So that I can quickly find relevant employee records
+
+Acceptance Criteria:
+Scenario: Employee list filtering
+Given I am on the employee list page
+When I apply filters (e.g., department, status)
+Then only employees matching the criteria are displayed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee record creation
+- Notes: Support pagination and sorting
