@@ -1,0 +1,12 @@
+Title: Localization & Multi-Tenant
+User Story: As a global admin I want localization and multi-tenant support So that the system can be used across regions and clients
+Acceptance Criteria:
+Scenario: Language and tenant configuration
+Given a new tenant or locale is added
+When users log in
+Then UI and notifications are localized, and data is isolated per tenant
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: None
+- Notes: Templates localized; tenant isolation enforced
