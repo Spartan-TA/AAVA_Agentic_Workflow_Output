@@ -1,0 +1,15 @@
+Title: Auditability of Onboarding and Offboarding Actions
+
+User Story: As a compliance officer I want all onboarding and offboarding actions to be logged so that we can demonstrate compliance and investigate issues
+
+Acceptance Criteria:
+Scenario: Auditing onboarding/offboarding
+Given onboarding or offboarding actions are performed
+When I review the audit log
+Then I see entries for each action with actor, timestamp, and outcome
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Audit log service, onboarding/offboarding workflows
+- Notes: Log entries must be exportable for compliance review
