@@ -1,0 +1,51 @@
+Title: Create Performance Review Templates
+User Story: As an HR manager I want to create quarterly and annual review templates so that feedback is standardized
+Acceptance Criteria:
+Scenario: Template creation
+Given I have access to the review module
+When I create a new review template with required fields
+Then the template is available for assignment to employees
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Templates support goals, competencies, ratings
+
+Title: Assign Reviews to Employees
+User Story: As a supervisor I want to assign performance reviews to employees so that evaluations are conducted on schedule
+Acceptance Criteria:
+Scenario: Review assignment
+Given review cycles are active
+When I assign reviews to employees
+Then the employees receive notifications and can submit self-assessments
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review module, Notification module
+- Notes: Role-based visibility
+
+Title: Submit and Acknowledge Reviews
+User Story: As an employee I want to submit self-assessments and acknowledge reviews so that my feedback is included
+Acceptance Criteria:
+Scenario: Review submission
+Given a review is assigned
+When I submit my self-assessment and acknowledge the review
+Then the review is marked as complete and history is immutable
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review module
+- Notes: PDF export supported
+
+Title: Export Review History
+User Story: As an HR manager I want to export performance review history so that records are available for compliance and analysis
+Acceptance Criteria:
+Scenario: Export review history
+Given reviews are completed
+When I request an export
+Then a PDF file is generated with all review details
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Review module
+- Notes: History is immutable after sign-off
