@@ -1,0 +1,15 @@
+Title: API Key/OAuth2 Authentication Toggle
+
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication via configuration So that the system can adapt to different security requirements
+
+Acceptance Criteria:
+Scenario: Authentication mode toggle
+Given the system configuration
+When I switch between API key and OAuth2 modes
+Then the authentication mechanism updates and endpoints enforce the selected mode
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Role-based access control (E03)
+- Notes: Document configuration steps and test both modes
