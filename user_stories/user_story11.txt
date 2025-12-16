@@ -1,0 +1,15 @@
+Title: Secure Endpoints with Role-Based Access Control
+
+User Story: As an ADMIN I want all API endpoints to be protected by role-based access control so that only authorized users can perform sensitive operations
+
+Acceptance Criteria:
+Scenario: Unauthorized access attempt
+Given I am not authenticated
+When I attempt to access a protected endpoint
+Then I receive a 401 Unauthorized response
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Use Spring Security for endpoint protection; ensure coverage by automated security tests.
