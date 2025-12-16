@@ -1,0 +1,15 @@
+Title: Create Employee Domain and CRUD Endpoints
+
+User Story: As an HR manager I want to create, read, update, and delete employee records so that employee data is accurately maintained in the system.
+
+Acceptance Criteria:
+Scenario: Employee CRUD operations
+  Given I have HR or ADMIN role
+  When I use the /employees API to create, read, update, or delete an employee
+  Then the operations should succeed and reflect in the employee database
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding (E01)
+- Notes: Support POST/GET/PUT/PATCH/DELETE; enforce unique badgeId; soft-delete employees.
