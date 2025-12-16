@@ -1,0 +1,15 @@
+Title: Structured JSON Logging with traceId
+
+User Story: As a developer I want all logs to be structured in JSON format and include a traceId so that I can correlate events across distributed services
+
+Acceptance Criteria:
+Scenario: Logging an event with traceId
+Given a request is processed
+When a log entry is created
+Then it is formatted as JSON and includes the traceId for the request
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Logging framework, distributed tracing
+- Notes: All logs must be searchable by traceId
