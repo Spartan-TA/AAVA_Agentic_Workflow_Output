@@ -1,0 +1,16 @@
+Title: Enable Actuator Health Endpoint and Documentation
+
+User Story: As a System Administrator I want to enable the Spring Boot Actuator health endpoint and provide build/run documentation So that system health can be monitored and onboarding is simplified
+
+Acceptance Criteria:
+Scenario: Health endpoint and documentation
+Given the application is running
+When I access the /actuator/health endpoint
+Then I receive a status of UP
+And the README contains clear build and run steps
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project initialization
+- Notes: Ensure actuator endpoints are secured if needed
