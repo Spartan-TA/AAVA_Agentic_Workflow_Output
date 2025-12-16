@@ -1,0 +1,15 @@
+Title: Clock-In/Out Endpoint
+
+User Story: As a WORKER I want to clock in and out via a mobile or web endpoint so that my attendance is accurately recorded for payroll and compliance
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am scheduled for a shift and at the warehouse
+When I submit a clock-in event with valid credentials
+Then my attendance is recorded and associated with my shift
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Support geofence/device capture; validate against shift schedule.
