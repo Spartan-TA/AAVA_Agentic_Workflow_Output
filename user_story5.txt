@@ -1,0 +1,12 @@
+Title: Shift & Schedule Management
+User Story: As a supervisor I want to manage shift templates and assignments So that I can ensure adequate staffing and reduce conflicts
+Acceptance Criteria:
+Scenario: Schedule creation and conflict detection
+Given I create or modify a schedule
+When I assign shifts to employees
+Then conflicts are detected/prevented, workers see their shifts, and audit entries are generated
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee Master Data, RBAC, Time & Attendance
+- Notes: Supports recurring templates, rotations, blackout dates
