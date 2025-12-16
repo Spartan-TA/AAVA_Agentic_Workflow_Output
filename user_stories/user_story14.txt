@@ -1,0 +1,15 @@
+Title: Automated Security Test Coverage
+
+User Story: As a QA engineer I want automated tests to validate all security rules so that unauthorized and forbidden actions are reliably blocked
+
+Acceptance Criteria:
+Scenario: Security test coverage
+Given the application is deployed
+When automated security tests run
+Then all endpoints enforce correct role-based access and return 401/403 as appropriate
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Integrate security tests into CI pipeline; report coverage metrics.
