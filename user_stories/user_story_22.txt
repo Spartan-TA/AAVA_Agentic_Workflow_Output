@@ -1,0 +1,51 @@
+Title: Support Multiple Languages
+User Story: As a warehouse worker I want the application to support multiple languages so that I can use it in my preferred language
+Acceptance Criteria:
+Scenario: Language selection
+Given I am logged in
+When I select my preferred language
+Then the application UI updates accordingly
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Localization module
+- Notes: Templates localized for notifications
+
+Title: Multi-Tenant Data Isolation
+User Story: As a system administrator I want data to be isolated per tenant so that each warehouse operates independently
+Acceptance Criteria:
+Scenario: Tenant isolation
+Given multiple tenants are configured
+When users access the system
+Then each tenant's data is isolated and not visible to others
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Multi-tenant module
+- Notes: Access control enforced
+
+Title: Tenant-Specific Configuration
+User Story: As a warehouse manager I want to configure tenant-specific settings so that operations are tailored to each warehouse
+Acceptance Criteria:
+Scenario: Configuration management
+Given I am logged in as a manager
+When I update tenant settings
+Then the changes apply only to my warehouse
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Multi-tenant module
+- Notes: Settings include calendars, blackout dates
+
+Title: Localized Notification Templates
+User Story: As an employee I want notification templates to be localized so that I receive messages in my preferred language
+Acceptance Criteria:
+Scenario: Localized notifications
+Given my language preference is set
+When notifications are sent
+Then they are delivered in my chosen language
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Localization module, Notification module
+- Notes: Templates managed per language
