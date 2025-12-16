@@ -1,0 +1,20 @@
+Title: Generate OpenAPI Schemas with Examples for Employee APIs
+
+User Story: As a developer I want OpenAPI schemas with request and response examples for all Employee APIs so that integration and documentation are standardized and clear
+
+Acceptance Criteria:
+Scenario: OpenAPI schema available
+  Given the Employee API is implemented
+  When I access the API documentation endpoint
+  Then I see accurate schemas for all endpoints with example payloads
+
+Scenario: Schema updates with API changes
+  Given the API changes
+  When I regenerate the OpenAPI docs
+  Then the schemas and examples reflect the latest API structure
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD APIs
+- Notes: Use Swagger UI or similar for interactive docs.
