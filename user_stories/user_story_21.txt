@@ -1,0 +1,15 @@
+Title: Submit Leave Request
+
+User Story: As an employee I want to submit a leave request So that I can formally notify my manager of my planned absence
+
+Acceptance Criteria:
+Scenario: Successful leave request submission
+Given I am logged into the system
+When I fill out the leave request form and submit it
+Then my manager should receive a notification for approval
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, Notifications module
+- Notes: Form should validate leave balance and required fields.
