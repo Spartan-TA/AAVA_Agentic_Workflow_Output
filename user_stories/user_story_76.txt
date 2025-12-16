@@ -1,0 +1,15 @@
+Title: Health Checks and Alerting for Critical Errors
+
+User Story: As a DevOps engineer I want automated health checks and alerting for database and external API failures so that I can respond quickly to critical issues
+
+Acceptance Criteria:
+Scenario: Triggering alerts on failures
+Given the health check endpoint detects a failure
+When the error rate or latency exceeds thresholds
+Then an alert is sent to the operations team and the issue is visible in Grafana dashboards
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Health check endpoints, alerting system, Grafana
+- Notes: Alerts must be configured for 5xx errors and high latency
