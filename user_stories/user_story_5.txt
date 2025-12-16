@@ -1,0 +1,15 @@
+Title: Set Up Core Modules
+
+User Story: As a Developer I want to set up core modules for employee, scheduling, attendance, and safety So that the foundational domains are ready for feature development
+
+Acceptance Criteria:
+Scenario: Core module setup
+Given the base package structure is created
+When I generate the initial modules
+Then the employee, scheduling, attendance, and safety modules should exist in the codebase
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Modules should be empty but follow naming and structure conventions.
