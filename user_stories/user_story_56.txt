@@ -1,0 +1,15 @@
+Title: Export Audit Logs by Date, User, or Entity
+
+User Story: As an auditor I want to export audit logs filtered by date, user, or entity so that I can efficiently review compliance events
+
+Acceptance Criteria:
+Scenario: Exporting filtered audit logs
+Given I select a date range, user, or entity
+When I request an export
+Then I receive a CSV file containing only the relevant audit log entries
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Audit log service, export module
+- Notes: Export must be available to authorized users only
