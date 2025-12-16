@@ -1,0 +1,15 @@
+Title: Certification Expiry Alerts
+
+User Story: As an HR administrator I want to receive alerts for upcoming certification expiries so that renewals are not missed
+
+Acceptance Criteria:
+Scenario: Certification expiry alert
+Given a certification is expiring within 30 days
+When the system checks certification dates
+Then an alert should be sent to the employee and HR administrator
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Notification module, Certification tracking
+- Notes: Configurable alert window.
