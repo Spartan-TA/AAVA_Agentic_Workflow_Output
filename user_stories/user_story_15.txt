@@ -1,0 +1,51 @@
+Title: Generate Payroll Export Files
+User Story: As a payroll administrator I want to generate payroll-ready files from approved attendance and leave so that payroll processing is accurate and efficient
+Acceptance Criteria:
+Scenario: Payroll export generation
+Given approved attendance and leave data is available
+When I request a payroll export
+Then the system generates a file matching the provider schema
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance, Leave modules
+- Notes: Export format matches provider requirements
+
+Title: Map Data to External Payroll Provider
+User Story: As a payroll administrator I want attendance and leave data mapped to external payroll provider formats so that manual errors are reduced
+Acceptance Criteria:
+Scenario: Data mapping
+Given provider schema is configured
+When I generate an export
+Then the data fields are mapped correctly and totals reconcile
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Payroll integration
+- Notes: Mapping logic configurable
+
+Title: Secure Delivery of Payroll Files
+User Story: As a payroll administrator I want payroll files delivered securely via SFTP or API so that sensitive data is protected
+Acceptance Criteria:
+Scenario: Secure delivery
+Given a payroll file is generated
+When I initiate delivery
+Then the file is sent securely and delivery status is tracked
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Payroll integration
+- Notes: Failed deliveries retried with backoff
+
+Title: Audit Payroll Export Events
+User Story: As a compliance officer I want every payroll export event logged so that audit requirements are met
+Acceptance Criteria:
+Scenario: Audit logging
+Given a payroll export occurs
+When the event is processed
+Then an audit log entry is created with timestamp and actor
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Audit module
+- Notes: Audit log exportable
