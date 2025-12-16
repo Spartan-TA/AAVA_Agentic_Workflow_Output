@@ -1,0 +1,51 @@
+Title: Register Equipment and Assets
+User Story: As an asset manager I want to register equipment and PPE in the system so that all assets are tracked and assigned
+Acceptance Criteria:
+Scenario: Asset registration
+Given I have access to the asset module
+When I add a new asset with required details
+Then the asset is available for assignment and tracked in the registry
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Asset registry supports condition state
+
+Title: Assign Assets to Employees
+User Story: As a supervisor I want to assign assets to employees so that accountability and safe operation are ensured
+Acceptance Criteria:
+Scenario: Asset assignment
+Given assets and employees are available
+When I assign an asset to an employee
+Then the assignment is logged and checked for required certifications
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification module, Employee Master Data
+- Notes: Blocks assignment if certs invalid
+
+Title: Track Asset Check-In/Check-Out
+User Story: As an employee I want to check in and check out assets so that usage is recorded and overdue returns are flagged
+Acceptance Criteria:
+Scenario: Asset check-in/out
+Given I am assigned an asset
+When I check out or return the asset
+Then the event is logged and overdue returns are reported
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset module
+- Notes: History log visible per asset and employee
+
+Title: Asset Condition and Overdue Reports
+User Story: As an asset manager I want to generate reports on asset condition and overdue returns so that maintenance and accountability are improved
+Acceptance Criteria:
+Scenario: Report generation
+Given asset data is available
+When I request a report
+Then I receive a summary of asset condition and overdue returns
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Asset module
+- Notes: Reports exportable
