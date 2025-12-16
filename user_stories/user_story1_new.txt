@@ -1,0 +1,15 @@
+Title: Initialize Spring Boot Project
+
+User Story: As a developer I want to initialize a Spring Boot project with Maven so that all modules have a standardized foundation
+
+Acceptance Criteria:
+Scenario: Project scaffolding
+Given I have cloned the repository
+When I run the build command
+Then the project builds and runs on port 8080
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: README must include build/run steps
