@@ -1,0 +1,15 @@
+Title: Add Actuator for Health Checks
+
+User Story: As a DevOps engineer I want to add Actuator endpoints so that I can monitor application health
+
+Acceptance Criteria:
+Scenario: Health endpoint
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns UP
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01
+- Notes: Ensure health endpoint is secured
