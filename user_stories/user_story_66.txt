@@ -1,0 +1,15 @@
+Title: New Hire Provisioning on HRIS Sync
+
+User Story: As an HR manager I want new hires from the HRIS to be automatically provisioned with accounts and initial schedules so that onboarding is seamless
+
+Acceptance Criteria:
+Scenario: Automatic new hire provisioning
+Given a new hire record appears in the HRIS
+When the sync job runs
+Then the employee is created in the system with a user account and initial schedule
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: HRIS integration, account management, scheduling
+- Notes: Must trigger onboarding workflow
