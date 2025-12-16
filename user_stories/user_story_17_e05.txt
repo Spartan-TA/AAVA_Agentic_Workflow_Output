@@ -1,0 +1,15 @@
+Title: Assign Shifts to Employees
+
+User Story: As a scheduler I want to assign shifts to employees So that work coverage is planned and communicated
+
+Acceptance Criteria:
+Scenario: Assign shift to employee
+Given a shift template and employee list
+When I select employees and assign them to a shift
+Then the assignments are saved and employees are notified
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Scheduling module, notification system
+- Notes: Prevent overlapping assignments for the same employee.
