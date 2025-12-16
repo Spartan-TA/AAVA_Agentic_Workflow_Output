@@ -1,0 +1,15 @@
+Title: HRIS Sync Job for Employee Creation and Updates
+
+User Story: As an HR manager I want new hires and terminations from the HRIS to automatically create or update employee records so that our workforce data is always current
+
+Acceptance Criteria:
+Scenario: Automatic employee sync
+Given a new hire or termination is processed in the HRIS
+When the sync job runs
+Then the corresponding employee record is created, updated, or deactivated in the scheduling system
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: HRIS API, employee database
+- Notes: Sync must be idempotent and handle errors gracefully
