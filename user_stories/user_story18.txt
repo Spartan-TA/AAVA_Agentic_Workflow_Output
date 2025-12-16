@@ -1,0 +1,15 @@
+Title: Employee Clock Out
+
+User Story: As an employee I want to clock out at the end of my shift So that my working hours are accurately completed and recorded
+
+Acceptance Criteria:
+Scenario: Successful clock out
+Given I am clocked in and my shift is ending
+When I click the clock out button
+Then my end time should be recorded and my attendance log updated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock in functionality
+- Notes: Prevent clock out before scheduled end time unless approved.
