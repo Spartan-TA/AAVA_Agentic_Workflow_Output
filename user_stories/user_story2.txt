@@ -1,0 +1,16 @@
+Title: Configure Database Migrations and Health Monitoring
+
+User Story: As a developer I want to configure Flyway/Liquibase for database migrations and enable Actuator endpoints so that the application can be reliably deployed and monitored
+
+Acceptance Criteria:
+Scenario: Database migration and health monitoring
+  Given the application is started
+  When Flyway/Liquibase runs
+  Then the baseline migration should be applied without errors
+  And the /actuator/health endpoint should return UP
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Ensure migration scripts are idempotent and health endpoint is accessible for monitoring.
