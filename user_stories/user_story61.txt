@@ -1,0 +1,15 @@
+Title: Track Onboarding/Offboarding Progress
+
+User Story: As an HR manager I want to track the progress of onboarding and offboarding workflows So that I can ensure all required steps are completed on time
+
+Acceptance Criteria:
+Scenario: Viewing workflow progress
+Given onboarding or offboarding is in progress
+When I view the workflow dashboard
+Then I should see the status of each task and outstanding items
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Workflow engine, dashboard module
+- Notes: Support notifications for overdue tasks.
