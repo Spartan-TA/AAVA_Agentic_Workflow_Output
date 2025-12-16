@@ -1,0 +1,15 @@
+Title: Record Safety Incident
+
+User Story: As a supervisor I want to record safety incidents so that workplace hazards are documented and addressed
+
+Acceptance Criteria:
+Scenario: Record new safety incident
+Given I witness or am informed of an incident
+When I fill out the incident form with required details
+Then the incident should be logged and available for investigation
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Safety module
+- Notes: Support attachments and witness statements.
