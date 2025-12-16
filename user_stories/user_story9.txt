@@ -1,0 +1,15 @@
+Title: OpenAPI Schema Documentation for Employee APIs
+
+User Story: As a developer I want the employee APIs documented in OpenAPI with examples So that I can easily integrate and test the endpoints
+
+Acceptance Criteria:
+Scenario: API documentation available
+Given the employee CRUD endpoints exist
+When I view the OpenAPI documentation
+Then all endpoints should be described with request/response schemas and example payloads
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Employee Master Data (E02)
+- Notes: Ensure documentation is updated with every API change.
