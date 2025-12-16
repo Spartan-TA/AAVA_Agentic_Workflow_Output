@@ -1,0 +1,51 @@
+Title: Receive Shift Change Notifications
+User Story: As a warehouse worker I want to receive notifications for shift changes so that I am informed of schedule updates in real time
+Acceptance Criteria:
+Scenario: Shift change notification
+Given my shift is updated
+When the change is processed
+Then I receive an in-app and email/SMS notification
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Scheduling, Notification module
+- Notes: Users opt-in/out per channel
+
+Title: Notify Expiring Certifications
+User Story: As an employee I want to receive notifications when my certifications are expiring so that I can renew them on time
+Acceptance Criteria:
+Scenario: Certification expiry notification
+Given my certification is nearing expiry
+When the system detects the upcoming date
+Then I receive a notification with renewal instructions
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Certification module, Notification module
+- Notes: Templates localized
+
+Title: Announcements Dashboard
+User Story: As a supervisor I want to post and view announcements so that my team is informed of important updates
+Acceptance Criteria:
+Scenario: Announcement posting
+Given I am logged in as a supervisor
+When I post an announcement
+Then it is visible on the dashboard and delivered to selected channels
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Notification module
+- Notes: Delivery status tracked
+
+Title: Configure Quiet Hours
+User Story: As an employee I want to configure quiet hours for notifications so that I am not disturbed outside working hours
+Acceptance Criteria:
+Scenario: Quiet hours configuration
+Given I am logged in
+When I set my quiet hours
+Then notifications are suppressed during those times
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Notification module
+- Notes: Rate limits applied
