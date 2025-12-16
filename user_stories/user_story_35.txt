@@ -1,0 +1,15 @@
+Title: Track Asset Return
+
+User Story: As an asset manager I want to record the return of assets from employees So that asset inventory remains accurate
+
+Acceptance Criteria:
+Scenario: Asset return recorded
+Given an employee returns an assigned asset
+When I update the asset status to returned
+Then the asset should be marked as available and the employee's assignment cleared
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data
+- Notes: Return process should allow for condition notes and photos.
