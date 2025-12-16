@@ -1,0 +1,15 @@
+Title: Generate Asset Assignment Report
+
+User Story: As an asset manager I want to generate reports on asset assignments and returns So that I can monitor asset utilization and losses
+
+Acceptance Criteria:
+Scenario: Generate asset report
+Given I am logged into the system
+When I select a reporting period and asset type
+Then I should receive a report of all assignments, returns, and outstanding assets
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Reporting & Analytics module
+- Notes: Reports should be exportable to CSV.
