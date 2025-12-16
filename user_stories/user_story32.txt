@@ -1,0 +1,15 @@
+Title: Implement Row-Level Security Constraints
+
+User Story: As a supervisor I want to be restricted to managing only my team's records So that data privacy and access control are enforced
+
+Acceptance Criteria:
+Scenario: Supervisor access limitation
+Given a supervisor is logged in
+When they attempt to access employee records
+Then only records for their assigned team are accessible; others return 403 forbidden
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Role-based access control (E03), Employee CRUD (E02)
+- Notes: Ensure row-level constraints are covered by automated tests
