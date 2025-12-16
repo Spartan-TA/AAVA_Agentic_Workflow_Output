@@ -1,0 +1,15 @@
+Title: Create Shift Schedules
+
+User Story: As a scheduler I want to create shift schedules for employees So that work coverage is planned and visible in advance
+
+Acceptance Criteria:
+Scenario: Creating a new shift schedule
+Given I am on the scheduling page
+When I enter shift details and assign employees
+Then the schedule should be saved and visible to assigned employees
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee list
+- Notes: Support recurring and one-time shifts.
