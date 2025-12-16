@@ -1,0 +1,15 @@
+Title: Generate Performance Review Report
+
+User Story: As an HR administrator I want to generate reports on performance review completion and ratings So that I can monitor compliance and identify high/low performers
+
+Acceptance Criteria:
+Scenario: Generate review report
+Given I am logged into the system
+When I select a review cycle and department
+Then I should receive a report of completion rates and rating distributions
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Reporting & Analytics module
+- Notes: Reports should be exportable to CSV.
