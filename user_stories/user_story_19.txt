@@ -1,0 +1,51 @@
+Title: Generate Attendance and Overtime Reports
+User Story: As a supervisor I want to generate attendance and overtime reports so that I can monitor staffing and compliance
+Acceptance Criteria:
+Scenario: Attendance report generation
+Given attendance data is available
+When I request a report
+Then I receive a CSV or PDF with filtered results by date, department, and shift
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance, Reporting modules
+- Notes: Exports within 10s for 50k rows
+
+Title: View Certification Status Reports
+User Story: As an HR manager I want to view certification status reports so that I can ensure all employees are compliant
+Acceptance Criteria:
+Scenario: Certification report
+Given certification data is available
+When I request a report
+Then I receive a summary of certification statuses and expirations
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Certification module, Reporting module
+- Notes: Access controlled
+
+Title: Safety KPIs Dashboard
+User Story: As a safety manager I want to view safety KPIs on a dashboard so that I can track incident trends and corrective actions
+Acceptance Criteria:
+Scenario: Safety dashboard
+Given safety data is available
+When I access the dashboard
+Then I see metrics on incidents, near-misses, and actions taken
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Safety module, Reporting module
+- Notes: Metrics endpoints available for BI
+
+Title: Export Leave Balance Reports
+User Story: As an HR manager I want to export leave balance reports so that I can analyze time off trends and policy compliance
+Acceptance Criteria:
+Scenario: Leave balance export
+Given leave data is available
+When I request an export
+Then I receive a CSV or PDF with leave balances by employee and department
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Leave module, Reporting module
+- Notes: Exports filterable
