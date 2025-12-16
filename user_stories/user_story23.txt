@@ -1,0 +1,15 @@
+Title: Request Shift Swap
+
+User Story: As an employee I want to request a shift swap with a coworker So that I can manage personal conflicts without impacting coverage
+
+Acceptance Criteria:
+Scenario: Submitting a shift swap request
+Given I am assigned to a shift
+When I select a coworker and submit a swap request
+Then the coworker should be notified and can accept or decline
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Notification system, schedule visibility
+- Notes: Supervisor approval required for final swap.
