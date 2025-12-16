@@ -1,0 +1,23 @@
+Title: List and Filter Employees
+
+User Story: As an HR manager I want to list and filter employee records So that I can quickly find relevant employees based on criteria
+
+Acceptance Criteria:
+Scenario: List all employees
+Given employee records exist
+When I submit a GET request to /employees
+Then I receive a paginated list of employees
+Scenario: Filter by department
+Given employee records exist
+When I filter by department
+Then only employees from that department are returned
+Scenario: Filter by status
+Given employee records exist
+When I filter by status
+Then only employees matching the status are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee records exist
+- Notes: Filtering and pagination should be supported; OpenAPI schemas should include examples.
