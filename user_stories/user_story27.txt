@@ -1,0 +1,15 @@
+Title: View Leave Balance
+
+User Story: As an employee I want to view my available leave balance So that I can plan my absences accordingly
+
+Acceptance Criteria:
+Scenario: Viewing leave balance
+Given I am logged into the system
+When I navigate to my leave balance page
+Then I should see my remaining leave for each leave type
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Leave accrual logic
+- Notes: Display historical leave usage.
