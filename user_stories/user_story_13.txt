@@ -1,0 +1,15 @@
+Title: Record Employee Clock-In Event
+
+User Story: As a warehouse worker I want to clock in at the start of my shift So that my working hours are accurately tracked for payroll
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am scheduled for a shift today
+When I submit a clock-in event via the system
+Then my attendance record is updated and the shift association is logged
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Geofence validation is optional but should be supported if enabled.
