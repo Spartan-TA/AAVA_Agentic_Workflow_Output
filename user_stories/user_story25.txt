@@ -1,0 +1,20 @@
+Title: Advanced Scheduling (AI-Assisted)
+
+User Story: As a scheduling manager I want AI-assisted shift assignment and conflict resolution So that staffing is optimized and overtime is minimized
+
+Acceptance Criteria:
+Scenario: AI-assisted shift assignment
+Given staffing requirements and employee constraints
+When I run the scheduling optimizer
+Then the system generates recommended shift assignments and highlights conflicts
+
+Scenario: Overtime minimization
+Given overtime rules are configured
+When the optimizer runs
+Then overtime assignments are minimized and flagged for review
+
+Additional Details:
+- Priority: High
+- Story Points: 10
+- Dependencies: Shift & Schedule Management
+- Notes: Uses AI/ML for recommendations; conflict detection; supervisor override supported
