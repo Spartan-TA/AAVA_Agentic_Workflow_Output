@@ -1,0 +1,112 @@
+Title: API Key/OAuth2 Security Toggle
+
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication via configuration So that security can be adapted to integration needs
+
+Acceptance Criteria:
+Scenario: API key authentication
+Given API key mode is enabled
+When a request is made with a valid API key
+Then access is granted
+
+Scenario: OAuth2 authentication
+Given OAuth2 mode is enabled
+When a request is made with a valid token
+Then access is granted
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC setup
+- Notes: Configuration must be documented
+
+---
+
+Title: Clock In/Out Attendance Endpoint
+
+User Story: As a warehouse worker I want to clock in and out using a secure endpoint So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Valid clock-in
+Given I am scheduled for a shift
+When I POST to /attendance/clock-in with valid data
+Then my clock-in event is recorded and associated with my shift
+
+Scenario: Valid clock-out
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded and hours worked are calculated
+
+Scenario: Geofence validation (optional)
+Given geofence is enabled
+When I clock in/out outside the allowed area
+Then the request is rejected
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD, RBAC
+- Notes: Device capture must be logged
+
+---
+
+Title: Attendance Correction Workflow
+
+User Story: As a supervisor I want to approve corrections for missed punches So that attendance records remain accurate
+
+Acceptance Criteria:
+Scenario: Missed punch correction
+Given a worker missed a clock-in/out
+When a correction request is submitted
+Then an approval task is created for the supervisor
+
+Scenario: Correction approval
+Given a pending correction
+When the supervisor approves it
+Then the attendance record is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Attendance endpoints
+- Notes: Corrections must be auditable
+
+---
+
+Title: Attendance Reporting
+
+User Story: As an HR manager I want to export attendance reports in CSV format So that payroll and compliance needs are met
+
+Acceptance Criteria:
+Scenario: Export attendance report
+Given attendance data exists
+When I request a CSV export
+Then the report is generated with daily totals
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance endpoints
+- Notes: Export must include shift associations
+
+---
+
+Title: Shift Template Management
+
+User Story: As a supervisor I want to create and manage recurring shift templates So that scheduling is efficient and consistent
+
+Acceptance Criteria:
+Scenario: Create shift template
+Given valid shift details
+When I POST to /shifts/templates
+Then a new shift template is created
+
+Scenario: Edit shift template
+Given an existing template
+When I PUT/PATCH to /shifts/templates/{id}
+Then the template is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, Attendance, RBAC
+- Notes: Templates must support rotations and overtime rules
