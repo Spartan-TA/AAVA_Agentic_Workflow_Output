@@ -1,0 +1,15 @@
+Title: Delete Employee Record via API
+
+User Story: As an HR manager I want to delete employee records So that obsolete or incorrect employee data is removed from the system
+
+Acceptance Criteria:
+Scenario: Employee deletion
+Given an existing employee record
+When I submit a delete employee API request
+Then the employee record should be removed and no longer retrievable
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee creation
+- Notes: Confirm deletion and handle related dependencies (e.g., shift assignments).
