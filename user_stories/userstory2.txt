@@ -1,0 +1,15 @@
+Title: Configure Flyway/Liquibase for Database Migrations
+
+User Story: As a backend developer I want to configure Flyway/Liquibase for database migrations So that schema changes are versioned and safely applied
+
+Acceptance Criteria:
+Scenario: Database migration setup
+Given the Spring Boot project is initialized
+When I add Flyway/Liquibase configuration and migration scripts
+Then database migrations should run automatically on application startup
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Include sample migration scripts and rollback procedures.
