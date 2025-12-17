@@ -1,0 +1,20 @@
+Title: Safety Incidents & OSHA Reporting
+
+User Story: As a safety officer I want to record and track safety incidents So that investigations can be conducted and OSHA reporting requirements are met
+
+Acceptance Criteria:
+Scenario: Record safety incident
+Given an incident occurs in the warehouse
+When I submit a new incident report with required details
+Then the system validates and stores the report
+
+Scenario: Investigation workflow
+Given an incident is reported
+When the status is updated to 'Investigating'
+Then corrective action tasks are generated and tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 6
+- Dependencies: Employee Master Data, RBAC
+- Notes: OSHA 300/300A export supported; metrics dashboard endpoints available
