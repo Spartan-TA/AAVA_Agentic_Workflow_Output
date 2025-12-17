@@ -1,0 +1,15 @@
+Title: Update Employee Record via API
+
+User Story: As an HR manager I want to update employee records So that changes to employee information are accurately reflected in the system
+
+Acceptance Criteria:
+Scenario: Employee update
+Given an existing employee record
+When I submit an update employee API request with new data
+Then the employee record should be updated and retrievable with the latest information
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee creation
+- Notes: Validate field changes and audit modifications.
