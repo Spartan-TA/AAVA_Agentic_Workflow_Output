@@ -1,0 +1,15 @@
+Title: Send Company-Wide Announcements
+
+User Story: As an HR manager I want to send company-wide announcements to all users so that important information is communicated efficiently.
+
+Acceptance Criteria:
+Scenario: Sending an announcement
+Given I have composed an announcement
+When I send it to all users
+Then all users should receive the announcement via their preferred notification channel
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Announcements should be archived and searchable.
