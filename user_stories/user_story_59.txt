@@ -1,0 +1,15 @@
+Title: Integrate Metrics and Alerting (Prometheus, PagerDuty/Slack)
+
+User Story: As a DevOps engineer I want to collect system metrics and configure alerts via Prometheus and PagerDuty/Slack so that I am notified of issues in real time and can respond quickly.
+
+Acceptance Criteria:
+Scenario: Triggering an alert
+Given a monitored metric exceeds a defined threshold
+When the alert condition is met
+Then the system should send an alert to the configured PagerDuty or Slack channel
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Alert rules should be customizable per environment.
