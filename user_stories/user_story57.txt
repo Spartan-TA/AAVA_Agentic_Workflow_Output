@@ -1,0 +1,20 @@
+Title: Timezone-Aware Scheduling
+
+User Story: As a global user I want scheduling features to respect my local timezone So that meeting times and deadlines are accurate for my location
+
+Acceptance Criteria:
+Scenario: Timezone detection and display
+  Given I am logged in from a specific timezone
+  When I view or create a scheduled event
+  Then the event time should be displayed and stored in my local timezone
+
+Scenario: Cross-timezone event coordination
+  Given users are in different timezones
+  When an event is scheduled
+  Then all participants should see the event in their respective local timezones
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User profile settings, calendar module
+- Notes: Use reliable timezone libraries and test with daylight saving changes.
