@@ -1,0 +1,15 @@
+Title: Timezone-Aware Scheduling
+
+User Story: As a warehouse supervisor I want schedules to be displayed and managed in the local timezone of each warehouse so that shift times are accurate for all locations.
+
+Acceptance Criteria:
+Scenario: Viewing schedules in local timezone
+Given I am assigned to a warehouse in a different timezone
+When I view or edit schedules
+Then the system should automatically convert and display times in the warehouse's local timezone
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02, E05
+- Notes: Users should be able to set their preferred timezone for notifications.
