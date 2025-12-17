@@ -1,0 +1,15 @@
+Title: Initialize Spring Boot Project
+
+User Story: As a developer I want to initialize a Spring Boot (Maven) project with core modules and base packages So that I can ensure a standardized foundation for further development and consistency across modules
+
+Acceptance Criteria:
+Scenario: Project Initialization
+Given a clean development environment
+When I run the build and start the application
+Then the project should build and run on port 8080 and the Actuator health endpoint should return UP
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps; base package structure created; Flyway/Liquibase runs baseline migration.
