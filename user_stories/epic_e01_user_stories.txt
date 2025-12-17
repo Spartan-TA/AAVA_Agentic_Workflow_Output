@@ -1,0 +1,59 @@
+### E01 - Project Scaffolding & Domain Setup
+
+**Title:** Initialize Spring Boot Project
+User Story: As a developer I want to initialize a Spring Boot project with Maven So that I have a standardized foundation for all modules
+Acceptance Criteria:
+Scenario: Project setup
+Given I have cloned the repository
+When I run `mvn clean install`
+Then the project builds successfully and runs on port 8080
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: README must include build/run steps
+
+---
+
+**Title:** Configure Base Packages
+User Story: As a developer I want to set up base packages for employee, scheduling, attendance, and safety So that code is organized and maintainable
+Acceptance Criteria:
+Scenario: Package structure
+Given the project is initialized
+When I inspect the source code
+Then base packages for each domain exist
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project initialization
+- Notes: Follow naming conventions
+
+---
+
+**Title:** Enable Actuator Health Endpoint
+User Story: As an admin I want to enable the Actuator health endpoint So that I can monitor application health
+Acceptance Criteria:
+Scenario: Health check
+Given the application is running
+When I access `/actuator/health`
+Then I receive a status of UP
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project setup
+- Notes: Secure endpoint for production
+
+---
+
+**Title:** Set Up Database Migration Tool
+User Story: As a developer I want to configure Flyway/Liquibase for DB migrations So that schema changes are versioned and repeatable
+Acceptance Criteria:
+Scenario: Baseline migration
+Given the migration tool is configured
+When I run migrations
+Then the baseline schema is created
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Database setup
+- Notes: Document migration process
