@@ -1,0 +1,61 @@
+Title: Role-Based Access Control Setup
+
+User Story: As a System Administrator I want to configure Spring Security with roles (ADMIN, HR, SUPERVISOR, WORKER) So that sensitive operations are restricted
+
+Acceptance Criteria:
+Scenario: Unauthorized access
+Given a user without proper role
+When they access a restricted endpoint
+Then they receive a 401 or 403 error
+
+Scenario: Role permissions
+Given an ADMIN user
+When they access any employee record
+Then access is granted
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project scaffolding, Employee CRUD API
+- Notes: Security rules covered by tests
+
+---
+
+Title: API Key/OAuth2 Toggle
+
+User Story: As a System Administrator I want to toggle between API key and OAuth2 authentication via config So that security can be adapted to environment
+
+Acceptance Criteria:
+Scenario: Authentication toggle
+Given the config is set to API key
+When a request is made with valid key
+Then access is granted
+
+Scenario: OAuth2 enabled
+Given the config is set to OAuth2
+When a request is made with valid token
+Then access is granted
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: RBAC setup
+- Notes: Documented in README
+
+---
+
+Title: Row-Level Security Enforcement
+
+User Story: As a SUPERVISOR I want to be restricted to viewing and managing only my team's records So that privacy and data protection are maintained
+
+Acceptance Criteria:
+Scenario: Row-level constraint
+Given a SUPERVISOR user
+When they access employee records
+Then only records for their team are visible
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC setup
+- Notes: Covered by integration tests
