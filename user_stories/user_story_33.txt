@@ -1,0 +1,15 @@
+Title: Track Employee Goals and Competencies
+
+User Story: As a supervisor I want to set and track goals and competencies for my team members so that I can monitor progress and provide targeted feedback.
+
+Acceptance Criteria:
+Scenario: Setting goals for an employee
+Given I am viewing an employee's profile
+When I add or update goals and competencies for the review period
+Then the system should save the entries and display them in the employee's review dashboard
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Goals should be visible to both supervisor and employee.
