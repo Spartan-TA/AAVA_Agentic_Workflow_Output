@@ -1,0 +1,20 @@
+Title: Equipment & Asset Assignment
+
+User Story: As a warehouse supervisor I want to assign and track equipment and assets to employees So that accountability is maintained and only qualified staff use sensitive equipment
+
+Acceptance Criteria:
+Scenario: Asset check-out
+Given an employee is qualified and available
+When I assign an asset to them
+Then the system records the check-out and updates asset status
+
+Scenario: Block assignment for invalid certification
+Given an employee lacks required certification
+When I attempt to assign restricted equipment
+Then the system blocks the assignment and logs the attempt
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee Master Data, RBAC, Training & Certification Tracking
+- Notes: Asset registry CRUD; overdue returns report; history log per asset and employee
