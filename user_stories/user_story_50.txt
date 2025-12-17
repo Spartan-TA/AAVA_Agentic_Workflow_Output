@@ -1,0 +1,15 @@
+Title: Provide Role-Based Dashboards for Analytics
+
+User Story: As a department manager I want to view a dashboard with key workforce metrics relevant to my role so that I can make informed decisions quickly.
+
+Acceptance Criteria:
+Scenario: Viewing a role-based dashboard
+Given I am logged in as a department manager
+When I access the analytics dashboard
+Then I should see metrics and charts tailored to my department and permissions
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Dashboards should be customizable by role.
