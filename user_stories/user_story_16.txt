@@ -1,0 +1,15 @@
+Title: Manager Review of Attendance Records
+
+User Story: As a manager I want to review my team's clock in and clock out records So that I can verify attendance and address discrepancies
+
+Acceptance Criteria:
+Scenario: Reviewing attendance records
+Given I am logged in as a manager
+When I access the attendance dashboard
+Then I should see accurate clock in/out times for my direct reports
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee clock in/out data
+- Notes: Provide export option for attendance reports.
