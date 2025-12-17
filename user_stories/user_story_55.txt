@@ -1,0 +1,15 @@
+Title: Support Multiple Warehouses (Tenants) with Isolated Data
+
+User Story: As a system administrator I want to manage multiple warehouses as separate tenants with isolated data so that each location's information is secure and independent.
+
+Acceptance Criteria:
+Scenario: Creating a new tenant
+Given I am an administrator
+When I create a new warehouse tenant
+Then the system should provision isolated data storage and restrict access to authorized users only
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E01, E02, E05
+- Notes: Tenants must not be able to access each other's data.
