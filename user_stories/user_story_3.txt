@@ -1,0 +1,21 @@
+Title: Enable Actuator Health Endpoint
+
+User Story: As a DevOps Engineer I want to enable the Actuator health endpoint So that I can monitor the application's health status in production
+
+Acceptance Criteria:
+
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access the /actuator/health endpoint
+Then the response should indicate status UP
+
+Scenario: Health endpoint is documented
+Given the application is deployed
+When I review the API documentation
+Then I should see instructions for accessing the health endpoint
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Ensure actuator endpoints are secured and not exposed publicly in production.
