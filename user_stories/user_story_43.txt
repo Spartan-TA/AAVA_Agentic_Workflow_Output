@@ -1,0 +1,15 @@
+Title: Expose REST APIs for HRIS Integration
+
+User Story: As a system integrator I want to access REST APIs for new hires and terminations so that HRIS data can be synchronized automatically with the workforce management system.
+
+Acceptance Criteria:
+Scenario: HRIS integration for new hires
+Given a new employee is added in the HRIS
+When the HRIS calls the workforce management API
+Then the employee record should be created in the system with all required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: API should support both new hires and terminations.
