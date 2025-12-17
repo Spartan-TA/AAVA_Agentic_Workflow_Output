@@ -1,0 +1,15 @@
+Title: Automate Account Provisioning and Initial Schedule
+
+User Story: As an HR manager I want new employee accounts and initial schedules to be provisioned automatically so that onboarding is efficient and error-free.
+
+Acceptance Criteria:
+Scenario: Onboarding a new employee
+Given a new hire is entered in the HRIS
+When the onboarding workflow is triggered
+Then the system should create the user account, assign an initial schedule, and notify the employee
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Workflow should support both full-time and part-time hires.
