@@ -1,0 +1,15 @@
+Title: Map Payroll Data to External Provider Formats
+
+User Story: As a payroll administrator I want to map payroll data fields to the required formats of external payroll providers so that exports are compatible and require no manual adjustment.
+
+Acceptance Criteria:
+Scenario: Configuring payroll export mapping
+Given I am setting up a new payroll provider integration
+When I map internal data fields to provider-specific fields
+Then the system should save the mapping and apply it to all future exports for that provider
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04, E06
+- Notes: Support multiple provider formats and allow mapping updates.
