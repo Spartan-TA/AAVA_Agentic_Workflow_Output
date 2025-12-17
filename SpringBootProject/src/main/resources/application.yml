@@ -1,0 +1,53 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/warehouse_db
+    username: warehouse_user
+    password: warehouse_pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/auth/realms/warehouse
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+  logback:
+    encoder:
+      pattern: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n'
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+warehouse:
+  security:
+    api-key-enabled: true
+    jwt-enabled: true
+    allowed-roles:
+      - ADMIN
+      - HR
+      - SUPERVISOR
+      - WORKER
