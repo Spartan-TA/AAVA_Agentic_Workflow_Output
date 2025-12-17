@@ -1,0 +1,107 @@
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor I want to assign shifts to employees in bulk So that staffing is managed efficiently
+
+Acceptance Criteria:
+Scenario: Bulk assignment
+Given a list of employees and a shift template
+When I assign the shift
+Then all selected employees are scheduled and conflicts are detected/prevented
+
+Scenario: Conflict detection
+Given overlapping shifts
+When I assign a new shift
+Then the system prevents the assignment and notifies the supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Shift templates, Employee CRUD
+- Notes: Audit entries must be generated for assignments
+
+---
+
+Title: View Upcoming Shifts
+
+User Story: As a warehouse worker I want to view my upcoming shifts So that I can plan my work schedule
+
+Acceptance Criteria:
+Scenario: View personal schedule
+Given I am logged in
+When I access my schedule
+Then I see all upcoming assigned shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Schedule must reflect blackout dates and warehouse calendar
+
+---
+
+Title: Leave Request Workflow
+
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that my time off is properly recorded
+
+Acceptance Criteria:
+Scenario: Submit leave request
+Given I have available leave balance
+When I submit a leave request
+Then the request is created and pending approval
+
+Scenario: Supervisor approval/denial
+Given a pending leave request
+When the supervisor reviews and approves/denies
+Then the leave balance updates and scheduled shifts are flagged for coverage
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee CRUD, Shift management, RBAC
+- Notes: Approved leaves must be exportable
+
+---
+
+Title: Leave Accrual Balance Management
+
+User Story: As an HR manager I want to manage leave accrual balances and policies So that leave is tracked and compliant with company policy
+
+Acceptance Criteria:
+Scenario: Accrual policy setup
+Given a new policy
+When I configure accrual rates
+Then employee balances update accordingly
+
+Scenario: Balance update on leave approval
+Given an approved leave
+When the leave is processed
+Then the employee's balance is reduced
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave request workflow
+- Notes: Integration hooks must exclude leave from scheduling and payroll
+
+---
+
+Title: Certification CRUD and Expiry Alerts
+
+User Story: As a supervisor I want to track employee certifications and receive expiry alerts So that only qualified staff are assigned to sensitive tasks
+
+Acceptance Criteria:
+Scenario: Add certification
+Given valid certification details
+When I POST to /certifications
+Then the certification is added to the employee profile
+
+Scenario: Expiry alert
+Given a certification expiring in 30/7 days
+When the system checks expiry dates
+Then an alert is sent to the employee and supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC
+- Notes: Certification status must block assignment to tasks if expired
