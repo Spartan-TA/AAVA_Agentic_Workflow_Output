@@ -1,0 +1,15 @@
+Title: Configure Quiet Hours for Notifications
+
+User Story: As an employee I want to configure quiet hours for notifications so that I am not disturbed outside of my preferred time window.
+
+Acceptance Criteria:
+Scenario: Setting quiet hours
+Given I am on my notification preferences page
+When I set a quiet hours window (e.g., 10pm-6am)
+Then the system should suppress non-urgent notifications during that period and deliver them after quiet hours end
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Urgent notifications (e.g., safety alerts) may bypass quiet hours.
