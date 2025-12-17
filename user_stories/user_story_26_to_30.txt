@@ -1,0 +1,122 @@
+Title: Operational Reporting
+
+User Story: As a manager I want to generate operational reports for attendance, overtime, leave, certifications, and safety So that I can make data-driven decisions
+
+Acceptance Criteria:
+Scenario: Filter reports
+Given report data
+When I filter by date, department, or shift
+Then only relevant data is shown
+
+Scenario: Export report
+Given filtered report
+When I export to CSV/PDF
+Then the export completes within 10 seconds for up to 50k rows
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: Attendance, Shift, Leave, Certification, Safety, Audit trail
+- Notes: Access must be role-controlled; metrics endpoints for BI required
+
+---
+
+Title: Mobile PWA Access
+
+User Story: As a warehouse worker I want to use a mobile-friendly PWA to clock in/out, view schedules, request leave, and see announcements So that I can access core features on any device
+
+Acceptance Criteria:
+Scenario: Mobile usability
+Given a mobile device
+When I access the PWA
+Then I can complete all core flows responsively
+
+Scenario: Offline queue for clock events
+Given no network connectivity
+When I clock in/out
+Then the event is queued and synced when online
+
+Scenario: PWA installability
+Given a supported browser
+When I install the PWA
+Then it is available on my device
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Attendance, Shift, Leave, Notifications
+- Notes: Lighthouse PWA score must be â¥ 80
+
+---
+
+Title: Onboarding Workflow Automation
+
+User Story: As an HR manager I want to automate onboarding tasks for new hires So that accounts, schedules, and training are provisioned efficiently
+
+Acceptance Criteria:
+Scenario: New hire provisioning
+Given a new hire from HRIS
+When onboarding starts
+Then tasks for account setup, initial schedule, and required training are generated
+
+Scenario: Offboarding workflow
+Given an employee termination
+When offboarding starts
+Then access is revoked, assets are collected, and schedules are updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: Employee CRUD, RBAC, Shift, Certification, Asset assignment, Integration layer
+- Notes: Offboarding must revoke access and collect assets
+
+---
+
+Title: Multi-Tenant Localization Support
+
+User Story: As a system administrator I want to support multiple warehouses/regions with locale-specific settings So that data and configuration are isolated and localized
+
+Acceptance Criteria:
+Scenario: Tenant isolation
+Given multiple tenants
+When data is accessed
+Then only data for the current tenant is visible
+
+Scenario: Locale configuration
+Given a tenant with specific locale
+When UI strings and timestamps are displayed
+Then they reflect the tenant's language, currency, and timezone
+
+Additional Details:
+- Priority: Low
+- Story Points: 4
+- Dependencies: Project scaffolding, Employee CRUD, RBAC
+- Notes: Tests must validate isolation
+
+---
+
+Title: Observability & Monitoring Setup
+
+User Story: As a DevOps engineer I want to implement structured logging, distributed tracing, and metrics So that I can proactively detect and resolve issues
+
+Acceptance Criteria:
+Scenario: Structured logging
+Given application events
+When logs are generated
+Then they include traceId in JSON format
+
+Scenario: Metrics export
+Given application is running
+When metrics endpoint is accessed
+Then Prometheus-compatible metrics are exported
+
+Scenario: Alerting configuration
+Given critical failures
+When 5xx rate or DB latency exceeds threshold
+Then alerts are triggered
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Dashboards in Grafana required
