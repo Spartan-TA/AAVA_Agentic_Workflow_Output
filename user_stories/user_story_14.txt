@@ -1,0 +1,15 @@
+Title: Employee Clock In
+
+User Story: As an employee I want to clock in at the start of my shift So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Successful clock in
+Given I am scheduled for a shift and have not yet clocked in
+When I access the clock in page and submit my clock in
+Then my attendance record should show the correct clock in time
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift scheduling
+- Notes: Prevent multiple clock-ins without a clock-out.
