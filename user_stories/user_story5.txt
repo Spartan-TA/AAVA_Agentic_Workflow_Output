@@ -1,0 +1,12 @@
+Title: Create Employee API Endpoint
+User Story: As an HR manager I want to create new employee records via an API So that employee onboarding is streamlined and standardized
+Acceptance Criteria:
+Scenario: Employee creation
+  Given valid employee details
+  When I POST to /employees
+  Then a new employee record is created with a unique badgeId
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding (E01)
+- Notes: API must validate required fields and enforce unique badgeId
