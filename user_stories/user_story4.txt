@@ -1,0 +1,12 @@
+Title: Document Build and Run Steps in README
+User Story: As a developer I want clear build and run instructions documented in the README so that new team members can quickly set up and run the project
+Acceptance Criteria:
+Scenario: README documentation
+Given a new team member joins the project
+When they follow the README instructions
+Then they can build and run the application successfully on port 8080
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project scaffolding
+- Notes: README should include prerequisites, build commands, run commands, and troubleshooting tips.
