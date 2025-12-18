@@ -1,0 +1,25 @@
+Title: Ensure Application Runs on Port 8080 and Is Configurable
+
+User Story: As a developer I want the application to run on port 8080 by default and allow port configuration So that deployments are standardized and flexible for different environments
+
+Acceptance Criteria:
+Scenario: Default port is 8080
+  Given the application is started without custom configuration
+  When I check the running port
+  Then it should be listening on port 8080
+
+Scenario: Port can be configured
+  Given the application is started with a custom port setting
+  When I set the server.port property
+  Then the application should listen on the specified port
+
+Scenario: Documentation reflects port configuration
+  Given the README is updated
+  When I review configuration options
+  Then I should see instructions for changing the application port
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: user_story_1.txt, user_story_4.txt
+- Notes: Ensure port conflicts are handled gracefully and documented.
