@@ -1,0 +1,15 @@
+Title: Employee List Filtering & Pagination
+
+User Story: As an HR manager I want to filter and paginate the employee list so that I can efficiently find and manage employee records in large warehouses.
+
+Acceptance Criteria:
+Scenario: Filter and paginate employees
+Given I am authenticated as HR and on the employee list page
+When I apply filters (e.g., department, status) and navigate pages
+Then the results update accordingly and performance remains acceptable for large datasets
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data (E02)
+- Notes: Support filtering by department, status, and role; page size configurable.
