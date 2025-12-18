@@ -1,0 +1,15 @@
+Title: Record Clock-In Event
+
+User Story: As a warehouse worker I want to clock in at the start of my shift so that my working hours are accurately recorded for payroll and compliance
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am a registered employee and my shift is scheduled for today
+When I access the clock-in endpoint and provide my badge ID and location
+Then my clock-in event is recorded with timestamp and geofence validation, and my shift association is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Geofence is optional but should be captured if available; device ID should be logged for audit
