@@ -1,0 +1,87 @@
+Title: Create Recurring Shift Templates
+
+User Story: As a scheduler I want to create recurring shift templates so that I can efficiently assign standard work patterns to employees
+
+Acceptance Criteria:
+Scenario: Creating a recurring shift template
+Given I am on the shift management page
+When I define a new recurring shift pattern
+Then the template is saved and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC, Attendance
+- Notes: Support daily, weekly, and custom recurrence
+
+---
+
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor I want to assign shifts to employees so that staffing requirements are met
+
+Acceptance Criteria:
+Scenario: Assigning a shift
+Given I have a list of employees and available shifts
+When I assign a shift to an employee
+Then the employee's schedule is updated and conflicts are checked
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift templates, Employee data
+- Notes: Bulk assignment supported
+
+---
+
+Title: Detect and Prevent Scheduling Conflicts
+
+User Story: As a scheduler I want the system to detect and prevent scheduling conflicts so that employees are not double-booked or assigned during blackout dates
+
+Acceptance Criteria:
+Scenario: Scheduling conflict detection
+Given an employee already has a shift assigned
+When I attempt to assign an overlapping shift
+Then the system blocks the assignment and notifies me of the conflict
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift assignment, Calendar
+- Notes: Include blackout dates and warehouse operation calendars
+
+---
+
+Title: View Personal Upcoming Shifts
+
+User Story: As an employee I want to view my upcoming shifts so that I can plan my work schedule
+
+Acceptance Criteria:
+Scenario: Viewing upcoming shifts
+Given I am logged in
+When I navigate to my schedule
+Then I see a list of my assigned shifts for the next 30 days
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Shift assignment
+- Notes: Mobile-friendly view
+
+---
+
+Title: Generate Audit Entries for Shift Changes
+
+User Story: As a compliance officer I want all shift assignments and changes to be logged so that there is an audit trail for staffing decisions
+
+Acceptance Criteria:
+Scenario: Logging shift changes
+Given a shift is assigned or modified
+When the change is saved
+Then an audit entry is created with actor, timestamp, and details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Audit Trail, Shift assignment
+- Notes: Immutable audit log
