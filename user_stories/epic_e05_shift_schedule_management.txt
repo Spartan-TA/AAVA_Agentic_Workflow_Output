@@ -1,0 +1,121 @@
+EPIC E05: SHIFT & SCHEDULE MANAGEMENT
+
+===========================================
+
+Title: Create Shift Templates
+
+User Story: As a scheduler I want to define recurring shift templates So that I can efficiently assign standard schedules
+
+Acceptance Criteria:
+
+Scenario: Create new shift template
+Given I have access to scheduling
+When I create a template with start/end times and recurrence
+Then the template is saved and available for assignment
+
+Scenario: Edit or delete template
+Given an existing template
+When I edit or delete it
+Then changes are reflected in future assignments
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, Role-Based Access Control, Time & Attendance
+- Notes: Templates should support daily, weekly, and custom recurrences
+
+===========================================
+
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor I want to assign shifts to employees using templates So that scheduling is streamlined
+
+Acceptance Criteria:
+
+Scenario: Assign shift to employee
+Given a shift template exists
+When I assign it to an employee
+Then the employee's schedule is updated
+
+Scenario: Bulk-assign shifts
+Given multiple employees
+When I select and assign a template
+Then all selected employees receive the schedule
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Create Shift Templates
+- Notes: Audit entries should be generated for assignments
+
+===========================================
+
+Title: Detect and Prevent Scheduling Conflicts
+
+User Story: As a scheduler I want the system to detect and prevent scheduling conflicts So that employees are not double-booked
+
+Acceptance Criteria:
+
+Scenario: Conflict detected
+Given an employee has an existing shift
+When I attempt to assign an overlapping shift
+Then the system blocks the assignment and notifies me
+
+Scenario: No conflict
+Given no overlapping shifts
+When I assign a new shift
+Then the assignment succeeds
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Assign Shifts to Employees
+- Notes: Include blackout dates and warehouse operation calendars in conflict checks
+
+===========================================
+
+Title: Personal Shift View for Workers
+
+User Story: As a worker I want to view my upcoming shifts So that I can plan my work schedule
+
+Acceptance Criteria:
+
+Scenario: View personal schedule
+Given I am logged in
+When I access my schedule
+Then I see a list of my upcoming shifts
+
+Scenario: Shifts are up to date
+Given my schedule changes
+When I refresh the view
+Then the latest assignments are displayed
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Assign Shifts to Employees
+- Notes: View should be accessible via web and mobile
+
+===========================================
+
+Title: Audit Shift Assignment Changes
+
+User Story: As an auditor I want all shift assignment changes to be logged So that scheduling actions are traceable
+
+Acceptance Criteria:
+
+Scenario: Assignment logged
+Given a shift is assigned or changed
+When the action occurs
+Then an audit entry is created with actor, timestamp, and details
+
+Scenario: Audit log exportable
+Given audit entries exist
+When I request an export
+Then I receive a file with all relevant audit data
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Assign Shifts to Employees
+- Notes: Audit log should be immutable
