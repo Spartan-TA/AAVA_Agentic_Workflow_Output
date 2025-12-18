@@ -1,0 +1,15 @@
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor I want to assign employees to shifts using templates so that I can ensure adequate staffing and reduce scheduling conflicts
+
+Acceptance Criteria:
+Scenario: Assign employees to shift
+Given I have created shift templates and have a list of available employees
+When I select a shift and assign employees
+Then the assignments are saved, conflicts are detected and prevented, and employees are notified of their upcoming shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, Shift Templates, RBAC
+- Notes: Bulk assignment and conflict detection must be supported; audit entries generated for all assignments
