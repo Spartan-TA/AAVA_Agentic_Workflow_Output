@@ -1,0 +1,15 @@
+Title: Set and Track Employee Goals
+
+User Story: As an employee I want to set personal and professional goals within the performance review system so that I can track my progress and align with company objectives
+
+Acceptance Criteria:
+Scenario: Goal setting and progress tracking
+Given I am participating in a review cycle
+When I add or update my goals in the system
+Then my goals should be saved and visible to my manager and HR, with progress tracking enabled
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee portal, Review cycle management
+- Notes: Allow comments and updates on goals throughout the year
