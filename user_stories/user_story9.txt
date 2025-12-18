@@ -1,0 +1,15 @@
+Title: Implement Clock In/Out Endpoints
+
+User Story: As an employee I want to clock in and out via the system So that my working hours are accurately recorded
+
+Acceptance Criteria:
+Scenario: Clock in/out endpoints available
+  Given I am authenticated
+  When I call the clock in or clock out endpoint
+  Then my attendance record should be updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee entity, authentication
+- Notes: Prevent duplicate clock-ins or outs within the same shift.
