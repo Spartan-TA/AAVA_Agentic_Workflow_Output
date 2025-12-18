@@ -1,0 +1,15 @@
+Title: Record Safety Incidents
+
+User Story: As a supervisor I want to record safety incidents in the system So that workplace safety can be monitored and improved
+
+Acceptance Criteria:
+Scenario: Safety incident recorded
+  Given an incident occurs
+  When I submit a safety incident report
+  Then the incident should be logged and available for review
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee entity, reporting module
+- Notes: Capture incident details, location, and involved employees.
