@@ -1,0 +1,15 @@
+Title: OpenAPI Schema for Employee Endpoints
+
+User Story: As a developer I want OpenAPI schemas with examples for all employee CRUD endpoints so that integration and documentation are standardized.
+
+Acceptance Criteria:
+Scenario: Generate OpenAPI schemas
+Given employee CRUD endpoints are implemented
+When I view the API documentation
+Then all endpoints are described with request/response examples and field constraints
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Employee Master Data (E02)
+- Notes: Schemas must be kept up to date with endpoint changes.
