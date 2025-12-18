@@ -1,0 +1,20 @@
+Title: Enable Spring Boot Actuator Endpoints
+
+User Story: As a DevOps engineer I want to enable Actuator endpoints So that I can monitor application health and metrics
+
+Acceptance Criteria:
+Scenario: Actuator endpoints enabled
+  Given the application is running
+  When I access /actuator/health
+  Then I receive a health status response
+
+Scenario: Metrics endpoint
+  Given the application is running
+  When I access /actuator/metrics
+  Then I receive application metrics data
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Secure actuator endpoints for production
