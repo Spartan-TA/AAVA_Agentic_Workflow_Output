@@ -1,0 +1,15 @@
+Title: Record Safety Incident with Validation
+
+User Story: As a supervisor or safety officer I want to record safety incidents and near-misses with required details so that all events are documented for investigation and compliance
+
+Acceptance Criteria:
+Scenario: Recording a safety incident
+Given I am logged in as a supervisor or safety officer
+When I submit a new incident report with severity, location, description, and involved employees
+Then the system validates required fields and saves the incident with status 'Open'
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Validation for required fields and duplicate detection.
