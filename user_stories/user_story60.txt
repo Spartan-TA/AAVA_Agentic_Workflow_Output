@@ -1,0 +1,15 @@
+Title: Support Multiple Warehouses with Distinct Policies
+
+User Story: As an operations manager I want to configure distinct attendance, scheduling, and compliance policies for each warehouse So that local requirements are met
+
+Acceptance Criteria:
+Scenario: Configuring warehouse-specific policies
+Given I manage multiple warehouses
+When I set policies for each warehouse
+Then the system enforces those policies only for the relevant location
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Warehouse management module
+- Notes: Policies should be easily auditable and updatable.
