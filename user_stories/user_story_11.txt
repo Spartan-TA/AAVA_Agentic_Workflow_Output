@@ -1,0 +1,15 @@
+Title: Role Assignment and Enforcement
+
+User Story: As a system administrator I want to assign roles to users and enforce access controls so that sensitive operations are restricted to authorized personnel.
+
+Acceptance Criteria:
+Scenario: Assign and enforce roles
+Given I am authenticated as ADMIN
+When I assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users
+Then access to endpoints and data is restricted according to role permissions
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project Scaffolding & Domain Setup (E01), Employee Master Data (E02)
+- Notes: Role changes should take effect immediately; permissions must be testable.
