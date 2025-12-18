@@ -1,0 +1,15 @@
+Title: Export Approved Leaves for Payroll and Compliance
+
+User Story: As a payroll administrator I want to export all approved leave records so that payroll and compliance reporting are accurate
+
+Acceptance Criteria:
+Scenario: Exporting approved leaves
+Given I am logged in as a payroll administrator
+When I select a date range and export approved leaves
+Then the system generates a file with all relevant leave data for integration with payroll and compliance systems
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Payroll, Leave Approval Workflow
+- Notes: Export format should match payroll provider requirements.
