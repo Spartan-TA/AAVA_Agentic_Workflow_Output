@@ -1,0 +1,15 @@
+Title: Track Asset Return During Offboarding
+
+User Story: As an IT administrator I want to track the return of assigned equipment during employee offboarding so that all company assets are accounted for
+
+Acceptance Criteria:
+Scenario: Asset return checklist during offboarding
+Given an employee is marked for offboarding
+When the IT administrator reviews the list of assigned assets and marks each as returned
+Then the system should update the asset status to available and log the return event
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Offboarding workflow, Asset inventory module
+- Notes: Notify HR if any assets are not returned
