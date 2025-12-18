@@ -1,0 +1,15 @@
+Title: Assign Equipment to Employee
+
+User Story: As an HR manager I want to assign equipment to a new employee so that they have the necessary assets on their first day
+
+Acceptance Criteria:
+Scenario: Assigning equipment during onboarding
+Given a new employee profile is created
+When the HR manager selects equipment from the available inventory and assigns it to the employee
+Then the equipment should be marked as assigned and linked to the employeeâs profile
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee onboarding module, Asset inventory module
+- Notes: Ensure audit trail for asset assignment
