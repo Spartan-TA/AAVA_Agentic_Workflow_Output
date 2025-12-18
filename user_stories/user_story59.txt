@@ -1,0 +1,15 @@
+Title: Automate User Deprovisioning
+
+User Story: As an IT administrator I want user accounts to be automatically deactivated when employees leave So that security and compliance are maintained
+
+Acceptance Criteria:
+Scenario: Deprovisioning a user
+Given an employee's termination date is reached
+When the deprovisioning process runs
+Then the user's access is revoked and all credentials are disabled
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: HRIS integration, user management
+- Notes: Ensure audit logs are updated for all deprovisioning actions.
