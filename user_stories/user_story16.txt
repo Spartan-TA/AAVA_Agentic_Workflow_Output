@@ -1,0 +1,87 @@
+Title: Register and Track Equipment Assets
+
+User Story: As an asset manager I want to register and track equipment assets so that accountability and maintenance are ensured
+
+Acceptance Criteria:
+Scenario: Registering a new asset
+Given I have a new piece of equipment
+When I enter its details into the system
+Then it is added to the asset registry and available for assignment
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, Certification Tracking
+- Notes: Asset types include scanners, forklifts, PPE
+
+---
+
+Title: Assign Equipment to Employees
+
+User Story: As a supervisor I want to assign equipment to employees so that usage and responsibility are tracked
+
+Acceptance Criteria:
+Scenario: Assigning equipment
+Given an asset is available
+When I assign it to an employee
+Then the assignment is logged and the employee's profile is updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset registry, Employee data
+- Notes: Certification check required for certain equipment
+
+---
+
+Title: Prevent Assignment if Certification Missing
+
+User Story: As a scheduler I want the system to block assignment of equipment if required certifications are missing so that only qualified employees use sensitive assets
+
+Acceptance Criteria:
+Scenario: Assignment with missing certification
+Given an employee lacks the required certification
+When I attempt to assign restricted equipment
+Then the system blocks the assignment and notifies me
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification tracking, Asset assignment
+- Notes: Applies to forklifts and other regulated assets
+
+---
+
+Title: Track Asset Condition and Maintenance
+
+User Story: As an asset manager I want to track the condition and maintenance history of equipment so that assets are kept in safe working order
+
+Acceptance Criteria:
+Scenario: Updating asset condition
+Given an asset is returned or inspected
+When I update its condition status
+Then the maintenance history is logged and alerts are generated for required service
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset registry
+- Notes: Condition states: Good, Needs Service, Out of Order
+
+---
+
+Title: Asset Check-In/Check-Out Workflow
+
+User Story: As an employee I want to check in and out equipment so that usage is tracked and overdue returns are flagged
+
+Acceptance Criteria:
+Scenario: Checking out an asset
+Given I am assigned equipment
+When I check it out
+Then the system logs the event and tracks the expected return date
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset registry, Employee data
+- Notes: Overdue returns trigger notifications
