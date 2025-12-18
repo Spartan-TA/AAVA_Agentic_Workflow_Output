@@ -1,0 +1,15 @@
+Title: Certification Expiry Alerts for Employees and Supervisors
+
+User Story: As an employee or supervisor I want to receive alerts before my or my team's certifications expire so that renewals can be completed on time and compliance is maintained
+
+Acceptance Criteria:
+Scenario: Certification expiry alert
+Given a certification is set to expire in 30 or 7 days
+When the system checks certification statuses
+Then an alert is sent to the employee and supervisor with renewal instructions
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Notification System, Employee Master Data
+- Notes: Alerts should be sent via in-app and email/SMS if enabled.
