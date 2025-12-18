@@ -1,0 +1,15 @@
+Title: Write User Manuals for Each Role
+
+User Story: As a documentation specialist I want to create user manuals tailored to each role So that users have clear guidance specific to their responsibilities
+
+Acceptance Criteria:
+Scenario: Accessing a role-specific manual
+Given a user logs in with a defined role
+When the user accesses the help section
+Then the system displays the manual relevant to their role
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Role management, documentation repository
+- Notes: Manuals should be version-controlled and easily updatable.
