@@ -1,0 +1,15 @@
+Title: Safety Metrics Dashboard Endpoints
+
+User Story: As a safety officer or supervisor I want to access safety metrics dashboards with incident trends and KPIs so that I can monitor safety performance and identify areas for improvement
+
+Acceptance Criteria:
+Scenario: Viewing safety metrics dashboard
+Given I am logged in as a safety officer or supervisor
+When I navigate to the safety dashboard
+Then I see charts and KPIs for incident frequency, severity, and resolution times, filterable by date and department
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Incident Recording, Reporting Module
+- Notes: Endpoints should support export to CSV/PDF.
