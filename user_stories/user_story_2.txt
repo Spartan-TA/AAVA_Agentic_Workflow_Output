@@ -1,0 +1,25 @@
+Title: Configure Flyway/Liquibase for Database Migrations
+
+User Story: As a developer I want to configure Flyway or Liquibase for database migrations So that database schema changes are versioned and repeatable across all environments
+
+Acceptance Criteria:
+Scenario: Baseline migration runs on startup
+  Given the application is started for the first time
+  When Flyway/Liquibase is enabled
+  Then the baseline migration should execute and create the initial schema
+
+Scenario: Migration scripts are versioned
+  Given new schema changes are required
+  When I add migration scripts
+  Then each script should have a unique version and apply in order
+
+Scenario: Migration status is visible
+  Given the application is running
+  When I access the Actuator or migration endpoint
+  Then I should see the status of all applied and pending migrations
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: user_story_1.txt
+- Notes: Ensure compatibility with chosen DB (e.g., PostgreSQL, MySQL).
