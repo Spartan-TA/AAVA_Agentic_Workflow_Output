@@ -1,0 +1,73 @@
+EPIC E13 - INTEGRATION LAYER (HRIS/WMS APIs)
+
+===========================================
+
+Title: Expose REST API for Employee Data
+
+User Story: As an integration engineer I want to access employee data via REST API so that external systems can synchronize records
+
+Acceptance Criteria:
+Scenario: Employee API access
+Given I have valid API credentials
+When I call the employee endpoint
+Then I receive employee data in a secure, documented format
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: JWT/OAuth2 required
+
+---
+
+Title: HRIS Sync for New Hires and Terminations
+
+User Story: As a system I want to sync new hires and terminations from HRIS so that employee records are up to date
+
+Acceptance Criteria:
+Scenario: HRIS sync
+Given new hire or termination events in HRIS
+When the sync job runs
+Then employee records are created or updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Idempotent processing
+
+---
+
+Title: Webhooks for Key Events
+
+User Story: As a developer I want to receive webhooks for key events (e.g., shift assignment, leave approval) so that downstream systems can react in real time
+
+Acceptance Criteria:
+Scenario: Webhook delivery
+Given a subscribed event occurs
+When the event is triggered
+Then a webhook is sent to the configured endpoint
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Webhooks are documented and retry on failure
+
+---
+
+Title: SSO Integration with IDP
+
+User Story: As an IT admin I want to enable SSO via IDP so that users can log in with corporate credentials
+
+Acceptance Criteria:
+Scenario: SSO login
+Given SSO is configured
+When a user logs in
+Then authentication is handled via the IDP and access is granted
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Supports SAML and OIDC
