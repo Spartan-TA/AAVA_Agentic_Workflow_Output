@@ -1,0 +1,15 @@
+Title: Accrual Balances Update and Shift Auto-Flagging
+
+User Story: As an employee I want my leave accrual balances to update automatically and my scheduled shifts to be flagged when leave is approved so that my records and coverage are accurate
+
+Acceptance Criteria:
+Scenario: Leave approval updates balances and flags shifts
+Given a leave request is approved
+When the approval is processed
+Then the employee's accrual balance is reduced and any scheduled shifts during the leave period are flagged for coverage
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Scheduling, Payroll, Employee Master Data
+- Notes: Flagged shifts should trigger notifications for coverage.
