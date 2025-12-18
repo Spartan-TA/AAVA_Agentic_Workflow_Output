@@ -1,0 +1,15 @@
+Title: Submit Self-Assessment for Performance Review
+
+User Story: As an employee I want to submit a self-assessment as part of my performance review so that I can reflect on my achievements and areas for growth
+
+Acceptance Criteria:
+Scenario: Completing self-assessment
+Given a performance review cycle is active
+When I access my review form and complete the self-assessment section
+Then my responses should be saved and visible to my manager for review
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Review cycle management, Employee portal
+- Notes: Allow employees to save drafts before final submission
