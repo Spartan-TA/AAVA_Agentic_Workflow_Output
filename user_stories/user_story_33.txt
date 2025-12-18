@@ -1,0 +1,15 @@
+Title: Automated Asset Assignment Notifications
+
+User Story: As an employee I want to receive notifications when equipment is assigned to me so that I am aware of my responsibilities and can prepare accordingly
+
+Acceptance Criteria:
+Scenario: Notification upon asset assignment
+Given an asset is assigned to my profile
+When the assignment is completed
+Then I should receive an email and in-app notification with asset details and pickup instructions
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Notification service, Asset inventory module
+- Notes: Notification template should include asset type, serial number, and contact for support
