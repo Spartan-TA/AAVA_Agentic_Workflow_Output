@@ -1,0 +1,15 @@
+Title: Track Employee Certifications
+
+User Story: As an HR manager I want to record and track employee certifications So that compliance and training requirements are met
+
+Acceptance Criteria:
+Scenario: Employee certifications tracked
+  Given I add certification records for employees
+  When I view an employee profile
+  Then I should see all active and expired certifications
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee entity, profile management
+- Notes: Support uploading certification documents and expiry dates.
