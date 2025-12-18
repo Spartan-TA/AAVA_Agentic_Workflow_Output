@@ -1,0 +1,15 @@
+Title: Export OSHA Summary and Reporting
+
+User Story: As a safety officer I want to export OSHA 300/300A summary reports from recorded incidents so that regulatory reporting requirements are met
+
+Acceptance Criteria:
+Scenario: Exporting OSHA summary
+Given I am logged in as a safety officer
+When I select a reporting period and export OSHA summary
+Then the system generates a file with all required OSHA fields populated from incident records
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Incident Recording, Reporting Module
+- Notes: Export format must match OSHA requirements.
