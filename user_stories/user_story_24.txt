@@ -1,0 +1,15 @@
+Title: Block Assignment to Tasks Requiring Expired Certifications
+
+User Story: As a supervisor I want the system to prevent assignment of employees to tasks or equipment that require valid certifications so that safety and compliance are ensured
+
+Acceptance Criteria:
+Scenario: Assignment blocked due to expired certification
+Given an employee's certification is expired
+When a supervisor attempts to assign them to a restricted task or equipment
+Then the system blocks the assignment and displays an error message
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Scheduling, Equipment Assignment, Certification Tracking
+- Notes: Error message should specify which certification is missing or expired.
