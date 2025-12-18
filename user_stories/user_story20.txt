@@ -1,0 +1,15 @@
+Title: Notify on Certification Expiry
+
+User Story: As an HR manager I want to receive notifications when employee certifications are about to expire So that I can take timely action to renew them
+
+Acceptance Criteria:
+Scenario: Certification expiry notification
+  Given an employee's certification is nearing expiry
+  When the expiry date is within the notification threshold
+  Then the system should send a notification to the HR manager and the employee
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Certification tracking, notification system
+- Notes: Support configurable notification thresholds (e.g., 30 days before expiry).
