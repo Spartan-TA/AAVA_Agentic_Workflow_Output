@@ -1,0 +1,57 @@
+Epic E01 - Project Scaffolding & Domain Setup
+
+User Story 1
+Title: Initialize Spring Boot Project Structure
+User Story: As a Developer I want to scaffold a Spring Boot project with Maven So that I have a standardized foundation for EMS development
+Acceptance Criteria:
+Scenario: Project scaffolding and build
+Given I have cloned the repository
+When I run mvn clean install
+Then the project should build successfully and run on port 8080
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Include README with build/run instructions
+
+User Story 2
+Title: Configure Core Domain Modules
+User Story: As a Developer I want to set up base packages for employee, scheduling, attendance, and safety modules So that the codebase is organized for maintainability
+Acceptance Criteria:
+Scenario: Base package structure
+Given the project is initialized
+When I inspect the source code
+Then I should see separate packages for employee, scheduling, attendance, and safety
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Follow standard package naming conventions
+
+User Story 3
+Title: Integrate Database Migration Tool
+User Story: As a Developer I want to add Flyway or Liquibase for database migrations So that schema changes are versioned and repeatable
+Acceptance Criteria:
+Scenario: Baseline migration runs
+Given the application starts
+When Flyway/Liquibase is configured
+Then the baseline migration should execute and create initial tables
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Migration scripts must be idempotent
+
+User Story 4
+Title: Enable Actuator Health Endpoint
+User Story: As a System Administrator I want to access the Actuator health endpoint So that I can monitor application health
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access /actuator/health
+Then the response should indicate status UP
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 1
+- Notes: Secure actuator endpoints as needed
