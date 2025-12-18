@@ -1,0 +1,15 @@
+Title: Missed Punch Correction Request
+
+User Story: As a warehouse worker I want to submit a correction request if I miss a clock-in or clock-out so that my attendance record is accurate and payroll is not impacted
+
+Acceptance Criteria:
+Scenario: Submit missed punch correction
+Given I have a missing clock-in or clock-out event for a scheduled shift
+When I submit a correction request with the correct time and reason
+Then a supervisor is notified for approval and my attendance record is updated upon approval
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Correction requests should be auditable and tracked for compliance
