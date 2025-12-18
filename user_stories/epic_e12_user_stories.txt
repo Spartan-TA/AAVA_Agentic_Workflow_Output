@@ -1,0 +1,73 @@
+EPIC E12 - NOTIFICATIONS & ANNOUNCEMENTS
+
+===========================================
+
+Title: Notify Users of Shift Changes
+
+User Story: As a system I want to send notifications to users about shift changes so that they are always informed
+
+Acceptance Criteria:
+Scenario: Shift change notification
+Given a shift assignment is changed
+When the change is saved
+Then affected users receive notifications via selected channels
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05
+- Notes: Supports in-app, email, SMS
+
+---
+
+Title: Alert on Expiring Certifications
+
+User Story: As a system I want to notify users of expiring certifications so that renewals are not missed
+
+Acceptance Criteria:
+Scenario: Certification expiry notification
+Given a certification is expiring soon
+When the system checks expiry dates
+Then notifications are sent to the employee and supervisor
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E07
+- Notes: Configurable alert windows
+
+---
+
+Title: Announcements Dashboard
+
+User Story: As an employee I want to view company announcements in a dashboard so that I stay informed of important updates
+
+Acceptance Criteria:
+Scenario: Announcements display
+Given announcements are published
+When I log in
+Then I see all current announcements on my dashboard
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06
+- Notes: Announcements can be targeted by role/location
+
+---
+
+Title: Configure Notification Quiet Hours
+
+User Story: As a user I want to set quiet hours for notifications so that I am not disturbed outside of work hours
+
+Acceptance Criteria:
+Scenario: Quiet hours configuration
+Given I have notification preferences
+When I set quiet hours
+Then notifications are suppressed during those times
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03
+- Notes: Applies to all notification channels
