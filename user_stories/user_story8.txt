@@ -1,0 +1,15 @@
+Title: Secure API Endpoints by Role
+
+User Story: As a developer I want to restrict API endpoint access based on user roles So that sensitive operations are only performed by authorized users
+
+Acceptance Criteria:
+Scenario: API endpoints secured by role
+  Given RBAC is implemented
+  When a user calls an API endpoint
+  Then access should be allowed or denied according to their assigned role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC implementation
+- Notes: Ensure endpoints return proper error codes for unauthorized access.
