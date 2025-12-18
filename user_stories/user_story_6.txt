@@ -1,0 +1,15 @@
+Title: Create Employee API
+
+User Story: As an HR manager I want to create new employee records with all required fields so that the system maintains a single source of truth for employee data.
+
+Acceptance Criteria:
+Scenario: Successful employee creation
+Given I am authenticated as HR and on the employee creation page
+When I submit valid employee details (name, badgeId, role, department, shiftGroup, hireDate, status)
+Then the employee is created, badgeId is unique, and the record is visible in the employee list
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project Scaffolding & Domain Setup (E01)
+- Notes: Enforce unique badgeId and validate required fields.
