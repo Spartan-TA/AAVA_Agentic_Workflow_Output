@@ -1,0 +1,15 @@
+Title: Supervisor Reviews and Approves/Deny Leave Requests
+
+User Story: As a supervisor I want to review and approve or deny leave requests from my team so that staffing levels are maintained and leave policies are enforced
+
+Acceptance Criteria:
+Scenario: Approving a leave request
+Given I am logged in as a supervisor and have pending leave requests
+When I review a request and select approve or deny with optional comments
+Then the employee is notified of the decision and the leave balance and schedule are updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC, Scheduling
+- Notes: Approval/denial reasons should be auditable.
