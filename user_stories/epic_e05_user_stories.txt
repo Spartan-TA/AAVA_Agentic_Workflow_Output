@@ -1,0 +1,113 @@
+### EPIC E05 - Shift & Schedule Management
+
+#### User Story 1
+Title: Create Recurring Shift Templates
+
+User Story: As an HR user I want to define recurring shift templates So that scheduling is efficient
+
+Acceptance Criteria:
+Scenario: Shift template creation
+Given the scheduling module
+When I create a new shift template
+Then it is available for assignment to employees
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Support day-of-week and time ranges
+
+---
+
+#### User Story 2
+Title: Assign Shifts to Employees with Conflict Detection
+
+User Story: As a supervisor I want to assign shifts to employees and detect conflicts So that schedules are accurate
+
+Acceptance Criteria:
+Scenario: Shift assignment with conflict detection
+Given existing schedules
+When I assign a new shift
+Then the system prevents overlapping or duplicate assignments
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: User Story 1
+- Notes: Show conflict reason to user
+
+---
+
+#### User Story 3
+Title: Bulk Assign Shifts to Multiple Employees
+
+User Story: As a supervisor I want to bulk-assign shifts to multiple employees So that scheduling is faster
+
+Acceptance Criteria:
+Scenario: Bulk shift assignment
+Given a list of employees
+When I select a shift template and assign
+Then all selected employees receive the shift if no conflicts
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 1, User Story 2
+- Notes: Show summary of successful and failed assignments
+
+---
+
+#### User Story 4
+Title: Handle Blackout Dates and Warehouse Calendars
+
+User Story: As an HR user I want to manage blackout dates and operation calendars So that shifts are not scheduled on closed days
+
+Acceptance Criteria:
+Scenario: Blackout date enforcement
+Given a warehouse calendar with blackout dates
+When I assign shifts
+Then the system prevents assignments on blackout dates
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 1
+- Notes: Calendar is configurable per warehouse
+
+---
+
+#### User Story 5
+Title: Display Upcoming Shifts to Workers
+
+User Story: As a worker I want to view my upcoming shifts So that I can plan my schedule
+
+Acceptance Criteria:
+Scenario: View upcoming shifts
+Given I am logged in
+When I access my schedule
+Then I see a list of my upcoming assigned shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Show shift details and location
+
+---
+
+#### User Story 6
+Title: Generate Audit Entries for Schedule Changes
+
+User Story: As an auditor I want all schedule changes to be logged So that compliance is maintained
+
+Acceptance Criteria:
+Scenario: Schedule change audit
+Given a schedule is created or modified
+When the change is saved
+Then an audit entry is generated with actor, timestamp, and details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E14
+- Notes: Audit log is immutable
