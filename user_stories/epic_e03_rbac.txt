@@ -1,0 +1,88 @@
+EPIC E03: ROLE BASED ACCESS CONTROL (RBAC)
+
+===========================================
+
+Title: Add Role-Based Access Control
+
+User Story: As a system administrator I want to restrict API access based on user roles So that only authorized users can perform sensitive actions
+
+Acceptance Criteria:
+
+Scenario: Unauthorized request returns 401
+Given a user is not authenticated
+When they access a protected endpoint
+Then the system returns a 401 Unauthorized response
+
+Scenario: Forbidden action returns 403
+Given a user is authenticated but lacks permissions
+When they attempt a restricted action
+Then the system returns a 403 Forbidden response
+
+Scenario: ADMIN can manage all records
+Given a user with ADMIN role
+When they access any employee record
+Then access is granted
+
+Scenario: SUPERVISOR limited to team
+Given a user with SUPERVISOR role
+When they access employee records outside their team
+Then access is denied
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data (CRUD)
+- Notes: Use Spring Security for implementation
+
+===========================================
+
+Title: Support API Key/OAuth2 Toggle
+
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication via configuration So that the system can adapt to different security requirements
+
+Acceptance Criteria:
+
+Scenario: API key authentication enabled
+Given API key mode is configured
+When a request is made with a valid API key
+Then access is granted
+
+Scenario: OAuth2 authentication enabled
+Given OAuth2 mode is configured
+When a request is made with a valid OAuth2 token
+Then access is granted
+
+Scenario: Invalid credentials are rejected
+Given invalid credentials
+When a request is made
+Then access is denied
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Add Role-Based Access Control
+- Notes: Configuration should be environment-specific
+
+===========================================
+
+Title: Cover Security Rules with Tests
+
+User Story: As a QA engineer I want automated tests for all security rules So that unauthorized access is reliably prevented
+
+Acceptance Criteria:
+
+Scenario: Tests for all roles
+Given security rules are implemented
+When tests are run
+Then all role-based access scenarios are covered and pass
+
+Scenario: Regression tests for new endpoints
+Given a new endpoint is added
+When security tests are executed
+Then unauthorized and forbidden scenarios are validated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Add Role-Based Access Control
+- Notes: Use integration tests for coverage
