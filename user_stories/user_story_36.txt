@@ -1,0 +1,15 @@
+Title: Manager Review and Feedback Submission
+
+User Story: As a manager I want to provide feedback and ratings for my direct reports during the performance review so that I can support their professional development
+
+Acceptance Criteria:
+Scenario: Manager submits review
+Given my direct report has completed their self-assessment
+When I access their review form and enter my feedback and ratings
+Then my responses should be saved and visible to HR and the employee after finalization
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Review cycle management, Employee records
+- Notes: Allow managers to save drafts and submit final reviews
