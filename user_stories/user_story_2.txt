@@ -1,0 +1,15 @@
+Title: Configure Database Migration Tool
+
+User Story: As a Developer I want to integrate Flyway or Liquibase for database migrations So that schema changes are versioned and repeatable across environments
+
+Acceptance Criteria:
+Scenario: Database migration setup
+Given the project is initialized
+When I run the application
+Then Flyway or Liquibase applies the baseline migration and logs the applied changes
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: user_story_1
+- Notes: Ensure migration scripts are stored in version control and documented in README
