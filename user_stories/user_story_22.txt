@@ -1,0 +1,15 @@
+Title: Employee Uploads Certification Proof
+
+User Story: As an employee I want to upload proof of my required certifications so that my qualifications are validated and tracked for compliance
+
+Acceptance Criteria:
+Scenario: Uploading certification proof
+Given I am logged in as an employee
+When I upload a document for a required certification
+Then the document is stored, linked to my profile, and visible to supervisors and HR
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Supported file types and size limits enforced.
