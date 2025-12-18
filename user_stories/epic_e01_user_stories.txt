@@ -1,0 +1,94 @@
+### EPIC E01 - Project Scaffolding & Domain Setup
+
+#### User Story 1
+Title: Initialize Spring Boot Project Structure
+
+User Story: As a developer I want to initialize a Spring Boot project with a standardized package structure So that the codebase is maintainable and scalable
+
+Acceptance Criteria:
+Scenario: Project initialization
+Given a new repository
+When I run the project initialization script
+Then the base package structure should be created under src/main/java and src/main/resources
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Follow company Java package naming conventions
+
+---
+
+#### User Story 2
+Title: Configure Database Migration Tool
+
+User Story: As a developer I want to add Flyway or Liquibase for database migrations So that schema changes are versioned and repeatable
+
+Acceptance Criteria:
+Scenario: Database migration setup
+Given the project is built
+When I run the application
+Then Flyway/Liquibase should run baseline migration and create the schema_version table
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Use Flyway by default unless otherwise specified
+
+---
+
+#### User Story 3
+Title: Enable Spring Boot Actuator Health Endpoint
+
+User Story: As a DevOps engineer I want to enable the Actuator health endpoint So that I can monitor application health
+
+Acceptance Criteria:
+Scenario: Health endpoint availability
+Given the application is running on port 8080
+When I access /actuator/health
+Then the endpoint should return status UP
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 1
+- Notes: No authentication required for health endpoint
+
+---
+
+#### User Story 4
+Title: Add Build and Run Instructions to README
+
+User Story: As a developer I want clear build and run instructions in the README So that new team members can set up the project easily
+
+Acceptance Criteria:
+Scenario: README documentation
+Given the project repository
+When I open the README file
+Then I should see steps for building and running the application locally
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 1
+- Notes: Include Java version and environment variables
+
+---
+
+#### User Story 5
+Title: Verify Project Builds on Port 8080
+
+User Story: As a developer I want the project to build and run on port 8080 by default So that local development is consistent
+
+Acceptance Criteria:
+Scenario: Application startup
+Given the application is built
+When I run the application
+Then it should start on port 8080 without errors
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 1
+- Notes: Port should be configurable via application.properties
