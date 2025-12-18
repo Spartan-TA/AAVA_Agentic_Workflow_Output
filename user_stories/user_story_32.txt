@@ -1,0 +1,15 @@
+Title: View Asset Assignment History
+
+User Story: As an operations manager I want to view the assignment history of a specific asset so that I can track usage and maintenance needs
+
+Acceptance Criteria:
+Scenario: Viewing asset assignment history
+Given I am on the asset details page
+When I select the assignment history tab
+Then I should see a chronological list of all assignments, returns, and related notes for that asset
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset inventory module
+- Notes: Include timestamps and user actions in the history
