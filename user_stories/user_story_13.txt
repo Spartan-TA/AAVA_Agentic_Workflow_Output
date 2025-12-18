@@ -1,0 +1,15 @@
+Title: Record Clock-Out Event
+
+User Story: As a warehouse worker I want to clock out at the end of my shift so that my total hours worked are accurately captured for payroll and compliance
+
+Acceptance Criteria:
+Scenario: Successful clock-out
+Given I am clocked in for my scheduled shift
+When I access the clock-out endpoint and provide my badge ID
+Then my clock-out event is recorded with timestamp, and my daily total hours are computed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Should handle overnight shifts and validate against shift schedule
