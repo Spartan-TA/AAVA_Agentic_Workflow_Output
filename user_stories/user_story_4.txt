@@ -1,0 +1,25 @@
+Title: Document Build and Run Steps in README
+
+User Story: As a developer I want clear build and run instructions documented in the README So that new team members can quickly set up and contribute to the project
+
+Acceptance Criteria:
+Scenario: README contains build steps
+  Given the project repository is initialized
+  When I open the README file
+  Then I should see step-by-step instructions for building the project using Maven
+
+Scenario: README contains run steps
+  Given the project repository is initialized
+  When I open the README file
+  Then I should see instructions for running the application locally and accessing the health endpoint
+
+Scenario: Troubleshooting section is present
+  Given the README is updated
+  When I encounter common setup issues
+  Then I should find troubleshooting tips in the documentation
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: user_story_1.txt
+- Notes: Include environment variables, DB setup, and links to migration documentation.
