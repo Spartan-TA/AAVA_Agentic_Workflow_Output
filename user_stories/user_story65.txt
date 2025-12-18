@@ -1,0 +1,15 @@
+Title: Set Up GitHub Actions CI/CD Pipeline
+
+User Story: As a DevOps engineer I want to configure a CI/CD pipeline using GitHub Actions So that builds, tests, and deployments are automated and reliable
+
+Acceptance Criteria:
+Scenario: Running the CI/CD pipeline
+Given new code is pushed to the repository
+When the pipeline is triggered
+Then the code is built, tested, and deployed automatically if all checks pass
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Repository access, deployment scripts
+- Notes: Include notifications for failed builds or deployments.
