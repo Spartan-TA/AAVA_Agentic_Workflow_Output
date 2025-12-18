@@ -1,0 +1,15 @@
+Title: Implement Role-Based Access Control (RBAC)
+
+User Story: As a system administrator I want to define roles and permissions So that users only access features appropriate to their role
+
+Acceptance Criteria:
+Scenario: RBAC enforced
+  Given user roles and permissions are configured
+  When a user attempts to access a restricted feature
+  Then access should be granted or denied based on their role
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: User management, authentication
+- Notes: Roles include Admin, Manager, Employee, etc.
