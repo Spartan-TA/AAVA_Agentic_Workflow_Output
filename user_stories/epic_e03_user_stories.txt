@@ -1,0 +1,91 @@
+EPIC E03 - ROLE BASED ACCESS CONTROL (RBAC)
+
+===========================================
+
+Title: Implement Role-Based Access Control (RBAC)
+
+User Story: As a system administrator I want to configure roles (ADMIN, HR, SUPERVISOR, WORKER) So that access to sensitive operations is restricted
+
+Acceptance Criteria:
+Scenario: Role-based endpoint security
+Given a user with a specific role
+When they access protected endpoints
+Then access is granted or denied based on their role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, Project scaffolding
+- Notes: Use Spring Security for implementation
+
+---
+
+Title: Unauthorized and Forbidden Response Handling
+
+User Story: As a security auditor I want unauthorized requests to return 401 and forbidden actions to return 403 So that API security is robust and predictable
+
+Acceptance Criteria:
+Scenario: Unauthorized and forbidden responses
+Given a user is not authenticated or lacks permissions
+When they attempt restricted actions
+Then the API returns 401 or 403 as appropriate
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: RBAC implementation
+- Notes: Include automated security tests
+
+---
+
+Title: ADMIN Role Full Access
+
+User Story: As an ADMIN I want to manage all employee records and system settings So that I can perform administrative tasks without restriction
+
+Acceptance Criteria:
+Scenario: ADMIN access to all endpoints
+Given I am authenticated as ADMIN
+When I access any management endpoint
+Then I have full CRUD access
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: RBAC implementation
+- Notes: Ensure ADMIN role is tested
+
+---
+
+Title: SUPERVISOR Role Limited Access
+
+User Story: As a SUPERVISOR I want to manage only my team's records So that I cannot access data outside my scope
+
+Acceptance Criteria:
+Scenario: SUPERVISOR row-level security
+Given I am authenticated as SUPERVISOR
+When I access employee data
+Then I can only view and manage records for my assigned team
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: RBAC implementation
+- Notes: Enforce row-level constraints
+
+---
+
+Title: API Key/OAuth2 Security Toggle
+
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication So that I can adapt security to organizational requirements
+
+Acceptance Criteria:
+Scenario: Security mode toggle
+Given the system is configured for a specific mode
+When I update the configuration
+Then authentication switches between API key and OAuth2
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: RBAC implementation
+- Notes: Document configuration steps
