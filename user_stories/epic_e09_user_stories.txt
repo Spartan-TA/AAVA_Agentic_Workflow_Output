@@ -1,0 +1,73 @@
+EPIC E09 - EQUIPMENT & ASSET ASSIGNMENT
+
+===========================================
+
+Title: Assign Equipment to Employee
+
+User Story: As a supervisor I want to assign equipment (e.g., scanner, forklift) to an employee so that asset usage is tracked
+
+Acceptance Criteria:
+Scenario: Equipment assignment
+Given equipment is available and employee is qualified
+When I assign the equipment
+Then the assignment is logged and visible on both employee and asset profiles
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Certification check for restricted equipment
+
+---
+
+Title: Track Equipment Checkout and Return
+
+User Story: As an employee I want to check out and return equipment so that asset custody is recorded
+
+Acceptance Criteria:
+Scenario: Equipment check-in/out
+Given I am assigned equipment
+When I check out or return it
+Then the system logs the transaction and updates asset status
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Overdue returns trigger alerts
+
+---
+
+Title: Prevent Use of Equipment Without Valid Certification
+
+User Story: As a system I want to block equipment use if the employee's certification is invalid so that safety is enforced
+
+Acceptance Criteria:
+Scenario: Certification enforcement
+Given an employee's certification is expired or missing
+When attempting to check out restricted equipment
+Then the system blocks the transaction and notifies the user
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Applies to forklifts and other regulated assets
+
+---
+
+Title: Maintain Asset Condition State
+
+User Story: As a supervisor I want to update the condition of assets after each return so that maintenance needs are tracked
+
+Acceptance Criteria:
+Scenario: Asset condition update
+Given equipment is returned
+When I inspect and update its condition
+Then the new condition is logged and visible in the asset history
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Condition states: Good, Needs Maintenance, Out of Service
