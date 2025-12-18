@@ -1,0 +1,15 @@
+Title: Write Deployment Guides
+
+User Story: As a DevOps engineer I want to create deployment guides for each environment So that deployments are consistent and repeatable
+
+Acceptance Criteria:
+Scenario: Following a deployment guide
+Given a new release is ready for deployment
+When the engineer follows the guide
+Then the application is deployed successfully with all required steps completed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Architecture documentation
+- Notes: Guides should cover rollback and validation steps.
