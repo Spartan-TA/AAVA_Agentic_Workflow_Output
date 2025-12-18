@@ -1,0 +1,15 @@
+Title: Update Employee API
+
+User Story: As an HR manager I want to update employee records so that changes in employee details are accurately reflected in the system.
+
+Acceptance Criteria:
+Scenario: Successful employee update
+Given I am authenticated as HR and viewing an employee profile
+When I edit and submit updated details
+Then the changes are saved, and the audit log records the update
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data (E02)
+- Notes: Only editable fields should be updatable; badgeId cannot be changed.
