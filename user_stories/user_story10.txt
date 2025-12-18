@@ -1,0 +1,15 @@
+Title: Calculate Hours Worked
+
+User Story: As a payroll manager I want the system to automatically calculate hours worked from clock in/out data So that payroll processing is accurate
+
+Acceptance Criteria:
+Scenario: Hours worked calculated
+  Given employees have clocked in and out
+  When I view payroll or attendance reports
+  Then the system should display total hours worked for each employee
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Clock in/out endpoints
+- Notes: Handle overnight shifts and time zone differences.
