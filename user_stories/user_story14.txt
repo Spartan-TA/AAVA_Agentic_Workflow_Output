@@ -1,0 +1,15 @@
+Title: Define Overtime Rules
+
+User Story: As a payroll manager I want to configure overtime rules So that overtime pay is calculated correctly for eligible employees
+
+Acceptance Criteria:
+Scenario: Overtime rules configured
+  Given I am in the payroll settings
+  When I define overtime thresholds and rates
+  Then the system should apply these rules to attendance calculations
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Attendance calculation, payroll module
+- Notes: Support daily and weekly overtime configurations.
