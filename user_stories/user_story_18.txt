@@ -1,0 +1,15 @@
+Title: Employee Requests Leave
+
+User Story: As an employee I want to request paid or unpaid leave through the system so that my absence is tracked and approved efficiently
+
+Acceptance Criteria:
+Scenario: Submitting a leave request
+Given I am logged in as an employee
+When I fill out and submit a leave request form specifying dates and type (PTO, sick, unpaid)
+Then the request should appear in my pending requests and notify my supervisor for approval
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, RBAC
+- Notes: Validation for overlapping leave and sufficient accrual balance required.
