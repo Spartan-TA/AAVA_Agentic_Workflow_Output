@@ -1,0 +1,69 @@
+Title: Automate Employee Onboarding Tasks
+
+User Story: As an HR manager I want onboarding tasks to be automatically generated for new hires so that provisioning, scheduling, and training are completed efficiently
+
+Acceptance Criteria:
+Scenario: New hire onboarding
+Given a new hire is created via HRIS integration
+When onboarding is triggered
+Then tasks for account provisioning, schedule assignment, and required training are generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: HRIS integration, Scheduling, Training, Asset assignment
+- Notes: Task list visible to HR and supervisors
+
+---
+
+Title: Automate Employee Offboarding Tasks
+
+User Story: As an HR manager I want offboarding tasks to be automatically generated for terminated employees so that access is revoked and assets are collected
+
+Acceptance Criteria:
+Scenario: Employee offboarding
+Given an employee is terminated
+When offboarding is triggered
+Then tasks for access revocation, asset collection, and schedule updates are generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: HRIS integration, Asset assignment, Scheduling
+- Notes: Task completion tracked
+
+---
+
+Title: Track Onboarding/Offboarding Progress
+
+User Story: As a supervisor I want to track the progress of onboarding and offboarding tasks so that nothing is missed during employee lifecycle changes
+
+Acceptance Criteria:
+Scenario: Tracking progress
+Given onboarding/offboarding is in progress
+When I view the task list
+Then I see the status of each task and who is responsible
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Task management module
+- Notes: Notifications for overdue tasks
+
+---
+
+Title: Integrate with HRIS for New Hires and Terms
+
+User Story: As a system I want to integrate with HRIS to automatically create new hires and process terminations so that manual data entry is minimized
+
+Acceptance Criteria:
+Scenario: HRIS integration
+Given a new hire or termination event in HRIS
+When the event is received
+Then the employee record is created or updated in EMS
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: HRIS integration, Employee Master Data
+- Notes: Idempotent processing
