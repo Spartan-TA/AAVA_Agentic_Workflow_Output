@@ -1,0 +1,91 @@
+EPIC E01 - PROJECT SCAFFOLDING & DOMAIN SETUP
+
+===========================================
+
+Title: Initialize Spring Boot Project
+
+User Story: As a developer I want to initialize a Spring Boot project with Maven So that I have a standardized foundation for all modules
+
+Acceptance Criteria:
+Scenario: Project scaffolding and build
+Given I have cloned the repository
+When I run the build command
+Then the project should build and run on port 8080
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Ensure README includes build and run steps
+
+---
+
+Title: Configure Base Package Structure
+
+User Story: As a developer I want to configure the base package structure for core modules So that code organization is consistent and maintainable
+
+Acceptance Criteria:
+Scenario: Base package structure creation
+Given the project is initialized
+When I inspect the source code
+Then I should see separate packages for employee, scheduling, attendance, and safety modules
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project initialization
+- Notes: Follow standard Java package conventions
+
+---
+
+Title: Integrate Database Migration Tool
+
+User Story: As a developer I want to add Flyway or Liquibase for database migrations So that database schema changes are versioned and repeatable
+
+Acceptance Criteria:
+Scenario: Baseline migration execution
+Given the project is running
+When I start the application
+Then Flyway/Liquibase should run the baseline migration successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project initialization
+- Notes: Use a sample migration for initial setup
+
+---
+
+Title: Enable Actuator Health Endpoint
+
+User Story: As a system administrator I want to enable the Actuator health endpoint So that I can monitor application health
+
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access the /actuator/health endpoint
+Then the response should indicate status UP
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project initialization
+- Notes: Ensure endpoint is secured if necessary
+
+---
+
+Title: Provide Comprehensive README
+
+User Story: As a developer I want a README with build and run instructions So that new team members can easily set up the project
+
+Acceptance Criteria:
+Scenario: README completeness
+Given a new developer joins the team
+When they follow the README instructions
+Then they should be able to build and run the project successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project initialization
+- Notes: Include environment setup and troubleshooting tips
