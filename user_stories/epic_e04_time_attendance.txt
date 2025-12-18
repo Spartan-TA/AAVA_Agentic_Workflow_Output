@@ -1,0 +1,107 @@
+EPIC E04: TIME & ATTENDANCE (CLOCK IN/OUT)
+
+===========================================
+
+Title: Implement Clock In/Out Endpoints
+
+User Story: As a warehouse worker I want to clock in and out via API endpoints So that my attendance is accurately recorded
+
+Acceptance Criteria:
+
+Scenario: Successful clock-in
+Given I am scheduled for a shift
+When I POST to /attendance/clock-in with valid data
+Then my clock-in event is recorded and associated with my shift
+
+Scenario: Successful clock-out
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded and hours worked are calculated
+
+Scenario: Geofence validation (optional)
+Given geofence is enabled
+When I clock in/out outside the allowed area
+Then the system rejects the attempt
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, Role-Based Access Control
+- Notes: Device capture should be logged for audit
+
+===========================================
+
+Title: Handle Missed Punches and Corrections
+
+User Story: As a worker or supervisor I want to submit corrections for missed punches So that attendance records are accurate
+
+Acceptance Criteria:
+
+Scenario: Submit correction request
+Given a missed punch is detected
+When I submit a correction request
+Then an approval task is created for my supervisor
+
+Scenario: Supervisor approves correction
+Given a pending correction
+When the supervisor approves it
+Then the attendance record is updated
+
+Scenario: Supervisor rejects correction
+Given a pending correction
+When the supervisor rejects it
+Then the attendance record remains unchanged and the requester is notified
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Implement Clock In/Out Endpoints
+- Notes: Correction workflow should be auditable
+
+===========================================
+
+Title: Export Attendance Reports
+
+User Story: As an HR admin I want to export attendance reports in CSV format So that I can analyze and share attendance data
+
+Acceptance Criteria:
+
+Scenario: Export daily attendance
+Given attendance data exists
+When I request a CSV export for a date range
+Then the system generates a CSV file with the relevant records
+
+Scenario: Export includes corrections
+Given corrections have been made
+When I export attendance
+Then the corrections are reflected in the report
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Handle Missed Punches and Corrections
+- Notes: Export should be accessible via API and UI
+
+===========================================
+
+Title: Calculate Hours Worked Per Shift
+
+User Story: As a supervisor I want the system to automatically calculate hours worked per shift So that payroll and overtime are accurate
+
+Acceptance Criteria:
+
+Scenario: Hours calculated on clock-out
+Given a worker clocks out
+When the system processes the event
+Then total hours worked for the shift are computed and stored
+
+Scenario: Overtime flagged
+Given hours exceed scheduled shift
+When calculation is performed
+Then overtime is flagged in the record
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Implement Clock In/Out Endpoints
+- Notes: Handle edge cases such as overnight shifts
