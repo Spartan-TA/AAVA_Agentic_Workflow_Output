@@ -1,0 +1,69 @@
+Title: Generate Operational Reports (Attendance, Overtime, Leave)
+
+User Story: As a manager I want to generate operational reports for attendance, overtime, and leave balances so that I can make data-driven staffing decisions
+
+Acceptance Criteria:
+Scenario: Generating a report
+Given I have access to reporting tools
+When I select the desired report and filters
+Then I receive a report with the requested data in under 10 seconds for up to 50k rows
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Attendance, Leave, Overtime data
+- Notes: Export formats CSV and PDF
+
+---
+
+Title: Certification Status and Safety KPI Reports
+
+User Story: As a safety officer I want to generate reports on certification status and safety KPIs so that compliance and safety trends are monitored
+
+Acceptance Criteria:
+Scenario: Generating certification/safety report
+Given I have access to safety and certification data
+When I generate the report
+Then I see up-to-date metrics and can export the data
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification Tracking, Safety Incident data
+- Notes: Metrics endpoints for BI
+
+---
+
+Title: Role-Based Dashboards
+
+User Story: As a user I want to see dashboards tailored to my role so that I have relevant insights at a glance
+
+Acceptance Criteria:
+Scenario: Viewing a dashboard
+Given I am logged in
+When I access my dashboard
+Then I see widgets and metrics relevant to my role (manager, supervisor, worker)
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: RBAC, Reporting module
+- Notes: Access controlled
+
+---
+
+Title: Filter and Export Reports by Date, Department, Shift
+
+User Story: As a manager I want to filter and export reports by date, department, and shift so that I can analyze trends and share data
+
+Acceptance Criteria:
+Scenario: Filtering and exporting a report
+Given I have access to reports
+When I apply filters and export
+Then I receive a file with the filtered data
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Reporting module
+- Notes: Export formats CSV and PDF
