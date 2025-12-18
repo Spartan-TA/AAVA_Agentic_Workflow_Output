@@ -1,0 +1,15 @@
+Title: Integrate Leave with Scheduling
+
+User Story: As a scheduler I want approved leave to automatically block out employee availability So that scheduling conflicts are prevented
+
+Acceptance Criteria:
+Scenario: Leave blocks scheduling
+  Given an employee's leave is approved
+  When I assign shifts
+  Then the system should prevent assignments during the leave period
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Leave approval workflow, scheduling module
+- Notes: Show leave blocks visually on the scheduling calendar.
