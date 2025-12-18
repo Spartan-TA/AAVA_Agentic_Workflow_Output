@@ -1,0 +1,20 @@
+Title: Add Employee Search and Filtering
+
+User Story: As an HR user I want to search and filter employees by name, department, role, or status So that I can quickly find relevant employee records
+
+Acceptance Criteria:
+Scenario: Search by name
+  Given multiple employees exist
+  When I search by name
+  Then only employees matching the name are returned
+
+Scenario: Filter by department
+  Given multiple employees exist
+  When I filter by department
+  Then only employees in that department are shown
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD APIs
+- Notes: Support partial matches and multiple filters
