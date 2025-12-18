@@ -1,0 +1,15 @@
+Title: Assign Shifts to Employees
+
+User Story: As a scheduler I want to assign shifts to employees using templates So that scheduling is efficient and consistent
+
+Acceptance Criteria:
+Scenario: Shifts assigned to employees
+  Given shift templates exist
+  When I assign a shift to an employee
+  Then the employee's schedule should reflect the new assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift templates, employee entity
+- Notes: Prevent overlapping shift assignments.
