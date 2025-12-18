@@ -1,0 +1,15 @@
+Title: Certification Status Visible on Employee Profile
+
+User Story: As a supervisor or HR user I want to view the current certification status for each employee on their profile so that I can quickly verify qualifications and compliance
+
+Acceptance Criteria:
+Scenario: Viewing certification status
+Given I am viewing an employee profile
+When I navigate to the certifications section
+Then I see a list of all required certifications, their status (valid/expiring/expired), and any uploaded proof documents
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Master Data, Certification Upload
+- Notes: Status should be color-coded for quick reference.
