@@ -1,0 +1,234 @@
+Epic E05 - Shift & Schedule Management
+
+User Story 1
+Title: Create and Manage Shift Templates
+User Story: As an HR Manager I want to define recurring shift templates So that scheduling is efficient
+Acceptance Criteria:
+Scenario: Shift template CRUD
+Given I have HR role
+When I create, update, or delete a shift template
+Then the changes are reflected in the schedule options
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Validate for overlapping times
+
+User Story 2
+Title: Assign Shifts to Employees
+User Story: As a Supervisor I want to assign shifts to employees in bulk So that I can manage team schedules
+Acceptance Criteria:
+Scenario: Bulk assignment
+Given a list of employees
+When I assign a shift template
+Then all selected employees receive the shift assignment
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 1
+- Notes: Audit assignments
+
+User Story 3
+Title: Detect and Prevent Schedule Conflicts
+User Story: As a Scheduler I want the system to detect and prevent overlapping or conflicting shifts So that employees are not double-booked
+Acceptance Criteria:
+Scenario: Conflict detection
+Given an employee has a scheduled shift
+When I try to assign an overlapping shift
+Then the system should block the assignment and show an error
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 2
+- Notes: Cover blackout dates
+
+User Story 4
+Title: Display Personal Upcoming Shifts
+User Story: As a Warehouse Worker I want to view my upcoming shifts So that I can plan my work
+Acceptance Criteria:
+Scenario: View schedule
+Given I am logged in
+When I access my schedule
+Then I see a list of my upcoming shifts
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 2
+- Notes: Show shift details
+
+---
+Epic E06 - Leave & Absence Management
+
+User Story 1
+Title: Request Paid Time Off (PTO)
+User Story: As a Warehouse Worker I want to request PTO via the system So that my absence is recorded and approved
+Acceptance Criteria:
+Scenario: PTO request
+Given I have available PTO balance
+When I submit a leave request
+Then the request is sent to my supervisor for approval
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Validate against accrual policies
+
+User Story 2
+Title: Approve or Deny Leave Requests
+User Story: As a Supervisor I want to approve or deny leave requests So that team coverage is maintained
+Acceptance Criteria:
+Scenario: Leave approval
+Given a pending leave request
+When I approve or deny it
+Then the employee is notified and the schedule is updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Track approval history
+
+User Story 3
+Title: Update Leave Balances and Policies
+User Story: As an HR Manager I want leave balances to update automatically based on requests and policies So that records are accurate
+Acceptance Criteria:
+Scenario: Balance update
+Given a leave is approved
+When the request is processed
+Then the employee's leave balance is reduced accordingly
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: User Story 2
+- Notes: Support multiple leave types
+
+User Story 4
+Title: Exclude Approved Leaves from Scheduling
+User Story: As a Scheduler I want approved leaves to automatically flag scheduled shifts for coverage So that no shifts are left uncovered
+Acceptance Criteria:
+Scenario: Shift auto-flag
+Given an approved leave overlaps a scheduled shift
+When the leave is approved
+Then the shift is flagged for coverage
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: User Story 2
+- Notes: Integrate with shift management
+
+---
+Epic E07 - Training & Certification Tracking
+
+User Story 1
+Title: Track Employee Certifications
+User Story: As an HR Manager I want to record and update employee certifications So that compliance is maintained
+Acceptance Criteria:
+Scenario: Certification CRUD
+Given an employee profile
+When I add or update a certification
+Then the certification details are saved and visible
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Include expiration date
+
+User Story 2
+Title: Alert for Expiring Certifications
+User Story: As a Supervisor I want to receive alerts 30 and 7 days before a certification expires So that renewals are not missed
+Acceptance Criteria:
+Scenario: Expiry alert
+Given a certification is expiring soon
+When the alert window is reached
+Then the supervisor and employee are notified
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Support email and in-app alerts
+
+User Story 3
+Title: Block Assignment to Tasks Requiring Expired Certifications
+User Story: As a Scheduler I want to prevent assignment of tasks to employees with expired certifications So that safety is ensured
+Acceptance Criteria:
+Scenario: Assignment block
+Given an employee's certification is expired
+When I try to assign a restricted task
+Then the system blocks the assignment and shows a warning
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Enforce at scheduling time
+
+User Story 4
+Title: Upload Proof of Certification Documents
+User Story: As an Employee I want to upload proof documents for my certifications So that my records are complete
+Acceptance Criteria:
+Scenario: Document upload
+Given I have a certification
+When I upload a document
+Then it is stored and linked to my profile
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 1
+- Notes: Support PDF, JPG, PNG
+
+---
+Epic E08 - Safety Incidents & OSHA Reporting
+
+User Story 1
+Title: Record Safety Incidents
+User Story: As a Safety Officer I want to record incidents and near-misses with severity, location, and involved employees So that safety data is tracked
+Acceptance Criteria:
+Scenario: Incident recording
+Given an incident occurs
+When I submit the incident form
+Then the data is validated and saved
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Support multiple employees per incident
+
+User Story 2
+Title: Manage Incident Investigation Workflow
+User Story: As a Safety Officer I want to track the status of incidents through Open, Investigating, and Resolved So that corrective actions are managed
+Acceptance Criteria:
+Scenario: Status workflow
+Given an incident is recorded
+When I update the status
+Then the workflow reflects the current stage
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Log status changes
+
+User Story 3
+Title: Export OSHA Summary Reports
+User Story: As a Compliance Manager I want to export OSHA 300/300A summary fields So that regulatory reporting is streamlined
+Acceptance Criteria:
+Scenario: OSHA export
+Given incidents are recorded
+When I request an OSHA export
+Then the file includes all required fields
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Support CSV/PDF
+
+User Story 4
+Title: Provide Safety Metrics Dashboard
+User Story: As a Safety Officer I want to view safety KPIs and metrics via dashboard endpoints So that I can monitor trends
+Acceptance Criteria:
+Scenario: Metrics dashboard
+Given incidents are logged
+When I access the dashboard
+Then I see up-to-date safety metrics
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Role-based access
