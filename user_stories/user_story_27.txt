@@ -1,0 +1,15 @@
+Title: Incident Investigation Workflow
+
+User Story: As a safety officer I want to manage the workflow for investigating safety incidents so that corrective actions are tracked and incidents are resolved efficiently
+
+Acceptance Criteria:
+Scenario: Advancing incident status through investigation
+Given an incident is recorded with status 'Open'
+When I assign investigators and add findings or corrective actions
+Then the incident status updates to 'Investigating' and finally to 'Resolved' upon completion
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Incident Recording, RBAC
+- Notes: All status changes and actions should be auditable.
