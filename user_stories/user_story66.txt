@@ -1,0 +1,15 @@
+Title: Integrate Security Scanning in CI/CD
+
+User Story: As a DevOps engineer I want to integrate security scanning tools into the CI/CD pipeline So that vulnerabilities are detected and addressed before deployment
+
+Acceptance Criteria:
+Scenario: Running security scans in CI/CD
+Given a new code commit is pushed
+When the CI/CD pipeline runs
+Then security scans are executed and results are reported to the team
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: CI/CD pipeline, security tools
+- Notes: Pipeline should fail on critical vulnerabilities.
