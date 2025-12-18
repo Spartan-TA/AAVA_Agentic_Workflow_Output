@@ -1,0 +1,15 @@
+Title: Approve or Reject Leave Requests
+
+User Story: As a manager I want to approve or reject employee leave requests So that I can manage team availability
+
+Acceptance Criteria:
+Scenario: Leave request approval workflow
+  Given a leave request is submitted
+  When I review the request
+  Then I should be able to approve or reject it and the employee should be notified
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Leave request submission, notification system
+- Notes: Track approval status and comments.
