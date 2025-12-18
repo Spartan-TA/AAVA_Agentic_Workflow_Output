@@ -1,0 +1,15 @@
+Title: Generate OpenAPI Documentation
+
+User Story: As an API developer I want to generate OpenAPI-compliant documentation for all endpoints So that integrators and consumers can easily understand and use the APIs
+
+Acceptance Criteria:
+Scenario: Accessing API documentation
+Given new or updated API endpoints
+When the developer generates documentation
+Then the OpenAPI spec is updated and published for consumers
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: API development, documentation tools
+- Notes: Documentation should be versioned and accessible via a public URL.
