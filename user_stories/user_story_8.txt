@@ -1,0 +1,15 @@
+Title: Soft Delete Employee
+
+User Story: As an HR manager I want to soft-delete employee records so that terminated employees are not shown in active lists but their history is retained for compliance.
+
+Acceptance Criteria:
+Scenario: Soft-delete employee
+Given I am authenticated as HR and viewing an employee profile
+When I choose to delete the employee
+Then the employee is marked as inactive, not removed from the database, and excluded from active queries
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data (E02)
+- Notes: Soft-deleted employees must be filterable in admin views.
