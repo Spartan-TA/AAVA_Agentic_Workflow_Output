@@ -1,0 +1,15 @@
+Title: Automate Asset Provisioning
+
+User Story: As an IT administrator I want new employees to be automatically assigned required assets So that onboarding is efficient and standardized
+
+Acceptance Criteria:
+Scenario: Provisioning assets for a new hire
+Given a new employee is added to the system
+When the onboarding workflow runs
+Then required assets (e.g., laptop, badge) are assigned and tracked
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Asset management, onboarding workflow
+- Notes: Integrate with inventory systems for asset availability.
