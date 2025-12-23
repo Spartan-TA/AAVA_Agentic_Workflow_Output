@@ -1,0 +1,25 @@
+Title: Employee Update, Delete, and Listing API
+
+User Story: As an HR manager I want to update, soft-delete, and list employee records with pagination and filtering so that I can efficiently manage employee data and maintain historical integrity.
+
+Acceptance Criteria:
+Scenario: Update employee
+  Given an employee record exists
+  When I PUT or PATCH to /employees/{id} with updated details
+  Then the employee record is updated and changes are reflected
+
+Scenario: Soft-delete employee
+  Given an employee record exists
+  When I DELETE /employees/{id}
+  Then the employee record is marked as inactive (soft-deleted) and not removed from the database
+
+Scenario: List employees with pagination and filtering
+  Given multiple employee records exist
+  When I GET /employees with pagination and filter parameters
+  Then I receive a paginated, filtered list of employees
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee creation (E02), Project scaffolding (E01)
+- Notes: Soft-delete must retain historical data; OpenAPI schemas must include examples for all operations.
