@@ -1,0 +1,64 @@
+Title: Request Leave (PTO/Sick/Unpaid)
+User Story: As a warehouse worker I want to request PTO, sick, or unpaid leave So that my time off is tracked and approved
+Acceptance Criteria:
+Scenario: Submit leave request
+Given I am logged in
+When I fill out and submit a leave request form
+Then my request is sent to my supervisor for review
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee Master Data, RBAC
+- Notes: Leave types configurable
+
+Title: Approve/Deny Leave Requests
+User Story: As a supervisor I want to approve or deny leave requests So that staffing levels are maintained
+Acceptance Criteria:
+Scenario: Approve leave
+Given a leave request is pending
+When I review and approve or deny the request
+Then the employee is notified and their leave balance is updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Notifications
+- Notes: Approval workflow tracked
+
+Title: Update Leave Accrual Balances
+User Story: As an HR manager I want leave balances to update automatically So that accruals and usage are accurate
+Acceptance Criteria:
+Scenario: Accrual update
+Given a leave request is approved
+When the leave period starts
+Then the employee's leave balance is adjusted accordingly
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave Approval
+- Notes: Supports multiple accrual policies
+
+Title: Exclude Approved Leave from Scheduling
+User Story: As a scheduler I want approved leaves to automatically flag shifts for coverage So that no-shows are prevented
+Acceptance Criteria:
+Scenario: Coverage flag
+Given an employee has approved leave
+When I view the schedule
+Then their assigned shifts are flagged for coverage
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Shift Assignment
+- Notes: Coverage notifications sent to supervisors
+
+Title: Export Approved Leaves
+User Story: As a payroll admin I want to export approved leave records So that payroll calculations are accurate
+Acceptance Criteria:
+Scenario: Export leaves
+Given approved leave data exists
+When I request an export
+Then a CSV file is generated with all approved leave records
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave Approval, Accrual Balances
+- Notes: Export format matches payroll provider requirements
