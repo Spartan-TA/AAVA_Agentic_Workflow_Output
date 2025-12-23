@@ -1,0 +1,15 @@
+Title: Manager Conducts Performance Review
+
+User Story: As a manager I want to conduct performance reviews for employees So that feedback and goals are documented and tracked
+
+Acceptance Criteria:
+Scenario: Conducting performance review
+Given I am logged in as a manager and have access to employee profiles
+When I initiate a performance review and enter feedback and ratings
+Then the review is saved and the employee is notified
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Employee Master Data, Notifications
+- Notes: Allow attaching supporting documents and setting future goals.
