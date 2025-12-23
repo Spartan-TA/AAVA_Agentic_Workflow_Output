@@ -1,0 +1,20 @@
+Title: Enable Database Migrations
+
+User Story: As a SYSTEM I want to add Flyway or Liquibase for database migrations So that schema changes are versioned and repeatable
+
+Acceptance Criteria:
+Scenario: Migration Runs
+Given the application starts
+When Flyway/Liquibase is enabled
+Then baseline migration is applied to the database
+
+Scenario: Migration Failure
+Given a migration error
+When the application starts
+Then a clear error is logged and startup fails
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Initialize Spring Boot Project Structure
+- Notes: Migration scripts must be included in version control
