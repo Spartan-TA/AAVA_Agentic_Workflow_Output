@@ -1,0 +1,15 @@
+Title: Manager Submits OSHA Report
+
+User Story: As a manager I want to review safety incidents and submit OSHA reports So that regulatory compliance is maintained
+
+Acceptance Criteria:
+Scenario: Submitting OSHA report
+Given I am logged in as a manager and have access to incident reports
+When I select incidents and generate an OSHA report
+Then the report is formatted according to OSHA standards and submitted to authorities
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Safety Incident Reports, Reporting Module
+- Notes: Include export to PDF and digital signature functionality.
