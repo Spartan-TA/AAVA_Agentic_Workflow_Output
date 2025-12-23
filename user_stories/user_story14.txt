@@ -1,0 +1,15 @@
+Title: Employee Reports Safety Incident
+
+User Story: As an employee I want to report safety incidents through the system So that hazards are documented and addressed promptly
+
+Acceptance Criteria:
+Scenario: Reporting a safety incident
+Given I am logged into the system
+When I submit a safety incident report with details and optional attachments
+Then the report is logged and relevant personnel are notified
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Notifications, Employee Master Data
+- Notes: Ensure anonymity option and mandatory fields for incident description.
