@@ -1,0 +1,20 @@
+Title: Leave Request Workflow
+
+User Story: As a WORKER I want to request PTO, sick, or unpaid leave So that my absences are tracked and approved
+
+Acceptance Criteria:
+Scenario: Submit Leave
+Given available leave balance
+When I request leave
+Then a supervisor approval task is created
+
+Scenario: Insufficient Balance
+Given no available balance
+When I request leave
+Then the request is rejected
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee CRUD API, Role-Based Endpoint Security, Shift Template Management
+- Notes: Leave types and balances must be visible
