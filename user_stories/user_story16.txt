@@ -1,0 +1,15 @@
+Title: Manager Assigns Equipment
+
+User Story: As a manager I want to assign equipment and assets to employees So that resources are tracked and accountability is maintained
+
+Acceptance Criteria:
+Scenario: Assigning equipment
+Given I am logged in as a manager and have access to the asset inventory
+When I select an employee and assign equipment
+Then the assignment is logged and the employee receives a notification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee Master Data, Notifications
+- Notes: Track asset return dates and condition.
