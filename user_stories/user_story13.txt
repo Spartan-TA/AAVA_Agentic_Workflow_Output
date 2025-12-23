@@ -1,0 +1,15 @@
+Title: Manager Assigns Training
+
+User Story: As a manager I want to assign training modules to employees So that compliance and skill requirements are met
+
+Acceptance Criteria:
+Scenario: Assigning training
+Given I am logged in as a manager and have access to employee profiles
+When I select an employee and assign a training module
+Then the employee receives a notification and the training is added to their required list
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee Master Data, Notifications
+- Notes: Allow bulk assignment for multiple employees.
