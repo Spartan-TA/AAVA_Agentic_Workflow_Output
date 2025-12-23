@@ -1,0 +1,15 @@
+Title: Payroll Admin Exports Payroll Data
+
+User Story: As a payroll admin I want to export payroll data to external systems So that payroll processing is automated and accurate
+
+Acceptance Criteria:
+Scenario: Exporting payroll data
+Given I am logged in as a payroll admin and payroll period is closed
+When I select 'Export Payroll' and choose the target system
+Then the data is formatted and exported successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Time & Attendance, Leave Management
+- Notes: Support multiple export formats (CSV, API, etc.) and error handling for failed exports.
