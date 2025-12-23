@@ -1,0 +1,20 @@
+Title: API Authentication Toggle
+
+User Story: As a SYSTEM ADMIN I want to toggle between API key and OAuth2 authentication So that integration partners can use the appropriate method
+
+Acceptance Criteria:
+Scenario: Config Toggle
+Given a configuration setting
+When I set it to API key
+Then endpoints require API key authentication
+
+Scenario: Config Toggle
+Given a configuration setting
+When I set it to OAuth2
+Then endpoints require OAuth2 authentication
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Role-Based Endpoint Security
+- Notes: Document both authentication flows
