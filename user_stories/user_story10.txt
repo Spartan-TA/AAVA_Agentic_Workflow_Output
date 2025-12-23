@@ -1,0 +1,15 @@
+Title: Employee Requests Leave
+
+User Story: As an employee I want to request leave through the system So that my absence is tracked and approved efficiently
+
+Acceptance Criteria:
+Scenario: Requesting leave
+Given I am logged into the system
+When I submit a leave request specifying dates and type of leave
+Then my request is sent to my manager for approval and I receive a confirmation
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Master Data, Notifications
+- Notes: Validate leave balance before submission.
