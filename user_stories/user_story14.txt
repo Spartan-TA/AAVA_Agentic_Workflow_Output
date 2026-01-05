@@ -1,0 +1,15 @@
+Title: Time & Attendance - Clock Out
+
+User Story: As a worker I want to clock out so that my shift hours are calculated for payroll.
+
+Acceptance Criteria:
+Scenario: Clock out event
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out is recorded and hours are computed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock In
+- Notes: Associate with correct shift.
