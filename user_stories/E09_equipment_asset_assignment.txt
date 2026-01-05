@@ -1,0 +1,100 @@
+# E09: Equipment & Asset Assignment
+
+## User Story 1: Asset Registry CRUD
+**User Story:**  
+As an asset manager, I want to create, update, and delete assets so that inventory is accurate.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given I POST/PUT/DELETE /assets
+Then the asset record is created, updated, or deleted
+
+Given I GET /assets
+Then all assets are listed with status
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E02, E03, E07  
+Notes: Include asset type, serial number, condition.
+
+---
+
+## User Story 2: Assign and Track Asset Check-In/Out
+**User Story:**  
+As a supervisor, I want to assign assets to employees and track check-in/out so that accountability is maintained.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given an asset is available
+When I assign it to an employee
+Then the assignment is recorded with timestamp
+
+Given an asset is checked out
+When it is returned
+Then the check-in is recorded and status updated
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E02, E03, E07  
+Notes: Track overdue returns.
+
+---
+
+## User Story 3: Block Asset Assignment if Certification Invalid
+**User Story:**  
+As a supervisor, I want to prevent assignment of assets requiring certification if the employee's cert is invalid so that safety is ensured.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given an asset requires certification
+When the employee's cert is expired
+Then the assignment is blocked with an error
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E02, E03, E07  
+Notes: Link assets to required certs.
+
+---
+
+## User Story 4: Maintain Asset Condition State
+**User Story:**  
+As an asset manager, I want to record asset condition so that maintenance needs are tracked.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given an asset is checked in
+When I update its condition
+Then the new state is recorded in the asset history
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 1  
+Dependencies: E02, E03, E07  
+Notes: Support statuses like "Good", "Needs Repair".
+
+---
+
+## User Story 5: Asset and Employee Assignment History
+**User Story:**  
+As an auditor, I want to view the history of asset assignments per asset and employee so that usage is transparent.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given an asset or employee
+When I view the assignment history
+Then all check-in/out events are listed with timestamps
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 1  
+Dependencies: E02, E03, E07  
+Notes: Exportable as CSV.
