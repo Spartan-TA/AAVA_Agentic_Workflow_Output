@@ -1,0 +1,12 @@
+Title: Employee Record Update
+User Story: As an HR manager I want to update employee records to reflect changes in role, department, or status so that employee information remains current and accurate.
+Acceptance Criteria:
+Scenario: Update employee record
+  Given the HR manager is authenticated
+  When they submit a PUT or PATCH request to /employees/{id} with valid changes
+  Then the employee record is updated and changes are reflected in GET requests
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: Employee Record Creation
+Notes: Audit log entry must be created for each update.
