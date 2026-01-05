@@ -1,0 +1,66 @@
+### Epic E02: Employee Master Data (CRUD)
+
+**User Story 1: Create Employee API**
+Title: Implement Employee Creation API
+User Story: As an HR user, I want to create employee records via API so that new hires are registered in the system.
+Acceptance Criteria:
+Scenario: Employee created successfully
+Given valid employee data
+When I POST to `/employees`
+Then a new employee record is created with a unique badgeId
+Priority: High
+Story Points: 3
+Dependencies: E01
+Notes: Validate required fields
+
+**User Story 2: Retrieve Employee Records**
+Title: Implement Employee Retrieval API
+User Story: As a supervisor, I want to retrieve employee records with filtering and pagination so that I can view relevant staff.
+Acceptance Criteria:
+Scenario: Employees retrieved with filters
+Given multiple employee records exist
+When I GET `/employees?department=Shipping&page=1`
+Then I receive a paginated, filtered list of employees
+Priority: High
+Story Points: 2
+Dependencies: E01
+Notes: Support filtering by department, role, status
+
+**User Story 3: Update Employee Details**
+Title: Implement Employee Update API
+User Story: As an HR user, I want to update employee details so that records remain accurate.
+Acceptance Criteria:
+Scenario: Employee updated
+Given an existing employee
+When I PATCH `/employees/{id}` with new data
+Then the employee record is updated
+Priority: High
+Story Points: 2
+Dependencies: E01
+Notes: Enforce badgeId uniqueness
+
+**User Story 4: Soft Delete Employee**
+Title: Implement Employee Soft Delete
+User Story: As an HR user, I want to soft-delete employee records so that terminated employees are excluded but history is preserved.
+Acceptance Criteria:
+Scenario: Employee soft-deleted
+Given an active employee
+When I DELETE `/employees/{id}`
+Then the employee status is set to inactive and record is not removed
+Priority: High
+Story Points: 2
+Dependencies: E01
+Notes: Exclude soft-deleted from active queries
+
+**User Story 5: OpenAPI Schema Documentation**
+Title: Document Employee APIs in OpenAPI
+User Story: As a developer, I want Employee APIs documented in OpenAPI with examples so that integration is easy.
+Acceptance Criteria:
+Scenario: OpenAPI docs available
+Given the API is implemented
+When I view `/swagger-ui.html`
+Then I see Employee endpoints with example requests/responses
+Priority: High
+Story Points: 1
+Dependencies: E01
+Notes: Include all CRUD operations
