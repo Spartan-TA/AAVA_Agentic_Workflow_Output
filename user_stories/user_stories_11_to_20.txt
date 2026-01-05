@@ -1,0 +1,143 @@
+USER STORY 11
+Title: Time & Attendance - Clock In
+User Story: As a WORKER I want to clock in at the start of my shift with optional geofence and device capture So that my attendance is accurately recorded.
+Acceptance Criteria:
+Scenario: Clock In Event
+  Given a worker at the warehouse location
+  When they POST to /attendance/clock-in with valid data
+  Then a clock-in event is recorded with timestamp, location, and device info
+  And the event is associated with the correct shift
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: Employee CRUD, RBAC
+Notes: Validate geofence if enabled.
+
+USER STORY 12
+Title: Time & Attendance - Clock Out
+User Story: As a WORKER I want to clock out at the end of my shift So that my worked hours are calculated for payroll.
+Acceptance Criteria:
+Scenario: Clock Out Event
+  Given a worker who has clocked in
+  When they POST to /attendance/clock-out
+  Then a clock-out event is recorded
+  And total hours worked for the shift are calculated
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Clock In
+Notes: Handle overnight shifts and missed punches.
+
+USER STORY 13
+Title: Time & Attendance - Missed Punch Correction
+User Story: As a SUPERVISOR I want to approve corrections for missed clock-in/out events So that attendance records are accurate.
+Acceptance Criteria:
+Scenario: Missed Punch Correction Workflow
+  Given a worker with a missed punch
+  When a correction request is submitted
+  Then a supervisor receives an approval task
+  And upon approval, the attendance record is updated
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Clock In, Clock Out
+Notes: Track correction history for audit.
+
+USER STORY 14
+Title: Time & Attendance - Attendance Reports
+User Story: As an HR MANAGER I want to export attendance reports in CSV format So that I can process payroll and compliance reports.
+Acceptance Criteria:
+Scenario: Export Attendance Report
+  Given attendance data for a period
+  When I request a report export
+  Then a CSV file is generated with daily totals and corrections
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Clock In, Clock Out, Missed Punch Correction
+Notes: Include approval status in export.
+
+USER STORY 15
+Title: Shift Management - Create Shift Templates
+User Story: As an ADMIN I want to create recurring shift templates and rotations So that scheduling is efficient and consistent.
+Acceptance Criteria:
+Scenario: Create Shift Template
+  Given valid shift details
+  When I POST to /shifts/templates
+  Then a new shift template is created and available for assignment
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Employee CRUD, RBAC, Time & Attendance
+Notes: Support daily, weekly, and custom rotations.
+
+USER STORY 16
+Title: Shift Management - Assign Shifts to Employees
+User Story: As a SUPERVISOR I want to assign shifts to employees in bulk So that I can efficiently manage team schedules.
+Acceptance Criteria:
+Scenario: Bulk Shift Assignment
+  Given a list of employees and a shift template
+  When I assign the shift
+  Then all selected employees are scheduled for the shift
+  And conflicts are detected and prevented
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: Shift Templates, Employee CRUD
+Notes: Prevent overlapping assignments.
+
+USER STORY 17
+Title: Shift Management - View Personal Schedule
+User Story: As a WORKER I want to view my upcoming shifts So that I can plan my work and personal life.
+Acceptance Criteria:
+Scenario: View Upcoming Shifts
+  Given a worker with assigned shifts
+  When they access their schedule
+  Then all upcoming shifts are displayed with dates and times
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: Shift Assignment
+Notes: Mobile-friendly view required.
+
+USER STORY 18
+Title: Shift Management - Audit Shift Changes
+User Story: As an ADMIN I want all shift assignments and changes to be audited So that there is a record for compliance and dispute resolution.
+Acceptance Criteria:
+Scenario: Audit Shift Assignment
+  Given a shift assignment or change
+  When the action is performed
+  Then an audit entry is generated with actor, timestamp, and before/after state
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Shift Assignment
+Notes: Store audit logs in immutable storage.
+
+USER STORY 19
+Title: Leave Management - Request Leave
+User Story: As a WORKER I want to request PTO, sick, or unpaid leave So that my time off is tracked and approved.
+Acceptance Criteria:
+Scenario: Submit Leave Request
+  Given a worker with available leave balance
+  When they submit a leave request
+  Then the request is created and pending supervisor approval
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Employee CRUD, RBAC, Shift Management
+Notes: Show leave balance at request time.
+
+USER STORY 20
+Title: Leave Management - Approve/Deny Leave
+User Story: As a SUPERVISOR I want to approve or deny leave requests So that staffing levels are maintained.
+Acceptance Criteria:
+Scenario: Approve Leave Request
+  Given a pending leave request
+  When a supervisor approves or denies it
+  Then the request status is updated and the employee is notified
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Leave Request
+Notes: Auto-flag scheduled shifts for coverage if leave is approved.
