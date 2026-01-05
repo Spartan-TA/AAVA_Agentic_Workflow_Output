@@ -1,0 +1,66 @@
+### Epic E04: Time & Attendance (Clock In/Out)
+
+**User Story 1: Implement Clock-In Endpoint**
+User Story: As a worker I want to clock in via an API endpoint so that my attendance is recorded.
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given a valid employee and shift
+When I POST to /attendance/clock-in
+Then my clock-in event is recorded with timestamp
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Validate employee status
+
+**User Story 2: Implement Clock-Out Endpoint**
+User Story: As a worker I want to clock out via an API endpoint so that my shift is completed.
+Acceptance Criteria:
+Scenario: Successful clock-out
+Given a valid clock-in event
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded and hours are calculated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Prevent duplicate clock-outs
+
+**User Story 3: Capture Geofence and Device Info**
+User Story: As a supervisor I want clock-in/out events to capture geofence and device info so that attendance is verified.
+Acceptance Criteria:
+Scenario: Geofence validation
+Given a clock-in request
+When geofence and device info are provided
+Then the event is accepted only if within allowed location
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04
+- Notes: Optional feature
+
+**User Story 4: Handle Missed Punches and Corrections Workflow**
+User Story: As a worker I want to request corrections for missed punches so that my attendance is accurate.
+Acceptance Criteria:
+Scenario: Correction request
+Given a missed punch
+When I submit a correction
+Then an approval task is created for supervisor
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04
+- Notes: Track correction status
+
+**User Story 5: Calculate Daily Totals and Export Reports**
+User Story: As an HR user I want daily attendance totals and exportable reports so that payroll can be processed.
+Acceptance Criteria:
+Scenario: Report export
+Given attendance data
+When I request a CSV export
+Then daily totals are included and file is generated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04
+- Notes: Support date range filtering
