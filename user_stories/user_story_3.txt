@@ -1,0 +1,14 @@
+USER STORY 3
+Title: Database Migration Tooling
+User Story: As a DATABASE ADMIN I want Flyway or Liquibase configured for database migrations So that schema changes are versioned and repeatable across environments.
+Acceptance Criteria:
+Scenario: Database Migration Execution
+  Given a new environment
+  When the application starts
+  Then Flyway/Liquibase should apply the baseline migration successfully
+  And no migration errors should occur
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Project Initialization
+Notes: Use baseline migration scripts for initial setup.
