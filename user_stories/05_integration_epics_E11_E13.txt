@@ -1,0 +1,318 @@
+### EPIC E11: Payroll Export Integration
+
+**User Story 50**
+
+**Title:** Generate Payroll Export
+
+**User Story:** As a payroll admin, I want to generate payroll-ready files from attendance and leave data So that I can process payroll accurately.
+
+**Acceptance Criteria:**
+
+Scenario: Exporting payroll data
+Given all attendance and leave is approved
+When I generate the export
+Then the file matches the provider schema and totals reconcile
+
+**Additional Details:**
+- Priority: High
+- Story Points: 3
+- Dependencies: E04, E06
+- Notes: Supports multiple formats.
+
+---
+
+**User Story 51**
+
+**Title:** Map Data to Provider Schema
+
+**User Story:** As a payroll admin, I want to map internal data to external provider formats So that exports are compatible.
+
+**Acceptance Criteria:**
+
+Scenario: Mapping fields
+Given I configure a provider
+When I export payroll
+Then fields are mapped as per provider requirements
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Supports SFTP/API delivery.
+
+---
+
+**User Story 52**
+
+**Title:** Secure Delivery of Payroll Files
+
+**User Story:** As a payroll admin, I want payroll files delivered securely So that sensitive data is protected.
+
+**Acceptance Criteria:**
+
+Scenario: Delivering export
+Given an export is generated
+When I deliver via SFTP/API
+Then the transfer is encrypted and logged
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Retries on failure.
+
+---
+
+**User Story 53**
+
+**Title:** Audit Payroll Export Events
+
+**User Story:** As an auditor, I want all payroll exports logged So that I can trace file generation and delivery.
+
+**Acceptance Criteria:**
+
+Scenario: Viewing export log
+Given I am an auditor
+When I view payroll export history
+Then I see actor, timestamp, and status for each export
+
+**Additional Details:**
+- Priority: High
+- Story Points: 1
+- Dependencies: E04, E06
+- Notes: Tamper-evident logs.
+
+---
+
+**User Story 54**
+
+**Title:** Reconcile Payroll Totals
+
+**User Story:** As a payroll admin, I want to reconcile exported totals with internal reports So that I can ensure accuracy.
+
+**Acceptance Criteria:**
+
+Scenario: Reconciling totals
+Given an export is generated
+When I compare with internal reports
+Then totals match or discrepancies are flagged
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Alerts on mismatch.
+
+---
+
+### EPIC E12: Notifications & Announcements
+
+**User Story 55**
+
+**Title:** Send Shift Change Notification
+
+**User Story:** As a supervisor, I want to notify employees of shift changes So that they stay informed.
+
+**Acceptance Criteria:**
+
+Scenario: Shift change
+Given a shift is updated
+When the change is saved
+Then affected employees receive notifications via selected channels
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05
+- Notes: In-app, email, SMS.
+
+---
+
+**User Story 56**
+
+**Title:** Notify on Expiring Certifications
+
+**User Story:** As a system, I want to notify users of expiring certifications So that renewals are not missed.
+
+**Acceptance Criteria:**
+
+Scenario: Certification expiry
+Given a certification expires soon
+When the system checks expirations
+Then notifications are sent as per user preferences
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E07
+- Notes: Quiet hours respected.
+
+---
+
+**User Story 57**
+
+**Title:** Approval Workflow Notifications
+
+**User Story:** As an employee, I want to receive notifications for approvals So that I know when requests are processed.
+
+**Acceptance Criteria:**
+
+Scenario: Leave approval
+Given I have a pending request
+When it is approved or denied
+Then I receive a notification
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E06
+- Notes: Opt-in/out per channel.
+
+---
+
+**User Story 58**
+
+**Title:** Announcements Dashboard
+
+**User Story:** As a worker, I want to view company announcements So that I stay updated on important news.
+
+**Acceptance Criteria:**
+
+Scenario: Viewing announcements
+Given I am logged in
+When I access the dashboard
+Then I see all current announcements
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03
+- Notes: Localized templates.
+
+---
+
+**User Story 59**
+
+**Title:** Track Notification Delivery
+
+**User Story:** As an admin, I want to track notification delivery status So that I can ensure messages are received.
+
+**Acceptance Criteria:**
+
+Scenario: Viewing delivery status
+Given I sent a notification
+When I view its status
+Then I see delivered, failed, or pending for each recipient
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03
+- Notes: Rate limits applied.
+
+---
+
+### EPIC E13: Integration Layer (HRIS/WMS APIs)
+
+**User Story 60**
+
+**Title:** Expose HRIS API for Employee Sync
+
+**User Story:** As an integration engineer, I want to expose a secure API for HRIS So that new hires and terminations sync automatically.
+
+**Acceptance Criteria:**
+
+Scenario: HRIS sync
+Given a new hire in HRIS
+When the sync job runs
+Then the employee is created in the system
+
+**Additional Details:**
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: JWT/OAuth2 secured.
+
+---
+
+**User Story 61**
+
+**Title:** WMS Department/Location Integration
+
+**User Story:** As an admin, I want to link departments and locations with WMS So that assignments are consistent.
+
+**Acceptance Criteria:**
+
+Scenario: WMS sync
+Given a department/location update in WMS
+When the sync job runs
+Then the change is reflected in the system
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Idempotent updates.
+
+---
+
+**User Story 62**
+
+**Title:** SSO Integration with IDP
+
+**User Story:** As an IT admin, I want to enable SSO via IDP So that users can log in with corporate credentials.
+
+**Acceptance Criteria:**
+
+Scenario: SSO login
+Given SSO is configured
+When a user logs in
+Then authentication is delegated to the IDP
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Supports SAML/OAuth2.
+
+---
+
+**User Story 63**
+
+**Title:** Webhooks for Key Events
+
+**User Story:** As an integration engineer, I want to configure webhooks for key events So that external systems stay in sync.
+
+**Acceptance Criteria:**
+
+Scenario: Event webhook
+Given a configured webhook
+When a relevant event occurs
+Then a POST is sent to the target URL
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Retry on failure.
+
+---
+
+**User Story 64**
+
+**Title:** OpenAPI Documentation
+
+**User Story:** As a developer, I want OpenAPI docs for all integration endpoints So that I can build clients easily.
+
+**Acceptance Criteria:**
+
+Scenario: Accessing API docs
+Given I am a developer
+When I visit the docs endpoint
+Then I see up-to-date OpenAPI documentation
+
+**Additional Details:**
+- Priority: High
+- Story Points: 1
+- Dependencies: E01, E02, E03
+- Notes: Includes schemas and examples.
