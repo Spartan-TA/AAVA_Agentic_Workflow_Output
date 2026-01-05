@@ -1,0 +1,102 @@
+USER STORY 4
+Title: Employee CRUD API - Create Employee
+User Story: As an HR MANAGER I want to create new employee records with name, badgeId, role, department, shiftGroup, hireDate, and status So that I can maintain accurate employee master data.
+Acceptance Criteria:
+Scenario: Create Employee
+  Given valid employee details
+  When I POST to /employees
+  Then a new employee record is created
+  And the badgeId is unique
+  And the response matches the OpenAPI schema
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: Project Scaffolding
+Notes: Enforce badgeId uniqueness at DB and API level.
+
+USER STORY 5
+Title: Employee CRUD API - Update Employee
+User Story: As an HR MANAGER I want to update employee details So that I can keep employee records current.
+Acceptance Criteria:
+Scenario: Update Employee
+  Given an existing employee
+  When I PUT or PATCH to /employees/{id}
+  Then the employee record is updated
+  And the response matches the OpenAPI schema
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Employee CRUD API - Create Employee
+Notes: Support partial updates via PATCH.
+
+USER STORY 6
+Title: Employee CRUD API - Delete (Soft Delete) Employee
+User Story: As an HR MANAGER I want to soft-delete employee records So that historical data is preserved but inactive employees are not shown in active lists.
+Acceptance Criteria:
+Scenario: Soft Delete Employee
+  Given an existing employee
+  When I DELETE /employees/{id}
+  Then the employee status is set to inactive (soft delete)
+  And the record is excluded from active queries
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Employee CRUD API - Create Employee
+Notes: Implement soft-delete, not hard delete.
+
+USER STORY 7
+Title: Employee CRUD API - List and Filter Employees
+User Story: As an ADMIN I want to list, paginate, and filter employee records So that I can efficiently manage large employee datasets.
+Acceptance Criteria:
+Scenario: List and Filter Employees
+  Given multiple employee records
+  When I GET /employees with pagination and filter parameters
+  Then the response contains the correct subset of employees
+  And the response matches the OpenAPI schema
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Employee CRUD API - Create Employee
+Notes: Support filtering by department, status, role, etc.
+
+USER STORY 8
+Title: Role-Based Access Control - Endpoint Security
+User Story: As a SECURITY ADMIN I want to restrict API endpoints based on user roles (ADMIN, HR, SUPERVISOR, WORKER) So that only authorized users can perform sensitive operations.
+Acceptance Criteria:
+Scenario: Unauthorized Access
+  Given a user without the required role
+  When they attempt to access a restricted endpoint
+  Then the API returns 401 Unauthorized or 403 Forbidden as appropriate
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: Project Scaffolding, Employee CRUD
+Notes: Cover all endpoints with appropriate security annotations.
+
+USER STORY 9
+Title: Role-Based Access Control - Row-Level Security
+User Story: As a SUPERVISOR I want to access only the employee records for my team So that I cannot view or modify records outside my scope.
+Acceptance Criteria:
+Scenario: Row-Level Security for Supervisors
+  Given a supervisor user
+  When they GET /employees
+  Then only employees in their team are returned
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Employee CRUD, RBAC Endpoint Security
+Notes: Implement row-level constraints in queries.
+
+USER STORY 10
+Title: RBAC - API Key/OAuth2 Toggle
+User Story: As a SYSTEM ADMIN I want to toggle between API key and OAuth2 authentication via configuration So that I can support different security models.
+Acceptance Criteria:
+Scenario: Auth Mode Toggle
+  Given a configuration setting
+  When I switch between API key and OAuth2
+  Then the application enforces the selected authentication method for all endpoints
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Project Scaffolding, RBAC Endpoint Security
+Notes: Document configuration steps in README.
