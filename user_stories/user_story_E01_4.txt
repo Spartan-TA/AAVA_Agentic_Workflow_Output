@@ -1,0 +1,16 @@
+Title: Enable Actuator Endpoints
+
+User Story: As an operator, I want Actuator endpoints enabled so that I can monitor application health and metrics.
+
+Acceptance Criteria:
+
+Scenario: Actuator endpoints available
+Given the application is running
+When I GET `/actuator/health` and `/actuator/info`
+Then both endpoints return 200
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Secure endpoints for production.
