@@ -1,0 +1,12 @@
+Title: Role-Based Endpoint Security
+User Story: As a system administrator I want to restrict sensitive endpoints to authorized roles so that only permitted users can access or modify employee data.
+Acceptance Criteria:
+Scenario: Unauthorized access attempt
+  Given a user without the required role
+  When they attempt to access a protected endpoint
+  Then the system returns a 401 or 403 error
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: Employee CRUD, Project Scaffolding
+Notes: All endpoints must be covered by automated security tests.
