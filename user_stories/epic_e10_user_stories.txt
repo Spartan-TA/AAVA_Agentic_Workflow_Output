@@ -1,0 +1,105 @@
+EPIC E10 - Performance Reviews & Goals
+
+===========================================
+
+User Story 1
+------------
+Title: Create Performance Review Cycle
+
+User Story: As an HR user, I want to create quarterly and annual review cycles so that structured feedback is scheduled.
+
+Acceptance Criteria:
+Scenario: Create review cycle
+  Given review cycle data
+  When I POST to /reviews/cycles
+  Then a new cycle is created and assigned to employees
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Supports multiple cycles.
+
+===========================================
+
+User Story 2
+------------
+Title: Track Goals and Competencies
+
+User Story: As a supervisor, I want to set and track goals and competencies for employees so that development is monitored.
+
+Acceptance Criteria:
+Scenario: Update employee goals
+  Given employee goals
+  When I update progress
+  Then the goals and competencies are tracked
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Supports feedback.
+
+===========================================
+
+User Story 3
+------------
+Title: Review Submission and Acknowledgement Workflow
+
+User Story: As an employee, I want to submit and acknowledge reviews so that feedback is documented.
+
+Acceptance Criteria:
+Scenario: Submit or acknowledge review
+  Given a review
+  When I submit or acknowledge
+  Then the workflow progresses and history is logged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Immutable after sign-off.
+
+===========================================
+
+User Story 4
+------------
+Title: PDF Export of Performance Reviews
+
+User Story: As an HR user, I want to export reviews as PDFs so that records are easily shared and archived.
+
+Acceptance Criteria:
+Scenario: Export review to PDF
+  Given a completed review
+  When I request export
+  Then a PDF is generated with all details
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Supports compliance.
+
+===========================================
+
+User Story 5
+------------
+Title: Role-Based Visibility of Reviews
+
+User Story: As a system, I want reviews visible only to authorized roles so that privacy is maintained.
+
+Acceptance Criteria:
+Scenario: Authorized access to reviews
+  Given a review
+  When accessed by HR or supervisor
+  Then details are visible
+
+Scenario: Unauthorized access denied
+  When accessed by unauthorized user
+  Then access is denied
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Enforces privacy.
