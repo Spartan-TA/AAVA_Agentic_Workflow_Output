@@ -1,0 +1,29 @@
+### E07 - Training & Certification Tracking
+
+**User Story 1**
+Title: Manage Certifications
+User Story: As an HR user, I want to CRUD certifications for employees So that compliance is tracked.
+Acceptance Criteria:
+- Given employee, When I add/edit/delete certifications, Then the employee profile updates accordingly.
+Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: CRUD operations.
+
+**User Story 2**
+Title: Certification Expiry Alerts
+User Story: As a supervisor, I want alerts for certifications expiring in 30/7 days So that renewals are timely.
+Acceptance Criteria:
+- Given expiring certs, When within 30/7 days, Then alert notifications are sent to employee and supervisor.
+Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Alerting.
+
+**User Story 3**
+Title: Block Assignment for Expired Certifications
+User Story: As a scheduler, I want to prevent assignment to tasks requiring expired certifications So that only qualified staff are assigned.
+Acceptance Criteria:
+- Given expired cert, When assigning to equipment-sensitive role, Then assignment is blocked and error shown.
+Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Assignment checks.
+
+**User Story 4**
+Title: Upload Proof Documents
+User Story: As an employee, I want to upload proof of certification So that my records are complete.
+Acceptance Criteria:
+- Given certification, When I upload a document, Then it is stored and visible on my profile.
+Additional Details: Priority: High, Story Points: 1, Dependencies: E02, E03, Notes: File upload.
