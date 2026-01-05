@@ -1,0 +1,105 @@
+EPIC E09 - Equipment & Asset Assignment
+
+===========================================
+
+User Story 1
+------------
+Title: Asset Registry CRUD Operations
+
+User Story: As an asset manager, I want to create, update, and delete assets so that inventory is accurate.
+
+Acceptance Criteria:
+Scenario: Manage asset registry
+  Given asset data
+  When I POST/PUT/DELETE /assets
+  Then the asset registry is updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Includes PPE, scanners, forklifts.
+
+===========================================
+
+User Story 2
+------------
+Title: Asset Check-In/Check-Out Endpoints
+
+User Story: As a supervisor, I want endpoints for checking assets in and out so that usage is tracked.
+
+Acceptance Criteria:
+Scenario: Check out asset
+  Given an asset and employee
+  When I POST to /assets/checkout
+  Then the asset is assigned and history is logged
+
+Scenario: Check in asset
+  When I POST to /assets/checkin
+  Then the asset is returned and condition updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Tracks accountability.
+
+===========================================
+
+User Story 3
+------------
+Title: Block Asset Use for Invalid Certification
+
+User Story: As a system, I want to block asset assignment if required certifications are missing or expired so that safety is enforced.
+
+Acceptance Criteria:
+Scenario: Block checkout without valid certification
+  Given an asset requiring certification
+  When an employee lacks valid cert
+  Then the system blocks checkout and notifies the user
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Safety compliance.
+
+===========================================
+
+User Story 4
+------------
+Title: Asset History Log Per Employee and Asset
+
+User Story: As an auditor, I want to view the history of asset assignments per employee and asset so that accountability is clear.
+
+Acceptance Criteria:
+Scenario: View asset history
+  Given asset and employee
+  When I view history
+  Then I see all check-in/out events with timestamps
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E07
+- Notes: Supports audits.
+
+===========================================
+
+User Story 5
+------------
+Title: Overdue Asset Return Report
+
+User Story: As a supervisor, I want a report of overdue asset returns so that I can follow up with employees.
+
+Acceptance Criteria:
+Scenario: Generate overdue report
+  Given asset assignment data
+  When I request the report
+  Then I see all assets overdue for return
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E07
+- Notes: Reduces loss.
