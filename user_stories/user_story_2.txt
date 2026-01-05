@@ -1,0 +1,14 @@
+USER STORY 2
+Title: Set Up Core Modules and Actuator
+User Story: As a BACKEND DEVELOPER I want to set up core modules (employee, scheduling, attendance, safety) and enable Actuator endpoints So that system health and module separation are ensured from the start.
+Acceptance Criteria:
+Scenario: Core Module and Actuator Setup
+  Given the initialized project
+  When I access the Actuator health endpoint
+  Then it should return "UP"
+  And the core modules should be present in the package structure
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Project Initialization
+Notes: Ensure modular separation for future scalability.
