@@ -1,0 +1,122 @@
+# Production profile configuration for Warehouse Employee Management System
+
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:postgresql://prod-db-server:5432/warehouse_employee_mgmt
+    username: warehouse_prod_user
+    password: strongProductionPassword123!
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+      idle-timeout: 600000
+      connection-timeout: 30000
+      pool-name: WarehouseEmployeeMgmtHikariCP
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+  data:
+    redis:
+      host: prod-redis-server
+      port: 6379
+      password: strongRedisPassword!
+      timeout: 6000
+      database: 0
+  cache:
+    type: redis
+    cache-names: employee,attendance,shift,leave,certification,asset,performanceReview
+    redis:
+      time-to-live: 3600s
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+    min-response-size: 1024
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+logging:
+  level:
+    root: INFO
+    com.warehouse: INFO
+    org.springframework.web: WARN
+  file:
+    name: /var/log/warehouse-employee-mgmt/application.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+security:
+  jwt:
+    secret: "SuperSecretProductionJWTKeyChangeMe!"
+    expiration: 86400000
+    issuer: "warehouse-employee-mgmt-prod"
+  oauth2:
+    client-id: "warehouse-prod-client"
+    client-secret: "warehouse-prod-client-secret"
+    authorized-grant-types: password,refresh_token
+    access-token-validity-seconds: 86400
+    refresh-token-validity-seconds: 2592000
+
+cors:
+  allowed-origins: "https://warehouse.company.com"
+  allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+  allowed-headers: "Authorization,Content-Type"
+  allow-credentials: true
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+warehouse:
+  notification:
+    email:
+      from: "no-reply@warehouse.company.com"
+      smtp-server: "smtp.prod.company.com"
+      smtp-port: 587
+      username: "smtp-prod-user"
+      password: "smtp-prod-password"
+    sms:
+      provider: "Twilio"
+      account-sid: "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      auth-token: "your_twilio_auth_token"
+      from-number: "+15555555555"
+  payroll:
+    export-path: "/var/warehouse/payroll_exports/"
+    retry-max-attempts: 3
+    retry-delay-ms: 5000
