@@ -1,0 +1,104 @@
+# E10: Performance Reviews & Goals
+
+## User Story 1: Create Review Templates
+**User Story:**  
+As an HR user, I want to create quarterly and annual review templates so that performance reviews are standardized.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given I POST to /reviews/templates
+Then a new template is created with goals, competencies, and rating scales
+
+Given I GET /reviews/templates
+Then all templates are listed
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E02, E03  
+Notes: Support custom questions.
+
+---
+
+## User Story 2: Assign Reviews to Employees
+**User Story:**  
+As a supervisor, I want to assign review cycles to employees so that feedback is structured.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a review cycle is active
+When I assign it to employees
+Then tasks are generated for completion
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E02, E03  
+Notes: Notify employees and supervisors.
+
+---
+
+## User Story 3: Submit and Acknowledge Reviews
+**User Story:**  
+As an employee, I want to submit my self-review and acknowledge supervisor feedback so that the process is collaborative.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a review is assigned
+When I submit my self-review
+Then it is saved and visible to my supervisor
+
+Given supervisor feedback is provided
+When I acknowledge it
+Then the review is marked as complete
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E02, E03  
+Notes: Lock review after both parties sign off.
+
+---
+
+## User Story 4: Export Reviews as PDF
+**User Story:**  
+As an HR user, I want to export completed reviews as PDF so that records are archived.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a review is complete
+When I export it
+Then a PDF file is generated with all details
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 1  
+Dependencies: E02, E03  
+Notes: Include signatures and timestamps.
+
+---
+
+## User Story 5: Role-Based Visibility and Immutable History
+**User Story:**  
+As an auditor, I want reviews to be visible only to authorized roles and history to be immutable after sign-off so that integrity is maintained.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a review is signed off
+When I attempt to edit it
+Then the system prevents changes
+
+Given I am not part of the review process
+When I try to access a review
+Then access is denied
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E02, E03  
+Notes: Log all access attempts.
