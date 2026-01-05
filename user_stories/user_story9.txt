@@ -1,0 +1,15 @@
+Title: Role-Based Access Control (RBAC) - Role Assignment
+
+User Story: As an admin I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users so that access is controlled based on responsibilities.
+
+Acceptance Criteria:
+Scenario: Assign role
+Given a user exists
+When I update their role
+Then their permissions reflect the assigned role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD
+- Notes: Roles should be persisted and enforced.
