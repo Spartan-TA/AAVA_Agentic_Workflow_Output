@@ -1,0 +1,40 @@
+### E01 â Project Scaffolding & Domain Setup
+
+**User Story 1:**  
+- Title: Initialize Spring Boot Project Structure  
+- User Story: As a developer, I want a standardized Spring Boot project scaffolded with Maven so that all modules follow a consistent structure and build process.  
+- Acceptance Criteria:  
+  - Given the repository is cloned  
+    When I run `mvn clean install`  
+    Then the project builds successfully and runs on port 8080  
+  - Given the project is running  
+    When I access `/actuator/health`  
+    Then I receive a response with status "UP"  
+- Additional Details: Priority: High, Story Points: 3, Dependencies: None, Notes: README must include build/run instructions.
+
+**User Story 2:**  
+- Title: Configure Base Packages and Core Modules  
+- User Story: As a developer, I want base packages and core modules (employee, scheduling, attendance, safety) set up so that future features can be developed in isolation.  
+- Acceptance Criteria:  
+  - Given the codebase  
+    When I browse the package structure  
+    Then I see separate packages for employee, scheduling, attendance, and safety  
+- Additional Details: Priority: High, Story Points: 2, Dependencies: None
+
+**User Story 3:**  
+- Title: Database Migration Setup  
+- User Story: As a developer, I want Flyway or Liquibase configured for database migrations so that schema changes are version-controlled and repeatable.  
+- Acceptance Criteria:  
+  - Given the project is built  
+    When I start the application  
+    Then Flyway/Liquibase runs the baseline migration without errors  
+- Additional Details: Priority: High, Story Points: 2, Dependencies: None
+
+**User Story 4:**  
+- Title: Enable Actuator Endpoints  
+- User Story: As an operations engineer, I want Spring Boot Actuator enabled so that I can monitor application health and metrics.  
+- Acceptance Criteria:  
+  - Given the application is running  
+    When I access `/actuator/health`  
+    Then I receive a status "UP"  
+- Additional Details: Priority: High, Story Points: 1, Dependencies: None
