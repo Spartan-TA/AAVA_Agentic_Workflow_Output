@@ -1,0 +1,87 @@
+# E03: Role-Based Access Control (RBAC)
+
+## User Story 1: Implement Role-Based Endpoint Security
+**User Story:**  
+As a system administrator, I want to restrict API endpoints based on user roles so that sensitive data is protected.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a user without the required role
+When they access a protected endpoint
+Then the response is 403 Forbidden
+
+Given a user with ADMIN role
+When they access any endpoint
+Then access is granted
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 3  
+Dependencies: E01, E02  
+Notes: Roles: ADMIN, HR, SUPERVISOR, WORKER.
+
+---
+
+## User Story 2: Enforce Row-Level Security for Supervisors
+**User Story:**  
+As a supervisor, I want to access only my team's data so that privacy is maintained.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a supervisor user
+When they GET /employees
+Then only employees in their team are returned
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E01, E02  
+Notes: Team membership must be defined.
+
+---
+
+## User Story 3: Support API Key/OAuth2 Toggle
+**User Story:**  
+As a DevOps engineer, I want to toggle between API key and OAuth2 authentication via configuration so that integration is flexible.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given the config is set to API key
+When requests include a valid key
+Then access is granted
+
+Given the config is set to OAuth2
+When requests include a valid token
+Then access is granted
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E01, E02  
+Notes: Document configuration options.
+
+---
+
+## User Story 4: Return Proper HTTP Status Codes for Unauthorized/Forbidden
+**User Story:**  
+As a developer, I want the API to return 401 for unauthorized and 403 for forbidden actions so that clients can handle errors correctly.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a request without authentication
+When accessing a protected endpoint
+Then the response is 401 Unauthorized
+
+Given a request with insufficient privileges
+When accessing a restricted endpoint
+Then the response is 403 Forbidden
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 1  
+Dependencies: E01, E02  
+Notes: Add tests for security rules.
