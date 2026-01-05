@@ -1,0 +1,29 @@
+### E17: Onboarding & Offboarding Workflow
+
+**User Story 1**
+- Title: Automated Onboarding from HRIS
+- User Story: As an HR user, I want new hires from HRIS to trigger onboarding tasks so that provisioning is automated.
+- Acceptance Criteria in Gherkin format:
+  Scenario: New hire onboarding
+  Given a new hire appears in HRIS
+  When the system syncs
+  Then accounts, schedules, and training tasks are created
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E02, E03, E05, E07, E09, E13
+  * Notes: Asset assignment included.
+
+**User Story 2**
+- Title: Automated Offboarding Workflow
+- User Story: As an HR user, I want offboarding to revoke access and collect assets so that terminations are secure.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Offboarding process
+  Given an employee is terminated
+  When offboarding is triggered
+  Then access is revoked, assets are collected, and schedules updated
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E02, E03, E05, E07, E09, E13
+  * Notes: Integration with asset registry.
