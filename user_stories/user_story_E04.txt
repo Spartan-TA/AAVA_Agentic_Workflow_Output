@@ -1,0 +1,53 @@
+### Epic E04: Time & Attendance (Clock In/Out)
+
+**User Story 1**
+Title: Employee Clock-In Event
+User Story: As a worker, I want to clock in via endpoint with optional geofence and device capture so that my attendance is accurately recorded.
+Acceptance Criteria:
+Scenario: Clock-In
+Given valid credentials and location
+When I POST to /attendance/clock-in
+Then my clock-in event is recorded and validated
+Priority: High
+Story Points: 3
+Dependencies: E02, E03
+Notes: Geofence optional.
+
+**User Story 2**
+Title: Employee Clock-Out Event
+User Story: As a worker, I want to clock out via endpoint so that my shift hours are tracked.
+Acceptance Criteria:
+Scenario: Clock-Out
+Given a clock-in event exists
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded and shift hours calculated
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Automatic shift association.
+
+**User Story 3**
+Title: Missed Punch Correction Workflow
+User Story: As a supervisor, I want to handle missed punches and approve corrections so that attendance data remains accurate.
+Acceptance Criteria:
+Scenario: Correction Request
+Given a missed punch
+When a correction is submitted
+Then an approval task is created for supervisor review
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Approval workflow required.
+
+**User Story 4**
+Title: Attendance Reporting
+User Story: As an HR user, I want to export attendance reports in CSV format so that payroll processing is streamlined.
+Acceptance Criteria:
+Scenario: Report Export
+Given attendance data
+When I request a CSV export
+Then the report is generated with daily totals
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Exportable via endpoint.
