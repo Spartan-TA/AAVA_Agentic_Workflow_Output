@@ -1,0 +1,15 @@
+Title: Set Up Core Modules (Employee, Scheduling, Attendance, Safety)
+
+User Story:
+As a developer, I want to set up the core modules for employee, scheduling, attendance, and safety so that the project structure supports all required business domains from the start.
+
+Acceptance Criteria:
+Given the base package structure is created,
+When I inspect the codebase,
+Then there are separate modules/packages for employee, scheduling, attendance, and safety, each with initial domain classes.
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Project scaffolding must be complete
+Notes: Each module should have a placeholder for future API and service logic.
