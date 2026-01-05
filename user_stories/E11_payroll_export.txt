@@ -1,0 +1,78 @@
+# E11: Payroll Export Integration
+
+## User Story 1: Generate Payroll-Ready Export Files
+**User Story:**  
+As a payroll manager, I want to generate export files from approved attendance and leave so that payroll processing is automated.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given attendance and leave data is approved
+When I generate an export
+Then the file matches the provider's schema
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E04, E06  
+Notes: Support multiple provider formats.
+
+---
+
+## User Story 2: Secure Delivery of Payroll Files (SFTP/API)
+**User Story:**  
+As a payroll manager, I want payroll files delivered securely via SFTP or API so that sensitive data is protected.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given an export file is generated
+When delivery is configured for SFTP or API
+Then the file is transmitted securely
+
+Given delivery fails
+Then the system retries with exponential backoff
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E04, E06  
+Notes: Log all delivery attempts.
+
+---
+
+## User Story 3: Reconcile Export Totals with Reports
+**User Story:**  
+As a payroll manager, I want to reconcile export totals with attendance and leave reports so that errors are detected.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given an export is generated
+When I compare totals with reports
+Then all values match or discrepancies are flagged
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E04, E06  
+Notes: Provide reconciliation report.
+
+---
+
+## User Story 4: Audit Log for Payroll Exports
+**User Story:**  
+As an auditor, I want an audit log for every payroll export so that compliance is ensured.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a payroll export occurs
+When I view the audit log
+Then all details (timestamp, user, status) are recorded
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 1  
+Dependencies: E04, E06  
+Notes: Include export file hash.
