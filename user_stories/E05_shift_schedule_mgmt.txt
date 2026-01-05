@@ -1,0 +1,103 @@
+# E05: Shift & Schedule Management
+
+## User Story 1: Create and Manage Shift Templates
+**User Story:**  
+As an HR user, I want to create recurring shift templates so that scheduling is efficient.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given I have HR role
+When I POST to /shifts/templates with valid data
+Then a new shift template is created
+
+Given I GET /shifts/templates
+Then all templates are listed
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E02, E03, E04  
+Notes: Support weekly, biweekly, custom patterns.
+
+---
+
+## User Story 2: Assign Shifts to Employees and Detect Conflicts
+**User Story:**  
+As a supervisor, I want to assign shifts to employees and prevent conflicts so that staffing is adequate.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given an employee is already scheduled
+When I assign an overlapping shift
+Then the system prevents the assignment
+
+Given I assign a shift with no conflicts
+Then the assignment is successful
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 3  
+Dependencies: E02, E03, E04  
+Notes: Bulk assignment supported.
+
+---
+
+## User Story 3: Manage Warehouse Operation Calendars and Blackout Dates
+**User Story:**  
+As an HR user, I want to define blackout dates and operation calendars so that scheduling respects warehouse closures.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a blackout date is set
+When I assign a shift on that date
+Then the system prevents the assignment
+
+Given I view the calendar
+Then blackout dates are clearly marked
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E02, E03, E04  
+Notes: Allow exceptions for critical roles.
+
+---
+
+## User Story 4: Workers View Upcoming Shifts
+**User Story:**  
+As a worker, I want to view my upcoming shifts so that I can plan accordingly.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given I am logged in as a worker
+When I view my schedule
+Then I see all upcoming assigned shifts
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 1  
+Dependencies: E02, E03, E04  
+Notes: Mobile-friendly view.
+
+---
+
+## User Story 5: Generate Audit Entries for Schedule Changes
+**User Story:**  
+As an auditor, I want all schedule changes to be logged so that compliance is maintained.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a shift assignment is created, updated, or deleted
+When I view the audit log
+Then the change is recorded with actor, timestamp, and details
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 1  
+Dependencies: E02, E03, E04  
+Notes: Integrate with audit trail module.
