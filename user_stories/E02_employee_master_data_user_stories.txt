@@ -1,0 +1,49 @@
+### E02 â Employee Master Data (CRUD)
+
+**User Story 1:**  
+- Title: Create Employee API (POST)  
+- User Story: As an HR user, I want to create new employee records with name, badgeId, role, department, shiftGroup, hireDate, and status so that all employee data is centrally managed.  
+- Acceptance Criteria:  
+  - Given valid employee data  
+    When I POST to `/employees`  
+    Then the employee is created and badgeId is unique  
+  - Given a duplicate badgeId  
+    When I POST to `/employees`  
+    Then I receive a validation error  
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01
+
+**User Story 2:**  
+- Title: Retrieve Employee Records (GET)  
+- User Story: As an HR user, I want to retrieve employee records with pagination and filtering so that I can efficiently manage large employee lists.  
+- Acceptance Criteria:  
+  - Given multiple employees exist  
+    When I GET `/employees?department=Shipping&page=1`  
+    Then I receive a paginated, filtered list  
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01
+
+**User Story 3:**  
+- Title: Update Employee Data (PUT/PATCH)  
+- User Story: As an HR user, I want to update employee details so that records remain current.  
+- Acceptance Criteria:  
+  - Given an existing employee  
+    When I PUT/PATCH `/employees/{id}`  
+    Then the employee data is updated  
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01
+
+**User Story 4:**  
+- Title: Soft Delete Employee  
+- User Story: As an HR user, I want to soft-delete employee records so that historical data is retained but inactive employees are hidden from active lists.  
+- Acceptance Criteria:  
+  - Given an employee  
+    When I DELETE `/employees/{id}`  
+    Then the employee is marked as inactive, not removed from the database  
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01
+
+**User Story 5:**  
+- Title: OpenAPI Schema Generation  
+- User Story: As a developer, I want OpenAPI schemas with examples for employee endpoints so that API consumers can integrate easily.  
+- Acceptance Criteria:  
+  - Given the API documentation  
+    When I view the OpenAPI spec  
+    Then all employee endpoints are documented with request/response examples  
+- Additional Details: Priority: High, Story Points: 1, Dependencies: E01
