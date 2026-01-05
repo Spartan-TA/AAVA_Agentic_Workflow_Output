@@ -1,0 +1,101 @@
+EPIC E11 - Payroll Export Integration
+
+===========================================
+
+User Story 1
+------------
+Title: Generate Payroll-Ready Export Files
+
+User Story: As a payroll admin, I want to generate export files from approved attendance and leave so that payroll runs are accurate.
+
+Acceptance Criteria:
+Scenario: Generate payroll export
+  Given approved attendance and leave
+  When I request export
+  Then a file matching provider schema is generated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04, E06
+- Notes: Supports multiple formats.
+
+===========================================
+
+User Story 2
+------------
+Title: Reconcile Export Totals with Reports
+
+User Story: As a payroll admin, I want export totals to reconcile with attendance and leave reports so that errors are minimized.
+
+Acceptance Criteria:
+Scenario: Reconcile totals
+  Given exported data
+  When I compare with reports
+  Then totals match and discrepancies are flagged
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Reduces manual checks.
+
+===========================================
+
+User Story 3
+------------
+Title: Secure Delivery of Payroll Files
+
+User Story: As a system, I want to deliver payroll files securely via SFTP or API so that sensitive data is protected.
+
+Acceptance Criteria:
+Scenario: Secure file delivery
+  Given an export file
+  When delivery is initiated
+  Then file is sent via secure channel and delivery status is tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Supports SFTP/API.
+
+===========================================
+
+User Story 4
+------------
+Title: Retry Failed Deliveries with Backoff
+
+User Story: As a system, I want failed payroll deliveries retried with exponential backoff so that files are reliably sent.
+
+Acceptance Criteria:
+Scenario: Retry failed delivery
+  Given a failed delivery
+  When retry is triggered
+  Then delivery is attempted with increasing intervals until success or max retries
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E04, E06
+- Notes: Improves reliability.
+
+===========================================
+
+User Story 5
+------------
+Title: Audit Log for Payroll Exports
+
+User Story: As an auditor, I want an audit log for every payroll export so that all actions are traceable.
+
+Acceptance Criteria:
+Scenario: Log payroll export
+  Given an export
+  When delivery occurs
+  Then an audit entry is created with actor, timestamp, and status
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E04, E06
+- Notes: Supports compliance.
