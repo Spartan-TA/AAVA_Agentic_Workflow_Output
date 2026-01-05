@@ -1,0 +1,325 @@
+### EPIC E18: Localization & Multi-Tenant
+
+**User Story 85**
+
+**Title:** Multi-Tenant Data Isolation
+
+**User Story:** As a system admin, I want tenant data isolated So that each company's data is secure and separate.
+
+**Acceptance Criteria:**
+
+Scenario: Accessing data
+Given I am logged in
+When I access records
+Then I only see data for my tenant
+
+**Additional Details:**
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Enforced at DB and API.
+
+---
+
+**User Story 86**
+
+**Title:** Localize UI Strings
+
+**User Story:** As a user, I want the UI in my preferred language So that I can use the system comfortably.
+
+**Acceptance Criteria:**
+
+Scenario: Selecting language
+Given multiple languages are available
+When I select my language
+Then all UI strings update accordingly
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Supports en, es, fr, etc.
+
+---
+
+**User Story 87**
+
+**Title:** Localize Notification Templates
+
+**User Story:** As a user, I want notifications in my language So that I understand messages clearly.
+
+**Acceptance Criteria:**
+
+Scenario: Receiving notification
+Given I have set my language
+When I receive a notification
+Then it is localized
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E12
+- Notes: Template-based.
+
+---
+
+**User Story 88**
+
+**Title:** Tenant Admin Role
+
+**User Story:** As a tenant admin, I want to manage users and settings for my company only So that I control my environment.
+
+**Acceptance Criteria:**
+
+Scenario: Managing users
+Given I am a tenant admin
+When I add or remove users
+Then changes only affect my tenant
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: No cross-tenant access.
+
+---
+
+**User Story 89**
+
+**Title:** Tenant-Specific Branding
+
+**User Story:** As a tenant admin, I want to customize branding So that the system reflects my company's identity.
+
+**Acceptance Criteria:**
+
+Scenario: Updating branding
+Given I am a tenant admin
+When I upload a logo and set colors
+Then my tenant's UI updates accordingly
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E01
+- Notes: Branding per tenant.
+
+---
+
+### EPIC E19: Advanced Scheduling (AI/Optimization)
+
+**User Story 90**
+
+**Title:** AI-Powered Shift Suggestions
+
+**User Story:** As a scheduler, I want AI to suggest optimal shift assignments So that I can reduce conflicts and overtime.
+
+**Acceptance Criteria:**
+
+Scenario: Generating shift suggestions
+Given I have open shifts
+When I request AI suggestions
+Then the system proposes assignments based on availability and rules
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E05
+- Notes: Considers preferences and constraints.
+
+---
+
+**User Story 91**
+
+**Title:** Predict Staffing Shortages
+
+**User Story:** As a manager, I want the system to predict staffing shortages So that I can plan ahead.
+
+**Acceptance Criteria:**
+
+Scenario: Predicting shortages
+Given upcoming schedules
+When I run the prediction
+Then the system highlights potential shortages
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E05
+- Notes: Uses historical data.
+
+---
+
+**User Story 92**
+
+**Title:** Optimize Overtime Allocation
+
+**User Story:** As a scheduler, I want AI to optimize overtime assignments So that costs are minimized.
+
+**Acceptance Criteria:**
+
+Scenario: Optimizing overtime
+Given overtime is required
+When I run the optimizer
+Then the system suggests assignments that minimize overtime
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E05
+- Notes: Considers employee limits.
+
+---
+
+**User Story 93**
+
+**Title:** Explain AI Scheduling Decisions
+
+**User Story:** As a scheduler, I want explanations for AI decisions So that I can trust and adjust recommendations.
+
+**Acceptance Criteria:**
+
+Scenario: Viewing AI explanation
+Given AI suggests assignments
+When I view details
+Then I see the rationale for each suggestion
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E05
+- Notes: Transparency required.
+
+---
+
+**User Story 94**
+
+**Title:** Override AI Suggestions
+
+**User Story:** As a scheduler, I want to override AI suggestions So that I retain control over final assignments.
+
+**Acceptance Criteria:**
+
+Scenario: Overriding suggestion
+Given AI has made suggestions
+When I make manual changes
+Then the system applies my changes and logs the override
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E05
+- Notes: Audit trail.
+
+---
+
+### EPIC E20: Self-Service Portal
+
+**User Story 95**
+
+**Title:** Update Personal Information
+
+**User Story:** As an employee, I want to update my personal info So that my records are accurate.
+
+**Acceptance Criteria:**
+
+Scenario: Updating info
+Given I am logged in
+When I edit my profile
+Then changes are saved and pending approval if required
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Approval workflow for sensitive fields.
+
+---
+
+**User Story 96**
+
+**Title:** View Pay Stubs and Attendance
+
+**User Story:** As an employee, I want to view my pay stubs and attendance history So that I can verify my records.
+
+**Acceptance Criteria:**
+
+Scenario: Viewing pay and attendance
+Given I am logged in
+When I access my portal
+Then I see pay stubs and attendance logs
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E11
+- Notes: Downloadable files.
+
+---
+
+**User Story 97**
+
+**Title:** Submit HR Requests
+
+**User Story:** As an employee, I want to submit HR requests (e.g., address change, benefits) So that I can manage my employment needs.
+
+**Acceptance Criteria:**
+
+Scenario: Submitting request
+Given I am logged in
+When I submit a request
+Then HR is notified and can respond
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Request tracking.
+
+---
+
+**User Story 98**
+
+**Title:** Track Request Status
+
+**User Story:** As an employee, I want to track the status of my HR and IT requests So that I know when they are resolved.
+
+**Acceptance Criteria:**
+
+Scenario: Tracking status
+Given I have submitted a request
+When I view my requests
+Then I see current status and updates
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Status notifications.
+
+---
+
+**User Story 99**
+
+**Title:** Access Company Policies and Documents
+
+**User Story:** As an employee, I want to access company policies and documents So that I can stay informed.
+
+**Acceptance Criteria:**
+
+Scenario: Accessing documents
+Given I am logged in
+When I view the documents section
+Then I see all current policies and can download them
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Version control.
+
+---
+
+## END OF USER STORIES DOCUMENT
+
+**Total User Stories:** 99
+**Document Status:** Complete and ready for agile team consumption
