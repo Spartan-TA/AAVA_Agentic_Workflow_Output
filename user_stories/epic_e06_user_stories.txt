@@ -1,0 +1,101 @@
+EPIC E06 - Leave & Absence Management
+
+===========================================
+
+User Story 1
+------------
+Title: Request Leave Workflow
+
+User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my absences are tracked and approved.
+
+Acceptance Criteria:
+Scenario: Submit leave request
+  Given leave request data
+  When I POST to /leave/request
+  Then my request is submitted for approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Supports multiple leave types.
+
+===========================================
+
+User Story 2
+------------
+Title: Supervisor Leave Approval
+
+User Story: As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+
+Acceptance Criteria:
+Scenario: Approve or deny leave request
+  Given a pending leave request
+  When I approve or deny
+  Then the employee is notified and balances are updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Approval workflow.
+
+===========================================
+
+User Story 3
+------------
+Title: Accrual Balance Tracking
+
+User Story: As an HR user, I want leave accrual balances to update automatically so that policies are enforced.
+
+Acceptance Criteria:
+Scenario: Balance updated after approved leave
+  Given an approved leave
+  When the leave is taken
+  Then the employee's accrual balance is reduced accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Policy-driven.
+
+===========================================
+
+User Story 4
+------------
+Title: Integration with Scheduling and Payroll
+
+User Story: As a system, I want approved leaves to flag scheduled shifts and exclude hours from payroll so that data is accurate.
+
+Acceptance Criteria:
+Scenario: Leave flags shift and adjusts payroll
+  Given an approved leave
+  When a shift overlaps
+  Then the shift is flagged for coverage and payroll hours are adjusted
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Reduces manual errors.
+
+===========================================
+
+User Story 5
+------------
+Title: Export Approved Leaves
+
+User Story: As an HR user, I want to export a list of approved leaves so that reporting and compliance are supported.
+
+Acceptance Criteria:
+Scenario: Export approved leaves
+  Given approved leave data
+  When I request an export
+  Then a file is generated with all approved leaves
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E05
+- Notes: Supports audits.
