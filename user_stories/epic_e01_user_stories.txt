@@ -1,0 +1,86 @@
+EPIC E01 - Project Scaffolding & Domain Setup
+
+===========================================
+
+User Story 1
+------------
+Title: Initialize Spring Boot Project Structure
+
+User Story: As a developer, I want a pre-configured Spring Boot project with standardized base packages so that all modules follow consistent architecture.
+
+Acceptance Criteria:
+Scenario: Project builds successfully
+  Given the repository is cloned
+  When I run the build command
+  Then the project builds successfully and runs on port 8080
+
+Scenario: Health endpoint is accessible
+  Given the project is running
+  When I access the Actuator health endpoint
+  Then I receive a status of UP
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Base for all future development.
+
+===========================================
+
+User Story 2
+------------
+Title: Set Up Core Domain Modules
+
+User Story: As a developer, I want core modules for employee, scheduling, attendance, and safety to be scaffolded so that each domain is isolated and extensible.
+
+Acceptance Criteria:
+Scenario: Package structure is created
+  Given the project is initialized
+  When I inspect the package structure
+  Then I see separate packages for employee, scheduling, attendance, and safety
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: Ensures modularity.
+
+===========================================
+
+User Story 3
+------------
+Title: Database Migration Tool Integration
+
+User Story: As a developer, I want Flyway or Liquibase integrated so that database schema changes are versioned and repeatable.
+
+Acceptance Criteria:
+Scenario: Baseline migration runs successfully
+  Given the migration tool is configured
+  When I start the application
+  Then baseline migration runs and the database schema is created
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Enables DB version control.
+
+===========================================
+
+User Story 4
+------------
+Title: Document Build and Run Steps
+
+User Story: As a developer, I want a README with build and run instructions so that onboarding is quick and standardized.
+
+Acceptance Criteria:
+Scenario: README instructions work correctly
+  Given the README is present
+  When I follow the steps
+  Then I can build and run the project without errors
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: None
+- Notes: Reduces onboarding friction.
