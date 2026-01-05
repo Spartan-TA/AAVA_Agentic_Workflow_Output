@@ -1,0 +1,66 @@
+### Epic E01: Project Scaffolding & Domain Setup
+
+**User Story 1: Spring Boot Project Initialization**
+Title: Initialize Spring Boot Project
+User Story: As a developer, I want to initialize a Spring Boot project with Maven so that the team has a standardized foundation for development.
+Acceptance Criteria:
+Scenario: Project builds and runs
+Given the project repository is cloned
+When I run `mvn spring-boot:run`
+Then the application starts on port 8080
+Priority: High
+Story Points: 3
+Dependencies: None
+Notes: Ensure README includes build/run instructions
+
+**User Story 2: Base Package Structure Setup**
+Title: Set Up Base Package Structure
+User Story: As a developer, I want to configure base packages for core modules so that code is organized and maintainable.
+Acceptance Criteria:
+Scenario: Base packages created
+Given the project is initialized
+When I inspect the source code
+Then I see packages for employee, scheduling, attendance, and safety modules
+Priority: High
+Story Points: 2
+Dependencies: Spring Boot Project Initialization
+Notes: Follow naming conventions
+
+**User Story 3: Database Migration Tool Integration**
+Title: Integrate Flyway/Liquibase for DB Migrations
+User Story: As a developer, I want to add Flyway or Liquibase so that database schema changes are versioned and automated.
+Acceptance Criteria:
+Scenario: Baseline migration runs
+Given the migration tool is configured
+When I start the application
+Then the baseline migration executes successfully
+Priority: High
+Story Points: 2
+Dependencies: Spring Boot Project Initialization
+Notes: Choose Flyway or Liquibase per team preference
+
+**User Story 4: Enable Actuator Health Endpoint**
+Title: Enable Actuator Health Endpoint
+User Story: As an ops engineer, I want to enable the Actuator health endpoint so that system health can be monitored.
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I call `/actuator/health`
+Then the response status is UP
+Priority: High
+Story Points: 1
+Dependencies: Spring Boot Project Initialization
+Notes: Expose only necessary endpoints
+
+**User Story 5: Document Build and Run Steps**
+Title: Document Build and Run Steps in README
+User Story: As a developer, I want build and run steps documented in the README so that onboarding is easy.
+Acceptance Criteria:
+Scenario: README contains instructions
+Given the repository is cloned
+When I open README.md
+Then I see clear build and run instructions
+Priority: High
+Story Points: 1
+Dependencies: Spring Boot Project Initialization
+Notes: Include troubleshooting tips
