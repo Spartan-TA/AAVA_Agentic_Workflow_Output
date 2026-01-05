@@ -1,0 +1,16 @@
+USER STORY 1
+Title: Initialize Project Scaffolding
+User Story: As a DEVOPS ENGINEER I want to initialize the Spring Boot project with Maven and configure base packages So that all modules have a standardized foundation for development.
+Acceptance Criteria:
+Scenario: Project Initialization
+  Given a clean repository
+  When I run the build and start the application
+  Then the application should build successfully and run on port 8080
+  And the Actuator health endpoint should return "UP"
+  And the base package structure should be present
+  And Flyway/Liquibase should run the baseline migration without errors
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: None
+Notes: README must include build/run steps.
