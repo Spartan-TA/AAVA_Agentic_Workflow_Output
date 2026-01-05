@@ -1,0 +1,53 @@
+### Epic E05: Shift & Schedule Management
+
+**User Story 1**
+Title: Create Shift Templates
+User Story: As an HR user, I want to create recurring shift templates and rotations so that scheduling is efficient.
+Acceptance Criteria:
+Scenario: Shift Template Creation
+Given shift details
+When I POST to /shifts/templates
+Then a new template is created and available for assignment
+Priority: High
+Story Points: 3
+Dependencies: E02, E03, E04
+Notes: Supports rotations.
+
+**User Story 2**
+Title: Assign Shifts to Employees
+User Story: As a supervisor, I want to assign shifts to employees and handle blackout dates so that staffing is adequate.
+Acceptance Criteria:
+Scenario: Shift Assignment
+Given a shift template and employee
+When I assign a shift
+Then conflicts are detected and prevented
+Priority: High
+Story Points: 3
+Dependencies: E02, E03, E04
+Notes: Blackout dates enforced.
+
+**User Story 3**
+Title: Bulk Shift Assignment
+User Story: As a supervisor, I want to bulk-assign shifts to multiple employees so that scheduling is faster.
+Acceptance Criteria:
+Scenario: Bulk Assignment
+Given a list of employees
+When I bulk-assign a shift
+Then all assignments are created and conflicts logged
+Priority: High
+Story Points: 2
+Dependencies: E02, E03, E04
+Notes: Audit entries generated.
+
+**User Story 4**
+Title: View Personal Upcoming Shifts
+User Story: As a worker, I want to view my upcoming shifts so that I can plan my attendance.
+Acceptance Criteria:
+Scenario: Shift Viewing
+Given assigned shifts
+When I access my schedule
+Then I see all upcoming shifts
+Priority: High
+Story Points: 2
+Dependencies: E02, E03, E04
+Notes: Role-based visibility.
