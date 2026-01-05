@@ -1,0 +1,29 @@
+### E15: Reporting & Analytics
+
+**User Story 1**
+- Title: Attendance and Overtime Reports
+- User Story: As an operations manager, I want reports on attendance and overtime so that I can optimize staffing.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Generate attendance report
+  Given attendance data exists
+  When I filter by date, department, or shift
+  Then the report is generated and exportable as CSV/PDF
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E04, E05, E06, E07, E08, E14
+  * Notes: Export within 10s for 50k rows.
+
+**User Story 2**
+- Title: Certification and Safety KPI Dashboards
+- User Story: As a safety manager, I want dashboards for certifications and safety KPIs so that compliance is visible.
+- Acceptance Criteria in Gherkin format:
+  Scenario: View certification/safety dashboard
+  Given certification and incident data exists
+  When I access the dashboard
+  Then I see up-to-date metrics with role-based access
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E04, E05, E06, E07, E08, E14
+  * Notes: Metrics endpoints for BI.
