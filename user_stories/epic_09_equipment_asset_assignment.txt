@@ -1,0 +1,43 @@
+### E09: Equipment & Asset Assignment
+
+**User Story 1**
+- Title: Asset Registry Management
+- User Story: As an asset manager, I want to maintain a registry of equipment so that all assets are tracked.
+- Acceptance Criteria in Gherkin format:
+  Scenario: CRUD asset records
+  Given I have asset details
+  When I create, update, or delete an asset
+  Then the registry reflects the changes
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E02, E03, E07
+  * Notes: Include asset condition state.
+
+**User Story 2**
+- Title: Assign and Return Equipment
+- User Story: As a supervisor, I want to check out and return equipment to employees so that usage is tracked.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Check-in/out equipment
+  Given an asset and employee exist
+  When I check out or return equipment
+  Then the assignment is recorded and visible in history
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E02, E03, E07
+  * Notes: Block checkout if certification is invalid.
+
+**User Story 3**
+- Title: Overdue Asset Return Reporting
+- User Story: As an asset manager, I want to report overdue returns so that lost or misplaced equipment is minimized.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Generate overdue asset report
+  Given assets are checked out
+  When the due date passes without return
+  Then the asset appears in the overdue report
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E02, E03, E07
+  * Notes: Notify responsible employees.
