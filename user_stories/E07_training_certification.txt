@@ -1,0 +1,97 @@
+# E07: Training & Certification Tracking
+
+## User Story 1: CRUD for Certifications
+**User Story:**  
+As an HR user, I want to create, update, and delete employee certifications so that compliance is tracked.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given I have HR role
+When I POST/PUT/DELETE /certifications
+Then the certification record is created, updated, or deleted
+
+Given I GET /certifications
+Then all certifications are listed with status
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E02, E03  
+Notes: Include certification type, issue/expiry dates.
+
+---
+
+## User Story 2: Alert for Expiring Certifications
+**User Story:**  
+As a supervisor, I want to receive alerts before certifications expire so that renewals are not missed.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a certification is expiring in 30 or 7 days
+When the alert job runs
+Then a notification is sent to the employee and supervisor
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E02, E03  
+Notes: Integrate with notifications module.
+
+---
+
+## User Story 3: Block Assignment to Tasks Requiring Expired Certifications
+**User Story:**  
+As a scheduler, I want to prevent assignment of employees with expired certifications to certain tasks so that safety is ensured.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given an employee's certification is expired
+When I assign them to a restricted task
+Then the system blocks the assignment with an error
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E02, E03  
+Notes: Define mapping of tasks to required certifications.
+
+---
+
+## User Story 4: Upload Proof Documents for Certifications
+**User Story:**  
+As an employee, I want to upload proof of certification so that records are complete.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given I have a valid certification
+When I upload a document
+Then it is stored and linked to my certification record
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 1  
+Dependencies: E02, E03  
+Notes: Support PDF, image formats.
+
+---
+
+## User Story 5: Display Certification Status on Employee Profile
+**User Story:**  
+As a supervisor, I want to view certification status on employee profiles so that I can verify qualifications.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given I view an employee profile
+When certifications exist
+Then their status (valid, expiring, expired) is displayed
+```
+
+**Additional Details:**  
+Priority: High  
+Story Points: 1  
+Dependencies: E02, E03  
+Notes: Show expiry date and document link.
