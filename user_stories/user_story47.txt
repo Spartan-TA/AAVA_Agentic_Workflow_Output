@@ -1,0 +1,21 @@
+Title: Audit Payroll Export Activity
+
+User Story:
+As a payroll administrator, I want to view an audit log of all payroll export activities so that I can track who exported data, when, and for which period to ensure compliance and security.
+
+Acceptance Criteria:
+Scenario 1: View export audit log
+  Given I have access to payroll export settings
+  When I view the audit log
+  Then I see a list of all export actions with user, date, and period details
+
+Scenario 2: Filter audit log
+  Given the audit log contains multiple entries
+  When I filter by user or date range
+  Then only matching export activities are shown
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Payroll export functionality
+Notes: Audit log should be exportable to CSV for compliance reporting.
