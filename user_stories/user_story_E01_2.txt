@@ -1,0 +1,18 @@
+EPIC E01: Project Scaffolding & Domain Setup
+
+User Story 2
+Title: Configure Base Package Structure
+
+User Story: As a developer, I want to set up base packages for core modules (employee, scheduling, attendance, safety) so that code is organized and maintainable.
+
+Acceptance Criteria:
+Scenario: Base Package Verification
+  Given the project is built
+  When I inspect the source code
+  Then I see separate packages for employee, scheduling, attendance, and safety modules
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Follow standard naming conventions.
