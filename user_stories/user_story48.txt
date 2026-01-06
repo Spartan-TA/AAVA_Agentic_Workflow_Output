@@ -1,0 +1,21 @@
+Title: Send Company-Wide Announcement
+
+User Story:
+As an HR administrator, I want to send company-wide announcements to all employees so that important information is communicated efficiently.
+
+Acceptance Criteria:
+Scenario 1: Create and send announcement
+  Given I have access to the announcement module
+  When I compose and send an announcement
+  Then all employees receive the message via their preferred notification channel
+
+Scenario 2: Track announcement delivery
+  Given an announcement is sent
+  When I view the delivery status
+  Then I see which employees have received and read the announcement
+
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: Employee contact information, notification system
+Notes: Announcements should support rich text and attachments.
