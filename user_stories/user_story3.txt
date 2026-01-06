@@ -1,0 +1,12 @@
+Title: Enable Actuator Health Endpoints
+User Story: As an admin, I want to enable Spring Actuator so that I can monitor application health and metrics.
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns status UP
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: user_story1
+Notes: Health endpoint must be documented.
