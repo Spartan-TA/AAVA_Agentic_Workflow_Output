@@ -1,0 +1,21 @@
+Title: Asset Assignment History
+
+User Story:
+As an HR administrator, I want to view the assignment history of each asset so that I can track usage, identify patterns, and ensure accountability.
+
+Acceptance Criteria:
+Scenario 1: View asset history
+  Given an asset exists in the inventory
+  When I view the asset details
+  Then I see a chronological list of all assignments and returns for that asset
+
+Scenario 2: Filter history by employee
+  Given I am viewing asset assignment history
+  When I filter by employee name
+  Then only assignments related to that employee are shown
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Asset inventory, assignment records
+Notes: Should support export to CSV for audit purposes.
