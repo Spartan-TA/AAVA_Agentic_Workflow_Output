@@ -1,0 +1,21 @@
+Title: Track Asset Return
+
+User Story:
+As an HR administrator, I want to record the return of equipment and assets from employees so that asset inventory remains accurate and losses are minimized.
+
+Acceptance Criteria:
+Scenario 1: Record asset return
+  Given an asset is assigned to an employee
+  When the employee returns the asset
+  Then the asset status is updated to 'available' in the inventory
+
+Scenario 2: Notify overdue returns
+  Given an asset is overdue for return
+  When the due date passes
+  Then the system sends a notification to the employee and HR administrator
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Asset assignment, notification system
+Notes: Should support bulk return for multiple assets.
