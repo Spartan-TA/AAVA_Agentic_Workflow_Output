@@ -1,0 +1,71 @@
+### Epic E06: Leave & Absence Management
+
+**User Story 1**
+Title: Request Leave
+User Story: As a WORKER, I want to request PTO, sick, or unpaid leave so that my time off is tracked.
+Acceptance Criteria:
+Scenario: Leave request
+Given my accrual balance
+When I submit a leave request
+Then the request is logged and pending approval
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E02, E03, E05
+Notes: Accrual policies enforced.
+
+**User Story 2**
+Title: Approve/Deny Leave
+User Story: As a SUPERVISOR, I want to approve or deny leave requests so that staffing is maintained.
+Acceptance Criteria:
+Scenario: Leave approval
+Given a pending request
+When I approve or deny
+Then the employee is notified and balances update
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E05
+Notes: Approval workflow.
+
+**User Story 3**
+Title: Auto-Flag Scheduled Shifts
+User Story: As an HR, I want scheduled shifts to auto-flag for coverage when leave is approved so that gaps are managed.
+Acceptance Criteria:
+Scenario: Shift flagging
+Given an approved leave
+When I view the schedule
+Then affected shifts are flagged for coverage
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E02, E03, E05
+Notes: Integration with scheduling.
+
+**User Story 4**
+Title: Export Approved Leaves
+User Story: As an ADMIN, I want to export approved leaves so that payroll and compliance are accurate.
+Acceptance Criteria:
+Scenario: Leave export
+Given approved leave records
+When I export
+Then all approved leaves are included
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E05
+Notes: CSV format.
+
+**User Story 5**
+Title: Accrual Balance Update
+User Story: As a WORKER, I want my leave accrual balances to update automatically so that I know my available time off.
+Acceptance Criteria:
+Scenario: Accrual update
+Given a leave request
+When it is approved
+Then my balance is reduced accordingly
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E05
+Notes: Policy-driven.
