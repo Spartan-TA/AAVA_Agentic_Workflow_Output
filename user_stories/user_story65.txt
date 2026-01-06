@@ -1,0 +1,21 @@
+Title: Share Reports with Stakeholders
+
+User Story:
+As an HR manager, I want to share generated reports with stakeholders so that relevant teams can access workforce insights and collaborate on decisions.
+
+Acceptance Criteria:
+Scenario 1: Share report via email
+  Given a report is generated
+  When I select 'Share' and enter stakeholder emails
+  Then the report is sent to the specified recipients
+
+Scenario 2: Set report access permissions
+  Given a report is generated
+  When I set access permissions
+  Then only authorized users can view or download the report
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Reporting module, email system
+Notes: Should support sharing links and access expiration.
