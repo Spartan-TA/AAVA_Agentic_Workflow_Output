@@ -1,0 +1,15 @@
+#### User Story 4: Create Employee Record
+**As an** HR user  
+**I want** to create a new employee record with required fields  
+**so that** employee data is stored centrally and accurately.
+
+**Acceptance Criteria:**
+- **Given** valid employee details,  
+  **When** I POST to `/employees`,  
+  **Then** a new employee is created with a unique badgeId.
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E01  
+Notes: Validate required fields and uniqueness of badgeId.
