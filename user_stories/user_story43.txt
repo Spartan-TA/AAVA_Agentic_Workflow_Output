@@ -1,0 +1,21 @@
+Title: Review Summary & Feedback
+
+User Story:
+As an employee, I want to view a summary of my performance review and feedback from my manager so that I understand my strengths, areas for improvement, and next steps.
+
+Acceptance Criteria:
+Scenario 1: View review summary
+  Given my performance review is completed
+  When I access my review summary
+  Then I see my self-assessment, manager evaluation, and overall feedback
+
+Scenario 2: Download review summary
+  Given I am viewing my review summary
+  When I click 'Download'
+  Then I receive a PDF copy of my review and feedback
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Review cycle completion
+Notes: Summary should be accessible from employee portal and securely stored.
