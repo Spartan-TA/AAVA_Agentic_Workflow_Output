@@ -1,0 +1,59 @@
+EPIC E04: Time & Attendance (Clock In/Out)
+
+===========================================
+
+Title: Record Employee Clock In/Out
+User Story: As a worker, I want to clock in and out using my device so that my worked hours are accurately recorded for payroll and compliance.
+Acceptance Criteria:
+Scenario: Successful clock in
+Given I am authenticated and at the warehouse location
+When I submit a clock-in event
+Then the system records the time, device, and (if enabled) geolocation, and associates it with my current shift
+
+Scenario: Successful clock out
+Given I am clocked in
+When I submit a clock-out event
+Then the system records the time and calculates hours worked for the shift
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Device and geofence capture optional per site policy
+
+===========================================
+
+Title: Request Correction for Missed Punch
+User Story: As a worker, I want to request a correction if I forget to clock in or out so that my attendance record is accurate.
+Acceptance Criteria:
+Scenario: Submit missed punch correction
+Given I have a missing clock-in or clock-out
+When I submit a correction request with the correct time and reason
+Then a task is created for supervisor approval
+
+Scenario: Supervisor approves correction
+Given a correction request is pending
+When the supervisor approves it
+Then the attendance record is updated and the change is logged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: All corrections auditable
+
+===========================================
+
+Title: Export Attendance Reports
+User Story: As an HR user, I want to export attendance data for a given period so that I can process payroll and audits.
+Acceptance Criteria:
+Scenario: Export attendance
+Given I have HR access
+When I select a date range and export
+Then I receive a CSV file with daily totals, clock events, and corrections
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Exports must match payroll requirements
