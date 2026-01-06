@@ -1,0 +1,21 @@
+Title: Employee Views Schedule
+
+User Story: As an EMPLOYEE I want to view my assigned shifts So that I can plan my work and personal time
+
+Acceptance Criteria:
+
+Scenario: Employee views schedule
+Given I am logged in as EMPLOYEE
+When I navigate to my schedule page
+Then I see all upcoming assigned shifts
+
+Scenario: Employee receives schedule update
+Given my schedule changes
+When the update is made
+Then I receive a notification of the change
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E05-2
+- Notes: Schedule should be accessible via mobile and desktop.
