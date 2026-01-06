@@ -1,0 +1,21 @@
+Title: Initiate Performance Review Cycle
+
+User Story:
+As an HR manager, I want to initiate a performance review cycle for selected employees so that reviews are conducted on schedule and progress can be tracked.
+
+Acceptance Criteria:
+Scenario 1: Start review cycle
+  Given a list of employees and a review period
+  When I initiate a performance review cycle
+  Then review tasks are created and assigned to relevant managers and employees
+
+Scenario 2: Notify participants
+  Given a review cycle has started
+  When review tasks are assigned
+  Then participants receive notifications with instructions and deadlines
+
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: Employee records, notification system
+Notes: Should support annual, semi-annual, and ad-hoc cycles.
