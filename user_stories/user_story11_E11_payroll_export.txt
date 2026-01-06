@@ -1,0 +1,57 @@
+### Epic E11: Payroll Export Integration
+
+**User Story 1**
+Title: Generate Payroll Export
+User Story: As an ADMIN, I want to generate payroll-ready files from approved attendance and leave so that payroll runs are accurate.
+Acceptance Criteria:
+Scenario: Payroll export
+Given approved records
+When I export
+Then files match provider schema
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E04, E06
+Notes: SFTP/API delivery.
+
+**User Story 2**
+Title: Reconcile Export Totals
+User Story: As an HR, I want export totals to reconcile with attendance and leave reports so that errors are minimized.
+Acceptance Criteria:
+Scenario: Reconciliation
+Given exported data
+When I compare totals
+Then they match reports
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E04, E06
+Notes: Validation required.
+
+**User Story 3**
+Title: Retry Failed Deliveries
+User Story: As a DEVOPS ENGINEER, I want failed payroll exports retried with backoff so that delivery is reliable.
+Acceptance Criteria:
+Scenario: Retry logic
+Given a failed delivery
+When retry is triggered
+Then backoff is applied and delivery is attempted again
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E04, E06
+Notes: Audit log for each export.
+
+**User Story 4**
+Title: Audit Log for Exports
+User Story: As an ADMIN, I want every payroll export logged so that compliance is maintained.
+Acceptance Criteria:
+Scenario: Export audit
+Given an export event
+When it occurs
+Then actor, timestamp, and status are logged
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E04, E06
+Notes: Exportable audit log.
