@@ -1,0 +1,21 @@
+Title: Schedule Automated Report Delivery
+
+User Story:
+As an HR manager, I want to schedule automated report delivery to my email so that I receive regular updates on key workforce metrics without manual effort.
+
+Acceptance Criteria:
+Scenario 1: Set report schedule
+  Given I have access to the reporting module
+  When I configure a report schedule (e.g., weekly, monthly)
+  Then the selected report is automatically generated and sent to my email
+
+Scenario 2: Edit report schedule
+  Given a report schedule is set
+  When I update the frequency or recipients
+  Then changes are applied to future deliveries
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Reporting module, email system
+Notes: Should support multiple recipients and report templates.
