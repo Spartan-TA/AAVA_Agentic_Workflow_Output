@@ -1,0 +1,21 @@
+Title: Assign Shifts to Employees
+
+User Story: As a SCHEDULER I want to assign shifts to employees So that I can ensure adequate coverage for each location
+
+Acceptance Criteria:
+
+Scenario: Scheduler assigns a shift
+Given I am logged in as SCHEDULER
+When I select an employee and assign a shift
+Then the employee is notified of their schedule
+
+Scenario: Scheduler reassigns a shift
+Given a shift is already assigned
+When I update the assignment
+Then the employeeâs schedule is updated and they are notified
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E05-1
+- Notes: Assignment changes should trigger notifications and update reporting.
