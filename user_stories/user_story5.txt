@@ -1,0 +1,15 @@
+#### User Story 5: Update Employee Information
+**As an** HR user  
+**I want** to update employee details  
+**so that** records remain current and accurate.
+
+**Acceptance Criteria:**
+- **Given** an existing employee,  
+  **When** I PUT/PATCH to `/employees/{id}`,  
+  **Then** the employee record is updated accordingly.
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E02  
+Notes: Support partial updates via PATCH.
