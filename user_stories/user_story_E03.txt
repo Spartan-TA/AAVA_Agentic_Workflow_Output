@@ -1,0 +1,86 @@
+EPIC E03: Role Based Access Control (RBAC)
+
+===========================================
+
+Title: RBAC - Implement Role-Based Access Control
+User Story: As an admin, I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users so that access is restricted appropriately.
+Acceptance Criteria:
+Scenario: Role Assignment
+Given a user exists
+When I assign a role
+Then the user has permissions according to their role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project Scaffolding, Employee CRUD
+- Notes: Use Spring Security for enforcement.
+
+===========================================
+
+Title: RBAC - Secure Endpoints by Role
+User Story: As a system, I want to restrict sensitive endpoints to authorized roles so that PII and operations are protected.
+Acceptance Criteria:
+Scenario: Endpoint Security
+Given a user with insufficient role
+When they access a restricted endpoint
+Then the system returns 403 Forbidden
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role Assignment
+- Notes: Cover all CRUD and sensitive endpoints.
+
+===========================================
+
+Title: RBAC - Support API Key/OAuth2 Toggle
+User Story: As a DevOps engineer, I want to toggle between API key and OAuth2 authentication via config so that integration flexibility is provided.
+Acceptance Criteria:
+Scenario: Auth Toggle
+Given the application is running
+When I change the config
+Then authentication switches between API key and OAuth2
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Role Assignment
+- Notes: Document configuration steps.
+
+===========================================
+
+Title: RBAC - Row-Level Security
+User Story: As a supervisor, I want to access only my team's records so that data privacy is maintained.
+Acceptance Criteria:
+Scenario: Row-Level Access
+Given I am a supervisor
+When I list employees
+Then I see only employees in my team
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Role Assignment
+- Notes: Enforce via query filters.
+
+===========================================
+
+Title: RBAC - Unauthorized and Forbidden Responses
+User Story: As a system, I want to return 401 for unauthenticated and 403 for unauthorized requests so that clients receive correct feedback.
+Acceptance Criteria:
+Scenario: Unauthorized Access
+Given a request is unauthenticated
+When it is made to a protected endpoint
+Then the system returns 401 Unauthorized
+
+Scenario: Forbidden Access
+Given a user lacks permission
+When they access a restricted endpoint
+Then the system returns 403 Forbidden
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Secure Endpoints by Role
+- Notes: Cover all endpoints.
