@@ -1,0 +1,21 @@
+Title: Access Audit Log Reports
+
+User Story:
+As a compliance officer, I want to access and download audit log reports so that I can review system activity and provide documentation for regulatory audits.
+
+Acceptance Criteria:
+Scenario 1: View audit log report
+  Given audit logs are recorded
+  When I access the reporting module
+  Then I can view and filter audit logs by user, date, and action type
+
+Scenario 2: Download audit log report
+  Given I am viewing filtered audit logs
+  When I click 'Download'
+  Then I receive a CSV or PDF report of the selected logs
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Audit trail, reporting module
+Notes: Reports should be securely stored and access-controlled.
