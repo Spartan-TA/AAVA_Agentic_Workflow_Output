@@ -1,0 +1,61 @@
+EPIC E06 - Leave & Absence Management
+
+User Story 1: Request Leave
+As an employee I want to request PTO, sick, or unpaid leave So that my time off is tracked
+Acceptance Criteria:
+Scenario: Leave request submitted
+Given the leave module
+When I submit a request
+Then it is recorded and pending approval
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E05
+Notes: Show accrual balances
+
+User Story 2: Approve or Deny Leave
+As a supervisor I want to approve or deny leave requests So that staffing is managed
+Acceptance Criteria:
+Scenario: Approval workflow
+Given a pending request
+When I approve or deny
+Then the employee is notified and balances update
+Priority: Medium
+Story Points: 2
+Dependencies: User Story 1
+Notes: Track approval history
+
+User Story 3: Update Accrual Balances
+As a payroll user I want leave accrual balances to update automatically So that records are accurate
+Acceptance Criteria:
+Scenario: Balance update
+Given an approved leave
+When it is processed
+Then the accrual balance is adjusted
+Priority: Medium
+Story Points: 1
+Dependencies: User Story 2
+Notes: Support multiple leave types
+
+User Story 4: Flag Scheduled Shifts for Coverage
+As a scheduler I want scheduled shifts to be auto-flagged for coverage when leave is approved So that coverage gaps are addressed
+Acceptance Criteria:
+Scenario: Shift flagged
+Given an approved leave
+When it overlaps with a shift
+Then the shift is flagged for coverage
+Priority: Medium
+Story Points: 1
+Dependencies: User Story 2
+Notes: Notify supervisor
+
+User Story 5: Export Approved Leaves
+As an HR user I want to export approved leaves So that records can be shared with payroll
+Acceptance Criteria:
+Scenario: Export leaves
+Given approved leave records
+When I request an export
+Then a file is generated
+Priority: Medium
+Story Points: 1
+Dependencies: User Story 2
+Notes: Include all leave types
