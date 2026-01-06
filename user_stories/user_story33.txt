@@ -1,0 +1,21 @@
+Title: Safety Analytics Dashboard
+
+User Story: As a SAFETY MANAGER I want a dashboard to analyze incident trends So that I can proactively address hazards and improve workplace safety
+
+Acceptance Criteria:
+
+Scenario: Safety manager views dashboard
+Given incident data is available
+When I access the safety analytics dashboard
+Then I see charts and metrics for incident frequency, type, and location
+
+Scenario: Drill-down analysis
+Given dashboard is loaded
+When I select a metric or filter
+Then the dashboard updates to show relevant details
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E08-1, E08-2, E08-3
+- Notes: Dashboard should support export and custom filters.
