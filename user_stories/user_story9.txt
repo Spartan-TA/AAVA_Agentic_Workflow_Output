@@ -1,0 +1,21 @@
+Title: Document Employee APIs in OpenAPI
+
+User Story: As a System Administrator I want the employee CRUD APIs documented in OpenAPI with examples So that developers and integrators can easily understand and use the endpoints
+
+Acceptance Criteria:
+
+Scenario: OpenAPI schema available
+Given the employee CRUD endpoints are implemented
+When I view the OpenAPI documentation
+Then all endpoints should be described with request/response schemas and example payloads
+
+Scenario: Example payloads provided
+Given the OpenAPI documentation is generated
+When I view the employee endpoints
+Then I should see example requests and responses for each operation
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Documentation must be kept up to date with API changes.
