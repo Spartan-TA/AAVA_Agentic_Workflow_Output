@@ -1,0 +1,33 @@
+Title: Performance Review Cycle Creation
+
+User Story: As an HR manager I want to create quarterly and annual review cycles So that employee performance is regularly evaluated.
+
+Acceptance Criteria:
+Scenario: Review cycle creation
+Given review templates are defined
+When I create a new review cycle
+Then employees are assigned reviews and notified
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Role-based visibility; PDF export supported.
+
+---
+
+Title: Review Submission and Acknowledgement
+
+User Story: As a supervisor I want to submit performance reviews and have employees acknowledge them So that feedback is documented and agreed upon.
+
+Acceptance Criteria:
+Scenario: Review workflow and acknowledgement
+Given a review is assigned
+When the supervisor submits and the employee acknowledges
+Then the review is locked and history is immutable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Comments and ratings tracked.
