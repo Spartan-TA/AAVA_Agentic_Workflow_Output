@@ -1,0 +1,15 @@
+#### User Story 6: Delete (Soft-Delete) Employee Record
+**As an** HR user  
+**I want** to soft-delete employee records  
+**so that** historical data is preserved for compliance.
+
+**Acceptance Criteria:**
+- **Given** an employee record,  
+  **When** I DELETE `/employees/{id}`,  
+  **Then** the record is marked as inactive but not physically removed.
+
+**Additional Details:**  
+Priority: High  
+Story Points: 1  
+Dependencies: E02  
+Notes: Ensure filtering excludes inactive records by default.
