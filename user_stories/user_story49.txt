@@ -1,0 +1,21 @@
+Title: Configure Notification Preferences
+
+User Story:
+As an employee, I want to configure my notification preferences so that I receive alerts and announcements via my preferred channels (email, SMS, in-app).
+
+Acceptance Criteria:
+Scenario 1: Set notification preferences
+  Given I am logged into my employee portal
+  When I access notification settings
+  Then I can select my preferred channels for different types of notifications
+
+Scenario 2: Save and apply preferences
+  Given I have updated my preferences
+  When a new announcement or alert is sent
+  Then I receive it via my selected channels
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Employee portal, notification system
+Notes: Preferences should be editable at any time.
