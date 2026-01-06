@@ -1,0 +1,21 @@
+Title: OSHA Compliance Reporting
+
+User Story: As a COMPLIANCE OFFICER I want to generate OSHA compliance reports So that I can meet regulatory requirements and avoid penalties
+
+Acceptance Criteria:
+
+Scenario: Compliance officer generates OSHA report
+Given incident data is available
+When I run an OSHA report
+Then all required fields and incidents are included per regulation
+
+Scenario: Export OSHA report
+Given a report is generated
+When I choose export
+Then the report is available in required formats (PDF, CSV)
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E08-1, E08-2
+- Notes: Reports must be timestamped and support digital signatures.
