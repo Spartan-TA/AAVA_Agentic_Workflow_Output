@@ -1,0 +1,21 @@
+Title: Retain Audit Logs per Compliance Policy
+
+User Story:
+As a compliance officer, I want audit logs to be retained for a configurable period according to company and regulatory policies so that I can ensure proper record-keeping and compliance.
+
+Acceptance Criteria:
+Scenario 1: Configure retention policy
+  Given I have access to audit log settings
+  When I set a retention period (e.g., 1 year, 7 years)
+  Then audit logs are retained for the specified duration and deleted securely after expiration
+
+Scenario 2: Prevent premature deletion
+  Given a retention policy is set
+  When a user attempts to delete logs before expiration
+  Then the system prevents deletion and alerts compliance officers
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Audit trail, system settings
+Notes: Retention settings should be access-controlled and auditable.
