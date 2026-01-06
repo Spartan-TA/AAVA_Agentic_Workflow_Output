@@ -1,0 +1,110 @@
+## Epic E06: Leave & Absence Management
+
+### User Story 1: Request Leave
+**User Story:**  
+As an employee, I want to request PTO, sick, or unpaid leave so that my absences are tracked.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given I have available leave balance
+When I submit a leave request
+Then the request is created and pending approval
+
+Given insufficient leave balance
+When I request leave
+Then the request is rejected with an error
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 2  
+Dependencies: Employee CRUD, RBAC, Shift management  
+Notes: Leave types configurable.
+
+---
+
+### User Story 2: Approve or Deny Leave Requests
+**User Story:**  
+As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a pending leave request
+When I approve the request
+Then the employee's leave balance is updated and the request is marked approved
+
+Given a pending leave request
+When I deny the request
+Then the request is marked denied and the employee is notified
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 2  
+Dependencies: Leave request  
+Notes: Approval workflow.
+
+---
+
+### User Story 3: Update Leave Balances and Policies
+**User Story:**  
+As an HR user, I want to configure leave accrual policies so that balances are managed automatically.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given a leave accrual policy
+When an employee earns leave
+Then their balance is updated according to the policy
+
+Given a policy change
+When I update the policy
+Then new accruals follow the updated rules
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 2  
+Dependencies: Leave management  
+Notes: Accruals run on schedule.
+
+---
+
+### User Story 4: Auto-Flag Scheduled Shifts for Coverage
+**User Story:**  
+As a scheduler, I want scheduled shifts to be flagged when an employee is on approved leave so that coverage can be arranged.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given an approved leave overlaps with scheduled shifts
+When I view the schedule
+Then affected shifts are flagged for coverage
+
+Given a flagged shift
+When I assign a replacement
+Then the flag is cleared
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 2  
+Dependencies: Shift management, Leave management  
+Notes: Integration with scheduling.
+
+---
+
+### User Story 5: Export Approved Leaves
+**User Story:**  
+As a payroll specialist, I want to export approved leave data so that payroll calculations are accurate.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given approved leave records exist
+When I export leave data
+Then a CSV file is generated with all approved leaves
+```
+
+**Additional Details:**  
+Priority: Medium  
+Story Points: 1  
+Dependencies: Leave management  
+Notes: Export format matches payroll needs.
