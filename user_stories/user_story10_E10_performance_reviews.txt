@@ -1,0 +1,71 @@
+### Epic E10: Performance Reviews & Goals
+
+**User Story 1**
+Title: Create Review Cycle
+User Story: As an HR, I want to create quarterly/annual review cycles so that performance is evaluated regularly.
+Acceptance Criteria:
+Scenario: Review cycle creation
+Given cycle details
+When I POST to /reviews/cycles
+Then a new cycle is created
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E02, E03
+Notes: Templates supported.
+
+**User Story 2**
+Title: Assign Reviews to Employees
+User Story: As a SUPERVISOR, I want to assign reviews to employees so that feedback is structured.
+Acceptance Criteria:
+Scenario: Review assignment
+Given a review cycle
+When I assign to employees
+Then reviews are created for each
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Role-based visibility.
+
+**User Story 3**
+Title: Submit and Acknowledge Reviews
+User Story: As a WORKER, I want to submit self-reviews and acknowledge supervisor reviews so that the process is collaborative.
+Acceptance Criteria:
+Scenario: Review submission
+Given a review
+When I submit or acknowledge
+Then the workflow progresses
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Immutable after sign-off.
+
+**User Story 4**
+Title: Export Reviews to PDF
+User Story: As an ADMIN, I want to export reviews to PDF so that records are archived.
+Acceptance Criteria:
+Scenario: PDF export
+Given completed reviews
+When I export
+Then a PDF is generated
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Secure storage.
+
+**User Story 5**
+Title: Review History Visibility
+User Story: As a SUPERVISOR, I want to view immutable review history so that past feedback is accessible.
+Acceptance Criteria:
+Scenario: History view
+Given employee reviews
+When I access history
+Then all signed-off reviews are visible
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: No edits after sign-off.
