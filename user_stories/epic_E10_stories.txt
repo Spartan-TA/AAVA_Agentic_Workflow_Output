@@ -1,0 +1,61 @@
+EPIC E10 - Performance Reviews & Goals
+
+User Story 1: Create Review Templates
+As an HR manager I want to create quarterly and annual review templates So that performance reviews are standardized
+Acceptance Criteria:
+Scenario: Template created
+Given the review module
+When I create a template
+Then it is available for assignment
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Support multiple templates
+
+User Story 2: Assign Reviews to Employees
+As a supervisor I want to assign reviews to employees So that the review process is initiated
+Acceptance Criteria:
+Scenario: Review assigned
+Given a template
+When I assign to an employee
+Then the review is created and tracked
+Priority: Medium
+Story Points: 1
+Dependencies: User Story 1
+Notes: Track due dates
+
+User Story 3: Submit and Acknowledge Reviews
+As an employee I want to submit and acknowledge reviews So that feedback is documented
+Acceptance Criteria:
+Scenario: Review submitted
+Given an assigned review
+When I complete and acknowledge
+Then the review is marked as complete
+Priority: Medium
+Story Points: 1
+Dependencies: User Story 2
+Notes: Both supervisor and employee acknowledge
+
+User Story 4: Export Reviews as PDF
+As an HR user I want to export completed reviews as PDF So that records can be archived
+Acceptance Criteria:
+Scenario: PDF export
+Given a completed review
+When I request export
+Then a PDF is generated
+Priority: Medium
+Story Points: 1
+Dependencies: User Story 3
+Notes: Include all comments and ratings
+
+User Story 5: Enforce Immutable History After Sign-Off
+As a compliance officer I want review history to be immutable after sign-off So that records cannot be altered
+Acceptance Criteria:
+Scenario: History locked
+Given a signed-off review
+When I attempt to edit
+Then changes are prevented
+Priority: Medium
+Story Points: 1
+Dependencies: User Story 3
+Notes: Log all attempts to edit
