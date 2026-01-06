@@ -1,0 +1,79 @@
+[E02] Employee Master Data (CRUD)
+
+Title: Create Employee Domain Model
+User Story: As a developer I want to create an Employee domain model with all required fields So that employee data is structured and complete.
+Acceptance Criteria:
+Scenario: Employee model creation
+Given the domain model is defined
+When I add fields name, badgeId, role, department, shiftGroup, hireDate, status
+Then the model matches business requirements
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01
+Notes: Use OpenAPI schema for documentation.
+
+---
+
+Title: Implement Employee CRUD APIs
+User Story: As an HR manager I want to create, read, update, and delete employee records So that employee information is always up to date.
+Acceptance Criteria:
+Scenario: Employee CRUD operations
+Given the API is available
+When I POST/GET/PUT/PATCH/DELETE /employees
+Then the operations succeed and data is persisted
+
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: Create Employee Domain Model
+Notes: Support pagination and filtering.
+
+---
+
+Title: Enforce Unique Badge ID
+User Story: As an HR manager I want badgeId to be unique for each employee So that duplicate records are prevented.
+Acceptance Criteria:
+Scenario: Unique badgeId enforcement
+Given an employee is being created
+When I enter a badgeId that already exists
+Then the system rejects the creation with an error
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Implement Employee CRUD APIs
+Notes: Validate uniqueness at DB and API level.
+
+---
+
+Title: Support Soft-Delete for Employees
+User Story: As an HR manager I want to soft-delete employee records So that historical data is retained for compliance.
+Acceptance Criteria:
+Scenario: Soft-delete employee
+Given an employee exists
+When I delete the employee
+Then the record is marked inactive but not removed from the database
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Implement Employee CRUD APIs
+Notes: Soft-deleted employees excluded from active lists.
+
+---
+
+Title: Provide OpenAPI Schemas with Examples
+User Story: As a developer I want OpenAPI schemas for employee endpoints So that integration is easier and consistent.
+Acceptance Criteria:
+Scenario: OpenAPI schema availability
+Given the API is implemented
+When I view the OpenAPI docs
+Then schemas and examples are present for all endpoints
+
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: Implement Employee CRUD APIs
+Notes: Keep schemas updated with changes.
