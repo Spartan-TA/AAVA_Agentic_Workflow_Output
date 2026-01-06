@@ -1,0 +1,33 @@
+Title: Leave Request Submission
+
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that my time off is tracked and approved.
+
+Acceptance Criteria:
+Scenario: Leave request workflow
+Given I have leave balance available
+When I submit a leave request
+Then the request is routed to my supervisor for approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Scheduled shifts auto-flagged for coverage.
+
+---
+
+Title: Supervisor Leave Approval
+
+User Story: As a supervisor I want to approve or deny leave requests So that staffing plans remain accurate.
+
+Acceptance Criteria:
+Scenario: Leave approval process
+Given a pending leave request
+When I approve or deny the request
+Then the employee's leave balance updates and coverage is flagged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Approved leaves shown in exports.
