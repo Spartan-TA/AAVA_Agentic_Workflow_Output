@@ -1,0 +1,61 @@
+EPIC E09 - Equipment & Asset Assignment
+
+User Story 1: Maintain Asset Registry
+As an asset manager I want to maintain a registry of scanners, forklifts, and PPE So that all assets are tracked
+Acceptance Criteria:
+Scenario: Asset added
+Given asset details
+When I add to the registry
+Then the asset is listed with status
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E07
+Notes: Include asset type and condition
+
+User Story 2: Assign and Track Asset Check-In/Out
+As a supervisor I want to assign assets to employees and track check-in/out So that accountability is ensured
+Acceptance Criteria:
+Scenario: Asset assigned
+Given an available asset
+When I assign to an employee
+Then the assignment is logged
+Priority: Medium
+Story Points: 2
+Dependencies: User Story 1
+Notes: Track due dates
+
+User Story 3: Block Use if Certification Missing
+As a safety manager I want to prevent asset use if required certifications are missing So that only qualified staff use equipment
+Acceptance Criteria:
+Scenario: Use blocked
+Given a missing certification
+When I assign an asset
+Then the system blocks the assignment
+Priority: Medium
+Story Points: 1
+Dependencies: User Story 2
+Notes: Show reason for block
+
+User Story 4: Track Asset Condition and History
+As an asset manager I want to maintain asset condition and assignment history So that maintenance and usage are tracked
+Acceptance Criteria:
+Scenario: Condition updated
+Given an asset
+When condition changes
+Then history is updated
+Priority: Medium
+Story Points: 1
+Dependencies: User Story 1
+Notes: Support condition states
+
+User Story 5: Report Overdue Asset Returns
+As a supervisor I want reports of overdue asset returns So that follow-up can occur
+Acceptance Criteria:
+Scenario: Overdue report
+Given checked-out assets
+When due date passes
+Then overdue assets are listed in a report
+Priority: Medium
+Story Points: 1
+Dependencies: User Story 2
+Notes: Notify responsible employees
