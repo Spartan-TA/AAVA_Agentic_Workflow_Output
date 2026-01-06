@@ -1,0 +1,18 @@
+EPIC E01: Project Scaffolding & Domain Setup
+
+User Story 4
+Title: Enable Actuator Health Endpoints
+
+User Story: As an operator, I want actuator health endpoints enabled so that I can monitor application health.
+
+Acceptance Criteria:
+Scenario: Health Endpoint Availability
+  Given the application is running
+  When I access /actuator/health
+  Then the endpoint returns status UP
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 1
+- Notes: Secure actuator endpoints.
