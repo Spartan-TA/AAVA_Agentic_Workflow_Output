@@ -1,0 +1,174 @@
+## E15 â Reporting & Analytics
+
+### User Story 1
+Title: Generate Operational Reports  
+User Story: As a manager, I want reports on attendance, overtime, leave, certifications, and safety so that I can make informed decisions.  
+Acceptance Criteria:
+```
+Given report filters,
+When I generate a report,
+Then data is filtered by date, department, and shift.
+```
+Additional Details:  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E04, E05, E06, E07, E08, E14  
+Notes: Export as CSV/PDF.
+
+### User Story 2
+Title: Export Large Reports Efficiently  
+User Story: As a user, I want to export reports with up to 50k rows within 10 seconds so that I can analyze large datasets.  
+Acceptance Criteria:
+```
+Given a large dataset,
+When I export,
+Then the file is generated within 10 seconds.
+```
+Additional Details:  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E04, E05, E06, E07, E08, E14  
+Notes: Performance tested.
+
+### User Story 3
+Title: Role-Based Dashboard Access  
+User Story: As a user, I want dashboards tailored to my role so that I see relevant metrics.  
+Acceptance Criteria:
+```
+Given my role,
+When I access the dashboard,
+Then I see only authorized data.
+```
+Additional Details:  
+Priority: Medium  
+Story Points: 1  
+Dependencies: E04, E05, E06, E07, E08, E14  
+Notes: Access control enforced.
+
+### User Story 4
+Title: Metrics Endpoints for BI  
+User Story: As a BI analyst, I want metrics endpoints so that I can integrate with external BI tools.  
+Acceptance Criteria:
+```
+Given metrics endpoints,
+When I query them,
+Then I receive up-to-date data for analysis.
+```
+Additional Details:  
+Priority: Medium  
+Story Points: 1  
+Dependencies: E04, E05, E06, E07, E08, E14  
+Notes: API documentation required.
+
+---
+
+## E16 â Mobile Access (PWA)
+
+### User Story 1
+Title: Responsive Mobile Views  
+User Story: As a worker, I want responsive views for core workflows so that I can use the system on any device.  
+Acceptance Criteria:
+```
+Given a mobile device,
+When I access the app,
+Then core flows are usable and layout adapts to screen size.
+```
+Additional Details:  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E04, E05, E06, E12  
+Notes: Usability tested.
+
+### User Story 2
+Title: Installable PWA Manifest  
+User Story: As a user, I want to install the app as a PWA so that I can access it offline.  
+Acceptance Criteria:
+```
+Given a supported browser,
+When I install the app,
+Then it appears on my home screen and works offline.
+```
+Additional Details:  
+Priority: Medium  
+Story Points: 1  
+Dependencies: E04, E05, E06, E12  
+Notes: Lighthouse PWA score â¥ 80.
+
+### User Story 3
+Title: Offline Clock-In/Out Queue  
+User Story: As a worker, I want to clock in/out offline and sync later so that my attendance is always recorded.  
+Acceptance Criteria:
+```
+Given no network,
+When I clock in/out,
+Then the event is queued and synced when online.
+```
+Additional Details:  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E04, E05, E06, E12  
+Notes: Conflict resolution required.
+
+### User Story 4
+Title: Mobile Announcements  
+User Story: As a worker, I want to receive announcements on mobile so that I stay informed.  
+Acceptance Criteria:
+```
+Given an announcement,
+When I open the app,
+Then I see it on my mobile dashboard.
+```
+Additional Details:  
+Priority: Medium  
+Story Points: 1  
+Dependencies: E04, E05, E06, E12  
+Notes: Push notifications optional.
+
+---
+
+## E17 â Onboarding & Offboarding Workflow
+
+### User Story 1
+Title: Automated Onboarding from HRIS  
+User Story: As an HR user, I want new hires from HRIS to trigger onboarding tasks so that setup is efficient.  
+Acceptance Criteria:
+```
+Given a new hire in HRIS,
+When the sync job runs,
+Then onboarding tasks are generated for accounts, schedule, and training.
+```
+Additional Details:  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E02, E03, E05, E07, E09, E13  
+Notes: Task list visible to HR.
+
+### User Story 2
+Title: Assign Required Training and Assets  
+User Story: As a supervisor, I want onboarding to include training and asset assignment so that new hires are ready to work.  
+Acceptance Criteria:
+```
+Given onboarding tasks,
+When I assign training and assets,
+Then completion is tracked in the system.
+```
+Additional Details:  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E02, E03, E05, E07, E09, E13  
+Notes: Progress visible to HR and supervisor.
+
+### User Story 3
+Title: Automated Offboarding Workflow  
+User Story: As an HR user, I want terminations to trigger offboarding tasks so that access and assets are revoked.  
+Acceptance Criteria:
+```
+Given a terminated employee,
+When offboarding starts,
+Then access is revoked, assets are collected, and schedules updated.
+```
+Additional Details:  
+Priority: Medium  
+Story Points: 2  
+Dependencies: E02, E03, E05, E07, E09, E13  
+Notes: Audit log for all actions.
