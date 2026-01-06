@@ -1,0 +1,21 @@
+Title: Safety Manager Reviews Incident
+
+User Story: As a SAFETY MANAGER I want to review and investigate reported incidents So that corrective actions can be taken and compliance maintained
+
+Acceptance Criteria:
+
+Scenario: Safety manager reviews incident
+Given an incident is reported
+When I log in as SAFETY MANAGER
+Then I can view details, assign investigation, and update status
+
+Scenario: Corrective action recorded
+Given an investigation is complete
+When corrective actions are taken
+Then the incident record is updated and closed
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E08-1
+- Notes: All actions must be logged and linked to incident records.
