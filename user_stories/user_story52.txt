@@ -1,0 +1,21 @@
+Title: Announcement Archive & Search
+
+User Story:
+As an employee, I want to access an archive of past announcements and search for specific messages so that I can reference important information when needed.
+
+Acceptance Criteria:
+Scenario 1: View announcement archive
+  Given I am logged into my employee portal
+  When I access the announcement archive
+  Then I see a list of all past announcements with dates and subjects
+
+Scenario 2: Search announcements
+  Given the archive contains multiple announcements
+  When I enter a search term
+  Then only matching announcements are displayed
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Announcement module, employee portal
+Notes: Archive should be searchable by date, subject, and keywords.
