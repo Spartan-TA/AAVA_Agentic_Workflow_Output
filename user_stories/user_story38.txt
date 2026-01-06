@@ -1,0 +1,21 @@
+Title: Asset Assignment Notifications
+
+User Story:
+As an HR administrator, I want the system to send notifications to employees when equipment is assigned or due for return so that employees are informed and compliance is improved.
+
+Acceptance Criteria:
+Scenario 1: Notify on assignment
+  Given an asset is assigned to an employee
+  When the assignment is completed
+  Then the employee receives a notification with asset details and return date
+
+Scenario 2: Notify before return due date
+  Given an asset has a return due date
+  When the due date is approaching
+  Then the employee receives a reminder notification
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Notification system, asset assignment
+Notes: Notifications should be configurable (email, SMS, in-app).
