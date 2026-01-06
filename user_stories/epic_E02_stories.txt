@@ -1,0 +1,61 @@
+EPIC E02 - Employee Master Data (CRUD)
+
+User Story 1: Create Employee Domain Model
+As a backend developer I want to define the Employee entity with fields name, badgeId, role, department, shiftGroup, hireDate, status So that employee data is structured and consistent
+Acceptance Criteria:
+Scenario: Employee entity created
+Given the domain model
+When I inspect the code
+Then all required fields are present
+Priority: High
+Story Points: 2
+Dependencies: E01
+Notes: badgeId must be unique
+
+User Story 2: Implement Employee CRUD APIs
+As an API consumer I want to create, read, update, patch, and delete employees via REST endpoints So that employee records can be managed
+Acceptance Criteria:
+Scenario: CRUD operations
+Given the API is running
+When I perform POST/GET/PUT/PATCH/DELETE on /employees
+Then the operations succeed as expected
+Priority: High
+Story Points: 3
+Dependencies: User Story 1
+Notes: Support pagination and filtering
+
+User Story 3: Enforce Unique Badge ID
+As a system I want to enforce unique badgeId for each employee So that duplicate records are prevented
+Acceptance Criteria:
+Scenario: Duplicate badgeId rejected
+Given an existing badgeId
+When I try to create another employee with the same badgeId
+Then the request is rejected
+Priority: High
+Story Points: 1
+Dependencies: User Story 2
+Notes: Return clear error message
+
+User Story 4: Support Soft Delete for Employees
+As an HR user I want to soft-delete employees So that records are not permanently lost
+Acceptance Criteria:
+Scenario: Employee soft-deleted
+Given an active employee
+When I delete the employee
+Then the status is updated but data is retained
+Priority: High
+Story Points: 1
+Dependencies: User Story 2
+Notes: Exclude soft-deleted from default queries
+
+User Story 5: Document Employee APIs with OpenAPI
+As a developer I want the Employee APIs documented with OpenAPI schemas and examples So that integration is easier
+Acceptance Criteria:
+Scenario: API docs available
+Given the API
+When I access the documentation
+Then all endpoints and models are described with examples
+Priority: High
+Story Points: 1
+Dependencies: User Story 2
+Notes: Keep docs up to date
