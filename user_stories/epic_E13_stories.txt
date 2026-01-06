@@ -1,0 +1,61 @@
+EPIC E13 - Integration Layer (HRIS/WMS APIs)
+
+User Story 1: Expose REST APIs for HRIS and WMS
+As an integration engineer I want to expose REST APIs for HRIS and WMS So that master data can be synchronized
+Acceptance Criteria:
+Scenario: APIs available
+Given the integration layer
+When I access the endpoints
+Then data is available per schema
+Priority: High
+Story Points: 2
+Dependencies: E01, E02, E03
+Notes: Document endpoints
+
+User Story 2: Secure APIs with JWT/OAuth2
+As a security engineer I want to secure APIs with JWT or OAuth2 So that only authorized systems can access data
+Acceptance Criteria:
+Scenario: API secured
+Given an API request
+When token is valid
+Then access is granted
+Priority: High
+Story Points: 1
+Dependencies: User Story 1
+Notes: Support both methods
+
+User Story 3: Sync Employees from HRIS
+As a system I want to sync new hires and terminations from HRIS So that employee records are up to date
+Acceptance Criteria:
+Scenario: HRIS sync job
+Given new HRIS data
+When sync runs
+Then employees are created or updated
+Priority: High
+Story Points: 2
+Dependencies: User Story 1
+Notes: Idempotent processing
+
+User Story 4: Link Departments and Locations from WMS
+As a system I want to link departments and locations from WMS So that assignments are accurate
+Acceptance Criteria:
+Scenario: WMS link
+Given WMS data
+When sync runs
+Then departments and locations are updated
+Priority: High
+Story Points: 1
+Dependencies: User Story 1
+Notes: Map fields correctly
+
+User Story 5: Provide Webhooks for Events
+As a developer I want webhooks for key events So that external systems can react in real time
+Acceptance Criteria:
+Scenario: Webhook triggered
+Given an event
+When it occurs
+Then a webhook is sent to subscribers
+Priority: High
+Story Points: 1
+Dependencies: User Story 1
+Notes: Document payloads
