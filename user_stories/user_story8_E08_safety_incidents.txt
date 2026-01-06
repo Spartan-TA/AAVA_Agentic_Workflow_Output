@@ -1,0 +1,57 @@
+### Epic E08: Safety Incidents & OSHA Reporting
+
+**User Story 1**
+Title: Record Safety Incident
+User Story: As a SUPERVISOR, I want to record safety incidents with severity, location, and involved employees so that incidents are tracked.
+Acceptance Criteria:
+Scenario: Incident recording
+Given incident details
+When I POST to /safety/incidents
+Then the incident is logged with validation
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03
+Notes: Near-misses included.
+
+**User Story 2**
+Title: Incident Workflow
+User Story: As an ADMIN, I want a status workflow (OpenâInvestigatingâResolved) for incidents so that corrective actions are managed.
+Acceptance Criteria:
+Scenario: Workflow progression
+Given an open incident
+When status changes
+Then workflow updates accordingly
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03
+Notes: Audit trail required.
+
+**User Story 3**
+Title: OSHA Summary Export
+User Story: As an HR, I want to export OSHA 300/300A fields so that regulatory reporting is streamlined.
+Acceptance Criteria:
+Scenario: OSHA export
+Given incident data
+When I export
+Then OSHA fields are included
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: CSV/PDF supported.
+
+**User Story 4**
+Title: Safety Metrics Dashboard
+User Story: As an ADMIN, I want a metrics dashboard for safety KPIs so that trends are visible.
+Acceptance Criteria:
+Scenario: Dashboard view
+Given incident data
+When I access the dashboard
+Then metrics are displayed
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03
+Notes: Role-based access.
