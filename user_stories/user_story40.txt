@@ -1,0 +1,21 @@
+Title: Submit Self-Assessment
+
+User Story:
+As an employee, I want to submit a self-assessment as part of my performance review so that my perspective is included in the evaluation process.
+
+Acceptance Criteria:
+Scenario 1: Submit self-assessment
+  Given a performance review cycle is active
+  When I access my review task
+  Then I can fill out and submit my self-assessment form
+
+Scenario 2: Prevent duplicate submission
+  Given I have already submitted my self-assessment
+  When I attempt to submit again
+  Then the system prevents duplicate submissions and displays a message
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Review cycle initiation
+Notes: Self-assessment form should be customizable by HR.
