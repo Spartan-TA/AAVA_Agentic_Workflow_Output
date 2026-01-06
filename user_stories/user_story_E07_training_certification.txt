@@ -1,0 +1,76 @@
+EPIC E07 â TRAINING & CERTIFICATION TRACKING
+
+===========================================
+
+Title: CRUD Certifications for Employees
+User Story: As an HR admin, I want to add, edit, and remove certifications for employees so that compliance is tracked.
+Acceptance Criteria:
+Scenario: Certification is managed
+Given I manage employee profiles
+When I add or edit a certification
+Then the certification is saved with type, issue, and expiry dates
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Supports document upload.
+
+---
+
+Title: Certification Expiry Alerts
+User Story: As an employee, I want to receive alerts before my certifications expire so that I can renew them on time.
+Acceptance Criteria:
+Scenario: Expiry alert is sent
+Given my certification is expiring in 30 or 7 days
+When the system runs daily checks
+Then I receive a notification via my preferred channel
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: US07.1, E12
+- Notes: Alerts configurable per cert type.
+
+---
+
+Title: Block Assignment to Tasks Requiring Expired Certs
+User Story: As a scheduler, I want the system to block assignment of employees to tasks requiring valid certifications.
+Acceptance Criteria:
+Scenario: Assignment is blocked
+Given an employee's certification is expired
+When I assign them to a restricted shift
+Then the system prevents the assignment and displays a warning
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: US07.1, E05
+- Notes: Certification requirements per shift.
+
+---
+
+Title: Certification Status on Employee Profile
+User Story: As a supervisor, I want to view certification status on employee profiles so that I can verify qualifications.
+Acceptance Criteria:
+Scenario: Certification status is visible
+Given I view an employee profile
+When I access the certifications tab
+Then I see all current, expired, and pending certifications
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: US07.1
+- Notes: Visual indicators for status.
+
+---
+
+Title: Upload Proof of Certification
+User Story: As an employee, I want to upload proof documents for certifications so that my records are complete.
+Acceptance Criteria:
+Scenario: Document is uploaded
+Given I have a new certification
+When I upload a document
+Then it is stored and linked to my certification record
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: US07.1
+- Notes: Supports PDF, image formats.
