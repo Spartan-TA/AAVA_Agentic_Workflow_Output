@@ -1,0 +1,76 @@
+EPIC E06 â LEAVE & ABSENCE MANAGEMENT
+
+===========================================
+
+Title: Request Paid/Unpaid Leave
+User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my absences are tracked.
+Acceptance Criteria:
+Scenario: Leave request is submitted
+Given I have available leave balance
+When I submit a leave request
+Then the request is routed to my supervisor for approval
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Leave types configurable.
+
+---
+
+Title: Supervisor Approve/Deny Leave
+User Story: As a supervisor, I want to approve or deny leave requests so that staffing is maintained.
+Acceptance Criteria:
+Scenario: Leave request is processed
+Given I have pending leave requests
+When I approve or deny a request
+Then the employee is notified and the schedule is updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: US06.1
+- Notes: Approval workflow with comments.
+
+---
+
+Title: Leave Accrual & Balance Tracking
+User Story: As an employee, I want to view my leave accrual and balances so that I know how much leave I can take.
+Acceptance Criteria:
+Scenario: Leave balance is displayed
+Given I am logged in
+When I view my leave balance
+Then I see current accruals and usage
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: US06.1
+- Notes: Accrual policies per role/tenure.
+
+---
+
+Title: Exclude Approved Leave from Scheduling & Payroll
+User Story: As a scheduler, I want approved leaves to automatically exclude employees from shift assignments and payroll calculations.
+Acceptance Criteria:
+Scenario: Leave is excluded from scheduling
+Given an employee has approved leave
+When generating schedules or payroll
+Then the system excludes those dates from assignment and pay
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: US06.2, E05
+- Notes: Integration hooks for payroll export.
+
+---
+
+Title: Leave Export & Reporting
+User Story: As an admin, I want to export leave records for compliance and reporting.
+Acceptance Criteria:
+Scenario: Leave data is exported
+Given I select a date range
+When I export leave data
+Then I receive a CSV with all approved leaves and balances
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: US06.3
+- Notes: Export includes employee, type, dates, status.
