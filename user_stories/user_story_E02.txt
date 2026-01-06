@@ -1,0 +1,46 @@
+## E02 - Employee Master Data (CRUD)
+
+### Story 1
+Title: Create Employee Domain Model
+User Story: As a developer, I want to define the Employee entity with fields (name, badgeId, role, department, shiftGroup, hireDate, status) so that employee data is structured and consistent.
+Acceptance Criteria:
+Scenario: Entity Definition
+Given the domain package
+When I create the Employee entity
+Then all required fields are present
+And badgeId is unique
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Use JPA annotations for constraints.
+
+### Story 2
+Title: Implement Employee CRUD APIs
+User Story: As an HR user, I want to create, read, update, patch, and delete employee records via API so that employee data can be managed efficiently.
+Acceptance Criteria:
+Scenario: CRUD Operations
+Given the Employee API endpoints
+When I perform POST/GET/PUT/PATCH/DELETE requests
+Then the operations succeed with proper validation
+And soft-delete is supported
+And pagination and filtering are available
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Story 1
+- Notes: Ensure OpenAPI schemas are documented.
+
+### Story 3
+Title: Enforce Unique Badge ID
+User Story: As a system, I want to enforce unique badgeId for employees so that duplicate badge assignments are prevented.
+Acceptance Criteria:
+Scenario: Badge ID Uniqueness
+Given an existing employee with badgeId
+When I try to create another employee with the same badgeId
+Then the system rejects the request with a validation error
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Add DB unique constraint.
