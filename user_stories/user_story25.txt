@@ -1,0 +1,21 @@
+Title: Absence Reporting & Analytics
+
+User Story: As an HR MANAGER I want to generate reports on employee absences So that I can identify trends and address potential issues
+
+Acceptance Criteria:
+
+Scenario: HR manager generates absence report
+Given absence data is available
+When I run an absence report
+Then I see all absences by type, date, and employee
+
+Scenario: Absence trend analysis
+Given historical absence data
+When I analyze trends
+Then I can identify departments or periods with high absence rates
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E06-1, E06-2, E06-3
+- Notes: Reports should be exportable and filterable.
