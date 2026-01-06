@@ -1,0 +1,21 @@
+Title: Audit Integration Activity
+
+User Story:
+As a system administrator, I want to view an audit log of all integration activities so that I can track data syncs, errors, and user actions for compliance and troubleshooting.
+
+Acceptance Criteria:
+Scenario 1: View integration audit log
+  Given integrations are configured
+  When I access the audit log
+  Then I see a list of all syncs, errors, and user actions with timestamps
+
+Scenario 2: Filter audit log
+  Given the audit log contains multiple entries
+  When I filter by system, user, or date range
+  Then only matching activities are shown
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Integration module
+Notes: Audit log should be exportable to CSV for compliance reporting.
