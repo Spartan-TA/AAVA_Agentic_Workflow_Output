@@ -1,0 +1,21 @@
+Title: Manager Evaluation Submission
+
+User Story:
+As a manager, I want to submit my evaluation of an employee during the performance review cycle so that my feedback is included in the employee's review.
+
+Acceptance Criteria:
+Scenario 1: Submit manager evaluation
+  Given a performance review cycle is active
+  When I access my assigned review tasks
+  Then I can fill out and submit my evaluation for each employee
+
+Scenario 2: Prevent incomplete submission
+  Given I am submitting an evaluation
+  When required fields are missing
+  Then the system prompts me to complete all required fields before submission
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: Review cycle initiation, employee records
+Notes: Evaluation form should be customizable by HR.
