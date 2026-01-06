@@ -1,0 +1,18 @@
+#### User Story 8: Implement Role-Based Endpoint Security
+**As a** system administrator  
+**I want** to restrict API endpoints based on user roles  
+**so that** only authorized users can perform sensitive operations.
+
+**Acceptance Criteria:**
+- **Given** a user with insufficient role,  
+  **When** they access a restricted endpoint,  
+  **Then** a 403 Forbidden response is returned.
+- **Given** an unauthorized request,  
+  **When** it is made,  
+  **Then** a 401 Unauthorized response is returned.
+
+**Additional Details:**  
+Priority: High  
+Story Points: 3  
+Dependencies: E01, E02  
+Notes: Cover all sensitive endpoints; add tests for security rules.
