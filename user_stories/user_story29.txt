@@ -1,0 +1,21 @@
+Title: Training & Certification Reporting
+
+User Story: As a COMPLIANCE OFFICER I want to generate reports on training and certification status So that I can ensure regulatory compliance and prepare for audits
+
+Acceptance Criteria:
+
+Scenario: Compliance officer generates report
+Given training and certification data is available
+When I run a compliance report
+Then I see all employees with expired, expiring, or missing certifications
+
+Scenario: Export report
+Given a report is generated
+When I choose export
+Then the report is available in CSV and PDF formats
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E07-1, E07-2, E07-3
+- Notes: Reports should be filterable by department, location, and date.
