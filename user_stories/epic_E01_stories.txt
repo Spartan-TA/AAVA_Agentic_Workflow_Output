@@ -1,0 +1,17 @@
+E01 Project Scaffolding and Domain Setup
+
+Story 1: Initialize Warehouse EMS Spring Boot Project
+As a DEVELOPER I want to initialize the Warehouse EMS project using Spring Boot with Maven So that I have a standardized foundation for all modules.
+Priority: High, Story Points: 3
+
+Story 2: Set Up Core Domain Modules
+As a DEVELOPER I want to configure base packages and set up core modules So that the codebase is organized.
+Priority: High, Story Points: 2
+
+Story 3: Integrate Flyway Liquibase for DB Migrations
+As a DEVELOPER I want to add Flyway or Liquibase to manage database migrations So that schema changes are versioned.
+Priority: High, Story Points: 2
+
+Story 4: Enable Spring Boot Actuator
+As a DEVOPS ENGINEER I want to enable Actuator endpoints So that I can monitor application health.
+Priority: High, Story Points: 1
