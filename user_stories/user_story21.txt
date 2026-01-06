@@ -1,0 +1,21 @@
+Title: Shift Swap Request
+
+User Story: As an EMPLOYEE I want to request a shift swap with a coworker So that I can manage personal conflicts without supervisor intervention
+
+Acceptance Criteria:
+
+Scenario: Employee requests shift swap
+Given I am logged in as EMPLOYEE
+When I select a shift and request a swap
+Then the coworker receives a notification to accept or decline
+
+Scenario: Supervisor approves swap
+Given both employees agree to swap
+When the supervisor reviews the request
+Then the swap is approved and schedules are updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E05-2, E05-3
+- Notes: All swap actions must be logged for audit and compliance.
