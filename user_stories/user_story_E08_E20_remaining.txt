@@ -1,0 +1,648 @@
+EPIC E08 â SAFETY INCIDENTS & OSHA REPORTING
+
+===========================================
+
+Title: Record Safety Incidents & Near-Misses
+User Story: As a supervisor, I want to record safety incidents and near-misses so that risks are tracked and mitigated.
+Acceptance Criteria:
+Scenario: Incident is recorded
+Given I witness or am informed of an incident
+When I submit an incident report
+Then the system records severity, location, description, and involved employees
+Additional Details:
+- Priority: High | Story Points: 3 | Dependencies: E02, E03 | Notes: Required fields validated.
+
+Title: Incident Investigation Workflow
+User Story: As a safety officer, I want to manage the investigation workflow for incidents so that corrective actions are documented.
+Acceptance Criteria:
+Scenario: Investigation progresses
+Given an incident is reported
+When I update its status
+Then it progresses from Open â Investigating â Resolved with notes at each stage
+Additional Details:
+- Priority: High | Story Points: 3 | Dependencies: US08.1 | Notes: Status changes logged.
+
+Title: OSHA 300/300A Export
+User Story: As a compliance officer, I want to export OSHA 300/300A summary reports so that regulatory requirements are met.
+Acceptance Criteria:
+Scenario: OSHA report is exported
+Given incidents are recorded
+When I request an OSHA export
+Then the system generates a file with all required fields
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US08.1 | Notes: Export format matches OSHA guidelines.
+
+Title: Safety Metrics Dashboard
+User Story: As a manager, I want to view safety KPIs on a dashboard so that I can monitor trends and take action.
+Acceptance Criteria:
+Scenario: Dashboard displays metrics
+Given incidents are logged
+When I access the dashboard
+Then I see charts for incident rates, severity, and resolution times
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: US08.1 | Notes: Filters by date, department.
+
+
+===========================================
+EPIC E09 â EQUIPMENT & ASSET ASSIGNMENT
+===========================================
+
+Title: Asset Registry CRUD
+User Story: As an asset manager, I want to add, edit, and remove equipment records so that all assets are tracked.
+Acceptance Criteria:
+Scenario: Asset is managed
+Given I have asset management access
+When I create or update an asset
+Then it is saved with type, serial, condition, and assignment status
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: E02, E03 | Notes: Supports categories (scanner, forklift, PPE).
+
+Title: Assign & Checkout Equipment to Employees
+User Story: As a supervisor, I want to assign and check out equipment to employees so that usage is tracked.
+Acceptance Criteria:
+Scenario: Equipment is assigned
+Given an asset is available
+When I assign it to an employee
+Then the assignment is logged with timestamp and expected return
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: US09.1 | Notes: Supports bulk assignment.
+
+Title: Prevent Assignment if Certification Missing
+User Story: As a scheduler, I want the system to block equipment assignment if required certifications are missing.
+Acceptance Criteria:
+Scenario: Assignment is blocked
+Given an employee lacks a valid certification
+When I attempt to assign restricted equipment
+Then the system blocks the assignment and displays a warning
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: E07 | Notes: Certification requirements per asset.
+
+Title: Asset Condition & Return Tracking
+User Story: As an asset manager, I want to track asset condition and overdue returns so that maintenance and accountability are ensured.
+Acceptance Criteria:
+Scenario: Asset return is tracked
+Given an asset is checked out
+When it is returned
+Then I record its condition and the system flags overdue returns
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US09.2 | Notes: Condition options configurable.
+
+Title: Asset Assignment History
+User Story: As an admin, I want to view the assignment history of assets and employees so that I can audit usage.
+Acceptance Criteria:
+Scenario: History is displayed
+Given I view an asset or employee
+When I access the history tab
+Then I see all check-in/out events with timestamps
+Additional Details:
+- Priority: Low | Story Points: 2 | Dependencies: US09.2 | Notes: Exportable as CSV.
+
+
+===========================================
+EPIC E10 â PERFORMANCE REVIEWS & GOALS
+===========================================
+
+Title: Create Review Templates
+User Story: As an HR admin, I want to create quarterly and annual review templates so that performance reviews are standardized.
+Acceptance Criteria:
+Scenario: Template is created
+Given I have HR access
+When I create a review template
+Then it is saved with competencies, rating scales, and goal sections
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: E02, E03 | Notes: Templates reusable.
+
+Title: Assign Reviews to Employees
+User Story: As a supervisor, I want to assign performance reviews to employees so that feedback cycles are initiated.
+Acceptance Criteria:
+Scenario: Review is assigned
+Given a review cycle is open
+When I assign employees
+Then they receive a notification and can complete their self-assessment
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US10.1 | Notes: Bulk assignment supported.
+
+Title: Submit & Acknowledge Reviews
+User Story: As an employee, I want to submit my review and acknowledge my supervisor's feedback so that the process is complete.
+Acceptance Criteria:
+Scenario: Review is completed
+Given I have a pending review
+When I submit my self-assessment
+Then my supervisor can add comments and ratings, and I can acknowledge the final review
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: US10.2 | Notes: Workflow enforced.
+
+Title: PDF Export of Reviews
+User Story: As an HR admin, I want to export completed reviews as PDF for records and compliance.
+Acceptance Criteria:
+Scenario: Review is exported
+Given a review is completed
+When I export it
+Then I receive a PDF with all ratings, comments, and signatures
+Additional Details:
+- Priority: Low | Story Points: 2 | Dependencies: US10.3 | Notes: PDF includes timestamps.
+
+Title: Immutable Review History
+User Story: As an admin, I want review records to be immutable after sign-off so that audit integrity is maintained.
+Acceptance Criteria:
+Scenario: Review is locked
+Given a review is acknowledged
+When I attempt to edit it
+Then the system blocks changes and logs the attempt
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US10.3 | Notes: Change requests require admin override.
+
+
+===========================================
+EPIC E11 â PAYROLL EXPORT INTEGRATION
+===========================================
+
+Title: Generate Payroll-Ready Files
+User Story: As a payroll admin, I want to generate payroll-ready files from approved attendance and leave so that payroll processing is automated.
+Acceptance Criteria:
+Scenario: Payroll file is generated
+Given attendance and leave are approved
+When I generate a payroll export
+Then the file matches the external provider's schema
+Additional Details:
+- Priority: High | Story Points: 3 | Dependencies: E04, E06 | Notes: Supports multiple provider formats.
+
+Title: Secure Delivery of Payroll Files (SFTP/API)
+User Story: As an admin, I want payroll files delivered securely via SFTP or API so that sensitive data is protected.
+Acceptance Criteria:
+Scenario: File is delivered securely
+Given a payroll file is generated
+When I configure SFTP/API credentials
+Then the file is delivered securely and delivery status is logged
+Additional Details:
+- Priority: High | Story Points: 3 | Dependencies: US11.1 | Notes: Retries with exponential backoff.
+
+Title: Reconcile Payroll Totals with Reports
+User Story: As a payroll admin, I want to reconcile payroll totals with attendance and leave reports so that errors are minimized.
+Acceptance Criteria:
+Scenario: Totals are reconciled
+Given a payroll export is generated
+When I compare totals
+Then the system highlights any discrepancies
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US11.1, E15 | Notes: Reconciliation report exportable.
+
+Title: Audit Log for Payroll Exports
+User Story: As an auditor, I want every payroll export to be logged with actor, timestamp, and status so that compliance is ensured.
+Acceptance Criteria:
+Scenario: Export is logged
+Given a payroll export occurs
+When I view the audit log
+Then I see all relevant details for each export
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: E14 | Notes: Log exportable as CSV.
+
+
+===========================================
+EPIC E12 â NOTIFICATIONS & ANNOUNCEMENTS
+===========================================
+
+Title: In-App, Email, and SMS Notifications
+User Story: As a user, I want to receive notifications via in-app, email, or SMS so that I am informed of important events.
+Acceptance Criteria:
+Scenario: Notification is sent
+Given I have notification preferences set
+When a relevant event occurs
+Then I receive a notification via my selected channels
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: E03, E05, E06, E07 | Notes: Supports opt-in/out per channel.
+
+Title: Notification Templates & Localization
+User Story: As an admin, I want notification templates to be localized so that users receive messages in their preferred language.
+Acceptance Criteria:
+Scenario: Template is localized
+Given templates are configured
+When a notification is sent
+Then it uses the user's preferred language
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: E18 | Notes: Supports English, Spanish, French.
+
+Title: Delivery Status Tracking
+User Story: As an admin, I want to track the delivery status of notifications so that I can ensure messages are received.
+Acceptance Criteria:
+Scenario: Status is tracked
+Given a notification is sent
+When I view the notification log
+Then I see delivery status (delivered, failed, pending)
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US12.1 | Notes: Retry logic for failed deliveries.
+
+Title: Announcements Dashboard Widget
+User Story: As a user, I want to see company announcements on my dashboard so that I stay informed.
+Acceptance Criteria:
+Scenario: Announcements are displayed
+Given announcements are published
+When I log in
+Then I see the latest announcements on my dashboard
+Additional Details:
+- Priority: Low | Story Points: 2 | Dependencies: US12.1 | Notes: Dismissible widget.
+
+Title: Quiet Hours Configuration
+User Story: As a user, I want to configure quiet hours so that I am not disturbed outside work hours.
+Acceptance Criteria:
+Scenario: Quiet hours are respected
+Given I set quiet hours
+When a notification is triggered during that time
+Then it is queued and delivered after quiet hours end
+Additional Details:
+- Priority: Low | Story Points: 2 | Dependencies: US12.1 | Notes: Per user setting.
+
+
+===========================================
+EPIC E13 â INTEGRATION LAYER (HRIS/WMS APIs)
+===========================================
+
+Title: Expose JWT/OAuth2-Secured REST APIs
+User Story: As an integration developer, I want to access secured REST APIs for employee and department data so that external systems can sync.
+Acceptance Criteria:
+Scenario: API is accessed
+Given I have valid credentials
+When I call the API
+Then I receive data per OpenAPI schema
+Additional Details:
+- Priority: High | Story Points: 3 | Dependencies: E01, E02, E03 | Notes: Supports JWT/OAuth2.
+
+Title: HRIS Sync Job for New Hires/Terms
+User Story: As an admin, I want a scheduled job to sync new hires and terminations from HRIS so that employee records are up to date.
+Acceptance Criteria:
+Scenario: Sync job runs
+Given HRIS integration is configured
+When the sync job runs
+Then new hires are created and terms are deactivated
+Additional Details:
+- Priority: High | Story Points: 3 | Dependencies: US13.1 | Notes: Idempotent sync.
+
+Title: WMS Department/Location Link
+User Story: As an admin, I want to link departments and locations with WMS so that assignments are accurate.
+Acceptance Criteria:
+Scenario: Departments are synced
+Given WMS integration is configured
+When I sync departments/locations
+Then records are updated in both systems
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US13.1 | Notes: Handles mapping conflicts.
+
+Title: Webhooks for Events
+User Story: As a partner system, I want to receive webhooks for key events (new hire, term, shift change) so that I can update my records.
+Acceptance Criteria:
+Scenario: Webhook is sent
+Given webhooks are configured
+When a relevant event occurs
+Then a webhook is sent with event payload
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US13.1 | Notes: Retry on failure.
+
+Title: OpenAPI Documentation
+User Story: As a developer, I want comprehensive OpenAPI documentation so that I can integrate efficiently.
+Acceptance Criteria:
+Scenario: Documentation is available
+Given APIs are available
+When I access the docs endpoint
+Then I see all endpoints, schemas, and examples
+Additional Details:
+- Priority: Medium | Story Points: 1 | Dependencies: US13.1 | Notes: Auto-generated.
+
+
+===========================================
+EPIC E14 â AUDIT TRAIL & COMPLIANCE
+===========================================
+
+Title: Centralized Audit Logging for Sensitive Changes
+User Story: As a compliance officer, I want all sensitive changes to be logged centrally so that I can audit activity.
+Acceptance Criteria:
+Scenario: Change is logged
+Given a create/update/delete occurs
+When the action is performed
+Then actor, timestamp, and before/after values are logged
+Additional Details:
+- Priority: High | Story Points: 3 | Dependencies: E03 | Notes: Covers PII, schedules, approvals, payroll.
+
+Title: Tamper-Evident Storage
+User Story: As an auditor, I want audit logs to be tamper-evident so that integrity is assured.
+Acceptance Criteria:
+Scenario: Logs are tamper-evident
+Given logs are stored
+When I review them
+Then any tampering is detectable via hash chains or similar
+Additional Details:
+- Priority: High | Story Points: 3 | Dependencies: US14.1 | Notes: Immutable storage.
+
+Title: Export Audit Logs by Date/User/Entity
+User Story: As an admin, I want to export audit logs filtered by date, user, or entity so that I can investigate incidents.
+Acceptance Criteria:
+Scenario: Logs are exported
+Given logs exist
+When I apply filters and export
+Then I receive a CSV with matching records
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US14.1 | Notes: Export includes all fields.
+
+Title: Test Coverage for Audit Logging
+User Story: As a QA, I want automated tests to validate audit logging coverage so that no sensitive action is missed.
+Acceptance Criteria:
+Scenario: Tests validate logging
+Given tests run
+When a sensitive action occurs
+Then the audit log is verified for completeness
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US14.1 | Notes: Test cases for all modules.
+
+
+===========================================
+EPIC E15 â REPORTING & ANALYTICS
+===========================================
+
+Title: Operational Reports (Attendance, Overtime, Leave)
+User Story: As a manager, I want to generate operational reports for attendance, overtime, and leave so that I can monitor workforce trends.
+Acceptance Criteria:
+Scenario: Report is generated
+Given data exists
+When I select report type and filters
+Then I receive a report with relevant metrics
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: E04, E05, E06 | Notes: Filters by date, department, shift.
+
+Title: Certification & Safety KPI Reports
+User Story: As a safety officer, I want reports on certification status and safety KPIs so that I can ensure compliance.
+Acceptance Criteria:
+Scenario: Report is generated
+Given data exists
+When I generate a report
+Then I see certification expiries, incident rates, and trends
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: E07, E08 | Notes: Exportable as CSV/PDF.
+
+Title: Role-Based Dashboards
+User Story: As a user, I want dashboards tailored to my role so that I see relevant analytics.
+Acceptance Criteria:
+Scenario: Dashboard is displayed
+Given I log in
+When I access the dashboard
+Then I see widgets based on my role (manager, HR, worker)
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: E03 | Notes: Widgets configurable.
+
+Title: Export Reports (CSV/PDF)
+User Story: As a user, I want to export reports as CSV or PDF so that I can share or archive them.
+Acceptance Criteria:
+Scenario: Report is exported
+Given a report is generated
+When I select export format
+Then I receive the file within 10 seconds for up to 50k rows
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US15.1 | Notes: Handles large datasets.
+
+Title: Metrics Endpoints for BI Integration
+User Story: As a BI developer, I want metrics endpoints for integration with external BI tools so that I can build custom dashboards.
+Acceptance Criteria:
+Scenario: Metrics are accessed
+Given endpoints are available
+When I call them with valid credentials
+Then I receive metrics in JSON format
+Additional Details:
+- Priority: Low | Story Points: 2 | Dependencies: US15.1 | Notes: OpenAPI documented.
+
+
+===========================================
+EPIC E16 â MOBILE ACCESS (PWA)
+===========================================
+
+Title: Responsive Mobile Views for Core Flows
+User Story: As a worker, I want to clock in/out, view schedules, request leave, and see announcements on my mobile device so that I can manage my work on the go.
+Acceptance Criteria:
+Scenario: Mobile views are responsive
+Given I access the app on mobile
+When I use core features
+Then all screens are responsive and usable
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: E04, E05, E06, E12 | Notes: Tested on iOS/Android.
+
+Title: Installable PWA Manifest
+User Story: As a user, I want to install the app as a PWA so that I have quick access from my home screen.
+Acceptance Criteria:
+Scenario: PWA is installable
+Given I access the app
+When I install it
+Then it appears as an app icon and launches full screen
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US16.1 | Notes: Manifest includes icons, splash screen.
+
+Title: Offline Queue for Clock Events
+User Story: As a worker, I want to clock in/out offline and have events queued for sync so that my attendance is not lost.
+Acceptance Criteria:
+Scenario: Offline events are queued
+Given I am offline
+When I clock in/out
+Then the event is queued and synced when online
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: US16.1 | Notes: Handles conflicts on sync.
+
+Title: Lighthouse PWA Score â¥ 80
+User Story: As a product owner, I want the PWA to score at least 80 on Lighthouse audits so that performance and usability are high.
+Acceptance Criteria:
+Scenario: Lighthouse score meets threshold
+Given the PWA is built
+When I run Lighthouse
+Then the score is â¥ 80 for performance, accessibility, and best practices
+Additional Details:
+- Priority: Low | Story Points: 1 | Dependencies: US16.1 | Notes: Automated in CI.
+
+
+===========================================
+EPIC E17 â ONBOARDING & OFFBOARDING WORKFLOW
+===========================================
+
+Title: Automated Provisioning for New Hires
+User Story: As an HR admin, I want new hires to be provisioned automatically with accounts, schedules, and training tasks so that onboarding is efficient.
+Acceptance Criteria:
+Scenario: New hire is provisioned
+Given a new hire is synced from HRIS
+When onboarding triggers
+Then accounts, initial schedule, and required training are created
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: E02, E03, E05, E07, E13 | Notes: Email sent to new hire.
+
+Title: Asset Assignment Tasks for Onboarding
+User Story: As a supervisor, I want onboarding tasks to include asset assignment so that new hires have required equipment.
+Acceptance Criteria:
+Scenario: Asset assignment is tracked
+Given onboarding is in progress
+When I view tasks
+Then asset assignment is listed and tracked
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US17.1, E09 | Notes: Checklist format.
+
+Title: Automated Deprovisioning on Termination
+User Story: As an HR admin, I want terminated employees to be deprovisioned automatically so that access and assets are recovered.
+Acceptance Criteria:
+Scenario: Termination is processed
+Given a termination is synced from HRIS
+When offboarding triggers
+Then access is revoked, assets are collected, and schedules are updated
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: E02, E03, E09, E13 | Notes: Notifications sent to IT and supervisor.
+
+Title: Onboarding/Offboarding Status Dashboard
+User Story: As an admin, I want to track onboarding and offboarding status for all employees so that nothing is missed.
+Acceptance Criteria:
+Scenario: Status is tracked
+Given onboarding/offboarding is in progress
+When I view the dashboard
+Then I see status, pending tasks, and completion dates
+Additional Details:
+- Priority: Low | Story Points: 2 | Dependencies: US17.1, US17.3 | Notes: Exportable as CSV.
+
+
+===========================================
+EPIC E18 â LOCALIZATION & MULTI-TENANT SUPPORT
+===========================================
+
+Title: Multi-Language UI Support
+User Story: As a user, I want the UI to be available in multiple languages so that I can use the system in my preferred language.
+Acceptance Criteria:
+Scenario: Language is selected
+Given I select a language
+When I navigate the app
+Then all UI text is displayed in that language
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: E03 | Notes: Supports English, Spanish, French.
+
+Title: Tenant-Specific Branding & Config
+User Story: As an admin, I want each tenant to have custom branding and configuration so that the system matches their identity.
+Acceptance Criteria:
+Scenario: Branding is applied
+Given I manage tenant settings
+When I update branding
+Then the UI reflects the tenant's logo, colors, and settings
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US18.1 | Notes: Configurable per tenant.
+
+Title: Localized Notification Templates
+User Story: As an admin, I want notification templates to be localized per tenant so that communications are clear.
+Acceptance Criteria:
+Scenario: Template is localized
+Given templates are set
+When a notification is sent
+Then it uses the tenant's language and branding
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: E12 | Notes: Supports merge fields.
+
+Title: Multi-Tenant Data Isolation
+User Story: As a system admin, I want tenant data to be isolated so that privacy and security are maintained.
+Acceptance Criteria:
+Scenario: Data is isolated
+Given multiple tenants exist
+When I access data
+Then I only see data for my tenant
+Additional Details:
+- Priority: High | Story Points: 3 | Dependencies: E03 | Notes: Enforced at DB and API layers.
+
+
+===========================================
+EPIC E19 â OBSERVABILITY (METRICS, LOGGING, TRACING)
+===========================================
+
+Title: Application Metrics Collection
+User Story: As a DevOps engineer, I want to collect application metrics so that I can monitor system health.
+Acceptance Criteria:
+Scenario: Metrics are collected
+Given the app is running
+When I access the /metrics endpoint
+Then I see metrics for requests, errors, latency, and resource usage
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: E01 | Notes: Prometheus format.
+
+Title: Centralized Structured Logging
+User Story: As a developer, I want all logs to be structured and centralized so that troubleshooting is efficient.
+Acceptance Criteria:
+Scenario: Logs are centralized
+Given the app is running
+When an event occurs
+Then logs are written in JSON format and sent to the central log store
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: E01 | Notes: Supports log levels.
+
+Title: Distributed Tracing for Key Flows
+User Story: As a DevOps engineer, I want distributed tracing enabled for key flows so that I can diagnose performance issues.
+Acceptance Criteria:
+Scenario: Tracing is enabled
+Given tracing is enabled
+When a request spans multiple services
+Then trace IDs are propagated and visible in the tracing dashboard
+Additional Details:
+- Priority: Medium | Story Points: 3 | Dependencies: E01 | Notes: OpenTelemetry or similar.
+
+Title: Alerting on Critical Metrics
+User Story: As an SRE, I want alerts to be triggered on critical metrics so that I can respond to incidents quickly.
+Acceptance Criteria:
+Scenario: Alert is triggered
+Given alert thresholds are set
+When a metric exceeds threshold
+Then an alert is sent to the on-call engineer
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US19.1 | Notes: Integrates with PagerDuty/Slack.
+
+
+===========================================
+EPIC E20 â CI/CD PIPELINE & DEPLOYMENT
+===========================================
+
+Title: Automated Build & Test Pipeline
+User Story: As a developer, I want an automated CI pipeline to build and test the application so that code quality is ensured.
+Acceptance Criteria:
+Scenario: Pipeline runs
+Given code is pushed
+When the pipeline runs
+Then the app is built and all tests pass before merge
+Additional Details:
+- Priority: High | Story Points: 3 | Dependencies: E01 | Notes: Runs on every PR.
+
+Title: Automated Deployment to Staging & Production
+User Story: As a DevOps engineer, I want automated deployments to staging and production so that releases are consistent.
+Acceptance Criteria:
+Scenario: Deployment is automated
+Given a build is successful
+When the pipeline triggers deployment
+Then the app is deployed to the target environment
+Additional Details:
+- Priority: High | Story Points: 3 | Dependencies: US20.1 | Notes: Blue/green or canary supported.
+
+Title: Rollback on Deployment Failure
+User Story: As a DevOps engineer, I want failed deployments to automatically roll back so that downtime is minimized.
+Acceptance Criteria:
+Scenario: Rollback is triggered
+Given a deployment fails
+When rollback is triggered
+Then the previous stable version is restored
+Additional Details:
+- Priority: High | Story Points: 2 | Dependencies: US20.2 | Notes: Alerts sent on rollback.
+
+Title: Deployment Audit Trail
+User Story: As an auditor, I want all deployments to be logged with actor, timestamp, and status so that I can track changes.
+Acceptance Criteria:
+Scenario: Deployment is logged
+Given a deployment occurs
+When I view the deployment log
+Then I see all relevant details
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US20.2 | Notes: Exportable as CSV.
+
+Title: Environment Configuration Management
+User Story: As a DevOps engineer, I want environment configs managed as code so that deployments are reproducible.
+Acceptance Criteria:
+Scenario: Configs are managed
+Given configs are updated
+When the pipeline runs
+Then configs are applied per environment and versioned
+Additional Details:
+- Priority: Medium | Story Points: 2 | Dependencies: US20.1 | Notes: Uses secrets management.
+
+
+===========================================
+END OF USER STORIES FOR ALL 20 EPICS
+===========================================
