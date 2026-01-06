@@ -1,0 +1,76 @@
+EPIC E02 â EMPLOYEE MASTER DATA (CRUD)
+
+===========================================
+
+Title: Employee Master Data - Create Employee
+User Story: As an HR user, I want to create new employee records with name, badgeId, role, department, shiftGroup, hireDate, and status so that employee data is centrally managed.
+Acceptance Criteria:
+Scenario: Creating a new employee
+Given valid employee details
+When I POST to /employees
+Then a new employee is created with a unique badgeId
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding complete
+- Notes: badgeId must be unique.
+
+---
+
+Title: Employee Master Data - Read Employee
+User Story: As an HR user, I want to retrieve employee records with filtering and pagination so that I can efficiently manage large employee lists.
+Acceptance Criteria:
+Scenario: Retrieving employee list
+Given multiple employees exist
+When I GET /employees with filters
+Then I receive a paginated, filtered list
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee creation
+- Notes: Support filtering by department, role, status.
+
+---
+
+Title: Employee Master Data - Update Employee
+User Story: As an HR user, I want to update employee details so that records remain current and accurate.
+Acceptance Criteria:
+Scenario: Updating employee details
+Given an existing employee
+When I PUT or PATCH /employees/{id}
+Then the employee record is updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee creation
+- Notes: Only allowed fields can be updated.
+
+---
+
+Title: Employee Master Data - Delete Employee (Soft Delete)
+User Story: As an HR user, I want to soft-delete employee records so that historical data is preserved.
+Acceptance Criteria:
+Scenario: Soft-deleting an employee
+Given an existing employee
+When I DELETE /employees/{id}
+Then the employee is marked as deleted but not removed from the database
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee creation
+- Notes: Soft-deleted employees are excluded from active queries.
+
+---
+
+Title: Employee Master Data - OpenAPI Documentation
+User Story: As a developer, I want OpenAPI schemas with examples for employee APIs so that integration is straightforward.
+Acceptance Criteria:
+Scenario: OpenAPI documentation is available
+Given the API is running
+When I access the OpenAPI endpoint
+Then I see schemas and examples for all employee endpoints
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Employee CRUD endpoints
+- Notes: Keep documentation up to date.
