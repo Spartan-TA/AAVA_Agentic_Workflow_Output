@@ -1,0 +1,21 @@
+Title: Generate Custom Workforce Reports
+
+User Story:
+As an HR manager, I want to generate custom workforce reports so that I can analyze employee data and make informed decisions.
+
+Acceptance Criteria:
+Scenario 1: Create custom report
+  Given I have access to the reporting module
+  When I select data fields and filters
+  Then I can generate a report with the selected criteria
+
+Scenario 2: Export report
+  Given a report is generated
+  When I click 'Export'
+  Then I receive a CSV or PDF copy of the report
+
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: Employee data, reporting module
+Notes: Reports should support saving templates for reuse.
