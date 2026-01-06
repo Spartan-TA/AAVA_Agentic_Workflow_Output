@@ -1,0 +1,33 @@
+Title: Role-Based Endpoint Security
+
+User Story: As a system administrator I want to restrict API endpoints based on user roles So that sensitive operations are only accessible to authorized users.
+
+Acceptance Criteria:
+Scenario: Role-based access enforcement
+Given a user with a specific role (ADMIN, HR, SUPERVISOR, WORKER)
+When the user accesses a protected endpoint
+Then access is granted or denied according to their role
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Unauthorized requests return 401; forbidden actions return 403.
+
+---
+
+Title: API Key/OAuth2 Security Toggle
+
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication So that the system can adapt to different security requirements.
+
+Acceptance Criteria:
+Scenario: Security mode configuration
+Given the security mode is set in configuration
+When the application starts
+Then endpoints require the selected authentication method
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Security rules covered by automated tests.
