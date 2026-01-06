@@ -1,0 +1,15 @@
+#### User Story 9: Row-Level Security for Supervisors
+**As a** supervisor  
+**I want** to access only my team's employee records  
+**so that** data privacy is maintained.
+
+**Acceptance Criteria:**
+- **Given** a supervisor user,  
+  **When** they list employees,  
+  **Then** only their team's records are visible.
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E02, E03  
+Notes: Enforce row-level constraints in queries.
