@@ -1,0 +1,57 @@
+### Epic E14: Audit Trail & Compliance
+
+**User Story 1**
+Title: Log Sensitive Changes
+User Story: As an ADMIN, I want all sensitive changes logged with actor, timestamp, and before/after values so that compliance is met.
+Acceptance Criteria:
+Scenario: Change logging
+Given a create/update/delete
+When the action occurs
+Then all details are logged
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E03
+Notes: Tamper-evident storage.
+
+**User Story 2**
+Title: Immutable Log Table
+User Story: As a DBA, I want an immutable log table so that audit data cannot be altered.
+Acceptance Criteria:
+Scenario: Log immutability
+Given audit logs
+When I attempt to edit
+Then changes are blocked
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E03
+Notes: Append-only.
+
+**User Story 3**
+Title: Export Audit Logs
+User Story: As an ADMIN, I want to export audit logs by date, user, or entity so that forensic analysis is possible.
+Acceptance Criteria:
+Scenario: Audit export
+Given log data
+When I export
+Then filtered logs are included
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E03
+Notes: CSV/PDF supported.
+
+**User Story 4**
+Title: Test Audit Coverage
+User Story: As a QA ENGINEER, I want tests to validate audit coverage so that no sensitive action is missed.
+Acceptance Criteria:
+Scenario: Audit test
+Given test cases
+When I run tests
+Then all sensitive actions are logged
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E03
+Notes: Coverage report required.
