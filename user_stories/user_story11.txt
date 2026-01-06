@@ -1,0 +1,18 @@
+#### User Story 11: Clock-In Endpoint with Geofence
+**As a** warehouse worker  
+**I want** to clock in via an endpoint with optional geofence validation  
+**so that** my attendance is accurately recorded.
+
+**Acceptance Criteria:**
+- **Given** a valid location,  
+  **When** I POST `/attendance/clock-in`,  
+  **Then** my clock-in event is recorded and associated with my shift.
+- **Given** an invalid location,  
+  **When** I attempt to clock in,  
+  **Then** the request is rejected.
+
+**Additional Details:**  
+Priority: High  
+Story Points: 3  
+Dependencies: E02, E03  
+Notes: Capture device info if available.
