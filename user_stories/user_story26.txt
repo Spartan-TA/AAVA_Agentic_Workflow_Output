@@ -1,0 +1,21 @@
+Title: Assign Training Modules
+
+User Story: As a TRAINING MANAGER I want to assign training modules to employees So that compliance and skill development are tracked
+
+Acceptance Criteria:
+
+Scenario: Training manager assigns module
+Given I am logged in as TRAINING MANAGER
+When I select employees and assign a module
+Then employees are notified and module is added to their dashboard
+
+Scenario: Employee views assigned training
+Given a module is assigned
+When I log in as EMPLOYEE
+Then I see the training module and due date
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Assignment should support bulk actions and notifications.
