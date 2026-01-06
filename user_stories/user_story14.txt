@@ -1,0 +1,15 @@
+#### User Story 14: Attendance Report Export
+**As a** payroll administrator  
+**I want** to export attendance reports in CSV format  
+**so that** payroll processing is streamlined.
+
+**Acceptance Criteria:**
+- **Given** attendance data,  
+  **When** I request an export,  
+  **Then** a CSV file is generated with daily totals.
+
+**Additional Details:**  
+Priority: High  
+Story Points: 2  
+Dependencies: E04  
+Notes: Support date range and filtering.
