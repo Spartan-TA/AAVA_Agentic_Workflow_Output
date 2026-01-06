@@ -1,0 +1,21 @@
+Title: Update Employee Record
+
+User Story: As an HR user I want to update employee records So that changes in employee information are accurately reflected in the system
+
+Acceptance Criteria:
+
+Scenario: Successful employee update
+Given I am authenticated as HR
+When I submit a PUT or PATCH request to /employees/{id} with valid changes
+Then the employee record should be updated and returned
+
+Scenario: Invalid update rejected
+Given an employee record exists
+When I submit an update with missing required fields or invalid data
+Then I should receive a validation error and the record should not be changed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: All updates must be validated and tracked.
