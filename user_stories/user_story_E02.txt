@@ -1,0 +1,33 @@
+### E02 - Employee Master Data (CRUD)
+
+**User Story 1: Create Employee Record**
+- Title: Employee Creation API
+- User Story: As an HR user, I want to create employee records with all required fields so that employee data is accurately captured.
+- Acceptance Criteria:
+  - Given valid employee data, When I POST to /employees, Then a new employee is created with a unique badgeId.
+  - Given a duplicate badgeId, When I try to create an employee, Then the request is rejected.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, Notes: badgeId must be unique.
+
+**User Story 2: Update Employee Record**
+- Title: Employee Update API
+- User Story: As an HR user, I want to update employee details so that changes in employee information are reflected in the system.
+- Acceptance Criteria:
+  - Given an existing employee, When I PUT/PATCH to /employees/{id}, Then the employee data is updated.
+  - Given invalid data, When I update, Then the request is rejected with validation errors.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Validate all fields.
+
+**User Story 3: Delete Employee Record (Soft Delete)**
+- Title: Employee Soft Delete API
+- User Story: As an HR user, I want to soft-delete employee records so that historical data is preserved.
+- Acceptance Criteria:
+  - Given an employee, When I DELETE /employees/{id}, Then the employee status is set to inactive and not removed from the database.
+  - Given a deleted employee, When I GET /employees, Then the employee is excluded from active lists unless filtered.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Implement soft-delete logic.
+
+**User Story 4: List & Filter Employees**
+- Title: Employee List API with Pagination/Filtering
+- User Story: As an HR user, I want to list and filter employees by department, status, and role so that I can find relevant records efficiently.
+- Acceptance Criteria:
+  - Given multiple employees, When I GET /employees with filters, Then only matching employees are returned.
+  - Given a large dataset, When I paginate, Then results are split across pages.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, Notes: Support OpenAPI schema.
