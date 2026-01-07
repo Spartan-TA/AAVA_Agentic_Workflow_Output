@@ -1,0 +1,71 @@
+### E05: Shift & Schedule Management
+
+**User Story 1**
+Title: Create Recurring Shift Templates
+User Story: As an HR I want to define recurring shift templates So that scheduling is efficient
+Acceptance Criteria:
+Scenario: Add shift template
+Given valid shift details
+When I POST to `/shifts/templates`
+Then the template is created and available for assignment
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Supports daily/weekly recurrence
+
+**User Story 2**
+Title: Assign Shifts to Employees
+User Story: As a SUPERVISOR I want to assign shifts to multiple employees in bulk So that scheduling is streamlined
+Acceptance Criteria:
+Scenario: Bulk assign shifts
+Given a list of employees
+When I assign a shift template
+Then all selected employees receive the shift
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Conflicts are detected and prevented
+
+**User Story 3**
+Title: Detect and Prevent Scheduling Conflicts
+User Story: As an HR I want the system to prevent overlapping shifts So that employees are not double-booked
+Acceptance Criteria:
+Scenario: Overlapping shift assignment
+Given an employee already has a shift
+When I attempt to assign an overlapping shift
+Then the system blocks the assignment and returns an error
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Error message specifies conflict details
+
+**User Story 4**
+Title: View Personal Upcoming Shifts
+User Story: As a WORKER I want to view my upcoming shifts So that I can plan my schedule
+Acceptance Criteria:
+Scenario: View shifts
+Given I am logged in
+When I access my schedule
+Then I see a list of my upcoming shifts
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E02, E03, E04
+- Notes: Mobile-friendly view
+
+**User Story 5**
+Title: Generate Audit Entries for Schedule Changes
+User Story: As an ADMIN I want all schedule changes to be audited So that I can trace who made changes
+Acceptance Criteria:
+Scenario: Schedule change
+Given a shift is updated
+When the change is saved
+Then an audit entry is created with actor, timestamp, and before/after values
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Audit log is immutable
