@@ -1,0 +1,73 @@
+Title: Time & Attendance (Clock In/Out) - Record Clock-In Event
+User Story: As a warehouse worker I want to clock in at the start of my shift So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Valid clock-in
+Given my badgeId and location are valid
+When I POST to /attendance/clock-in
+Then my clock-in event is recorded
+And associated with my shift
+
+Scenario: Geofence validation
+Given geofence is enabled
+When I clock in outside allowed area
+Then the request is rejected
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC
+- Notes: Device capture required
+
+---
+
+Title: Time & Attendance (Clock In/Out) - Record Clock-Out Event
+User Story: As a warehouse worker I want to clock out at the end of my shift So that my worked hours are calculated
+
+Acceptance Criteria:
+Scenario: Valid clock-out
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded
+And hours worked are calculated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock-in event
+- Notes: Automatic shift association
+
+---
+
+Title: Time & Attendance (Clock In/Out) - Handle Missed Punches
+User Story: As a supervisor I want to correct missed clock-in/out events So that attendance records are accurate
+
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch is detected
+When a correction request is submitted
+Then an approval task is created
+And upon approval, the record is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock-in/out events
+- Notes: Corrections must be auditable
+
+---
+
+Title: Time & Attendance (Clock In/Out) - Export Attendance Report
+User Story: As a payroll manager I want to export attendance data So that payroll processing is accurate
+
+Acceptance Criteria:
+Scenario: Export attendance
+Given attendance records exist
+When I request a CSV export
+Then the report is generated and downloadable
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance events
+- Notes: Daily totals computed
