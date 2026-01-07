@@ -1,0 +1,15 @@
+Title: Update User Profile Information
+
+User Story: As a logged-in user I want to update my profile information (name, address, phone) So that my account details remain accurate and up to date
+
+Acceptance Criteria:
+Scenario: Successful Profile Update
+Given I am logged in and on the profile settings page
+When I edit my name, address, or phone number and click "Save"
+Then my updated information is saved and displayed, and I receive a confirmation message
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: User profile module
+- Notes: Input validation must be enforced (e.g., valid phone number format, address fields not empty).
