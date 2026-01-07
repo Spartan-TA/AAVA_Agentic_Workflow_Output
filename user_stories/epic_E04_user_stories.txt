@@ -1,0 +1,67 @@
+E04 - TIME & ATTENDANCE (CLOCK IN/OUT) USER STORIES
+
+Title: Clock-In/Clock-Out Endpoints
+User Story: As a worker, I want to clock in and out via endpoints so that my attendance is accurately recorded.
+Acceptance Criteria:
+Scenario: Clock In
+Given a valid employee
+When I POST to /attendance/clock-in
+Then my clock-in event is recorded
+Scenario: Clock Out
+Given a valid employee
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Validate geofence and device capture if enabled.
+
+---
+
+Title: Calculate Hours Worked Per Shift
+User Story: As a payroll admin, I want hours worked per shift to be calculated automatically so that payroll is accurate.
+Acceptance Criteria:
+Scenario: Shift Calculation
+Given clock-in and clock-out events
+When daily totals are computed
+Then hours worked per shift are available
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Handle overnight shifts.
+
+---
+
+Title: Missed Punches and Corrections Workflow
+User Story: As a supervisor, I want to handle missed punches and corrections via approval workflow so that attendance records are accurate.
+Acceptance Criteria:
+Scenario: Missed Punch
+Given a missed clock-in/out
+When a correction is submitted
+Then an approval task is created for supervisor
+Scenario: Correction Approval
+Given a pending correction
+When supervisor approves
+Then attendance record is updated
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Track correction history.
+
+---
+
+Title: Attendance Reports Export
+User Story: As an HR user, I want to export attendance reports in CSV format so that I can analyze and share data.
+Acceptance Criteria:
+Scenario: Export Attendance
+Given attendance data
+When I request an export
+Then a CSV file is generated with daily totals
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Include filters for date range.
