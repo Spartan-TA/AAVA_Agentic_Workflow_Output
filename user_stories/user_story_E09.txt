@@ -1,0 +1,30 @@
+### E09 - Equipment & Asset Assignment
+
+**User Story 1: Asset Registry CRUD**
+- Title: Manage Asset Registry
+- User Story: As an asset manager, I want to create, update, and delete asset records so that equipment is tracked.
+- Acceptance Criteria:
+  - Given asset data, When I CRUD assets, Then records are stored and retrievable.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: E02, E03, E07, Notes: Include asset condition.
+
+**User Story 2: Asset Check-In/Out**
+- Title: Asset Checkout/Return
+- User Story: As an employee, I want to check out and return assets so that usage is tracked.
+- Acceptance Criteria:
+  - Given a valid certification, When I check out an asset, Then the assignment is recorded.
+  - Given an invalid certification, When I check out, Then the request is blocked.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E07, Notes: Certification check.
+
+**User Story 3: Asset History Log**
+- Title: View Asset Assignment History
+- User Story: As an asset manager, I want to view the history of asset assignments so that accountability is maintained.
+- Acceptance Criteria:
+  - Given an asset, When I view history, Then all check-in/out events are listed.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E07, Notes: Link to employee.
+
+**User Story 4: Overdue Asset Report**
+- Title: Report Overdue Asset Returns
+- User Story: As an asset manager, I want to report overdue asset returns so that assets are recovered promptly.
+- Acceptance Criteria:
+  - Given overdue assets, When I generate a report, Then all overdue items are listed.
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E02, E03, E07, Notes: Notification required.
