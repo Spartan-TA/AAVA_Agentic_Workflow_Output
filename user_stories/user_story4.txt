@@ -1,0 +1,29 @@
+**User Story 4: Data Management - Export Data**
+
+**Title:** Export User Data to CSV
+
+**User Story:**
+As a user, I want to export my data to a CSV file so that I can analyze it offline or share it with others.
+
+**Acceptance Criteria:**
+**Scenario 1:** Successful Data Export
+Given the user is logged in and on the data management page
+When the user clicks the "Export to CSV" button
+Then a CSV file containing the user's data is downloaded
+
+**Scenario 2:** No Data to Export
+Given the user is on the data management page
+When there is no data available
+Then the "Export to CSV" button is disabled
+And a tooltip "No data available to export" is displayed
+
+**Scenario 3:** Export Error Handling
+Given the user initiates a data export
+When an error occurs during export
+Then an error message "Export failed, please try again later" is displayed
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Data retrieval API, CSV generation module
+- Notes: Ensure sensitive data is excluded from export; support large data sets efficiently.
