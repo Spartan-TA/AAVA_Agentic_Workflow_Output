@@ -1,0 +1,73 @@
+### E03 - Role-Based Access Control (RBAC)
+
+**User Story 1**
+Title: Implement Role-Based Authentication
+User Story: As a system I want to authenticate users and assign roles (ADMIN, HR, SUPERVISOR, WORKER) So that access is controlled based on user type.
+Acceptance Criteria:
+Scenario: User login
+Given a valid user
+When they log in
+Then their role is assigned in the session
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Use Spring Security.
+
+**User Story 2**
+Title: Secure Endpoints by Role
+User Story: As a system I want to restrict API endpoints based on user roles So that only authorized users can perform sensitive operations.
+Acceptance Criteria:
+Scenario: Endpoint access
+Given a user with role WORKER
+When they try to access an ADMIN-only endpoint
+Then the API returns 403 Forbidden
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03-1
+- Notes: Method-level security annotations.
+
+**User Story 3**
+Title: Enforce Row-Level Security
+User Story: As a supervisor I want to access only records for my team So that I cannot view or modify data outside my scope.
+Acceptance Criteria:
+Scenario: Team data access
+Given a supervisor user
+When they query employee data
+Then only their team's records are returned
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03-2
+- Notes: Team assignment logic required.
+
+**User Story 4**
+Title: Support API Key/OAuth2 Toggle
+User Story: As a system admin I want to toggle between API key and OAuth2 authentication via config So that integration options are flexible.
+Acceptance Criteria:
+Scenario: Auth mode toggle
+Given the config is set to API key
+When I authenticate
+Then API key is required
+And when set to OAuth2
+Then OAuth2 is required
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03-1
+- Notes: Document config options.
+
+**User Story 5**
+Title: Return Proper Error Codes for Unauthorized/Forbidden
+User Story: As a user I want to receive 401 for unauthorized and 403 for forbidden actions So that error handling is clear.
+Acceptance Criteria:
+Scenario: Unauthorized/forbidden access
+Given an unauthenticated or unauthorized request
+When I access a protected endpoint
+Then I receive 401 or 403 as appropriate
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E03-2
+- Notes: Covered by automated tests.
