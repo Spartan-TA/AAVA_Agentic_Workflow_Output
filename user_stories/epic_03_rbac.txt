@@ -1,0 +1,46 @@
+Title: Role-Based Access Control (RBAC) - Secure Endpoints by Role
+User Story: As a system administrator I want to restrict access to sensitive endpoints based on user roles So that only authorized users can perform certain actions
+
+Acceptance Criteria:
+Scenario: Unauthorized access
+Given a user without required role
+When they access a protected endpoint
+Then they receive a 401 or 403 error
+
+Scenario: ADMIN access
+Given an ADMIN user
+When they access any employee record
+Then access is granted
+
+Scenario: SUPERVISOR access
+Given a SUPERVISOR user
+When they access team records
+Then access is granted
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD
+- Notes: Security rules must be covered by tests
+
+---
+
+Title: Role-Based Access Control (RBAC) - API Key/OAuth2 Toggle
+User Story: As a DevOps engineer I want to toggle authentication between API key and OAuth2 So that I can support different integration scenarios
+
+Acceptance Criteria:
+Scenario: Toggle authentication method
+Given configuration is set to API key
+When a request is made with valid API key
+Then access is granted
+
+Scenario: Toggle to OAuth2
+Given configuration is set to OAuth2
+When a request is made with valid OAuth2 token
+Then access is granted
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Secure endpoints
+- Notes: Toggle must be configurable
