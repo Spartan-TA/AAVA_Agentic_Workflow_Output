@@ -1,0 +1,71 @@
+### E04 - Time & Attendance (Clock In/Out)
+
+**User Story 1**
+Title: Implement Clock-In Endpoint
+User Story: As a worker I want to clock in at the start of my shift So that my attendance is recorded accurately.
+Acceptance Criteria:
+Scenario: Clock-in event
+Given my shift is scheduled
+When I POST to /attendance/clock-in
+Then my clock-in time is recorded and associated with my shift
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Device and geofence capture optional.
+
+**User Story 2**
+Title: Implement Clock-Out Endpoint
+User Story: As a worker I want to clock out at the end of my shift So that my worked hours are calculated.
+Acceptance Criteria:
+Scenario: Clock-out event
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out time is recorded and hours are computed
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04-1
+- Notes: Validation for missed punches.
+
+**User Story 3**
+Title: Handle Missed Punches and Corrections
+User Story: As a supervisor I want to review and approve corrections for missed punches So that attendance records are accurate.
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch is detected
+When a correction is submitted
+Then an approval task is created for supervisor review
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04-2
+- Notes: Corrections must be auditable.
+
+**User Story 4**
+Title: Export Attendance Reports
+User Story: As an HR user I want to export attendance data as CSV So that I can process payroll and compliance reports.
+Acceptance Criteria:
+Scenario: Attendance export
+Given attendance records exist
+When I request an export
+Then a CSV file is generated with daily totals
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04-2
+- Notes: Export includes shift association.
+
+**User Story 5**
+Title: Automatic Shift Association
+User Story: As a system I want to automatically associate clock-in/out events with scheduled shifts So that manual mapping is not required.
+Acceptance Criteria:
+Scenario: Shift association
+Given a clock-in event
+When the event is processed
+Then it is linked to the correct scheduled shift
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04-1, E05
+- Notes: Handles overnight shifts.
