@@ -1,0 +1,48 @@
+Title: Payroll Export Integration - Generate Payroll File
+User Story: As a payroll manager I want to generate payroll-ready files from attendance and leave So that payroll runs are accurate
+
+Acceptance Criteria:
+Scenario: Generate payroll file
+Given approved attendance and leave records
+When I request payroll export
+Then the file matches provider schema
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Attendance, Leave management
+- Notes: Secure delivery via SFTP/API
+
+---
+
+Title: Payroll Export Integration - Retry Failed Deliveries
+User Story: As a payroll manager I want failed payroll exports to be retried automatically So that errors are minimized
+
+Acceptance Criteria:
+Scenario: Failed export
+Given a payroll export fails
+When the system detects failure
+Then it retries with exponential backoff
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Payroll export
+- Notes: Audit log for every export
+
+---
+
+Title: Payroll Export Integration - Audit Payroll Exports
+User Story: As a compliance manager I want every payroll export to be logged So that all actions are traceable
+
+Acceptance Criteria:
+Scenario: Log export
+Given a payroll export is performed
+When the export completes
+Then an audit log entry is created with timestamp and actor
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Payroll export
+- Notes: Audit log must be immutable
