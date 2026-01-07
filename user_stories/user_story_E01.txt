@@ -1,0 +1,26 @@
+### E01 - Project Scaffolding & Domain Setup
+
+**User Story 1: Project Initialization**
+- Title: Initialize Spring Boot Project Structure
+- User Story: As a developer, I want to initialize the Spring Boot project with base packages and modules so that the team has a standardized foundation for development.
+- Acceptance Criteria:
+  - Given the repository is cloned, When I run the build command, Then the project builds and runs on port 8080.
+  - Given the project, When I check the README, Then I see clear build and run steps.
+  - Given the application is running, When I access /actuator/health, Then I receive a status of UP.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: None, Notes: Use Maven, include Flyway/Liquibase.
+
+**User Story 2: Database Migration Setup**
+- Title: Configure DB Migrations
+- User Story: As a developer, I want to set up Flyway/Liquibase for database migrations so that schema changes are managed consistently.
+- Acceptance Criteria:
+  - Given the project is built, When I start the application, Then baseline migrations are applied automatically.
+  - Given a new migration file, When I run migrations, Then the database schema updates without errors.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: None, Notes: Baseline migration must run on first start.
+
+**User Story 3: Core Module Scaffolding**
+- Title: Scaffold Core Modules
+- User Story: As a developer, I want to scaffold core modules (employee, scheduling, attendance, safety) so that each domain is separated and maintainable.
+- Acceptance Criteria:
+  - Given the project structure, When I inspect the codebase, Then I see separate packages for each core module.
+  - Given a new module, When I add it, Then it follows the established package structure.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: None, Notes: Follow DDD principles.
