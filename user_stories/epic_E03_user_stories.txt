@@ -1,0 +1,67 @@
+E03 - ROLE BASED ACCESS CONTROL (RBAC) USER STORIES
+
+Title: Implement Role-Based Endpoint Security
+User Story: As a system admin, I want to restrict API endpoints based on user roles so that sensitive operations are only performed by authorized users.
+Acceptance Criteria:
+Scenario: Unauthorized Request
+Given a user without required role
+When they access a protected endpoint
+Then they receive a 401 Unauthorized response
+Scenario: Forbidden Action
+Given a user with insufficient privileges
+When they attempt a restricted action
+Then they receive a 403 Forbidden response
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Roles include ADMIN, HR, SUPERVISOR, WORKER.
+
+---
+
+Title: Row-Level Security for Employee Data
+User Story: As a supervisor, I want to access only my team's employee records so that privacy is maintained.
+Acceptance Criteria:
+Scenario: Supervisor Access
+Given a supervisor user
+When they query employee data
+Then only employees in their team are returned
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Enforce row-level constraints.
+
+---
+
+Title: API Key/OAuth2 Authentication Toggle
+User Story: As a system admin, I want to toggle between API key and OAuth2 authentication via config so that integration requirements can be met.
+Acceptance Criteria:
+Scenario: Auth Toggle
+Given the config is set to API key
+When a request is made with a valid key
+Then access is granted
+Scenario: Auth Toggle
+Given the config is set to OAuth2
+When a request is made with a valid token
+Then access is granted
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Document toggle mechanism.
+
+---
+
+Title: Security Test Coverage
+User Story: As a QA engineer, I want security rules to be covered by automated tests so that vulnerabilities are detected early.
+Acceptance Criteria:
+Scenario: Security Test
+Given security rules
+When tests are executed
+Then unauthorized and forbidden actions are correctly blocked
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Include edge cases.
