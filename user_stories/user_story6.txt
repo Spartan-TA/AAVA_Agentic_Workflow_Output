@@ -1,0 +1,29 @@
+**User Story 6: User Authentication - Password Reset**
+
+**Title:** Password Reset via Email
+
+**User Story:**
+As a user who has forgotten my password, I want to reset it via email so that I can regain access to my account securely.
+
+**Acceptance Criteria:**
+**Scenario 1:** Request Password Reset
+Given the user is on the login page
+When the user clicks "Forgot Password" and enters their registered email
+Then a password reset link is sent to the email address
+
+**Scenario 2:** Invalid Email
+Given the user enters an unregistered email
+When the user requests a password reset
+Then an error message "Email not found" is displayed
+
+**Scenario 3:** Successful Password Update
+Given the user clicks the password reset link
+When the user enters a new password and confirms
+Then the password is updated
+And the user can log in with the new password
+
+**Additional Details:**
+- Priority: High
+- Story Points: 8
+- Dependencies: Email service, authentication module, user database
+- Notes: Password reset link should expire after a set time; enforce strong password requirements.
