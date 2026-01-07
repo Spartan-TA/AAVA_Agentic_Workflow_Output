@@ -1,0 +1,37 @@
+### E05 - Shift & Schedule Management
+
+**User Story 1: Shift Template CRUD**
+- Title: Manage Shift Templates
+- User Story: As an HR user, I want to create, update, and delete shift templates so that scheduling is standardized.
+- Acceptance Criteria:
+  - Given shift data, When I CRUD shift templates, Then templates are stored and retrievable.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, E04, Notes: Support recurring shifts.
+
+**User Story 2: Assign Shifts to Employees**
+- Title: Bulk Assign Shifts
+- User Story: As a supervisor, I want to bulk-assign shifts to employees so that scheduling is efficient.
+- Acceptance Criteria:
+  - Given a list of employees, When I assign shifts, Then assignments are created and conflicts are detected.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, E04, Notes: Conflict detection required.
+
+**User Story 3: Blackout Dates & Calendar Integration**
+- Title: Manage Blackout Dates
+- User Story: As an HR user, I want to set blackout dates and integrate with warehouse calendars so that scheduling avoids operational conflicts.
+- Acceptance Criteria:
+  - Given a blackout date, When I add it, Then no shifts are scheduled on that date.
+  - Given a calendar update, When I sync, Then blackout dates are reflected.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, E04, Notes: Calendar sync.
+
+**User Story 4: Shift Visibility for Workers**
+- Title: View Upcoming Shifts
+- User Story: As a worker, I want to view my upcoming shifts so that I can plan my attendance.
+- Acceptance Criteria:
+  - Given assigned shifts, When I view my schedule, Then all upcoming shifts are listed.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, E04, Notes: Role-based visibility.
+
+**User Story 5: Audit Shift Changes**
+- Title: Audit Shift Assignment Changes
+- User Story: As a compliance officer, I want audit entries for shift assignments so that changes are traceable.
+- Acceptance Criteria:
+  - Given a shift assignment change, When I check the audit log, Then the actor, timestamp, and before/after data are recorded.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, E04, Notes: Link to audit trail.
