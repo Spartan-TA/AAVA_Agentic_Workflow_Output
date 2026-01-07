@@ -1,0 +1,15 @@
+Title: Receive Order Status Notifications
+
+User Story: As a customer I want to receive notifications when my order status changes So that I am kept informed about my order progress
+
+Acceptance Criteria:
+Scenario: Order Shipped Notification
+Given I have placed an order and provided a valid email address
+When the order status changes to "Shipped"
+Then I receive an email and an in-app notification indicating my order has shipped, including tracking information if available
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Notification service, Order management module
+- Notes: Notification preferences should be respected (email, in-app, or both).
