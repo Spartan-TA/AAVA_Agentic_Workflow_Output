@@ -1,0 +1,63 @@
+E05 - SHIFT & SCHEDULE MANAGEMENT USER STORIES
+
+Title: Create and Manage Shift Templates
+User Story: As a scheduler, I want to create recurring shift templates so that I can efficiently assign shifts to employees.
+Acceptance Criteria:
+Scenario: Create Template
+Given shift details
+When I create a template
+Then the template is saved and available for assignment
+Scenario: Edit Template
+Given an existing template
+When I update details
+Then changes are saved
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03, E04
+- Notes: Support rotations and overtime rules.
+
+---
+
+Title: Assign Shifts to Employees
+User Story: As a supervisor, I want to assign shifts to employees so that staffing needs are met.
+Acceptance Criteria:
+Scenario: Assign Shift
+Given a shift template
+When I assign to employees
+Then assignments are created and conflicts are detected/prevented
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03, E04
+- Notes: Bulk assignment supported.
+
+---
+
+Title: Blackout Dates and Operation Calendar
+User Story: As an operations manager, I want to manage blackout dates and operation calendars so that scheduling conflicts are minimized.
+Acceptance Criteria:
+Scenario: Add Blackout Date
+Given a calendar
+When I add a blackout date
+Then no shifts can be scheduled on that date
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Calendar visible to all users.
+
+---
+
+Title: Audit Entries for Schedule Changes
+User Story: As a compliance officer, I want audit entries generated for schedule changes so that all modifications are tracked.
+Acceptance Criteria:
+Scenario: Schedule Change
+Given a shift assignment
+When it is created/updated/deleted
+Then an audit entry is logged with actor and timestamp
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Immutable audit log.
