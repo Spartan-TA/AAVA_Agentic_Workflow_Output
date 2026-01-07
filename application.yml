@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  mail:
+    host: smtp.example.com
+    port: 587
+    username: your_email@example.com
+    password: your_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  websocket:
+    endpoint: /ws
+    allowed-origins: '*'
+
+jwt:
+  secret: mysecretkey1234567890
+  expiration: 3600000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  level:
+    org.springframework: INFO
+    com.example.usermanagement: DEBUG
+
+app:
+  report:
+    schedule:
+      daily: '0 0 8 * * *'
+      weekly: '0 0 8 * * MON'
+      monthly: '0 0 8 1 * *'
