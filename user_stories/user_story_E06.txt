@@ -1,0 +1,38 @@
+### E06 - Leave & Absence Management
+
+**User Story 1: Request Leave**
+- Title: Employee Leave Request
+- User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my time off is tracked.
+- Acceptance Criteria:
+  - Given leave balance, When I request leave, Then the request is submitted for approval.
+  - Given insufficient balance, When I request leave, Then the request is rejected.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: E02, E03, E05, Notes: Validate policies.
+
+**User Story 2: Approve/Deny Leave**
+- Title: Supervisor Leave Approval
+- User Story: As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+- Acceptance Criteria:
+  - Given a pending leave request, When I approve/deny, Then the employee is notified and balances update.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Notification required.
+
+**User Story 3: Update Leave Balances**
+- Title: Leave Balance Adjustment
+- User Story: As an HR user, I want leave balances to update automatically so that accruals and usage are accurate.
+- Acceptance Criteria:
+  - Given approved leave, When I check balances, Then the leave is deducted.
+  - Given leave accrual, When a period ends, Then balances increase per policy.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Policy-driven accrual.
+
+**User Story 4: Flag Shifts for Coverage**
+- Title: Auto-Flag Scheduled Shifts for Coverage
+- User Story: As a scheduler, I want scheduled shifts to be flagged for coverage when leave is approved so that staffing gaps are addressed.
+- Acceptance Criteria:
+  - Given an approved leave, When I view the schedule, Then affected shifts are flagged for coverage.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Integration with scheduling.
+
+**User Story 5: Export Approved Leaves**
+- Title: Leave Export Report
+- User Story: As an HR user, I want to export approved leaves so that records are available for payroll and compliance.
+- Acceptance Criteria:
+  - Given approved leaves, When I export, Then the report includes all relevant fields.
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E02, E03, E05, Notes: CSV format.
