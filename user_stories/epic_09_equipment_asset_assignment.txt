@@ -1,0 +1,55 @@
+Title: Equipment & Asset Assignment - Register Asset
+User Story: As an asset manager I want to register equipment and PPE So that assets are tracked and assigned
+
+Acceptance Criteria:
+Scenario: Register asset
+Given valid asset details
+When I POST to /assets
+Then the asset is added to the registry
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC, Certification tracking
+- Notes: Asset condition state tracked
+
+---
+
+Title: Equipment & Asset Assignment - Assign Asset to Employee
+User Story: As a supervisor I want to assign assets to employees So that accountability is maintained
+
+Acceptance Criteria:
+Scenario: Assign asset
+Given an employee has valid certification
+When I assign an asset
+Then the assignment is recorded
+And blocked if certification is invalid
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset registry, Certification tracking
+- Notes: History log per asset and employee
+
+---
+
+Title: Equipment & Asset Assignment - Track Asset Check-In/Out
+User Story: As an asset manager I want to track asset check-in and check-out events So that overdue returns are flagged
+
+Acceptance Criteria:
+Scenario: Check-out asset
+Given an asset is available
+When an employee checks out the asset
+Then the event is recorded
+
+Scenario: Check-in asset
+Given an asset is checked out
+When it is returned
+Then the event is recorded
+And overdue returns are reported
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset assignment
+- Notes: Reports of overdue returns
