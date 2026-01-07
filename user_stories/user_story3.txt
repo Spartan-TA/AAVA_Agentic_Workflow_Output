@@ -1,0 +1,28 @@
+**User Story 3: Dashboard/Reporting - View Dashboard Metrics**
+
+**Title:** Display Personalized Dashboard Metrics
+
+**User Story:**
+As a user, I want to view key metrics and recent activity on my dashboard so that I can quickly assess my account status and performance.
+
+**Acceptance Criteria:**
+**Scenario 1:** Display Metrics on Dashboard
+Given the user is logged in
+When the user navigates to the dashboard
+Then the dashboard displays metrics such as total usage, recent activity, and notifications
+
+**Scenario 2:** No Data Available
+Given the user is logged in
+When there is no data for a particular metric
+Then the dashboard displays "No data available" for that metric
+
+**Scenario 3:** Data Refresh
+Given the user is on the dashboard
+When the user clicks the "Refresh" button
+Then the dashboard updates to show the latest metrics
+
+**Additional Details:**
+- Priority: High
+- Story Points: 8
+- Dependencies: Reporting service, data aggregation module, UI components
+- Notes: Metrics should be updated in real-time or near real-time; ensure data privacy for user-specific metrics.
