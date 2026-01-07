@@ -1,0 +1,15 @@
+Title: Generate Sales Report
+
+User Story: As an admin I want to generate a sales report for a selected date range So that I can analyze sales performance and make informed business decisions
+
+Acceptance Criteria:
+Scenario: Generating Report for Custom Date Range
+Given I am logged in as an admin and on the reports dashboard
+When I select a start and end date and click "Generate Report"
+Then a downloadable report (CSV and PDF) is generated showing total sales, number of orders, and top 10 products sold within the selected range
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Order management module, Reporting service
+- Notes: Report generation should not impact application performance; background processing is acceptable.
