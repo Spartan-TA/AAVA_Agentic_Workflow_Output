@@ -1,0 +1,10 @@
+Title: Leave Management - Request & Approve Leave
+User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my time off is managed according to policy.
+Acceptance Criteria:
+  - Given a leave request, When I submit it, Then my supervisor is notified for approval.
+  - Given an approval/denial, When my supervisor acts, Then my leave balance is updated and scheduled shifts are flagged for coverage.
+Additional Details:
+  Priority: Medium
+  Story Points: 2
+  Dependencies: Employee CRUD, RBAC, Shift Management
+  Notes: Accrual balances and policies.
