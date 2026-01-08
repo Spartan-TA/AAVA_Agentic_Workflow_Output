@@ -1,0 +1,63 @@
+### E08 - Safety Incidents & OSHA Reporting
+
+**Title:** Safety Incident Recording
+User Story: As a supervisor I want to record safety incidents and near-misses So that investigations and corrective actions are tracked
+Acceptance Criteria:
+Scenario: Record incident
+Given incident details
+When I POST to `/safety/incidents`
+Then the incident is logged with severity, location, and involved employees
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Validation required
+
+---
+
+**Title:** Incident Investigation Workflow
+User Story: As a safety officer I want to manage incident status So that investigations and resolutions are documented
+Acceptance Criteria:
+Scenario: Change status
+Given an open incident
+When I mark as Investigating
+Then status updates
+Scenario: Resolve incident
+Given investigation complete
+When I mark as Resolved
+Then corrective actions are recorded
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Workflow covers Open, Investigating, Resolved
+
+---
+
+**Title:** OSHA Summary Export
+User Story: As a compliance manager I want to export OSHA 300/300A summaries So that regulatory reporting is simplified
+Acceptance Criteria:
+Scenario: Export OSHA summary
+Given incident data
+When I request OSHA export
+Then the file includes all required fields
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Export format matches OSHA requirements
+
+---
+
+**Title:** Safety Metrics Dashboard
+User Story: As a manager I want safety KPIs available via dashboard endpoints So that safety culture can be monitored
+Acceptance Criteria:
+Scenario: View metrics
+Given incidents recorded
+When I access the dashboard
+Then I see metrics on incidents, severity, and resolution times
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Endpoints available for BI tools
