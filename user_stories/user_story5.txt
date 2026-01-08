@@ -1,0 +1,73 @@
+---
+EPIC E05: Shift & Schedule Management
+
+User Story 1:
+Title: Create and Manage Shift Templates
+User Story: As an HR user, I want to define recurring shift templates so that scheduling is efficient.
+Acceptance Criteria in Gherkin:
+Scenario: Shift template CRUD
+  Given the shift management module
+  When I create, update, or delete a shift template
+  Then the template is persisted and available for assignment
+Additional Details:
+  Priority: High
+  Story Points: 3
+  Dependencies: E02, E03, E04
+  Notes: Support rotations and overtime rules
+
+User Story 2:
+Title: Assign Shifts to Employees
+User Story: As a supervisor, I want to assign shifts to employees so that staffing is planned.
+Acceptance Criteria in Gherkin:
+Scenario: Shift assignment
+  Given a shift template
+  When I assign it to employees
+  Then the assignments are visible in their schedules
+Additional Details:
+  Priority: High
+  Story Points: 2
+  Dependencies: E02, E03, E04
+  Notes: Bulk assignment supported
+
+User Story 3:
+Title: Detect and Prevent Scheduling Conflicts
+User Story: As a system, I want to detect scheduling conflicts so that employees are not double-booked.
+Acceptance Criteria in Gherkin:
+Scenario: Conflict detection
+  Given existing shift assignments
+  When I assign a new shift that overlaps
+  Then the system prevents the assignment and shows an error
+Additional Details:
+  Priority: High
+  Story Points: 2
+  Dependencies: E02, E03, E04
+  Notes: Include blackout dates and warehouse calendars
+
+User Story 4:
+Title: Display Upcoming Shifts to Workers
+User Story: As a worker, I want to view my upcoming shifts so that I can plan my schedule.
+Acceptance Criteria in Gherkin:
+Scenario: View personal schedule
+  Given my employee account
+  When I access my schedule
+  Then I see all upcoming assigned shifts
+Additional Details:
+  Priority: High
+  Story Points: 1
+  Dependencies: E02, E03, E04
+  Notes: Mobile-friendly view
+
+User Story 5:
+Title: Generate Audit Entries for Schedule Changes
+User Story: As a compliance officer, I want audit logs for schedule changes so that accountability is maintained.
+Acceptance Criteria in Gherkin:
+Scenario: Audit log generation
+  Given a schedule change
+  When I update, assign, or delete a shift
+  Then an audit entry is created with actor, timestamp, and before/after state
+Additional Details:
+  Priority: High
+  Story Points: 2
+  Dependencies: E02, E03, E04
+  Notes: Integrate with audit trail module
+---
