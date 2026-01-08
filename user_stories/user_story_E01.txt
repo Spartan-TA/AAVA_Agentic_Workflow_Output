@@ -1,0 +1,53 @@
+### E01: Project Scaffolding & Domain Setup
+
+#### 1. Initialize Spring Boot Project Structure
+User Story: As a developer I want to scaffold a Spring Boot project with standardized base packages So that all modules follow a consistent structure and onboarding is faster
+Acceptance Criteria:
+Scenario: Project scaffolding
+Given I clone the repository
+When I build and run the project
+Then the application starts on port 8080 and the base package structure is present
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Follow company Java package conventions
+
+#### 2. Configure Database Migration Tool
+User Story: As a developer I want to set up Flyway or Liquibase for database migrations So that schema changes are versioned and repeatable
+Acceptance Criteria:
+Scenario: Baseline migration
+Given the project is built
+When I run the application
+Then Flyway/Liquibase applies the baseline migration and the DB schema is created
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project structure
+- Notes: Baseline migration must be idempotent
+
+#### 3. Enable Spring Boot Actuator
+User Story: As an operator I want Actuator endpoints enabled So that I can monitor application health and metrics
+Acceptance Criteria:
+Scenario: Health endpoint
+Given the application is running
+When I access /actuator/health
+Then I receive a JSON response with "status":"UP"
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project structure
+- Notes: Secure actuator endpoints in production
+
+#### 4. Add README with Build/Run Steps
+User Story: As a developer I want a README with clear build and run instructions So that new team members can get started quickly
+Acceptance Criteria:
+Scenario: Documentation
+Given I open the repository
+When I view the README
+Then I see steps for building, running, and testing the project
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project structure
+- Notes: Include Java, Maven, and DB prerequisites
