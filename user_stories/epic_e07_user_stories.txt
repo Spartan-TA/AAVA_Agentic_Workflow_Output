@@ -1,0 +1,57 @@
+### Epic E07: Training & Certification Tracking
+
+**User Story 1**
+Title: Track Employee Certifications
+User Story: As a safety manager I want to record and track required certifications for employees So that only qualified staff are assigned to sensitive tasks
+Acceptance Criteria:
+Scenario: Certification CRUD
+Given I have access
+When I create, update, or delete a certification
+Then the certification is reflected on the employee profile
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Certification types and expiration dates required
+
+**User Story 2**
+Title: Alert on Expiring Certifications
+User Story: As a supervisor I want to receive alerts before certifications expire So that renewals are not missed
+Acceptance Criteria:
+Scenario: Expiry alert
+Given a certification is expiring in 30 or 7 days
+When I view alerts
+Then I am notified of the upcoming expiration
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Alerts sent via in-app and email
+
+**User Story 3**
+Title: Block Assignment to Tasks Requiring Valid Certification
+User Story: As a scheduler I want to prevent assignment of tasks to employees with expired certifications So that safety is ensured
+Acceptance Criteria:
+Scenario: Assignment block
+Given an employee's certification is expired
+When I assign them to a restricted task
+Then the system blocks the assignment and shows an error
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Scheduling checks must be enforced
+
+**User Story 4**
+Title: Upload Proof of Certification Documents
+User Story: As an employee I want to upload proof of my certifications So that my records are complete
+Acceptance Criteria:
+Scenario: Document upload
+Given I am authenticated
+When I upload a certification document
+Then it is stored and linked to my profile
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Supported formats: PDF, JPG, PNG
