@@ -1,0 +1,9 @@
+Title: Training & Certification - Certification Status Visibility
+User Story: As a supervisor, I want to view certification status on employee profiles so that I can quickly verify qualifications.
+Acceptance Criteria:
+  - Given an employee profile, When I view it, Then I see all certifications and their status (valid/expiring/expired).
+Additional Details:
+  Priority: High
+  Story Points: 1
+  Dependencies: Training & Certification
+  Notes: Status visible to supervisors.
