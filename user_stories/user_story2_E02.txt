@@ -1,0 +1,71 @@
+### E02 - Employee Master Data (CRUD)
+
+**Title:** Employee Creation API
+User Story: As an HR user I want to create new employee records So that all staff are registered in the EMS
+Acceptance Criteria:
+Scenario: Create employee
+Given valid employee data
+When I POST to `/employees`
+Then a new employee is created with a unique badgeId
+Scenario: BadgeId uniqueness
+Given an existing badgeId
+When I try to create another employee with the same badgeId
+Then the request fails with a validation error
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01
+- Notes: OpenAPI schema must include examples
+
+---
+
+**Title:** Employee Update & Soft Delete
+User Story: As an HR user I want to update or deactivate employee records So that data remains current and historical records are preserved
+Acceptance Criteria:
+Scenario: Update employee
+Given an existing employee
+When I PUT/PATCH their record
+Then the changes are saved
+Scenario: Soft delete
+Given an active employee
+When I DELETE their record
+Then their status is set to inactive, not removed from DB
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Soft delete for compliance
+
+---
+
+**Title:** Employee List with Filtering
+User Story: As a supervisor I want to list and filter employees So that I can find staff by department, role, or status
+Acceptance Criteria:
+Scenario: Filter employees
+Given multiple employees exist
+When I GET `/employees?department=Shipping&status=active`
+Then only matching employees are returned
+Scenario: Pagination
+Given >50 employees
+When I GET `/employees?page=2&size=20`
+Then I receive the correct page of results
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Supports large datasets
+
+---
+
+**Title:** Employee DTOs for Web
+User Story: As a frontend developer I want DTOs for employee data So that the UI can display and edit employee records
+Acceptance Criteria:
+Scenario: DTO matches API
+Given an employee record
+When I fetch via API
+Then the DTO includes name, badgeId, role, department, shiftGroup, hireDate, status
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: DTOs documented in OpenAPI
