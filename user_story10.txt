@@ -1,0 +1,11 @@
+Title: Time & Attendance - Clock In/Out Endpoint
+User Story: As a warehouse worker, I want to clock in and out via a mobile/web endpoint so that my work hours are accurately tracked.
+Acceptance Criteria:
+  - Given valid credentials, When I POST to /attendance/clock-in, Then my clock-in event is recorded.
+  - Given a clock-out event, When I POST to /attendance/clock-out, Then my clock-out time is recorded and associated with my shift.
+  - Given a missed punch, When I request a correction, Then an approval task is created for my supervisor.
+Additional Details:
+  Priority: High
+  Story Points: 3
+  Dependencies: Employee CRUD, RBAC
+  Notes: Geofence/device capture optional.
