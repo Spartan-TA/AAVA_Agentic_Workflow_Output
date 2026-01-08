@@ -1,0 +1,67 @@
+### E20 - Self-Service Portal & Preferences
+
+**Title:** Shift Preference Submission
+User Story: As an employee I want to set my shift preferences and availability So that scheduling matches my needs
+Acceptance Criteria:
+Scenario: Submit preferences
+Given logged in
+When I update preferences
+Then scheduler sees updated availability
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E02, E03, E05, E06
+- Notes: Preferences visible to supervisors
+
+---
+
+**Title:** Shift Swap Request
+User Story: As an employee I want to request shift swaps So that I can manage my schedule flexibly
+Acceptance Criteria:
+Scenario: Request swap
+Given assigned shift
+When I request swap
+Then supervisor is notified for approval
+Scenario: Approve swap
+Given pending swap
+When supervisor approves
+Then shifts are updated
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E02, E03, E05, E06
+- Notes: Swap workflow tracked
+
+---
+
+**Title:** Update Contact Info
+User Story: As an employee I want to update my contact info So that HR can reach me
+Acceptance Criteria:
+Scenario: Update info
+Given logged in
+When I edit contact info
+Then changes are saved
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E02, E03, E05, E06
+- Notes: Info visible to HR
+
+---
+
+**Title:** View Pay Stubs & Tax Forms
+User Story: As an employee I want to view pay stubs and tax forms So that I can access my payroll documents
+Acceptance Criteria:
+Scenario: View pay stub
+Given payroll integration
+When I access portal
+Then pay stubs are listed
+Scenario: View tax form
+Given payroll integration
+When I access portal
+Then tax forms are available
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E02, E03, E05, E06
+- Notes: Requires payroll integration
