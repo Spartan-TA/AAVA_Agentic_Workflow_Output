@@ -1,0 +1,55 @@
+### EPIC E04 - Time & Attendance (Clock In/Out)
+
+**User Story 4.1**
+- Title: Clock-In/Clock-Out Endpoints
+- User Story: As a worker, I want to clock in and out via API so that my attendance is recorded.
+- Acceptance Criteria:
+    - Given a valid request,
+      When I POST to /attendance/clock-in,
+      Then my clock-in is recorded.
+    - Given a valid request,
+      When I POST to /attendance/clock-out,
+      Then my clock-out is recorded.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Core attendance.
+
+**User Story 4.2**
+- Title: Geofence and Device Capture (Optional)
+- User Story: As a supervisor, I want clock events to capture location and device info so that I can verify on-site attendance.
+- Acceptance Criteria:
+    - Given a clock event,
+      When location is provided,
+      Then it is stored with the event.
+    - Given a device,
+      When clocking in,
+      Then device ID is recorded.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: 4.1, Notes: Optional for compliance.
+
+**User Story 4.3**
+- Title: Calculate Hours Worked per Shift
+- User Story: As a payroll system, I want to calculate hours worked per shift so that payroll is accurate.
+- Acceptance Criteria:
+    - Given clock-in and clock-out,
+      When shift is completed,
+      Then total hours are computed.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 4.1, Notes: For payroll.
+
+**User Story 4.4**
+- Title: Handle Missed Punches and Corrections Workflow
+- User Story: As a worker, I want to request corrections for missed punches so that my attendance is accurate.
+- Acceptance Criteria:
+    - Given a missed punch,
+      When I submit a correction,
+      Then an approval task is created for my supervisor.
+    - Given an approval,
+      When supervisor approves,
+      Then attendance is updated.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: 4.1, Notes: For accuracy.
+
+**User Story 4.5**
+- Title: Export Attendance Reports
+- User Story: As an HR user, I want to export attendance data as CSV so that I can analyze and share reports.
+- Acceptance Criteria:
+    - Given attendance data,
+      When I request an export,
+      Then a CSV file is generated with all relevant fields.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 4.1, Notes: For reporting.
