@@ -1,0 +1,10 @@
+Title: Shift Management - Conflict Detection
+User Story: As a scheduler, I want the system to detect and prevent shift conflicts so that employees are not double-booked.
+Acceptance Criteria:
+  - Given overlapping shifts, When I attempt to assign them, Then the system blocks the assignment and shows an error.
+  - Given a blackout date, When I schedule a shift, Then the system prevents scheduling.
+Additional Details:
+  Priority: High
+  Story Points: 2
+  Dependencies: Shift Management
+  Notes: Blackout dates and operation calendars.
