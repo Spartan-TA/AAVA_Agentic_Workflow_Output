@@ -1,0 +1,10 @@
+Title: Employee CRUD API - Update & Soft Delete Employee
+User Story: As an HR manager, I want to update employee details and soft-delete records so that data remains current and historical records are preserved.
+Acceptance Criteria:
+  - Given an existing employee, When I PUT/PATCH to /employees/{id}, Then the employee record is updated.
+  - Given an employee to be removed, When I DELETE /employees/{id}, Then the employee is soft-deleted and excluded from active lists.
+Additional Details:
+  Priority: High
+  Story Points: 2
+  Dependencies: Employee CRUD
+  Notes: Soft-delete for audit compliance.
