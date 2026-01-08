@@ -1,0 +1,255 @@
+### Epic E13: Integration Layer (HRIS/WMS APIs)
+
+**User Story 1**
+Title: Expose Secured REST APIs for HRIS and WMS
+User Story: As an integration engineer I want to expose JWT/OAuth2-secured REST APIs for HRIS and WMS So that master data is synchronized
+Acceptance Criteria:
+Scenario: API security
+Given the API is deployed
+When a client authenticates
+Then only authorized access is allowed
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: API documented in OpenAPI
+
+**User Story 2**
+Title: Sync Employee Data from HRIS
+User Story: As an HR user I want new hires and terminations to sync from HRIS So that employee records are up to date
+Acceptance Criteria:
+Scenario: HRIS sync
+Given a new hire or termination in HRIS
+When the sync job runs
+Then the employee is created or updated in EMS
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Idempotent sync required
+
+**User Story 3**
+Title: Integrate with WMS for Department and Location
+User Story: As a warehouse manager I want department and location data synced with WMS So that assignments are accurate
+Acceptance Criteria:
+Scenario: WMS integration
+Given department/location changes in WMS
+When the sync job runs
+Then EMS reflects the changes
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Webhooks for event-driven updates
+
+**User Story 4**
+Title: Support SSO via IDP Integration
+User Story: As an IT admin I want to enable SSO via IDP So that users have seamless access
+Acceptance Criteria:
+Scenario: SSO login
+Given SSO is configured
+When a user logs in
+Then authentication is handled by the IDP
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: SSO must support standard protocols
+
+---
+
+### Epic E14: Audit Trail & Compliance
+
+**User Story 1**
+Title: Log Sensitive Changes with Actor and Timestamp
+User Story: As a compliance officer I want all sensitive changes to be logged with actor and timestamp So that I can audit actions
+Acceptance Criteria:
+Scenario: Audit log entry
+Given a create, update, or delete action
+When the action occurs
+Then the log records actor, timestamp, before/after values
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03
+- Notes: Applies to employee PII, schedules, approvals, payroll
+
+**User Story 2**
+Title: Store Audit Logs in Tamper-Evident Table
+User Story: As a system administrator I want audit logs stored in a tamper-evident table So that records cannot be altered
+Acceptance Criteria:
+Scenario: Tamper-evident storage
+Given audit logs are written
+When I review the table
+Then records are immutable and protected
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Export by date/user/entity supported
+
+**User Story 3**
+Title: Export Audit Logs for Compliance Reviews
+User Story: As an auditor I want to export audit logs by date, user, or entity So that I can conduct compliance reviews
+Acceptance Criteria:
+Scenario: Audit log export
+Given audit logs exist
+When I export logs
+Then the file includes all relevant records
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Tests must validate coverage
+
+---
+
+### Epic E15: Reporting & Analytics
+
+**User Story 1**
+Title: Generate Operational Reports
+User Story: As a manager I want to generate reports on attendance, overtime, leave balances, certification status, and safety KPIs So that I can make data-driven decisions
+Acceptance Criteria:
+Scenario: Report generation
+Given relevant data exists
+When I request a report
+Then the report is generated with filters
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Reports filter by date, department, shift
+
+**User Story 2**
+Title: Export Reports in CSV and PDF
+User Story: As a supervisor I want to export reports in CSV or PDF So that I can share and analyze data
+Acceptance Criteria:
+Scenario: Report export
+Given a report is generated
+When I export it
+Then the file is downloadable within 10 seconds for up to 50k rows
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Export performance must be tested
+
+**User Story 3**
+Title: Provide Role-Based Dashboards
+User Story: As a user I want dashboards tailored to my role So that I see relevant metrics
+Acceptance Criteria:
+Scenario: Dashboard access
+Given I am authenticated
+When I access the dashboard
+Then only metrics relevant to my role are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Access controlled by role
+
+**User Story 4**
+Title: Expose Metrics Endpoints for BI Integration
+User Story: As a BI analyst I want metrics endpoints available So that I can integrate with external BI tools
+Acceptance Criteria:
+Scenario: Metrics endpoint
+Given the API is running
+When I query the metrics endpoint
+Then operational metrics are returned
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Endpoints must be documented
+
+---
+
+### Epic E16: Mobile Access (PWA)
+
+**User Story 1**
+Title: Implement Responsive Mobile Views
+User Story: As a warehouse worker I want to access clock-in/out, schedules, leave requests, and announcements on mobile So that I can use the system on any device
+Acceptance Criteria:
+Scenario: Mobile usability
+Given I access the app on mobile
+When I use core features
+Then all flows are responsive and usable
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Tested on major mobile browsers
+
+**User Story 2**
+Title: Enable PWA Installation
+User Story: As a worker I want to install the app as a PWA So that I have quick access from my device
+Acceptance Criteria:
+Scenario: PWA manifest
+Given I visit the app
+When I choose to install
+Then the app is added to my home screen
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Lighthouse PWA score must be high
+
+**User Story 3**
+Title: Support Offline Clock-In/Out with Sync
+User Story: As a worker I want to clock in/out offline and sync when online So that attendance is not disrupted
+Acceptance Criteria:
+Scenario: Offline clock event
+Given I am offline
+When I clock in/out
+Then the event is queued and synced when online
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Conflict resolution must be handled
+
+---
+
+### Epic E17: Onboarding & Offboarding Workflow
+
+**User Story 1**
+Title: Automate New Hire Provisioning
+User Story: As an HR user I want new hires from HRIS to be automatically provisioned with accounts, schedules, and required training So that onboarding is efficient
+Acceptance Criteria:
+Scenario: New hire automation
+Given a new hire appears in HRIS
+When the sync job runs
+Then an account, initial schedule, and training tasks are created
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Tasks must be tracked to completion
+
+**User Story 2**
+Title: Automate Offboarding and Asset Recovery
+User Story: As an HR user I want offboarding to revoke access, collect assets, and update schedules So that terminations are secure
+Acceptance Criteria:
+Scenario: Offboarding automation
+Given an employee is terminated
+When the offboarding workflow runs
+Then access is revoked, assets are collected, and schedules updated
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Asset recovery must be tracked
+
+**User Story 3**
+Title: Track Onboarding and Offboarding Task Completion
+User Story: As a supervisor I want to track completion of onboarding and offboarding tasks So that nothing is missed
+Acceptance Criteria:
+Scenario: Task tracking
+Given onboarding/offboarding is in progress
+When I view the task list
+Then all tasks and their statuses are visible
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Notifications sent for overdue tasks
