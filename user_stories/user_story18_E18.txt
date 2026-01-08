@@ -1,0 +1,59 @@
+### E18 - Localization & Multi-Warehouse
+
+**Title:** Multi-Warehouse Support
+User Story: As an admin I want EMS to support multiple warehouses with distinct calendars and policies So that operations scale
+Acceptance Criteria:
+Scenario: Add warehouse
+Given new warehouse data
+When I configure EMS
+Then warehouse is available with its own calendar and policies
+Additional Details:
+- Priority: Low
+- Story Points: 4
+- Dependencies: E01, E02, E05
+- Notes: Warehouses selectable in UI
+
+---
+
+**Title:** UI Localization
+User Story: As a user I want EMS UI localized for my language So that I can use the system comfortably
+Acceptance Criteria:
+Scenario: Set language
+Given language preference
+When I log in
+Then UI displays in selected language
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02, E05
+- Notes: Supports major languages
+
+---
+
+**Title:** Timezone-Aware Scheduling
+User Story: As a scheduler I want shift times to respect warehouse timezones So that schedules are accurate
+Acceptance Criteria:
+Scenario: Schedule in timezone
+Given warehouse in different timezone
+When I assign shifts
+Then times are displayed and stored in local timezone
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02, E05
+- Notes: Prevents scheduling errors
+
+---
+
+**Title:** Warehouse-Specific Operation Calendar
+User Story: As a supervisor I want operation calendars per warehouse So that local holidays and blackout dates are respected
+Acceptance Criteria:
+Scenario: Configure calendar
+Given warehouse
+When I set blackout dates
+Then only affect that warehouse
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02, E05
+- Notes: Calendar visible to warehouse staff
