@@ -1,0 +1,57 @@
+### Epic E03: Role Based Access Control (RBAC)
+
+**User Story 1**
+Title: Implement Role-Based Endpoint Security
+User Story: As a system administrator I want to restrict API endpoints by user role So that only authorized users can access sensitive data
+Acceptance Criteria:
+Scenario: Endpoint access by role
+Given a user with a specific role
+When they access a protected endpoint
+Then access is allowed or denied based on their role
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Roles include ADMIN, HR, SUPERVISOR, WORKER
+
+**User Story 2**
+Title: Enforce Row-Level Security
+User Story: As a supervisor I want to access only my team's employee records So that I cannot view or modify records outside my scope
+Acceptance Criteria:
+Scenario: Row-level access
+Given a supervisor is authenticated
+When they request employee data
+Then only employees in their team are returned
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Security rules must be covered by tests
+
+**User Story 3**
+Title: Support API Key and OAuth2 Authentication
+User Story: As a DevOps engineer I want to toggle between API Key and OAuth2 authentication via config So that I can adapt to different environments
+Acceptance Criteria:
+Scenario: Auth method toggle
+Given the config is set to API Key or OAuth2
+When the application starts
+Then the selected authentication method is enforced
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Unauthorized requests return 401, forbidden actions return 403
+
+**User Story 4**
+Title: Test Security Rules
+User Story: As a QA engineer I want automated tests for all security rules So that unauthorized access is prevented
+Acceptance Criteria:
+Scenario: Security test coverage
+Given all endpoints
+When tests are run
+Then unauthorized and forbidden actions are correctly handled
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Coverage must include all roles and endpoints
