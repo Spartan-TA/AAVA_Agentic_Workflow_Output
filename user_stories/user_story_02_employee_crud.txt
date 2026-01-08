@@ -1,0 +1,52 @@
+### EPIC E02 - Employee Master Data (CRUD)
+
+**User Story 2.1**
+- Title: Create Employee Entity and Repository
+- User Story: As a developer, I want an Employee entity with fields (name, badgeId, role, department, shiftGroup, hireDate, status) so that employee data is stored consistently.
+- Acceptance Criteria:
+    - Given the database,
+      When I create an employee,
+      Then all fields are persisted.
+    - Given a badgeId,
+      When I try to create a duplicate,
+      Then the system rejects it.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, Notes: Core data model.
+
+**User Story 2.2**
+- Title: Implement Employee CRUD APIs
+- User Story: As an HR user, I want to create, read, update, and delete employee records via API so that employee data is managed efficiently.
+- Acceptance Criteria:
+    - Given the API,
+      When I POST to /employees,
+      Then a new employee is created.
+    - Given an employee,
+      When I GET /employees/{id},
+      Then I receive the employee details.
+    - Given an employee,
+      When I PATCH /employees/{id},
+      Then only specified fields are updated.
+    - Given an employee,
+      When I DELETE /employees/{id},
+      Then the employee is soft-deleted.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: 2.1, Notes: Follows OpenAPI spec.
+
+**User Story 2.3**
+- Title: Support Pagination and Filtering
+- User Story: As an HR user, I want to paginate and filter employee records so that I can efficiently search and browse large datasets.
+- Acceptance Criteria:
+    - Given many employees,
+      When I GET /employees?page=1&size=20,
+      Then I receive 20 employees.
+    - Given filter parameters,
+      When I GET /employees?department=Shipping,
+      Then only employees in Shipping are returned.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: 2.2, Notes: For scalability.
+
+**User Story 2.4**
+- Title: Provide OpenAPI Schemas with Examples
+- User Story: As a developer, I want OpenAPI documentation with request/response examples for employee APIs so that integration is straightforward.
+- Acceptance Criteria:
+    - Given the API docs,
+      When I view /swagger-ui.html,
+      Then I see all employee endpoints with example payloads.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 2.2, Notes: For API consumers.
