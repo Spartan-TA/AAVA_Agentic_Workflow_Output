@@ -1,0 +1,67 @@
+### E13 - Integration Layer (HRIS/WMS APIs)
+
+**Title:** JWT/OAuth2 Secured APIs
+User Story: As an integration partner I want EMS APIs secured by JWT/OAuth2 So that data is protected
+Acceptance Criteria:
+Scenario: Secure API access
+Given valid token
+When I call EMS API
+Then access is granted
+Scenario: Invalid token
+Given invalid token
+When I call EMS API
+Then access is denied
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Security documented in OpenAPI
+
+---
+
+**Title:** HRIS Sync Job
+User Story: As an HRIS admin I want EMS to sync new hires and terminations So that employee data stays current
+Acceptance Criteria:
+Scenario: Sync new hire
+Given new hire in HRIS
+When sync job runs
+Then employee is created in EMS
+Scenario: Sync termination
+Given terminated employee in HRIS
+When sync job runs
+Then employee is marked inactive in EMS
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: E01, E02, E03
+- Notes: Idempotent sync
+
+---
+
+**Title:** WMS Department/Location Link
+User Story: As a warehouse manager I want EMS linked to WMS for department and location So that assignments are accurate
+Acceptance Criteria:
+Scenario: Link department
+Given department in WMS
+When EMS syncs
+Then department is available for employee assignment
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Webhooks for events
+
+---
+
+**Title:** API Documentation
+User Story: As a developer I want EMS APIs documented in OpenAPI So that integration is straightforward
+Acceptance Criteria:
+Scenario: View API docs
+Given OpenAPI spec
+When I access documentation
+Then all endpoints and models are described
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Documentation kept up to date
