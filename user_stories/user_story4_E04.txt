@@ -1,0 +1,67 @@
+### E04 - Time & Attendance (Clock In/Out)
+
+**Title:** Clock-In/Clock-Out Endpoints
+User Story: As a worker I want to clock in and out via EMS So that my attendance is accurately recorded
+Acceptance Criteria:
+Scenario: Valid clock-in
+Given my badgeId and location
+When I POST to `/attendance/clock-in`
+Then my clock-in event is recorded
+Scenario: Geofence validation
+Given I am outside the warehouse geofence
+When I attempt to clock in
+Then the request is rejected
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Device capture optional
+
+---
+
+**Title:** Shift Hours Calculation
+User Story: As payroll I want hours worked per shift calculated So that payroll and compliance are accurate
+Acceptance Criteria:
+Scenario: Daily totals
+Given clock-in and clock-out events
+When I GET `/attendance/report`
+Then daily totals are computed for each employee
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Automatic shift association
+
+---
+
+**Title:** Missed Punch Correction Workflow
+User Story: As a worker I want to request corrections for missed punches So that my attendance is accurate
+Acceptance Criteria:
+Scenario: Correction request
+Given a missed punch
+When I submit a correction
+Then an approval task is created for my supervisor
+Scenario: Supervisor approval
+Given a pending correction
+When my supervisor approves
+Then my attendance record is updated
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Approval workflow required
+
+---
+
+**Title:** Attendance Report Export
+User Story: As an HR user I want to export attendance reports to CSV So that records can be shared and audited
+Acceptance Criteria:
+Scenario: Export attendance
+Given attendance data exists
+When I request a CSV export
+Then the file is generated and downloadable
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Export includes all relevant fields
