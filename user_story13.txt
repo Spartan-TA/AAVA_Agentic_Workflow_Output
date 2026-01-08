@@ -1,0 +1,10 @@
+Title: Shift Management - Create Shift Templates
+User Story: As an HR manager, I want to create recurring shift templates so that scheduling is efficient and consistent.
+Acceptance Criteria:
+  - Given shift details, When I POST to /shifts/templates, Then a new template is created.
+  - Given a template, When I assign it to employees, Then their schedules are updated accordingly.
+Additional Details:
+  Priority: High
+  Story Points: 2
+  Dependencies: Employee CRUD, RBAC, Time & Attendance
+  Notes: Supports rotations and overtime rules.
