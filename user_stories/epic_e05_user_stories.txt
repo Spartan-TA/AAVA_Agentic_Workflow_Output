@@ -1,0 +1,57 @@
+### Epic E05: Shift & Schedule Management
+
+**User Story 1**
+Title: Create and Manage Shift Templates
+User Story: As an HR user I want to create recurring shift templates So that scheduling is efficient
+Acceptance Criteria:
+Scenario: Shift template CRUD
+Given I have access
+When I create, update, or delete a shift template
+Then the template is saved and available for assignment
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Templates support rotation and overtime rules
+
+**User Story 2**
+Title: Assign Shifts to Employees
+User Story: As a supervisor I want to assign shifts to employees So that staffing is planned
+Acceptance Criteria:
+Scenario: Shift assignment
+Given a shift template exists
+When I assign it to employees
+Then the assignments are visible in their schedules
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Bulk assignment supported
+
+**User Story 3**
+Title: Detect and Prevent Scheduling Conflicts
+User Story: As a scheduler I want the system to detect and prevent scheduling conflicts So that employees are not double-booked
+Acceptance Criteria:
+Scenario: Conflict detection
+Given overlapping shifts
+When I attempt to assign them to the same employee
+Then the system blocks the assignment and shows an error
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Blackout dates and operation calendars enforced
+
+**User Story 4**
+Title: Audit Shift Assignment Changes
+User Story: As an auditor I want all shift assignment changes to be logged So that I can review scheduling history
+Acceptance Criteria:
+Scenario: Audit log entry
+Given a shift assignment is changed
+When I review the audit log
+Then the change is recorded with actor, timestamp, and details
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Audit entries must be immutable
