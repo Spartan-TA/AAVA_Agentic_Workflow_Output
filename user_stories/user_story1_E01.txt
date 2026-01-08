@@ -1,0 +1,63 @@
+### E01 - Project Scaffolding & Domain Setup
+
+**Title:** Spring Boot Project Initialization
+User Story: As a developer I want to initialize a Spring Boot (Maven) project So that the EMS has a standardized foundation for all modules
+Acceptance Criteria:
+Scenario: Project builds and runs
+Given the repository is cloned
+When I run `mvn spring-boot:run`
+Then the application starts on port 8080 and Actuator health endpoint returns UP
+Scenario: Baseline migration runs
+Given the database is empty
+When I start the application
+Then Flyway/Liquibase runs baseline migration successfully
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: README must include build/run steps
+
+---
+
+**Title:** Core Module Package Structure
+User Story: As a developer I want base packages for employee, scheduling, attendance, and safety So that code is organized and extensible
+Acceptance Criteria:
+Scenario: Package structure exists
+Given the project is initialized
+When I inspect the codebase
+Then I see base packages for each core domain
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Follows EMS domain model
+
+---
+
+**Title:** Actuator Health Endpoint
+User Story: As an operator I want a health endpoint So that I can monitor EMS uptime
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I GET `/actuator/health`
+Then the response is `{"status":"UP"}`
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Should be covered by automated tests
+
+---
+
+**Title:** Database Migration Tooling
+User Story: As a developer I want Flyway/Liquibase configured So that DB schema changes are versioned and repeatable
+Acceptance Criteria:
+Scenario: Baseline migration runs
+Given a new environment
+When I deploy EMS
+Then baseline migration is applied without errors
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Supports future migrations
