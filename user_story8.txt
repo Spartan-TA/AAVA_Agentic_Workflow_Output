@@ -1,0 +1,10 @@
+Title: RBAC - Row-Level Security
+User Story: As a supervisor, I want to access only my team's employee records so that privacy and data protection are enforced.
+Acceptance Criteria:
+  - Given a SUPERVISOR user, When they GET /employees, Then only employees in their team are returned.
+  - Given a WORKER user, When they access employee data, Then only their own record is visible.
+Additional Details:
+  Priority: High
+  Story Points: 2
+  Dependencies: RBAC
+  Notes: Row-level constraints.
