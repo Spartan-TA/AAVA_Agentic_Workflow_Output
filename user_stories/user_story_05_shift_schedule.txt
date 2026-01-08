@@ -1,0 +1,46 @@
+### EPIC E05 - Shift & Schedule Management
+
+**User Story 5.1**
+- Title: Create and Manage Shift Templates
+- User Story: As a scheduler, I want to create recurring shift templates so that I can standardize scheduling.
+- Acceptance Criteria:
+    - Given the UI,
+      When I create a shift template,
+      Then it is saved and available for assignment.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, E04, Notes: For efficiency.
+
+**User Story 5.2**
+- Title: Assign Shifts to Employees
+- User Story: As a supervisor, I want to assign shifts to employees so that staffing is planned.
+- Acceptance Criteria:
+    - Given a shift,
+      When I assign to an employee,
+      Then the assignment is visible in their schedule.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: 5.1, Notes: Core scheduling.
+
+**User Story 5.3**
+- Title: Detect and Prevent Scheduling Conflicts
+- User Story: As a scheduler, I want the system to detect conflicts so that double-booking is avoided.
+- Acceptance Criteria:
+    - Given overlapping shifts,
+      When I assign to an employee,
+      Then the system blocks the assignment and shows an error.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 5.2, Notes: For accuracy.
+
+**User Story 5.4**
+- Title: Bulk Assign Shifts
+- User Story: As a supervisor, I want to bulk-assign shifts to multiple employees so that scheduling is efficient.
+- Acceptance Criteria:
+    - Given a list of employees,
+      When I bulk assign a shift,
+      Then all assignments are created.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 5.2, Notes: For efficiency.
+
+**User Story 5.5**
+- Title: Audit Schedule Changes
+- User Story: As an auditor, I want all schedule changes to be logged so that I can review history.
+- Acceptance Criteria:
+    - Given a schedule change,
+      When it is made,
+      Then an audit entry is created with actor, timestamp, and details.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 5.2, Notes: For compliance.
