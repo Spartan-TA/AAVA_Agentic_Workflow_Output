@@ -1,0 +1,26 @@
+---
+# User Story 2: Configure Base Packages and Core Modules
+
+**Epic:** E01 - Project Scaffolding & Domain Setup
+
+**Title:** Configure Base Packages and Core Modules
+
+**User Story:** As a developer, I want to set up base packages and core modules (employee, scheduling, attendance, safety) so that the codebase is organized and scalable.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given the project structure
+When I inspect the packages
+Then I see separate packages for employee, scheduling, attendance, and safety
+
+Given the base modules
+When I run the application
+Then all modules are loaded without errors
+```
+
+**Additional Details:**
+- Priority: High
+- Story Points: 5
+- Dependencies: User Story 1
+- Notes: Ensures modularity.
+---
