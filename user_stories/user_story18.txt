@@ -1,0 +1,43 @@
+# E18: Localization & Multi-Tenant
+
+## User Story 1
+- Title: Support Multiple Warehouse Tenants
+- User Story: As an admin, I want to support multiple warehouse tenants so that each operates independently.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Tenant isolation
+  Given multiple tenants
+  When data is accessed
+  Then only data for the current tenant is visible
+- Additional Details:
+  * Priority: Low
+  * Story Points: 3
+  * Dependencies: E01, E02
+  * Notes: Tenant context in all queries
+
+## User Story 2
+- Title: Locale-Specific Settings per Tenant
+- User Story: As an admin, I want locale-specific settings for each tenant so that local requirements are met.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Locale settings
+  Given a tenant
+  When locale settings are configured
+  Then all UI and notifications reflect the locale
+- Additional Details:
+  * Priority: Low
+  * Story Points: 2
+  * Dependencies: Tenant support
+  * Notes: Language, date/time formats
+
+## User Story 3
+- Title: Isolate Data and Access per Tenant
+- User Story: As an admin, I want data and access isolated per tenant so that privacy and compliance are maintained.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Data isolation
+  Given multiple tenants
+  When a user accesses the system
+  Then they cannot see or modify data from other tenants
+- Additional Details:
+  * Priority: Low
+  * Story Points: 2
+  * Dependencies: Tenant support
+  * Notes: Role-based access within tenant
