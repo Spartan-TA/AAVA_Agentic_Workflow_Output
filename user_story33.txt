@@ -1,0 +1,11 @@
+Title: Certification Tracking - Scheduling Block for Expired Certifications
+User Story: As a scheduler, I want the system to block assignment of tasks to employees with expired certifications so that compliance and safety are maintained.
+Acceptance Criteria:
+  Given an employee's certification is expired
+  When I attempt to assign them to a task requiring that certification
+  Then the system prevents the assignment and displays a warning
+Additional Details:
+  Priority: High
+  Story Points: 8
+  Dependencies: E02, E03
+  Notes: Scheduling checks must run automatically and be auditable.
