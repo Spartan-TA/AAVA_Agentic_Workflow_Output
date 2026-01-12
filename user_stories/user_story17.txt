@@ -1,0 +1,57 @@
+# E17: Onboarding & Offboarding Workflow
+
+## User Story 1
+- Title: Automate Provisioning for New Hires
+- User Story: As an HR user, I want new hires from HRIS to be automatically provisioned with accounts, schedules, and training so that onboarding is efficient.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Automated onboarding
+  Given a new hire in HRIS
+  When the sync job runs
+  Then an account, initial schedule, and training tasks are created
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E02, E03, E05, E07, E09, E13
+  * Notes: Integration with asset assignment
+
+## User Story 2
+- Title: Generate Training and Asset Assignment Tasks
+- User Story: As a supervisor, I want onboarding tasks for training and asset assignment so that new hires are ready to work.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Onboarding task generation
+  Given a new hire
+  When onboarding is initiated
+  Then tasks for training and asset assignment are generated
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: Onboarding automation
+  * Notes: Track completion status
+
+## User Story 3
+- Title: Automate Offboarding on Termination
+- User Story: As an HR user, I want offboarding to revoke access, collect assets, and update schedules so that terminations are secure.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Automated offboarding
+  Given a terminated employee
+  When offboarding is initiated
+  Then access is revoked, assets are collected, and schedules are updated
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: Onboarding automation
+  * Notes: Audit log for actions
+
+## User Story 4
+- Title: Update Schedules and Training Status on Lifecycle Changes
+- User Story: As a supervisor, I want schedules and training status updated automatically on onboarding/offboarding so that records are accurate.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Lifecycle update
+  Given an onboarding or offboarding event
+  When processed
+  Then schedules and training status are updated
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: Onboarding/offboarding automation
+  * Notes: Integration with scheduling and training modules
