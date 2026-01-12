@@ -1,0 +1,9 @@
+User Story 23: As a safety officer, I want to record safety incidents and near-misses in the system, so that investigations and OSHA reporting are accurate and streamlined.
+
+Acceptance Criteria:
+- POST /safety/incidents endpoint accepts incident type, severity, location, description, and involved employees.
+- Incidents are validated for required fields and data integrity.
+- Each incident follows a status workflow: Open â Investigating â Resolved.
+- Supervisors and safety officers can update status and add investigation notes and corrective actions.
+- All incident changes are logged in the audit trail.
+- OSHA 300/300A summary fields are captured for reporting.
