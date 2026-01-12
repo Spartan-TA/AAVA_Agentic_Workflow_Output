@@ -1,0 +1,8 @@
+User Story 33: As a warehouse worker, I want to use my mobile device to clock in/out, view schedules, request leave, and see announcements, even when offline, so that I can manage my work efficiently from anywhere.
+
+Acceptance Criteria:
+- Responsive mobile views for clock-in/out, schedule, leave requests, and announcements.
+- Installable PWA manifest enables app-like experience on mobile devices.
+- Offline queue stores clock events and resolves conflicts when reconnected.
+- Core flows are fully usable on mobile devices.
+- Lighthouse PWA score meets industry standards for performance and accessibility.
