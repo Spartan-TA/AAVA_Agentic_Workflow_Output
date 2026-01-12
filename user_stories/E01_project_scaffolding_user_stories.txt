@@ -1,0 +1,57 @@
+## E01: Project Scaffolding & Domain Setup
+
+### User Story 1
+- Title: Initialize Spring Boot Project Structure
+- User Story: As a developer, I want a standardized Spring Boot project scaffold so that all modules follow consistent structure and conventions.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Project scaffolding and build
+  Given a fresh repository
+  When I run the build and start the application
+  Then the application runs on port 8080 and the README contains build/run instructions
+- Additional Details:
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: None
+  * Notes: Ensure base package structure is created.
+
+### User Story 2
+- Title: Configure Database Migration Tool
+- User Story: As a developer, I want Flyway/Liquibase configured so that database schema changes are versioned and repeatable.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Database migration runs on startup
+  Given the application is started
+  When Flyway/Liquibase executes
+  Then baseline migration is applied and DB is up-to-date
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: Project scaffold
+  * Notes: Baseline migration script must be present.
+
+### User Story 3
+- Title: Enable Actuator Health Endpoint
+- User Story: As an operator, I want to check the health of the application via Actuator so that I can monitor uptime.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Health endpoint returns UP
+  Given the application is running
+  When I query /actuator/health
+  Then the response status is UP
+- Additional Details:
+  * Priority: High
+  * Story Points: 1
+  * Dependencies: Project scaffold
+  * Notes: Health endpoint must be enabled.
+
+### User Story 4
+- Title: Establish Core Domain Modules
+- User Story: As a developer, I want core modules (employee, scheduling, attendance, safety) initialized so that future features can be built modularly.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Core modules exist
+  Given the project is scaffolded
+  When I inspect the codebase
+  Then base packages for employee, scheduling, attendance, and safety exist
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: Project scaffold
+  * Notes: Modules should follow naming conventions.
