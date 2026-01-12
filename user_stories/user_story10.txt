@@ -1,0 +1,21 @@
+Title: ADMIN Role Management
+
+User Story: As an ADMIN I want to manage all employee records and system configurations So that I can maintain system integrity and support business needs
+
+Acceptance Criteria:
+
+Scenario: ADMIN can access all endpoints
+Given I am authenticated as an ADMIN
+When I access any employee or configuration endpoint
+Then I should be able to perform all CRUD operations
+
+Scenario: Non-ADMIN cannot access admin endpoints
+Given I am authenticated as a non-ADMIN user
+When I attempt to access admin-only endpoints
+Then access should be denied with a 403 Forbidden response
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee domain (E02), RBAC setup (E03)
+- Notes: ADMIN role must be clearly defined and tested.
