@@ -1,0 +1,8 @@
+User Story 32: As an operations manager, I want to generate operational reports (attendance, overtime, leave balances, certification status, safety KPIs) and export them in CSV/PDF formats, so that I can analyze workforce and safety metrics efficiently.
+
+Acceptance Criteria:
+- Reports are filterable by date, department, and shift.
+- Export of up to 50,000 rows completes within 10 seconds.
+- Role-based access controls restrict report visibility.
+- Metrics endpoints are available for BI integration.
+- All report exports are logged in the audit trail.
