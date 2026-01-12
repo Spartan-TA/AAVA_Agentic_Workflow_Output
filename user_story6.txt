@@ -1,0 +1,12 @@
+Title: Enforce Unique Badge ID
+User Story: As an HR manager, I want the system to enforce unique badge IDs for employees so that duplicate records are prevented and badge-based identification is reliable.
+Acceptance Criteria:
+Scenario: Unique badge ID enforcement
+Given an employee record exists with a badge ID
+When I attempt to create another employee with the same badge ID
+Then the system rejects the request with a validation error
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Validation should occur on both create and update operations.
