@@ -1,0 +1,9 @@
+User Story 27: As an HR manager, I want to create quarterly and annual performance review cycles and manage goal tracking, so that employee development and feedback are structured and documented.
+
+Acceptance Criteria:
+- Review cycle templates can be created with competencies, goals, ratings, and comment fields.
+- Reviews are assigned to employees and supervisors for completion.
+- Submission and acknowledgement workflow ensures both parties sign off before review is finalized.
+- PDF export of completed reviews is available for records.
+- Role-based visibility ensures only authorized users can view or edit reviews.
+- Immutable history is maintained after sign-off.
