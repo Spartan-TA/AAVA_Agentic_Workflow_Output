@@ -1,0 +1,9 @@
+User Story 17: As an operations manager, I want to create and manage recurring shift templates and rotations, so that scheduling is efficient and consistent across the warehouse.
+
+Acceptance Criteria:
+- CRUD endpoints for shift templates, including start/end times, recurrence patterns, and rotation rules.
+- Templates can be assigned to specific departments, locations, or employee groups.
+- Blackout dates and warehouse operation calendars can be set to prevent scheduling on non-working days.
+- System detects and prevents scheduling conflicts (e.g., overlapping shifts, overtime violations).
+- Audit entries are generated for all template changes.
+- API documented in OpenAPI spec.
