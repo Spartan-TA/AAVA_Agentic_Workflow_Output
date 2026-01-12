@@ -1,0 +1,11 @@
+Title: Leave Management - Export and Coverage Flagging
+User Story: As an HR manager, I want to export approved leave records and have scheduled shifts auto-flagged for coverage so that reporting and shift management are streamlined.
+Acceptance Criteria:
+  Given leave requests are approved
+  When I export leave data or review schedules
+  Then approved leaves are included in exports and affected shifts are flagged for coverage
+Additional Details:
+  Priority: Medium
+  Story Points: 5
+  Dependencies: E02, E03, E05
+  Notes: Export format must include leave type, dates, approval status, and coverage flags.
