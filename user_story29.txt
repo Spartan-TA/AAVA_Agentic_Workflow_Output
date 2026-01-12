@@ -1,0 +1,11 @@
+Title: Leave Management - Scheduling and Payroll Integration
+User Story: As a payroll administrator, I want approved leaves to be excluded from scheduling and payroll hours so that payroll is accurate and shifts are properly covered.
+Acceptance Criteria:
+  Given a leave request is approved
+  When payroll and scheduling processes run
+  Then the approved leave is excluded from scheduled hours and payroll calculations
+Additional Details:
+  Priority: Medium
+  Story Points: 5
+  Dependencies: E02, E03, E05
+  Notes: Integration hooks must be available for both scheduling and payroll systems.
