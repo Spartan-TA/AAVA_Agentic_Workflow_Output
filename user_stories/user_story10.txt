@@ -1,0 +1,71 @@
+# E10: Performance Reviews & Goals
+
+## User Story 1
+- Title: Create Review Templates
+- User Story: As an HR user, I want to create quarterly and annual review templates so that performance reviews are standardized.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Template creation
+  Given the review module
+  When I create a template
+  Then it is saved and reusable for future cycles
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E02, E03
+  * Notes: Support competencies and goals
+
+## User Story 2
+- Title: Assign Reviews to Employees
+- User Story: As a supervisor, I want to assign reviews to employees so that feedback cycles are managed.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Review assignment
+  Given a review template
+  When I assign it to employees
+  Then review cycles are created and tracked
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: Review templates
+  * Notes: Support bulk assignment
+
+## User Story 3
+- Title: Submit and Acknowledge Reviews
+- User Story: As an employee, I want to submit self-reviews and acknowledge supervisor reviews so that the process is complete.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Review submission
+  Given a review cycle
+  When the employee submits and acknowledges
+  Then the review is finalized and locked
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: Review assignment
+  * Notes: Immutable after sign-off
+
+## User Story 4
+- Title: PDF Export of Reviews
+- User Story: As an HR user, I want to export reviews as PDF so that records are archived.
+- Acceptance Criteria in Gherkin format:
+  Scenario: PDF export
+  Given a completed review
+  When I request export
+  Then a PDF file is generated
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: Review records
+  * Notes: Include all ratings and comments
+
+## User Story 5
+- Title: Role-Based Review Visibility
+- User Story: As a supervisor, I want review visibility controlled by role so that privacy is maintained.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Review visibility
+  Given a user with a specific role
+  When they access reviews
+  Then only permitted reviews are visible
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: Review records
+  * Notes: HR, supervisor, employee roles
