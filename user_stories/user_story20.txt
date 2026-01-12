@@ -1,0 +1,8 @@
+User Story 20: As a payroll administrator, I want leave accrual balances and policies to be managed in the system, and for approved leaves to be excluded from scheduling and payroll calculations, so that compliance and accuracy are maintained.
+
+Acceptance Criteria:
+- Leave accrual balances are calculated and updated according to company policies (e.g., PTO, sick leave).
+- Employees can view their current leave balances in their profile.
+- Approved leave requests automatically exclude employees from shift scheduling and payroll hour calculations for the affected dates.
+- Integration hooks are available for external payroll and scheduling systems to consume leave data.
+- Leave exports include approved leaves and updated balances for reporting.
