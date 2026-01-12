@@ -1,0 +1,11 @@
+Title: Payroll Export - Provider Schema Mapping
+User Story: As a payroll administrator, I want payroll exports to match external provider schemas so that files are accepted and processed without errors.
+Acceptance Criteria:
+  Given approved attendance and leave records
+  When I generate a payroll export
+  Then the file matches the provider's required schema and passes validation
+Additional Details:
+  Priority: High
+  Story Points: 8
+  Dependencies: E04, E06
+  Notes: Schema mapping must be configurable for multiple providers.
