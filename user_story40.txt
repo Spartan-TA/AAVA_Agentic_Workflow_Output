@@ -1,0 +1,11 @@
+Title: Safety Incidents - Corrective Action Audit Trail
+User Story: As a compliance officer, I want all corrective actions from incident investigations to be logged and auditable so that regulatory requirements are met.
+Acceptance Criteria:
+  Given a corrective action is taken during an investigation
+  When the action is logged
+  Then the audit trail includes actor, timestamp, action details, and related incident
+Additional Details:
+  Priority: High
+  Story Points: 5
+  Dependencies: E02, E03
+  Notes: Audit trail must be exportable and tamper-evident.
