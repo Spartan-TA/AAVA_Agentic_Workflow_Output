@@ -1,0 +1,40 @@
+### E09: Equipment & Asset Assignment
+
+**User Story 1: Assign Assets to Employees**
+User Story: As a supervisor I want to assign equipment to employees So that asset usage is tracked
+Acceptance Criteria:
+Scenario: Assign asset
+Given an available asset
+When I assign it to an employee
+Then the assignment is logged and visible on both profiles
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Asset registry CRUD.
+
+**User Story 2: Check-In/Out Equipment**
+User Story: As a worker I want to check out and return equipment So that asset status is accurate
+Acceptance Criteria:
+Scenario: Check out asset
+Given an asset is available
+When I check it out
+Then the asset status updates and my assignment is recorded
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Block if certs invalid.
+
+**User Story 3: Overdue Asset Return Reporting**
+User Story: As an asset manager I want to report on overdue returns So that lost assets are minimized
+Acceptance Criteria:
+Scenario: Overdue report
+Given assets are overdue
+When I run the report
+Then all overdue assets and responsible employees are listed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E07
+- Notes: History log per asset.
