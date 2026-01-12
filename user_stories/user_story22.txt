@@ -1,0 +1,8 @@
+User Story 22: As a scheduler, I want the system to block assignment of employees to tasks that require valid certifications, so that only qualified workers are assigned to safety-critical roles.
+
+Acceptance Criteria:
+- When assigning employees to tasks (e.g., forklift operation), system checks certification status and expiry.
+- Employees with expired or missing certifications are blocked from assignment and flagged for supervisor review.
+- Certification status is visible in scheduling UI and APIs.
+- Alerts are sent to supervisors when assignments are blocked due to certification issues.
+- All blocked assignments and alerts are logged in the audit trail.
