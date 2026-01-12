@@ -1,0 +1,11 @@
+Title: Notifications - Opt-In/Out Per Channel
+User Story: As an employee, I want to opt-in or out of in-app, email, and SMS notifications so that I receive updates in my preferred way.
+Acceptance Criteria:
+  Given I am authenticated as an employee
+  When I update my notification preferences
+  Then I only receive notifications via selected channels
+Additional Details:
+  Priority: Medium
+  Story Points: 5
+  Dependencies: E03, E05, E06, E07
+  Notes: Preferences must be saved and respected for all notification types.
