@@ -1,0 +1,13 @@
+Title: Personal Shift Visibility
+User Story: As a worker, I want to view my upcoming shifts so that I can plan my schedule.
+Acceptance Criteria:
+Scenario: View personal shifts
+Given I am authenticated
+When I GET /shifts/my
+Then I see my upcoming shifts
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Shift Assignment
+- Notes: Improves worker engagement
