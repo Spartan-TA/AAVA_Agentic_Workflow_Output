@@ -1,0 +1,17 @@
+Title: Add Actuator for Monitoring
+
+User Story: As an ops engineer, I want Actuator endpoints enabled so that I can monitor application health and metrics.
+
+Acceptance Criteria:
+
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access `/actuator/health`
+Then the response is `"status": "UP"`
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 1
+- Notes: Enables monitoring
+- Epic: E01 - Project Scaffolding & Domain Setup
