@@ -1,0 +1,9 @@
+User Story 18: As a supervisor, I want to bulk-assign shifts to employees and have the system detect scheduling conflicts, so that workforce planning is streamlined and errors are minimized.
+
+Acceptance Criteria:
+- Supervisors can select multiple employees and assign them to shifts in bulk via UI or API.
+- System checks for conflicts (overlapping shifts, overtime rule violations, blackout dates) before confirming assignments.
+- Conflicting assignments are flagged with detailed error messages and prevented from saving.
+- Employees can view their upcoming personal shifts in their dashboard.
+- Audit entries are generated for all bulk assignments and changes.
+- API documented in OpenAPI spec.
