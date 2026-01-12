@@ -1,0 +1,12 @@
+Title: Employee OpenAPI Schema Generation
+User Story: As a developer, I want the employee API endpoints to be documented in OpenAPI with example requests and responses so that integration and testing are streamlined.
+Acceptance Criteria:
+Scenario: OpenAPI schema and examples
+Given the employee API is implemented
+When I view the OpenAPI documentation
+Then I see schemas for all endpoints with example payloads for requests and responses
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Documentation should be auto-generated and updated with each API change.
