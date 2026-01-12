@@ -1,0 +1,71 @@
+# E12: Notifications & Announcements
+
+## User Story 1
+- Title: Configure Notification Channels
+- User Story: As a user, I want to opt-in or out of in-app, email, and SMS notifications so that I control how I am notified.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Notification channel opt-in/out
+  Given notification settings
+  When I update my preferences
+  Then notifications are sent only via selected channels
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E03, E05, E06, E07
+  * Notes: Per-user configuration
+
+## User Story 2
+- Title: Localize Notification Templates
+- User Story: As a user, I want notification templates localized so that messages are in my preferred language.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Template localization
+  Given a notification template
+  When my locale is set
+  Then notifications are sent in the correct language
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: Notification system
+  * Notes: Support multiple locales
+
+## User Story 3
+- Title: Track Notification Delivery Status
+- User Story: As an admin, I want delivery status tracked for notifications so that failures are visible.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Delivery status tracking
+  Given a sent notification
+  When delivery is attempted
+  Then status is updated to delivered or failed
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: Notification system
+  * Notes: Retry on failure
+
+## User Story 4
+- Title: Apply Rate Limits to Notifications
+- User Story: As an admin, I want rate limits applied to notifications so that users are not spammed.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Rate limiting
+  Given multiple notifications
+  When the rate limit is exceeded
+  Then excess notifications are queued or dropped
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: Notification system
+  * Notes: Configurable limits
+
+## User Story 5
+- Title: Display Announcements on Dashboard
+- User Story: As a user, I want announcements visible on my dashboard so that I am informed of important updates.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Announcement display
+  Given an active announcement
+  When I log in
+  Then the announcement is displayed on my dashboard
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: Notification system
+  * Notes: Role-based visibility
