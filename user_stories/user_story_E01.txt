@@ -1,0 +1,49 @@
+### Epic E01: Project Scaffolding & Domain Setup
+
+**User Story 1: Initialize Spring Boot Project**
+- Title: Spring Boot Project Initialization
+- User Story: As a DEVELOPER, I want to initialize a Spring Boot Maven project so that the team has a standardized foundation for development.
+- Acceptance Criteria:
+  ```
+  Given a clean repository,
+  When I run the build command,
+  Then the project builds successfully and runs on port 8080.
+
+  Given the repository,
+  When I open the README,
+  Then I see clear build and run instructions.
+  ```
+- Additional Details: Priority: High, Story Points: 3, Dependencies: None, Notes: Base for all modules.
+
+**User Story 2: Configure Base Packages**
+- Title: Base Package Structure Setup
+- User Story: As a DEVELOPER, I want to configure base packages for core modules so that code is organized and maintainable.
+- Acceptance Criteria:
+  ```
+  Given the project structure,
+  When I inspect the packages,
+  Then I see separate packages for employee, scheduling, attendance, and safety modules.
+  ```
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Follows domain-driven design.
+
+**User Story 3: Database Migration Tool Integration**
+- Title: Integrate Flyway/Liquibase
+- User Story: As a DEVELOPER, I want to integrate Flyway or Liquibase so that database migrations are automated and version-controlled.
+- Acceptance Criteria:
+  ```
+  Given the project setup,
+  When I run the migration tool,
+  Then the baseline migration is applied to the database without errors.
+  ```
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Ensures DB consistency.
+
+**User Story 4: Enable Actuator Health Endpoint**
+- Title: Actuator Health Check
+- User Story: As a SYSTEM, I want to enable the Actuator health endpoint so that system health can be monitored.
+- Acceptance Criteria:
+  ```
+  Given the application is running,
+  When I access /actuator/health,
+  Then the endpoint returns status UP.
+  ```
+- Additional Details: Priority: High, Story Points: 1, Dependencies: E01, Notes: Required for monitoring.
