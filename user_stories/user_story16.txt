@@ -1,0 +1,10 @@
+User Story 16: As a supervisor, I want the system to automatically calculate hours worked per shift and handle missed punches/corrections, so that payroll and attendance are accurate.
+
+Acceptance Criteria:
+- System calculates total hours worked for each shift based on valid clock-in and clock-out events.
+- Daily totals are computed and visible to employees and supervisors.
+- If a punch is missed or incorrect, employee can submit a correction request with reason.
+- Correction requests generate approval tasks for supervisors.
+- Approved corrections update attendance records and recalculate totals.
+- All corrections and approvals are logged in the audit trail.
+- Attendance and corrections data can be exported as CSV for reporting.
