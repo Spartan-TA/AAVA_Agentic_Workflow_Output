@@ -1,0 +1,26 @@
+---
+# User Story 7: Update Employee Details
+
+**Epic:** E02 - Employee Master Data (CRUD)
+
+**Title:** Update Employee Details
+
+**User Story:** As an HR manager, I want to update employee details so that records remain accurate and up-to-date.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given an existing employee
+When I PUT or PATCH updated details
+Then the employee record is updated accordingly
+
+Given an invalid update (e.g., duplicate badgeId)
+When I submit the request
+Then the update is rejected with a validation error
+```
+
+**Additional Details:**
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Data integrity enforced.
+---
