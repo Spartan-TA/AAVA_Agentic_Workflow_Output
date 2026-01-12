@@ -1,0 +1,18 @@
+Title: Shift Assignment and Conflict Detection
+User Story: As a supervisor, I want to assign shifts to employees and detect conflicts so that staffing is adequate and errors are prevented.
+Acceptance Criteria:
+Scenario: Assign shift
+Given an employee is available
+When I assign a shift
+Then the assignment is successful
+
+Scenario: Conflict detected
+Given an employee is already scheduled
+When I assign an overlapping shift
+Then a conflict is detected and prevented
+
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Shift Template Management
+- Notes: Bulk assignment supported
