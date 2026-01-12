@@ -1,0 +1,26 @@
+---
+# User Story 6: Retrieve Employee List with Filtering
+
+**Epic:** E02 - Employee Master Data (CRUD)
+
+**Title:** Retrieve Employee List with Filtering
+
+**User Story:** As an HR manager, I want to retrieve a paginated and filtered list of employees so that I can efficiently manage large employee datasets.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given the employee list API
+When I GET with pagination parameters
+Then I receive a paginated list of employees
+
+Given the employee list API
+When I GET with filter parameters (e.g., department, status)
+Then I receive only matching employees
+```
+
+**Additional Details:**
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Supports efficient data access.
+---
