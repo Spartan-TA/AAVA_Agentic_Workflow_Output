@@ -1,0 +1,11 @@
+Title: Certification Tracking - Status Visibility and Proof Upload
+User Story: As an employee, I want to view my certification status and upload proof documents so that my qualifications are visible and verifiable.
+Acceptance Criteria:
+  Given I am authenticated as an employee
+  When I view my profile
+  Then I see all certifications with status and can upload proof documents
+Additional Details:
+  Priority: High
+  Story Points: 5
+  Dependencies: E02, E03
+  Notes: Uploaded documents must be securely stored and linked to certification records.
