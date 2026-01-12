@@ -1,0 +1,71 @@
+# E05: Shift & Schedule Management
+
+## User Story 1
+- Title: Create Shift Templates
+- User Story: As an HR user, I want to create recurring shift templates so that scheduling is efficient.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Shift template creation
+  Given the shift management module
+  When I create a template
+  Then the template is saved and reusable
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E02, E03, E04
+  * Notes: Support multiple shift types
+
+## User Story 2
+- Title: Assign Shifts to Employees
+- User Story: As a supervisor, I want to assign shifts to employees so that staffing is planned.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Shift assignment
+  Given a list of employees and shifts
+  When I assign shifts
+  Then assignments are saved and visible to employees
+- Additional Details:
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: Shift templates
+  * Notes: Bulk assignment supported
+
+## User Story 3
+- Title: Detect and Prevent Scheduling Conflicts
+- User Story: As a scheduler, I want conflicts detected and prevented so that no employee is double-booked.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Conflict detection
+  Given overlapping shift assignments
+  When I try to assign a conflicting shift
+  Then the system blocks the assignment and shows an error
+- Additional Details:
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: Shift assignment
+  * Notes: Include blackout dates
+
+## User Story 4
+- Title: Display Upcoming Shifts to Employees
+- User Story: As a worker, I want to view my upcoming shifts so that I can plan my schedule.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Upcoming shifts view
+  Given an employee with assigned shifts
+  When they log in
+  Then their personal shift schedule is displayed
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: Shift assignment
+  * Notes: Mobile-friendly view
+
+## User Story 5
+- Title: Audit Shift Assignments
+- User Story: As a compliance officer, I want audit entries for shift assignments so that changes are tracked.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Audit entry creation
+  Given a shift assignment or change
+  When the action is performed
+  Then an audit log entry is generated
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: Shift assignment
+  * Notes: Include actor, timestamp, before/after
