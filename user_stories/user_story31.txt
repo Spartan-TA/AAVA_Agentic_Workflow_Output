@@ -1,0 +1,8 @@
+User Story 31: As a compliance officer, I want every sensitive change (employee PII, schedules, approvals, payroll) to be logged in a tamper-evident audit trail, so that regulatory and internal compliance requirements are met.
+
+Acceptance Criteria:
+- Every create, update, and delete action records actor, timestamp, before/after values, and affected entity.
+- Audit log is stored in an immutable, tamper-evident table.
+- Audit log can be exported by date, user, or entity for compliance review.
+- Automated tests validate audit coverage for all sensitive actions.
+- Audit log access is restricted to authorized roles.
