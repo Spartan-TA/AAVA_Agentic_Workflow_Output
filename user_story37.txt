@@ -1,0 +1,11 @@
+Title: Safety Incidents - Investigation Workflow
+User Story: As a safety officer, I want to manage incident investigation and corrective actions so that all safety events are properly resolved and documented.
+Acceptance Criteria:
+  Given an incident is recorded
+  When I update the status to Investigating or Resolved
+  Then the workflow tracks progress and corrective actions taken
+Additional Details:
+  Priority: High
+  Story Points: 8
+  Dependencies: E02, E03
+  Notes: Status workflow must include Open, Investigating, and Resolved states.
