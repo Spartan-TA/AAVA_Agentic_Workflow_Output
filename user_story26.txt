@@ -1,0 +1,11 @@
+Title: Leave Management - PTO Request Submission
+User Story: As an employee, I want to submit paid time off (PTO) requests so that my leave is tracked and processed according to company policy.
+Acceptance Criteria:
+  Given I am authenticated as an employee
+  When I submit a PTO request
+  Then my request is recorded and routed for supervisor approval
+Additional Details:
+  Priority: Medium
+  Story Points: 3
+  Dependencies: E02, E03, E05
+  Notes: PTO requests must validate against accrual balances and policies.
