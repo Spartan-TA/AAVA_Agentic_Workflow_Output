@@ -1,0 +1,11 @@
+Title: Attendance - Clock In Endpoint with Validation
+User Story: As a worker, I want to clock in using a secure endpoint with device and optional geofence validation so that my attendance is accurately recorded and verified.
+Acceptance Criteria:
+  Given I am authenticated as a WORKER
+  When I POST to /attendance/clock-in with required data
+  Then my clock-in event is validated and recorded, including device and location info
+Additional Details:
+  Priority: High
+  Story Points: 5
+  Dependencies: E02, E03
+  Notes: Geofence validation is optional and configurable per site.
