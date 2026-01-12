@@ -1,0 +1,40 @@
+### E14: Audit Trail & Compliance
+
+**User Story 1: Log Sensitive Changes**
+User Story: As a compliance officer I want all sensitive changes logged with actor and timestamp So that I can audit activity
+Acceptance Criteria:
+Scenario: Log employee update
+Given an employee record is updated
+When the change is saved
+Then the log records before/after values, actor, and timestamp
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Immutable log table.
+
+**User Story 2: Export Audit Logs**
+User Story: As an auditor I want to export logs by date, user, or entity So that I can investigate incidents
+Acceptance Criteria:
+Scenario: Export logs
+Given logs exist
+When I filter by date range
+Then the matching logs are exported as CSV
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Tamper-evident storage.
+
+**User Story 3: Automated Audit Coverage Tests**
+User Story: As a QA I want tests to validate audit coverage So that no sensitive action is missed
+Acceptance Criteria:
+Scenario: Test audit log
+Given a sensitive action
+When the test runs
+Then the action is present in the audit log
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E03
+- Notes: Coverage for create/update/delete.
