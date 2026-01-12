@@ -1,0 +1,11 @@
+Title: Performance Reviews - Assign Review Cycle and Workflow
+User Story: As a supervisor, I want to assign review cycles to employees and manage the submission/acknowledgement workflow so that performance reviews are completed and signed off.
+Acceptance Criteria:
+  Given I am authenticated as a supervisor
+  When I assign a review cycle and employees submit their reviews
+  Then the workflow tracks submission, acknowledgement, and sign-off
+Additional Details:
+  Priority: Medium
+  Story Points: 8
+  Dependencies: E02, E03
+  Notes: History must be immutable after sign-off and visible to both supervisor and employee.
