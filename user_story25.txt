@@ -1,0 +1,11 @@
+Title: Shift Management - Blackout Dates and Warehouse Calendars
+User Story: As an operations manager, I want to configure blackout dates and warehouse operation calendars so that shifts are not scheduled during non-operational periods.
+Acceptance Criteria:
+  Given I am authenticated as an operations manager
+  When I configure blackout dates or update the warehouse calendar
+  Then the system prevents shift assignments during those periods
+Additional Details:
+  Priority: High
+  Story Points: 5
+  Dependencies: E02, E03, E04
+  Notes: Calendar updates must be reflected in scheduling and conflict detection.
