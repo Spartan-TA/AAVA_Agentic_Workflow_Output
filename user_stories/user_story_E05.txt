@@ -1,0 +1,57 @@
+### E05 - Shift & Schedule Management
+
+**Title:** Create Shift Templates
+User Story: As a scheduler I want to define recurring shift templates So that I can quickly assign standard shifts
+Acceptance Criteria:
+Scenario: Create template
+Given shift details
+When I POST to `/shifts/templates`
+Then a new template is created
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Templates reusable across weeks
+
+**Title:** Assign Shifts to Employees
+User Story: As a supervisor I want to assign shifts to employees in bulk So that scheduling is efficient
+Acceptance Criteria:
+Scenario: Bulk assignment
+Given a list of employees
+When I POST to `/shifts/assign`
+Then shifts are assigned and conflicts detected
+Scenario: Conflict prevention
+Given overlapping assignments
+When I assign a shift
+Then the system prevents the conflict
+Additional Details:
+- Priority: High
+- Story Points: 4
+- Dependencies: Create Shift Templates
+- Notes: Audit entries generated for assignments
+
+**Title:** Display Personal Upcoming Shifts
+User Story: As a worker I want to view my upcoming shifts So that I can plan my schedule
+Acceptance Criteria:
+Scenario: View schedule
+Given I am logged in
+When I GET `/shifts/my`
+Then my upcoming shifts are displayed
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Assign Shifts to Employees
+- Notes: Includes blackout dates
+
+**Title:** Manage Warehouse Operation Calendars
+User Story: As an operations manager I want to configure blackout dates and operation calendars So that scheduling reflects warehouse availability
+Acceptance Criteria:
+Scenario: Add blackout date
+Given a calendar
+When I POST a blackout date
+Then shifts cannot be assigned on that date
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Create Shift Templates
+- Notes: Calendar scoped per warehouse
