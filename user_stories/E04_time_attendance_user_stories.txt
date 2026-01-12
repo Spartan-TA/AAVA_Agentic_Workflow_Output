@@ -1,0 +1,71 @@
+## E04: Time & Attendance (Clock In/Out)
+
+### User Story 1
+- Title: Clock-In Endpoint with Geofence Validation
+- User Story: As a worker, I want to clock in with location validation so that only on-site attendance is recorded.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Clock-in with geofence
+  Given a worker is at the warehouse
+  When they POST to /attendance/clock-in
+  Then the event is recorded if within geofence
+- Additional Details:
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E02, E03
+  * Notes: Device capture required.
+
+### User Story 2
+- Title: Clock-Out Endpoint and Shift Association
+- User Story: As a worker, I want to clock out and have my shift automatically associated so that hours are calculated correctly.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Clock-out and shift association
+  Given a worker has clocked in
+  When they POST to /attendance/clock-out
+  Then the shift is associated and hours computed
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E02, E03
+  * Notes: Shift association logic.
+
+### User Story 3
+- Title: Handle Missed Punches and Corrections Workflow
+- User Story: As a supervisor, I want to manage missed punches and corrections so that attendance records are accurate.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Missed punch correction
+  Given a missed punch is reported
+  When a correction is submitted
+  Then an approval task is created for supervisor
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E02, E03
+  * Notes: Approval workflow required.
+
+### User Story 4
+- Title: Attendance Reports Exportable as CSV
+- User Story: As an HR user, I want attendance reports exportable as CSV so that payroll processing is streamlined.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Attendance report export
+  Given attendance data exists
+  When I request a CSV export
+  Then the report is generated and downloadable
+- Additional Details:
+  * Priority: High
+  * Story Points: 1
+  * Dependencies: E02, E03
+  * Notes: Export endpoint required.
+
+### User Story 5
+- Title: Daily Totals Computation
+- User Story: As a supervisor, I want daily totals of hours worked computed automatically so that overtime and compliance are tracked.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Daily totals calculation
+  Given clock-in/out events for a day
+  When totals are computed
+  Then the correct number of hours is shown per employee
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E02, E03
+  * Notes: Calculation logic must be accurate.
