@@ -1,0 +1,53 @@
+### E05: Shift & Schedule Management
+
+**User Story 1: Create and Manage Shift Templates**
+User Story: As an HR user I want to create recurring shift templates So that scheduling is efficient
+Acceptance Criteria:
+Scenario: Create shift template
+Given I have shift details
+When I POST to /shifts/templates
+Then a new template is created and available for assignment
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Support rotations.
+
+**User Story 2: Assign Shifts to Employees**
+User Story: As a supervisor I want to assign shifts in bulk So that I can quickly schedule my team
+Acceptance Criteria:
+Scenario: Bulk assign shifts
+Given a list of employees
+When I assign a shift template
+Then all selected employees receive the schedule
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Audit entries required.
+
+**User Story 3: Prevent Scheduling Conflicts**
+User Story: As a scheduler I want the system to detect conflicts So that employees are not double-booked
+Acceptance Criteria:
+Scenario: Conflict detection
+Given an employee has a shift
+When I assign an overlapping shift
+Then the system prevents the assignment and shows an error
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Blackout dates supported.
+
+**User Story 4: View Personal Upcoming Shifts**
+User Story: As a worker I want to view my upcoming shifts So that I can plan my work
+Acceptance Criteria:
+Scenario: View schedule
+Given I am logged in
+When I access my schedule
+Then I see all upcoming assigned shifts
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E04
+- Notes: Mobile-friendly.
