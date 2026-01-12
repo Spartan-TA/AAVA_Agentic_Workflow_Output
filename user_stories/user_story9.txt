@@ -1,0 +1,23 @@
+Title: Time & Attendance Clock-In/Out
+User Story: As a warehouse worker, I want to clock in and out via API so that my working hours are accurately recorded.
+Acceptance Criteria:
+Scenario: Valid clock-in
+Given my badgeId is valid
+When I POST to /attendance/clock-in
+Then my clock-in event is recorded and associated with my shift
+
+Scenario: Valid clock-out
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded and hours are calculated
+
+Scenario: Geofence validation
+Given geofence is enabled
+When I clock in outside the allowed area
+Then the request is rejected
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD, RBAC
+- Notes: Device capture optional
