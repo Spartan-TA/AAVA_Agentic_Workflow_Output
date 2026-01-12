@@ -1,0 +1,11 @@
+Title: Asset Assignment - Check-In/Out Endpoints
+User Story: As an employee, I want to check out and return equipment using secure endpoints so that asset usage is tracked and managed.
+Acceptance Criteria:
+  Given I am authenticated as an employee
+  When I check out or return an asset
+  Then the system records the transaction and updates asset status
+Additional Details:
+  Priority: Medium
+  Story Points: 5
+  Dependencies: E02, E03, E07
+  Notes: Check-in/out actions must be logged with timestamps and user info.
