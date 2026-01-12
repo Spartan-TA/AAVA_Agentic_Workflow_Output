@@ -1,0 +1,56 @@
+### Epic E06: Leave & Absence Management
+
+**User Story 1: Request Leave**
+- Title: Employee Leave Request
+- User Story: As a WORKER, I want to request PTO, sick, or unpaid leave so that my time off is tracked.
+- Acceptance Criteria:
+  ```
+  Given available leave balance,
+  When I submit a leave request,
+  Then the request is created and pending approval.
+  ```
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Validates balance.
+
+**User Story 2: Approve/Deny Leave**
+- Title: Supervisor Leave Approval
+- User Story: As a SUPERVISOR, I want to approve or deny leave requests so that staffing is managed.
+- Acceptance Criteria:
+  ```
+  Given a pending leave request,
+  When I review the request,
+  Then I can approve or deny it and the employee is notified.
+  ```
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Notification integration.
+
+**User Story 3: Update Leave Balances**
+- Title: Leave Balance Update
+- User Story: As a SYSTEM, I want leave balances to update automatically so that records are accurate.
+- Acceptance Criteria:
+  ```
+  Given an approved leave,
+  When the leave period starts,
+  Then the employee's leave balance is reduced accordingly.
+  ```
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E02, E03, E05, Notes: Policy-driven.
+
+**User Story 4: Flag Scheduled Shifts for Coverage**
+- Title: Shift Coverage Flagging
+- User Story: As a SUPERVISOR, I want scheduled shifts to be flagged when an employee is on leave so that coverage can be arranged.
+- Acceptance Criteria:
+  ```
+  Given an approved leave,
+  When the leave overlaps scheduled shifts,
+  Then those shifts are flagged for coverage.
+  ```
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Triggers notifications.
+
+**User Story 5: Export Approved Leaves**
+- Title: Leave Export Report
+- User Story: As an ADMIN, I want to export approved leaves so that payroll and planning are accurate.
+- Acceptance Criteria:
+  ```
+  Given approved leave records,
+  When I request an export,
+  Then a CSV file is generated with all relevant details.
+  ```
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E02, E03, E05, Notes: For payroll integration.
