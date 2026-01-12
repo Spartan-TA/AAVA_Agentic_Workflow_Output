@@ -1,0 +1,47 @@
+### Epic E03: Role-Based Access Control (RBAC)
+
+**User Story 1**
+Title: Implement Role-Based Endpoint Security
+User Story: As a system admin, I want to restrict API endpoints by user role so that sensitive data is protected.
+Acceptance Criteria:
+Scenario: Unauthorized Access
+Given a user without required role
+When they access a protected endpoint
+Then the response is 401 Unauthorized
+Scenario: Forbidden Action
+Given a user with insufficient permissions
+When they attempt a restricted action
+Then the response is 403 Forbidden
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee API
+- Notes: Roles: ADMIN, HR, SUPERVISOR, WORKER
+
+**User Story 2**
+Title: Row-Level Security for Supervisors
+User Story: As a supervisor, I want to access only my team's records so that I don't see unrelated employee data.
+Acceptance Criteria:
+Scenario: Supervisor Access
+Given a supervisor user
+When they access employee data
+Then only records for their team are returned
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee API
+- Notes: Team mapping required
+
+**User Story 3**
+Title: API Key/OAuth2 Toggle
+User Story: As a system admin, I want to toggle between API key and OAuth2 authentication so that integration requirements are met.
+Acceptance Criteria:
+Scenario: Auth Toggle
+Given a config setting
+When I switch authentication mode
+Then endpoints require the selected auth method
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Project scaffolding
+- Notes: Document toggle process
