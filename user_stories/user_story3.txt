@@ -1,0 +1,85 @@
+# E03: Role-Based Access Control (RBAC)
+
+## User Story 1
+- Title: Implement Role Definitions
+- User Story: As a security admin, I want roles (ADMIN, HR, SUPERVISOR, WORKER) defined so that access can be controlled.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Role definition
+  Given the security configuration
+  When I inspect the roles
+  Then all four roles are present and assignable
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E01, E02
+  * Notes: Use Spring Security roles
+
+## User Story 2
+- Title: Secure Endpoints by Role
+- User Story: As a security admin, I want endpoints secured by role so that only authorized users can perform sensitive actions.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Endpoint security
+  Given a user with a specific role
+  When they access a restricted endpoint
+  Then access is granted or denied based on role
+- Additional Details:
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: Role definitions
+  * Notes: Use method and endpoint security annotations
+
+## User Story 3
+- Title: Enforce Row-Level Security
+- User Story: As a supervisor, I want to see only my team's records so that privacy is maintained.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Row-level access
+  Given a supervisor user
+  When they list employees
+  Then only their team's records are returned
+- Additional Details:
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: Endpoint security
+  * Notes: Filter queries by supervisor/team
+
+## User Story 4
+- Title: Support API Key/OAuth2 Toggle
+- User Story: As a security admin, I want to toggle between API key and OAuth2 authentication so that integration requirements are met.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Auth mode toggle
+  Given the configuration is set to API key or OAuth2
+  When authentication is performed
+  Then the correct method is enforced
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: Security config
+  * Notes: Configurable via properties
+
+## User Story 5
+- Title: Unauthorized and Forbidden Responses
+- User Story: As a developer, I want unauthorized requests to return 401 and forbidden actions to return 403 so that API consumers understand errors.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Error response codes
+  Given an unauthorized or forbidden request
+  When the API is called
+  Then the response is 401 or 403 as appropriate
+- Additional Details:
+  * Priority: High
+  * Story Points: 1
+  * Dependencies: Endpoint security
+  * Notes: Standardize error handling
+
+## User Story 6
+- Title: Security Test Coverage
+- User Story: As a QA engineer, I want automated tests for security rules so that vulnerabilities are detected early.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Security test execution
+  Given the test suite
+  When tests are run
+  Then all security rules are covered and pass
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: Security implementation
+  * Notes: Use unit and integration tests
