@@ -1,0 +1,11 @@
+Title: Performance Reviews - Immutable History After Sign-Off
+User Story: As an HR manager, I want review history to be immutable after supervisor and employee sign-off so that records are tamper-proof and compliant.
+Acceptance Criteria:
+  Given a review is signed off by both supervisor and employee
+  When I view the review history
+  Then no further changes are allowed and the record is locked
+Additional Details:
+  Priority: Medium
+  Story Points: 5
+  Dependencies: E02, E03
+  Notes: Locked history must be visible to authorized roles and exportable.
