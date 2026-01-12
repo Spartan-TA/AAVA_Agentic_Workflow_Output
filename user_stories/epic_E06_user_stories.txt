@@ -1,0 +1,40 @@
+### E06: Leave & Absence Management
+
+**User Story 1: Request Leave**
+User Story: As an employee I want to request PTO or sick leave So that my absences are tracked
+Acceptance Criteria:
+Scenario: Submit leave request
+Given I have available leave balance
+When I request PTO
+Then my supervisor receives an approval task
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Accrual policies enforced.
+
+**User Story 2: Approve or Deny Leave**
+User Story: As a supervisor I want to approve or deny leave requests So that staffing is maintained
+Acceptance Criteria:
+Scenario: Approve leave
+Given a pending leave request
+When I approve it
+Then the employee's balance updates and the schedule is flagged for coverage
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Denials notify employee.
+
+**User Story 3: Exclude Approved Leave from Scheduling**
+User Story: As a scheduler I want approved leaves to auto-flag shifts So that coverage gaps are visible
+Acceptance Criteria:
+Scenario: Auto-flag scheduled shifts
+Given an approved leave overlaps a shift
+When I view the schedule
+Then the shift is flagged for coverage
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Export includes approved leaves.
