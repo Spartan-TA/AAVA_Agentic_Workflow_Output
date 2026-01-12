@@ -1,0 +1,57 @@
+# E01: Project Scaffolding & Domain Setup
+
+## User Story 1
+- Title: Initialize Spring Boot Project Structure
+- User Story: As a developer, I want to initialize a Spring Boot project with standardized base packages so that all modules follow a consistent structure.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Project initialization
+  Given a new Spring Boot project is created
+  When the project is built and run
+  Then the application starts on port 8080 and the base package structure is present
+- Additional Details:
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: None
+  * Notes: Base packages for employee, scheduling, attendance, safety
+
+## User Story 2
+- Title: Configure Database Migrations
+- User Story: As a developer, I want Flyway/Liquibase configured for DB migrations so that schema changes are versioned and repeatable.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Database migration setup
+  Given the migration tool is configured
+  When the application starts
+  Then the baseline migration runs successfully and the database schema is initialized
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: Project structure
+  * Notes: Use Flyway or Liquibase as per config
+
+## User Story 3
+- Title: Enable Actuator Health Endpoints
+- User Story: As an operations engineer, I want Actuator endpoints enabled so that I can monitor application health.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Health endpoint availability
+  Given the application is running
+  When I access /actuator/health
+  Then the endpoint returns status UP
+- Additional Details:
+  * Priority: High
+  * Story Points: 1
+  * Dependencies: Project structure
+  * Notes: Expose only necessary endpoints
+
+## User Story 4
+- Title: Provide Build and Run Documentation
+- User Story: As a developer, I want a README with build and run steps so that onboarding is fast and consistent.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Documentation completeness
+  Given the project repository
+  When I open the README
+  Then I see clear build and run instructions
+- Additional Details:
+  * Priority: High
+  * Story Points: 1
+  * Dependencies: Project structure
+  * Notes: Include prerequisites and troubleshooting
