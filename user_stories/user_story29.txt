@@ -1,0 +1,9 @@
+User Story 29: As a warehouse worker, I want to receive notifications about shift changes, expiring certifications, approvals, and announcements via my preferred channel, so that I stay informed and can manage my work effectively.
+
+Acceptance Criteria:
+- Users can opt-in or opt-out of notifications per channel (in-app, email, SMS).
+- Notification templates are localized based on user language preference.
+- Delivery status is tracked for each notification (sent, delivered, failed).
+- Rate limits are applied to prevent notification spam.
+- Announcements are visible on the dashboard for all users.
+- Quiet hours configuration prevents non-critical notifications during off-hours.
