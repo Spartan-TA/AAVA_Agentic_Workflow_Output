@@ -1,0 +1,8 @@
+User Story 26: As a supervisor, I want to view reports of overdue asset returns and access history logs for each asset and employee, so that accountability and asset management are improved.
+
+Acceptance Criteria:
+- System tracks due dates for asset returns and flags overdue items in supervisor dashboard and reports.
+- History log is available for each asset, showing all check-in/out events, condition updates, and assigned employees.
+- Employees have a personal asset history log in their profile.
+- Reports of overdue returns are exportable in CSV format.
+- All asset history and overdue events are logged in the audit trail.
