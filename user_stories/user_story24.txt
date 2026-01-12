@@ -1,0 +1,8 @@
+User Story 24: As a compliance officer, I want to generate OSHA 300/300A summary reports and view safety metrics dashboards, so that regulatory requirements are met and safety KPIs are tracked.
+
+Acceptance Criteria:
+- OSHA 300/300A summary fields are exportable in CSV format for regulatory submission.
+- Safety metrics dashboard endpoints provide incident counts, severity, and trends over time.
+- Dashboards are filterable by date, department, and location.
+- All report exports and dashboard accesses are logged in the audit trail.
+- API endpoints for metrics are documented in OpenAPI spec.
