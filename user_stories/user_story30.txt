@@ -1,8 +1,0 @@
-User Story 30: As a systems integrator, I want to expose secure REST APIs and connectors for HRIS and WMS systems, so that employee and department/location data can be synchronized automatically.
-
-Acceptance Criteria:
-- APIs are secured using JWT/OAuth2 authentication.
-- HRIS sync job creates and updates employee records from external HRIS systems.
-- WMS connector links department and location data for scheduling and reporting.
-- Webhooks for events are idempotent and reliably delivered.
-- API endpoints are documented in OpenAPI spec for developer reference.

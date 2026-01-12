@@ -1,8 +1,0 @@
-User Story 25: As an asset manager, I want to assign equipment (e.g., scanners, forklifts, PPE) to employees and ensure only certified workers can check out restricted assets, so that safety and accountability are maintained.
-
-Acceptance Criteria:
-- CRUD endpoints for asset registry, including asset type, serial number, condition, and assignment status.
-- Check-in/out endpoints for employees to request and return assets.
-- System checks employee certifications before allowing check-out of restricted assets (e.g., forklifts).
-- Blocked check-outs are flagged for supervisor review.
-- Asset assignment and return events are logged in the audit trail.

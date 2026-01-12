@@ -1,8 +1,0 @@
-User Story 28: As a payroll administrator, I want to generate payroll-ready export files from approved attendance and leave data, and deliver them securely to external payroll providers, so that payroll processing is accurate and compliant.
-
-Acceptance Criteria:
-- Exports match the schema required by external payroll providers (e.g., ADP, Paychex).
-- Exported totals reconcile with attendance and leave reports.
-- Secure delivery via SFTP or API with retry and exponential backoff on failure.
-- Audit log records every export event, including delivery status and errors.
-- Failed deliveries trigger alerts for manual intervention.

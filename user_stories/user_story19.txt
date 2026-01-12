@@ -1,9 +1,0 @@
-User Story 19: As an employee, I want to request PTO, sick, or unpaid leave through the system, and as a supervisor, I want to approve or deny these requests, so that leave balances and coverage are managed accurately.
-
-Acceptance Criteria:
-- Employees can submit leave requests specifying type, dates, and reason.
-- Supervisors receive notification and can approve or deny requests with comments.
-- Upon approval, leave balances are updated according to company policy.
-- Scheduled shifts during approved leave are auto-flagged for coverage or reassignment.
-- Approved and denied leaves are visible in employee and supervisor dashboards.
-- Leave data can be exported for reporting.

@@ -1,8 +1,0 @@
-User Story 21: As an HR manager, I want to manage employee certifications and receive alerts before they expire, so that compliance and safety requirements are met.
-
-Acceptance Criteria:
-- CRUD endpoints for adding, updating, and deleting certifications for employees.
-- Certification records include type, issue date, expiry date, and proof document upload.
-- System sends alerts to employees and supervisors 30 and 7 days before certification expiry.
-- Certification status is visible on employee profiles.
-- All certification changes are logged in the audit trail.

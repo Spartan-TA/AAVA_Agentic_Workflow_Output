@@ -1,8 +1,0 @@
-User Story 34: As an HR manager, I want new hires to be automatically provisioned with accounts, initial schedules, and required training tasks, and for terminated employees to have access and assets revoked, so that onboarding and offboarding are efficient and compliant.
-
-Acceptance Criteria:
-- New hires appear in the system via HRIS integration and are provisioned with user accounts and initial schedules.
-- Required training and certification tasks are generated and assigned to new hires.
-- Asset assignment tasks are created for necessary equipment (e.g., PPE, scanners).
-- Offboarding workflow revokes system access, collects assigned assets, and updates schedules to remove terminated employees.
-- All onboarding and offboarding events are logged in the audit trail.
