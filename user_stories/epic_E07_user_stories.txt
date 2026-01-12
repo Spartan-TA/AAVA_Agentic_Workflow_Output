@@ -1,0 +1,40 @@
+### E07: Training & Certification Tracking
+
+**User Story 1: Track Employee Certifications**
+User Story: As an HR user I want to record and update employee certifications So that compliance is maintained
+Acceptance Criteria:
+Scenario: Add certification
+Given an employee profile
+When I add a certification
+Then it appears on the profile with expiry date
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Proof document upload.
+
+**User Story 2: Alert on Expiring Certifications**
+User Story: As a supervisor I want alerts for expiring certifications So that renewals are not missed
+Acceptance Criteria:
+Scenario: Expiry alert
+Given a certification expires in 30 days
+When I view the dashboard
+Then I see an alert for the employee
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: 30/7 day alerts.
+
+**User Story 3: Block Assignment to Unqualified Tasks**
+User Story: As a scheduler I want to prevent assignment of tasks to employees with expired certifications So that safety is ensured
+Acceptance Criteria:
+Scenario: Block assignment
+Given an employee's certification is expired
+When I assign them to a forklift shift
+Then the system blocks the assignment
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Visible on scheduling screen.
