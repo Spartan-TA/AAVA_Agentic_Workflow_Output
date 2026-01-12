@@ -1,0 +1,58 @@
+### Epic E02: Employee Master Data (CRUD)
+
+**User Story 1**
+Title: Create Employee API
+User Story: As an HR admin, I want to create employee records via API so that new hires are registered in the system.
+Acceptance Criteria:
+Scenario: Employee Creation
+Given valid employee data
+When I POST to /employees
+Then a new employee record is created with a unique badgeId
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: badgeId must be unique
+
+**User Story 2**
+Title: Update Employee Details
+User Story: As an HR admin, I want to update employee details so that records stay current.
+Acceptance Criteria:
+Scenario: Employee Update
+Given an existing employee
+When I PUT/PATCH to /employees/{id}
+Then the employee record is updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee API
+- Notes: OpenAPI schemas required
+
+**User Story 3**
+Title: Delete (Soft) Employee Record
+User Story: As an HR admin, I want to soft-delete employee records so that historical data is preserved.
+Acceptance Criteria:
+Scenario: Soft Delete
+Given an active employee
+When I DELETE /employees/{id}
+Then the employee status is set to inactive
+And the record is not removed from the database
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee API
+- Notes: Soft-delete only
+
+**User Story 4**
+Title: Employee List Pagination & Filtering
+User Story: As an HR user, I want to paginate and filter employee lists so that I can efficiently find records.
+Acceptance Criteria:
+Scenario: List Employees
+Given multiple employees exist
+When I GET /employees with pagination/filter params
+Then the response is paginated and filtered accordingly
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee API
+- Notes: Filtering by department, role, status
