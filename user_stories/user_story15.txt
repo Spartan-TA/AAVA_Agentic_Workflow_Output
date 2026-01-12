@@ -1,0 +1,9 @@
+User Story 15: As a warehouse worker, I want to clock out using the mobile app, so that my shift end time is accurately recorded and associated with my attendance.
+
+Acceptance Criteria:
+- POST /attendance/clock-out endpoint accepts employee ID, timestamp, device info, and optional geofence data.
+- System automatically associates clock-out with the correct shift based on previous clock-in and schedule.
+- If clock-out is missing for a shift, system flags for supervisor review.
+- Device info and location are logged for audit.
+- Error returned if clock-out is outside scheduled shift window or duplicate for the same shift.
+- API request/response documented in OpenAPI spec.
