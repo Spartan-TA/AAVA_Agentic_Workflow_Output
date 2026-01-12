@@ -1,0 +1,11 @@
+Title: Certification Tracking - Block Assignment for Expired Certs
+User Story: As a supervisor, I want the system to block assignment of tasks to employees with expired certifications so that only qualified staff are scheduled for safety-critical work.
+Acceptance Criteria:
+  Given an employee's certification is expired
+  When I attempt to assign them to a safety-critical task
+  Then the system prevents the assignment and displays a compliance warning
+Additional Details:
+  Priority: High
+  Story Points: 8
+  Dependencies: E02, E03
+  Notes: Blocking logic must be enforced for all certification-dependent tasks.
