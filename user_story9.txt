@@ -1,0 +1,22 @@
+---
+# User Story 9: OpenAPI Schema Documentation
+
+**Epic:** E02 - Employee Master Data (CRUD)
+
+**Title:** Document Employee APIs with OpenAPI
+
+**User Story:** As a developer, I want all employee CRUD APIs documented in OpenAPI with examples so that integration is easy and standardized.
+
+**Acceptance Criteria (Gherkin):**
+```
+Given the API documentation endpoint
+When I access it
+Then I see all employee CRUD endpoints with example requests and responses
+```
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Facilitates integration.
+---
