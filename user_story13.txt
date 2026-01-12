@@ -1,0 +1,11 @@
+Title: RBAC - SUPERVISOR Team Constraints
+User Story: As a SUPERVISOR, I want to access and manage records only for my assigned team so that I can fulfill my responsibilities without overreaching access.
+Acceptance Criteria:
+  Given I am authenticated as a SUPERVISOR
+  When I access employee or attendance records
+  Then I can only view and manage records for my team members
+Additional Details:
+  Priority: High
+  Story Points: 5
+  Dependencies: E01, E02
+  Notes: Row-level security must enforce team-based constraints.
