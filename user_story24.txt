@@ -1,0 +1,11 @@
+Title: Shift Management - Bulk Assignment and Audit Logging
+User Story: As a supervisor, I want to bulk-assign shifts to multiple employees and have all actions logged for audit purposes so that scheduling is efficient and traceable.
+Acceptance Criteria:
+  Given I am authenticated as a SUPERVISOR
+  When I bulk-assign shifts
+  Then all assignments are completed and audit entries are generated for each action
+Additional Details:
+  Priority: High
+  Story Points: 8
+  Dependencies: E02, E03, E04
+  Notes: Audit log must include actor, timestamp, and affected records.
