@@ -1,0 +1,11 @@
+Title: Leave Management - Supervisor Approval Workflow
+User Story: As a supervisor, I want to approve or deny leave requests so that team coverage and policy compliance are maintained.
+Acceptance Criteria:
+  Given I am authenticated as a supervisor
+  When I review a leave request
+  Then I can approve or deny the request, and the employee is notified
+Additional Details:
+  Priority: Medium
+  Story Points: 5
+  Dependencies: E02, E03, E05
+  Notes: Approval/denial actions must update leave balances and trigger notifications.
