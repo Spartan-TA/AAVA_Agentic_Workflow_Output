@@ -1,0 +1,11 @@
+Title: Shift Management - Personal Upcoming Shifts Visibility
+User Story: As a worker, I want to view my upcoming scheduled shifts so that I can plan my attendance and manage my time.
+Acceptance Criteria:
+  Given I am authenticated as a WORKER
+  When I access my schedule
+  Then I see a list of my upcoming shifts with details
+Additional Details:
+  Priority: High
+  Story Points: 3
+  Dependencies: E02, E03, E04
+  Notes: Shifts must be filterable by date and include location and role.
