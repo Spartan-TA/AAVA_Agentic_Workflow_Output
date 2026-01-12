@@ -1,0 +1,13 @@
+Title: Unique Badge ID Enforcement
+User Story: As a system admin, I want to enforce unique badge IDs for employees so that identification is reliable across systems.
+Acceptance Criteria:
+Scenario: Duplicate badgeId rejected
+Given an employee with badgeId 123 exists
+When I POST a new employee with badgeId 123
+Then the request is rejected with a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Prevents identity conflicts
