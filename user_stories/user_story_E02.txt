@@ -1,0 +1,56 @@
+### Epic E02: Employee Master Data (CRUD)
+
+**User Story 1: Create Employee Record**
+- Title: Employee Creation API
+- User Story: As an HR, I want to create employee records so that new hires are added to the system.
+- Acceptance Criteria:
+  ```
+  Given valid employee data,
+  When I POST to /employees,
+  Then a new employee is created with a unique badgeId.
+  ```
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, Notes: badgeId must be unique.
+
+**User Story 2: Retrieve Employee Records**
+- Title: Employee Retrieval API
+- User Story: As an ADMIN, I want to retrieve employee records so that I can view employee details.
+- Acceptance Criteria:
+  ```
+  Given existing employees,
+  When I GET /employees,
+  Then I receive a paginated list of employees with filtering options.
+  ```
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Supports filters.
+
+**User Story 3: Update Employee Details**
+- Title: Employee Update API
+- User Story: As an HR, I want to update employee details so that records remain accurate.
+- Acceptance Criteria:
+  ```
+  Given an employee exists,
+  When I PUT or PATCH /employees/{id},
+  Then the employee details are updated.
+  ```
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Validates input.
+
+**User Story 4: Delete Employee (Soft Delete)**
+- Title: Employee Soft Delete
+- User Story: As an ADMIN, I want to soft-delete employee records so that terminated employees are not lost but excluded from active lists.
+- Acceptance Criteria:
+  ```
+  Given an employee exists,
+  When I DELETE /employees/{id},
+  Then the employee is marked as inactive and excluded from active queries.
+  ```
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: No hard delete.
+
+**User Story 5: OpenAPI Documentation**
+- Title: Employee API Documentation
+- User Story: As a DEVELOPER, I want OpenAPI schemas for employee endpoints so that integration is easy and standardized.
+- Acceptance Criteria:
+  ```
+  Given the API is deployed,
+  When I access the OpenAPI docs,
+  Then all employee endpoints are documented with example requests and responses.
+  ```
+- Additional Details: Priority: High, Story Points: 1, Dependencies: E01, Notes: For integrators.
