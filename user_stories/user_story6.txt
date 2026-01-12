@@ -1,0 +1,71 @@
+# E06: Leave & Absence Management
+
+## User Story 1
+- Title: Request Leave
+- User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my time off is tracked.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Leave request
+  Given an employee
+  When they submit a leave request
+  Then the request is recorded and pending approval
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E02, E03, E05
+  * Notes: Support multiple leave types
+
+## User Story 2
+- Title: Approve or Deny Leave Requests
+- User Story: As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Leave approval workflow
+  Given a pending leave request
+  When the supervisor reviews and acts
+  Then the request is approved or denied and the employee is notified
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: Leave request
+  * Notes: Notification integration
+
+## User Story 3
+- Title: Update Leave Accrual Balances
+- User Story: As an HR user, I want leave balances to update automatically so that accruals are accurate.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Accrual balance update
+  Given an approved leave
+  When the leave period starts
+  Then the employee's balance is updated accordingly
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: Leave approval
+  * Notes: Policy-driven accruals
+
+## User Story 4
+- Title: Exclude Approved Leave from Scheduling
+- User Story: As a scheduler, I want approved leaves to auto-flag scheduled shifts for coverage so that staffing gaps are addressed.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Shift coverage flagging
+  Given an approved leave overlapping a scheduled shift
+  When the schedule is generated
+  Then the shift is flagged for coverage
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: Leave approval, scheduling
+  * Notes: Integration with shift management
+
+## User Story 5
+- Title: Export Leave Reports
+- User Story: As an HR user, I want to export reports of approved leaves so that payroll and compliance are supported.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Leave report export
+  Given approved leave data
+  When I request a report
+  Then a CSV file is generated with relevant details
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: Leave records
+  * Notes: Include employee, dates, type, status
