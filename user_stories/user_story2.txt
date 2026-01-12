@@ -1,0 +1,17 @@
+Title: Configure Base Package Structure
+
+User Story: As a developer, I want to set up base packages for employee, scheduling, attendance, and safety so that code is organized and maintainable.
+
+Acceptance Criteria:
+
+Scenario: Packages created
+Given the project structure
+When I inspect the source code
+Then I see packages for employee, scheduling, attendance, and safety
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Ensures modularity
+- Epic: E01 - Project Scaffolding & Domain Setup
