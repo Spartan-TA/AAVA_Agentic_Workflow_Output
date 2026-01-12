@@ -1,0 +1,11 @@
+Title: Asset Assignment - Block Use if Certification Missing
+User Story: As a supervisor, I want the system to prevent asset check-out if the required certification is missing or expired so that only qualified employees use equipment.
+Acceptance Criteria:
+  Given an employee attempts to check out an asset
+  When their certification is missing or expired
+  Then the system blocks the check-out and displays a warning
+Additional Details:
+  Priority: Medium
+  Story Points: 8
+  Dependencies: E02, E03, E07
+  Notes: Blocking logic must be enforced for all certification-dependent assets.
