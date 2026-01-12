@@ -1,0 +1,59 @@
+### Epic E08: Safety Incidents & OSHA Reporting
+
+**User Story 1**
+Title: Record Safety Incident
+User Story: As a safety officer, I want to record incidents and near-misses so that safety data is tracked.
+Acceptance Criteria:
+Scenario: Incident Recording
+Given incident details
+When I POST to /safety/incidents
+Then the incident is recorded with severity, location, description, and involved employees
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee API, RBAC
+- Notes: Validation required
+
+**User Story 2**
+Title: Incident Investigation Workflow
+User Story: As a safety manager, I want to manage investigation workflow so that corrective actions are tracked.
+Acceptance Criteria:
+Scenario: Status Workflow
+Given an open incident
+When investigation starts
+Then status changes to Investigating
+When resolved
+Then status changes to Resolved
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Incident recording
+- Notes: Workflow must be auditable
+
+**User Story 3**
+Title: OSHA Summary Export
+User Story: As a compliance officer, I want to export OSHA 300/300A summaries so that regulatory requirements are met.
+Acceptance Criteria:
+Scenario: Export OSHA Summary
+Given incidents are recorded
+When I request an export
+Then the file includes required OSHA fields
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Incident data
+- Notes: Export format per OSHA specs
+
+**User Story 4**
+Title: Safety Metrics Dashboard
+User Story: As a safety manager, I want a dashboard of safety KPIs so that I can monitor trends.
+Acceptance Criteria:
+Scenario: Dashboard Metrics
+Given incidents are recorded
+When I access the dashboard
+Then metrics are displayed by severity, location, and time
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Incident data
+- Notes: Endpoints for BI integration
