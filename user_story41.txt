@@ -1,0 +1,11 @@
+Title: Asset Assignment - Asset Registry CRUD
+User Story: As an asset manager, I want to create, update, and delete asset records so that equipment and PPE are tracked and managed efficiently.
+Acceptance Criteria:
+  Given I am authenticated as an asset manager
+  When I manage asset records
+  Then I can add, update, or remove assets from the registry
+Additional Details:
+  Priority: Medium
+  Story Points: 5
+  Dependencies: E02, E03, E07
+  Notes: Asset records must include type, condition, assignment status, and history.
