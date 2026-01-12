@@ -1,0 +1,16 @@
+Title: Configure Core Modules
+
+User Story: As a developer, I want to set up core modules for employee, scheduling, attendance, and safety so that each domain is separated and maintainable.
+
+Acceptance Criteria (Gherkin):
+Scenario: Configure core modules
+Given the base project structure
+When I add modules for employee, scheduling, attendance, and safety
+Then each module has its own package and initial class files
+And modules are registered in the application context
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Story 1
+- Notes: Follow domain-driven design principles.
