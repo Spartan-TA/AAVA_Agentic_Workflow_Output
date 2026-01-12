@@ -1,0 +1,26 @@
+Title: Retrieve Employee Records with Pagination and Filtering
+
+User Story: As an HR manager I want to retrieve employee records with pagination and filtering options So that I can efficiently manage large employee datasets
+
+Acceptance Criteria:
+
+Scenario: Paginated employee list
+Given there are more than 20 employees in the system
+When I request the /employees endpoint with page and size parameters
+Then I should receive a paginated list of employees
+
+Scenario: Filter by department
+Given employees are assigned to different departments
+When I request /employees?department=Shipping
+Then only employees in the Shipping department should be returned
+
+Scenario: Filter by status
+Given some employees are inactive
+When I request /employees?status=active
+Then only active employees should be included in the response
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee record creation (E02)
+- Notes: Filtering should support department, role, status, and shiftGroup.
