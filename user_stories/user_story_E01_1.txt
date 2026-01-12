@@ -1,0 +1,16 @@
+Title: Initialize Spring Boot Project
+
+User Story: As a developer, I want to initialize a Spring Boot project with Maven so that the team has a standardized foundation for all modules.
+
+Acceptance Criteria (Gherkin):
+Scenario: Initialize Spring Boot project
+Given a new repository
+When I run the Maven initialization command
+Then a Spring Boot project is created with the correct base package structure
+And the project builds and runs on port 8080
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Ensure README includes build/run steps.
