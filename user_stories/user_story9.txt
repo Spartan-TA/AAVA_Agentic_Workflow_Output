@@ -1,0 +1,71 @@
+# E09: Equipment & Asset Assignment
+
+## User Story 1
+- Title: Manage Asset Registry
+- User Story: As an asset manager, I want to CRUD assets (scanners, forklifts, PPE) so that inventory is tracked.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Asset CRUD
+  Given the asset registry
+  When I add, update, or remove an asset
+  Then the changes are saved and visible
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E02, E03, E07
+  * Notes: Track asset condition
+
+## User Story 2
+- Title: Assign Assets to Employees
+- User Story: As a supervisor, I want to assign assets to employees and track checkout/return so that accountability is maintained.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Asset assignment
+  Given an available asset
+  When I assign it to an employee
+  Then the checkout is logged and return is tracked
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: Asset registry, certification status
+  * Notes: Block assignment if certs invalid
+
+## User Story 3
+- Title: Block Asset Use for Invalid Certifications
+- User Story: As a supervisor, I want asset assignment blocked if required certifications are missing or expired so that safety is enforced.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Certification check
+  Given an employee with expired certification
+  When I try to assign a restricted asset
+  Then the system blocks the assignment
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: Certification records
+  * Notes: Integrate with training module
+
+## User Story 4
+- Title: Asset History Log
+- User Story: As an asset manager, I want to view the history of asset assignments and condition so that audits are possible.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Asset history view
+  Given an asset or employee
+  When I view the history log
+  Then all check-in/out events and condition changes are displayed
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: Asset assignment
+  * Notes: Include overdue returns
+
+## User Story 5
+- Title: Overdue Asset Return Reports
+- User Story: As a supervisor, I want reports of overdue asset returns so that follow-up actions can be taken.
+- Acceptance Criteria in Gherkin format:
+  Scenario: Overdue report
+  Given asset assignment data
+  When I request a report
+  Then overdue returns are listed
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: Asset assignment
+  * Notes: Exportable as CSV
