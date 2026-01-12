@@ -1,0 +1,40 @@
+### E13: Integration Layer (HRIS/WMS APIs)
+
+**User Story 1: Expose Secured REST APIs**
+User Story: As an integrator I want REST APIs secured with JWT/OAuth2 So that external systems can sync data securely
+Acceptance Criteria:
+Scenario: API authentication
+Given I have a valid token
+When I call the API
+Then access is granted and data is returned
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: OpenAPI documented.
+
+**User Story 2: HRIS Sync Job for Employees**
+User Story: As an HRIS admin I want a sync job to create/update employees So that master data is consistent
+Acceptance Criteria:
+Scenario: HRIS sync
+Given new hires in HRIS
+When the sync job runs
+Then new employees are created or updated in the system
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Idempotent processing.
+
+**User Story 3: Webhooks for System Events**
+User Story: As a developer I want webhooks for key events So that external systems can react in real time
+Acceptance Criteria:
+Scenario: Employee created webhook
+Given a new employee is added
+When the event occurs
+Then a webhook is sent to the configured endpoint
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Retry on failure.
