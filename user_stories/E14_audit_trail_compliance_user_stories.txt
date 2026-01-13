@@ -1,0 +1,53 @@
+### E14: Audit Trail & Compliance
+
+#### 1. Centralized Audit Logging for Sensitive Changes
+User Story: As a compliance officer I want all sensitive changes logged centrally So that I can audit activity.
+Acceptance Criteria:
+Scenario: Audit log entry created
+Given a sensitive change occurs
+When the change is saved
+Then an audit entry is created with actor, timestamp, before/after values
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Cover employee PII, schedules, approvals, payroll.
+
+#### 2. Tamper-Evident Storage for Audit Logs
+User Story: As a compliance officer I want audit logs stored in a tamper-evident manner So that records cannot be altered.
+Acceptance Criteria:
+Scenario: Tamper-evident log
+Given audit logs are written
+When I attempt to modify them
+Then the system prevents changes and logs the attempt
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Immutable log table.
+
+#### 3. Export Audit Logs by Date/User/Entity
+User Story: As an auditor I want to export audit logs filtered by date, user, or entity So that I can investigate incidents.
+Acceptance Criteria:
+Scenario: Export logs
+Given audit logs exist
+When I request an export with filters
+Then a file is generated with matching entries
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03
+- Notes: Support CSV export.
+
+#### 4. Automated Tests for Audit Coverage
+User Story: As a QA engineer I want automated tests to validate audit coverage So that all sensitive actions are logged.
+Acceptance Criteria:
+Scenario: Audit tests pass
+Given the test suite runs
+When audit tests execute
+Then all sensitive actions are verified as logged
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03
+- Notes: Cover all modules.
