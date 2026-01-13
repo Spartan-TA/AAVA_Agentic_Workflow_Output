@@ -1,0 +1,43 @@
+### E04 - Time & Attendance (Clock In/Out)
+
+**User Story 1**
+- Title: Implement Clock-In Endpoint with Validation
+- User Story: As a worker, I want to clock in via an endpoint with geofence and device capture so that my attendance is accurately recorded.
+- Acceptance Criteria:
+    - Given a valid location and device,
+      When I POST to `/attendance/clock-in`,
+      Then my clock-in is recorded with timestamp, location, and device info.
+    - Given an invalid location,
+      When I attempt to clock in,
+      Then the request is rejected.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Geofence optional but must be supported.
+
+**User Story 2**
+- Title: Implement Clock-Out Endpoint and Calculate Hours Worked
+- User Story: As a worker, I want to clock out and have my hours automatically calculated so that my work time is tracked.
+- Acceptance Criteria:
+    - Given a clock-in,
+      When I POST to `/attendance/clock-out`,
+      Then my clock-out is recorded and hours worked are computed.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Must handle overnight shifts.
+
+**User Story 3**
+- Title: Handle Missed Punches and Corrections Workflow
+- User Story: As a supervisor, I want to approve corrections for missed punches so that attendance records are accurate.
+- Acceptance Criteria:
+    - Given a missed punch,
+      When a correction is submitted,
+      Then an approval task is created for the supervisor.
+    - Given supervisor approval,
+      When the correction is approved,
+      Then the attendance record is updated.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: All corrections must be auditable.
+
+**User Story 4**
+- Title: Export Attendance Reports (CSV)
+- User Story: As an HR user, I want to export attendance data as CSV so that I can analyze and share records.
+- Acceptance Criteria:
+    - Given attendance records,
+      When I request an export,
+      Then a CSV file is generated with all relevant fields.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Must support date range filtering.
