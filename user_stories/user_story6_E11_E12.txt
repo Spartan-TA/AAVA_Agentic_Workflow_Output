@@ -1,0 +1,103 @@
+### E11: Payroll Export Integration
+
+**User Story 1**
+Title: Generate Payroll Files
+User Story: As a PAYROLL ADMIN I want to generate payroll-ready files from attendance and leave So that payroll runs are automated
+Acceptance Criteria:
+Scenario: Payroll export
+Given approved attendance and leave
+When I export payroll
+Then the file matches provider schema
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E04, E06
+Notes: Mapping configurable
+
+**User Story 2**
+Title: Secure Payroll Delivery
+User Story: As a SYSTEM I want to deliver payroll files via SFTP or API So that data is securely transmitted
+Acceptance Criteria:
+Scenario: Secure delivery
+Given a payroll file
+When delivery is initiated
+Then the file is sent securely and delivery status is logged
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E04, E06
+Notes: Retries with backoff on failure
+
+**User Story 3**
+Title: Audit Payroll Exports
+User Story: As an AUDITOR I want an audit log for every payroll export So that compliance is ensured
+Acceptance Criteria:
+Scenario: Audit log
+Given a payroll export
+When the export completes
+Then an audit entry is created with timestamp and actor
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E04, E06
+Notes: Log exportable
+
+---
+
+### E12: Notifications & Announcements
+
+**User Story 1**
+Title: In-App Notifications
+User Story: As a WORKER I want to receive in-app notifications for shift changes and approvals So that I stay informed
+Acceptance Criteria:
+Scenario: In-app notification
+Given a shift change
+When it is approved
+Then a notification appears in my dashboard
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E03, E05, E06, E07
+Notes: Opt-in/out per channel
+
+**User Story 2**
+Title: Email/SMS Alerts
+User Story: As a SUPERVISOR I want to receive email/SMS alerts for urgent announcements So that I can respond quickly
+Acceptance Criteria:
+Scenario: Email/SMS alert
+Given an urgent announcement
+When it is published
+Then all opted-in users receive an alert
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E03, E05, E06, E07
+Notes: Templates localized
+
+**User Story 3**
+Title: Quiet Hours Configuration
+User Story: As an ADMIN I want to configure quiet hours for notifications So that users are not disturbed off-hours
+Acceptance Criteria:
+Scenario: Quiet hours
+Given configured quiet hours
+When a notification is triggered
+Then it is queued for delivery after quiet hours
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: E03, E05, E06, E07
+Notes: Rate limits applied
+
+**User Story 4**
+Title: Announcement Dashboard
+User Story: As an EMPLOYEE I want to view all announcements on my dashboard So that I don't miss important updates
+Acceptance Criteria:
+Scenario: View announcements
+Given published announcements
+When I log in
+Then all current announcements are visible
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: E03, E05, E06, E07
+Notes: Delivery status tracked
