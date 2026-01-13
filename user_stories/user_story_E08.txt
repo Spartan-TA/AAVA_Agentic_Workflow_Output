@@ -1,0 +1,61 @@
+### E08: Safety Incidents & OSHA Reporting
+
+#### User Story 1
+Title: Safety Incident Submission
+User Story: As any employee, I want to record a safety incident or near-miss so that it can be investigated and tracked.
+Acceptance Criteria:
+Scenario: Record incident
+  Given I am logged in
+  When I submit an incident with severity, location, description, and involved employees
+  Then the incident is saved with status "Open"
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: E02, E03
+Notes: Incident form must be accessible on mobile.
+
+#### User Story 2
+Title: Safety Incident Investigation and Resolution
+User Story: As a safety officer, I want to manage the investigation workflow so that corrective actions are documented and incidents are resolved.
+Acceptance Criteria:
+Scenario: Investigation workflow
+  Given an incident is "Open"
+  When I assign it for investigation
+  Then the status changes to "Investigating"
+Scenario: Resolution
+  Given investigation is complete
+  When corrective actions are entered
+  Then the status changes to "Resolved"
+Additional Details:
+Priority: High
+Story Points: 8
+Dependencies: E03
+Notes: All status changes must be audited.
+
+#### User Story 3
+Title: OSHA 300/300A Export
+User Story: As an HR or safety admin, I want to export OSHA-compliant reports so that regulatory requirements are met.
+Acceptance Criteria:
+Scenario: OSHA export
+  Given incidents are recorded
+  When I export OSHA 300/300A
+  Then the file contains all required fields and is formatted per OSHA guidelines
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: E15
+Notes: Export must be filterable by date and location.
+
+#### User Story 4
+Title: Safety KPIs Dashboard
+User Story: As a safety manager, I want to view metrics on incidents, near-misses, and corrective actions so that I can monitor safety trends.
+Acceptance Criteria:
+Scenario: View dashboard
+  Given incidents are logged
+  When I view the dashboard
+  Then I see charts for incident rates, types, and resolution times
+Additional Details:
+Priority: Medium
+Story Points: 5
+Dependencies: E15
+Notes: Dashboard should be role-based.
