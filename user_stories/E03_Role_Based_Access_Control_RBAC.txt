@@ -1,0 +1,35 @@
+====================================================================
+Epic E03: Role Based Access Control (RBAC)
+====================================================================
+
+User Story 1:
+- Title: Implement Role-Based Endpoint Security
+- User Story: As a system administrator, I want to restrict API endpoints by role so that only authorized users can access sensitive data.
+- Acceptance Criteria:
+  - Given a user with insufficient role, When they access a protected endpoint, Then a 403 Forbidden is returned.
+  - Given an unauthenticated request, When accessing any endpoint, Then a 401 Unauthorized is returned.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: E01, E02, Notes: Core security.
+
+User Story 2:
+- Title: Define Roles and Permissions
+- User Story: As an admin, I want to define roles (ADMIN, HR, SUPERVISOR, WORKER) so that permissions are clear and enforceable.
+- Acceptance Criteria:
+  - Given a user, When assigned a role, Then their access matches the role's permissions.
+  - Given an ADMIN, When managing records, Then all actions are allowed.
+  - Given a SUPERVISOR, When accessing team data, Then only their team's records are visible.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: User Story 1, Notes: Role matrix documented.
+
+User Story 3:
+- Title: Support API Key/OAuth2 Authentication Toggle
+- User Story: As a security engineer, I want to toggle between API key and OAuth2 authentication via configuration so that security can be adapted to deployment needs.
+- Acceptance Criteria:
+  - Given the config, When I enable OAuth2, Then endpoints require OAuth2 tokens.
+  - Given the config, When I enable API key, Then endpoints require a valid API key.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: User Story 1, Notes: Configurable at runtime.
+
+User Story 4:
+- Title: Enforce Row-Level Security Where Applicable
+- User Story: As a supervisor, I want to see only my team's records so that data privacy is maintained.
+- Acceptance Criteria:
+  - Given a SUPERVISOR, When accessing employee data, Then only their team's records are returned.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: User Story 2, Notes: Applies to sensitive endpoints.
