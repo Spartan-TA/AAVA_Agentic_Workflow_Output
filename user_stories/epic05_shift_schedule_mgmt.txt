@@ -1,0 +1,46 @@
+### EPIC 5 (E05): Shift & Schedule Management
+
+**User Story 5.1: Create and Manage Shift Templates**
+- Title: Create and Manage Shift Templates
+- User Story: As an HR user, I want to create, update, and delete shift templates so that recurring schedules can be managed efficiently.
+- Acceptance Criteria:
+    - Given the shift template API,
+      When I perform CRUD operations,
+      Then templates are created, updated, or deleted as requested.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, E04, Notes: Foundation for scheduling.
+
+**User Story 5.2: Assign Shifts and Detect Conflicts**
+- Title: Assign Shifts and Detect Scheduling Conflicts
+- User Story: As a supervisor, I want to assign shifts to employees and detect conflicts so that overbooking and understaffing are prevented.
+- Acceptance Criteria:
+    - Given a shift assignment,
+      When there is a conflict (overlap, blackout date, etc.),
+      Then the system prevents the assignment and notifies the user.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: 5.1, Notes: Ensures valid schedules.
+
+**User Story 5.3: Bulk Assign Shifts**
+- Title: Bulk Assign Shifts to Employees
+- User Story: As a supervisor, I want to bulk-assign shifts to multiple employees so that scheduling is efficient.
+- Acceptance Criteria:
+    - Given a list of employees,
+      When I bulk-assign a shift,
+      Then all assignments are created unless conflicts exist.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: 5.1, Notes: Improves productivity.
+
+**User Story 5.4: View Personal Upcoming Shifts**
+- Title: View Personal Upcoming Shifts
+- User Story: As a worker, I want to view my upcoming shifts so that I can plan my schedule.
+- Acceptance Criteria:
+    - Given my user account,
+      When I access my schedule,
+      Then I see a list of my upcoming assigned shifts.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 5.1, Notes: Improves transparency.
+
+**User Story 5.5: Generate Audit Entries for Schedule Changes**
+- Title: Generate Audit Entries for Schedule Changes
+- User Story: As a compliance officer, I want audit entries for all schedule changes so that I can track who made what changes and when.
+- Acceptance Criteria:
+    - Given a schedule change,
+      When it is made,
+      Then an audit entry is generated with actor, timestamp, and change details.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 5.1, Notes: Supports compliance.
