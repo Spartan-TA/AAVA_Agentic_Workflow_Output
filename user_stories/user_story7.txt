@@ -1,0 +1,66 @@
+Title: Training & Certification - Track Certifications and Expiry
+User Story: As a safety manager, I want to track employee certifications, expirations, and renewals so that only qualified staff are assigned to sensitive roles.
+Acceptance Criteria:
+Scenario: Add certification
+  Given an employee completes training
+  When I add a certification
+  Then it is visible on their profile
+
+Scenario: Expiry alerts
+  Given a certification is expiring in 30/7 days
+  When the system checks expirations
+  Then an alert is sent
+
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03
+Notes: Ensures compliance
+
+---
+
+Title: Training & Certification - Block Assignment for Expired Certs
+User Story: As a scheduler, I want the system to block assignment to tasks requiring valid certifications so that safety is not compromised.
+Acceptance Criteria:
+Scenario: Block unqualified assignment
+  Given an employee's cert is expired
+  When I assign them to a restricted task
+  Then the system rejects the assignment
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Prevents unsafe work
+
+---
+
+Title: Training & Certification - Certification Document Upload
+User Story: As an employee, I want to upload proof documents for certifications so that my qualifications are verifiable.
+Acceptance Criteria:
+Scenario: Upload document
+  Given I have a certification
+  When I upload proof
+  Then the document is stored and linked to my profile
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Supports audits
+
+---
+
+Title: Training & Certification - Certification Status Visibility
+User Story: As a supervisor, I want to view certification status on employee profiles so that I can assign qualified staff.
+Acceptance Criteria:
+Scenario: View cert status
+  Given I access an employee profile
+  When I view certifications
+  Then current status and expiry are shown
+
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E02, E03
+Notes: Improves assignment accuracy
