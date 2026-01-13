@@ -1,0 +1,71 @@
+Title: Performance Reviews - Create and Assign Review Cycles
+User Story: As an HR manager, I want to create quarterly/annual review cycles and assign them to employees so that performance is evaluated regularly.
+Acceptance Criteria:
+Scenario: Create review cycle
+  Given I define a cycle
+  When I assign it to employees
+  Then review tasks are generated
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Supports structured feedback
+
+---
+
+Title: Performance Reviews - Submit and Acknowledge Reviews
+User Story: As a supervisor, I want to submit reviews and have employees acknowledge them so that feedback is documented.
+Acceptance Criteria:
+Scenario: Submit review
+  Given a review cycle is active
+  When I submit a review
+  Then the employee is notified
+
+Scenario: Acknowledge review
+  Given a review is submitted
+  When the employee acknowledges
+  Then the review is locked
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Ensures closure
+
+---
+
+Title: Performance Reviews - PDF Export and Role-Based Visibility
+User Story: As an HR analyst, I want to export reviews as PDFs and control visibility by role so that records are secure and shareable.
+Acceptance Criteria:
+Scenario: Export review PDF
+  Given a review is complete
+  When I export it
+  Then a PDF is generated
+
+Scenario: Role-based access
+  Given reviews exist
+  When users access them
+  Then only authorized roles can view
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Protects confidentiality
+
+---
+
+Title: Performance Reviews - Immutable History
+User Story: As an auditor, I want review history to be immutable after sign-off so that records cannot be tampered with.
+Acceptance Criteria:
+Scenario: Lock review
+  Given a review is acknowledged
+  When I attempt to edit it
+  Then the system prevents changes
+
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: E02, E03
+Notes: Supports compliance
