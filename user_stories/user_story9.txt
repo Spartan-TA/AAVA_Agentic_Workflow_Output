@@ -1,0 +1,60 @@
+Title: Equipment Assignment - Asset Registry CRUD
+User Story: As an asset manager, I want to maintain a registry of equipment and PPE so that assignments and conditions are tracked.
+Acceptance Criteria:
+Scenario: Add asset
+  Given I have asset details
+  When I POST to /assets
+  Then the asset is registered
+
+Scenario: Update asset
+  Given an asset exists
+  When I PATCH /assets/{id}
+  Then the asset details are updated
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E07
+Notes: Supports accountability
+
+---
+
+Title: Equipment Assignment - Check-In/Out and Certification Block
+User Story: As a supervisor, I want to check equipment in/out to employees and block use if certifications are invalid so that only qualified staff use assets.
+Acceptance Criteria:
+Scenario: Check out asset
+  Given an employee has valid certs
+  When I check out equipment
+  Then the assignment is recorded
+
+Scenario: Block invalid cert
+  Given an employee's cert is expired
+  When I check out equipment
+  Then the system rejects the action
+
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E02, E03, E07
+Notes: Ensures safety
+
+---
+
+Title: Equipment Assignment - Asset History and Overdue Reports
+User Story: As an asset manager, I want to view asset assignment history and generate overdue return reports so that assets are tracked and recovered.
+Acceptance Criteria:
+Scenario: View asset history
+  Given an asset has been assigned
+  When I view its history
+  Then all check-in/out events are listed
+
+Scenario: Overdue report
+  Given assets are overdue
+  When I generate a report
+  Then overdue items are listed by employee
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E07
+Notes: Reduces loss
