@@ -1,0 +1,50 @@
+Title: Payroll Export - Generate Payroll Files
+User Story: As a payroll admin, I want to generate payroll-ready files from approved attendance and leave so that payroll runs are accurate.
+Acceptance Criteria:
+Scenario: Generate payroll export
+  Given approved attendance and leave data
+  When I export payroll
+  Then the file matches provider schema
+
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E04, E06
+Notes: Reduces manual errors
+
+---
+
+Title: Payroll Export - Secure Delivery and Retry
+User Story: As a payroll admin, I want payroll files delivered securely via SFTP/API and retried on failure so that data is transmitted reliably.
+Acceptance Criteria:
+Scenario: Secure delivery
+  Given a payroll file is ready
+  When I send it via SFTP/API
+  Then delivery is logged and secure
+
+Scenario: Retry on failure
+  Given delivery fails
+  When the system retries
+  Then backoff is applied until success
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E04, E06
+Notes: Ensures reliability
+
+---
+
+Title: Payroll Export - Audit Log for Exports
+User Story: As an auditor, I want an audit log for every payroll export so that all actions are traceable.
+Acceptance Criteria:
+Scenario: Log export
+  Given a payroll export occurs
+  When I view the audit log
+  Then all details are recorded
+
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E04, E06
+Notes: Supports audits
