@@ -1,0 +1,61 @@
+Title: Safety Incidents - Record and Track Incidents
+User Story: As a safety officer, I want to record incidents and near-misses with severity, location, and involved employees so that safety issues are tracked.
+Acceptance Criteria:
+Scenario: Record incident
+  Given an incident occurs
+  When I POST to /safety/incidents
+  Then the incident is logged with all required fields
+
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03
+Notes: Supports OSHA compliance
+
+---
+
+Title: Safety Incidents - Incident Workflow and Status
+User Story: As a safety manager, I want a workflow for investigating and resolving incidents so that corrective actions are tracked.
+Acceptance Criteria:
+Scenario: Incident workflow
+  Given an incident is logged
+  When I update status
+  Then it moves through Open, Investigating, Resolved
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Ensures closure
+
+---
+
+Title: Safety Incidents - OSHA Summary Export
+User Story: As a compliance officer, I want to export OSHA 300/300A summaries so that regulatory reporting is efficient.
+Acceptance Criteria:
+Scenario: Export OSHA summary
+  Given incidents are logged
+  When I request an export
+  Then OSHA fields are included
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Meets legal requirements
+
+---
+
+Title: Safety Incidents - Safety Metrics Dashboard
+User Story: As a warehouse manager, I want a dashboard of safety KPIs so that I can monitor trends and take action.
+Acceptance Criteria:
+Scenario: View safety dashboard
+  Given incidents exist
+  When I access the dashboard
+  Then key metrics are displayed
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Drives improvement
