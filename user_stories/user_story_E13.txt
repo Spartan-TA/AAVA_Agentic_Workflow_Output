@@ -1,0 +1,65 @@
+### E13: Integration Layer (HRIS/WMS APIs)
+
+#### User Story 1
+Title: Expose JWT/OAuth2-Secured APIs
+User Story: As an integration developer, I want to access secured REST APIs so that I can synchronize data with external systems.
+Acceptance Criteria:
+Scenario: Successful API access
+  Given I have valid credentials
+  When I call the API
+  Then I receive data per OpenAPI documentation
+Scenario: Invalid credentials
+  Given credentials are invalid
+  When I call the API
+  Then I receive a 401 error
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: E01, E02, E03
+Notes: OpenAPI docs must be published.
+
+#### User Story 2
+Title: Automated HRIS Employee Sync
+User Story: As an HR admin, I want new hires and terminations from HRIS to sync automatically so that employee records are up-to-date.
+Acceptance Criteria:
+Scenario: New hire sync
+  Given a new hire is created in HRIS
+  When the sync job runs
+  Then the employee is created in the system
+Scenario: Termination sync
+  Given an employee is terminated in HRIS
+  When the sync job runs
+  Then the employee is deactivated in the system
+Additional Details:
+Priority: High
+Story Points: 8
+Dependencies: E02
+Notes: Sync must be idempotent.
+
+#### User Story 3
+Title: WMS Integration for Department and Location
+User Story: As a warehouse manager, I want department and location data to sync from WMS so that assignments are accurate.
+Acceptance Criteria:
+Scenario: WMS sync
+  Given departments/locations are updated in WMS
+  When the sync job runs
+  Then the system updates its records accordingly
+Additional Details:
+Priority: Medium
+Story Points: 5
+Dependencies: E02
+Notes: Sync failures must be logged.
+
+#### User Story 4
+Title: Outbound Webhooks for Key Events
+User Story: As an integration partner, I want to receive webhooks for key events so that I can react in real time.
+Acceptance Criteria:
+Scenario: Webhook delivery
+  Given a relevant event occurs (e.g., new hire, shift change)
+  When webhooks are configured
+  Then the event payload is sent to the configured endpoint
+Additional Details:
+Priority: Medium
+Story Points: 5
+Dependencies: E13
+Notes: Webhooks must be idempotent and retry on failure.
