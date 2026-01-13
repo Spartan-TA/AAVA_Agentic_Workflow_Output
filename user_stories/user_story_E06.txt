@@ -1,0 +1,87 @@
+### E06: Leave & Absence Management
+
+#### User Story 1
+Title: Employee Leave Request Submission
+User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my time off is properly recorded and approved.
+Acceptance Criteria:
+Scenario: Leave request submission
+  Given I am logged in as an employee
+  When I submit a leave request with type, dates, and reason
+  Then the request is saved and routed to my supervisor for approval
+Scenario: Insufficient balance
+  Given I have insufficient leave balance
+  When I attempt to request PTO
+  Then the system prevents submission and displays an error
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: E02, E03
+Notes: Leave types and balances must be configurable per policy.
+
+#### User Story 2
+Title: Supervisor Leave Approval Workflow
+User Story: As a supervisor, I want to approve or deny leave requests so that staffing levels are maintained.
+Acceptance Criteria:
+Scenario: View and approve leave
+  Given I am a supervisor
+  When I view pending leave requests
+  Then I can approve or deny each request with an optional comment
+Scenario: Update balance on approval
+  Given I approve a request
+  When the request is approved
+  Then the employee's leave balance is updated and the schedule is flagged for coverage
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: E02, E03, E05
+Notes: Approval actions should trigger notifications.
+
+#### User Story 3
+Title: Leave Accrual Management
+User Story: As an HR admin, I want to define and manage leave accrual policies so that balances are updated automatically.
+Acceptance Criteria:
+Scenario: Accrual policy application
+  Given an accrual policy is set
+  When an employee earns leave
+  Then their balance is updated according to the policy
+Scenario: Balance decrement
+  Given a leave is taken
+  When the leave is approved
+  Then the balance is decremented accordingly
+Additional Details:
+Priority: Medium
+Story Points: 8
+Dependencies: E02
+Notes: Policies may vary by role, tenure, or department.
+
+#### User Story 4
+Title: Exclude Approved Leave from Scheduling and Payroll
+User Story: As a system, I want to exclude approved leave from scheduling and payroll calculations so that staffing and pay are accurate.
+Acceptance Criteria:
+Scenario: Scheduling exclusion
+  Given a leave is approved
+  When schedules are generated
+  Then the employee is flagged as unavailable for those dates
+Scenario: Payroll exclusion
+  Given a payroll export is generated
+  When leave is unpaid
+  Then those hours are not included in paid time
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: E05, E11
+Notes: Integration hooks must be documented.
+
+#### User Story 5
+Title: Leave Reporting and Export
+User Story: As an HR user, I want to export leave records so that I can analyze absence trends and ensure compliance.
+Acceptance Criteria:
+Scenario: Leave export
+  Given I have access to leave records
+  When I export data
+  Then I receive a CSV with all approved leaves, including type, dates, employee, and status
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E15
+Notes: Export must be filterable by date, department, and leave type.
