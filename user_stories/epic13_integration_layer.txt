@@ -1,0 +1,49 @@
+### EPIC 13 (E13): Integration Layer (HRIS/WMS APIs)
+
+**User Story 13.1: Expose JWT/OAuth2-Secured REST APIs**
+- Title: Expose JWT/OAuth2-Secured REST APIs for Integration
+- User Story: As an integration partner, I want REST APIs secured by JWT/OAuth2 so that data exchange is secure.
+- Acceptance Criteria:
+    - Given the API,
+      When accessed with valid credentials,
+      Then data is returned per permissions.
+    - Given invalid credentials,
+      When accessing the API,
+      Then access is denied.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, E02, E03, Notes: Secure integration.
+
+**User Story 13.2: Sync Employees from HRIS**
+- Title: Sync Employees from HRIS via Scheduled Job
+- User Story: As a system, I want to sync new hires and terminations from HRIS so that employee data is up to date.
+- Acceptance Criteria:
+    - Given a scheduled sync,
+      When new hires or terms are detected,
+      Then employee records are created or updated accordingly.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: 13.1, Notes: Master data sync.
+
+**User Story 13.3: Integrate with WMS for Department/Location**
+- Title: Integrate with WMS for Department and Location Data
+- User Story: As a system, I want to link employee records to WMS department and location data so that assignments are accurate.
+- Acceptance Criteria:
+    - Given a WMS integration,
+      When department/location changes,
+      Then employee records are updated.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 13.1, Notes: Accurate assignments.
+
+**User Story 13.4: Provide Idempotent Webhooks for Events**
+- Title: Provide Idempotent Webhooks for Events
+- User Story: As an external system, I want to receive idempotent webhooks for relevant events so that I can process changes reliably.
+- Acceptance Criteria:
+    - Given an event,
+      When a webhook is sent,
+      Then duplicate deliveries are handled idempotently.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 13.1, Notes: Reliable integration.
+
+**User Story 13.5: Document APIs in OpenAPI**
+- Title: Document All Integration APIs in OpenAPI
+- User Story: As a developer, I want all integration APIs documented in OpenAPI so that I can integrate easily.
+- Acceptance Criteria:
+    - Given the API documentation,
+      When I review it,
+      Then all endpoints, schemas, and examples are present.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 13.1, Notes: Developer enablement.
