@@ -1,0 +1,57 @@
+### E01: Project Scaffolding & Domain Setup
+
+#### User Story 1
+Title: Initialize Spring Boot Project Structure
+User Story: As a developer, I want to initialize a Spring Boot project with Maven so that I have a standardized foundation for all modules.
+Acceptance Criteria:
+Scenario: Project initialization
+  Given I have cloned the repository
+  When I run the build command
+  Then the project builds successfully and runs on port 8080
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: None
+Notes: Ensure README includes build/run steps.
+
+#### User Story 2
+Title: Configure Base Packages and Core Modules
+User Story: As a developer, I want to configure base packages and set up core modules (employee, scheduling, attendance, safety) so that the codebase is organized and scalable.
+Acceptance Criteria:
+Scenario: Base package structure
+  Given the project is initialized
+  When I inspect the source folders
+  Then I see separate packages for employee, scheduling, attendance, and safety
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01
+Notes: Follow standard package naming conventions.
+
+#### User Story 3
+Title: Database Migration Setup
+User Story: As a developer, I want to add Flyway/Liquibase for database migrations so that schema changes are versioned and repeatable.
+Acceptance Criteria:
+Scenario: Baseline migration
+  Given the project is running
+  When I start the application
+  Then Flyway/Liquibase runs the baseline migration without errors
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01
+Notes: Use environment-specific configs as needed.
+
+#### User Story 4
+Title: Enable Spring Boot Actuator
+User Story: As a developer, I want to enable Actuator endpoints so that I can monitor application health.
+Acceptance Criteria:
+Scenario: Health endpoint
+  Given the application is running
+  When I access /actuator/health
+  Then the endpoint returns status UP
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E01
+Notes: Restrict sensitive endpoints to ADMIN.
