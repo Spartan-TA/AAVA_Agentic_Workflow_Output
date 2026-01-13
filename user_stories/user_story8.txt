@@ -1,0 +1,26 @@
+Title: Time & Attendance - Clock In/Out
+
+User Story: As a worker, I want to clock in and out via an endpoint with optional geofence and device capture so that my attendance is accurately recorded.
+
+Acceptance Criteria:
+
+Scenario: Successful clock-in with valid location
+Given I am within the geofence area
+When I POST to /attendance/clock-in with my device info
+Then my clock-in event is recorded
+
+Scenario: Clock-in outside geofence is rejected
+Given I am outside the geofence
+When I attempt to clock in
+Then the request is rejected with an error
+
+Scenario: Clock-out event recorded
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee CRUD, RBAC
+- Notes: Device info should be stored with event.
