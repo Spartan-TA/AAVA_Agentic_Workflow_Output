@@ -1,0 +1,62 @@
+### E04 - Time & Attendance (Clock In/Out)
+
+**User Story 1:**
+- Title: Clock In/Out Endpoints
+- User Story: As a worker, I want to clock in and out via API so that my attendance is recorded.
+- Acceptance Criteria:
+  - Scenario: Valid clock-in
+    - Given I am scheduled for a shift
+    - When I POST to `/attendance/clock-in` with valid data
+    - Then my clock-in is recorded
+  - Scenario: Valid clock-out
+    - Given I am clocked in
+    - When I POST to `/attendance/clock-out`
+    - Then my clock-out is recorded
+- Additional Details: Priority: High, Story Points: 5, Dependencies: E02, E03
+
+**User Story 2:**
+- Title: Geofence and Device Capture
+- User Story: As a supervisor, I want clock events to capture location and device so that attendance is verified.
+- Acceptance Criteria:
+  - Scenario: Geofence validation
+    - Given geofencing is enabled
+    - When I clock in outside the allowed area
+    - Then the request is rejected
+  - Scenario: Device info stored
+    - Given I clock in
+    - Then device details are stored with the event
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03
+
+**User Story 3:**
+- Title: Automatic Shift Association
+- User Story: As a worker, I want my clock events associated with my scheduled shift so that hours are calculated correctly.
+- Acceptance Criteria:
+  - Scenario: Shift association
+    - Given I clock in during my shift window
+    - When I clock out
+    - Then the event is linked to my shift
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03
+
+**User Story 4:**
+- Title: Missed Punches and Corrections
+- User Story: As a worker, I want to request corrections for missed punches so that my attendance is accurate.
+- Acceptance Criteria:
+  - Scenario: Correction request
+    - Given I missed a punch
+    - When I submit a correction
+    - Then an approval task is created for my supervisor
+  - Scenario: Supervisor approves correction
+    - Given a pending correction
+    - When my supervisor approves
+    - Then my attendance is updated
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03
+
+**User Story 5:**
+- Title: Export Attendance Reports
+- User Story: As a payroll user, I want to export attendance data as CSV so that I can process payroll.
+- Acceptance Criteria:
+  - Scenario: Export report
+    - Given attendance data exists
+    - When I request a CSV export
+    - Then the file is generated and downloadable
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03
