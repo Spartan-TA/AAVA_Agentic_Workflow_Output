@@ -1,0 +1,43 @@
+### E01 - Project Scaffolding & Domain Setup
+
+**User Story 1**
+- Title: Initialize Spring Boot Project with Standard Structure
+- User Story: As a developer, I want the project to be initialized with Spring Boot and a standardized package structure so that all modules are consistent and maintainable.
+- Acceptance Criteria:
+    - Given the repository is cloned,
+      When I run `mvn clean install`,
+      Then the project builds successfully and runs on port 8080.
+    - Given the project is running,
+      When I access the `/actuator/health` endpoint,
+      Then it returns status UP.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: None, Notes: Foundation for all modules.
+
+**User Story 2**
+- Title: Add Database Migration Tooling (Flyway/Liquibase)
+- User Story: As a developer, I want Flyway or Liquibase configured so that database schema changes are versioned and repeatable.
+- Acceptance Criteria:
+    - Given the project is started,
+      When the application starts,
+      Then baseline migration scripts are applied without errors.
+    - Given a new migration is added,
+      When I run the migration,
+      Then the database schema updates as expected.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: None, Notes: Must support both Flyway and Liquibase.
+
+**User Story 3**
+- Title: Provide Comprehensive README with Build/Run Steps
+- User Story: As a new developer, I want a README with clear build and run instructions so that I can set up the project quickly.
+- Acceptance Criteria:
+    - Given the repository,
+      When I open the README,
+      Then I see steps for building, running, and accessing the application.
+- Additional Details: Priority: High, Story Points: 1, Dependencies: None, Notes: README must be kept up to date.
+
+**User Story 4**
+- Title: Enable Spring Boot Actuator for Health Monitoring
+- User Story: As an operator, I want Actuator endpoints enabled so that I can monitor application health.
+- Acceptance Criteria:
+    - Given the application is running,
+      When I access `/actuator/health`,
+      Then I receive a 200 OK with status UP.
+- Additional Details: Priority: High, Story Points: 1, Dependencies: None, Notes: Required for monitoring.
