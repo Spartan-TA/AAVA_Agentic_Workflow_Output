@@ -1,0 +1,53 @@
+### E04: Time & Attendance (Clock In/Out)
+
+#### 1. Implement Clock-In/Clock-Out Endpoints
+User Story: As a worker I want to clock in and out via API So that my attendance is recorded.
+Acceptance Criteria:
+Scenario: Clock in/out event
+Given I am a valid employee
+When I POST to /attendance/clock-in or /clock-out
+Then my attendance event is recorded with timestamp
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Validate employee status.
+
+#### 2. Associate Attendance with Shifts
+User Story: As a system I want to associate clock events with scheduled shifts So that hours worked are calculated.
+Acceptance Criteria:
+Scenario: Shift association
+Given a clock-in event during a scheduled shift
+When the event is recorded
+Then it is linked to the correct shift
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift data
+- Notes: Handle unscheduled events gracefully.
+
+#### 3. Handle Missed Punches and Corrections
+User Story: As a supervisor I want to approve corrections for missed punches So that attendance records are accurate.
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch is reported
+When a correction is submitted
+Then a supervisor can approve or reject the change
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Attendance, RBAC
+- Notes: Track correction history.
+
+#### 4. Export Attendance Reports
+User Story: As a payroll admin I want to export attendance data as CSV So that payroll processing is efficient.
+Acceptance Criteria:
+Scenario: Export attendance
+Given attendance data exists
+When I request a CSV export
+Then the file contains all relevant attendance records
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance data
+- Notes: Include filters for date, employee, shift.
