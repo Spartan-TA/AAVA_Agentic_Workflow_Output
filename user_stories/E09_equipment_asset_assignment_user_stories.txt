@@ -1,0 +1,66 @@
+### E09: Equipment & Asset Assignment
+
+#### 1. Asset Registry CRUD
+User Story: As an asset manager I want to create, update, and delete asset records So that all equipment is tracked.
+Acceptance Criteria:
+Scenario: Manage asset
+Given I have asset details
+When I POST/PUT/DELETE to /assets
+Then the asset registry is updated accordingly
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Include asset type, serial, condition.
+
+#### 2. Assign and Return Assets
+User Story: As a supervisor I want to assign and track asset check-in/out So that accountability is maintained.
+Acceptance Criteria:
+Scenario: Assign asset
+Given an asset and employee exist
+When I POST to /assets/assign
+Then the asset is checked out to the employee and status updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Block assignment if certs invalid.
+
+#### 3. Prevent Use if Certification Missing
+User Story: As a system I want to block asset assignment if required certifications are missing So that only qualified employees use equipment.
+Acceptance Criteria:
+Scenario: Assignment blocked
+Given an employee lacks required certification
+When I attempt to assign restricted equipment
+Then the system blocks the assignment and notifies me
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Enforce at assignment time.
+
+#### 4. Asset History Log
+User Story: As an asset manager I want to view the history of asset assignments and returns So that I can audit usage.
+Acceptance Criteria:
+Scenario: View asset history
+Given an asset has been assigned
+When I view its history
+Then all check-in/out events are listed with timestamps and employees
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E02, E03, E07
+- Notes: Include asset condition updates.
+
+#### 5. Report Overdue Returns
+User Story: As a supervisor I want to report on overdue asset returns So that lost or misplaced equipment is minimized.
+Acceptance Criteria:
+Scenario: Overdue report
+Given assets are overdue for return
+When I run the report
+Then a list of overdue assets and responsible employees is generated
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E02, E03, E07
+- Notes: Include notification triggers.
