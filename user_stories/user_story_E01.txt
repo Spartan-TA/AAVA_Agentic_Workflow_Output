@@ -1,0 +1,43 @@
+### E01 - Project Scaffolding & Domain Setup
+
+**User Story 1:**
+- Title: Initialize Spring Boot Project Structure
+- User Story: As a developer, I want to initialize a Spring Boot project with Maven so that all modules have a standardized foundation.
+- Acceptance Criteria:
+  - Scenario: Project builds and runs
+    - Given the project is cloned
+    - When I run `mvn spring-boot:run`
+    - Then the application starts on port 8080
+  - Scenario: Health endpoint is available
+    - Given the application is running
+    - When I GET `/actuator/health`
+    - Then the response is 200 and status is "UP"
+- Additional Details: Priority: High, Story Points: 3, Dependencies: None, Notes: Foundation for all modules
+
+**User Story 2:**
+- Title: Configure Base Package Structure
+- User Story: As a developer, I want a clearly defined base package structure so that code is organized and maintainable.
+- Acceptance Criteria:
+  - Scenario: Base packages exist
+    - Given the project is generated
+    - Then packages for employee, scheduling, attendance, and safety exist
+- Additional Details: Priority: High, Story Points: 2, Dependencies: None
+
+**User Story 3:**
+- Title: Set Up Database Migration Tool
+- User Story: As a developer, I want Flyway/Liquibase configured so that database migrations are versioned and repeatable.
+- Acceptance Criteria:
+  - Scenario: Baseline migration runs
+    - Given the application starts
+    - When the database is empty
+    - Then Flyway/Liquibase applies the baseline migration
+- Additional Details: Priority: High, Story Points: 2, Dependencies: None
+
+**User Story 4:**
+- Title: Provide Project Documentation
+- User Story: As a developer, I want a README with build and run steps so that onboarding is easy.
+- Acceptance Criteria:
+  - Scenario: README contains instructions
+    - Given the repository is cloned
+    - Then README includes build and run steps
+- Additional Details: Priority: High, Story Points: 1, Dependencies: None
