@@ -1,0 +1,69 @@
+Title: Time & Attendance - Clock In
+
+User Story: As a WORKER I want to clock in at the start of my shift So that my attendance is accurately recorded.
+
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given a scheduled shift and valid geofence
+When I POST to /attendance/clock-in
+Then my clock-in event is recorded and associated with my shift
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Device and location are captured
+
+---
+
+Title: Time & Attendance - Clock Out
+
+User Story: As a WORKER I want to clock out at the end of my shift So that my worked hours are tracked.
+
+Acceptance Criteria:
+Scenario: Successful clock-out
+Given an active shift
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded and daily total hours are computed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Handles missed punches
+
+---
+
+Title: Time & Attendance - Missed Punch Correction
+
+User Story: As a SUPERVISOR I want to correct missed or erroneous clock events So that attendance data remains accurate.
+
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch is detected
+When a correction is submitted
+Then an approval task is created and the correction is logged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: All corrections are auditable
+
+---
+
+Title: Time & Attendance - Attendance Report Export
+
+User Story: As an HR I want to export attendance reports in CSV format So that I can process payroll and compliance checks.
+
+Acceptance Criteria:
+Scenario: Export attendance report
+Given attendance data exists
+When I request an export
+Then a CSV file is generated with daily totals
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Export includes corrections
