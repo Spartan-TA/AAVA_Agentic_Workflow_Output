@@ -1,0 +1,66 @@
+### E05: Shift & Schedule Management
+
+#### 1. Create and Manage Shift Templates
+User Story: As an HR user I want to create recurring shift templates So that scheduling is efficient and consistent.
+Acceptance Criteria:
+Scenario: Create shift template
+Given I have shift details
+When I POST to /shifts/templates
+Then a new template is created and available for assignment
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Support rotations and overtime rules.
+
+#### 2. Assign Shifts to Employees
+User Story: As a supervisor I want to assign shifts to employees in bulk So that staffing is managed efficiently.
+Acceptance Criteria:
+Scenario: Bulk assign shifts
+Given a list of employees and a shift template
+When I POST to /shifts/assignments
+Then all selected employees are assigned to the shift
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Detect and prevent conflicts.
+
+#### 3. Detect and Prevent Scheduling Conflicts
+User Story: As a scheduler I want the system to detect scheduling conflicts So that employees are not double-booked.
+Acceptance Criteria:
+Scenario: Conflict detection
+Given an employee has an existing shift
+When I attempt to assign an overlapping shift
+Then the system blocks the assignment and notifies me of the conflict
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Include blackout dates and operation calendars.
+
+#### 4. View Personal Upcoming Shifts
+User Story: As a worker I want to view my upcoming shifts So that I can plan my schedule.
+Acceptance Criteria:
+Scenario: View shifts
+Given I am authenticated
+When I access my schedule
+Then I see a list of my upcoming assigned shifts
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E04
+- Notes: Mobile-friendly view.
+
+#### 5. Audit Entries for Schedule Changes
+User Story: As a compliance officer I want audit entries for all schedule changes So that I can track modifications.
+Acceptance Criteria:
+Scenario: Audit log created
+Given a schedule is created or modified
+When the change is saved
+Then an audit entry is recorded with actor, timestamp, and before/after values
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E04
+- Notes: Integrate with audit trail module.
