@@ -1,0 +1,43 @@
+### EPIC 2 (E02): Employee Master Data (CRUD)
+
+**User Story 2.1: Create Employee Entity and Repository**
+- Title: Implement Employee Entity and Repository
+- User Story: As a developer, I want to define the Employee entity and repository so that employee data can be persisted.
+- Acceptance Criteria:
+    - Given the codebase,
+      When I inspect the Employee entity,
+      Then it includes name, badgeId, role, department, shiftGroup, hireDate, and status fields.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Foundation for CRUD.
+
+**User Story 2.2: Implement Employee CRUD APIs**
+- Title: Implement Employee CRUD REST APIs
+- User Story: As an HR user, I want to create, read, update, and delete employee records via API so that I can manage employee data.
+- Acceptance Criteria:
+    - Given the API,
+      When I POST/GET/PUT/PATCH/DELETE to /employees,
+      Then the corresponding operation is performed and returns appropriate status codes.
+    - Given a badgeId,
+      When I try to create a duplicate,
+      Then the API returns a validation error.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: 2.1, Notes: Enforces unique badgeId.
+
+**User Story 2.3: Support Soft-Delete and Filtering**
+- Title: Support Soft-Delete and Filtering for Employees
+- User Story: As an HR user, I want to soft-delete employees and filter/paginate results so that I can manage large employee datasets efficiently.
+- Acceptance Criteria:
+    - Given an employee,
+      When I delete the record,
+      Then it is marked as inactive but not removed from the database.
+    - Given the API,
+      When I request a list of employees,
+      Then I can filter by status, department, and paginate results.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: 2.2, Notes: Improves data integrity.
+
+**User Story 2.4: Provide OpenAPI Documentation**
+- Title: Provide OpenAPI Schemas with Examples
+- User Story: As a developer, I want OpenAPI documentation with example requests and responses for employee APIs so that integration is straightforward.
+- Acceptance Criteria:
+    - Given the API documentation,
+      When I view the /employees endpoints,
+      Then I see schemas and example payloads for each operation.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 2.2, Notes: Required for integrations.
