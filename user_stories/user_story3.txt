@@ -1,0 +1,71 @@
+Title: RBAC - Secure Endpoints by Role
+User Story: As a security admin, I want to restrict API endpoints by role (ADMIN, HR, SUPERVISOR, WORKER) so that only authorized users can access sensitive data.
+Acceptance Criteria:
+Scenario: Unauthorized request
+  Given a user is not authenticated
+  When they access a protected endpoint
+  Then a 401 Unauthorized is returned
+
+Scenario: Forbidden action
+  Given a user lacks the required role
+  When they perform a restricted action
+  Then a 403 Forbidden is returned
+
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E01, E02
+Notes: Protects PII and sensitive operations
+
+---
+
+Title: RBAC - Row-Level Security
+User Story: As a supervisor, I want to access only my team's employee records so that I cannot view or modify unrelated data.
+Acceptance Criteria:
+Scenario: Supervisor access
+  Given a supervisor is logged in
+  When they list employees
+  Then only their team's records are visible
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02
+Notes: Enforces least privilege
+
+---
+
+Title: RBAC - Security Configuration Toggle
+User Story: As a DevOps engineer, I want to toggle between API key and OAuth2 authentication via configuration so that the system can adapt to different environments.
+Acceptance Criteria:
+Scenario: Toggle security mode
+  Given the config is set to API key
+  When I authenticate
+  Then API key is required
+
+Scenario: Toggle security mode
+  Given the config is set to OAuth2
+  When I authenticate
+  Then OAuth2 is required
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02
+Notes: Supports multiple auth strategies
+
+---
+
+Title: RBAC - Security Test Coverage
+User Story: As a QA engineer, I want automated tests for security rules so that unauthorized access is reliably prevented.
+Acceptance Criteria:
+Scenario: Test unauthorized access
+  Given test users with various roles
+  When they access endpoints
+  Then only permitted actions succeed
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02
+Notes: Ensures ongoing compliance
