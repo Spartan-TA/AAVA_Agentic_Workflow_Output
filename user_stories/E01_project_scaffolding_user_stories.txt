@@ -1,0 +1,53 @@
+### E01: Project Scaffolding & Domain Setup
+
+#### 1. Initialize Spring Boot Project
+User Story: As a developer I want to initialize a Spring Boot (Maven) project with core dependencies So that all modules have a consistent and maintainable foundation.
+Acceptance Criteria:
+Scenario: Project builds and runs
+Given I have cloned the repository
+When I run the build and start the application
+Then the application should start on port 8080 and display a healthy status on the Actuator health endpoint
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps.
+
+#### 2. Configure Base Package Structure
+User Story: As a developer I want a standardized base package structure for core modules So that code organization is clear and scalable.
+Acceptance Criteria:
+Scenario: Base packages exist
+Given the project is initialized
+When I browse the source code
+Then I should see packages for employee, scheduling, attendance, and safety modules
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Align with domain-driven design best practices.
+
+#### 3. Set Up Database Migration Tooling
+User Story: As a developer I want Flyway or Liquibase configured for DB migrations So that schema changes are versioned and repeatable.
+Acceptance Criteria:
+Scenario: Baseline migration runs
+Given the application starts for the first time
+When the database is empty
+Then the baseline migration should execute and create initial tables
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Migration scripts must be idempotent.
+
+#### 4. Enable Spring Boot Actuator
+User Story: As an operator I want Actuator endpoints enabled So that I can monitor application health and metrics.
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access /actuator/health
+Then I should receive a status of UP
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: None
+- Notes: Secure actuator endpoints as needed.
