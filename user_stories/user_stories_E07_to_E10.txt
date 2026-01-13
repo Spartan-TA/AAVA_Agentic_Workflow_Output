@@ -1,0 +1,223 @@
+### E07 - Training & Certification Tracking
+
+**User Story 1**
+Title: Certification CRUD and Assignment
+User Story: As an HR user I want to create, update, and assign certifications to employees So that compliance is tracked
+Acceptance Criteria:
+Scenario: Certification management
+Given the certification module
+When I manage certifications
+Then changes are persisted and visible on employee profiles
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Supports proof document upload
+
+**User Story 2**
+Title: Certification Expiry Alerts
+User Story: As a supervisor I want alerts for certifications expiring in 30/7 days So that renewals are timely
+Acceptance Criteria:
+Scenario: Expiry alert
+Given a certification nearing expiry
+When the threshold is reached
+Then an alert is sent to the employee and supervisor
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Alerts via in-app and email
+
+**User Story 3**
+Title: Block Assignment for Expired Certifications
+User Story: As a scheduler I want to prevent assignment of tasks to employees with expired certifications So that safety is ensured
+Acceptance Criteria:
+Scenario: Assignment block
+Given an expired certification
+When I assign a restricted task
+Then the system blocks the assignment and notifies me
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Enforced in scheduling module
+
+---
+
+### E08 - Safety Incidents & OSHA Reporting
+
+**User Story 1**
+Title: Record Safety Incidents and Near-Misses
+User Story: As a supervisor I want to record incidents with severity, location, and involved employees So that safety events are tracked
+Acceptance Criteria:
+Scenario: Incident recording
+Given an incident occurs
+When I POST to /safety/incidents
+Then the event is recorded with all required fields
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Validation on required fields
+
+**User Story 2**
+Title: Incident Investigation Workflow
+User Story: As a safety officer I want a workflow for investigating and resolving incidents So that corrective actions are tracked
+Acceptance Criteria:
+Scenario: Investigation workflow
+Given a recorded incident
+When I update the status
+Then the workflow moves from Open to Investigating to Resolved
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Status changes logged
+
+**User Story 3**
+Title: OSHA Summary Report Generation
+User Story: As a compliance officer I want to generate OSHA 300/300A summaries So that regulatory reporting is streamlined
+Acceptance Criteria:
+Scenario: OSHA report export
+Given incident data
+When I request a summary
+Then a report is generated with all required OSHA fields
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Exportable as PDF/CSV
+
+**User Story 4**
+Title: Safety Metrics Dashboard
+User Story: As a manager I want a dashboard of safety KPIs So that I can monitor trends
+Acceptance Criteria:
+Scenario: Metrics dashboard
+Given incident data
+When I access the dashboard
+Then I see charts for incident rates, severity, and resolution times
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Endpoints available for BI tools
+
+---
+
+### E09 - Equipment & Asset Assignment
+
+**User Story 1**
+Title: Asset Registry CRUD
+User Story: As an asset manager I want to create, update, and delete asset records So that all equipment is tracked
+Acceptance Criteria:
+Scenario: Asset management
+Given the asset module
+When I manage assets
+Then changes are persisted and visible
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Asset types include scanners, forklifts, PPE
+
+**User Story 2**
+Title: Asset Check-In/Out Endpoints
+User Story: As a worker I want to check out and return assets So that usage is tracked
+Acceptance Criteria:
+Scenario: Asset check-in/out
+Given a valid asset and employee
+When I check out or return an asset
+Then the event is logged with timestamp
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Prevents checkout if certification missing
+
+**User Story 3**
+Title: Asset Assignment Block for Invalid Certification
+User Story: As a supervisor I want to prevent asset assignment if required certification is missing So that safety is maintained
+Acceptance Criteria:
+Scenario: Certification check
+Given an employee without valid certification
+When I attempt to assign a restricted asset
+Then the system blocks the assignment
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: User Story 2
+- Notes: Enforced at check-out
+
+**User Story 4**
+Title: Asset History and Overdue Reports
+User Story: As an asset manager I want to view asset and employee history and see overdue returns So that accountability is ensured
+Acceptance Criteria:
+Scenario: Asset history report
+Given asset usage data
+When I request a report
+Then I see all check-in/out events and overdue assets
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: User Story 2
+- Notes: Exportable as CSV
+
+---
+
+### E10 - Performance Reviews & Goals
+
+**User Story 1**
+Title: Create Review Templates
+User Story: As an HR user I want to create quarterly and annual review templates So that performance reviews are standardized
+Acceptance Criteria:
+Scenario: Template creation
+Given the review module
+When I create a template
+Then it is available for assignment
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Templates include goals and competencies
+
+**User Story 2**
+Title: Assign and Complete Reviews
+User Story: As a supervisor I want to assign reviews to employees and track completion So that feedback is timely
+Acceptance Criteria:
+Scenario: Review assignment
+Given a template and employee
+When I assign a review
+Then the employee can submit and acknowledge
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Supervisor and employee both acknowledge
+
+**User Story 3**
+Title: PDF Export of Completed Reviews
+User Story: As an HR user I want to export completed reviews as PDF So that records are easily shared
+Acceptance Criteria:
+Scenario: Review export
+Given a completed review
+When I request an export
+Then a PDF is generated with all fields
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: User Story 2
+- Notes: Immutable after sign-off
+
+**User Story 4**
+Title: Role-Based Review Visibility
+User Story: As a user I want review visibility to be role-based So that privacy is maintained
+Acceptance Criteria:
+Scenario: Review access
+Given a completed review
+When a user accesses the review
+Then access is granted or denied based on their role
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: User Story 2
+- Notes: Only HR, supervisor, and employee can view
