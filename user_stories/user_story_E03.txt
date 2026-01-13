@@ -1,0 +1,46 @@
+### E03 - Role Based Access Control (RBAC)
+
+**User Story 1**
+- Title: Implement Role-Based Endpoint Security
+- User Story: As a system administrator, I want endpoints secured by role so that only authorized users can access sensitive data.
+- Acceptance Criteria:
+    - Given a user with no token,
+      When accessing a protected endpoint,
+      Then a 401 Unauthorized is returned.
+    - Given a user with insufficient role,
+      When accessing a restricted endpoint,
+      Then a 403 Forbidden is returned.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, E02, Notes: Must cover all sensitive endpoints.
+
+**User Story 2**
+- Title: Define Roles and Permissions (ADMIN, HR, SUPERVISOR, WORKER)
+- User Story: As a product owner, I want roles and permissions defined so that access is controlled according to business rules.
+- Acceptance Criteria:
+    - Given an ADMIN,
+      When accessing any employee record,
+      Then access is granted.
+    - Given a SUPERVISOR,
+      When accessing records outside their team,
+      Then access is denied.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, E02, Notes: Role matrix must be documented.
+
+**User Story 3**
+- Title: Support API Key/OAuth2 Security Toggle
+- User Story: As a DevOps engineer, I want to toggle between API key and OAuth2 authentication so that integration is flexible.
+- Acceptance Criteria:
+    - Given the config is set to API key,
+      When I authenticate with a valid key,
+      Then access is granted.
+    - Given the config is set to OAuth2,
+      When I authenticate with a valid token,
+      Then access is granted.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, E02, Notes: Must be switchable via config.
+
+**User Story 4**
+- Title: Cover Security Rules with Automated Tests
+- User Story: As a QA engineer, I want automated tests for all security rules so that regressions are caught early.
+- Acceptance Criteria:
+    - Given the test suite,
+      When I run security tests,
+      Then all role-based access scenarios are validated.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, E02, Notes: Must achieve high coverage.
