@@ -1,0 +1,66 @@
+### E07: Training & Certification Tracking
+
+#### 1. Create and Manage Certifications
+User Story: As an HR user I want to create and manage employee certifications So that compliance is maintained.
+Acceptance Criteria:
+Scenario: Manage certifications
+Given I have certification details
+When I create or update a certification
+Then it is saved and visible on the employee profile
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Include type, issue/expiry date, proof document.
+
+#### 2. Alert on Expiring Certifications
+User Story: As a supervisor I want alerts for certifications expiring soon So that renewals are not missed.
+Acceptance Criteria:
+Scenario: Expiry alert
+Given a certification is expiring in 30 or 7 days
+When the system checks expirations
+Then an alert is sent to the employee and supervisor
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Notification module
+- Notes: Support email/SMS/in-app.
+
+#### 3. Block Assignment to Tasks Requiring Valid Certification
+User Story: As a scheduler I want to block assignment to tasks requiring valid certifications So that only qualified staff are assigned.
+Acceptance Criteria:
+Scenario: Assignment blocked
+Given an employee's certification is expired
+When I assign them to a restricted task
+Then the system blocks the assignment and notifies me
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift management, Certification data
+- Notes: Enforce at assignment time.
+
+#### 4. Upload Proof of Certification
+User Story: As an employee I want to upload proof documents for certifications So that my records are complete.
+Acceptance Criteria:
+Scenario: Upload proof
+Given I have a certification document
+When I upload it to my profile
+Then it is stored and accessible to HR
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification management
+- Notes: Support PDF/JPG/PNG.
+
+#### 5. Display Certification Status on Employee Profile
+User Story: As a supervisor I want to see certification status on employee profiles So that I can verify qualifications.
+Acceptance Criteria:
+Scenario: View certification status
+Given I view an employee profile
+When the profile loads
+Then all current certifications and statuses are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Certification data
+- Notes: Show expiry dates and alerts.
