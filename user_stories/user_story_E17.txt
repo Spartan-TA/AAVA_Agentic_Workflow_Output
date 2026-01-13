@@ -1,0 +1,57 @@
+### E17: Onboarding & Offboarding Workflow
+
+#### User Story 1
+Title: New Hire Onboarding Automation
+User Story: As an HR admin, I want new hires from HRIS to trigger onboarding tasks so that setup is consistent and fast.
+Acceptance Criteria:
+Scenario: Onboarding trigger
+  Given a new hire appears from HRIS
+  When onboarding starts
+  Then tasks are generated for account setup, schedule, and training
+Additional Details:
+Priority: Medium
+Story Points: 8
+Dependencies: E02, E03, E05, E07, E13
+Notes: Onboarding checklist must be configurable.
+
+#### User Story 2
+Title: Assign Equipment During Onboarding
+User Story: As an asset manager, I want onboarding to include asset assignment so that new hires have what they need.
+Acceptance Criteria:
+Scenario: Asset assignment
+  Given onboarding is in progress
+  When asset assignment is due
+  Then assets are assigned and logged
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E09
+Notes: Asset checklist must be tracked.
+
+#### User Story 3
+Title: Automated Offboarding on Termination
+User Story: As an HR admin, I want terminations to trigger offboarding so that access and assets are revoked.
+Acceptance Criteria:
+Scenario: Offboarding trigger
+  Given an employee is terminated
+  When offboarding starts
+  Then access is revoked, assets are collected, and schedules are updated
+Additional Details:
+Priority: Medium
+Story Points: 8
+Dependencies: E09, E13
+Notes: Offboarding must be auditable.
+
+#### User Story 4
+Title: Assign Required Training to New Hires
+User Story: As a supervisor, I want onboarding to assign required training so that compliance is ensured.
+Acceptance Criteria:
+Scenario: Training assignment
+  Given onboarding is in progress
+  When training is due
+  Then training tasks are assigned and tracked
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E07
+Notes: Training status must be visible to supervisors.
