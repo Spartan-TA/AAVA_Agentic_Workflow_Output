@@ -1,0 +1,31 @@
+Title: RBAC - Role-Based Endpoint Security
+
+User Story: As an admin, I want to restrict API endpoints based on user roles (ADMIN, HR, SUPERVISOR, WORKER) so that sensitive operations are protected.
+
+Acceptance Criteria:
+
+Scenario: Unauthorized access returns 401
+Given I am not authenticated
+When I access a protected endpoint
+Then I receive a 401 Unauthorized response
+
+Scenario: Forbidden access returns 403
+Given I am authenticated as WORKER
+When I attempt to access an ADMIN-only endpoint
+Then I receive a 403 Forbidden response
+
+Scenario: Admin can manage all records
+Given I am authenticated as ADMIN
+When I access any employee record
+Then I am permitted
+
+Scenario: Supervisor limited to team
+Given I am authenticated as SUPERVISOR
+When I access employee records outside my team
+Then I receive a 403 Forbidden response
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee CRUD, Project scaffolding
+- Notes: Security rules must be covered by automated tests.
