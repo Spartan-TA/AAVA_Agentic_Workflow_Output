@@ -1,0 +1,37 @@
+### EPIC 14 (E14): Audit Trail & Compliance
+
+**User Story 14.1: Log All Sensitive Changes with Actor and Timestamp**
+- Title: Log All Sensitive Changes with Actor and Timestamp
+- User Story: As a compliance officer, I want every create, update, and delete of sensitive data to be logged with actor and timestamp so that actions are traceable.
+- Acceptance Criteria:
+    - Given a sensitive change,
+      When it occurs,
+      Then an audit entry is created with actor, timestamp, and before/after values.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E03, Notes: Core audit logging.
+
+**User Story 14.2: Store Audit Logs in Immutable Table**
+- Title: Store Audit Logs in Immutable Table
+- User Story: As a system, I want audit logs to be stored in an immutable table so that tampering is prevented.
+- Acceptance Criteria:
+    - Given an audit log entry,
+      When it is created,
+      Then it cannot be modified or deleted.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 14.1, Notes: Tamper-evident.
+
+**User Story 14.3: Export Audit Logs by Date, User, or Entity**
+- Title: Export Audit Logs by Date, User, or Entity
+- User Story: As a compliance officer, I want to export audit logs filtered by date, user, or entity so that investigations are efficient.
+- Acceptance Criteria:
+    - Given the audit log module,
+      When I request an export with filters,
+      Then only matching entries are included in the export.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 14.1, Notes: Supports investigations.
+
+**User Story 14.4: Validate Audit Coverage with Automated Tests**
+- Title: Validate Audit Coverage with Automated Tests
+- User Story: As a developer, I want automated tests to validate audit coverage so that no sensitive changes are missed.
+- Acceptance Criteria:
+    - Given the test suite,
+      When I run audit tests,
+      Then all sensitive actions are covered and logged.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 14.1, Notes: Ensures completeness.
