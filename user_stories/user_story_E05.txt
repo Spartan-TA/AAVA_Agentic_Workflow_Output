@@ -1,0 +1,71 @@
+### E05: Shift & Schedule Management
+
+#### User Story 1
+Title: Create Recurring Shift Templates
+User Story: As an HR user, I want to create recurring shift templates so that scheduling is efficient.
+Acceptance Criteria:
+Scenario: Shift template creation
+  Given I am authenticated as HR
+  When I POST to /shifts/templates with valid data
+  Then a new shift template is created
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03, E04
+Notes: Support daily/weekly recurrences.
+
+#### User Story 2
+Title: Assign Shifts to Employees
+User Story: As a supervisor, I want to assign shifts to employees in bulk so that staffing is managed efficiently.
+Acceptance Criteria:
+Scenario: Bulk shift assignment
+  Given a shift template exists
+  When I assign it to multiple employees
+  Then all selected employees receive the schedule
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03, E04
+Notes: Prevent conflicts.
+
+#### User Story 3
+Title: Detect and Prevent Scheduling Conflicts
+User Story: As a scheduler, I want the system to detect and prevent shift conflicts so that employees are not double-booked.
+Acceptance Criteria:
+Scenario: Conflict detection
+  Given an employee has a shift
+  When I attempt to assign an overlapping shift
+  Then the system blocks the assignment and notifies me
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03, E04
+Notes: Include blackout dates.
+
+#### User Story 4
+Title: View Personal Upcoming Shifts
+User Story: As a worker, I want to view my upcoming shifts so that I can plan accordingly.
+Acceptance Criteria:
+Scenario: View shifts
+  Given I am authenticated as a worker
+  When I access my schedule
+  Then I see a list of my upcoming shifts
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E02, E03, E04
+Notes: Show in mobile and web.
+
+#### User Story 5
+Title: Audit Shift Assignments
+User Story: As an auditor, I want all shift assignments to be logged so that changes are traceable.
+Acceptance Criteria:
+Scenario: Audit entry
+  Given a shift is assigned or modified
+  When the action occurs
+  Then an audit entry is created with actor, timestamp, and details
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03, E04
+Notes: Integrate with audit trail module.
