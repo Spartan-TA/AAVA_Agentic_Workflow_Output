@@ -1,0 +1,53 @@
+### E08: Safety Incidents & OSHA Reporting
+
+#### 1. Record Safety Incidents and Near-Misses
+User Story: As a worker I want to record safety incidents and near-misses So that hazards are tracked.
+Acceptance Criteria:
+Scenario: Submit incident report
+Given I witness an incident
+When I submit a report
+Then it is saved with severity, location, and involved employees
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Validate required fields.
+
+#### 2. Manage Incident Investigation Workflow
+User Story: As a safety officer I want to manage incident status through investigation and resolution So that corrective actions are tracked.
+Acceptance Criteria:
+Scenario: Incident workflow
+Given an incident is reported
+When I update status to Investigating or Resolved
+Then the change is logged and visible in the system
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Incident data
+- Notes: Track all status changes.
+
+#### 3. Generate OSHA Summary Reports
+User Story: As a compliance officer I want to generate OSHA 300/300A summary reports So that regulatory requirements are met.
+Acceptance Criteria:
+Scenario: Generate OSHA report
+Given incident data exists
+When I request a summary
+Then the report includes all required OSHA fields
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Incident data
+- Notes: Support PDF/CSV export.
+
+#### 4. Provide Safety Metrics Dashboard
+User Story: As a manager I want a dashboard of safety metrics So that I can monitor safety KPIs.
+Acceptance Criteria:
+Scenario: View safety dashboard
+Given incidents are recorded
+When I access the dashboard
+Then I see metrics like incident rate, open cases, and resolution time
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Incident data
+- Notes: Role-based access.
