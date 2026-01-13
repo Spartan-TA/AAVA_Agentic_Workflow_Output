@@ -1,0 +1,46 @@
+### E06 - Leave & Absence Management
+
+**User Story 1**
+- Title: Employees Request Leave (PTO, Sick, Unpaid)
+- User Story: As an employee, I want to request different types of leave so that my absences are tracked and approved.
+- Acceptance Criteria:
+    - Given an employee,
+      When I submit a leave request,
+      Then the request is saved and pending approval.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Must support all leave types.
+
+**User Story 2**
+- Title: Supervisors Approve or Deny Leave Requests
+- User Story: As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+- Acceptance Criteria:
+    - Given a pending leave request,
+      When I approve or deny,
+      Then the employee is notified and the status is updated.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Approval workflow must be auditable.
+
+**User Story 3**
+- Title: Update Leave Balances and Policies
+- User Story: As an HR user, I want leave balances to update automatically based on policies so that accruals are accurate.
+- Acceptance Criteria:
+    - Given an approved leave,
+      When the leave is processed,
+      Then the employee's balance is updated according to policy.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Must support accrual and carryover.
+
+**User Story 4**
+- Title: Auto-Flag Scheduled Shifts for Coverage
+- User Story: As a scheduler, I want scheduled shifts to be flagged when an employee is on leave so that coverage is maintained.
+- Acceptance Criteria:
+    - Given an approved leave,
+      When it overlaps with a scheduled shift,
+      Then the shift is flagged for coverage.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Integrate with scheduling module.
+
+**User Story 5**
+- Title: Export Approved Leaves for Reporting
+- User Story: As an HR user, I want to export approved leaves so that I can report on absence trends.
+- Acceptance Criteria:
+    - Given approved leave records,
+      When I export data,
+      Then a report is generated with all relevant fields.
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E02, E03, E05, Notes: CSV export required.
