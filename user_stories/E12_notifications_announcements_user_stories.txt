@@ -1,0 +1,66 @@
+### E12: Notifications & Announcements
+
+#### 1. In-App and Email/SMS Notifications
+User Story: As a user I want to receive notifications via app, email, or SMS So that I stay informed about important events.
+Acceptance Criteria:
+Scenario: Receive notification
+Given I have opted in to a channel
+When a relevant event occurs
+Then I receive a notification via my preferred channel
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Support quiet hours.
+
+#### 2. Opt-In/Out Per Channel
+User Story: As a user I want to opt-in or out of notification channels So that I control how I am contacted.
+Acceptance Criteria:
+Scenario: Update preferences
+Given I am authenticated
+When I update my notification preferences
+Then my choices are saved and respected for future notifications
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Default to in-app notifications.
+
+#### 3. Localized Notification Templates
+User Story: As a system I want notification templates to be localized So that users receive messages in their preferred language.
+Acceptance Criteria:
+Scenario: Localized message sent
+Given a user has a preferred language
+When a notification is sent
+Then the message is in the user's language
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Support at least English and Spanish.
+
+#### 4. Track Delivery Status
+User Story: As an admin I want to track the delivery status of notifications So that I can troubleshoot issues.
+Acceptance Criteria:
+Scenario: View delivery status
+Given notifications are sent
+When I view the status
+Then I see delivered, failed, or pending for each message
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Retry failed messages.
+
+#### 5. Announcements on Dashboard
+User Story: As a user I want to see company announcements on my dashboard So that I am aware of important updates.
+Acceptance Criteria:
+Scenario: View announcement
+Given an announcement is published
+When I log in
+Then I see the announcement on my dashboard
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Mark announcements as read.
