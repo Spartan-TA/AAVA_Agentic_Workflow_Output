@@ -1,0 +1,43 @@
+### EPIC 4 (E04): Time & Attendance (Clock In/Out)
+
+**User Story 4.1: Implement Clock-In/Clock-Out Endpoints**
+- Title: Implement Clock-In and Clock-Out Endpoints
+- User Story: As a worker, I want to clock in and out via API so that my attendance is accurately recorded.
+- Acceptance Criteria:
+    - Given the /attendance/clock-in endpoint,
+      When I submit a valid request,
+      Then my clock-in is recorded with timestamp and device info.
+    - Given the /attendance/clock-out endpoint,
+      When I submit a valid request,
+      Then my clock-out is recorded.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: E02, E03, Notes: Core attendance flow.
+
+**User Story 4.2: Associate Attendance with Shifts**
+- Title: Associate Clock Events with Shifts
+- User Story: As a system, I want to automatically associate clock-in/out events with the correct shift so that hours worked are calculated.
+- Acceptance Criteria:
+    - Given a clock-in/out event,
+      When it is recorded,
+      Then it is linked to the employee's scheduled shift.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: 4.1, Notes: Enables payroll calculations.
+
+**User Story 4.3: Handle Missed Punches and Corrections**
+- Title: Handle Missed Punches and Corrections Workflow
+- User Story: As a supervisor, I want to approve corrections for missed punches so that attendance records are accurate.
+- Acceptance Criteria:
+    - Given a missed punch,
+      When a correction is submitted,
+      Then an approval task is created for the supervisor.
+    - Given an approval,
+      When the supervisor approves or rejects,
+      Then the attendance record is updated accordingly.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: 4.1, Notes: Ensures data accuracy.
+
+**User Story 4.4: Export Attendance Reports**
+- Title: Export Attendance Reports as CSV
+- User Story: As an HR user, I want to export attendance reports in CSV format so that I can process payroll and audits.
+- Acceptance Criteria:
+    - Given the attendance module,
+      When I request a report export,
+      Then a CSV file is generated with daily totals and corrections.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 4.2, 4.3, Notes: Required for compliance.
