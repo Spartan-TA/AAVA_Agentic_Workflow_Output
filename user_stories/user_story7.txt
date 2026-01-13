@@ -1,0 +1,21 @@
+Title: RBAC - API Key/OAuth2 Toggle
+
+User Story: As a system administrator, I want to toggle between API key and OAuth2 authentication via configuration so that the system supports different security models.
+
+Acceptance Criteria:
+
+Scenario: API key authentication enabled
+Given API key mode is configured
+When I access a protected endpoint with a valid API key
+Then I am authenticated
+
+Scenario: OAuth2 authentication enabled
+Given OAuth2 mode is configured
+When I access a protected endpoint with a valid OAuth2 token
+Then I am authenticated
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Role-based security
+- Notes: Configuration should be environment-specific.
