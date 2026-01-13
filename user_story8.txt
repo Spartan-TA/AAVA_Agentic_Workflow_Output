@@ -1,0 +1,51 @@
+Title: Safety Incident - Record Incident
+
+User Story: As a SUPERVISOR I want to record safety incidents with all required details So that investigations can be tracked.
+
+Acceptance Criteria:
+Scenario: Record incident
+Given an incident occurs
+When I POST to /safety/incidents with severity, location, description, and involved employees
+Then the incident is logged and status is Open
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Validation on required fields
+
+---
+
+Title: Safety Incident - Investigation Workflow
+
+User Story: As a SAFETY OFFICER I want to manage the investigation workflow for incidents So that corrective actions are documented.
+
+Acceptance Criteria:
+Scenario: Advance incident status
+Given an incident is Open
+When I update the status to Investigating or Resolved
+Then the workflow progresses and actions are logged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Status history is auditable
+
+---
+
+Title: Safety Incident - OSHA Report Export
+
+User Story: As an ADMIN I want to export OSHA 300/300A reports So that regulatory requirements are met.
+
+Acceptance Criteria:
+Scenario: Export OSHA report
+Given incident data exists
+When I request an export
+Then a file is generated with all required OSHA fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Export includes resolved incidents
