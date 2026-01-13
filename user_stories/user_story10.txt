@@ -1,0 +1,66 @@
+### E10: Performance Reviews & Goals
+
+#### 1. Create Review Templates
+User Story: As an HR user I want to create performance review templates So that reviews are consistent.
+Acceptance Criteria:
+Scenario: Create template
+Given review criteria
+When I create a template
+Then it is saved and available for use
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Support competencies, ratings, comments.
+
+#### 2. Assign Reviews to Employees
+User Story: As a supervisor I want to assign reviews to employees So that performance is evaluated.
+Acceptance Criteria:
+Scenario: Assign review
+Given a review cycle
+When I assign reviews
+Then employees are notified and can complete their part
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review templates, Employee data
+- Notes: Support quarterly/annual cycles.
+
+#### 3. Submit and Acknowledge Reviews
+User Story: As an employee I want to submit and acknowledge my review So that feedback is documented.
+Acceptance Criteria:
+Scenario: Submit review
+Given a pending review
+When I complete and submit it
+Then it is saved and visible to my supervisor
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review assignment
+- Notes: Both supervisor and employee must acknowledge.
+
+#### 4. Export Reviews as PDF
+User Story: As an HR user I want to export completed reviews as PDF So that records are easily shared.
+Acceptance Criteria:
+Scenario: Export review
+Given a completed review
+When I export it
+Then a PDF is generated with all details
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: Review data
+- Notes: Format for printing.
+
+#### 5. Lock Reviews After Sign-Off
+User Story: As a system I want to lock reviews after both parties sign off So that records are immutable.
+Acceptance Criteria:
+Scenario: Lock review
+Given a review is signed by both parties
+When I attempt to edit it
+Then the system prevents changes
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Review workflow
+- Notes: Track sign-off timestamps.
