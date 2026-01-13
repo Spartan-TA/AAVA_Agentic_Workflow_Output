@@ -1,0 +1,53 @@
+### E03: Role-Based Access Control (RBAC)
+
+#### 1. Implement Role Definitions and Assignment
+User Story: As an admin I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users So that access is controlled.
+Acceptance Criteria:
+Scenario: Role assignment
+Given a user account
+When I assign a role
+Then the user has permissions associated with that role
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Store roles in DB or config.
+
+#### 2. Secure Endpoints by Role
+User Story: As a system I want to restrict endpoint access based on user role So that sensitive operations are protected.
+Acceptance Criteria:
+Scenario: Unauthorized access blocked
+Given a user without required role
+When they access a restricted endpoint
+Then they receive a 401 or 403 error
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Role assignment
+- Notes: Cover all sensitive endpoints.
+
+#### 3. Support API Key/OAuth2 Toggle
+User Story: As a system admin I want to toggle between API key and OAuth2 authentication So that security can be adapted to environment.
+Acceptance Criteria:
+Scenario: Auth mode toggle
+Given a config setting
+When I switch between API key and OAuth2
+Then authentication mode changes accordingly
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Security config
+- Notes: Document how to switch modes.
+
+#### 4. Enforce Row-Level Security
+User Story: As a supervisor I want to access only my team's data So that privacy is maintained.
+Acceptance Criteria:
+Scenario: Row-level constraints
+Given a supervisor user
+When they query employee data
+Then only employees in their team are returned
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Role assignment, Employee data
+- Notes: Apply to all relevant queries.
