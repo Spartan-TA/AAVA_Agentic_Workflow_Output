@@ -1,0 +1,59 @@
+### E05 - Shift & Schedule Management
+
+**User Story 1:**
+- Title: Manage Shift Templates
+- User Story: As an HR user, I want to create, update, and delete shift templates so that recurring schedules are easy to manage.
+- Acceptance Criteria:
+  - Scenario: Create shift template
+    - Given valid shift data
+    - When I POST to `/shifts/templates`
+    - Then the template is created
+  - Scenario: Delete shift template
+    - Given an existing template
+    - When I DELETE `/shifts/templates/{id}`
+    - Then the template is removed
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, E04
+
+**User Story 2:**
+- Title: Assign Shifts to Employees
+- User Story: As a supervisor, I want to assign shifts to employees so that schedules are clear.
+- Acceptance Criteria:
+  - Scenario: Assign shift
+    - Given a shift template
+    - When I assign it to an employee
+    - Then the employee sees the shift on their schedule
+  - Scenario: Bulk assignment
+    - Given a group of employees
+    - When I bulk-assign a shift
+    - Then all selected employees receive the assignment
+- Additional Details: Priority: High, Story Points: 5, Dependencies: E02, E03, E04
+
+**User Story 3:**
+- Title: Prevent Scheduling Conflicts
+- User Story: As a scheduler, I want the system to detect and prevent shift conflicts so that double-booking is avoided.
+- Acceptance Criteria:
+  - Scenario: Conflict detected
+    - Given an employee has a shift
+    - When I try to assign an overlapping shift
+    - Then the system blocks the assignment and shows an error
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, E04
+
+**User Story 4:**
+- Title: Handle Blackout Dates and Calendars
+- User Story: As an HR user, I want to define blackout dates and operation calendars so that scheduling respects warehouse constraints.
+- Acceptance Criteria:
+  - Scenario: Blackout date prevents assignment
+    - Given a blackout date
+    - When I try to assign a shift on that date
+    - Then the system blocks the assignment
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, E04
+
+**User Story 5:**
+- Title: Audit Shift Changes
+- User Story: As a compliance officer, I want all shift assignments and changes audited so that I can track who made changes.
+- Acceptance Criteria:
+  - Scenario: Audit entry created
+    - Given a shift assignment
+    - When it is created, updated, or deleted
+    - Then an audit entry is generated with actor and timestamp
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, E04
