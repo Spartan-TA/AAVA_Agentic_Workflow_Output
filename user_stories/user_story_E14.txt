@@ -1,0 +1,57 @@
+### E14: Audit Trail & Compliance
+
+#### User Story 1
+Title: Audit Log for Sensitive Changes
+User Story: As a compliance officer, I want all sensitive changes to be logged so that I can audit activity.
+Acceptance Criteria:
+Scenario: Audit logging
+  Given a create/update/delete occurs on sensitive data
+  When the action is performed
+  Then an audit entry is created with actor, timestamp, before/after values
+Additional Details:
+Priority: High
+Story Points: 8
+Dependencies: E03
+Notes: Sensitive data includes PII, schedules, approvals, payroll.
+
+#### User Story 2
+Title: Immutable Audit Log Storage
+User Story: As a compliance officer, I want audit logs to be tamper-evident so that I can trust their integrity.
+Acceptance Criteria:
+Scenario: Tamper prevention
+  Given audit logs are written
+  When I attempt to modify or delete them
+  Then the system prevents changes and logs the attempt
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: E14
+Notes: Use append-only storage.
+
+#### User Story 3
+Title: Export and Filter Audit Logs
+User Story: As an auditor, I want to export audit logs by date, user, or entity so that I can perform investigations.
+Acceptance Criteria:
+Scenario: Export logs
+  Given audit logs exist
+  When I filter and export
+  Then I receive a CSV with matching entries
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E15
+Notes: Export must be access-controlled.
+
+#### User Story 4
+Title: Automated Audit Coverage Testing
+User Story: As a QA engineer, I want tests to validate audit coverage so that no sensitive action is missed.
+Acceptance Criteria:
+Scenario: Coverage validation
+  Given a sensitive action is performed in tests
+  When the test completes
+  Then an audit log entry is verified
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E20
+Notes: Coverage must be >95%.
