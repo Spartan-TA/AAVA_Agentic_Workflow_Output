@@ -1,0 +1,51 @@
+Title: RBAC - Endpoint Security
+
+User Story: As an ADMIN I want to restrict sensitive endpoints to authorized roles So that only permitted users can perform critical actions.
+
+Acceptance Criteria:
+Scenario: Unauthorized access returns 401/403
+Given a user without ADMIN role
+When they attempt to access /employees (POST/DELETE)
+Then the system returns 403 Forbidden
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Security rules must be covered by tests
+
+---
+
+Title: RBAC - Role Management
+
+User Story: As an ADMIN I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users So that access is controlled according to job function.
+
+Acceptance Criteria:
+Scenario: Assign role to user
+Given a user exists
+When I assign a new role
+Then their access rights are updated immediately
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Role changes are auditable
+
+---
+
+Title: RBAC - Row-Level Security
+
+User Story: As a SUPERVISOR I want to access only my team's records So that I cannot view or edit employees outside my supervision.
+
+Acceptance Criteria:
+Scenario: Supervisor access limited to team
+Given a supervisor user
+When they list employees
+Then only employees in their team are visible
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Team membership defined in employee record
