@@ -1,0 +1,16 @@
+Title: Training & Certification Tracking - Block Unqualified Assignments
+
+User Story: As a scheduler, I want to prevent assignment of tasks to employees with expired or missing certifications so that only qualified staff are assigned.
+
+Acceptance Criteria:
+
+Scenario: Block assignment to unqualified employee
+Given an employee's certification is expired
+When I attempt to assign them to a task requiring that certification
+Then the assignment is blocked with an error
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Certification CRUD, Scheduling
+- Notes: Applies to equipment-sensitive roles.
