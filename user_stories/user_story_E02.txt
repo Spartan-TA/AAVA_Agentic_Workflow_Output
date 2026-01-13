@@ -1,0 +1,49 @@
+### E02 - Employee Master Data (CRUD)
+
+**User Story 1**
+- Title: Create Employee Entity and Repository
+- User Story: As a developer, I want an Employee entity with fields (name, badgeId, role, department, shiftGroup, hireDate, status) so that employee data is structured and persisted.
+- Acceptance Criteria:
+    - Given the database,
+      When I create an employee,
+      Then all fields are saved and retrievable.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Foundation for all employee operations.
+
+**User Story 2**
+- Title: Implement Employee CRUD REST APIs
+- User Story: As an HR user, I want to create, read, update, and delete employee records via REST APIs so that employee data can be managed efficiently.
+- Acceptance Criteria:
+    - Given the API,
+      When I POST/GET/PUT/PATCH/DELETE to `/employees`,
+      Then the operations succeed and data is validated.
+    - Given a badgeId,
+      When I try to create a duplicate,
+      Then the API returns an error.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, Notes: Must enforce unique badgeId.
+
+**User Story 3**
+- Title: Support Soft-Delete for Employees
+- User Story: As an HR user, I want to soft-delete employees so that historical data is preserved.
+- Acceptance Criteria:
+    - Given an employee,
+      When I delete the employee,
+      Then the status is set to inactive and the record is not removed from the database.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: No hard deletes.
+
+**User Story 4**
+- Title: Add Pagination and Filtering to Employee List API
+- User Story: As a supervisor, I want to filter and paginate employee lists so that I can find relevant records quickly.
+- Acceptance Criteria:
+    - Given a large employee dataset,
+      When I request `/employees?department=Shipping&page=1&size=20`,
+      Then I receive only the filtered and paginated results.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Must support filtering by all fields.
+
+**User Story 5**
+- Title: Document Employee APIs with OpenAPI
+- User Story: As a developer, I want Employee APIs documented with OpenAPI and examples so that integration is straightforward.
+- Acceptance Criteria:
+    - Given the API documentation,
+      When I view the `/employees` endpoints,
+      Then I see all request/response schemas and example payloads.
+- Additional Details: Priority: High, Story Points: 1, Dependencies: E01, Notes: OpenAPI spec must be up to date.
