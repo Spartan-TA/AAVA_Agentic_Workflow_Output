@@ -1,0 +1,26 @@
+Title: Training & Certification Tracking - Certification CRUD
+
+User Story: As an HR user, I want to create, update, and delete employee certifications so that training records are maintained.
+
+Acceptance Criteria:
+
+Scenario: Add certification to employee
+Given an employee exists
+When I POST a certification with type and expiry date
+Then the certification is added to the employee profile
+
+Scenario: Update certification
+Given a certification exists
+When I PATCH the certification
+Then the record is updated
+
+Scenario: Delete certification
+Given a certification exists
+When I DELETE it
+Then the record is removed
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD, RBAC
+- Notes: Certification status must be visible on profile.
