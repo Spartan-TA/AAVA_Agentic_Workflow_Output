@@ -1,0 +1,51 @@
+Title: Leave Management - Request PTO
+
+User Story: As a WORKER I want to request paid time off So that my leave is tracked and approved.
+
+Acceptance Criteria:
+Scenario: Submit PTO request
+Given I have available PTO balance
+When I submit a request
+Then my supervisor is notified and the request is pending approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Accrual balances update on approval
+
+---
+
+Title: Leave Management - Approve/Deny Leave
+
+User Story: As a SUPERVISOR I want to approve or deny leave requests So that staffing is maintained.
+
+Acceptance Criteria:
+Scenario: Approve leave request
+Given a pending leave request
+When I approve it
+Then the employee's balance is updated and the shift is flagged for coverage
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Denials notify employee
+
+---
+
+Title: Leave Management - Exclude from Scheduling
+
+User Story: As an HR I want approved leaves to automatically exclude employees from scheduling So that coverage gaps are visible.
+
+Acceptance Criteria:
+Scenario: Exclude from schedule
+Given an approved leave
+When the schedule is generated
+Then the employee is not assigned to shifts during the leave period
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Integration with shift management
