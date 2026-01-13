@@ -1,0 +1,57 @@
+### E03 - Role Based Access Control (RBAC)
+
+**User Story 1**
+Title: Implement Role-Based Endpoint Security
+User Story: As a system administrator I want endpoints secured by role (ADMIN, HR, SUPERVISOR, WORKER) So that only authorized users can access sensitive data
+Acceptance Criteria:
+Scenario: Endpoint access by role
+Given a user with a specific role
+When they access a protected endpoint
+Then access is granted or denied according to their role
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Security rules covered by tests
+
+**User Story 2**
+Title: Row-Level Security for Sensitive Data
+User Story: As a supervisor I want to only see employee data for my team So that privacy is maintained
+Acceptance Criteria:
+Scenario: Row-level constraints
+Given a supervisor is logged in
+When they request employee data
+Then only their team's data is returned
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 1
+- Notes: Team mapping must be defined
+
+**User Story 3**
+Title: API Key/OAuth2 Toggle via Config
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication So that the system can adapt to different security requirements
+Acceptance Criteria:
+Scenario: Auth mode toggle
+Given the config is updated
+When the application restarts
+Then the selected auth mode is enforced
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Documented in README
+
+**User Story 4**
+Title: Unauthorized and Forbidden Response Handling
+User Story: As a user I want clear 401/403 responses So that I understand why access is denied
+Acceptance Criteria:
+Scenario: Unauthorized/forbidden access
+Given a user without proper credentials
+When they access a protected endpoint
+Then a 401 or 403 is returned as appropriate
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 1
+- Notes: Error messages must not leak sensitive info
