@@ -1,0 +1,57 @@
+### E05 - Shift & Schedule Management
+
+**User Story 1**
+Title: Create and Manage Shift Templates
+User Story: As a scheduler I want to create recurring shift templates So that I can efficiently assign shifts
+Acceptance Criteria:
+Scenario: Shift template CRUD
+Given the scheduling module
+When I create, update, or delete a shift template
+Then the template is persisted and available for assignment
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Supports rotations and overtime rules
+
+**User Story 2**
+Title: Assign Shifts to Employees
+User Story: As a supervisor I want to assign shifts to employees So that staffing is planned
+Acceptance Criteria:
+Scenario: Shift assignment
+Given available employees and shift templates
+When I assign shifts
+Then employees see their upcoming shifts
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 1
+- Notes: Bulk assignment supported
+
+**User Story 3**
+Title: Detect and Prevent Schedule Conflicts
+User Story: As a scheduler I want the system to detect scheduling conflicts So that double-booking is avoided
+Acceptance Criteria:
+Scenario: Conflict detection
+Given existing shift assignments
+When I assign a new shift
+Then the system prevents conflicts and notifies me
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 2
+- Notes: Includes blackout dates and operation calendars
+
+**User Story 4**
+Title: Audit Trail for Schedule Changes
+User Story: As an auditor I want all schedule changes to be logged So that I can review historical assignments
+Acceptance Criteria:
+Scenario: Schedule audit
+Given a schedule change
+When the change is made
+Then an audit entry is created with actor, timestamp, and before/after
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 2
+- Notes: Exposed via reporting module
