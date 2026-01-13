@@ -1,0 +1,34 @@
+====================================================================
+Epic E06: Leave & Absence Management
+====================================================================
+
+User Story 1:
+- Title: Request Leave (PTO, Sick, Unpaid)
+- User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my absences are tracked.
+- Acceptance Criteria:
+  - Given the leave form, When I submit a request, Then it is saved and pending approval.
+  - Given insufficient balance, When I request leave, Then the system rejects the request.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: E02, E03, E05, Notes: Includes validation.
+
+User Story 2:
+- Title: Approve or Deny Leave Requests
+- User Story: As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+- Acceptance Criteria:
+  - Given a pending request, When I approve or deny, Then the employee is notified and balances are updated.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: User Story 1, Notes: Approval workflow.
+
+User Story 3:
+- Title: Update Accrual Balances and Policies
+- User Story: As an HR user, I want leave balances to update according to accrual policies so that entitlements are accurate.
+- Acceptance Criteria:
+  - Given an approved leave, When processed, Then the employee's balance is reduced accordingly.
+  - Given a new policy, When applied, Then all balances recalculate.
+- Additional Details: Priority: Medium, Story Points: 5, Dependencies: User Story 2, Notes: Policy-driven.
+
+User Story 4:
+- Title: Integrate Leave with Scheduling and Payroll
+- User Story: As a payroll admin, I want approved leaves to auto-flag scheduled shifts and be excluded from payroll hours so that records are accurate.
+- Acceptance Criteria:
+  - Given an approved leave, When a shift overlaps, Then the shift is flagged for coverage.
+  - Given payroll export, When leave is present, Then only worked hours are included.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: User Story 3, Notes: Integration hooks.
