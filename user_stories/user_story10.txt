@@ -1,0 +1,21 @@
+Title: Time & Attendance - Hours Calculation and Reporting
+
+User Story: As a payroll admin, I want the system to calculate hours worked per shift and export attendance reports so that payroll is accurate.
+
+Acceptance Criteria:
+
+Scenario: Daily totals computed
+Given attendance events exist for a worker
+When I view the attendance report
+Then I see total hours worked per day
+
+Scenario: Export attendance report
+Given I have appropriate permissions
+When I request an export in CSV format
+Then I receive a CSV file with attendance data
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Clock in/out, corrections
+- Notes: Reports must reconcile with payroll export.
