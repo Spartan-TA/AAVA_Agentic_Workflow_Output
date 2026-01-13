@@ -1,0 +1,35 @@
+====================================================================
+Epic E02: Employee Master Data (CRUD)
+====================================================================
+
+User Story 1:
+- Title: Create Employee Entity and Repository
+- User Story: As a developer, I want to define the Employee entity and repository so that employee data can be persisted.
+- Acceptance Criteria:
+  - Given the codebase, When I inspect the Employee entity, Then it includes name, badgeId, role, department, shiftGroup, hireDate, and status.
+  - Given the repository, When I save an employee, Then the data is stored in the database.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, Notes: Foundation for CRUD.
+
+User Story 2:
+- Title: Implement Employee CRUD REST APIs
+- User Story: As an HR user, I want to create, read, update, and delete employee records via REST APIs so that employee data is managed efficiently.
+- Acceptance Criteria:
+  - Given the API, When I POST/GET/PUT/PATCH/DELETE /employees, Then the operations succeed with valid data.
+  - Given a badgeId, When I create a new employee, Then the badgeId is unique.
+  - Given a delete request, When I delete an employee, Then the record is soft-deleted.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: User Story 1, Notes: Includes OpenAPI docs.
+
+User Story 3:
+- Title: Support Pagination and Filtering for Employee List
+- User Story: As an HR user, I want to paginate and filter employee lists so that I can efficiently find records.
+- Acceptance Criteria:
+  - Given a large dataset, When I GET /employees with pagination, Then results are limited per page.
+  - Given filter parameters, When I query employees, Then only matching records are returned.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: User Story 2, Notes: Improves usability.
+
+User Story 4:
+- Title: Document Employee APIs with OpenAPI
+- User Story: As a developer, I want the Employee APIs documented in OpenAPI with examples so that integration is easy.
+- Acceptance Criteria:
+  - Given the API docs, When I view /openapi, Then all Employee endpoints are described with request/response examples.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: User Story 2, Notes: Required for integrations.
