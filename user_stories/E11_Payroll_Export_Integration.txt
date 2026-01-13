@@ -1,0 +1,32 @@
+====================================================================
+Epic E11: Payroll Export Integration
+====================================================================
+
+User Story 1:
+- Title: Generate Payroll-Ready Export Files
+- User Story: As a payroll admin, I want to generate payroll files from attendance and leave data so that payroll processing is automated.
+- Acceptance Criteria:
+  - Given approved attendance and leave, When I export, Then the file matches the provider schema.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: E04, E06, Notes: Schema mapping required.
+
+User Story 2:
+- Title: Secure Delivery of Payroll Files (SFTP/API)
+- User Story: As a payroll admin, I want to deliver payroll files securely via SFTP or API so that data is protected.
+- Acceptance Criteria:
+  - Given an export, When sent, Then delivery is logged and secure.
+  - Given a failure, When delivery fails, Then retries are attempted with backoff.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: User Story 1, Notes: Delivery audit.
+
+User Story 3:
+- Title: Reconcile Payroll Totals with Reports
+- User Story: As a payroll admin, I want to reconcile export totals with attendance and leave reports so that errors are detected.
+- Acceptance Criteria:
+  - Given an export, When compared to reports, Then totals match or discrepancies are flagged.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: User Story 1, Notes: Ensures accuracy.
+
+User Story 4:
+- Title: Audit Log for Payroll Exports
+- User Story: As a compliance officer, I want every payroll export to be logged with details so that audits are possible.
+- Acceptance Criteria:
+  - Given an export, When completed, Then actor, timestamp, and status are logged.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: User Story 1, Notes: For compliance.
