@@ -1,0 +1,63 @@
+### E03: Role-Based Access Control (RBAC)
+
+#### User Story 1
+Title: Implement Role-Based Endpoint Security
+User Story: As a system admin, I want to restrict API endpoints based on user roles so that sensitive operations are protected.
+Acceptance Criteria:
+Scenario: Unauthorized access
+  Given I am not authenticated
+  When I access a protected endpoint
+  Then I receive a 401 Unauthorized response
+Scenario: Forbidden action
+  Given I am authenticated as WORKER
+  When I attempt to delete an employee
+  Then I receive a 403 Forbidden response
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E01, E02
+Notes: Cover all endpoints.
+
+#### User Story 2
+Title: Configure Row-Level Security
+User Story: As a supervisor, I want to access only my team's records so that I cannot view or modify data outside my scope.
+Acceptance Criteria:
+Scenario: Row-level access
+  Given I am authenticated as SUPERVISOR
+  When I GET /employees
+  Then I only see employees in my team
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E01, E02
+Notes: Enforce via queries or service layer.
+
+#### User Story 3
+Title: API Key/OAuth2 Toggle
+User Story: As a system admin, I want to toggle between API key and OAuth2 authentication via config so that I can adapt to different security requirements.
+Acceptance Criteria:
+Scenario: Auth toggle
+  Given the system is configured for API key
+  When I send a request with a valid API key
+  Then I am authenticated
+  And when switched to OAuth2
+  Then only OAuth2 tokens are accepted
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02
+Notes: Document config options.
+
+#### User Story 4
+Title: Security Test Coverage
+User Story: As a QA engineer, I want automated tests for security rules so that unauthorized access is prevented.
+Acceptance Criteria:
+Scenario: Security test
+  Given test cases for each role
+  When tests are executed
+  Then all unauthorized and forbidden actions are covered
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02
+Notes: Integrate with CI/CD.
