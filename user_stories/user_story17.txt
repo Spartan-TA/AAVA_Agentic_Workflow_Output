@@ -1,0 +1,45 @@
+Title: Onboarding/Offboarding - Automated Provisioning for New Hires
+User Story: As an HR manager, I want new hires from HRIS to trigger account, schedule, and training provisioning so that onboarding is seamless.
+Acceptance Criteria:
+Scenario: New hire provisioning
+  Given a new hire appears in HRIS
+  When the sync job runs
+  Then accounts, schedules, and training tasks are created
+
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E02, E03, E05, E07, E09, E13
+Notes: Reduces manual effort
+
+---
+
+Title: Onboarding/Offboarding - Offboarding Workflow
+User Story: As an HR manager, I want offboarding to revoke access, collect assets, and update schedules so that terminations are handled securely.
+Acceptance Criteria:
+Scenario: Offboarding
+  Given an employee is terminated
+  When the workflow runs
+  Then access is revoked, assets collected, and schedules updated
+
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E02, E03, E05, E07, E09, E13
+Notes: Reduces risk
+
+---
+
+Title: Onboarding/Offboarding - Task Generation for Training and Assets
+User Story: As a supervisor, I want onboarding/offboarding to generate tasks for training and asset assignment/return so that nothing is missed.
+Acceptance Criteria:
+Scenario: Task generation
+  Given onboarding/offboarding occurs
+  When the workflow runs
+  Then tasks are created for all required steps
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E05, E07, E09, E13
+Notes: Ensures completeness
