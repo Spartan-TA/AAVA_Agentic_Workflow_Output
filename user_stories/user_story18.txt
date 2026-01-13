@@ -1,0 +1,34 @@
+Title: Localization & Multi-Warehouse - Multi-Language and Warehouse Support
+User Story: As a global admin, I want the system to support multiple languages and warehouses so that it can be used across regions.
+Acceptance Criteria:
+Scenario: Language selection
+  Given multiple locales are configured
+  When I select a language
+  Then the UI updates accordingly
+
+Scenario: Warehouse selection
+  Given multiple warehouses exist
+  When I select a warehouse
+  Then data is scoped to that location
+
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E01, E02, E03
+Notes: Supports global operations
+
+---
+
+Title: Localization & Multi-Warehouse - Data Segregation and Access Control
+User Story: As a security admin, I want data segregated by warehouse and access controlled so that users see only relevant information.
+Acceptance Criteria:
+Scenario: Data segregation
+  Given I am assigned to a warehouse
+  When I access data
+  Then only my warehouse's data is visible
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E01, E02, E03
+Notes: Ensures privacy
