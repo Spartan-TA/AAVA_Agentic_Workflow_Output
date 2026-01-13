@@ -1,0 +1,31 @@
+====================================================================
+Epic E07: Training & Certification Tracking
+====================================================================
+
+User Story 1:
+- Title: CRUD for Employee Certifications
+- User Story: As an HR user, I want to add, update, and remove employee certifications so that compliance is tracked.
+- Acceptance Criteria:
+  - Given the UI/API, When I manage certifications, Then changes are reflected in the employee profile.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Includes proof upload.
+
+User Story 2:
+- Title: Alert on Expiring Certifications
+- User Story: As a supervisor, I want to receive alerts 30 and 7 days before a certification expires so that renewals are timely.
+- Acceptance Criteria:
+  - Given a certification nearing expiry, When within 30 or 7 days, Then alerts are sent to the employee and supervisor.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: User Story 1, Notes: Notification integration.
+
+User Story 3:
+- Title: Block Assignment to Tasks Requiring Valid Certification
+- User Story: As a scheduler, I want to prevent assignment of tasks to employees with expired certifications so that safety is ensured.
+- Acceptance Criteria:
+  - Given an assignment, When the required certification is expired, Then the system blocks the assignment.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: User Story 1, Notes: Scheduling integration.
+
+User Story 4:
+- Title: Display Certification Status on Employee Profile
+- User Story: As a supervisor, I want to view certification status on the employee profile so that I can verify qualifications.
+- Acceptance Criteria:
+  - Given an employee profile, When viewed, Then all certifications and expiry dates are visible.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: User Story 1, Notes: For quick checks.
