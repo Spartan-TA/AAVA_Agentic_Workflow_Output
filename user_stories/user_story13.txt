@@ -1,0 +1,16 @@
+Title: Shift & Schedule Management - View Personal Upcoming Shifts
+
+User Story: As a worker, I want to view my upcoming shifts so that I can plan my attendance.
+
+Acceptance Criteria:
+
+Scenario: View upcoming shifts
+Given I am authenticated as a worker
+When I access my schedule endpoint
+Then I see a list of my upcoming assigned shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift assignment
+- Notes: Should be mobile-friendly.
