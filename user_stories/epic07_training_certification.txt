@@ -1,0 +1,46 @@
+### EPIC 7 (E07): Training & Certification Tracking
+
+**User Story 7.1: Manage Certifications for Employees**
+- Title: Manage Employee Certifications (CRUD)
+- User Story: As an HR user, I want to create, update, and delete certifications for employees so that compliance is tracked.
+- Acceptance Criteria:
+    - Given the certification API,
+      When I perform CRUD operations,
+      Then certifications are managed for each employee.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Core certification flow.
+
+**User Story 7.2: Alert on Expiring Certifications**
+- Title: Alert Employees and Supervisors on Expiring Certifications
+- User Story: As a system, I want to send alerts 30 and 7 days before a certification expires so that renewals are not missed.
+- Acceptance Criteria:
+    - Given a certification nearing expiry,
+      When it is 30 or 7 days from expiration,
+      Then an alert is sent to the employee and supervisor.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 7.1, Notes: Prevents lapses.
+
+**User Story 7.3: Block Assignment to Unqualified Tasks**
+- Title: Block Assignment to Tasks Requiring Valid Certifications
+- User Story: As a supervisor, I want the system to block assignment of employees to tasks requiring certifications if their certs are expired.
+- Acceptance Criteria:
+    - Given an assignment,
+      When the employee's certification is expired,
+      Then the assignment is blocked and a warning is shown.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: 7.1, Notes: Ensures safety.
+
+**User Story 7.4: Upload Proof of Certification**
+- Title: Upload Proof Documents for Certifications
+- User Story: As an employee, I want to upload proof documents for my certifications so that compliance is documented.
+- Acceptance Criteria:
+    - Given a certification,
+      When I upload a document,
+      Then it is stored and linked to my certification record.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 7.1, Notes: Supports audits.
+
+**User Story 7.5: Display Certification Status on Profile**
+- Title: Display Certification Status on Employee Profile
+- User Story: As an employee or supervisor, I want to view certification status on the employee profile so that qualifications are visible.
+- Acceptance Criteria:
+    - Given an employee profile,
+      When I view it,
+      Then all current certifications and their statuses are displayed.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 7.1, Notes: Improves transparency.
