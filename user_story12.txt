@@ -1,0 +1,51 @@
+Title: Notifications - Shift Change Notification
+
+User Story: As a WORKER I want to receive notifications for shift changes So that I am always aware of my schedule.
+
+Acceptance Criteria:
+Scenario: Notify on shift change
+Given my shift is updated
+When the change is saved
+Then I receive a notification via my preferred channel
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Users can opt-in/out per channel
+
+---
+
+Title: Notifications - Certification Expiry Notification
+
+User Story: As a SUPERVISOR I want to receive notifications for expiring certifications So that I can ensure compliance.
+
+Acceptance Criteria:
+Scenario: Notify on cert expiry
+Given a certification is expiring soon
+When the alert job runs
+Then I receive a notification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Templates localized
+
+---
+
+Title: Notifications - Announcement Broadcast
+
+User Story: As an ADMIN I want to broadcast announcements to all users So that important information is shared quickly.
+
+Acceptance Criteria:
+Scenario: Broadcast announcement
+Given an announcement is created
+When I publish it
+Then all users receive it via in-app and email/SMS
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Announcements visible on dashboard
