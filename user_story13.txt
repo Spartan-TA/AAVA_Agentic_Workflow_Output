@@ -1,0 +1,51 @@
+Title: Integration Layer - HRIS Sync
+
+User Story: As an ADMIN I want to sync employee data with the HRIS So that records are consistent across systems.
+
+Acceptance Criteria:
+Scenario: HRIS sync job
+Given new hires in HRIS
+When the sync job runs
+Then new employees are created or updated in EMS
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Idempotent sync
+
+---
+
+Title: Integration Layer - WMS Department Link
+
+User Story: As an ADMIN I want to link departments and locations with the WMS So that warehouse assignments are accurate.
+
+Acceptance Criteria:
+Scenario: WMS link
+Given departments in WMS
+When I link them
+Then EMS reflects the correct department/location
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: API documented in OpenAPI
+
+---
+
+Title: Integration Layer - SSO Integration
+
+User Story: As an IT ADMIN I want to enable SSO via IDP So that users can log in with corporate credentials.
+
+Acceptance Criteria:
+Scenario: SSO login
+Given SSO is configured
+When a user logs in
+Then authentication is handled by the IDP
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: JWT/OAuth2-secured APIs
