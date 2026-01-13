@@ -1,0 +1,47 @@
+### E11: Payroll Export Integration
+
+#### User Story 1
+Title: Payroll Export Generation
+User Story: As a payroll admin, I want to generate payroll-ready files from attendance and leave data so that payroll processing is accurate.
+Acceptance Criteria:
+Scenario: Generate export
+  Given all attendance and leave is approved
+  When I generate an export
+  Then the file matches the provider's schema and includes all required fields
+Additional Details:
+Priority: High
+Story Points: 8
+Dependencies: E04, E06
+Notes: Support multiple provider formats.
+
+#### User Story 2
+Title: Secure Payroll File Delivery
+User Story: As a payroll admin, I want to securely deliver payroll exports via SFTP or API so that sensitive data is protected.
+Acceptance Criteria:
+Scenario: Secure delivery
+  Given an export is generated
+  When I send it to the provider
+  Then delivery is encrypted and status is logged
+Scenario: Retry on failure
+  Given delivery fails
+  When a retry is triggered
+  Then the system retries with exponential backoff
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: E13
+Notes: Delivery logs must be auditable.
+
+#### User Story 3
+Title: Payroll Export Audit Trail
+User Story: As an auditor, I want to see a log of all payroll exports so that I can verify compliance.
+Acceptance Criteria:
+Scenario: View audit log
+  Given exports are generated
+  When I view the audit log
+  Then I see timestamp, user, export details, and delivery status
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E14
+Notes: Log must be immutable.
