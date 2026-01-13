@@ -1,0 +1,66 @@
+### E09: Equipment & Asset Assignment
+
+#### 1. Maintain Asset Registry
+User Story: As an asset manager I want to maintain a registry of equipment and PPE So that all assets are tracked.
+Acceptance Criteria:
+Scenario: Asset CRUD
+Given asset details
+When I create, update, or delete an asset
+Then the registry is updated accordingly
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Include type, serial, condition.
+
+#### 2. Assign and Track Asset Check-In/Out
+User Story: As a supervisor I want to assign and track asset check-in/out So that accountability is maintained.
+Acceptance Criteria:
+Scenario: Asset assignment
+Given an available asset
+When I assign it to an employee
+Then the assignment is recorded with timestamp
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset registry, Employee data
+- Notes: Track overdue returns.
+
+#### 3. Block Asset Use if Certification Missing
+User Story: As a system I want to block asset assignment if required certification is missing So that only qualified employees use equipment.
+Acceptance Criteria:
+Scenario: Block unqualified assignment
+Given an employee lacks required certification
+When I assign them a restricted asset
+Then the system blocks the assignment
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification data
+- Notes: Enforce at assignment time.
+
+#### 4. Track Asset Condition and History
+User Story: As an asset manager I want to track asset condition and assignment history So that maintenance and usage are visible.
+Acceptance Criteria:
+Scenario: View asset history
+Given an asset
+When I view its details
+Then I see all check-in/out events and condition updates
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset registry
+- Notes: Support reporting.
+
+#### 5. Report Overdue Asset Returns
+User Story: As a supervisor I want to see reports of overdue asset returns So that I can follow up with employees.
+Acceptance Criteria:
+Scenario: Overdue report
+Given assets are overdue
+When I run the report
+Then all overdue assignments are listed with employee details
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Asset assignment
+- Notes: Notify responsible employees.
