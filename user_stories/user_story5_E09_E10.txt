@@ -1,0 +1,117 @@
+### E09: Equipment & Asset Assignment
+
+**User Story 1**
+Title: Assign Equipment to Employees
+User Story: As a SUPERVISOR I want to assign scanners, forklifts, and PPE to employees So that asset usage is tracked
+Acceptance Criteria:
+Scenario: Equipment assignment
+Given available equipment
+When I assign to an employee
+Then the assignment is logged and asset status updated
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E07
+Notes: Asset registry required
+
+**User Story 2**
+Title: Prevent Use Without Certification
+User Story: As a SYSTEM I want to block equipment assignment if required certification is missing So that safety is enforced
+Acceptance Criteria:
+Scenario: Assignment block
+Given an employee without valid cert
+When assigning restricted equipment
+Then the assignment is blocked
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E07
+Notes: Certification check required
+
+**User Story 3**
+Title: Track Asset Condition
+User Story: As an ADMIN I want to maintain asset condition state So that maintenance can be scheduled
+Acceptance Criteria:
+Scenario: Condition update
+Given an asset
+When condition changes are reported
+Then the new state is logged
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: E02, E03, E07
+Notes: Condition history per asset
+
+**User Story 4**
+Title: Overdue Asset Return Report
+User Story: As an ASSET MANAGER I want reports of overdue asset returns So that follow-up actions can be taken
+Acceptance Criteria:
+Scenario: Overdue report
+Given overdue assets
+When I generate a report
+Then all overdue assignments are listed
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: E02, E03, E07
+Notes: Report exportable
+
+---
+
+### E10: Performance Reviews & Goals
+
+**User Story 1**
+Title: Create Review Templates
+User Story: As an HR I want to create quarterly and annual review templates So that performance reviews are standardized
+Acceptance Criteria:
+Scenario: Template creation
+Given review criteria
+When I create a template
+Then it is available for assignment
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Templates versioned
+
+**User Story 2**
+Title: Assign Reviews to Employees
+User Story: As a SUPERVISOR I want to assign performance reviews to my team So that feedback is structured
+Acceptance Criteria:
+Scenario: Assign review
+Given a review cycle
+When I assign to employees
+Then they are notified and can submit responses
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Notification required
+
+**User Story 3**
+Title: Submit and Acknowledge Reviews
+User Story: As a WORKER I want to submit self-reviews and acknowledge supervisor feedback So that the process is collaborative
+Acceptance Criteria:
+Scenario: Review submission
+Given an assigned review
+When I submit my input
+Then the supervisor can review and both can acknowledge
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Workflow must be tracked
+
+**User Story 4**
+Title: Export Review PDFs
+User Story: As an HR I want to export completed reviews as PDFs So that records are archived
+Acceptance Criteria:
+Scenario: PDF export
+Given a completed review
+When I export
+Then a PDF is generated with all details
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: E02, E03
+Notes: Immutable after sign-off
