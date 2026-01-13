@@ -1,0 +1,46 @@
+### EPIC 11 (E11): Payroll Export Integration
+
+**User Story 11.1: Generate Payroll-Ready Export Files**
+- Title: Generate Payroll-Ready Export Files
+- User Story: As a payroll administrator, I want to generate export files from approved attendance and leave so that payroll processing is automated.
+- Acceptance Criteria:
+    - Given approved records,
+      When I generate an export,
+      Then the file matches the provider schema.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E04, E06, Notes: Core payroll integration.
+
+**User Story 11.2: Map Data to External Provider Formats**
+- Title: Map Data to External Payroll Provider Formats
+- User Story: As a developer, I want to map internal data to external payroll provider formats so that exports are compatible.
+- Acceptance Criteria:
+    - Given an export,
+      When I review the file,
+      Then all fields are mapped per provider requirements.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 11.1, Notes: Ensures compatibility.
+
+**User Story 11.3: Secure Delivery of Payroll Files**
+- Title: Secure Delivery of Payroll Files via SFTP/API
+- User Story: As a payroll administrator, I want to securely deliver payroll files via SFTP or API so that sensitive data is protected.
+- Acceptance Criteria:
+    - Given an export file,
+      When I deliver via SFTP/API,
+      Then the transfer is encrypted and logged.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 11.1, Notes: Security.
+
+**User Story 11.4: Retry Failed Deliveries with Backoff**
+- Title: Retry Failed Payroll File Deliveries with Backoff
+- User Story: As a system, I want to retry failed payroll file deliveries with exponential backoff so that transient errors are handled.
+- Acceptance Criteria:
+    - Given a failed delivery,
+      When a retry is triggered,
+      Then the system retries with increasing intervals until success or max attempts.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 11.3, Notes: Reliability.
+
+**User Story 11.5: Audit Log for Payroll Exports**
+- Title: Maintain Audit Log for Every Payroll Export
+- User Story: As a compliance officer, I want an audit log for every payroll export so that all actions are traceable.
+- Acceptance Criteria:
+    - Given a payroll export,
+      When it is generated or delivered,
+      Then an audit entry is created with timestamp, user, and status.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: 11.1, Notes: Compliance.
