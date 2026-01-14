@@ -1,0 +1,19 @@
+Title: Notifications & Announcements
+
+User Story: As a warehouse worker I want to receive in-app and email/SMS notifications for shift changes, expiring certifications, approvals, and announcements so that I am informed in real time.
+
+Acceptance Criteria:
+Scenario: Notification delivery and management
+Given I have opted in to notification channels
+When a relevant event occurs (shift change, cert expiry, approval, announcement)
+Then I receive notifications via my selected channels
+And templates are localized
+And delivery status is tracked
+And announcements are visible on the dashboard
+And rate limits are applied
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Role-Based Access Control (RBAC), Shift & Schedule Management, Leave & Absence Management, Training & Certification Tracking
+- Notes: Support quiet hours configuration and opt-in/out per channel.
