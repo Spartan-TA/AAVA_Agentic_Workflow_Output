@@ -1,0 +1,66 @@
+Epic E06: Leave & Absence Management
+
+1. Title: Request Leave (PTO, Sick, Unpaid)
+   User Story: As an employee I want to request leave So that my time off is properly recorded and approved.
+   Acceptance Criteria:
+   Scenario: Leave request
+   Given I am logged in
+   When I submit a leave request
+   Then the request is created and pending approval
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E02, E03, E05
+   - Notes: Support multiple leave types.
+
+2. Title: Approve or Deny Leave Requests
+   User Story: As a supervisor I want to approve or deny leave requests So that staffing plans are maintained.
+   Acceptance Criteria:
+   Scenario: Leave approval
+   Given a pending leave request
+   When I approve or deny the request
+   Then the employee is notified and balances update
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E02, E03, E05
+   - Notes: Notification required.
+
+3. Title: Update Leave Accrual Balances
+   User Story: As an HR manager I want leave balances updated automatically So that accrual policies are enforced.
+   Acceptance Criteria:
+   Scenario: Accrual balance update
+   Given a leave is approved
+   When the leave period starts
+   Then the employee's leave balance is reduced accordingly
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E02, E03, E05
+   - Notes: Policy-driven accruals.
+
+4. Title: Auto-Flag Scheduled Shifts for Coverage
+   User Story: As a scheduler I want scheduled shifts auto-flagged when an employee is on leave So that coverage can be arranged.
+   Acceptance Criteria:
+   Scenario: Shift auto-flag
+   Given an employee's leave is approved
+   When their scheduled shifts overlap with leave
+   Then those shifts are flagged for coverage
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E02, E03, E05
+   - Notes: Integration with scheduling.
+
+5. Title: Export Approved Leaves for Payroll
+   User Story: As a payroll manager I want to export approved leaves So that payroll calculations are accurate.
+   Acceptance Criteria:
+   Scenario: Leave export
+   Given approved leave records exist
+   When I request an export
+   Then a file is generated with leave details for payroll
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 1
+   - Dependencies: E02, E03, E05
+   - Notes: Format compatible with payroll provider.
