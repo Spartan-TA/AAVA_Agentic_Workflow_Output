@@ -1,0 +1,273 @@
+Epic E10: Performance Reviews & Goals
+
+1. Title: Create Review Cycles and Templates
+   User Story: As an HR manager I want to create review cycles and templates So that performance reviews are standardized.
+   Acceptance Criteria:
+   Scenario: Review cycle/template creation
+   Given I have review details
+   When I create a cycle or template
+   Then it is available for assignment to employees
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E02, E03
+   - Notes: Quarterly/annual cycles.
+
+2. Title: Assign Reviews to Employees
+   User Story: As a supervisor I want to assign reviews to employees So that feedback is collected regularly.
+   Acceptance Criteria:
+   Scenario: Review assignment
+   Given a review cycle exists
+   When I assign it to an employee
+   Then the review appears in their profile
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 1
+   - Dependencies: E02, E03
+   - Notes: Role-based assignment.
+
+3. Title: Submit and Acknowledge Reviews
+   User Story: As an employee I want to submit and acknowledge reviews So that the process is transparent.
+   Acceptance Criteria:
+   Scenario: Review submission/acknowledgement
+   Given a review is assigned
+   When I submit my feedback and acknowledge
+   Then the review is marked as complete and immutable
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E02, E03
+   - Notes: Lock after sign-off.
+
+4. Title: Export Reviews to PDF
+   User Story: As an HR manager I want to export reviews to PDF So that records are easily shared and archived.
+   Acceptance Criteria:
+   Scenario: PDF export
+   Given reviews exist
+   When I request a PDF export
+   Then a file is generated with review details
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 1
+   - Dependencies: E02, E03
+   - Notes: Format per HR standards.
+
+5. Title: Role-Based Visibility of Reviews
+   User Story: As a supervisor I want review visibility restricted by role So that privacy is maintained.
+   Acceptance Criteria:
+   Scenario: Review visibility
+   Given reviews exist
+   When I access the review dashboard
+   Then I see only reviews for my team/employees
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 1
+   - Dependencies: E02, E03
+   - Notes: HR/admin access to all.
+
+---
+
+Epic E11: Payroll Export Integration
+
+1. Title: Generate Payroll-Ready Export Files
+   User Story: As a payroll manager I want to generate payroll-ready files So that payroll processing is automated.
+   Acceptance Criteria:
+   Scenario: Payroll export
+   Given approved attendance and leave data
+   When I request an export
+   Then a file is generated matching provider schema
+   Additional Details:
+   - Priority: High
+   - Story Points: 3
+   - Dependencies: E04, E06
+   - Notes: Support multiple formats.
+
+2. Title: Map Data to External Payroll Provider Formats
+   User Story: As a payroll manager I want data mapped to provider formats So that integration is seamless.
+   Acceptance Criteria:
+   Scenario: Data mapping
+   Given provider format requirements
+   When I export payroll data
+   Then the file matches the required schema
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: E04, E06
+   - Notes: Configurable mappings.
+
+3. Title: Secure Delivery via SFTP/API
+   User Story: As a payroll manager I want exports delivered securely So that sensitive data is protected.
+   Acceptance Criteria:
+   Scenario: Secure delivery
+   Given an export file is generated
+   When delivery is initiated
+   Then the file is sent via SFTP or API securely
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: E04, E06
+   - Notes: Encryption required.
+
+4. Title: Retry Failed Deliveries with Backoff
+   User Story: As a payroll manager I want failed deliveries retried automatically So that exports are reliably delivered.
+   Acceptance Criteria:
+   Scenario: Delivery retry
+   Given a delivery fails
+   When the system retries with backoff
+   Then delivery succeeds or error is logged
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: E04, E06
+   - Notes: Configurable retry policy.
+
+5. Title: Audit Log for Payroll Exports
+   User Story: As a compliance officer I want audit logs for payroll exports So that all actions are traceable.
+   Acceptance Criteria:
+   Scenario: Payroll export audit
+   Given an export is generated or delivered
+   When the action occurs
+   Then an audit entry is created with actor and timestamp
+   Additional Details:
+   - Priority: High
+   - Story Points: 1
+   - Dependencies: E04, E06
+   - Notes: Link to E14.
+
+---
+
+Epic E12: Notifications & Announcements
+
+1. Title: In-App and Email/SMS Notifications
+   User Story: As a worker I want notifications for shift changes, approvals, and announcements So that I stay informed.
+   Acceptance Criteria:
+   Scenario: Notification delivery
+   Given a relevant event occurs
+   When notification is triggered
+   Then I receive it via my chosen channel
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 3
+   - Dependencies: E03, E05, E06, E07
+   - Notes: Support email/SMS/in-app.
+
+2. Title: Opt-In/Opt-Out per Notification Channel
+   User Story: As a user I want to opt-in or out of notification channels So that I control my communication preferences.
+   Acceptance Criteria:
+   Scenario: Channel opt-in/out
+   Given notification channels are available
+   When I update my preferences
+   Then notifications are sent only to selected channels
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E03, E05, E06, E07
+   - Notes: UI for preferences.
+
+3. Title: Localize Notification Templates
+   User Story: As a multi-lingual user I want notifications localized So that I receive messages in my preferred language.
+   Acceptance Criteria:
+   Scenario: Localized notification
+   Given my language preference is set
+   When a notification is sent
+   Then it is delivered in my chosen language
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E03, E05, E06, E07
+   - Notes: Support for major languages.
+
+4. Title: Track Notification Delivery Status
+   User Story: As an admin I want to track notification delivery status So that failures can be addressed.
+   Acceptance Criteria:
+   Scenario: Delivery status tracking
+   Given notifications are sent
+   When I view the delivery log
+   Then status (delivered, failed, pending) is visible
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 1
+   - Dependencies: E03, E05, E06, E07
+   - Notes: Retry failed notifications.
+
+5. Title: Apply Rate Limits to Notifications
+   User Story: As a system admin I want rate limits on notifications So that users are not spammed.
+   Acceptance Criteria:
+   Scenario: Notification rate limiting
+   Given multiple events occur
+   When notifications are triggered
+   Then rate limits are enforced per user/channel
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 1
+   - Dependencies: E03, E05, E06, E07
+   - Notes: Configurable limits.
+
+---
+
+Epic E13: Integration Layer (HRIS/WMS APIs)
+
+1. Title: Expose REST APIs for HRIS and WMS
+   User Story: As a system integrator I want REST APIs for HRIS and WMS So that master data can be synchronized.
+   Acceptance Criteria:
+   Scenario: API exposure
+   Given the integration layer is enabled
+   When I access the API endpoints
+   Then HRIS and WMS data is available per OpenAPI spec
+   Additional Details:
+   - Priority: High
+   - Story Points: 3
+   - Dependencies: E01, E02, E03
+   - Notes: JWT/OAuth2 secured.
+
+2. Title: Sync Job for HRIS New Hires/Terms
+   User Story: As an HR manager I want new hires and terminations synced from HRIS So that employee records are up to date.
+   Acceptance Criteria:
+   Scenario: HRIS sync job
+   Given new hire/term data in HRIS
+   When the sync job runs
+   Then employee records are created or updated accordingly
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: E01, E02, E03
+   - Notes: Idempotent sync.
+
+3. Title: Link WMS Data for Department/Location
+   User Story: As a warehouse manager I want WMS data linked So that employee assignments reflect actual locations.
+   Acceptance Criteria:
+   Scenario: WMS data link
+   Given department/location data in WMS
+   When I view employee assignments
+   Then WMS data is reflected in the system
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: E01, E02, E03
+   - Notes: API connector.
+
+4. Title: Support Webhooks for Events
+   User Story: As a developer I want webhooks for key events So that external systems can react in real time.
+   Acceptance Criteria:
+   Scenario: Webhook event
+   Given an event occurs (new hire, termination, etc.)
+   When the webhook is triggered
+   Then the external system receives a payload per spec
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: E01, E02, E03
+   - Notes: Documented payloads.
+
+5. Title: Document APIs in OpenAPI Spec
+   User Story: As a developer I want APIs documented in OpenAPI So that integration is straightforward.
+   Acceptance Criteria:
+   Scenario: OpenAPI documentation
+   Given APIs are available
+   When I view the spec
+   Then all endpoints are documented with schemas and examples
+   Additional Details:
+   - Priority: High
+   - Story Points: 1
+   - Dependencies: E01, E02, E03
+   - Notes: Swagger UI.
