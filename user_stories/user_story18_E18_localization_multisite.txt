@@ -1,0 +1,40 @@
+**E18: Localization & Multi-Site**
+
+1. Title: Localize UI and Data
+User Story: As a user, I want the UI and data to be localized so that I can use the system in my preferred language.
+Acceptance Criteria:
+Scenario: Localization
+Given language settings
+When I select a language
+Then all UI and notifications are displayed in that language
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E12
+- Notes: Support multi-site.
+
+2. Title: Multi-Site Configuration
+User Story: As an admin, I want to configure multiple warehouse sites so that operations are managed separately.
+Acceptance Criteria:
+Scenario: Site Configuration
+Given site details
+When I add a new site
+Then it is available for scheduling and reporting
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Support site-specific settings.
+
+3. Title: Site-Specific Reporting
+User Story: As a manager, I want reports to be filtered by site so that I see only relevant data.
+Acceptance Criteria:
+Scenario: Site Reporting
+Given multiple sites
+When I request a report
+Then only data for the selected site is included
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Story 2
+- Notes: Support cross-site comparison.
