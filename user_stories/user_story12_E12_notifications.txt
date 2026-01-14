@@ -1,0 +1,53 @@
+**E12: Notifications & Announcements**
+
+1. Title: Configure Notification Channels
+User Story: As a user, I want to opt-in or out of in-app, email, and SMS notifications so that I receive updates in my preferred way.
+Acceptance Criteria:
+Scenario: Channel Configuration
+Given notification settings
+When I update preferences
+Then notifications are sent only to selected channels
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Support quiet hours.
+
+2. Title: Localize Notification Templates
+User Story: As an admin, I want notification templates to be localized so that users receive messages in their language.
+Acceptance Criteria:
+Scenario: Localization
+Given a template
+When I select a language
+Then notifications are sent in the chosen language
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Support multi-site.
+
+3. Title: Track Notification Delivery Status
+User Story: As an admin, I want to track notification delivery status so that failed deliveries can be retried.
+Acceptance Criteria:
+Scenario: Delivery Tracking
+Given a sent notification
+When delivery fails
+Then it is retried and status is updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Rate limits applied.
+
+4. Title: Announcements Dashboard
+User Story: As a supervisor, I want announcements to be visible on the dashboard so that all staff are informed of important updates.
+Acceptance Criteria:
+Scenario: Announcement Visibility
+Given a new announcement
+When I view the dashboard
+Then the announcement is displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Support read/unread status.
