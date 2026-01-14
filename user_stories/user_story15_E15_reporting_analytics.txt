@@ -1,0 +1,40 @@
+**E15: Reporting & Analytics**
+
+1. Title: Generate Operational Reports
+User Story: As a manager, I want to generate reports on attendance, overtime, leave balances, certification status, and safety KPIs so that I can make data-driven decisions.
+Acceptance Criteria:
+Scenario: Report Generation
+Given report criteria
+When I request a report
+Then the data is filtered and displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Support CSV/PDF export.
+
+2. Title: Role-Based Dashboards
+User Story: As a supervisor, I want dashboards to show relevant metrics based on my role so that I see only what's important to me.
+Acceptance Criteria:
+Scenario: Dashboard Filtering
+Given user role
+When I view the dashboard
+Then only authorized metrics are visible
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Enforce access control.
+
+3. Title: Metrics Endpoints for BI
+User Story: As a BI analyst, I want metrics endpoints so that I can integrate with external BI tools.
+Acceptance Criteria:
+Scenario: Metrics API
+Given a metrics request
+When I call the endpoint
+Then data is returned within 10s for up to 50k rows
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Document API.
