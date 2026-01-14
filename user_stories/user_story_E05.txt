@@ -1,0 +1,66 @@
+Epic E05: Shift & Schedule Management
+
+1. Title: Create and Manage Shift Templates
+   User Story: As an HR manager I want to define recurring shift templates So that scheduling is efficient and consistent.
+   Acceptance Criteria:
+   Scenario: Shift template CRUD
+   Given I have shift details
+   When I create, update, or delete a shift template
+   Then the template is stored and available for assignment
+   Additional Details:
+   - Priority: High
+   - Story Points: 3
+   - Dependencies: E02, E03, E04
+   - Notes: Support rotations.
+
+2. Title: Assign Shifts to Employees
+   User Story: As a supervisor I want to assign shifts to employees So that staffing needs are met.
+   Acceptance Criteria:
+   Scenario: Shift assignment
+   Given shift templates exist
+   When I assign shifts to employees
+   Then assignments are reflected in their schedules
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: E02, E03, E04
+   - Notes: Bulk assignment supported.
+
+3. Title: Detect and Prevent Scheduling Conflicts
+   User Story: As a scheduler I want conflicts detected and prevented So that employees are not double-booked.
+   Acceptance Criteria:
+   Scenario: Conflict detection
+   Given an employee has an existing shift
+   When I try to assign an overlapping shift
+   Then the system prevents the assignment and shows an error
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: E02, E03, E04
+   - Notes: Include blackout dates.
+
+4. Title: Display Personal Upcoming Shifts
+   User Story: As a worker I want to view my upcoming shifts So that I can plan my attendance.
+   Acceptance Criteria:
+   Scenario: View upcoming shifts
+   Given I am logged in
+   When I access my schedule
+   Then my upcoming shifts are displayed
+   Additional Details:
+   - Priority: High
+   - Story Points: 1
+   - Dependencies: E02, E03, E04
+   - Notes: Mobile-friendly view.
+
+5. Title: Generate Audit Entries for Schedule Changes
+   User Story: As a compliance officer I want audit entries for schedule changes So that all modifications are tracked.
+   Acceptance Criteria:
+   Scenario: Audit schedule change
+   Given a shift assignment is created or modified
+   When the change occurs
+   Then an audit entry is generated with actor and timestamp
+   Additional Details:
+   - Priority: High
+   - Story Points: 1
+   - Dependencies: E02, E03, E04
+   - Notes: Link to E14.
