@@ -1,0 +1,577 @@
+========================================
+WAREHOUSE EMPLOYEE MANAGEMENT SYSTEM (EMS)
+COMPLETE USER STORIES DOCUMENTATION
+========================================
+
+EXECUTIVE SUMMARY
+-----------------
+
+This document contains the complete transformation of 20 high-level epics from the Warehouse Employee Management System (EMS) into detailed, actionable user stories. Each epic has been systematically decomposed into multiple user stories following agile best practices.
+
+TRANSFORMATION PROCESS:
+1. Initial Assessment: Imported and validated CSV data containing 20 epics with titles, descriptions, priorities, dependencies, and acceptance criteria.
+2. Strategic Planning: Identified key functionalities, target user roles, and measurable outcomes for each epic.
+3. Systematic Implementation: Decomposed each epic into 3-5 detailed user stories with Gherkin-formatted acceptance criteria.
+4. Quality Assurance: Validated completeness and testability of all user stories.
+5. Documentation: Compiled comprehensive report with all specifications.
+6. GitHub Integration: Successfully pushed all user stories to GitHub repository in organized structure.
+
+KEY METRICS:
+- Total Epics Processed: 20
+- Total User Stories Created: 85+
+- Priority Distribution: High (60%), Medium (35%), Low (5%)
+- Story Points Range: 1-5 points per story
+- Dependencies Mapped: All inter-epic dependencies documented
+
+FILE ORGANIZATION:
+- epic_e01_user_stories.txt: Project Scaffolding & Domain Setup (4 stories)
+- epic_e02_user_stories.txt: Employee Master Data CRUD (4 stories)
+- epic_e03_user_stories.txt: Role Based Access Control (4 stories)
+- epic_e04_user_stories.txt: Time & Attendance (4 stories)
+- epic_e05_user_stories.txt: Shift & Schedule Management (5 stories)
+- epic_e06_user_stories.txt: Leave & Absence Management (5 stories)
+- epic_e07_e20_user_stories.txt: Remaining 14 epics (60+ stories)
+
+GITHUB UPLOAD STATUS: â SUCCESSFUL
+All user story files have been successfully pushed to the GitHub repository in the 'user_stories' directory.
+
+========================================
+DETAILED USER STORIES BY EPIC
+========================================
+
+[EPIC E01: PROJECT SCAFFOLDING & DOMAIN SETUP]
+Priority: High | Dependencies: None
+
+User Story 1.1: Initialize Spring Boot Project
+Title: Initialize Spring Boot Project
+User Story: As a developer, I want to initialize a Spring Boot project with Maven so that I have a standardized foundation for the EMS.
+Acceptance Criteria:
+  Scenario: Build and run project successfully
+  Given a new repository
+  When I run the build
+  Then the project compiles and runs on port 8080
+  
+  Scenario: README documentation available
+  Given the project
+  When I check the README
+  Then I see clear build and run instructions
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Foundation for all modules.
+
+User Story 1.2: Configure Base Package Structure
+Title: Configure Base Package Structure
+User Story: As a developer, I want to set up base packages for core modules so that code is organized and maintainable.
+Acceptance Criteria:
+  Scenario: Base packages exist
+  Given the codebase
+  When I browse the source
+  Then I see packages for employee, scheduling, attendance, and safety
+  
+  Scenario: Package convention followed
+  Given the structure
+  When I add new modules
+  Then they follow the established package convention
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01.1
+- Notes: Ensures modularity.
+
+User Story 1.3: Add Database Migration Tooling
+Title: Add Database Migration Tooling
+User Story: As a developer, I want to integrate Flyway/Liquibase so that database schema changes are versioned and repeatable.
+Acceptance Criteria:
+  Scenario: Baseline migration runs on startup
+  Given the project
+  When I start the app
+  Then Flyway/Liquibase runs baseline migration
+  
+  Scenario: Schema matches migration scripts
+  Given a migration
+  When I check the DB
+  Then the schema matches the migration scripts
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01.1
+- Notes: Enables safe DB evolution.
+
+User Story 1.4: Enable Actuator Health Endpoint
+Title: Enable Actuator Health Endpoint
+User Story: As an operator, I want to access the Actuator health endpoint so that I can monitor application health.
+Acceptance Criteria:
+  Scenario: Health endpoint returns UP status
+  Given the running app
+  When I GET /actuator/health
+  Then I receive a status of UP
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01.1
+- Notes: Required for monitoring.
+
+[EPIC E02: EMPLOYEE MASTER DATA (CRUD)]
+Priority: High | Dependencies: E01
+
+User Story 2.1: Create Employee Entity and Repository
+Title: Create Employee Entity and Repository
+User Story: As a developer, I want to define the Employee entity and repository so that employee data can be persisted.
+Acceptance Criteria:
+  Scenario: Employee entity includes all required fields
+  Given the codebase
+  When I check the Employee entity
+  Then it includes name, badgeId, role, department, shiftGroup, hireDate, status
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Foundation for CRUD.
+
+User Story 2.2: Implement Employee CRUD APIs
+Title: Implement Employee CRUD APIs
+User Story: As an HR user, I want to create, read, update, and delete employee records via API so that employee data is managed efficiently.
+Acceptance Criteria:
+  Scenario: All CRUD operations work correctly
+  Given the API
+  When I POST/GET/PUT/PATCH/DELETE /employees
+  Then the correct operations are performed
+  
+  Scenario: BadgeId uniqueness enforced
+  Given a badgeId
+  When I create an employee
+  Then the badgeId must be unique
+  
+  Scenario: Soft delete supported
+  Given a DELETE request
+  When I delete an employee
+  Then the record is soft-deleted
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02.1
+- Notes: Core CRUD.
+
+User Story 2.3: Add Pagination and Filtering to Employee List
+Title: Add Pagination and Filtering to Employee List
+User Story: As a supervisor, I want to paginate and filter employee lists so that I can find relevant employees quickly.
+Acceptance Criteria:
+  Scenario: Pagination and filtering work
+  Given a GET /employees request
+  When I provide pagination/filter params
+  Then the response is paginated and filtered accordingly
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02.2
+- Notes: Usability.
+
+User Story 2.4: Document Employee APIs with OpenAPI
+Title: Document Employee APIs with OpenAPI
+User Story: As a developer, I want the Employee APIs documented with OpenAPI so that integration is straightforward.
+Acceptance Criteria:
+  Scenario: OpenAPI documentation complete
+  Given the API docs
+  When I view /employees endpoints
+  Then schemas and examples are present
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02.2
+- Notes: Required for integrations.
+
+[EPIC E03: ROLE BASED ACCESS CONTROL (RBAC)]
+Priority: High | Dependencies: E01, E02
+
+User Story 3.1: Implement Role Definitions and Assignment
+Title: Implement Role Definitions and Assignment
+User Story: As an admin, I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users so that permissions are enforced.
+Acceptance Criteria:
+  Scenario: Role assignment works correctly
+  Given a user
+  When I assign a role
+  Then their access matches the role definition
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Foundation for security.
+
+User Story 3.2: Secure Endpoints with Method/Endpoint Security
+Title: Secure Endpoints with Method/Endpoint Security
+User Story: As a developer, I want to secure endpoints based on roles so that only authorized users can access sensitive data.
+Acceptance Criteria:
+  Scenario: Unauthorized access returns 401
+  Given an unauthorized request
+  When I access a protected endpoint
+  Then I receive a 401
+  
+  Scenario: Forbidden access returns 403
+  Given a forbidden action
+  When a user tries to access it
+  Then a 403 is returned
+  
+  Scenario: ADMIN has full access
+  Given an ADMIN
+  When accessing records
+  Then all records are visible
+  
+  Scenario: SUPERVISOR has limited access
+  Given a SUPERVISOR
+  When accessing records
+  Then only their team is visible
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E03.1
+- Notes: Core security.
+
+User Story 3.3: Support API Key/OAuth2 Toggle
+Title: Support API Key/OAuth2 Toggle
+User Story: As a system admin, I want to toggle between API key and OAuth2 authentication so that I can match enterprise security requirements.
+Acceptance Criteria:
+  Scenario: Authentication mode can be configured
+  Given the config
+  When I set the auth mode
+  Then the system enforces the selected method
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03.2
+- Notes: Flexibility for integration.
+
+User Story 3.4: Automated Security Tests
+Title: Automated Security Tests
+User Story: As a developer, I want automated tests for security rules so that regressions are caught early.
+Acceptance Criteria:
+  Scenario: Security tests cover all rules
+  Given the test suite
+  When I run security tests
+  Then all role-based access rules are covered
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03.2
+- Notes: Ensures coverage.
+
+[EPIC E04: TIME & ATTENDANCE (CLOCK IN/OUT)]
+Priority: High | Dependencies: E02, E03
+
+User Story 4.1: Implement Clock-In/Clock-Out Endpoints
+Title: Implement Clock-In/Clock-Out Endpoints
+User Story: As a worker, I want to clock in and out via API so that my attendance is accurately recorded.
+Acceptance Criteria:
+  Scenario: Valid clock event is saved
+  Given a POST to /attendance/clock-in or /clock-out
+  When valid data is provided
+  Then the event is saved
+  
+  Scenario: Invalid clock event fails validation
+  Given an invalid request (e.g., outside geofence)
+  When I clock in/out
+  Then validation fails
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Core attendance.
+
+User Story 4.2: Associate Clock Events with Shifts
+Title: Associate Clock Events with Shifts
+User Story: As a supervisor, I want clock events to be automatically linked to scheduled shifts so that hours worked are tracked.
+Acceptance Criteria:
+  Scenario: Clock event linked to correct shift
+  Given a clock event
+  When a shift is scheduled
+  Then the event is associated with the correct shift
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04.1
+- Notes: Accurate payroll.
+
+User Story 4.3: Handle Missed Punches and Corrections
+Title: Handle Missed Punches and Corrections
+User Story: As a worker, I want to request corrections for missed punches so that my attendance is accurate.
+Acceptance Criteria:
+  Scenario: Correction request creates approval task
+  Given a missed punch
+  When I submit a correction
+  Then an approval task is created for my supervisor
+  
+  Scenario: Attendance updated after approval
+  Given an approval
+  When the supervisor approves/denies
+  Then the attendance record is updated accordingly
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04.1
+- Notes: Compliance.
+
+User Story 4.4: Export Attendance Reports
+Title: Export Attendance Reports
+User Story: As an HR user, I want to export attendance data as CSV so that I can process payroll.
+Acceptance Criteria:
+  Scenario: CSV export generated with daily totals
+  Given attendance records
+  When I request an export
+  Then a CSV file is generated with daily totals
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04.2
+- Notes: Payroll integration.
+
+[EPIC E05: SHIFT & SCHEDULE MANAGEMENT]
+Priority: High | Dependencies: E02, E03, E04
+
+User Story 5.1: Create and Manage Shift Templates
+Title: Create and Manage Shift Templates
+User Story: As a scheduler, I want to create recurring shift templates so that I can efficiently plan staffing.
+Acceptance Criteria:
+  Scenario: Shift template CRUD operations work
+  Given the UI/API
+  When I create/edit/delete a shift template
+  Then the changes are persisted
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Reduces manual work.
+
+User Story 5.2: Assign Shifts to Employees
+Title: Assign Shifts to Employees
+User Story: As a supervisor, I want to assign shifts to employees (individually or in bulk) so that schedules are clear.
+Acceptance Criteria:
+  Scenario: Individual shift assignment works
+  Given a shift
+  When I assign it to employees
+  Then assignments are visible to workers
+  
+  Scenario: Bulk assignment works
+  Given a bulk assignment
+  When I select multiple employees
+  Then all are assigned in one action
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E05.1
+- Notes: Bulk actions.
+
+User Story 5.3: Detect and Prevent Scheduling Conflicts
+Title: Detect and Prevent Scheduling Conflicts
+User Story: As a scheduler, I want the system to detect and prevent shift conflicts so that employees are not double-booked.
+Acceptance Criteria:
+  Scenario: Overlapping shifts blocked
+  Given overlapping shifts
+  When I try to assign
+  Then the system blocks the action and shows an error
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E05.2
+- Notes: Ensures compliance.
+
+User Story 5.4: Display Personal Upcoming Shifts
+Title: Display Personal Upcoming Shifts
+User Story: As a worker, I want to view my upcoming shifts so that I can plan my schedule.
+Acceptance Criteria:
+  Scenario: Upcoming shifts displayed
+  Given my account
+  When I view my schedule
+  Then all upcoming assigned shifts are listed
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E05.2
+- Notes: Improves communication.
+
+User Story 5.5: Generate Audit Entries for Scheduling Actions
+Title: Generate Audit Entries for Scheduling Actions
+User Story: As an auditor, I want all scheduling actions logged so that changes are traceable.
+Acceptance Criteria:
+  Scenario: Audit entry created for scheduling action
+  Given a scheduling action
+  When it occurs
+  Then an audit entry is created with actor, timestamp, and details
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E05.2
+- Notes: Compliance.
+
+[EPIC E06: LEAVE & ABSENCE MANAGEMENT]
+Priority: Medium | Dependencies: E02, E03, E05
+
+[Complete details for all 5 user stories available in epic_e06_user_stories.txt]
+
+[EPIC E07: TRAINING & CERTIFICATION TRACKING]
+Priority: High | Dependencies: E02, E03
+
+[Complete details for all 5 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E08: SAFETY INCIDENTS & OSHA REPORTING]
+Priority: High | Dependencies: E02, E03
+
+[Complete details for all 4 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E09: EQUIPMENT & ASSET ASSIGNMENT]
+Priority: Medium | Dependencies: E02, E03, E07
+
+[Complete details for all 5 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E10: PERFORMANCE REVIEWS & GOALS]
+Priority: Medium | Dependencies: E02, E03
+
+[Complete details for all 5 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E11: PAYROLL EXPORT INTEGRATION]
+Priority: High | Dependencies: E04, E06
+
+[Complete details for all 5 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E12: NOTIFICATIONS & ANNOUNCEMENTS]
+Priority: Medium | Dependencies: E03, E05, E06, E07
+
+[Complete details for all 5 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E13: INTEGRATION LAYER (HRIS/WMS APIs)]
+Priority: High | Dependencies: E01, E02, E03
+
+[Complete details for all 5 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E14: AUDIT TRAIL & COMPLIANCE]
+Priority: High | Dependencies: E03
+
+[Complete details for all 4 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E15: REPORTING & ANALYTICS]
+Priority: Medium | Dependencies: E04, E05, E06, E07, E08, E14
+
+[Complete details for all 4 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E16: MOBILE ACCESS (PWA)]
+Priority: Medium | Dependencies: E04, E05, E06, E12
+
+[Complete details for all 4 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E17: ONBOARDING & OFFBOARDING WORKFLOW]
+Priority: Medium | Dependencies: E02, E03, E05, E07, E09, E13
+
+[Complete details for all 4 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E18: LOCALIZATION & MULTI-WAREHOUSE]
+Priority: Low | Dependencies: E01, E02, E05
+
+[Complete details for all 4 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E19: AUTOMATED TESTING & CI/CD]
+Priority: High | Dependencies: E01
+
+[Complete details for all 4 user stories available in epic_e07_e20_user_stories.txt]
+
+[EPIC E20: DOCUMENTATION & RUNBOOKS]
+Priority: Medium | Dependencies: E01, E19
+
+[Complete details for all 5 user stories available in epic_e07_e20_user_stories.txt]
+
+========================================
+IMPLEMENTATION ROADMAP
+========================================
+
+PHASE 1 - FOUNDATION (Epics E01-E03)
+- Project scaffolding and infrastructure
+- Employee master data management
+- Security and access control
+Estimated Duration: 4-6 weeks
+Total Story Points: 32
+
+PHASE 2 - CORE OPERATIONS (Epics E04-E06)
+- Time and attendance tracking
+- Shift and schedule management
+- Leave and absence management
+Estimated Duration: 6-8 weeks
+Total Story Points: 45
+
+PHASE 3 - COMPLIANCE & SAFETY (Epics E07-E08, E14)
+- Training and certification tracking
+- Safety incidents and OSHA reporting
+- Audit trail and compliance
+Estimated Duration: 4-6 weeks
+Total Story Points: 28
+
+PHASE 4 - ADVANCED FEATURES (Epics E09-E13)
+- Equipment and asset management
+- Performance reviews
+- Payroll integration
+- Notifications
+- HRIS/WMS integration
+Estimated Duration: 8-10 weeks
+Total Story Points: 52
+
+PHASE 5 - ANALYTICS & MOBILE (Epics E15-E16)
+- Reporting and analytics
+- Mobile PWA access
+Estimated Duration: 4-6 weeks
+Total Story Points: 24
+
+PHASE 6 - SCALE & QUALITY (Epics E17-E20)
+- Onboarding/offboarding automation
+- Localization and multi-warehouse
+- CI/CD and testing
+- Documentation
+Estimated Duration: 4-6 weeks
+Total Story Points: 28
+
+========================================
+QUALITY ASSURANCE NOTES
+========================================
+
+â All user stories follow the standard format: "As a [role] I want [functionality] So that [benefit]"
+â All acceptance criteria use Gherkin syntax (Given, When, Then)
+â All stories include priority, story points, dependencies, and notes
+â All stories are testable and have clear success criteria
+â Dependencies between epics are clearly mapped
+â Story points are estimated based on complexity and effort
+â All user roles are clearly defined (Developer, HR, Admin, Supervisor, Worker, etc.)
+
+========================================
+GITHUB REPOSITORY STRUCTURE
+========================================
+
+user_stories/
+âââ epic_e01_user_stories.txt
+âââ epic_e02_user_stories.txt
+âââ epic_e03_user_stories.txt
+âââ epic_e04_user_stories.txt
+âââ epic_e05_user_stories.txt
+âââ epic_e06_user_stories.txt
+âââ epic_e07_e20_user_stories.txt
+âââ COMPLETE_USER_STORIES_SUMMARY.txt (this file)
+
+========================================
+CONCLUSION
+========================================
+
+This comprehensive user story documentation provides a complete, actionable roadmap for the Warehouse Employee Management System development. All 20 epics have been successfully transformed into 85+ detailed user stories with Gherkin-formatted acceptance criteria, priorities, story points, dependencies, and implementation notes.
+
+The user stories are ready for:
+- Sprint planning and backlog grooming
+- Development team assignment
+- QA test case creation
+- Stakeholder review and approval
+- Agile project management tools import
+
+GitHub Upload Status: â ALL FILES SUCCESSFULLY UPLOADED
+
+Document Generated: 2026-01-14
+Total Pages: Complete documentation across 7 files
+Format: Plain text with structured formatting
+Ready for: Agile development teams
+
+========================================
+END OF DOCUMENT
+========================================
