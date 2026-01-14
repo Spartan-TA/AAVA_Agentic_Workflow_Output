@@ -1,0 +1,35 @@
+Title: Role Based Access Control (RBAC)
+
+User Story: As a system administrator I want to enforce role-based access control so that only authorized users can perform sensitive operations and access PII.
+
+Acceptance Criteria:
+Scenario: Unauthorized access
+  Given a user is not authenticated
+  When they access a protected endpoint
+  Then a 401 Unauthorized response is returned
+
+Scenario: Forbidden action
+  Given a user is authenticated but lacks required role
+  When they attempt a restricted action
+  Then a 403 Forbidden response is returned
+
+Scenario: Admin privileges
+  Given an ADMIN user
+  When they access any employee or schedule record
+  Then access is granted
+
+Scenario: Supervisor constraints
+  Given a SUPERVISOR user
+  When they access records outside their team
+  Then access is denied
+
+Scenario: Security configuration
+  Given the system is deployed
+  When API key or OAuth2 is toggled via config
+  Then authentication method changes accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Project Scaffolding & Domain Setup (E01), Employee Master Data (E02)
+- Notes: Security rules must be covered by automated tests.
