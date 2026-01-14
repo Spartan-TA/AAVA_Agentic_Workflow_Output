@@ -1,0 +1,30 @@
+Title: Time & Attendance (Clock In/Out)
+
+User Story: As a warehouse worker I want to clock in and out of my shifts so that my working hours are accurately recorded for payroll and compliance.
+
+Acceptance Criteria:
+Scenario: Clock-in event
+  Given I am scheduled for a shift
+  When I POST to /attendance/clock-in with valid credentials
+  Then my clock-in time and device are recorded and associated with my shift
+
+Scenario: Clock-out event
+  Given I am clocked in
+  When I POST to /attendance/clock-out
+  Then my clock-out time is recorded and total hours are calculated
+
+Scenario: Missed punch correction
+  Given I missed a clock event
+  When I submit a correction request
+  Then an approval task is created for my supervisor
+
+Scenario: Export attendance report
+  Given attendance data exists
+  When I request a CSV export
+  Then the report is generated with daily totals
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee Master Data (E02), Role Based Access Control (E03)
+- Notes: Optional geofence/device capture; corrections workflow required; automatic shift association.
