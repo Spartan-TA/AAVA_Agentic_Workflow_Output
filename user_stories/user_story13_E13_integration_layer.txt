@@ -1,0 +1,53 @@
+**E13: Integration Layer (HRIS/WMS APIs)**
+
+1. Title: Expose JWT/OAuth2-Secured APIs
+User Story: As a system integrator, I want REST APIs to be secured with JWT/OAuth2 so that only authorized systems can access data.
+Acceptance Criteria:
+Scenario: API Security
+Given API credentials
+When I call the API
+Then access is granted or denied based on token validity
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Document endpoints.
+
+2. Title: HRIS Sync Job for Employees
+User Story: As an admin, I want a sync job to create or update employees from HRIS so that master data stays current.
+Acceptance Criteria:
+Scenario: HRIS Sync
+Given new or updated HRIS data
+When the sync job runs
+Then employee records are created or updated
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Story 1
+- Notes: Idempotent sync.
+
+3. Title: WMS Department/Location Link
+User Story: As an admin, I want to link employee records to WMS department/location so that assignments are accurate.
+Acceptance Criteria:
+Scenario: WMS Link
+Given WMS data
+When I link to employee
+Then department/location is updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Validate mapping.
+
+4. Title: Webhooks for Events
+User Story: As a system integrator, I want webhooks for key events so that external systems are notified in real time.
+Acceptance Criteria:
+Scenario: Webhook Trigger
+Given an event
+When it occurs
+Then a webhook is sent to registered endpoints
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Document payloads.
