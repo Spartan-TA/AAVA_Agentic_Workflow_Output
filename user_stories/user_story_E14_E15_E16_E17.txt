@@ -1,0 +1,221 @@
+Epic E14: Audit Trail & Compliance
+
+1. Title: Log Sensitive Changes with Actor and Timestamp
+   User Story: As a compliance officer I want sensitive changes logged with actor and timestamp So that forensic analysis is possible.
+   Acceptance Criteria:
+   Scenario: Audit log entry
+   Given a create/update/delete occurs
+   When the action is performed
+   Then an audit log entry is created with before/after state
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: E03
+   - Notes: Tamper-evident storage.
+
+2. Title: Export Audit Logs by Date/User/Entity
+   User Story: As a compliance officer I want to export audit logs So that I can review activity for compliance.
+   Acceptance Criteria:
+   Scenario: Audit log export
+   Given audit logs exist
+   When I request an export by date/user/entity
+   Then a file is generated with matching entries
+   Additional Details:
+   - Priority: High
+   - Story Points: 1
+   - Dependencies: E03
+   - Notes: CSV/PDF formats.
+
+3. Title: Ensure Immutable Log Table
+   User Story: As a system admin I want audit logs stored immutably So that records cannot be tampered with.
+   Acceptance Criteria:
+   Scenario: Immutable log storage
+   Given audit logs are written
+   When I attempt to modify or delete a log
+   Then the system prevents changes and logs the attempt
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: E03
+   - Notes: Use append-only table.
+
+4. Title: Automated Tests for Audit Coverage
+   User Story: As a QA engineer I want automated tests for audit coverage So that all sensitive actions are logged.
+   Acceptance Criteria:
+   Scenario: Audit test coverage
+   Given sensitive actions are performed
+   When tests are run
+   Then audit log entries are verified for each action
+   Additional Details:
+   - Priority: High
+   - Story Points: 1
+   - Dependencies: E03
+   - Notes: Integration tests.
+
+---
+
+Epic E15: Reporting & Analytics
+
+1. Title: Generate Operational Reports (Attendance, Overtime, Leave)
+   User Story: As a manager I want operational reports So that I can make data-driven decisions.
+   Acceptance Criteria:
+   Scenario: Report generation
+   Given attendance, overtime, and leave data exist
+   When I request a report
+   Then a file is generated with relevant metrics
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 3
+   - Dependencies: E04, E05, E06, E07, E08, E14
+   - Notes: Filter by date/department.
+
+2. Title: Export Reports to CSV/PDF
+   User Story: As a manager I want to export reports So that I can share and archive them.
+   Acceptance Criteria:
+   Scenario: Report export
+   Given a report is generated
+   When I request export
+   Then a CSV or PDF file is created within 10s for up to 50k rows
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E04, E05, E06, E07, E08, E14
+   - Notes: Performance requirement.
+
+3. Title: Role-Based Dashboards
+   User Story: As a user I want dashboards tailored to my role So that I see relevant metrics.
+   Acceptance Criteria:
+   Scenario: Dashboard access
+   Given I am logged in
+   When I access the dashboard
+   Then metrics relevant to my role are displayed
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E04, E05, E06, E07, E08, E14
+   - Notes: HR/admin/supervisor views.
+
+4. Title: Metrics Endpoints for BI Integration
+   User Story: As a BI analyst I want metrics endpoints So that I can integrate with external BI tools.
+   Acceptance Criteria:
+   Scenario: Metrics API
+   Given metrics data exists
+   When I query the endpoint
+   Then data is returned in a format suitable for BI integration
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 1
+   - Dependencies: E04, E05, E06, E07, E08, E14
+   - Notes: JSON/CSV formats.
+
+---
+
+Epic E16: Mobile Access (PWA)
+
+1. Title: Responsive Views for Core Flows
+   User Story: As a worker I want responsive views for clock-in/out, schedules, leave requests, and announcements So that I can use the system on any device.
+   Acceptance Criteria:
+   Scenario: Responsive core flows
+   Given I access the app on mobile
+   When I use core features
+   Then the UI adapts and is fully usable
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 3
+   - Dependencies: E04, E05, E06, E12
+   - Notes: Test on major devices.
+
+2. Title: Installable PWA Manifest
+   User Story: As a worker I want to install the app as a PWA So that I have quick access from my device.
+   Acceptance Criteria:
+   Scenario: PWA installation
+   Given I access the app in a browser
+   When I install it
+   Then it appears as an app on my device
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E04, E05, E06, E12
+   - Notes: Manifest and icons.
+
+3. Title: Offline Queue for Clock Events
+   User Story: As a worker I want clock events queued offline So that my attendance is captured even without connectivity.
+   Acceptance Criteria:
+   Scenario: Offline clock event
+   Given I am offline
+   When I clock in/out
+   Then the event is queued and synced when online
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E04, E05, E06, E12
+   - Notes: Conflict resolution required.
+
+4. Title: Achieve Lighthouse PWA Score â¥ 80
+   User Story: As a product owner I want a high Lighthouse PWA score So that the app meets quality standards.
+   Acceptance Criteria:
+   Scenario: Lighthouse audit
+   Given the PWA is deployed
+   When I run Lighthouse
+   Then the score is at least 80
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 1
+   - Dependencies: E04, E05, E06, E12
+   - Notes: Optimize performance/accessibility.
+
+---
+
+Epic E17: Onboarding & Offboarding Workflow
+
+1. Title: Automate Provisioning for New Hires
+   User Story: As an HR manager I want new hires provisioned automatically So that onboarding is efficient.
+   Acceptance Criteria:
+   Scenario: New hire provisioning
+   Given a new hire appears from HRIS
+   When onboarding starts
+   Then accounts, initial schedule, and required training tasks are created
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 3
+   - Dependencies: E02, E03, E05, E07, E09, E13
+   - Notes: Integration with HRIS.
+
+2. Title: Generate Training and Asset Assignment Tasks
+   User Story: As a supervisor I want training and asset assignment tasks generated for new hires So that compliance is ensured.
+   Acceptance Criteria:
+   Scenario: Task generation
+   Given a new hire is onboarded
+   When onboarding tasks are created
+   Then training and asset assignment tasks are visible in the workflow
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E02, E03, E05, E07, E09, E13
+   - Notes: Link to certification/asset modules.
+
+3. Title: Automate Offboarding Workflow
+   User Story: As an HR manager I want offboarding automated So that access and assets are revoked efficiently.
+   Acceptance Criteria:
+   Scenario: Offboarding automation
+   Given an employee is terminated
+   When offboarding starts
+   Then access is revoked, assets are collected, and schedules updated
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 2
+   - Dependencies: E02, E03, E05, E07, E09, E13
+   - Notes: Audit trail required.
+
+4. Title: Update Schedules and Training Status on Offboarding
+   User Story: As a supervisor I want schedules and training status updated on offboarding So that records are accurate.
+   Acceptance Criteria:
+   Scenario: Schedule/training update
+   Given an employee is offboarded
+   When the workflow completes
+   Then schedules and training status are updated accordingly
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 1
+   - Dependencies: E02, E03, E05, E07, E09, E13
+   - Notes: Compliance check.
