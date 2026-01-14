@@ -1,0 +1,40 @@
+**E19: Advanced Scheduling (AI/ML)**
+
+1. Title: AI-Based Shift Recommendations
+User Story: As a scheduler, I want AI/ML to recommend optimal shift assignments so that staffing is efficient and conflicts are minimized.
+Acceptance Criteria:
+Scenario: AI Shift Recommendation
+Given employee and shift data
+When I request recommendations
+Then the system suggests optimal assignments
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E05
+- Notes: Explain recommendations.
+
+2. Title: Predict Overtime and Coverage Gaps
+User Story: As a manager, I want the system to predict overtime and coverage gaps so that I can proactively adjust schedules.
+Acceptance Criteria:
+Scenario: Overtime Prediction
+Given historical data
+When I view the schedule
+Then overtime risks and gaps are highlighted
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Story 1
+- Notes: Alert on risks.
+
+3. Title: Learn from Historical Scheduling
+User Story: As a scheduler, I want the system to learn from past scheduling decisions so that recommendations improve over time.
+Acceptance Criteria:
+Scenario: Historical Learning
+Given past schedules
+When the AI/ML model trains
+Then future recommendations reflect improved accuracy
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Story 1
+- Notes: Support feedback loop.
