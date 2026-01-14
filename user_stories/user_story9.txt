@@ -1,0 +1,18 @@
+Title: Equipment & Asset Assignment
+
+User Story: As an asset manager I want to assign and track equipment and PPE to employees so that accountability and safe equipment operation are ensured.
+
+Acceptance Criteria:
+Scenario: Asset assignment and tracking
+Given an asset registry
+When I check out or return an asset to an employee
+Then the system blocks assignment if required certifications are invalid
+And maintains asset condition state
+And logs history per asset and employee
+And reports overdue returns
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee Master Data (CRUD), Role-Based Access Control (RBAC), Training & Certification Tracking
+- Notes: Support scanners, forklifts, PPE; CRUD for assets; check-in/out endpoints.
