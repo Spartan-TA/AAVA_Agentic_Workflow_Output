@@ -1,0 +1,15 @@
+Title: Core Domain Package Structure
+
+User Story: As a developer I want to set up base packages for employee, scheduling, attendance, and safety so that code is organized by domain.
+
+Acceptance Criteria:
+Scenario: Package structure
+Given the project is initialized
+When I inspect the source tree
+Then base packages for each core module exist
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project Initialization
+- Notes: Enforces modularity.
