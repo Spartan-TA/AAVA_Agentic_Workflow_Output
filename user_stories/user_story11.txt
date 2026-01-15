@@ -1,0 +1,71 @@
+### E11 - Payroll Export Integration
+
+**User Story 1**
+Title: Generate Payroll-Ready Export Files
+User Story: As a payroll admin I want to generate export files from approved attendance and leave So that payroll processing is automated.
+Acceptance Criteria:
+Scenario: Payroll export
+Given approved attendance and leave records exist
+When I generate an export
+Then the file matches the provider's schema
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Support multiple provider formats
+
+**User Story 2**
+Title: Reconcile Export Totals with Reports
+User Story: As a payroll admin I want to reconcile export totals with system reports So that errors are detected early.
+Acceptance Criteria:
+Scenario: Totals reconciliation
+Given an export is generated
+When I compare totals with reports
+Then all values match
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E11-1
+- Notes: Highlight discrepancies
+
+**User Story 3**
+Title: Secure Delivery of Payroll Files
+User Story: As a system I want to deliver payroll files securely via SFTP or API So that sensitive data is protected.
+Acceptance Criteria:
+Scenario: Secure file delivery
+Given an export file is ready
+When I deliver it via SFTP/API
+Then the transfer is encrypted and logged
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E11-1
+- Notes: Support delivery retries
+
+**User Story 4**
+Title: Retry Failed Deliveries with Backoff
+User Story: As a system I want to retry failed payroll file deliveries with exponential backoff So that transient errors are handled gracefully.
+Acceptance Criteria:
+Scenario: Delivery retry
+Given a delivery fails
+When a retry is attempted
+Then the system waits and retries up to N times
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E11-3
+- Notes: Configurable retry policy
+
+**User Story 5**
+Title: Audit Log for Payroll Exports
+User Story: As a compliance officer I want an audit log for every payroll export So that all actions are traceable.
+Acceptance Criteria:
+Scenario: Export audit log
+Given exports are generated
+When I review the audit log
+Then every export event is recorded with timestamp, user, and status
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E11-1
+- Notes: Log includes delivery status
