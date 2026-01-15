@@ -1,0 +1,71 @@
+### E12 - Notifications & Announcements
+
+**User Story 1**
+Title: Configure Notification Preferences
+User Story: As a user I want to opt-in or out of in-app, email, and SMS notifications So that I control how I receive updates.
+Acceptance Criteria:
+Scenario: Manage notification channels
+Given I am logged in
+When I update my preferences
+Then notifications are sent only via selected channels
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Preferences stored per user
+
+**User Story 2**
+Title: Localize Notification Templates
+User Story: As a system I want notification templates to be localized So that users receive messages in their preferred language.
+Acceptance Criteria:
+Scenario: Localized notifications
+Given my language preference is set
+When I receive a notification
+Then the content is in my language
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E12-1
+- Notes: Support for all supported locales
+
+**User Story 3**
+Title: Track Notification Delivery Status
+User Story: As an admin I want to track the delivery status of notifications So that I can monitor communication effectiveness.
+Acceptance Criteria:
+Scenario: Delivery status tracking
+Given notifications are sent
+When I view the admin dashboard
+Then I see delivery status for each message
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E12-1
+- Notes: Track delivered, failed, pending
+
+**User Story 4**
+Title: Apply Rate Limits to Notifications
+User Story: As a system I want to apply rate limits to notifications So that users are not spammed.
+Acceptance Criteria:
+Scenario: Rate limiting
+Given multiple events trigger notifications
+When the rate limit is reached
+Then further notifications are suppressed until the window resets
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E12-1
+- Notes: Configurable per channel
+
+**User Story 5**
+Title: Display Announcements on Dashboard
+User Story: As a worker I want to see important announcements on my dashboard So that I am informed of critical updates.
+Acceptance Criteria:
+Scenario: Announcements visible
+Given announcements are published
+When I log in
+Then I see all current announcements on my dashboard
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E12-1
+- Notes: Mark announcements as read
