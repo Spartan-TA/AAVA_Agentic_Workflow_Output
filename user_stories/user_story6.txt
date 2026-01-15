@@ -1,0 +1,71 @@
+### E06 - Leave & Absence Management
+
+**User Story 1**
+Title: Request Leave (PTO, Sick, Unpaid)
+User Story: As an employee I want to request different types of leave So that my absences are tracked and approved.
+Acceptance Criteria:
+Scenario: Submit leave request
+Given I am logged in
+When I submit a leave request
+Then the request is recorded and pending approval
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Validate leave type and balance
+
+**User Story 2**
+Title: Approve or Deny Leave Requests
+User Story: As a supervisor I want to approve or deny leave requests So that staffing is maintained.
+Acceptance Criteria:
+Scenario: Leave approval workflow
+Given a leave request is pending
+When I approve or deny the request
+Then the employee is notified and balances are updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E06-1
+- Notes: Approval actions logged
+
+**User Story 3**
+Title: Update Accrual Balances
+User Story: As a payroll system I want leave accrual balances to update automatically So that entitlements are accurate.
+Acceptance Criteria:
+Scenario: Accrual balance update
+Given a leave is approved
+When the payroll period ends
+Then the employee's balance reflects the leave taken
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E06-2
+- Notes: Support different accrual policies
+
+**User Story 4**
+Title: Flag Scheduled Shifts for Coverage
+User Story: As a scheduler I want scheduled shifts to be flagged when an employee is on approved leave So that coverage can be arranged.
+Acceptance Criteria:
+Scenario: Shift flagged for coverage
+Given an employee has approved leave
+When I view the schedule
+Then affected shifts are flagged for coverage
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E06-2
+- Notes: Integrate with shift management
+
+**User Story 5**
+Title: Export Approved Leaves
+User Story: As an HR user I want to export a list of approved leaves So that I can report on absences.
+Acceptance Criteria:
+Scenario: Export leave data
+Given approved leave records exist
+When I request an export
+Then a file is generated with all approved leaves
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E06-2
+- Notes: Support CSV and date range filters
