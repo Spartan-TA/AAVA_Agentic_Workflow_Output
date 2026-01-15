@@ -1,0 +1,12 @@
+Title: Configure Core Domain Packages
+User Story: As a developer I want base packages for employee, scheduling, attendance, and safety So that code is organized and maintainable
+Acceptance Criteria:
+Scenario: Package structure creation
+Given the project scaffold
+When I inspect the source code
+Then core modules are present in their respective packages
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Follows domain-driven design conventions
