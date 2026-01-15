@@ -1,0 +1,71 @@
+### E18 - Localization & Multi-Tenant
+
+**User Story 1**
+Title: Support Tenant ID in All Entities
+User Story: As a system I want every entity to include a tenant ID So that data is isolated per warehouse/region.
+Acceptance Criteria:
+Scenario: Tenant data isolation
+Given multiple tenants exist
+When I query data
+Then only records for my tenant are returned
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Enforce at DB and API layers
+
+**User Story 2**
+Title: Locale Configuration per Tenant
+User Story: As an admin I want to configure locale settings (date/time, currency, language) per tenant So that the system matches local conventions.
+Acceptance Criteria:
+Scenario: Locale config
+Given I manage a tenant
+When I set locale options
+Then all UI and data reflect those settings
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E18-1
+- Notes: Support for multiple locales
+
+**User Story 3**
+Title: Translate UI Strings
+User Story: As a user I want UI strings translated to my language So that I can use the system comfortably.
+Acceptance Criteria:
+Scenario: UI translation
+Given my language is set
+When I use the app
+Then all UI strings are in my language
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E18-2
+- Notes: Use i18n framework
+
+**User Story 4**
+Title: Timezone-Aware Timestamps
+User Story: As a user I want all timestamps to be timezone-aware So that data is accurate for my region.
+Acceptance Criteria:
+Scenario: Timezone handling
+Given my tenant's timezone is set
+When I view timestamps
+Then they are displayed in the correct timezone
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E18-2
+- Notes: Store all times in UTC, display per tenant
+
+**User Story 5**
+Title: Test Multi-Tenant Data Isolation
+User Story: As a QA engineer I want automated tests for tenant isolation So that data leaks are prevented.
+Acceptance Criteria:
+Scenario: Tenant isolation tests
+Given multiple tenants exist
+When I run tests
+Then no data is accessible across tenants
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E18-1
+- Notes: Cover all entities
