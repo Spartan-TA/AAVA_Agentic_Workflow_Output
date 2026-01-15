@@ -1,0 +1,86 @@
+[E05] Shift & Schedule Management
+
+User Story 1
+Title: Create and Manage Shift Templates
+
+User Story: As an HR user, I want to create recurring shift templates so that scheduling is efficient.
+
+Acceptance Criteria:
+Scenario: Shift template CRUD
+Given the scheduling module
+When I create, update, or delete a shift template
+Then the template is saved and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02,E03,E04
+- Notes: Supports rotations and overtime rules
+
+User Story 2
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor, I want to assign shifts to employees so that staffing is planned.
+
+Acceptance Criteria:
+Scenario: Assign shifts
+Given a shift template
+When I assign to employees
+Then assignments are visible in their schedules
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E05-1
+- Notes: Bulk assignment supported
+
+User Story 3
+Title: Detect and Prevent Scheduling Conflicts
+
+User Story: As a system, I want to detect conflicts in shift assignments so that double-booking is avoided.
+
+Acceptance Criteria:
+Scenario: Conflict detection
+Given overlapping shifts
+When I assign to an employee
+Then the system blocks the assignment and shows an error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E05-2
+- Notes: Includes blackout dates
+
+User Story 4
+Title: Display Personal Upcoming Shifts
+
+User Story: As a worker, I want to view my upcoming shifts so that I can plan my work.
+
+Acceptance Criteria:
+Scenario: View schedule
+Given assigned shifts
+When I log in
+Then I see my personal schedule for the next 30 days
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E05-2
+- Notes: Mobile-friendly view
+
+User Story 5
+Title: Generate Audit Entries for Schedule Changes
+
+User Story: As an auditor, I want all schedule changes logged so that compliance is ensured.
+
+Acceptance Criteria:
+Scenario: Audit log for schedules
+Given a schedule change
+When the change is made
+Then an audit entry is created with actor, timestamp, and before/after
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E05-2
+- Notes: Immutable log
