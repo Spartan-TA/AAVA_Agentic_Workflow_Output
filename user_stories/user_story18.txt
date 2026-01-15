@@ -1,0 +1,15 @@
+Title: Leave Request Submission
+
+User Story: As an employee I want to request PTO, sick, or unpaid leave so that my absences are tracked.
+
+Acceptance Criteria:
+Scenario: Submit leave
+Given I have leave balance
+When I submit a request
+Then the request is logged and pending approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02,E03,E05
+- Notes: Accrual policies enforced.
