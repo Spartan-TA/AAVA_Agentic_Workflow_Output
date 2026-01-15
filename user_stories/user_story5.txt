@@ -1,0 +1,71 @@
+### E05 - Shift & Schedule Management
+
+**User Story 1**
+Title: Create and Manage Shift Templates
+User Story: As a supervisor I want to create recurring shift templates and rotations So that scheduling is efficient and consistent.
+Acceptance Criteria:
+Scenario: Shift template CRUD
+Given I have supervisor access
+When I create, update, or delete a shift template
+Then the template is persisted and available for assignment
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Support weekly/daily rotations
+
+**User Story 2**
+Title: Assign Shifts to Employees
+User Story: As a supervisor I want to assign shifts to employees in bulk So that staffing is managed at scale.
+Acceptance Criteria:
+Scenario: Bulk assignment
+Given a list of employees
+When I assign a shift template
+Then all selected employees receive the assignment
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E05-1
+- Notes: Prevent conflicts and double-booking
+
+**User Story 3**
+Title: Detect and Prevent Scheduling Conflicts
+User Story: As a system I want to detect scheduling conflicts So that employees are not double-booked or assigned during blackout dates.
+Acceptance Criteria:
+Scenario: Conflict detection
+Given an employee has an existing shift
+When a conflicting assignment is attempted
+Then the system blocks the action with an error
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E05-2
+- Notes: Blackout dates configurable
+
+**User Story 4**
+Title: Display Personal Upcoming Shifts
+User Story: As a worker I want to view my upcoming shifts So that I can plan my schedule.
+Acceptance Criteria:
+Scenario: View personal schedule
+Given I am logged in
+When I access my schedule
+Then I see all upcoming assigned shifts
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E05-2
+- Notes: Show shift details and location
+
+**User Story 5**
+Title: Generate Audit Entries for Schedule Changes
+User Story: As a compliance officer I want all schedule changes to be logged So that I can review historical changes.
+Acceptance Criteria:
+Scenario: Audit log for schedule
+Given a shift assignment is created, updated, or deleted
+When I review the audit log
+Then I see the actor, timestamp, and before/after values
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E05-2
+- Notes: Integrate with centralized audit trail
