@@ -1,0 +1,71 @@
+### E04 - Time & Attendance (Clock In/Out)
+
+**User Story 1**
+Title: Implement Clock-In Endpoint
+User Story: As a worker I want to clock in via an endpoint with optional geofence and device capture So that my attendance is accurately recorded.
+Acceptance Criteria:
+Scenario: Valid clock-in
+Given I am scheduled for a shift
+When I POST to /attendance/clock-in with valid data
+Then my clock-in is recorded with location and device info
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Validate geofence if enabled
+
+**User Story 2**
+Title: Implement Clock-Out Endpoint
+User Story: As a worker I want to clock out via an endpoint So that my shift end time is captured.
+Acceptance Criteria:
+Scenario: Valid clock-out
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out is recorded and shift duration calculated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04-1
+- Notes: Prevent multiple open shifts
+
+**User Story 3**
+Title: Handle Missed Punches and Corrections
+User Story: As a supervisor I want to correct missed or erroneous clock events So that attendance records are accurate.
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch is detected
+When a correction is submitted
+Then an approval task is created for supervisor review
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04-1
+- Notes: Corrections logged for audit
+
+**User Story 4**
+Title: Calculate Hours Worked per Shift
+User Story: As a payroll system I want to compute total hours worked per shift So that payroll is accurate.
+Acceptance Criteria:
+Scenario: Shift hours calculation
+Given clock-in and clock-out events exist
+When the daily total is computed
+Then the correct number of hours is stored
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E04-2
+- Notes: Account for breaks and overtime
+
+**User Story 5**
+Title: Export Attendance Reports
+User Story: As an HR user I want to export attendance data in CSV format So that I can analyze and share records.
+Acceptance Criteria:
+Scenario: Export attendance
+Given attendance records exist
+When I request an export
+Then a CSV file is generated with all relevant fields
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E04-4
+- Notes: Include filters for date range, employee
