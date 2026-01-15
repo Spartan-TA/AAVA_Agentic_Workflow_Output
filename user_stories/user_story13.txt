@@ -1,0 +1,15 @@
+Title: Attendance Reporting Export
+
+User Story: As an HR admin I want to export attendance reports in CSV so that I can analyze and share data.
+
+Acceptance Criteria:
+Scenario: Export report
+Given attendance data exists
+When I request an export
+Then a CSV file is generated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance Data
+- Notes: Totals computed daily.
