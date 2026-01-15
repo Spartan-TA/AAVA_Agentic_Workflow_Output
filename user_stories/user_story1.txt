@@ -1,0 +1,12 @@
+Title: Initialize Spring Boot Project Structure
+User Story: As a developer I want a standardized Spring Boot project scaffold So that all modules follow consistent structure and build conventions
+Acceptance Criteria:
+Scenario: Project initialization
+Given a new repository
+When I run the build command
+Then the project builds successfully and runs on port 8080
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps
