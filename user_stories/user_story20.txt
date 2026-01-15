@@ -1,0 +1,15 @@
+Title: Leave Integration with Scheduling
+
+User Story: As a scheduler I want approved leaves to auto-flag scheduled shifts so that coverage gaps are visible.
+
+Acceptance Criteria:
+Scenario: Approved leave
+Given an approved leave
+When I view the schedule
+Then affected shifts are flagged for coverage
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave Approval Workflow
+- Notes: Export includes approved leaves.
