@@ -1,0 +1,71 @@
+### E15 - Reporting & Analytics
+
+**User Story 1**
+Title: Generate Operational Reports
+User Story: As a manager I want to generate reports on attendance, overtime, leave balances, certification status, and safety KPIs So that I can make data-driven decisions.
+Acceptance Criteria:
+Scenario: Report generation
+Given relevant data exists
+When I generate a report
+Then the data is accurate and up to date
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Support multiple report types
+
+**User Story 2**
+Title: Filter Reports by Date, Department, and Shift
+User Story: As a user I want to filter reports by date, department, and shift So that I can focus on relevant data.
+Acceptance Criteria:
+Scenario: Report filtering
+Given reports are available
+When I apply filters
+Then only matching records are shown
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E15-1
+- Notes: Filters persist in exports
+
+**User Story 3**
+Title: Export Reports as CSV or PDF
+User Story: As a user I want to export reports in CSV or PDF format So that I can share and archive them.
+Acceptance Criteria:
+Scenario: Report export
+Given a report is generated
+When I export
+Then the file is generated within 10 seconds for up to 50,000 rows
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E15-1
+- Notes: Performance requirement
+
+**User Story 4**
+Title: Restrict Report Access Based on Role
+User Story: As a system I want to control report access based on user role So that sensitive data is protected.
+Acceptance Criteria:
+Scenario: Access control
+Given I lack permission
+When I try to access a restricted report
+Then access is denied
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E15-1
+- Notes: Role-based dashboards
+
+**User Story 5**
+Title: Provide Metrics Endpoints for BI Integration
+User Story: As a BI developer I want metrics endpoints So that I can integrate with external BI tools.
+Acceptance Criteria:
+Scenario: Metrics endpoint
+Given the system is running
+When I call the metrics endpoint
+Then operational metrics are returned in a standard format
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E15-1
+- Notes: Support for Prometheus/Grafana
