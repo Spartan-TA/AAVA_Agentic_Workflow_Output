@@ -1,0 +1,15 @@
+Title: Initialize Spring Boot Project with Maven
+
+User Story: As a developer, I want to initialize a Spring Boot project using Maven so that I have a standardized foundation for all modules.
+
+Acceptance Criteria:
+Scenario: Project builds and runs
+  Given the project is cloned,
+  When I run `mvn clean install` and `mvn spring-boot:run`,
+  Then the application builds and runs on port 8080.
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run instructions.
