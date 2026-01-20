@@ -1,0 +1,25 @@
+Title: Audit Trail & Compliance
+
+User Story: As a compliance officer I want all sensitive changes to be logged in a tamper-evident audit trail so that regulatory and forensic requirements are met.
+
+Acceptance Criteria:
+Scenario: Log sensitive changes
+  Given a create, update, or delete action on sensitive data
+  When the action is performed
+  Then the actor, timestamp, and before/after values are recorded in an immutable log
+
+Scenario: Export audit log
+  Given audit logs exist
+  When I request an export by date, user, or entity
+  Then the relevant logs are exported
+
+Scenario: Coverage tests
+  Given audit logging is implemented
+  When automated tests are run
+  Then all sensitive changes are covered
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: RBAC (E03)
+- Notes: Centralized audit logging; immutable log table; export and test coverage required.
