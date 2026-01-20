@@ -1,0 +1,25 @@
+Title: Payroll Export Integration
+
+User Story: As a payroll administrator I want to generate payroll-ready files from approved attendance and leave records so that payroll runs are accurate and manual processing is minimized.
+
+Acceptance Criteria:
+Scenario: Generate payroll export
+  Given approved attendance and leave data
+  When I request a payroll export
+  Then the file matches the external provider schema and totals reconcile with reports
+
+Scenario: Secure delivery
+  Given a payroll export file
+  When I send it via SFTP or API
+  Then delivery is secure and retried on failure with backoff
+
+Scenario: Audit log
+  Given payroll exports are generated
+  When I review the audit log
+  Then every export is logged with timestamp and status
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Time & Attendance (E04), Leave & Absence Management (E06)
+- Notes: Mapping to provider formats; audit log for every export; failed deliveries retried.
