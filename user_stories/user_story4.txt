@@ -1,0 +1,13 @@
+Title: [User Story 4 Title]
+
+User Story:
+As a [role], I want to [goal], so that [reason].
+
+Acceptance Criteria:
+Given [context], when [action], then [outcome].
+
+Additional Details:
+Priority: [Priority]
+Story Points: [Points]
+Dependencies: [Dependencies]
+Notes: [Any additional notes]
