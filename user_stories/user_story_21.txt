@@ -1,0 +1,23 @@
+Title: Audit Logging for Sensitive Changes
+User Story: As a compliance officer I want all sensitive changes logged with actor, timestamp, and before/after values So that forensic analysis and audits are possible.
+Acceptance Criteria:
+Scenario: Log create/update/delete
+  Given a sensitive change
+  When the action occurs
+  Then an immutable log entry is created
+
+Scenario: Export audit log
+  Given a date/user/entity filter
+  When I export logs
+  Then the correct entries are included
+
+Scenario: Tamper-evident storage
+  Given the log table
+  When I attempt to modify entries
+  Then changes are detected and prevented
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E03
+- Notes: Automated tests validate coverage.
