@@ -1,0 +1,57 @@
+### E03 - Role Based Access Control (RBAC)
+
+**User Story 1: Implement Role-Based Endpoint Security**
+- Title: Secure Endpoints by Role
+- Narrative: As a system admin, I want endpoints secured by role so that only authorized users can access sensitive data.
+- Acceptance Criteria:
+  ```
+  Given a user with a role,
+  When accessing a protected endpoint,
+  Then unauthorized users get 401, forbidden actions get 403, and permitted actions succeed.
+  ```
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Security foundation.
+
+**User Story 2: Method-Level Security**
+- Title: Method-Level Security Enforcement
+- Narrative: As a developer, I want method-level security so that business logic is protected from unauthorized access.
+- Acceptance Criteria:
+  ```
+  Given service methods,
+  When called by users with insufficient roles,
+  Then access is denied.
+  ```
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Defense in depth.
+
+**User Story 3: API Key/OAuth2 Toggle**
+- Title: Configurable API Key/OAuth2 Authentication
+- Narrative: As an admin, I want to toggle between API key and OAuth2 authentication so that integration flexibility is maintained.
+- Acceptance Criteria:
+  ```
+  Given a config setting,
+  When toggled,
+  Then authentication switches between API key and OAuth2.
+  ```
+- Priority: High
+- Story Points: 3
+- Dependencies: Story 1
+- Notes: Integration support.
+
+**User Story 4: Security Test Coverage**
+- Title: Security Test Coverage
+- Narrative: As a QA engineer, I want automated tests for security rules so that vulnerabilities are detected early.
+- Acceptance Criteria:
+  ```
+  Given security rules,
+  When tests are run,
+  Then unauthorized and forbidden scenarios are covered.
+  ```
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Quality assurance.
