@@ -1,0 +1,81 @@
+EPIC E02 - EMPLOYEE MASTER DATA (CRUD)
+
+===========================================
+User Story 1: Create Employee Domain Model
+===========================================
+
+Title: Create Employee Domain Model
+
+User Story: As a developer I want to define the Employee entity with fields name, badgeId, role, department, shiftGroup, hireDate, status So that employee data is standardized.
+
+Acceptance Criteria:
+Scenario: Employee entity creation
+Given the domain model is defined
+When I inspect the database schema
+Then all required fields are present
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Use appropriate data types
+
+===========================================
+User Story 2: Implement Employee CRUD APIs
+===========================================
+
+Title: Implement Employee CRUD APIs
+
+User Story: As an HR user I want to create, read, update, and delete employee records via REST APIs So that employee data is managed efficiently.
+
+Acceptance Criteria:
+Scenario: CRUD operations
+Given valid employee data
+When I call POST/GET/PUT/PATCH/DELETE /employees
+Then the operations succeed and data is persisted
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Create Employee Domain Model
+- Notes: API must support pagination and filtering
+
+===========================================
+User Story 3: Enforce Unique Badge ID
+===========================================
+
+Title: Enforce Unique Badge ID
+
+User Story: As a system admin I want to enforce unique badgeId for employees So that duplicate badge assignments are prevented.
+
+Acceptance Criteria:
+Scenario: Badge ID uniqueness
+Given an existing badgeId
+When I try to create another employee with the same badgeId
+Then the request is rejected with a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Implement Employee CRUD APIs
+- Notes: Error message must be clear
+
+===========================================
+User Story 4: Support Soft-Delete for Employees
+===========================================
+
+Title: Support Soft-Delete for Employees
+
+User Story: As an HR user I want to soft-delete employee records So that historical data is retained for compliance.
+
+Acceptance Criteria:
+Scenario: Soft-delete operation
+Given an employee record
+When I perform a delete action
+Then the status is updated to inactive and record is not physically removed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Implement Employee CRUD APIs
+- Notes: Soft-deleted records excluded from active queries
