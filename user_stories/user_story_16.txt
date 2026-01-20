@@ -1,0 +1,23 @@
+Title: Asset Assignment and Tracking
+User Story: As an asset manager I want to assign equipment and PPE to employees and track their condition So that assets are accounted for and safely used.
+Acceptance Criteria:
+Scenario: Assign asset to employee
+  Given a valid asset and employee
+  When I check out the asset
+  Then the assignment is recorded
+
+Scenario: Prevent assignment if certification missing
+  Given an employee without required cert
+  When I assign restricted equipment
+  Then the system blocks the assignment
+
+Scenario: Asset check-in/out history
+  Given asset assignments
+  When I view asset or employee history
+  Then all check-in/out events are visible
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E07
+- Notes: Overdue returns are reported.
