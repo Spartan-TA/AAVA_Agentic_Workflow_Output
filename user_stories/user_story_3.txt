@@ -1,0 +1,18 @@
+Title: Core Module Setup
+User Story: As a developer I want core modules (employee, scheduling, attendance, safety) created as packages So that future features are logically organized and maintainable.
+Acceptance Criteria:
+Scenario: Core modules exist
+  Given the project is initialized
+  When I inspect the codebase
+  Then packages for employee, scheduling, attendance, and safety are present
+
+Scenario: Modules are empty but ready for implementation
+  Given the base packages exist
+  When I add new classes
+  Then they are placed in the correct module
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Follows agreed package naming conventions.
