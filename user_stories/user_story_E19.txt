@@ -1,0 +1,57 @@
+### E19 - Advanced Scheduling Optimization
+
+**User Story 1: On-Demand Scheduling Solver**
+- Title: Run Constraint-Based Scheduling Solver
+- Narrative: As a scheduler, I want to run a solver for shift assignments so that skills, preferences, and fairness are considered.
+- Acceptance Criteria:
+  ```
+  Given scheduling constraints,
+  When solver is run,
+  Then feasible schedules are generated within 30 seconds for 500 employees.
+  ```
+- Priority: Low
+- Story Points: 5
+- Dependencies: E05, E07
+- Notes: Optimization.
+
+**User Story 2: Manual Override of Solver Results**
+- Title: Manual Override of Schedules
+- Narrative: As a scheduler, I want to manually tweak solver results so that exceptions are handled.
+- Acceptance Criteria:
+  ```
+  Given solver output,
+  When I make manual changes,
+  Then overrides are saved and tracked.
+  ```
+- Priority: Low
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Flexibility.
+
+**User Story 3: Coverage Metrics for Schedules**
+- Title: Display Coverage Metrics
+- Narrative: As a manager, I want coverage metrics for schedules so that staffing adequacy is visible.
+- Acceptance Criteria:
+  ```
+  Given a schedule,
+  When viewed,
+  Then coverage metrics (skills, demand) are displayed.
+  ```
+- Priority: Low
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Decision support.
+
+**User Story 4: Performance Testing for Solver**
+- Title: Test Solver Performance
+- Narrative: As a QA engineer, I want tests for solver performance so that SLAs are met.
+- Acceptance Criteria:
+  ```
+  Given solver tests,
+  When run,
+  Then schedules for 500 employees are generated in under 30 seconds.
+  ```
+- Priority: Low
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: Reliability.
