@@ -1,0 +1,71 @@
+### E02 - Employee Master Data (CRUD)
+
+**User Story 1: Create Employee Entity and API**
+- Title: Employee Entity and CRUD API
+- Narrative: As an HR user, I want to create, read, update, and delete employee records so that employee data is managed centrally.
+- Acceptance Criteria:
+  ```
+  Given the API,
+  When I POST/GET/PUT/PATCH/DELETE /employees,
+  Then employee records are created, retrieved, updated, and soft-deleted.
+  ```
+- Priority: High
+- Story Points: 5
+- Dependencies: E01
+- Notes: Core employee management.
+
+**User Story 2: Enforce Unique Badge ID**
+- Title: Unique Badge ID Enforcement
+- Narrative: As an HR user, I want each employee to have a unique badgeId so that identification is reliable.
+- Acceptance Criteria:
+  ```
+  Given an employee record,
+  When I try to create another with the same badgeId,
+  Then the API returns a validation error.
+  ```
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Prevents duplicates.
+
+**User Story 3: Implement Pagination and Filtering**
+- Title: Employee List Pagination and Filtering
+- Narrative: As an HR user, I want to paginate and filter employee lists so that I can efficiently find records.
+- Acceptance Criteria:
+  ```
+  Given multiple employees,
+  When I GET /employees with pagination and filter params,
+  Then I receive a paginated, filtered list.
+  ```
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Scalability.
+
+**User Story 4: Soft Delete Employee Records**
+- Title: Soft Delete Employees
+- Narrative: As an HR user, I want to soft-delete employees so that records are retained for audit.
+- Acceptance Criteria:
+  ```
+  Given an employee,
+  When I DELETE /employees/{id},
+  Then the employee is marked as deleted but not removed from the database.
+  ```
+- Priority: High
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: Compliance.
+
+**User Story 5: OpenAPI Schema Documentation**
+- Title: Document Employee API with OpenAPI
+- Narrative: As a developer, I want the employee API documented in OpenAPI so that consumers understand endpoints and payloads.
+- Acceptance Criteria:
+  ```
+  Given the API,
+  When I view the OpenAPI docs,
+  Then all employee endpoints and examples are present.
+  ```
+- Priority: High
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: API clarity.
