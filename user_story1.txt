@@ -1,0 +1,75 @@
+### E01: Project Scaffolding & Domain Setup
+
+**User Story 1**
+Title: Spring Boot Project Initialization
+
+User Story: As a SYSTEM I want the EMS project to be initialized using Spring Boot with Maven So that all modules have a standardized foundation for development.
+
+Acceptance Criteria:
+Scenario: Project Initialization
+Given a new repository
+When I run the build and start the application
+Then the project builds successfully and runs on port 8080
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps
+
+---
+
+**User Story 2**
+Title: Base Package Structure Setup
+
+User Story: As a DEVELOPER I want the base package structure for core modules to be created So that future development is organized and consistent.
+
+Acceptance Criteria:
+Scenario: Package Structure Verification
+Given the project is initialized
+When I inspect the source code
+Then the base packages for employee, scheduling, attendance, and safety modules exist
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Structure should follow domain-driven design
+
+---
+
+**User Story 3**
+Title: Database Migration Tool Integration
+
+User Story: As a SYSTEM I want Flyway or Liquibase configured for database migrations So that schema changes are versioned and repeatable.
+
+Acceptance Criteria:
+Scenario: Migration Execution
+Given the application starts
+When Flyway/Liquibase runs
+Then the baseline migration is applied to the database
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Baseline migration must succeed on fresh DB
+
+---
+
+**User Story 4**
+Title: Health Endpoint Availability
+
+User Story: As a DEVOPS ENGINEER I want the Actuator health endpoint enabled So that I can monitor the application's health status.
+
+Acceptance Criteria:
+Scenario: Health Check
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns status UP
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: Should be accessible without authentication for initial setup
