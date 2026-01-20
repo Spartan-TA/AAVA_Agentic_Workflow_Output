@@ -1,0 +1,23 @@
+Title: Payroll Export Generation
+User Story: As a payroll administrator I want to generate payroll-ready files from attendance and leave data So that payroll processing is accurate and efficient.
+Acceptance Criteria:
+Scenario: Generate payroll export
+  Given approved attendance and leave
+  When I run the export
+  Then the file matches provider schema
+
+Scenario: Secure delivery
+  Given a generated file
+  When I select SFTP or API delivery
+  Then the file is securely transmitted
+
+Scenario: Export audit log
+  Given exports are run
+  When I review the log
+  Then all exports and delivery attempts are recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E04, E06
+- Notes: Failed deliveries retried with backoff.
