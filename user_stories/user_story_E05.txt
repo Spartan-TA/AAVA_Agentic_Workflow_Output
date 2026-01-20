@@ -1,0 +1,76 @@
+EPIC E05: Shift & Schedule Management
+
+===========================================
+
+Title: Shift Template Creation
+User Story: As an HR manager, I want to create recurring shift templates so that I can efficiently assign standard schedules to employees.
+Acceptance Criteria:
+Scenario: Create shift template
+Given I am on the shift management page
+When I create a new shift template with start/end times and recurrence
+Then the template is saved and available for assignment
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03, E04
+- Notes: Support for daily/weekly recurrence.
+
+---
+
+Title: Shift Assignment
+User Story: As a supervisor, I want to bulk-assign shifts to employees so that I can ensure adequate staffing.
+Acceptance Criteria:
+Scenario: Bulk shift assignment
+Given I have selected employees
+When I assign a shift template
+Then the system assigns shifts and detects any conflicts
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E02, E03, E04
+- Notes: Conflict detection required.
+
+---
+
+Title: Blackout Date Management
+User Story: As an operations manager, I want to set blackout dates on the warehouse calendar so that shifts are not scheduled during closures.
+Acceptance Criteria:
+Scenario: Set blackout dates
+Given I set a blackout date
+When I save the calendar
+Then no shifts can be assigned on those dates
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Calendar UI integration.
+
+---
+
+Title: Upcoming Shifts Dashboard
+User Story: As a worker, I want to view my upcoming shifts so that I can plan my attendance.
+Acceptance Criteria:
+Scenario: View upcoming shifts
+Given I log in
+When I navigate to my schedule
+Then I see all upcoming assigned shifts
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Mobile-friendly view.
+
+---
+
+Title: Shift Change Auditing
+User Story: As an auditor, I want all shift assignments and changes to be logged so that compliance is maintained.
+Acceptance Criteria:
+Scenario: Audit shift changes
+Given a shift assignment or change occurs
+When I review audit logs
+Then I see actor, timestamp, and before/after details
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E14
+- Notes: Tamper-evident logs.
