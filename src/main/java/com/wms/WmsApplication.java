@@ -1,0 +1,17 @@
+package com.wms;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+
+/**
+ * Main entry point for the Warehouse Employee Management System Spring Boot application.
+ * Enables configuration properties and component scanning for all modules.
+ */
+@SpringBootApplication
+@EnableConfigurationProperties
+public class WmsApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(WmsApplication.class, args);
+    }
+}
