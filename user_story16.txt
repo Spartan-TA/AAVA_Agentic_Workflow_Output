@@ -1,0 +1,75 @@
+### E16: Mobile Access (PWA)
+
+**User Story 1**
+Title: Mobile Clock-In/Out
+
+User Story: As a WORKER I want to clock in/out from my mobile device So that attendance is convenient.
+
+Acceptance Criteria:
+Scenario: Mobile Clock-In
+Given mobile access
+When I clock in/out
+Then the event is recorded as on desktop
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Responsive UI required
+
+---
+
+**User Story 2**
+Title: Mobile Shift and Leave Management
+
+User Story: As a WORKER I want to view schedules and request leave from mobile So that I manage my work-life balance easily.
+
+Acceptance Criteria:
+Scenario: Mobile Schedule/Leave
+Given mobile access
+When I view shifts or request leave
+Then the actions are available and usable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Offline-friendly via PWA
+
+---
+
+**User Story 3**
+Title: Mobile Announcements
+
+User Story: As a WORKER I want to receive announcements on mobile So that I stay informed on the go.
+
+Acceptance Criteria:
+Scenario: Mobile Announcement
+Given active announcements
+When I access my mobile dashboard
+Then announcements are displayed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: Push notifications supported
+
+---
+
+**User Story 4**
+Title: PWA Manifest and Lighthouse Score
+
+User Story: As a SYSTEM I want the EMS to be installable as a PWA and score well on Lighthouse So that mobile usability is maximized.
+
+Acceptance Criteria:
+Scenario: PWA Installability
+Given the application
+When I install as PWA
+Then it passes Lighthouse PWA checks
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: Offline queue for clock events with conflict resolution
