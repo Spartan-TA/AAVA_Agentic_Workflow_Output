@@ -1,0 +1,18 @@
+Title: Database Migration Integration
+User Story: As a developer I want Flyway or Liquibase integrated for DB migrations So that database changes are versioned and repeatable across environments.
+Acceptance Criteria:
+Scenario: Baseline migration runs on startup
+  Given a clean database
+  When the application starts
+  Then Flyway/Liquibase applies the baseline migration without errors
+
+Scenario: Migration scripts are tracked
+  Given new migration scripts are added
+  When the application is deployed
+  Then migrations are applied in order and schema is up to date
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Migration tool choice documented in README.
