@@ -1,0 +1,31 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: warehouse-employee-mgmt
+  datasource:
+    url: jdbc:postgresql://localhost:5432/warehouse_db
+    username: warehouse_user
+    password: warehouse_pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  flyway:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["health", "info", "metrics"]
+jwt:
+  secret: "SuperSecretJWTKeyForWarehouseEmployeeMgmtSystem2024"
+  expiration: 86400000 # 24 hours in milliseconds
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.company.warehouse: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %logger{36} - %msg%n"
