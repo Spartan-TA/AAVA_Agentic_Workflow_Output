@@ -1,0 +1,81 @@
+EPIC E01 - PROJECT SCAFFOLDING & DOMAIN SETUP
+
+===========================================
+User Story 1: Initialize Spring Boot Project Structure
+===========================================
+
+Title: Initialize Spring Boot Project Structure
+
+User Story: As a developer I want to initialize a Spring Boot project with Maven So that the EMS backend has a standardized, maintainable foundation.
+
+Acceptance Criteria:
+Scenario: Project initialization
+Given a clean development environment
+When I run the build command
+Then the project builds and runs on port 8080
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps
+
+===========================================
+User Story 2: Configure Core Domain Modules
+===========================================
+
+Title: Configure Core Domain Modules
+
+User Story: As a developer I want to set up base packages for employee, scheduling, attendance, and safety modules So that the codebase is organized for future development.
+
+Acceptance Criteria:
+Scenario: Base package structure
+Given the project is initialized
+When I inspect the codebase
+Then core modules are present in their respective packages
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Initialize Spring Boot Project Structure
+- Notes: Follows domain-driven design
+
+===========================================
+User Story 3: Enable Actuator & Health Endpoint
+===========================================
+
+Title: Enable Actuator & Health Endpoint
+
+User Story: As an ops engineer I want to enable Spring Boot Actuator So that I can monitor application health.
+
+Acceptance Criteria:
+Scenario: Health endpoint
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns UP
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Initialize Spring Boot Project Structure
+- Notes: Health endpoint must be documented
+
+===========================================
+User Story 4: Set Up DB Migration Tool
+===========================================
+
+Title: Set Up DB Migration Tool
+
+User Story: As a developer I want to add Flyway/Liquibase for database migrations So that schema changes are versioned and repeatable.
+
+Acceptance Criteria:
+Scenario: Baseline migration
+Given the migration tool is configured
+When I start the application
+Then baseline migration runs successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Initialize Spring Boot Project Structure
+- Notes: Migration scripts must be in version control
