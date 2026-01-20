@@ -1,0 +1,61 @@
+EPIC E03 - ROLE BASED ACCESS CONTROL (RBAC)
+
+===========================================
+User Story 1: Implement Role-Based Endpoint Security
+===========================================
+
+Title: Implement Role-Based Endpoint Security
+
+User Story: As a system admin I want to restrict API access based on user roles (ADMIN, HR, SUPERVISOR, WORKER) So that sensitive operations are protected.
+
+Acceptance Criteria:
+Scenario: Role-based access
+Given a user with a specific role
+When they access a protected endpoint
+Then permissions are enforced and unauthorized requests return 401/403
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Security rules must be covered by tests
+
+===========================================
+User Story 2: Configure Row-Level Security for Supervisors
+===========================================
+
+Title: Configure Row-Level Security for Supervisors
+
+User Story: As a supervisor I want to access only my team's records So that data privacy is maintained.
+
+Acceptance Criteria:
+Scenario: Row-level constraints
+Given a supervisor user
+When they query employee data
+Then only records for their team are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Implement Role-Based Endpoint Security
+- Notes: Team assignment logic required
+
+===========================================
+User Story 3: Support API Key/OAuth2 Toggle
+===========================================
+
+Title: Support API Key/OAuth2 Toggle
+
+User Story: As a system admin I want to toggle between API key and OAuth2 authentication via config So that integration flexibility is provided.
+
+Acceptance Criteria:
+Scenario: Auth method toggle
+Given a config change
+When I restart the application
+Then the selected authentication method is active
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Implement Role-Based Endpoint Security
+- Notes: Document configuration steps
