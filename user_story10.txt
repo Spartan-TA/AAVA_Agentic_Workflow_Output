@@ -1,0 +1,75 @@
+### E10: Performance Reviews & Goals
+
+**User Story 1**
+Title: Review Cycle Creation
+
+User Story: As an HR I want to create quarterly and annual review cycles So that employee performance is evaluated regularly.
+
+Acceptance Criteria:
+Scenario: Create Review Cycle
+Given review template details
+When I create a cycle
+Then employees are assigned to the review
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Templates include competencies, goals
+
+---
+
+**User Story 2**
+Title: Review Submission Workflow
+
+User Story: As a SUPERVISOR I want to submit and acknowledge performance reviews So that feedback is documented.
+
+Acceptance Criteria:
+Scenario: Submit Review
+Given an assigned review
+When I submit ratings and comments
+Then the review is recorded and acknowledged by employee
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Workflow includes supervisor and employee sign-off
+
+---
+
+**User Story 3**
+Title: PDF Export of Reviews
+
+User Story: As an HR I want to export completed reviews as PDFs So that records are archived and shared.
+
+Acceptance Criteria:
+Scenario: Export Review PDF
+Given a completed review
+When I request a PDF export
+Then the review is generated as a PDF
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Story 2
+- Notes: Immutable history after sign-off
+
+---
+
+**User Story 4**
+Title: Role-Based Review Visibility
+
+User Story: As an ADMIN I want to control visibility of reviews So that only authorized users access sensitive feedback.
+
+Acceptance Criteria:
+Scenario: Review Access Control
+Given review data
+When I access reviews as different roles
+Then visibility is restricted based on role
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: HR and supervisor access only
