@@ -1,0 +1,75 @@
+### E07: Training & Certification Tracking
+
+**User Story 1**
+Title: Certification CRUD Operations
+
+User Story: As an HR I want to manage employee certifications So that compliance and safety are ensured.
+
+Acceptance Criteria:
+Scenario: Manage Certifications
+Given employee certification data
+When I create, update, or delete a certification
+Then the changes are reflected in the employee profile
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Proof documents can be uploaded
+
+---
+
+**User Story 2**
+Title: Certification Expiry Alerts
+
+User Story: As a SUPERVISOR I want to receive alerts for expiring certifications So that renewals are handled proactively.
+
+Acceptance Criteria:
+Scenario: Expiry Alert
+Given a certification expiring in 30 or 7 days
+When the alert job runs
+Then notifications are sent to relevant users
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: Alerts visible in-app and via email/SMS
+
+---
+
+**User Story 3**
+Title: Assignment Blocking for Expired Certifications
+
+User Story: As a SYSTEM I want to block assignment to tasks requiring valid certifications So that only qualified staff are assigned.
+
+Acceptance Criteria:
+Scenario: Assignment Block
+Given an expired certification
+When I attempt to assign a task requiring certification
+Then the system blocks the assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Status visible on employee profile
+
+---
+
+**User Story 4**
+Title: Certification Status Visibility
+
+User Story: As an HR I want to view certification status on employee profiles So that qualification is easily verified.
+
+Acceptance Criteria:
+Scenario: View Certification Status
+Given an employee profile
+When I view the profile
+Then all certifications and their status are displayed
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: Expiry dates and proof documents shown
