@@ -1,0 +1,81 @@
+EPIC E04 - TIME & ATTENDANCE (CLOCK IN/OUT)
+
+===========================================
+User Story 1: Implement Clock-In/Clock-Out Endpoints
+===========================================
+
+Title: Implement Clock-In/Clock-Out Endpoints
+
+User Story: As a warehouse worker I want to clock in and out via mobile or kiosk So that my attendance is accurately recorded.
+
+Acceptance Criteria:
+Scenario: Clock-in event
+Given a valid employee and device
+When I POST to /attendance/clock-in
+Then the event is validated and recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Geofence/device capture optional
+
+===========================================
+User Story 2: Calculate Hours Worked Per Shift
+===========================================
+
+Title: Calculate Hours Worked Per Shift
+
+User Story: As a payroll admin I want to see total hours worked per shift So that payroll calculations are accurate.
+
+Acceptance Criteria:
+Scenario: Shift hours calculation
+Given clock-in and clock-out events
+When I view the daily attendance report
+Then total hours are computed per employee
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Implement Clock-In/Clock-Out Endpoints
+- Notes: Handle overnight shifts
+
+===========================================
+User Story 3: Handle Missed Punches & Corrections
+===========================================
+
+Title: Handle Missed Punches & Corrections
+
+User Story: As a supervisor I want to approve corrections for missed punches So that attendance records are accurate.
+
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch
+When an employee submits a correction
+Then an approval task is created for supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Implement Clock-In/Clock-Out Endpoints
+- Notes: Corrections must be auditable
+
+===========================================
+User Story 4: Export Attendance Reports
+===========================================
+
+Title: Export Attendance Reports
+
+User Story: As an HR user I want to export attendance reports in CSV format So that records can be shared with payroll.
+
+Acceptance Criteria:
+Scenario: Report export
+Given attendance data
+When I request a CSV export
+Then the file is generated and downloadable
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Calculate Hours Worked Per Shift
+- Notes: Export must include all relevant fields
