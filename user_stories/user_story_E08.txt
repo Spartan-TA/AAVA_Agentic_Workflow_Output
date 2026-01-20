@@ -1,0 +1,57 @@
+### E08 - Safety Incidents & OSHA Reporting
+
+**User Story 1: Record Safety Incidents**
+- Title: Record Safety Incidents and Near-Misses
+- Narrative: As a supervisor, I want to record safety incidents and near-misses so that risks are tracked.
+- Acceptance Criteria:
+  ```
+  Given an incident,
+  When I POST /safety/incidents,
+  Then the incident is validated and saved.
+  ```
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Safety tracking.
+
+**User Story 2: Investigation Workflow**
+- Title: Safety Incident Investigation Workflow
+- Narrative: As a safety officer, I want a workflow for investigating incidents so that corrective actions are taken.
+- Acceptance Criteria:
+  ```
+  Given an open incident,
+  When investigation is started,
+  Then status updates to Investigating and actions are logged.
+  ```
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Compliance.
+
+**User Story 3: OSHA 300/300A Export**
+- Title: Export OSHA Reports
+- Narrative: As a compliance officer, I want to export OSHA 300/300A reports so that regulatory requirements are met.
+- Acceptance Criteria:
+  ```
+  Given incident data,
+  When I request an export,
+  Then OSHA 300/300A fields are generated.
+  ```
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Regulatory reporting.
+
+**User Story 4: Safety Metrics Dashboard**
+- Title: Safety Metrics Dashboard
+- Narrative: As a manager, I want a dashboard of safety metrics so that I can monitor trends.
+- Acceptance Criteria:
+  ```
+  Given incident data,
+  When I view the dashboard,
+  Then metrics are displayed (counts, severity, status).
+  ```
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Data-driven safety.
