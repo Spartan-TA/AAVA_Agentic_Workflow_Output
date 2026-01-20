@@ -1,0 +1,28 @@
+Title: Role-Based Access Control Enforcement
+User Story: As a system administrator I want to restrict API access based on user roles So that only authorized users can perform sensitive operations.
+Acceptance Criteria:
+Scenario: Unauthorized access returns 401
+  Given no authentication
+  When I access a protected endpoint
+  Then I receive a 401 Unauthorized response
+
+Scenario: Forbidden actions return 403
+  Given a user with insufficient role
+  When I attempt a restricted action
+  Then I receive a 403 Forbidden response
+
+Scenario: ADMIN can manage all records
+  Given an ADMIN user
+  When they access any endpoint
+  Then all actions are permitted
+
+Scenario: SUPERVISOR limited to team
+  Given a SUPERVISOR user
+  When they access employee data
+  Then only team members are visible/editable
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Security rules covered by automated tests.
