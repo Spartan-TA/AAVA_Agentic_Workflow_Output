@@ -1,0 +1,75 @@
+### E15: Reporting & Analytics
+
+**User Story 1**
+Title: Attendance and Overtime Reports
+
+User Story: As an HR I want to generate attendance and overtime reports So that staffing decisions are data-driven.
+
+Acceptance Criteria:
+Scenario: Generate Attendance Report
+Given attendance data
+When I filter by date, department, shift
+Then the report is generated and exportable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Export within 10s for up to 50k rows
+
+---
+
+**User Story 2**
+Title: Certification Status Report
+
+User Story: As a SUPERVISOR I want to report on employee certification status So that compliance gaps are identified.
+
+Acceptance Criteria:
+Scenario: Certification Report
+Given certification data
+When I request a report
+Then all employees with expired or expiring certs are listed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: Exportable in CSV/PDF
+
+---
+
+**User Story 3**
+Title: Safety KPI Dashboard
+
+User Story: As a SAFETY OFFICER I want to view safety KPIs So that incident trends are monitored.
+
+Acceptance Criteria:
+Scenario: View Safety KPIs
+Given incident data
+When I access the dashboard
+Then safety metrics are displayed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: Metrics endpoints available for BI
+
+---
+
+**User Story 4**
+Title: Role-Based Dashboard Access
+
+User Story: As an ADMIN I want dashboards to be access-controlled So that sensitive data is only visible to authorized users.
+
+Acceptance Criteria:
+Scenario: Dashboard Access Control
+Given dashboard endpoints
+When accessed by different roles
+Then access is restricted appropriately
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: HR, supervisor, safety officer roles
