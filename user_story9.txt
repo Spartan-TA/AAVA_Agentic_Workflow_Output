@@ -1,0 +1,75 @@
+### E09: Equipment & Asset Assignment
+
+**User Story 1**
+Title: Asset Registry Management
+
+User Story: As an ADMIN I want to manage the asset registry So that equipment assignments are tracked.
+
+Acceptance Criteria:
+Scenario: Asset CRUD
+Given asset details
+When I create, update, or delete an asset
+Then the registry reflects the changes
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Includes scanners, forklifts, PPE
+
+---
+
+**User Story 2**
+Title: Asset Check-In/Check-Out
+
+User Story: As a SUPERVISOR I want to check assets in and out to employees So that accountability is maintained.
+
+Acceptance Criteria:
+Scenario: Asset Assignment
+Given an available asset and qualified employee
+When I assign the asset
+Then the check-out is recorded and history updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Blocks assignment if certification invalid
+
+---
+
+**User Story 3**
+Title: Asset Condition Tracking
+
+User Story: As a WORKER I want to report asset condition So that maintenance needs are flagged.
+
+Acceptance Criteria:
+Scenario: Report Asset Condition
+Given a checked-out asset
+When I submit a condition report
+Then the asset state is updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Story 2
+- Notes: Condition history visible per asset
+
+---
+
+**User Story 4**
+Title: Overdue Asset Return Reporting
+
+User Story: As an ADMIN I want to generate reports of overdue asset returns So that lost or unreturned equipment is identified.
+
+Acceptance Criteria:
+Scenario: Overdue Asset Report
+Given asset assignment data
+When I request a report
+Then overdue returns are listed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Story 2
+- Notes: History log per asset and employee
