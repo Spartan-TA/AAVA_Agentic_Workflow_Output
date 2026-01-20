@@ -1,0 +1,75 @@
+### E06: Leave & Absence Management
+
+**User Story 1**
+Title: Leave Request Submission
+
+User Story: As a WORKER I want to request PTO, sick, or unpaid leave So that my time off is tracked and approved.
+
+Acceptance Criteria:
+Scenario: Submit Leave Request
+Given available leave balance
+When I submit a leave request
+Then the request is created and pending approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Accrual policies enforced
+
+---
+
+**User Story 2**
+Title: Leave Approval Workflow
+
+User Story: As a SUPERVISOR I want to approve or deny leave requests So that staffing plans remain accurate.
+
+Acceptance Criteria:
+Scenario: Approve Leave
+Given a pending leave request
+When I approve or deny
+Then the employee's leave balance updates accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Approval triggers schedule coverage flag
+
+---
+
+**User Story 3**
+Title: Leave Balance Tracking
+
+User Story: As an HR I want to track leave accruals and balances So that compliance is maintained.
+
+Acceptance Criteria:
+Scenario: Leave Balance Update
+Given an approved leave
+When the leave is processed
+Then the employee's balance is updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Story 1, Story 2
+- Notes: Integration hooks for payroll and scheduling
+
+---
+
+**User Story 4**
+Title: Leave Export Reporting
+
+User Story: As an HR I want to export approved leaves for payroll So that time off is accurately reflected in payroll runs.
+
+Acceptance Criteria:
+Scenario: Leave Export
+Given approved leave records
+When I request an export
+Then the report includes all approved leaves
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: All leave stories
+- Notes: Export format matches payroll requirements
