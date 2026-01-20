@@ -1,0 +1,94 @@
+### E20: Self-Service Portal
+
+**User Story 1**
+Title: Employee Self-Service Portal
+
+User Story: As a WORKER I want a portal to view my data, request leave, and see announcements So that I manage my employment independently.
+
+Acceptance Criteria:
+Scenario: Employee Portal Access
+Given valid credentials
+When I log in to the portal
+Then I can view my profile, schedule, leave, and announcements
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E04, E05, E06, E12
+- Notes: Mobile and desktop support
+
+---
+
+**User Story 2**
+Title: Supervisor Self-Service Portal
+
+User Story: As a SUPERVISOR I want a portal to manage team schedules, approve leave, and assign shifts So that I efficiently manage my team.
+
+Acceptance Criteria:
+Scenario: Supervisor Portal Access
+Given valid credentials
+When I log in to the portal
+Then I can manage team data, schedules, and approvals
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Story 1
+- Notes: Role-based access enforced
+
+---
+
+**User Story 3**
+Title: Portal Customization
+
+User Story: As an ADMIN I want to customize portal features per role So that user experience is tailored.
+
+Acceptance Criteria:
+Scenario: Portal Feature Customization
+Given role configurations
+When I update portal settings
+Then features are enabled/disabled per role
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1, Story 2
+- Notes: Feature flags supported
+
+---
+
+**User Story 4**
+Title: Self-Service Portal Security
+
+User Story: As a SYSTEM I want secure authentication and session management for the portal So that user data is protected.
+
+Acceptance Criteria:
+Scenario: Portal Security
+Given a login attempt
+When credentials are validated
+Then a secure session is established
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Supports SSO and MFA
+
+---
+
+**User Story 5**
+Title: Portal Accessibility Compliance
+
+User Story: As an ADMIN I want the portal to meet accessibility standards So that all employees can use it.
+
+Acceptance Criteria:
+Scenario: Accessibility Verification
+Given the portal UI
+When tested with accessibility tools
+Then it meets WCAG 2.1 AA standards
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: Includes keyboard navigation and screen reader support
