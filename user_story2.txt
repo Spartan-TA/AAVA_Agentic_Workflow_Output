@@ -1,0 +1,94 @@
+### E02: Employee Master Data (CRUD)
+
+**User Story 1**
+Title: Employee Creation API
+
+User Story: As an HR I want to create new employee records via API So that employee data is centrally managed.
+
+Acceptance Criteria:
+Scenario: Create Employee
+Given valid employee details
+When I POST to /employees
+Then a new employee is created with a unique badgeId
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: badgeId must be unique
+
+---
+
+**User Story 2**
+Title: Employee Data Retrieval
+
+User Story: As a SUPERVISOR I want to retrieve employee records with filtering and pagination So that I can efficiently manage large teams.
+
+Acceptance Criteria:
+Scenario: Retrieve Employees
+Given multiple employees exist
+When I GET /employees with filters
+Then I receive paginated and filtered results
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Supports department, role, status filters
+
+---
+
+**User Story 3**
+Title: Employee Update API
+
+User Story: As an HR I want to update employee details via API So that records remain accurate.
+
+Acceptance Criteria:
+Scenario: Update Employee
+Given an existing employee
+When I PUT/PATCH to /employees/{id}
+Then the employee record is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Only allowed fields are updatable
+
+---
+
+**User Story 4**
+Title: Employee Deletion (Soft Delete)
+
+User Story: As an ADMIN I want to soft-delete employee records So that historical data is preserved.
+
+Acceptance Criteria:
+Scenario: Soft Delete Employee
+Given an active employee
+When I DELETE /employees/{id}
+Then the employee is marked as deleted but not removed from the database
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Deleted employees excluded from active queries
+
+---
+
+**User Story 5**
+Title: Employee API Documentation
+
+User Story: As a DEVELOPER I want OpenAPI schemas with examples for employee endpoints So that integration is straightforward.
+
+Acceptance Criteria:
+Scenario: API Schema Availability
+Given the API is running
+When I access the OpenAPI docs
+Then employee endpoints are documented with request/response examples
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: All CRUD stories
+- Notes: Must cover all CRUD operations
