@@ -1,0 +1,71 @@
+### E13 - Integration Layer (HRIS/WMS APIs)
+
+**User Story 1: Secure REST APIs with JWT/OAuth2**
+- Title: Secure Integration APIs
+- Narrative: As a developer, I want REST APIs secured with JWT/OAuth2 so that data is protected.
+- Acceptance Criteria:
+  ```
+  Given an API endpoint,
+  When accessed,
+  Then JWT/OAuth2 authentication is required.
+  ```
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Security.
+
+**User Story 2: HRIS Sync Job for Employees**
+- Title: Sync Employees from HRIS
+- Narrative: As an HR user, I want new hires and terminations synced from HRIS so that employee data is current.
+- Acceptance Criteria:
+  ```
+  Given HRIS data,
+  When sync job runs,
+  Then employees are created/updated/terminated as needed.
+  ```
+- Priority: High
+- Story Points: 3
+- Dependencies: Story 1
+- Notes: Data consistency.
+
+**User Story 3: WMS Link for Department/Location**
+- Title: Link Employees to WMS Departments/Locations
+- Narrative: As a supervisor, I want employees linked to WMS departments and locations so that assignments are accurate.
+- Acceptance Criteria:
+  ```
+  Given WMS data,
+  When linked,
+  Then employee records reflect correct department/location.
+  ```
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Integration.
+
+**User Story 4: Idempotent Webhooks for Events**
+- Title: Implement Idempotent Webhooks
+- Narrative: As a developer, I want webhooks for events to be idempotent so that duplicate processing is avoided.
+- Acceptance Criteria:
+  ```
+  Given a webhook event,
+  When received multiple times,
+  Then only one processing occurs.
+  ```
+- Priority: High
+- Story Points: 2
+- Dependencies: Story 1
+- Notes: Reliability.
+
+**User Story 5: OpenAPI Documentation for Integration**
+- Title: Document Integration APIs in OpenAPI
+- Narrative: As a developer, I want integration APIs documented in OpenAPI so that consumers understand usage.
+- Acceptance Criteria:
+  ```
+  Given the API,
+  When I view OpenAPI docs,
+  Then all endpoints and payloads are documented.
+  ```
+- Priority: High
+- Story Points: 1
+- Dependencies: Story 1
+- Notes: API clarity.
