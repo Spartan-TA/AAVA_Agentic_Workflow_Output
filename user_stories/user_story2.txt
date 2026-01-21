@@ -1,0 +1,69 @@
+### E02 - Employee Master Data (CRUD)
+
+**User Story 1:**
+Title: Create Employee API Endpoints
+User Story: As an HR admin, I want to create, read, update, and delete employee records so that employee data is managed centrally.
+Acceptance Criteria:
+Scenario: Create new employee
+  Given valid employee data
+  When I POST to /employees
+  Then a new employee is created
+Scenario: Retrieve employee details
+  Given an existing employee
+  When I GET /employees/{id}
+  Then the employee details are returned
+Scenario: Update employee information
+  Given an existing employee
+  When I PUT/PATCH /employees/{id}
+  Then the employee is updated
+Scenario: Soft delete employee
+  Given an existing employee
+  When I DELETE /employees/{id}
+  Then the employee is soft-deleted
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01
+- Notes: CRUD foundation
+
+**User Story 2:**
+Title: Enforce Unique Badge ID
+User Story: As an HR admin, I want badge IDs to be unique so that each employee can be distinctly identified.
+Acceptance Criteria:
+Scenario: Duplicate badge ID prevention
+  Given a badge ID already exists
+  When I attempt to create another employee with the same badge ID
+  Then the request is rejected with a validation error
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Prevents duplicates
+
+**User Story 3:**
+Title: Support Pagination and Filtering
+User Story: As a supervisor, I want to filter and paginate employee lists so that I can efficiently find records.
+Acceptance Criteria:
+Scenario: Paginated employee list
+  Given many employees
+  When I GET /employees with pagination/filter params
+  Then only matching employees are returned in pages
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Usability for large datasets
+
+**User Story 4:**
+Title: Provide OpenAPI Schemas with Examples
+User Story: As a developer, I want OpenAPI docs with examples so that API consumers understand request/response formats.
+Acceptance Criteria:
+Scenario: API documentation availability
+  Given the API is running
+  When I access the OpenAPI docs
+  Then all employee endpoints are documented with example payloads
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01
+- Notes: API clarity
