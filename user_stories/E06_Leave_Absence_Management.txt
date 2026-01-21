@@ -1,0 +1,109 @@
+### E06: Leave & Absence Management
+
+**Epic Description:**
+Request/approve PTO, sick, unpaid leave; accrual balances and policies; integration hooks to exclude from scheduling and payroll hours.
+
+---
+
+**User Story 1: Employee Leave Request Submission**
+
+Title: Employee Leave Request Submission
+
+User Story: As an employee, I want to submit requests for PTO, sick, or unpaid leave so that my absences are properly recorded and considered in scheduling.
+
+Acceptance Criteria:
+
+Scenario: Submit leave request
+  Given I am logged in as an employee
+  When I fill out and submit a leave request form specifying type, dates, and reason
+  Then the request is saved with status "Pending" and my supervisor is notified
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Request types and policies configurable.
+
+---
+
+**User Story 2: Supervisor Leave Approval Workflow**
+
+Title: Supervisor Leave Approval Workflow
+
+User Story: As a supervisor, I want to review, approve, or deny leave requests so that staffing levels are maintained.
+
+Acceptance Criteria:
+
+Scenario: Approve or deny leave
+  Given I am a supervisor with pending leave requests
+  When I review a request and select approve or deny
+  Then the employee is notified and the request status is updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: None
+
+---
+
+**User Story 3: Leave Accrual and Balance Tracking**
+
+Title: Leave Accrual and Balance Tracking
+
+User Story: As an employee, I want to view my current leave balances so that I know how much time off I have available.
+
+Acceptance Criteria:
+
+Scenario: View leave balances
+  Given I am logged in
+  When I navigate to my leave balance page
+  Then I see up-to-date balances for PTO, sick, and unpaid leave
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02
+- Notes: None
+
+---
+
+**User Story 4: Integration with Scheduling and Payroll**
+
+Title: Integration with Scheduling and Payroll
+
+User Story: As a system, I want approved leaves to automatically update schedules and payroll exports so that absences are accurately reflected.
+
+Acceptance Criteria:
+
+Scenario: Approved leave updates schedule and payroll
+  Given a leave request is approved
+  When the schedule and payroll export are generated
+  Then the employee is marked as absent and hours are adjusted accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E05, E11
+- Notes: None
+
+---
+
+**User Story 5: Leave Export and Reporting**
+
+Title: Leave Export and Reporting
+
+User Story: As an HR user, I want to export leave records for a given period so that I can process compliance and payroll.
+
+Acceptance Criteria:
+
+Scenario: Export leave records
+  Given I am an HR user
+  When I select a date range and export leave data
+  Then I receive a CSV file with all approved leaves in that period
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E06
+- Notes: None
