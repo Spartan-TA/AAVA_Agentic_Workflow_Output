@@ -1,0 +1,15 @@
+Title: Audit Trail & Compliance
+User Story: As a compliance officer I want centralized audit logging for sensitive changes so that audit and forensic requirements are met.
+Acceptance Criteria:
+Scenario: Audit log generation and export
+Given a sensitive create/update/delete action occurs
+When the action is performed
+Then the system records actor, timestamp, before/after values
+And stores the log in an immutable table
+And supports export by date, user, or entity
+And tests validate coverage of audit logging
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Role-Based Access Control (RBAC)
+- Notes: Tamper-evident storage required; coverage for employee PII, schedules, approvals, payroll.
