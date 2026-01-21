@@ -1,0 +1,130 @@
+### E02: Employee Master Data (CRUD)
+
+**Epic Description:**
+Create Employee domain with CRUD APIs and web DTOs: name, badgeId, role, department, shiftGroup, hireDate, status.
+
+---
+
+**User Story 1: Employee Creation API**
+
+Title: Implement Employee Creation Endpoint
+
+User Story: As an HR user, I want to create new employee records so that I can onboard new staff into the system.
+
+Acceptance Criteria:
+
+Scenario: Create employee with unique badgeId
+  Given I have valid employee details
+  When I POST to /employees
+  Then a new employee is created with a unique badgeId
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: badgeId must be unique.
+
+---
+
+**User Story 2: Employee Retrieval API**
+
+Title: Implement Employee Retrieval Endpoint
+
+User Story: As an HR user, I want to retrieve employee records so that I can view employee information.
+
+Acceptance Criteria:
+
+Scenario: Retrieve employee by ID
+  Given an employee exists
+  When I GET /employees/{id}
+  Then the employee details are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Support pagination and filtering.
+
+---
+
+**User Story 3: Employee Update API**
+
+Title: Implement Employee Update Endpoint
+
+User Story: As an HR user, I want to update employee details so that I can keep records current.
+
+Acceptance Criteria:
+
+Scenario: Update employee details
+  Given an employee exists
+  When I PUT or PATCH to /employees/{id} with updated data
+  Then the employee record is updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Validate badgeId uniqueness on update.
+
+---
+
+**User Story 4: Employee Deletion (Soft Delete)**
+
+Title: Implement Employee Soft Delete
+
+User Story: As an HR user, I want to soft-delete employee records so that terminated employees are not lost but excluded from active lists.
+
+Acceptance Criteria:
+
+Scenario: Soft-delete employee
+  Given an employee exists
+  When I DELETE /employees/{id}
+  Then the employee status is set to inactive and record is not physically removed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Soft-deleted employees are excluded from active queries.
+
+---
+
+**User Story 5: Employee List with Filtering and Pagination**
+
+Title: List Employees with Filters and Pagination
+
+User Story: As an HR user, I want to list employees with filtering and pagination so that I can efficiently manage large employee datasets.
+
+Acceptance Criteria:
+
+Scenario: List employees with filters
+  Given multiple employees exist
+  When I GET /employees with filter parameters
+  Then I receive a paginated and filtered list of employees
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Filters include department, status, role.
+
+---
+
+**User Story 6: OpenAPI Documentation**
+
+Title: Document Employee APIs with OpenAPI
+
+User Story: As a developer, I want the employee APIs documented in OpenAPI with examples so that integration is straightforward.
+
+Acceptance Criteria:
+
+Scenario: OpenAPI schema available for employee endpoints
+  Given the application is running
+  When I access the OpenAPI documentation
+  Then all employee endpoints are documented with request/response examples
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01
+- Notes: Keep documentation up to date.
