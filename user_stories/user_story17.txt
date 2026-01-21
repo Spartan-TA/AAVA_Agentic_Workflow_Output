@@ -1,0 +1,57 @@
+### E17 - Onboarding & Offboarding Workflow
+
+**User Story 1:**
+Title: Automate New Hire Provisioning from HRIS
+User Story: As an HR admin, I want new hires to appear automatically from HRIS so that onboarding is seamless.
+Acceptance Criteria:
+Scenario: Sync new hire
+  Given a new hire in HRIS
+  When the sync runs
+  Then the employee appears in EMS with initial status
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Automation
+
+**User Story 2:**
+Title: Generate Onboarding Tasks for Training and Asset Assignment
+User Story: As a supervisor, I want onboarding tasks generated for required training and asset assignment so that nothing is missed.
+Acceptance Criteria:
+Scenario: Create onboarding tasks
+  Given a new hire
+  When onboarding starts
+  Then tasks for training and asset assignment are created
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Task management
+
+**User Story 3:**
+Title: Automate Initial Schedule Assignment
+User Story: As a scheduler, I want new hires to receive an initial schedule automatically so that they are ready to work.
+Acceptance Criteria:
+Scenario: Assign initial schedule
+  Given a new hire
+  When onboarding is completed
+  Then an initial schedule is assigned
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Scheduling
+
+**User Story 4:**
+Title: Offboarding Workflow for Access and Asset Revocation
+User Story: As an HR admin, I want offboarding to revoke system access and collect assets so that risk is minimized.
+Acceptance Criteria:
+Scenario: Execute offboarding
+  Given a terminated employee
+  When offboarding is triggered
+  Then access is revoked, assets are collected, and schedules are updated
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Security
