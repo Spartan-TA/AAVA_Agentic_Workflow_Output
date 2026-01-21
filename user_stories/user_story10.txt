@@ -1,0 +1,75 @@
+### E10 - Performance Reviews & Goals
+
+**User Story 1:**
+Title: Create Review Templates
+User Story: As an HR admin, I want to create templates for quarterly and annual reviews so that evaluations are consistent.
+Acceptance Criteria:
+Scenario: Create review template
+  Given template data
+  When I create a review template
+  Then it is available for assignment
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Template management
+
+**User Story 2:**
+Title: Assign Reviews to Employees
+User Story: As a supervisor, I want to assign review cycles to employees so that performance is tracked.
+Acceptance Criteria:
+Scenario: Assign review cycle
+  Given a review template
+  When I assign it to employees
+  Then the review appears in their profile
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Assignment
+
+**User Story 3:**
+Title: Submit and Acknowledge Reviews
+User Story: As an employee, I want to submit self-reviews and acknowledge supervisor reviews so that the process is collaborative.
+Acceptance Criteria:
+Scenario: Submit self-review
+  Given a review cycle
+  When I submit my review
+  Then it is saved and visible to my supervisor
+Scenario: Acknowledge supervisor review
+  Given a supervisor review
+  When I acknowledge it
+  Then the review is locked
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Workflow
+
+**User Story 4:**
+Title: Export Reviews as PDF
+User Story: As an HR admin, I want to export completed reviews as PDF so that records are easily shared.
+Acceptance Criteria:
+Scenario: Generate PDF export
+  Given a completed review
+  When I export it
+  Then a PDF is generated
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Recordkeeping
+
+**User Story 5:**
+Title: Role-Based Review Visibility
+User Story: As a system admin, I want review visibility to be restricted by role so that only authorized users can view them.
+Acceptance Criteria:
+Scenario: Restrict unauthorized access
+  Given a review
+  When accessed by unauthorized user
+  Then access is denied
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Privacy
