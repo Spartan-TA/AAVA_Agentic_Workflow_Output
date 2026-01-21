@@ -1,0 +1,71 @@
+### E11 - Payroll Export Integration
+
+**User Story 1:**
+Title: Generate Payroll-Ready Export Files
+User Story: As a payroll admin, I want to generate files from approved attendance and leave so that payroll runs are automated.
+Acceptance Criteria:
+Scenario: Generate payroll export
+  Given approved attendance and leave
+  When I generate an export
+  Then the file matches the provider schema
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04, E06
+- Notes: Payroll automation
+
+**User Story 2:**
+Title: Reconcile Export Totals with Reports
+User Story: As a payroll admin, I want export totals to match attendance and leave reports so that errors are avoided.
+Acceptance Criteria:
+Scenario: Verify export accuracy
+  Given an export
+  When I compare totals
+  Then they match the reports
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Data integrity
+
+**User Story 3:**
+Title: Secure Delivery of Payroll Files
+User Story: As a payroll admin, I want exports delivered securely via SFTP or API so that sensitive data is protected.
+Acceptance Criteria:
+Scenario: Secure file delivery
+  Given a payroll export
+  When delivery is configured
+  Then the file is sent securely
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Security
+
+**User Story 4:**
+Title: Retry Failed Deliveries with Backoff
+User Story: As a payroll admin, I want failed deliveries retried with backoff so that exports are reliably delivered.
+Acceptance Criteria:
+Scenario: Retry failed delivery
+  Given a failed delivery
+  When the system retries
+  Then it uses exponential backoff and logs each attempt
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Reliability
+
+**User Story 5:**
+Title: Audit Log for Payroll Exports
+User Story: As an auditor, I want every export logged with timestamp and status so that all actions are traceable.
+Acceptance Criteria:
+Scenario: Log export activity
+  Given an export
+  When it is generated or delivered
+  Then an audit entry is created
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E04, E06
+- Notes: Compliance
