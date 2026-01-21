@@ -1,0 +1,60 @@
+# Epic E02: Employee Master Data (CRUD)
+
+## User Story 1: Create Employee Record
+- **Title:** Create Employee API Endpoint
+- **User Story:** As an HR user, I want to create new employee records with all required fields so that employee data is centralized.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the HR user is authenticated
+  When they POST to /employees with valid data
+  Then a new employee record is created
+  And badgeId is unique
+  ```
+- **Additional Details:** Priority: High, Story Points: 3, Dependencies: E01, Notes: Validate required fields.
+
+## User Story 2: Read Employee Records
+- **Title:** Retrieve Employee List with Filtering
+- **User Story:** As an HR user, I want to view a paginated and filterable list of employees so that I can manage large datasets efficiently.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the HR user is authenticated
+  When they GET /employees with filters (department, status)
+  Then the response is paginated and matches filter criteria
+  ```
+- **Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, Notes: Implement OpenAPI schema.
+
+## User Story 3: Update Employee Details
+- **Title:** Update Employee Information
+- **User Story:** As an HR user, I want to update employee details so that records remain accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an existing employee record
+  When HR PATCHes /employees/{id} with valid changes
+  Then the employee record is updated
+  And badgeId uniqueness is enforced
+  ```
+- **Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, Notes: Audit changes.
+
+## User Story 4: Delete (Soft) Employee Record
+- **Title:** Soft-Delete Employee Record
+- **User Story:** As an HR user, I want to soft-delete employee records so that historical data is preserved.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an employee record
+  When HR DELETEs /employees/{id}
+  Then the record is marked as inactive
+  And is excluded from active queries
+  ```
+- **Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, Notes: Implement soft-delete flag.
+
+## User Story 5: Employee DTOs for Web
+- **Title:** Employee DTOs for Web UI
+- **User Story:** As a frontend developer, I want employee DTOs for web so that UI components can display employee data consistently.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the API returns employee data
+  When the frontend requests employee DTOs
+  Then the response matches the documented schema
+  And includes examples
+  ```
+- **Additional Details:** Priority: High, Story Points: 1, Dependencies: E01, Notes: Align with OpenAPI.
