@@ -1,0 +1,130 @@
+### E05: Shift & Schedule Management
+
+**Epic Description:**
+Create recurring shift templates, rotations, overtime rules, and assignment to employees; handle blackout dates and warehouse operation calendars.
+
+---
+
+**User Story 1: Shift Template CRUD**
+
+Title: Manage Shift Templates
+
+User Story: As an HR user, I want to create, update, and delete shift templates so that I can standardize scheduling.
+
+Acceptance Criteria:
+
+Scenario: Create shift template
+  Given I have shift details
+  When I POST to /shifts/templates
+  Then a new shift template is created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Support recurring patterns.
+
+---
+
+**User Story 2: Schedule Assignment**
+
+Title: Assign Schedules to Employees
+
+User Story: As a supervisor, I want to assign schedules to employees so that shifts are covered.
+
+Acceptance Criteria:
+
+Scenario: Assign schedule to employee
+  Given a shift template exists
+  When I assign it to an employee
+  Then the employee's schedule is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Bulk assignment supported.
+
+---
+
+**User Story 3: Conflict Detection**
+
+Title: Detect and Prevent Scheduling Conflicts
+
+User Story: As a scheduler, I want the system to detect scheduling conflicts so that employees are not double-booked.
+
+Acceptance Criteria:
+
+Scenario: Scheduling conflict detected
+  Given an employee has an existing shift
+  When I try to assign an overlapping shift
+  Then the system prevents the assignment and shows an error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Include blackout dates and operation calendars.
+
+---
+
+**User Story 4: Personal Shift View**
+
+Title: View Upcoming Shifts
+
+User Story: As a worker, I want to view my upcoming shifts so that I can plan my work schedule.
+
+Acceptance Criteria:
+
+Scenario: Worker views personal shift schedule
+  Given I am logged in as a worker
+  When I access my schedule
+  Then I see a list of my upcoming shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Mobile-friendly view.
+
+---
+
+**User Story 5: Bulk Assignment**
+
+Title: Bulk Assign Shifts to Multiple Employees
+
+User Story: As a supervisor, I want to bulk-assign shifts to multiple employees so that scheduling is efficient.
+
+Acceptance Criteria:
+
+Scenario: Bulk shift assignment
+  Given I select multiple employees
+  When I assign a shift template
+  Then all selected employees receive the assigned shift
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Audit entries generated for each assignment.
+
+---
+
+**User Story 6: Audit Trail for Scheduling**
+
+Title: Generate Audit Entries for Schedule Changes
+
+User Story: As a compliance officer, I want audit entries for schedule changes so that I can track who made what changes.
+
+Acceptance Criteria:
+
+Scenario: Audit entry created for schedule change
+  Given a schedule is created or modified
+  When the change is saved
+  Then an audit entry is generated with actor and timestamp
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Integrate with audit trail module.
