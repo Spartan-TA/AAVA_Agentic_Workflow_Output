@@ -1,0 +1,109 @@
+### E04: Time & Attendance (Clock In/Out)
+
+**Epic Description:**
+Endpoints for clock-in/out events with geofence (optional) and device capture; calculate hours worked per shift; handle missed punches and corrections workflow.
+
+---
+
+**User Story 1: Clock-In Endpoint**
+
+Title: Implement Clock-In Endpoint
+
+User Story: As a worker, I want to clock in at the start of my shift so that my attendance is recorded.
+
+Acceptance Criteria:
+
+Scenario: Successful clock-in
+  Given I am a registered employee
+  When I POST to /attendance/clock-in with valid credentials
+  Then my clock-in event is recorded with timestamp and device info
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Optionally capture geolocation.
+
+---
+
+**User Story 2: Clock-Out Endpoint**
+
+Title: Implement Clock-Out Endpoint
+
+User Story: As a worker, I want to clock out at the end of my shift so that my worked hours are tracked.
+
+Acceptance Criteria:
+
+Scenario: Successful clock-out
+  Given I am clocked in
+  When I POST to /attendance/clock-out
+  Then my clock-out event is recorded and hours worked are calculated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Validate that clock-in exists.
+
+---
+
+**User Story 3: Automatic Shift Association**
+
+Title: Associate Clock Events with Shifts
+
+User Story: As a system, I want to automatically associate clock-in/out events with scheduled shifts so that attendance is accurate.
+
+Acceptance Criteria:
+
+Scenario: Clock event linked to shift
+  Given a scheduled shift exists for the employee
+  When a clock-in/out event is recorded
+  Then the event is linked to the correct shift
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Handle edge cases for unscheduled work.
+
+---
+
+**User Story 4: Missed Punches and Corrections Workflow**
+
+Title: Handle Missed Punches and Corrections
+
+User Story: As a supervisor, I want to review and approve corrections for missed punches so that attendance records are accurate.
+
+Acceptance Criteria:
+
+Scenario: Correction creates approval task
+  Given a missed punch is reported
+  When a correction request is submitted
+  Then an approval task is created for the supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Track correction history.
+
+---
+
+**User Story 5: Attendance Reporting**
+
+Title: Export Attendance Reports
+
+User Story: As an HR user, I want to export attendance reports in CSV format so that I can process payroll.
+
+Acceptance Criteria:
+
+Scenario: Export attendance report as CSV
+  Given attendance data exists
+  When I request a report export
+  Then a CSV file is generated with daily totals per employee
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Include filters for date range and department.
