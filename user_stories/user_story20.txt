@@ -1,0 +1,71 @@
+### E20 - Deployment & CI/CD
+
+**User Story 1:**
+Title: Dockerize Application
+User Story: As a DevOps engineer, I want a Dockerfile so that the app can be containerized and deployed consistently.
+Acceptance Criteria:
+Scenario: Build Docker image
+  Given the codebase
+  When I build the Docker image
+  Then the app runs in a container
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E19
+- Notes: Containerization
+
+**User Story 2:**
+Title: Kubernetes Manifests for Deployment
+User Story: As a DevOps engineer, I want K8s manifests so that the app can be deployed to a cluster.
+Acceptance Criteria:
+Scenario: Deploy to Kubernetes
+  Given the manifests
+  When I apply them
+  Then the app is deployed to the cluster
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E19
+- Notes: Orchestration
+
+**User Story 3:**
+Title: CI/CD Pipeline for Build, Test, Deploy
+User Story: As a DevOps engineer, I want a pipeline (GitHub Actions/Jenkins) so that builds, tests, and deployments are automated.
+Acceptance Criteria:
+Scenario: Run CI/CD pipeline
+  Given a code change
+  When the pipeline runs
+  Then tests are executed and the app is deployed to staging
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E19
+- Notes: Automation
+
+**User Story 4:**
+Title: Blue-Green or Canary Deployment Strategy
+User Story: As a DevOps engineer, I want blue-green or canary deployments so that releases are safe and can be rolled back.
+Acceptance Criteria:
+Scenario: Deploy with canary strategy
+  Given a deployment
+  When a new version is released
+  Then traffic is shifted gradually and rollback is possible
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E19
+- Notes: Release safety
+
+**User Story 5:**
+Title: Manage Secrets via Vault/Sealed-Secrets
+User Story: As a DevOps engineer, I want secrets managed securely so that sensitive data is protected in CI/CD and runtime.
+Acceptance Criteria:
+Scenario: Use secure secrets
+  Given a secret
+  When it is used in the pipeline or runtime
+  Then it is managed via vault or sealed-secrets
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E19
+- Notes: Security
