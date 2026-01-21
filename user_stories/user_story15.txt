@@ -1,0 +1,14 @@
+Title: Reporting & Analytics
+User Story: As an operations manager I want to generate operational reports and dashboards for attendance, overtime, leave, certifications, and safety so that data-driven staffing and compliance decisions can be made.
+Acceptance Criteria:
+Scenario: Report generation and export
+Given I am authenticated as an operations manager
+When I filter and export reports by date, department, or shift
+Then exports complete within 10s for up to 50k rows
+And access is controlled by role
+And metrics endpoints are available for BI
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Time & Attendance (Clock In/Out), Shift & Schedule Management, Leave & Absence Management, Training & Certification Tracking, Safety Incidents & OSHA Reporting, Audit Trail & Compliance
+- Notes: Support for CSV/PDF export and role-based dashboards.
