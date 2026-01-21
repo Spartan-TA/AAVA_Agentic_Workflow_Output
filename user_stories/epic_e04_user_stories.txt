@@ -1,0 +1,94 @@
+### EPIC E04 - Time & Attendance (Clock In/Out)
+
+**User Story 1**
+Title: Implement Clock-In/Clock-Out Endpoints
+
+User Story: As a worker I want to clock in and out via API So that my attendance is accurately recorded.
+
+Acceptance Criteria:
+Scenario: Clock-in event
+Given I am scheduled for a shift
+When I POST to /attendance/clock-in
+Then my clock-in time is recorded and validated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02,E03
+- Notes: Validate against shift schedule.
+
+---
+
+**User Story 2**
+Title: Capture Device and Geofence Data
+
+User Story: As a supervisor I want clock events to capture device and location So that attendance fraud is minimized.
+
+Acceptance Criteria:
+Scenario: Device/geofence capture
+Given a clock-in event
+When I submit with device and location data
+Then the event stores device ID and geofence info
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04
+- Notes: Geofence optional.
+
+---
+
+**User Story 3**
+Title: Calculate Hours Worked Per Shift
+
+User Story: As a payroll admin I want the system to calculate hours worked per shift So that payroll is accurate.
+
+Acceptance Criteria:
+Scenario: Shift hours calculation
+Given clock-in and clock-out events
+When I view attendance records
+Then total hours per shift are computed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04
+- Notes: Handle overnight shifts.
+
+---
+
+**User Story 4**
+Title: Handle Missed Punches and Corrections Workflow
+
+User Story: As a worker I want to request corrections for missed punches So that my attendance is accurate.
+
+Acceptance Criteria:
+Scenario: Correction request
+Given I missed a punch
+When I submit a correction
+Then an approval task is created for my supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04
+- Notes: Track correction status.
+
+---
+
+**User Story 5**
+Title: Export Attendance Reports as CSV
+
+User Story: As a supervisor I want to export attendance reports in CSV format So that I can review and share attendance data.
+
+Acceptance Criteria:
+Scenario: Attendance report export
+Given attendance data exists
+When I request a CSV export
+Then the report is generated and downloadable
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04
+- Notes: Support date range filter.
