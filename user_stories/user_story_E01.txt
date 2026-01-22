@@ -1,0 +1,43 @@
+### E01 - Project Scaffolding & Domain Setup
+
+**User Story 1**
+Title: Initialize Spring Boot Project Structure
+User Story: As a developer, I want to initialize a Spring Boot project with Maven and configure base packages so that all modules have a standardized foundation.
+Acceptance Criteria:
+Scenario: Project Initialization
+Given I have cloned the repository
+When I run the build command
+Then the project builds successfully and runs on port 8080
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Ensure README contains build/run steps.
+
+**User Story 2**
+Title: Set Up Core Modules and Database Migration
+User Story: As a developer, I want to set up core modules (employee, scheduling, attendance, safety) and integrate Flyway/Liquibase so that database migrations are automated and consistent.
+Acceptance Criteria:
+Scenario: Database Migration
+Given the project is running
+When I start the application
+Then Flyway/Liquibase runs the baseline migration and the database schema is created
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: Migration scripts must be versioned and idempotent.
+
+**User Story 3**
+Title: Enable Actuator Health Endpoint
+User Story: As a DevOps engineer, I want to enable the Spring Boot Actuator health endpoint so that system health can be monitored.
+Acceptance Criteria:
+Scenario: Health Endpoint
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns status UP
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Health endpoint must be accessible without authentication for initial setup.
