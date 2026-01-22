@@ -1,0 +1,49 @@
+### E17 - Onboarding & Offboarding Workflow
+
+#### User Story 1: Automate Provisioning for New Hires
+- **Title:** Automate Provisioning for New Hires
+- **User Story:** As an HR, I want new hires from HRIS to be automatically provisioned with accounts, schedules, and required training so that onboarding is efficient.
+- **Acceptance Criteria:**
+    - Given a new hire in HRIS,
+      When synced,
+      Then accounts, schedules, and training tasks are created.
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E02, E03, E05, E07, E13
+- **Notes:** End-to-end onboarding.
+
+#### User Story 2: Generate Tasks for Asset Assignment
+- **Title:** Generate Tasks for Asset Assignment
+- **User Story:** As a SUPERVISOR, I want asset assignment tasks generated for new hires so that equipment is provisioned.
+- **Acceptance Criteria:**
+    - Given a new hire,
+      When onboarding starts,
+      Then asset assignment tasks are created.
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E17-1, E09
+- **Notes:** Asset workflow.
+
+#### User Story 3: Automate Deprovisioning on Termination
+- **Title:** Automate Deprovisioning on Termination
+- **User Story:** As an HR, I want terminated employees to have access revoked, assets collected, and schedules updated so that offboarding is secure.
+- **Acceptance Criteria:**
+    - Given a termination event,
+      When processed,
+      Then accounts are deactivated, assets are collected, and schedules are cleared.
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E17-1, E09
+- **Notes:** Reduces risk.
+
+#### User Story 4: Track Onboarding/Offboarding Progress
+- **Title:** Track Onboarding/Offboarding Progress
+- **User Story:** As an HR or SUPERVISOR, I want to track the progress of onboarding and offboarding tasks so that nothing is missed.
+- **Acceptance Criteria:**
+    - Given a workflow,
+      When I view progress,
+      Then all tasks and their status are visible.
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E17-1
+- **Notes:** Transparency.
