@@ -1,0 +1,13 @@
+Title: Attendance Report Export
+User Story: As an HR user I want to export attendance reports in CSV format So that I can process payroll and compliance reports
+Acceptance Criteria:
+Scenario: Attendance report export
+Given attendance data exists for a period
+When I request a CSV export
+Then the file is generated with daily totals and corrections
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Clock In/Out Event Recording
+- Notes: Export must include corrections
