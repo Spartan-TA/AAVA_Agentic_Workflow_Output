@@ -1,0 +1,73 @@
+### E02 - Employee Master Data (CRUD)
+
+#### User Story 1: Create Employee Entity and Repository
+- **Title:** Create Employee Entity and Repository
+- **User Story:** As a DEVELOPER, I want to define the Employee entity and repository so that employee data can be persisted.
+- **Acceptance Criteria:**
+    - Given the codebase,
+      When I inspect the Employee entity,
+      Then it includes name, badgeId, role, department, shiftGroup, hireDate, status.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E01
+- **Notes:** Foundation for CRUD APIs.
+
+#### User Story 2: Implement Employee CRUD APIs
+- **Title:** Implement Employee CRUD APIs
+- **User Story:** As an ADMIN or HR, I want to create, read, update, and delete employee records so that employee data is managed centrally.
+- **Acceptance Criteria:**
+    - Given a valid employee payload,
+      When I POST to /employees,
+      Then a new employee is created with a unique badgeId.
+    - Given an existing employee,
+      When I GET /employees/{id},
+      Then the employee details are returned.
+    - Given an update payload,
+      When I PUT or PATCH /employees/{id},
+      Then the employee record is updated.
+    - Given a delete request,
+      When I DELETE /employees/{id},
+      Then the employee is soft-deleted.
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E02-1
+- **Notes:** Supports all CRUD operations.
+
+#### User Story 3: Enforce Unique Badge ID
+- **Title:** Enforce Unique Badge ID for Employees
+- **User Story:** As an ADMIN or HR, I want to ensure each employee has a unique badgeId so that identification is reliable.
+- **Acceptance Criteria:**
+    - Given a badgeId already in use,
+      When I try to create another employee with the same badgeId,
+      Then the API returns a validation error.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E02-2
+- **Notes:** Prevents duplicates.
+
+#### User Story 4: Support Pagination and Filtering
+- **Title:** Support Pagination and Filtering for Employee List
+- **User Story:** As an HR or SUPERVISOR, I want to paginate and filter the employee list so that I can efficiently find records.
+- **Acceptance Criteria:**
+    - Given a large number of employees,
+      When I GET /employees with pagination parameters,
+      Then results are paginated.
+    - Given filter parameters (e.g., department, status),
+      When I GET /employees,
+      Then only matching employees are returned.
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E02-2
+- **Notes:** Improves usability.
+
+#### User Story 5: Document Employee APIs with OpenAPI
+- **Title:** Document Employee APIs with OpenAPI
+- **User Story:** As a DEVELOPER, I want the Employee APIs documented in OpenAPI with examples so that integration is straightforward.
+- **Acceptance Criteria:**
+    - Given the API documentation,
+      When I view the /employees endpoints,
+      Then request and response schemas are present with examples.
+- **Priority:** High
+- **Story Points:** 1
+- **Dependencies:** E02-2
+- **Notes:** Required for integrations.
