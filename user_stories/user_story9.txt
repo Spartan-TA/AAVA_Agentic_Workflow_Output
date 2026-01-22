@@ -1,0 +1,13 @@
+Title: API Key/OAuth2 Security Toggle
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication So that I can adapt security to organizational requirements
+Acceptance Criteria:
+Scenario: Security mode toggle
+Given the system configuration is set to API key or OAuth2
+When I authenticate using the configured method
+Then access is granted or denied based on the selected mode
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Role-Based Endpoint Security
+- Notes: Toggle must be documented
