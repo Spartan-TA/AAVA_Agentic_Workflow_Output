@@ -1,0 +1,64 @@
+### E10 - Performance Reviews & Goals
+
+#### User Story 1: Create Review Templates
+- **Title:** Create Performance Review Templates
+- **User Story:** As an HR, I want to create templates for quarterly and annual reviews so that evaluations are standardized.
+- **Acceptance Criteria:**
+    - Given a template,
+      When I create or update it,
+      Then it is available for review cycles.
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E02, E03
+- **Notes:** Standardization.
+
+#### User Story 2: Assign Reviews to Employees
+- **Title:** Assign Reviews to Employees
+- **User Story:** As a SUPERVISOR, I want to assign performance reviews to employees so that feedback is collected on schedule.
+- **Acceptance Criteria:**
+    - Given a review cycle,
+      When I assign it,
+      Then employees receive review tasks.
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E10-1
+- **Notes:** Timely feedback.
+
+#### User Story 3: Submit and Acknowledge Reviews
+- **Title:** Submit and Acknowledge Performance Reviews
+- **User Story:** As a SUPERVISOR or EMPLOYEE, I want to submit and acknowledge reviews so that the process is complete and transparent.
+- **Acceptance Criteria:**
+    - Given a review,
+      When it is submitted,
+      Then both supervisor and employee can acknowledge.
+    - Given a completed review,
+      When acknowledged,
+      Then it becomes immutable.
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E10-2
+- **Notes:** Immutable after sign-off.
+
+#### User Story 4: Track Goals and Competencies
+- **Title:** Track Goals and Competencies in Reviews
+- **User Story:** As a SUPERVISOR, I want to track goals and competencies in reviews so that employee development is monitored.
+- **Acceptance Criteria:**
+    - Given a review,
+      When I add goals and competencies,
+      Then they are saved and visible in the review.
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E10-1
+- **Notes:** Development focus.
+
+#### User Story 5: Export Reviews as PDF
+- **Title:** Export Performance Reviews as PDF
+- **User Story:** As an HR, I want to export completed reviews as PDF so that records are archived and shared.
+- **Acceptance Criteria:**
+    - Given a completed review,
+      When I request an export,
+      Then a PDF file is generated.
+- **Priority:** Medium
+- **Story Points:** 1
+- **Dependencies:** E10-3
+- **Notes:** For record-keeping.
