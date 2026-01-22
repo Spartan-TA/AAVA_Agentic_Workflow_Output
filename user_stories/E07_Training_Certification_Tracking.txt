@@ -1,0 +1,61 @@
+## E07 - Training & Certification Tracking
+
+### Story 1: CRUD for Certifications
+- **User Story:** As an HR user, I want to create, update, and delete certifications for employees so that compliance is tracked.
+- **Acceptance Criteria:**
+    ```
+    Given a valid certification
+    When I add it to an employee
+    Then the certification appears on their profile
+
+    Given an expired certification
+    When I attempt to assign equipment
+    Then the system blocks the assignment
+    ```
+- **Additional Details:**  
+    Priority: High  
+    Story Points: 4  
+    Dependencies: E02, E03  
+    Notes: Include document upload.
+
+### Story 2: Expiry Alerts for Certifications
+- **User Story:** As a Supervisor, I want to receive alerts before certifications expire so that renewals are planned.
+- **Acceptance Criteria:**
+    ```
+    Given a certification expiring in 30 or 7 days
+    When the system runs the alert job
+    Then an alert is sent to the employee and supervisor
+    ```
+- **Additional Details:**  
+    Priority: High  
+    Story Points: 2  
+    Dependencies: E02, E03  
+    Notes: Email and in-app notifications.
+
+### Story 3: Block Unqualified Assignments
+- **User Story:** As a System, I want to prevent assignment of tasks or equipment to employees with expired or missing certifications so that safety is ensured.
+- **Acceptance Criteria:**
+    ```
+    Given an employee with expired certification
+    When I attempt to assign restricted equipment
+    Then the system blocks the assignment and notifies the user
+    ```
+- **Additional Details:**  
+    Priority: High  
+    Story Points: 3  
+    Dependencies: E02, E03  
+    Notes: Integrate with equipment assignment.
+
+### Story 4: Certification Status on Employee Profile
+- **User Story:** As a Worker, I want to view my certification status on my profile so that I know when renewals are needed.
+- **Acceptance Criteria:**
+    ```
+    Given certifications assigned to me
+    When I view my profile
+    Then I see all certifications with status and expiry dates
+    ```
+- **Additional Details:**  
+    Priority: Medium  
+    Story Points: 2  
+    Dependencies: E02, E03  
+    Notes: Accessible via web/mobile.
