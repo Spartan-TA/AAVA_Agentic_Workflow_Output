@@ -1,0 +1,43 @@
+## E17 - Onboarding & Offboarding Workflow
+
+### Story 1: Automated Onboarding from HRIS
+- **User Story:** As an HR user, I want new hires from HRIS to be onboarded automatically so that accounts and schedules are provisioned.
+- **Acceptance Criteria:**
+    ```
+    Given a new hire in HRIS
+    When the sync job runs
+    Then the employee is created in EMS and onboarding tasks are generated
+    ```
+- **Additional Details:**  
+    Priority: Medium  
+    Story Points: 4  
+    Dependencies: E02, E03, E05, E07, E09, E13  
+    Notes: Tasks include training and asset assignment.
+
+### Story 2: Training and Asset Assignment Tasks
+- **User Story:** As a Supervisor, I want onboarding tasks for training and asset assignment so that new hires are ready to work.
+- **Acceptance Criteria:**
+    ```
+    Given a new hire
+    When onboarding tasks are generated
+    Then I can assign required training and assets
+    ```
+- **Additional Details:**  
+    Priority: Medium  
+    Story Points: 3  
+    Dependencies: E02, E03, E05, E07, E09, E13  
+    Notes: Task tracking required.
+
+### Story 3: Automated Offboarding on Termination
+- **User Story:** As an HR user, I want terminated employees to be offboarded automatically so that access is revoked and assets are collected.
+- **Acceptance Criteria:**
+    ```
+    Given a termination in HRIS
+    When the sync job runs
+    Then the employee's access is revoked, assets are flagged for return, and schedules are updated
+    ```
+- **Additional Details:**  
+    Priority: Medium  
+    Story Points: 4  
+    Dependencies: E02, E03, E05, E07, E09, E13  
+    Notes: Integrate with asset and schedule modules.
