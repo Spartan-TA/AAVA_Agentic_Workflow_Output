@@ -1,0 +1,49 @@
+### E08 - Safety Incidents & OSHA Reporting
+
+#### User Story 1: Record Safety Incidents
+- **Title:** Record Safety Incidents
+- **User Story:** As a SUPERVISOR, I want to record safety incidents and near-misses so that risks are documented.
+- **Acceptance Criteria:**
+    - Given a new incident,
+      When I POST to /safety/incidents,
+      Then the incident is saved with severity, location, description, and involved employees.
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E02, E03
+- **Notes:** Validation required.
+
+#### User Story 2: Incident Investigation Workflow
+- **Title:** Incident Investigation Workflow
+- **User Story:** As a SAFETY OFFICER, I want to manage the investigation workflow for incidents so that corrective actions are tracked.
+- **Acceptance Criteria:**
+    - Given an open incident,
+      When I update its status,
+      Then it moves through Open, Investigating, Resolved.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E08-1
+- **Notes:** Workflow states.
+
+#### User Story 3: OSHA Report Generation
+- **Title:** Generate OSHA Summary Reports
+- **User Story:** As an ADMIN or SAFETY OFFICER, I want to generate OSHA 300/300A summary reports so that regulatory requirements are met.
+- **Acceptance Criteria:**
+    - Given incident data,
+      When I request an OSHA report,
+      Then a summary is generated with required fields.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E08-1, E08-2
+- **Notes:** Compliance.
+
+#### User Story 4: Metrics Dashboard for Safety KPIs
+- **Title:** Metrics Dashboard for Safety KPIs
+- **User Story:** As a MANAGER, I want to view a dashboard of safety KPIs so that I can monitor trends and take action.
+- **Acceptance Criteria:**
+    - Given incident data,
+      When I access the dashboard,
+      Then I see metrics such as incident rate, severity, and resolution time.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E08-1
+- **Notes:** For continuous improvement.
