@@ -1,0 +1,67 @@
+### E03 - Role Based Access Control (RBAC)
+
+#### User Story 1: Implement Role-Based Endpoint Security
+- **Title:** Implement Role-Based Endpoint Security
+- **User Story:** As a SYSTEM, I want to restrict API endpoints based on user roles (ADMIN, HR, SUPERVISOR, WORKER) so that sensitive operations are protected.
+- **Acceptance Criteria:**
+    - Given a user with insufficient role,
+      When they access a restricted endpoint,
+      Then the API returns 403 Forbidden.
+    - Given an unauthenticated user,
+      When they access any endpoint,
+      Then the API returns 401 Unauthorized.
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E01, E02
+- **Notes:** Core security requirement.
+
+#### User Story 2: Configure Method-Level Security
+- **Title:** Configure Method-Level Security
+- **User Story:** As a SYSTEM, I want to enforce security at the method level so that business logic is protected even if endpoints are bypassed.
+- **Acceptance Criteria:**
+    - Given a secured method,
+      When accessed by an unauthorized role,
+      Then access is denied.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E03-1
+- **Notes:** Defense in depth.
+
+#### User Story 3: Support API Key/OAuth2 Toggle
+- **Title:** Support API Key/OAuth2 Authentication Toggle
+- **User Story:** As a SYSTEM, I want to toggle between API Key and OAuth2 authentication via configuration so that the system can adapt to different security requirements.
+- **Acceptance Criteria:**
+    - Given the config is set to API Key,
+      When I authenticate,
+      Then API Key is required.
+    - Given the config is set to OAuth2,
+      When I authenticate,
+      Then OAuth2 is required.
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E03-1
+- **Notes:** Flexible authentication.
+
+#### User Story 4: Implement Row-Level Security for Supervisors
+- **Title:** Implement Row-Level Security for Supervisors
+- **User Story:** As a SUPERVISOR, I want to access only records for my team so that I cannot view or modify unrelated employee data.
+- **Acceptance Criteria:**
+    - Given a supervisor,
+      When they access employee data,
+      Then only employees in their team are visible.
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E03-1, E02
+- **Notes:** Data privacy.
+
+#### User Story 5: Automated Security Tests
+- **Title:** Automated Security Tests for RBAC
+- **User Story:** As a QA, I want automated tests for security rules so that unauthorized access is detected early.
+- **Acceptance Criteria:**
+    - Given the test suite,
+      When I run security tests,
+      Then all role-based access rules are validated.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E03-1
+- **Notes:** Ensures ongoing compliance.
