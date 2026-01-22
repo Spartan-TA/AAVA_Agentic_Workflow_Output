@@ -1,0 +1,13 @@
+Title: Unique Badge ID Enforcement
+User Story: As a system administrator I want each employee to have a unique badgeId So that duplicate badge assignments are prevented
+Acceptance Criteria:
+Scenario: Duplicate badgeId prevention
+Given an employee with badgeId X exists
+When I try to create another employee with badgeId X
+Then the system should return a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: badgeId uniqueness enforced at DB and API level
