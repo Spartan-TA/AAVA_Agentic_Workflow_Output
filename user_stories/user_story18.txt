@@ -1,0 +1,13 @@
+Title: Leave Export for Payroll
+User Story: As a payroll administrator I want to export approved leave data So that payroll calculations are accurate
+Acceptance Criteria:
+Scenario: Leave export
+Given approved leave records exist
+When I export leave data
+Then the export includes all relevant fields for payroll
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Leave Approval Workflow
+- Notes: Export format must match payroll requirements
