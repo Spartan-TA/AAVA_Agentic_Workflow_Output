@@ -1,0 +1,57 @@
+## E14 - Audit Trail & Compliance
+
+### Story 1: Centralized Audit Logging
+- **User Story:** As a Compliance Officer, I want all sensitive changes to be logged centrally so that I can perform audits.
+- **Acceptance Criteria:**
+    ```
+    Given a create, update, or delete on sensitive data
+    When the action occurs
+    Then an audit log entry is created with actor, timestamp, and before/after state
+    ```
+- **Additional Details:**  
+    Priority: High  
+    Story Points: 4  
+    Dependencies: E03  
+    Notes: Tamper-evident storage.
+
+### Story 2: Immutable Log Table
+- **User Story:** As a System Admin, I want the audit log table to be immutable so that records cannot be altered.
+- **Acceptance Criteria:**
+    ```
+    Given audit log entries
+    When I attempt to modify or delete them
+    Then the system prevents the action
+    ```
+- **Additional Details:**  
+    Priority: High  
+    Story Points: 2  
+    Dependencies: E03  
+    Notes: Enforce at DB level.
+
+### Story 3: Export Audit Logs
+- **User Story:** As an Auditor, I want to export audit logs by date, user, or entity so that I can investigate incidents.
+- **Acceptance Criteria:**
+    ```
+    Given audit log data
+    When I export logs for a date range or user
+    Then I receive a file with all matching entries
+    ```
+- **Additional Details:**  
+    Priority: Medium  
+    Story Points: 2  
+    Dependencies: E03  
+    Notes: Export format: CSV.
+
+### Story 4: Automated Audit Coverage Tests
+- **User Story:** As a Developer, I want automated tests to verify audit coverage so that no sensitive change is missed.
+- **Acceptance Criteria:**
+    ```
+    Given the test suite
+    When I run audit tests
+    Then all sensitive actions are covered and logs are generated
+    ```
+- **Additional Details:**  
+    Priority: Medium  
+    Story Points: 2  
+    Dependencies: E03  
+    Notes: Integration tests.
