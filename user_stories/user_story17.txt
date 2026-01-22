@@ -1,0 +1,13 @@
+Title: Leave Approval Workflow
+User Story: As a supervisor I want to approve or deny leave requests So that staffing plans remain accurate
+Acceptance Criteria:
+Scenario: Leave approval
+Given a leave request is pending
+When I approve or deny the request
+Then the employee's balance is updated and scheduled shifts are flagged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave Request Submission
+- Notes: Integration with scheduling and payroll
