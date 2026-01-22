@@ -1,0 +1,67 @@
+### E05 - Shift & Schedule Management
+
+#### User Story 1: CRUD for Shift Templates
+- **Title:** CRUD for Shift Templates
+- **User Story:** As an ADMIN or HR, I want to create, read, update, and delete shift templates so that recurring schedules are easy to manage.
+- **Acceptance Criteria:**
+    - Given a shift template,
+      When I create or update it,
+      Then it is saved and available for assignment.
+    - Given a delete request,
+      When I delete a template,
+      Then it is removed unless in use.
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E02, E03, E04
+- **Notes:** Foundation for scheduling.
+
+#### User Story 2: Assign Shifts to Employees
+- **Title:** Assign Shifts to Employees
+- **User Story:** As a SUPERVISOR, I want to assign shifts to employees so that staffing is planned in advance.
+- **Acceptance Criteria:**
+    - Given a list of employees,
+      When I assign a shift,
+      Then the schedule is updated and conflicts are detected.
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E05-1
+- **Notes:** Bulk assignment supported.
+
+#### User Story 3: Handle Blackout Dates and Calendars
+- **Title:** Handle Blackout Dates and Operation Calendars
+- **User Story:** As an ADMIN, I want to define blackout dates and operation calendars so that shifts are not scheduled on holidays or closures.
+- **Acceptance Criteria:**
+    - Given a blackout date,
+      When I create or update the calendar,
+      Then no shifts are assigned on those dates.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E05-1
+- **Notes:** Prevents scheduling errors.
+
+#### User Story 4: Overtime Rules and Rotations
+- **Title:** Define Overtime Rules and Shift Rotations
+- **User Story:** As an HR, I want to set overtime rules and shift rotations so that labor laws and fairness are enforced.
+- **Acceptance Criteria:**
+    - Given overtime policies,
+      When I configure them,
+      Then overtime is calculated and flagged.
+    - Given a rotation schedule,
+      When I assign it,
+      Then employees rotate as defined.
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E05-1
+- **Notes:** Compliance and fairness.
+
+#### User Story 5: Workers View Personal Upcoming Shifts
+- **Title:** Workers View Personal Upcoming Shifts
+- **User Story:** As a WORKER, I want to view my upcoming shifts so that I can plan my attendance.
+- **Acceptance Criteria:**
+    - Given my login,
+      When I access my schedule,
+      Then I see all upcoming assigned shifts.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E05-2
+- **Notes:** Improves communication.
