@@ -1,0 +1,73 @@
+## E03 - Role Based Access Control (RBAC)
+
+### Story 1: Implement Role-Based Endpoint Security
+- **User Story:** As a System Admin, I want to restrict API endpoints based on user roles so that sensitive operations are protected.
+- **Acceptance Criteria:**
+    ```
+    Given a user with no valid token
+    When they access a protected endpoint
+    Then they receive a 401 Unauthorized response
+
+    Given a user with insufficient role
+    When they attempt a forbidden action
+    Then they receive a 403 Forbidden response
+
+    Given an ADMIN user
+    When they access any endpoint
+    Then access is granted
+    ```
+- **Additional Details:**  
+    Priority: High  
+    Story Points: 5  
+    Dependencies: E01, E02  
+    Notes: Use Spring Security.
+
+### Story 2: Row-Level Security for Supervisors
+- **User Story:** As a Supervisor, I want to access only the records of employees in my team so that I cannot view or modify unrelated data.
+- **Acceptance Criteria:**
+    ```
+    Given a SUPERVISOR user
+    When they GET '/employees'
+    Then only employees in their team are returned
+
+    Given a SUPERVISOR user
+    When they attempt to update an employee outside their team
+    Then the request is rejected with 403 Forbidden
+    ```
+- **Additional Details:**  
+    Priority: High  
+    Story Points: 5  
+    Dependencies: E01, E02  
+    Notes: Team assignment logic required.
+
+### Story 3: API Key/OAuth2 Toggle via Config
+- **User Story:** As a System Admin, I want to switch between API key and OAuth2 authentication via configuration so that I can adapt to different environments.
+- **Acceptance Criteria:**
+    ```
+    Given the application config is set to 'API_KEY'
+    When a request is made with a valid API key
+    Then authentication succeeds
+
+    Given the config is set to 'OAUTH2'
+    When a request is made with a valid OAuth2 token
+    Then authentication succeeds
+    ```
+- **Additional Details:**  
+    Priority: Medium  
+    Story Points: 3  
+    Dependencies: E01  
+    Notes: Document config options.
+
+### Story 4: Automated Security Tests
+- **User Story:** As a Developer, I want automated tests for security rules so that unauthorized access is detected early.
+- **Acceptance Criteria:**
+    ```
+    Given the test suite
+    When I run security tests
+    Then all unauthorized and forbidden scenarios are covered and pass
+    ```
+- **Additional Details:**  
+    Priority: High  
+    Story Points: 2  
+    Dependencies: E01, E02  
+    Notes: Use integration tests.
