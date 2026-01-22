@@ -1,0 +1,64 @@
+### E06 - Leave & Absence Management
+
+#### User Story 1: Request Leave (PTO, Sick, Unpaid)
+- **Title:** Request Leave (PTO, Sick, Unpaid)
+- **User Story:** As a WORKER, I want to request different types of leave so that my absences are tracked and approved.
+- **Acceptance Criteria:**
+    - Given a leave request,
+      When I submit it,
+      Then it is pending supervisor approval.
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E02, E03, E05
+- **Notes:** PTO, sick, unpaid.
+
+#### User Story 2: Approve or Deny Leave Requests
+- **Title:** Approve or Deny Leave Requests
+- **User Story:** As a SUPERVISOR, I want to approve or deny leave requests so that staffing is maintained.
+- **Acceptance Criteria:**
+    - Given a pending leave request,
+      When I approve or deny it,
+      Then the employee is notified and balances are updated.
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E06-1
+- **Notes:** Approval workflow.
+
+#### User Story 3: Track Leave Accrual Balances
+- **Title:** Track Leave Accrual Balances
+- **User Story:** As an HR, I want to track leave accrual balances so that employees know their available time off.
+- **Acceptance Criteria:**
+    - Given an employee,
+      When I view their profile,
+      Then I see current leave balances.
+    - Given a leave approval,
+      When it is processed,
+      Then balances are updated.
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E06-1, E06-2
+- **Notes:** Accrual policies.
+
+#### User Story 4: Integrate Leave with Scheduling
+- **Title:** Integrate Leave with Scheduling
+- **User Story:** As a SYSTEM, I want approved leaves to auto-flag scheduled shifts for coverage so that absences are managed.
+- **Acceptance Criteria:**
+    - Given an approved leave,
+      When it overlaps with scheduled shifts,
+      Then those shifts are flagged for coverage.
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E06-2, E05
+- **Notes:** Ensures coverage.
+
+#### User Story 5: Export Approved Leaves
+- **Title:** Export Approved Leaves
+- **User Story:** As an ADMIN or HR, I want to export approved leaves so that payroll and planning are accurate.
+- **Acceptance Criteria:**
+    - Given approved leave data,
+      When I request an export,
+      Then a report is generated.
+- **Priority:** Medium
+- **Story Points:** 1
+- **Dependencies:** E06-3
+- **Notes:** For payroll integration.
