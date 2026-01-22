@@ -1,0 +1,61 @@
+### E13 - Integration Layer (HRIS/WMS APIs)
+
+#### User Story 1: Expose Secured REST APIs
+- **Title:** Expose Secured REST APIs for HRIS/WMS
+- **User Story:** As a SYSTEM, I want to expose JWT/OAuth2-secured REST APIs for HRIS and WMS integration so that master data is synchronized.
+- **Acceptance Criteria:**
+    - Given an API request,
+      When authenticated,
+      Then data is exchanged securely.
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E01, E02, E03
+- **Notes:** Security is critical.
+
+#### User Story 2: HRIS Sync Job for Employee Data
+- **Title:** HRIS Sync Job for Employee Data
+- **User Story:** As a SYSTEM, I want a scheduled job to sync employee data from HRIS so that new hires and terms are up to date.
+- **Acceptance Criteria:**
+    - Given new HRIS data,
+      When the sync job runs,
+      Then employees are created or updated.
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E13-1
+- **Notes:** Idempotent updates.
+
+#### User Story 3: WMS Link for Department/Location
+- **Title:** WMS Link for Department/Location Data
+- **User Story:** As a SYSTEM, I want to sync department and location data with WMS so that assignments are accurate.
+- **Acceptance Criteria:**
+    - Given WMS data,
+      When the sync runs,
+      Then department/location info is updated.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E13-1
+- **Notes:** Data consistency.
+
+#### User Story 4: SSO Integration with IDP
+- **Title:** SSO Integration with Identity Provider
+- **User Story:** As a USER, I want to log in via SSO so that access is seamless and secure.
+- **Acceptance Criteria:**
+    - Given SSO configuration,
+      When I log in,
+      Then authentication is handled by the IDP.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E13-1
+- **Notes:** User convenience.
+
+#### User Story 5: Webhooks for System Events
+- **Title:** Webhooks for System Events
+- **User Story:** As a SYSTEM, I want to send webhooks for key events so that external systems can react in real time.
+- **Acceptance Criteria:**
+    - Given a configured webhook,
+      When an event occurs,
+      Then a webhook is sent with event data.
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E13-1
+- **Notes:** Event-driven integration.
