@@ -1,0 +1,12 @@
+Title: Project Scaffolding - Actuator Health Endpoint
+User Story: As an operations engineer, I want the Actuator health endpoint enabled so that I can monitor application health.
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns status UP
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: Spring Boot initialization
+Notes: Health endpoint must be secured
