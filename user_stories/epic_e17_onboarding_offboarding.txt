@@ -1,0 +1,67 @@
+# E17 â Onboarding & Offboarding Workflow
+
+## User Story 1: Automated Provisioning for New Hires
+**User Story:**  
+As an HR user, I want new hires from HRIS to be provisioned with accounts, schedules, and training tasks.
+
+**Acceptance Criteria (Gherkin):**  
+Given a new hire in HRIS  
+When synced  
+Then an account, initial schedule, and training tasks are created
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E02, E03, E05, E07, E13  
+- Notes: Welcome notification sent
+
+---
+
+## User Story 2: Asset Assignment Tasks for Onboarding
+**User Story:**  
+As a supervisor, I want onboarding tasks to include asset assignment.
+
+**Acceptance Criteria (Gherkin):**  
+Given a new hire  
+When onboarding tasks are generated  
+Then asset assignment is included
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E17-1, E09  
+- Notes: Track asset status
+
+---
+
+## User Story 3: Automated Offboarding for Terminations
+**User Story:**  
+As an HR user, I want terminated employees to have access revoked, assets collected, and schedules updated.
+
+**Acceptance Criteria (Gherkin):**  
+Given a termination in HRIS  
+When synced  
+Then access is revoked, assets flagged for return, and future shifts removed
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E17-1, E09, E05  
+- Notes: Offboarding checklist generated
+
+---
+
+## User Story 4: Track Onboarding/Offboarding Progress
+**User Story:**  
+As an HR user, I want to track progress of onboarding/offboarding tasks.
+
+**Acceptance Criteria (Gherkin):**  
+Given an employee  
+When I view their profile  
+Then all onboarding/offboarding tasks and status are visible
+
+**Additional Details:**  
+- Priority: Low  
+- Story Points: 1  
+- Dependencies: E17-1  
+- Notes: Dashboard widget
