@@ -1,0 +1,94 @@
+E04: Time & Attendance (Clock In/Out)
+
+User Story 1
+Title: Implement Clock-In Endpoint with Geofence
+
+User Story: As a Worker I want to clock in via an endpoint with optional geofence validation So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Clock-in with geofence
+Given my device is within the allowed geofence
+When I POST to /attendance/clock-in
+Then my clock-in event is recorded with location data
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Geofence validation is configurable
+
+---
+
+User Story 2
+Title: Implement Clock-Out Endpoint
+
+User Story: As a Worker I want to clock out via an endpoint So that my shift end time is captured
+
+Acceptance Criteria:
+Scenario: Clock-out event
+Given I am currently clocked in
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded and shift hours are calculated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Clock-in endpoint
+- Notes: Device capture is required
+
+---
+
+User Story 3
+Title: Calculate Hours Worked Per Shift
+
+User Story: As a Supervisor I want the system to calculate hours worked per shift So that payroll and compliance are accurate
+
+Acceptance Criteria:
+Scenario: Shift hours calculation
+Given valid clock-in and clock-out events
+When I view the attendance report
+Then total hours worked are computed for each shift
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Clock-in/out endpoints
+- Notes: Handles overnight shifts
+
+---
+
+User Story 4
+Title: Handle Missed Punches and Corrections Workflow
+
+User Story: As a Worker I want to request corrections for missed punches So that my attendance record is accurate
+
+Acceptance Criteria:
+Scenario: Missed punch correction
+Given a missed punch event
+When I submit a correction request
+Then an approval task is created for my supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Clock-in/out endpoints
+- Notes: Correction workflow must be auditable
+
+---
+
+User Story 5
+Title: Export Attendance Reports to CSV
+
+User Story: As an HR I want to export attendance reports to CSV So that payroll processing is streamlined
+
+Acceptance Criteria:
+Scenario: Attendance report export
+Given attendance data for a period
+When I request an export
+Then a CSV file is generated with daily totals
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance calculation
+- Notes: Export must include corrections
