@@ -1,0 +1,84 @@
+# E12 â Notifications & Announcements
+
+## User Story 1: In-App and Email/SMS Notifications
+**User Story:**  
+As a user, I want to receive notifications for shift changes, approvals, and announcements via my preferred channel.
+
+**Acceptance Criteria (Gherkin):**  
+Given a notification event  
+When triggered  
+Then I receive it via in-app, email, or SMS as per my settings
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E03, E05, E06, E07  
+- Notes: Channel preferences stored per user
+
+---
+
+## User Story 2: Notification Templates and Localization
+**User Story:**  
+As an admin, I want to manage notification templates and localize them so that messages are clear and in the user's language.
+
+**Acceptance Criteria (Gherkin):**  
+Given a template  
+When I edit or localize it  
+Then notifications use the correct version
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E12-1  
+- Notes: Support for multiple languages
+
+---
+
+## User Story 3: Notification Delivery Status Tracking
+**User Story:**  
+As an admin, I want to track delivery status of notifications so that failures are visible.
+
+**Acceptance Criteria (Gherkin):**  
+Given a sent notification  
+When I view status  
+Then delivered, failed, or pending is shown
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E12-1  
+- Notes: Retry failed deliveries
+
+---
+
+## User Story 4: Quiet Hours and Rate Limiting
+**User Story:**  
+As a user, I want to configure quiet hours and rate limits so that I am not disturbed outside work hours.
+
+**Acceptance Criteria (Gherkin):**  
+Given my settings  
+When a notification is triggered during quiet hours  
+Then it is delayed or suppressed
+
+**Additional Details:**  
+- Priority: Low  
+- Story Points: 1  
+- Dependencies: E12-1  
+- Notes: Quiet hours configurable per user
+
+---
+
+## User Story 5: Announcements Dashboard Widget
+**User Story:**  
+As a user, I want to see recent announcements on my dashboard.
+
+**Acceptance Criteria (Gherkin):**  
+Given I log in  
+When I view the dashboard  
+Then recent announcements are listed
+
+**Additional Details:**  
+- Priority: Low  
+- Story Points: 1  
+- Dependencies: E12-1  
+- Notes: Mark as read/unread
