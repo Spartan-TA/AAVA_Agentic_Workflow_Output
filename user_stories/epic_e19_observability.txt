@@ -1,0 +1,67 @@
+# E19 â Observability
+
+## User Story 1: Centralized Logging for All Services
+**User Story:**  
+As a DevOps engineer, I want all services to log to a central system.
+
+**Acceptance Criteria (Gherkin):**  
+Given deployed services  
+When logs are generated  
+Then they are aggregated in a central dashboard
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E01  
+- Notes: Use ELK or similar stack
+
+---
+
+## User Story 2: Distributed Tracing for Key Flows
+**User Story:**  
+As a DevOps engineer, I want distributed tracing for API calls.
+
+**Acceptance Criteria (Gherkin):**  
+Given a request  
+When it traverses services  
+Then trace IDs are propagated and visible in the dashboard
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E19-1  
+- Notes: Use OpenTelemetry
+
+---
+
+## User Story 3: Metrics Collection and Alerting
+**User Story:**  
+As an operator, I want to collect metrics and set alerts for errors, latency, and resource usage.
+
+**Acceptance Criteria (Gherkin):**  
+Given metrics thresholds  
+When exceeded  
+Then alerts are triggered
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E19-1  
+- Notes: Integrate with PagerDuty or email
+
+---
+
+## User Story 4: Health and Readiness Probes
+**User Story:**  
+As an operator, I want health and readiness endpoints for all services.
+
+**Acceptance Criteria (Gherkin):**  
+Given a running service  
+When I call /health or /ready  
+Then status is returned for monitoring
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E01  
+- Notes: Used by Kubernetes
