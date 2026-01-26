@@ -1,0 +1,94 @@
+E02: Employee Master Data (CRUD)
+
+User Story 1
+Title: Create Employee Entity and Repository
+
+User Story: As a Developer I want to define the Employee entity and repository So that employee records can be stored and retrieved
+
+Acceptance Criteria:
+Scenario: Employee entity creation
+Given the domain model
+When I create the Employee entity with fields name, badgeId, role, department, shiftGroup, hireDate, status
+Then the repository supports basic CRUD operations
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Entity must support soft-delete
+
+---
+
+User Story 2
+Title: Implement Employee CRUD APIs
+
+User Story: As an HR I want to create, read, update, and delete employee records via API So that employee data is managed centrally
+
+Acceptance Criteria:
+Scenario: Employee CRUD API
+Given valid employee data
+When I call POST/GET/PUT/PATCH/DELETE /employees
+Then the API performs the requested operation and enforces unique badgeId
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee entity
+- Notes: API must support pagination and filtering
+
+---
+
+User Story 3
+Title: Enforce Unique Badge ID
+
+User Story: As an HR I want the system to enforce unique badge IDs So that duplicate employee records are prevented
+
+Acceptance Criteria:
+Scenario: Badge ID uniqueness
+Given an existing employee with badgeId X
+When I try to create another employee with badgeId X
+Then the system rejects the request with a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Error message must be clear
+
+---
+
+User Story 4
+Title: Support Soft-Delete for Employees
+
+User Story: As an HR I want to soft-delete employee records So that historical data is preserved for compliance
+
+Acceptance Criteria:
+Scenario: Soft-delete employee
+Given an active employee record
+When I delete the employee
+Then the status is set to inactive and the record is not physically removed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee entity
+- Notes: Soft-deleted records excluded from active queries
+
+---
+
+User Story 5
+Title: Provide OpenAPI Schemas with Examples
+
+User Story: As a Developer I want the Employee APIs documented with OpenAPI schemas and examples So that integration is straightforward
+
+Acceptance Criteria:
+Scenario: API documentation
+Given the API endpoints
+When I view the OpenAPI documentation
+Then schemas and example payloads are present for all Employee operations
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD API
+- Notes: Documentation must be updated with each API change
