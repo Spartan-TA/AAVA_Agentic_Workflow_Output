@@ -1,0 +1,94 @@
+E05: Shift & Schedule Management
+
+User Story 1
+Title: Create Recurring Shift Templates
+
+User Story: As an HR I want to create recurring shift templates So that scheduling is efficient and consistent
+
+Acceptance Criteria:
+Scenario: Shift template creation
+Given shift parameters
+When I create a template
+Then the template is saved and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Supports daily, weekly, custom recurrence
+
+---
+
+User Story 2
+Title: Assign Shifts to Employees
+
+User Story: As a Supervisor I want to assign shifts to employees So that staffing needs are met
+
+Acceptance Criteria:
+Scenario: Shift assignment
+Given a shift template
+When I assign employees
+Then assignments are saved and conflicts are detected
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Shift templates
+- Notes: Bulk assignment supported
+
+---
+
+User Story 3
+Title: Detect and Prevent Scheduling Conflicts
+
+User Story: As a Supervisor I want the system to detect and prevent scheduling conflicts So that employees are not double-booked
+
+Acceptance Criteria:
+Scenario: Conflict detection
+Given existing shift assignments
+When I assign a new shift
+Then the system prevents overlapping assignments
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift assignment
+- Notes: Conflict rules configurable
+
+---
+
+User Story 4
+Title: Display Upcoming Shifts to Workers
+
+User Story: As a Worker I want to view my upcoming shifts So that I can plan my schedule
+
+Acceptance Criteria:
+Scenario: Upcoming shifts view
+Given my employee account
+When I access my schedule
+Then my personal upcoming shifts are displayed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Mobile-friendly view required
+
+---
+
+User Story 5
+Title: Generate Audit Entries for Schedule Changes
+
+User Story: As an HR I want audit entries generated for schedule changes So that compliance is maintained
+
+Acceptance Criteria:
+Scenario: Audit entry creation
+Given a schedule change
+When I update an assignment
+Then an audit entry is created with actor, timestamp, and before/after values
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Audit log must be immutable
