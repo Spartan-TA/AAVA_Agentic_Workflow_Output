@@ -1,0 +1,33 @@
+Title: Audit Trail - Log Sensitive Changes
+
+User Story: As a compliance officer I want all sensitive changes (employee PII, schedules, approvals, payroll) logged with actor and timestamp so that audits are possible.
+
+Acceptance Criteria:
+Scenario: Log create/update/delete
+Given a sensitive change occurs
+When the action is performed
+Then an immutable log entry is created with before/after values
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03
+- Notes: Tamper-evident storage.
+
+---
+
+Title: Audit Trail - Export Audit Log
+
+User Story: As an auditor I want to export audit logs by date, user, or entity so that investigations can be conducted.
+
+Acceptance Criteria:
+Scenario: Export audit log
+Given audit log entries exist
+When I request an export by date/user/entity
+Then I receive a file with matching entries
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Tests validate coverage.
