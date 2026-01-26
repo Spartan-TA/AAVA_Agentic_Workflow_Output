@@ -1,0 +1,69 @@
+Title: Integration Layer - Expose HRIS API
+
+User Story: As a systems integrator I want to expose REST APIs for HRIS so that new hires and terminations are synchronized.
+
+Acceptance Criteria:
+Scenario: HRIS sync job creates/updates employees
+Given new hire/term data in HRIS
+When the sync job runs
+Then employee records are created or updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: JWT/OAuth2-secured APIs.
+
+---
+
+Title: Integration Layer - Expose WMS API
+
+User Story: As a systems integrator I want to expose REST APIs for WMS so that department and location data is synchronized.
+
+Acceptance Criteria:
+Scenario: WMS link for department/location
+Given department/location data in WMS
+When the sync job runs
+Then records are updated in the system
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Idempotent webhooks supported.
+
+---
+
+Title: Integration Layer - Expose IDP for SSO
+
+User Story: As an IT admin I want to expose an IDP connector for SSO so that users can log in with single sign-on.
+
+Acceptance Criteria:
+Scenario: SSO login via IDP
+Given the IDP is configured
+When a user logs in
+Then authentication is handled via SSO
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: API documented in OpenAPI.
+
+---
+
+Title: Integration Layer - Webhooks for Events
+
+User Story: As a systems integrator I want to receive webhooks for key events so that downstream systems stay in sync.
+
+Acceptance Criteria:
+Scenario: Webhook sent on employee update
+Given an employee is updated
+When the update occurs
+Then a webhook is sent with change details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Webhooks are idempotent.
