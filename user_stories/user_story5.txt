@@ -1,0 +1,74 @@
+Title: Shift Management - Create Shift Templates
+
+User Story: As an HR user I want to create recurring shift templates so that scheduling is efficient.
+
+Acceptance Criteria:
+Scenario: Create shift template
+Given I am authenticated as HR
+When I POST to /shifts/templates with valid data
+Then a new shift template is created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Supports rotations and overtime rules.
+
+---
+
+Title: Shift Management - Assign Shifts
+
+User Story: As a supervisor I want to assign shifts to employees so that staffing is planned.
+
+Acceptance Criteria:
+Scenario: Assign shift to employee
+Given a shift template exists
+When I assign it to an employee
+Then the employee sees the upcoming shift in their schedule
+
+Scenario: Bulk-assign shifts
+Given multiple employees
+When I bulk-assign a shift
+Then all selected employees receive the assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Conflict detection required.
+
+---
+
+Title: Shift Management - Prevent Scheduling Conflicts
+
+User Story: As a scheduler I want to prevent overlapping or conflicting shifts so that employees are not double-booked.
+
+Acceptance Criteria:
+Scenario: Detect scheduling conflict
+Given an employee has a shift assigned
+When I try to assign an overlapping shift
+Then the system prevents the assignment and shows an error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Blackout dates and operation calendars respected.
+
+---
+
+Title: Shift Management - Audit Shift Assignments
+
+User Story: As an auditor I want all shift assignments and changes to be logged so that I can review scheduling history.
+
+Acceptance Criteria:
+Scenario: Audit entry for shift assignment
+Given a shift is assigned or changed
+When the action occurs
+Then an audit entry is generated with actor, timestamp, and details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Required for compliance.
