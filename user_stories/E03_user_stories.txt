@@ -1,0 +1,94 @@
+E03: Role-Based Access Control (RBAC)
+
+User Story 1
+Title: Implement Role-Based Authentication
+
+User Story: As a System Administrator I want to configure authentication with roles (ADMIN, HR, SUPERVISOR, WORKER) So that access is restricted appropriately
+
+Acceptance Criteria:
+Scenario: Role-based login
+Given a user account with a role
+When I log in
+Then my session reflects my assigned role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Roles must be stored securely
+
+---
+
+User Story 2
+Title: Secure Endpoints by Role
+
+User Story: As a Developer I want to secure API endpoints and methods based on user roles So that sensitive operations are protected
+
+Acceptance Criteria:
+Scenario: Endpoint security
+Given an API endpoint restricted to ADMIN
+When a WORKER attempts access
+Then the system returns 403 Forbidden
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Authentication
+- Notes: Security rules must be covered by tests
+
+---
+
+User Story 3
+Title: Support API Key/OAuth2 Toggle
+
+User Story: As a System Administrator I want to toggle between API key and OAuth2 authentication via configuration So that integration options are flexible
+
+Acceptance Criteria:
+Scenario: Authentication toggle
+Given the configuration file
+When I switch between API key and OAuth2
+Then the system authenticates requests accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Authentication
+- Notes: Toggle must not require code changes
+
+---
+
+User Story 4
+Title: Enforce Row-Level Security
+
+User Story: As a Supervisor I want to access only my team's employee records So that privacy is maintained
+
+Acceptance Criteria:
+Scenario: Row-level access
+Given a supervisor account
+When I query employee records
+Then only employees in my team are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Endpoint security
+- Notes: Row-level constraints must be tested
+
+---
+
+User Story 5
+Title: Handle Unauthorized and Forbidden Requests
+
+User Story: As a Developer I want the system to return 401 for unauthorized and 403 for forbidden actions So that error handling is clear
+
+Acceptance Criteria:
+Scenario: Unauthorized/forbidden access
+Given an unauthenticated or unauthorized request
+When I access a protected endpoint
+Then the system returns the correct HTTP status code
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Endpoint security
+- Notes: Error responses must be standardized
