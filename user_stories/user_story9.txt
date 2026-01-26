@@ -1,0 +1,74 @@
+Title: Equipment Assignment - Register Asset
+
+User Story: As an asset manager I want to register equipment and PPE so that all assets are tracked.
+
+Acceptance Criteria:
+Scenario: Add asset to registry
+Given I have asset details
+When I POST to /assets with data
+Then the asset is added to the registry
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Asset condition state tracked.
+
+---
+
+Title: Equipment Assignment - Assign/Return Asset
+
+User Story: As a supervisor I want to assign and track checkout/return of equipment to employees so that accountability is maintained.
+
+Acceptance Criteria:
+Scenario: Assign asset to employee
+Given an asset and employee exist
+When I assign the asset
+Then the assignment is recorded
+
+Scenario: Return asset
+Given an asset is checked out
+When it is returned
+Then the return is recorded and asset status updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Overdue returns reported.
+
+---
+
+Title: Equipment Assignment - Block Assignment if Certification Missing
+
+User Story: As a supervisor I want to prevent assignment of equipment to employees lacking required certifications so that safety is enforced.
+
+Acceptance Criteria:
+Scenario: Block assignment to uncertified employee
+Given an asset requires certification
+When I try to assign it to an uncertified employee
+Then the system blocks the assignment
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Certification check enforced.
+
+---
+
+Title: Equipment Assignment - Asset History Log
+
+User Story: As an auditor I want to view the history of asset assignments and returns so that asset usage is traceable.
+
+Acceptance Criteria:
+Scenario: View asset history
+Given an asset exists
+When I request its history
+Then I see all assignments and returns with timestamps
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E07
+- Notes: History visible per asset and employee.
