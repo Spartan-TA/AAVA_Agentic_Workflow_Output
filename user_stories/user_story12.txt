@@ -1,0 +1,141 @@
+### Epic E18: Localization & Multi-Tenant
+
+**User Story 1: Localize UI and Notifications**
+- Title: Localize UI and Notification Content
+- User Story: As a Worker, I want the UI and notifications in my preferred language so that I can use the system comfortably.
+- Acceptance Criteria:
+  ```
+  Given a worker sets their language preference,
+  When they access the UI or receive notifications,
+  Then content is displayed in the selected language.
+  ```
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E12, Notes: Language settings.
+
+**User Story 2: Localize Date/Time Formats**
+- Title: Localize Date and Time Formats
+- User Story: As a Worker, I want date and time formats localized so that information is clear.
+- Acceptance Criteria:
+  ```
+  Given a worker's locale is set,
+  When dates/times are displayed,
+  Then formats match the locale.
+  ```
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E12, Notes: Locale support.
+
+**User Story 3: Localize Exported Reports**
+- Title: Localize Exported Reports
+- User Story: As an HR user, I want exported reports in the selected language so that compliance is met.
+- Acceptance Criteria:
+  ```
+  Given a report is exported,
+  When a language is selected,
+  Then the report content is localized.
+  ```
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E15, Notes: Export options.
+
+---
+
+### Epic E19: Observability & Monitoring
+
+**User Story 1: Application Metrics Collection**
+- Title: Collect Application Metrics
+- User Story: As a System Admin, I want to collect application metrics so that system health is monitored.
+- Acceptance Criteria:
+  ```
+  Given the application is running,
+  When metrics endpoints are accessed,
+  Then metrics such as request count and latency are returned.
+  ```
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E01, Notes: Metrics API.
+
+**User Story 2: Error and Exception Logging**
+- Title: Log Errors and Exceptions
+- User Story: As a System Admin, I want errors and exceptions logged so that issues are detected and resolved.
+- Acceptance Criteria:
+  ```
+  Given an error occurs,
+  When logging is configured,
+  Then the error is recorded with stack trace and context.
+  ```
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E01, Notes: Centralized logging.
+
+**User Story 3: Health Check Endpoints**
+- Title: Health Check Endpoints
+- User Story: As a System Admin, I want health check endpoints so that uptime is monitored.
+- Acceptance Criteria:
+  ```
+  Given the application is running,
+  When /actuator/health is accessed,
+  Then the status is UP if healthy.
+  ```
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E01, Notes: Monitoring integration.
+
+**User Story 4: Alerting on Critical Events**
+- Title: Alert on Critical System Events
+- User Story: As a System Admin, I want alerts for critical events so that I can respond quickly.
+- Acceptance Criteria:
+  ```
+  Given a critical event occurs,
+  When alerting is configured,
+  Then a notification is sent to the admin team.
+  ```
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E01, Notes: Alerting integration.
+
+---
+
+### Epic E20: CI/CD & Deployment Automation
+
+**User Story 1: Automated Build Pipeline**
+- Title: Automated Build Pipeline
+- User Story: As a Developer, I want an automated build pipeline so that code is built and tested on every commit.
+- Acceptance Criteria:
+  ```
+  Given code is pushed to the repository,
+  When the pipeline runs,
+  Then the project is built and tests are executed automatically.
+  ```
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: CI setup.
+
+**User Story 2: Automated Deployment Pipeline**
+- Title: Automated Deployment Pipeline
+- User Story: As a DevOps Engineer, I want an automated deployment pipeline so that releases are consistent and reliable.
+- Acceptance Criteria:
+  ```
+  Given a successful build,
+  When the pipeline runs,
+  Then the application is deployed to the target environment.
+  ```
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: CD setup.
+
+**User Story 3: Environment Configuration Management**
+- Title: Manage Environment Configurations
+- User Story: As a DevOps Engineer, I want environment-specific configurations managed so that deployments are correct.
+- Acceptance Criteria:
+  ```
+  Given multiple environments,
+  When configuration is applied,
+  Then settings are correct for each environment.
+  ```
+- Additional Details: Priority: High, Story Points: 1, Dependencies: E01, Notes: Config management.
+
+**User Story 4: Automated Test Coverage Reporting**
+- Title: Automated Test Coverage Reports
+- User Story: As a Developer, I want test coverage reports generated in CI so that code quality is tracked.
+- Acceptance Criteria:
+  ```
+  Given tests are run in CI,
+  When coverage is reported,
+  Then results are available in the pipeline dashboard.
+  ```
+- Additional Details: Priority: High, Story Points: 1, Dependencies: E01, Notes: Quality gates.
+
+**User Story 5: Rollback on Failed Deployments**
+- Title: Rollback Failed Deployments
+- User Story: As a DevOps Engineer, I want failed deployments to trigger automatic rollback so that service is restored quickly.
+- Acceptance Criteria:
+  ```
+  Given a deployment fails,
+  When rollback is configured,
+  Then the previous stable version is restored automatically.
+  ```
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Rollback logic.
