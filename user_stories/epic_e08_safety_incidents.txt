@@ -1,0 +1,67 @@
+# E08 â Safety Incidents & OSHA Reporting
+
+## User Story 1: Record Safety Incidents and Near-Misses
+**User Story:**  
+As a supervisor, I want to record incidents with severity, location, and involved employees so that safety data is captured.
+
+**Acceptance Criteria (Gherkin):**  
+Given an incident  
+When I submit the form  
+Then the incident is saved with all required fields
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E02, E03  
+- Notes: Validation for required fields
+
+---
+
+## User Story 2: Workflow for Investigation and Corrective Actions
+**User Story:**  
+As a safety manager, I want incidents to progress through OpenâInvestigatingâResolved so that accountability is tracked.
+
+**Acceptance Criteria (Gherkin):**  
+Given a new incident  
+When I update the status  
+Then the workflow progresses and actions are logged
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E08-1  
+- Notes: Corrective actions linked to incident
+
+---
+
+## User Story 3: Generate OSHA Summary Reports
+**User Story:**  
+As a compliance officer, I want to export OSHA 300/300A summaries so that regulatory requirements are met.
+
+**Acceptance Criteria (Gherkin):**  
+Given incident records  
+When I request an OSHA export  
+Then the file includes all required fields
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E08-1  
+- Notes: Export as CSV/PDF
+
+---
+
+## User Story 4: Metrics Dashboard for Safety KPIs
+**User Story:**  
+As a manager, I want to view dashboard metrics for safety incidents so that trends are visible.
+
+**Acceptance Criteria (Gherkin):**  
+Given incident data  
+When I access the dashboard  
+Then I see KPIs (incident rate, severity, resolution time)
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E08-1  
+- Notes: Role-based access
