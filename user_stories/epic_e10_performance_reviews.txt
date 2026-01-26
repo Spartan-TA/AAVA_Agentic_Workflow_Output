@@ -1,0 +1,84 @@
+# E10 â Performance Reviews & Goals
+
+## User Story 1: Create Review Templates
+**User Story:**  
+As an HR user, I want to define quarterly and annual review templates with goals and competencies.
+
+**Acceptance Criteria (Gherkin):**  
+Given the review module  
+When I create/edit/delete a template  
+Then it is available for assignment
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E02, E03  
+- Notes: Templates versioned
+
+---
+
+## User Story 2: Assign Reviews to Employees
+**User Story:**  
+As a supervisor, I want to assign reviews to employees so that performance is tracked.
+
+**Acceptance Criteria (Gherkin):**  
+Given a review template  
+When I assign it to an employee  
+Then the review cycle is started
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E10-1  
+- Notes: Assignment triggers notification
+
+---
+
+## User Story 3: Submit and Acknowledge Reviews
+**User Story:**  
+As an employee and supervisor, I want to submit and acknowledge reviews so that feedback is documented.
+
+**Acceptance Criteria (Gherkin):**  
+Given an assigned review  
+When both parties submit and acknowledge  
+Then the review is marked complete and locked
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E10-2  
+- Notes: Immutable after sign-off
+
+---
+
+## User Story 4: Export Reviews as PDF
+**User Story:**  
+As an HR user, I want to export completed reviews as PDF for record-keeping.
+
+**Acceptance Criteria (Gherkin):**  
+Given a completed review  
+When I request export  
+Then a PDF is generated with all details
+
+**Additional Details:**  
+- Priority: Low  
+- Story Points: 1  
+- Dependencies: E10-3  
+- Notes: PDF includes signatures
+
+---
+
+## User Story 5: Role-Based Review Visibility
+**User Story:**  
+As a user, I want to see only reviews relevant to my role (self, direct reports, HR) for privacy.
+
+**Acceptance Criteria (Gherkin):**  
+Given logged-in user  
+When accessing reviews  
+Then only authorized reviews are visible
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E10-2  
+- Notes: RBAC enforced
