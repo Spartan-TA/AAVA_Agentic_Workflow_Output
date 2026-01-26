@@ -1,0 +1,84 @@
+# E05 â Shift & Schedule Management
+
+## User Story 1: Create and Manage Shift Templates
+**User Story:**  
+As an HR user, I want to define recurring shift templates so that I can standardize scheduling.
+
+**Acceptance Criteria (Gherkin):**  
+Given the scheduling module  
+When I create/edit/delete a shift template  
+Then the template is saved and available for assignment
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E02, E03, E04  
+- Notes: Templates include start/end time, break rules
+
+---
+
+## User Story 2: Assign Shifts to Employees
+**User Story:**  
+As a supervisor, I want to assign shifts to employees so that staffing is planned in advance.
+
+**Acceptance Criteria (Gherkin):**  
+Given available shift templates  
+When I assign a shift to an employee  
+Then the assignment is saved and visible to the employee
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E05-1  
+- Notes: Bulk assignment supported
+
+---
+
+## User Story 3: Detect and Prevent Scheduling Conflicts
+**User Story:**  
+As a scheduler, I want the system to detect conflicts (overlaps, double-booking) so that errors are prevented.
+
+**Acceptance Criteria (Gherkin):**  
+Given existing assignments  
+When I assign a new shift  
+Then conflicts are detected and prevented
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E05-2  
+- Notes: Includes blackout dates and holidays
+
+---
+
+## User Story 4: Display Personal Upcoming Shifts
+**User Story:**  
+As a worker, I want to view my upcoming shifts so that I can plan accordingly.
+
+**Acceptance Criteria (Gherkin):**  
+Given I am logged in  
+When I view my schedule  
+Then I see all upcoming assigned shifts
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E05-2  
+- Notes: Mobile-friendly view
+
+---
+
+## User Story 5: Generate Audit Entries for Shift Changes
+**User Story:**  
+As an auditor, I want all shift assignments and changes logged so that I can review scheduling history.
+
+**Acceptance Criteria (Gherkin):**  
+Given a shift assignment is created/updated/deleted  
+When I view the audit log  
+Then the change is recorded with actor and timestamp
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E14  
+- Notes: Link to audit trail module
