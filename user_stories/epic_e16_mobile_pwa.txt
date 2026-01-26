@@ -1,0 +1,67 @@
+# E16 â Mobile Access (PWA)
+
+## User Story 1: Responsive Mobile Views for Core Flows
+**User Story:**  
+As a worker, I want to clock in/out, view schedules, request leave, and see announcements on my mobile device.
+
+**Acceptance Criteria (Gherkin):**  
+Given a mobile device  
+When I access the app  
+Then all core flows are usable and responsive
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E04, E05, E06, E12  
+- Notes: Test on Android/iOS
+
+---
+
+## User Story 2: Installable PWA Manifest
+**User Story:**  
+As a user, I want to install the app as a PWA.
+
+**Acceptance Criteria (Gherkin):**  
+Given a supported browser  
+When I add to home screen  
+Then the app installs with icon and splash screen
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E16-1  
+- Notes: Manifest includes name, icons, theme
+
+---
+
+## User Story 3: Offline Queue for Clock Events
+**User Story:**  
+As a worker, I want to clock in/out offline and have events sync when online.
+
+**Acceptance Criteria (Gherkin):**  
+Given no network  
+When I clock in/out  
+Then the event is queued and syncs automatically when online
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E16-1  
+- Notes: Conflict resolution for duplicate events
+
+---
+
+## User Story 4: Lighthouse PWA Score â¥ 80
+**User Story:**  
+As a product owner, I want the PWA to score at least 80 in Lighthouse audits.
+
+**Acceptance Criteria (Gherkin):**  
+Given the deployed app  
+When audited  
+Then the PWA score is â¥ 80
+
+**Additional Details:**  
+- Priority: Low  
+- Story Points: 1  
+- Dependencies: E16-1  
+- Notes: Accessibility and performance included
