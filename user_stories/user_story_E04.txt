@@ -1,0 +1,46 @@
+Epic E04: Time & Attendance (Clock In/Out)
+
+1. Title: Clock-In Event Capture
+   User Story: As a WORKER I want to clock in with device and location data So that my attendance is accurately recorded.
+   Acceptance Criteria:
+     Scenario: Valid clock-in
+     Given my shift has started
+     When I POST /attendance/clock-in with device and location
+     Then my clock-in event is recorded and associated with my shift
+   Additional Details: Priority: High, Story Points: 2, Dependencies: E02,E03, Notes: Geofence optional.
+
+2. Title: Missed Punch Correction Workflow
+   User Story: As a SUPERVISOR I want to approve corrections for missed punches So that attendance records are accurate.
+   Acceptance Criteria:
+     Scenario: Correction approval
+     Given a missed punch request
+     When I approve the correction
+     Then the attendance record is updated and approval logged
+   Additional Details: Priority: High, Story Points: 2, Dependencies: E04, Notes: Audit approval.
+
+3. Title: Daily Totals Calculation
+   User Story: As an HR I want daily totals of hours worked per shift So that payroll is accurate.
+   Acceptance Criteria:
+     Scenario: Totals computed
+     Given clock-in/out events for a day
+     When I request daily totals
+     Then the correct hours are calculated and available for export
+   Additional Details: Priority: High, Story Points: 2, Dependencies: E04, Notes: Handle overnight shifts.
+
+4. Title: Error Handling for Invalid Clock-In
+   User Story: As a WORKER I want to receive an error if I clock in outside allowed location So that compliance is enforced.
+   Acceptance Criteria:
+     Scenario: Geofence violation
+     Given my location is outside allowed area
+     When I POST /attendance/clock-in
+     Then a 400 error is returned with reason
+   Additional Details: Priority: Medium, Story Points: 1, Dependencies: E04, Notes: Error message must specify location.
+
+5. Title: Attendance Report Export
+   User Story: As an ADMIN I want to export attendance reports in CSV So that I can analyze attendance data.
+   Acceptance Criteria:
+     Scenario: Export attendance
+     Given attendance data exists
+     When I request export
+     Then a CSV file is generated with all relevant fields
+   Additional Details: Priority: Medium, Story Points: 2, Dependencies: E04, Notes: Support date range filter.
