@@ -1,0 +1,56 @@
+Title: Safety Incidents - Record Incident
+
+User Story: As a supervisor I want to record safety incidents and near-misses so that corrective actions can be taken.
+
+Acceptance Criteria:
+Scenario: Record new incident
+Given an incident occurs
+When I POST to /safety/incidents with details
+Then the incident is recorded with status Open
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Severity, location, involved employees captured.
+
+---
+
+Title: Safety Incidents - Incident Workflow
+
+User Story: As a safety officer I want to manage the investigation and resolution workflow for incidents so that issues are tracked to closure.
+
+Acceptance Criteria:
+Scenario: Move incident to Investigating
+Given an incident is Open
+When investigation starts
+Then status changes to Investigating
+
+Scenario: Resolve incident
+Given an incident is Investigating
+When corrective actions are completed
+Then status changes to Resolved
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Workflow status transitions enforced.
+
+---
+
+Title: Safety Incidents - OSHA Reporting
+
+User Story: As a compliance officer I want to generate OSHA summary reports so that regulatory requirements are met.
+
+Acceptance Criteria:
+Scenario: Export OSHA 300/300A fields
+Given incidents are recorded
+When I request an OSHA export
+Then I receive a file with required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Metrics dashboard endpoints available.
