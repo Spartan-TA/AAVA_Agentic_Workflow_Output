@@ -1,0 +1,67 @@
+# E07 â Training & Certification Tracking
+
+## User Story 1: CRUD for Certifications
+**User Story:**  
+As an HR user, I want to create, update, and delete employee certifications so that compliance is tracked.
+
+**Acceptance Criteria (Gherkin):**  
+Given the certification module  
+When I manage certifications  
+Then changes are saved and visible on employee profiles
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E02, E03  
+- Notes: Certification types configurable
+
+---
+
+## User Story 2: Alert on Expiring Certifications
+**User Story:**  
+As a supervisor, I want to receive alerts 30 and 7 days before a certification expires so that renewals are not missed.
+
+**Acceptance Criteria (Gherkin):**  
+Given a certification nearing expiry  
+When the alert period is reached  
+Then a notification is sent to the employee and supervisor
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E07-1, E12  
+- Notes: Alerts via email/SMS/in-app
+
+---
+
+## User Story 3: Block Assignment to Tasks Requiring Valid Certifications
+**User Story:**  
+As a scheduler, I want to prevent assignment of employees to tasks requiring certifications if their cert is expired.
+
+**Acceptance Criteria (Gherkin):**  
+Given an expired certification  
+When assigning a task  
+Then the system blocks the assignment and displays a warning
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E07-1, E05  
+- Notes: Certification requirements defined per task
+
+---
+
+## User Story 4: Upload Proof Documents for Certifications
+**User Story:**  
+As an employee, I want to upload proof of certification so that my records are complete.
+
+**Acceptance Criteria (Gherkin):**  
+Given a certification  
+When I upload a document  
+Then it is stored and linked to my profile
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E07-1  
+- Notes: Support PDF/JPG/PNG
