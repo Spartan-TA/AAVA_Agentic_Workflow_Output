@@ -1,0 +1,89 @@
+Title: RBAC - Secure Endpoints by Role
+
+User Story: As a security admin I want to restrict API endpoints by user role (ADMIN, HR, SUPERVISOR, WORKER) so that sensitive operations are protected.
+
+Acceptance Criteria:
+Scenario: Unauthorized request returns 401
+Given I am not authenticated
+When I access a protected endpoint
+Then I receive a 401 Unauthorized response
+
+Scenario: Forbidden action returns 403
+Given I am authenticated as WORKER
+When I try to access an ADMIN-only endpoint
+Then I receive a 403 Forbidden response
+
+Scenario: ADMIN can manage all records
+Given I am authenticated as ADMIN
+When I access any endpoint
+Then I have full access
+
+Scenario: SUPERVISOR limited to team
+Given I am authenticated as SUPERVISOR
+When I access employee data
+Then I only see/manage employees in my team
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Enforced via Spring Security.
+
+---
+
+Title: RBAC - Row-Level Security
+
+User Story: As a supervisor I want to only access records for my team so that data privacy is maintained.
+
+Acceptance Criteria:
+Scenario: SUPERVISOR sees only team data
+Given I am a SUPERVISOR
+When I GET /employees
+Then only employees in my team are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Row-level constraints enforced.
+
+---
+
+Title: RBAC - API Key/OAuth2 Toggle
+
+User Story: As a security admin I want to toggle between API key and OAuth2 authentication via configuration so that integration partners can use the appropriate method.
+
+Acceptance Criteria:
+Scenario: API key authentication enabled
+Given API key mode is enabled in config
+When I call an endpoint with a valid API key
+Then I am authenticated
+
+Scenario: OAuth2 authentication enabled
+Given OAuth2 mode is enabled in config
+When I call an endpoint with a valid OAuth2 token
+Then I am authenticated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Configurable at deployment.
+
+---
+
+Title: RBAC - Security Test Coverage
+
+User Story: As a QA engineer I want automated tests for all security rules so that unauthorized access is prevented.
+
+Acceptance Criteria:
+Scenario: Tests cover all roles and endpoints
+Given the test suite runs
+When tests execute
+Then all role-based access rules are validated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Required for compliance.
