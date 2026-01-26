@@ -1,0 +1,67 @@
+# E14 â Audit Trail & Compliance
+
+## User Story 1: Centralized Audit Logging for Sensitive Changes
+**User Story:**  
+As a compliance officer, I want all sensitive changes (PII, schedules, approvals, payroll) logged centrally.
+
+**Acceptance Criteria (Gherkin):**  
+Given a sensitive change  
+When it occurs  
+Then an audit entry is created with actor, timestamp, before/after
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E03  
+- Notes: Immutable log table
+
+---
+
+## User Story 2: Tamper-Evident Storage for Audit Logs
+**User Story:**  
+As a compliance officer, I want audit logs stored in a tamper-evident way.
+
+**Acceptance Criteria (Gherkin):**  
+Given audit log storage  
+When I attempt to modify logs  
+Then unauthorized changes are prevented or detected
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E14-1  
+- Notes: Use append-only or hash chaining
+
+---
+
+## User Story 3: Export Audit Logs by Date/User/Entity
+**User Story:**  
+As an auditor, I want to export logs filtered by date, user, or entity.
+
+**Acceptance Criteria (Gherkin):**  
+Given audit logs  
+When I apply filters and export  
+Then only matching records are included
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E14-1  
+- Notes: Export as CSV
+
+---
+
+## User Story 4: Automated Test Coverage for Audit Logging
+**User Story:**  
+As a developer, I want automated tests to verify audit logging coverage.
+
+**Acceptance Criteria (Gherkin):**  
+Given test cases  
+When sensitive actions are performed  
+Then audit entries are created and validated
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E14-1  
+- Notes: Include negative tests
