@@ -1,0 +1,79 @@
+Title: Notifications - In-App Notifications
+
+User Story: As a worker I want to receive in-app notifications for shift changes, expiring certs, and approvals so that I stay informed.
+
+Acceptance Criteria:
+Scenario: Receive notification for shift change
+Given my shift is changed
+When the change is saved
+Then I receive an in-app notification
+
+Scenario: Receive notification for expiring cert
+Given my certification is expiring soon
+When the system checks expirations
+Then I receive an in-app notification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Users can opt-in/out per channel.
+
+---
+
+Title: Notifications - Email/SMS Notifications
+
+User Story: As a supervisor I want to receive email or SMS notifications for approvals and announcements so that I can respond promptly.
+
+Acceptance Criteria:
+Scenario: Receive email for approval request
+Given an approval is needed
+When the request is created
+Then I receive an email notification
+
+Scenario: Receive SMS for urgent announcement
+Given an urgent announcement is posted
+When I am subscribed to SMS
+Then I receive an SMS notification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Quiet hours configuration supported.
+
+---
+
+Title: Notifications - Delivery Status Tracking
+
+User Story: As an admin I want to track the delivery status of notifications so that failures can be addressed.
+
+Acceptance Criteria:
+Scenario: Track notification delivery
+Given a notification is sent
+When I view the delivery log
+Then I see status (delivered, failed, pending)
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Rate limits applied.
+
+---
+
+Title: Notifications - Announcements Dashboard
+
+User Story: As a worker I want to view all announcements on my dashboard so that I am aware of important updates.
+
+Acceptance Criteria:
+Scenario: View announcements
+Given announcements exist
+When I log in to the dashboard
+Then I see all current announcements
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Templates localized.
