@@ -1,0 +1,67 @@
+# E11 â Payroll Export Integration
+
+## User Story 1: Generate Payroll-Ready Export Files
+**User Story:**  
+As a payroll admin, I want to generate files from approved attendance and leave so that payroll processing is automated.
+
+**Acceptance Criteria (Gherkin):**  
+Given approved records  
+When I generate export  
+Then the file matches provider schema
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E04, E06  
+- Notes: Support multiple provider formats
+
+---
+
+## User Story 2: Secure Delivery of Payroll Files
+**User Story:**  
+As a payroll admin, I want to deliver payroll files via SFTP or API so that data is transferred securely.
+
+**Acceptance Criteria (Gherkin):**  
+Given a payroll file  
+When I send it via SFTP/API  
+Then delivery is logged and secure
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E11-1  
+- Notes: Credentials stored securely
+
+---
+
+## User Story 3: Retry Failed Payroll Deliveries
+**User Story:**  
+As a payroll admin, I want failed deliveries retried with backoff so that files are not lost.
+
+**Acceptance Criteria (Gherkin):**  
+Given a failed delivery  
+When retry is triggered  
+Then the system retries with increasing intervals
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E11-2  
+- Notes: Max retry limit
+
+---
+
+## User Story 4: Audit Log for Payroll Exports
+**User Story:**  
+As an auditor, I want every payroll export logged with actor, timestamp, and status.
+
+**Acceptance Criteria (Gherkin):**  
+Given an export event  
+When I view the audit log  
+Then all details are present
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 1  
+- Dependencies: E14  
+- Notes: Exportable as CSV
