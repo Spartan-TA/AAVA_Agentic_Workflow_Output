@@ -1,0 +1,67 @@
+# E18 â Localization & Multi-Tenant
+
+## User Story 1: Multi-Language Support for UI and Notifications
+**User Story:**  
+As a user, I want the UI and notifications in my preferred language.
+
+**Acceptance Criteria (Gherkin):**  
+Given my language setting  
+When I use the app  
+Then all text and notifications are localized
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E12  
+- Notes: Support for at least English and Spanish
+
+---
+
+## User Story 2: Tenant-Specific Branding and Settings
+**User Story:**  
+As a tenant admin, I want to configure branding and settings for my organization.
+
+**Acceptance Criteria (Gherkin):**  
+Given my tenant  
+When I update branding/settings  
+Then only my users see the changes
+
+**Additional Details:**  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: E18-1  
+- Notes: Logo, colors, holidays
+
+---
+
+## User Story 3: Data Isolation Between Tenants
+**User Story:**  
+As a system admin, I want strict data isolation between tenants.
+
+**Acceptance Criteria (Gherkin):**  
+Given multiple tenants  
+When users access data  
+Then only their tenant's data is visible
+
+**Additional Details:**  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E18-1  
+- Notes: Enforced at DB and API layers
+
+---
+
+## User Story 4: Tenant Onboarding Wizard
+**User Story:**  
+As a system admin, I want a wizard to onboard new tenants.
+
+**Acceptance Criteria (Gherkin):**  
+Given a new tenant  
+When I use the wizard  
+Then initial settings, users, and branding are configured
+
+**Additional Details:**  
+- Priority: Low  
+- Story Points: 1  
+- Dependencies: E18-2  
+- Notes: Email confirmation for admin
