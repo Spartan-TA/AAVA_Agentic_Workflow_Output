@@ -1,0 +1,15 @@
+Title: Performance Reviews & Goals
+
+User Story: As an HR manager I want to create and manage performance review cycles and goals so that structured feedback and employee development are supported.
+
+Acceptance Criteria:
+Scenario: Review cycle creation and workflow
+  Given a new review cycle is initiated
+  When reviews are assigned to employees and supervisors
+  Then the submit/acknowledge workflow is followed, PDF export is available, role-based visibility is enforced, and history is immutable after sign-off
+
+Additional Details:
+- Priority: Medium
+- Story Points: 6
+- Dependencies: Employee Master Data (CRUD), Role Based Access Control (RBAC)
+- Notes: Templates for quarterly/annual reviews and goal tracking required.
