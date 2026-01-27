@@ -1,0 +1,96 @@
+EPIC: E03 - Role-Based Access Control (RBAC)
+
+===========================================
+User Story 1
+===========================================
+Title: Implement Role Assignment System
+
+User Story: As an admin, I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users so that permissions are enforced.
+
+Acceptance Criteria:
+Scenario: Role assignment
+Given a user exists
+When I assign a role
+Then the user has the correct permissions on next login
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Roles must be persisted and enforced.
+
+===========================================
+User Story 2
+===========================================
+Title: Enforce Role-Based Endpoint Access
+
+User Story: As a system, I want to restrict access to endpoints based on roles so that sensitive operations are protected.
+
+Acceptance Criteria:
+Scenario: Unauthorized access blocked
+Given a user without ADMIN role
+When they attempt to access an admin endpoint
+Then they receive a 403 Forbidden error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Use Spring Security for enforcement.
+
+===========================================
+User Story 3
+===========================================
+Title: Configure Authentication Method Toggle
+
+User Story: As an admin, I want to toggle between API key and OAuth2 authentication so that I can adapt to different security requirements.
+
+Acceptance Criteria:
+Scenario: Auth method toggle
+Given the system is configured for API key auth
+When I switch to OAuth2 in config
+Then all endpoints require OAuth2 tokens
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Configurable via application properties.
+
+===========================================
+User Story 4
+===========================================
+Title: Implement Row-Level Security for Supervisors
+
+User Story: As a supervisor, I want to be limited to managing only my team's records so that data access is controlled.
+
+Acceptance Criteria:
+Scenario: Row-level security for supervisors
+Given I am a supervisor
+When I access employee records
+Then I can only see and manage my team's data
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Team assignment must be modeled.
+
+===========================================
+User Story 5
+===========================================
+Title: Create Automated Security Tests
+
+User Story: As a QA, I want security rules to be covered by automated tests so that regressions are prevented.
+
+Acceptance Criteria:
+Scenario: Security test coverage
+Given the test suite runs
+When security tests execute
+Then unauthorized and forbidden actions are correctly blocked
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Include both positive and negative tests.
