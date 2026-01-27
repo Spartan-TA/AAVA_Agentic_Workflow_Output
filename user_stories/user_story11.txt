@@ -1,0 +1,27 @@
+Title: Implement Role-Based Access Control with Spring Security
+
+User Story:
+As an ADMIN, I want to manage user roles and permissions (ADMIN, HR, SUPERVISOR, WORKER) so that access to sensitive operations is restricted appropriately.
+
+Acceptance Criteria (Gherkin):
+Given a user with the ADMIN role,
+When accessing the user management endpoints,
+Then all CRUD operations are permitted.
+
+Given a user with the HR or SUPERVISOR role,
+When accessing endpoints outside their scope,
+Then a 403 Forbidden is returned.
+
+Given a user with no authentication,
+When accessing any secured endpoint,
+Then a 401 Unauthorized is returned.
+
+Given a SUPERVISOR,
+When accessing employee records,
+Then only employees in their team are visible.
+
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: E01, E02
+Notes: Must use Spring Security annotations and method-level security.
