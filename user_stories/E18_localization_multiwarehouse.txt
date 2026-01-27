@@ -1,0 +1,21 @@
+EpicID: E18
+Title: Localization & Multi-Warehouse
+User Story: As a global admin, I want to localize the app and support multiple warehouses so that teams in different regions can use the system in their language and context.
+Acceptance Criteria:
+  Scenario: Language Selection
+    Given supported languages
+    When user selects a language
+    Then UI is localized
+  Scenario: Warehouse Context
+    Given multiple warehouses
+    When switching context
+    Then data is scoped to selected warehouse
+  Scenario: Localized Templates
+    Given notifications and reports
+    When generated
+    Then content is localized
+Additional Details:
+  Priority: Medium
+  Story Points: 8
+  Dependencies: E01, E02, E03, E05
+  Notes: Multi-warehouse scoping required for all major entities
