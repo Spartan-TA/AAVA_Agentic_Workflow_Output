@@ -1,0 +1,111 @@
+EPIC E02 - EMPLOYEE MASTER DATA (CRUD)
+
+===========================================
+User Story 1: Employee Creation API
+===========================================
+
+Title: Employee Creation API
+
+User Story: As an HR user, I want to create new employee records via API so that new hires are registered in the system.
+
+Acceptance Criteria:
+
+Scenario: Valid employee creation
+Given valid employee data (name, badgeId, role, department, shiftGroup, hireDate, status)
+When I POST to /employees
+Then the employee is created and returned with a unique ID
+
+Scenario: Duplicate badgeId rejected
+Given an existing badgeId
+When I try to create another employee with the same badgeId
+Then the API returns a 409 Conflict error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: badgeId must be unique
+
+===========================================
+User Story 2: Employee Retrieval API
+===========================================
+
+Title: Employee Retrieval API
+
+User Story: As a supervisor, I want to retrieve employee records with filtering and pagination so that I can view and manage staff efficiently.
+
+Acceptance Criteria:
+
+Scenario: List employees with filters
+Given multiple employees exist
+When I GET /employees?department=Shipping&page=1
+Then I receive a paginated list of employees in Shipping
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Supports filters
+
+===========================================
+User Story 3: Employee Update API
+===========================================
+
+Title: Employee Update API
+
+User Story: As an HR user, I want to update employee details so that records remain current.
+
+Acceptance Criteria:
+
+Scenario: Update employee status
+Given an employee exists
+When I PATCH /employees/{id} with updated status
+Then the employee record reflects the new status
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: PATCH/PUT supported
+
+===========================================
+User Story 4: Employee Soft Delete
+===========================================
+
+Title: Employee Soft Delete
+
+User Story: As an HR user, I want to soft-delete employees so that records are retained for audit but excluded from active lists.
+
+Acceptance Criteria:
+
+Scenario: Soft delete hides employee
+Given an employee exists
+When I DELETE /employees/{id}
+Then the employee is marked as deleted but not removed from the database
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: For compliance
+
+===========================================
+User Story 5: Employee API Documentation
+===========================================
+
+Title: Employee API Documentation
+
+User Story: As a developer, I want OpenAPI schemas with examples for employee APIs so that integration is straightforward.
+
+Acceptance Criteria:
+
+Scenario: OpenAPI spec available
+Given the API is running
+When I access /v3/api-docs
+Then I see employee endpoints with example requests/responses
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01
+- Notes: For API consumers
