@@ -1,0 +1,15 @@
+Title: Expose Application Health Endpoint
+
+User Story:
+As an operations engineer, I want the application to expose a health endpoint via Spring Boot Actuator so that I can monitor service uptime and health.
+
+Acceptance Criteria (Gherkin):
+Given the application is running,
+When I send a GET request to /actuator/health,
+Then I should receive a 200 OK response with status "UP".
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: None
+Notes: Required for monitoring and readiness/liveness probes.
