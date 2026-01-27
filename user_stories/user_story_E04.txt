@@ -1,0 +1,90 @@
+EPIC E04 - TIME & ATTENDANCE (CLOCK IN/OUT)
+
+===========================================
+User Story 1: Employee Clock In
+===========================================
+
+Title: Employee Clock In
+
+User Story: As a worker, I want to clock in at the start of my shift so that my attendance is recorded.
+
+Acceptance Criteria:
+
+Scenario: Valid clock in
+Given a valid employee and shift
+When I POST to /attendance/clock-in
+Then the clock-in event is recorded with timestamp and device info
+
+Scenario: Geofence validation (optional)
+Given geofencing is enabled
+When I clock in outside the allowed area
+Then the request is rejected with an error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Device capture optional
+
+===========================================
+User Story 2: Employee Clock Out
+===========================================
+
+Title: Employee Clock Out
+
+User Story: As a worker, I want to clock out at the end of my shift so that my worked hours are calculated.
+
+Acceptance Criteria:
+
+Scenario: Valid clock out
+Given a clock-in exists
+When I POST to /attendance/clock-out
+Then the clock-out event is recorded and hours worked are computed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Links to payroll
+
+===========================================
+User Story 3: Attendance Correction Workflow
+===========================================
+
+Title: Attendance Correction Workflow
+
+User Story: As a supervisor, I want to handle missed punches and corrections so that attendance data is accurate.
+
+Acceptance Criteria:
+
+Scenario: Correction request creates approval task
+Given a missed punch is reported
+When a correction is submitted
+Then a supervisor approval task is created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Approval workflow
+
+===========================================
+User Story 4: Attendance Reports Export
+===========================================
+
+Title: Attendance Reports Export
+
+User Story: As an admin, I want to export attendance reports in CSV so that I can process payroll.
+
+Acceptance Criteria:
+
+Scenario: Export attendance data
+Given attendance records exist
+When I request a CSV export
+Then a file is generated with daily totals per employee
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: For payroll integration
