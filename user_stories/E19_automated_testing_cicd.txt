@@ -1,0 +1,21 @@
+EpicID: E19
+Title: Automated Testing & CI/CD
+User Story: As a developer, I want automated tests and CI/CD pipelines so that code quality is maintained and deployments are reliable.
+Acceptance Criteria:
+  Scenario: Test Coverage
+    Given codebase
+    When tests run
+    Then coverage meets threshold
+  Scenario: CI Pipeline
+    Given new commits
+    When pushed
+    Then build, test, and deploy steps run automatically
+  Scenario: Deployment
+    Given successful pipeline
+    When deployed
+    Then app is available and healthy
+Additional Details:
+  Priority: High
+  Story Points: 8
+  Dependencies: E01
+  Notes: Pipeline must include build, test, and deploy steps
