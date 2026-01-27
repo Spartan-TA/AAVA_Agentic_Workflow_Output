@@ -1,0 +1,25 @@
+EpicID: E13
+Title: Integration Layer (HRIS/WMS APIs)
+User Story: As an integration engineer, I want to expose and consume APIs for HRIS and WMS so that master data is synchronized and duplicate entry is reduced.
+Acceptance Criteria:
+  Scenario: Secure API
+    Given JWT/OAuth2 credentials
+    When accessing APIs
+    Then access is granted or denied appropriately
+  Scenario: HRIS Sync
+    Given new hire/term data
+    When sync job runs
+    Then employees are created/updated
+  Scenario: WMS Link
+    Given department/location data
+    When API is called
+    Then data is updated accordingly
+  Scenario: Webhook Delivery
+    Given events occur
+    When webhook is triggered
+    Then delivery is idempotent and documented
+Additional Details:
+  Priority: High
+  Story Points: 13
+  Dependencies: E01, E02, E03
+  Notes: API must be documented in OpenAPI
