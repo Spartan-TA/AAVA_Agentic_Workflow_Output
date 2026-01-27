@@ -1,0 +1,25 @@
+EpicID: E05
+Title: Shift & Schedule Management
+User Story: As a supervisor, I want to create shift templates and assign schedules so that staffing is optimized and conflicts are avoided.
+Acceptance Criteria:
+  Scenario: Create Shift Template
+    Given shift details
+    When I POST to /shifts/templates
+    Then a new template is created
+  Scenario: Assign Schedule
+    Given employees and templates
+    When I assign schedules
+    Then conflicts are detected and prevented
+  Scenario: View Personal Shifts
+    Given a worker
+    When they view their schedule
+    Then upcoming shifts are displayed
+  Scenario: Bulk Assignment
+    Given a supervisor
+    When they bulk-assign shifts
+    Then assignments are created and audited
+Additional Details:
+  Priority: High
+  Story Points: 13
+  Dependencies: E02, E03, E04
+  Notes: Audit entries must be generated
