@@ -1,0 +1,153 @@
+# Spring Boot Application Configuration for Warehouse Employee Management System
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: warehouse-employee-mgmt
+  
+  # Database Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/wmsdb
+    username: wmsuser
+    password: wmspassword
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+  
+  # JPA/Hibernate Configuration
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+  
+  # Flyway Database Migration
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+# Security Configuration
+security:
+  jwt:
+    secret: "supersecretkeyforjwt_change_in_production"
+    expiration: 3600000 # 1 hour in milliseconds
+  auth:
+    type: jwt # Options: jwt, apikey, oauth2
+
+# Actuator Configuration for Monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.companyname.wms: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Notification Configuration
+notification:
+  email:
+    enabled: true
+    smtp:
+      host: smtp.example.com
+      port: 587
+      username: noreply@example.com
+      password: emailpassword
+      auth: true
+      starttls:
+        enable: true
+  sms:
+    enabled: true
+    provider: twilio
+    accountSid: your_twilio_sid
+    authToken: your_twilio_token
+    fromNumber: "+1234567890"
+
+# Attendance Configuration
+attendance:
+  geofence:
+    enabled: true
+    radius: 100 # meters
+  missed-punch:
+    auto-flag-after-hours: 24
+  export:
+    max-records: 10000
+
+# Payroll Export Configuration
+payroll:
+  export:
+    format: csv # Options: csv, json, xml
+    sftp:
+      enabled: false
+      host: sftp.payroll.com
+      port: 22
+      username: payroll_user
+      password: payroll_password
+
+# Integration Configuration
+integration:
+  hris:
+    enabled: true
+    sync-interval: 3600000 # 1 hour
+    api-url: https://hris.example.com/api
+    api-key: hris_api_key
+  wms:
+    enabled: true
+    sync-interval: 3600000 # 1 hour
+    api-url: https://wms.example.com/api
+    api-key: wms_api_key
+
+# Reporting Configuration
+reporting:
+  export:
+    max-rows: 50000
+    timeout-seconds: 10
+
+# PWA Configuration
+pwa:
+  enabled: true
+  offline-support: true
+  cache-strategy: network-first
+
+---
+# Production Profile
+spring:
+  config:
+    activate:
+      on-profile: production
+  datasource:
+    url: jdbc:postgresql://prod-db-host:5432/wmsdb
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: false
+logging:
+  level:
+    root: WARN
+    com.companyname.wms: INFO
