@@ -1,0 +1,25 @@
+EpicID: E07
+Title: Training & Certification Tracking
+User Story: As a safety manager, I want to track employee certifications and expirations so that only qualified staff are assigned to sensitive equipment.
+Acceptance Criteria:
+  Scenario: Add Certification
+    Given certification details
+    When I POST to /certifications
+    Then the certification is added to the employee profile
+  Scenario: Expiry Alerts
+    Given a certification nearing expiry
+    When within 30/7 days of expiration
+    Then an alert is sent to the employee and supervisor
+  Scenario: Block Assignment
+    Given an expired certification
+    When scheduling a shift requiring it
+    Then assignment is blocked
+  Scenario: Upload Proof
+    Given a certification
+    When I upload a document
+    Then proof is attached to the record
+Additional Details:
+  Priority: High
+  Story Points: 8
+  Dependencies: E02, E03
+  Notes: Certification status must be visible on profile
