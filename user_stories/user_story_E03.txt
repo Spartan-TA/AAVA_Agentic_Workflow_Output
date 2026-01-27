@@ -1,0 +1,81 @@
+EPIC E03: Role-Based Access Control (RBAC)
+
+===========================================
+
+Title: Role-Based Access Control (RBAC) - Role Setup
+User Story: As an admin I want to configure roles (ADMIN, HR, SUPERVISOR, WORKER) So that access is restricted based on responsibilities.
+Acceptance Criteria:
+Scenario: Role configuration
+Given the system is initialized
+When I assign roles to users
+Then users have permissions according to their role
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project scaffolding, Employee API
+- Notes: Roles must be enforced at endpoint and method level.
+
+---
+
+Title: Role-Based Access Control (RBAC) - Endpoint Security
+User Story: As an admin I want to secure sensitive endpoints So that unauthorized users cannot access or modify data.
+Acceptance Criteria:
+Scenario: Unauthorized access
+Given a user without required role
+When they access a protected endpoint
+Then they receive a 401 or 403 error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role setup
+- Notes: Cover all sensitive endpoints.
+
+---
+
+Title: Role-Based Access Control (RBAC) - Row-Level Security
+User Story: As a supervisor I want to access only my team's records So that I cannot view or edit other teams' data.
+Acceptance Criteria:
+Scenario: Row-level access
+Given a supervisor is logged in
+When they query employee records
+Then only their team's data is returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Role setup
+- Notes: Enforce via query constraints.
+
+---
+
+Title: Role-Based Access Control (RBAC) - API Key/OAuth2 Toggle
+User Story: As a system admin I want to toggle between API key and OAuth2 authentication via config So that integration partners can use preferred auth method.
+Acceptance Criteria:
+Scenario: Auth method toggle
+Given the config is set to API key or OAuth2
+When an API request is made
+Then authentication is enforced according to the selected method
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role setup
+- Notes: Document config options.
+
+---
+
+Title: Role-Based Access Control (RBAC) - Security Tests
+User Story: As a QA engineer I want automated tests for security rules So that unauthorized access is reliably prevented.
+Acceptance Criteria:
+Scenario: Security test coverage
+Given the test suite runs
+When security tests execute
+Then unauthorized and forbidden actions are correctly blocked
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Endpoint security
+- Notes: Cover all roles and endpoints.
