@@ -1,0 +1,106 @@
+EPIC E05 - SHIFT & SCHEDULE MANAGEMENT
+
+===========================================
+User Story 1: Shift Template CRUD
+===========================================
+
+Title: Shift Template CRUD
+
+User Story: As an HR user, I want to create and manage recurring shift templates so that scheduling is efficient.
+
+Acceptance Criteria:
+
+Scenario: Create new shift template
+Given shift details
+When I POST to /shifts/templates
+Then the template is saved and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Supports rotations
+
+===========================================
+User Story 2: Shift Assignment
+===========================================
+
+Title: Shift Assignment
+
+User Story: As a supervisor, I want to assign shifts to employees so that staffing is planned.
+
+Acceptance Criteria:
+
+Scenario: Assign shift to employee
+Given a shift template and employee
+When I assign the shift
+Then the employee's schedule is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Bulk assignment supported
+
+===========================================
+User Story 3: Schedule Conflict Prevention
+===========================================
+
+Title: Schedule Conflict Prevention
+
+User Story: As a scheduler, I want the system to detect and prevent scheduling conflicts so that employees are not double-booked.
+
+Acceptance Criteria:
+
+Scenario: Conflict detected
+Given overlapping shifts
+When I try to assign both to one employee
+Then the system blocks the assignment with an error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Prevents errors
+
+===========================================
+User Story 4: Blackout Date Management
+===========================================
+
+Title: Blackout Date Management
+
+User Story: As an admin, I want to manage blackout dates and operation calendars so that shifts are not scheduled on holidays or closures.
+
+Acceptance Criteria:
+
+Scenario: Blackout date blocks scheduling
+Given a blackout date
+When I try to schedule a shift
+Then the system prevents the assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: For compliance
+
+===========================================
+User Story 5: Schedule Change Auditing
+===========================================
+
+Title: Schedule Change Auditing
+
+User Story: As a compliance officer, I want audit entries for schedule changes so that all modifications are tracked.
+
+Acceptance Criteria:
+
+Scenario: Audit entry created
+Given a schedule change
+When the change is saved
+Then an audit entry is recorded with actor, timestamp, and details
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: For traceability
