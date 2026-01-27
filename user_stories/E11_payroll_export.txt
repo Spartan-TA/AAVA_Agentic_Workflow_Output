@@ -1,0 +1,25 @@
+EpicID: E11
+Title: Payroll Export Integration
+User Story: As a payroll admin, I want to export attendance and leave data in provider format so that payroll runs are accurate and automated.
+Acceptance Criteria:
+  Scenario: Generate Export
+    Given approved attendance and leave data
+    When I export payroll
+    Then the file matches provider schema
+  Scenario: Reconcile Totals
+    Given exported data
+    When I compare with reports
+    Then totals match
+  Scenario: Delivery Failure
+    Given a failed export delivery
+    When retry logic triggers
+    Then delivery is retried with backoff
+  Scenario: Audit Log
+    Given exports occur
+    When I view audit log
+    Then every export is logged
+Additional Details:
+  Priority: High
+  Story Points: 8
+  Dependencies: E04, E06
+  Notes: Secure delivery via SFTP/API required
