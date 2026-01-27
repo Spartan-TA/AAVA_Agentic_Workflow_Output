@@ -1,0 +1,25 @@
+EpicID: E15
+Title: Reporting & Analytics
+User Story: As an operations manager, I want to generate reports on attendance, overtime, leave, certifications, and safety so that I can make data-driven decisions.
+Acceptance Criteria:
+  Scenario: Filter Reports
+    Given report data
+    When I filter by date, department, shift
+    Then results are scoped accordingly
+  Scenario: Export Data
+    Given large datasets
+    When I export
+    Then CSV/PDF is generated within 10s for up to 50k rows
+  Scenario: Access Control
+    Given role-based dashboards
+    When accessed
+    Then only authorized users see relevant data
+  Scenario: Metrics Endpoint
+    Given BI integration
+    When metrics endpoint is called
+    Then correct data is returned
+Additional Details:
+  Priority: Medium
+  Story Points: 13
+  Dependencies: E04, E05, E06, E07, E08, E14
+  Notes: Metrics endpoints must be available for BI
