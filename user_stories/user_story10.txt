@@ -1,0 +1,4 @@
+Title: Enforce Unique Badge ID
+User Story: As a system, I want to enforce uniqueness of badgeId for each employee so that there are no duplicate badge assignments.
+Acceptance Criteria: Given an employee with badgeId "12345" exists, When I attempt to create or update another employee with badgeId "12345", Then the request is rejected with a validation error.
+Additional Details: Priority: High, Story Points: 1, Dependencies: E01, Notes: badgeId is the unique identifier for physical access.
