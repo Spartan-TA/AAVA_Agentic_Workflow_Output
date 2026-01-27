@@ -1,4 +1,0 @@
-Title: Retrieve Employee Records with Pagination and Filtering
-User Story: As an HR user, I want to retrieve a paginated and filterable list of employees so that I can efficiently search and manage employee records.
-Acceptance Criteria: Given I am an authenticated HR user, When I GET /employees with pagination and filter parameters, Then I receive a paginated list of employees matching the filters.
-Additional Details: Priority: High, Story Points: 3, Dependencies: E01, Notes: Filters include department, role, status, shiftGroup.

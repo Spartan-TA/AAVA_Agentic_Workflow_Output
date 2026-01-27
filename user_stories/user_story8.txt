@@ -1,4 +1,0 @@
-Title: Update Employee Record
-User Story: As an HR user, I want to update employee details so that changes in employee information are reflected in the system.
-Acceptance Criteria: Given I am an authenticated HR user, When I PUT or PATCH /employees/{id} with updated fields, Then the employee record is updated, And changes are reflected in subsequent GET requests.
-Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Only valid fields can be updated; audit trail required.
