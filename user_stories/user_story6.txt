@@ -1,0 +1,4 @@
+Title: Create Employee Record
+User Story: As an HR user, I want to create a new employee record with name, badgeId, role, department, shiftGroup, hireDate, and status so that employee information is accurately captured in the system.
+Acceptance Criteria: Given I am an authenticated HR user, When I POST a new employee to /employees with all required fields, Then the employee is created, And the badgeId is unique, And the response includes the new employee's details.
+Additional Details: Priority: High, Story Points: 3, Dependencies: E01, Notes: badgeId must be unique; validation errors for duplicates.
