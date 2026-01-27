@@ -1,0 +1,21 @@
+EpicID: E17
+Title: Onboarding & Offboarding Workflow
+User Story: As an HR manager, I want to automate onboarding and offboarding tasks so that employee lifecycle changes are efficient and low-risk.
+Acceptance Criteria:
+  Scenario: New Hire Provisioning
+    Given new hire data from HRIS
+    When onboarding starts
+    Then accounts, initial schedule, and training tasks are provisioned
+  Scenario: Asset Assignment
+    Given onboarding workflow
+    When assets are required
+    Then assignment tasks are generated
+  Scenario: Offboarding
+    Given termination event
+    When workflow runs
+    Then access is revoked, assets collected, and schedules updated
+Additional Details:
+  Priority: Medium
+  Story Points: 13
+  Dependencies: E02, E03, E05, E07, E09, E13
+  Notes: Tasks must be tracked and auditable
