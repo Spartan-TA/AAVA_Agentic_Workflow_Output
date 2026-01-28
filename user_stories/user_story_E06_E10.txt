@@ -1,0 +1,380 @@
+WAREHOUSE EMPLOYEE MANAGEMENT SYSTEM - USER STORIES (CONTINUED)
+===================================================================
+
+## Epic E06: Leave & Absence Management
+
+### User Story 1: Submit Leave Request
+- **Title:** Submit Leave Request
+- **User Story:** As an employee, I want to submit a leave request (PTO, sick, unpaid) so that my supervisor can review and approve my time off.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am logged in
+  When I fill out and submit a leave request
+  Then the request appears in my pending requests and notifies my supervisor
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 3
+  - Dependencies: E02, E03, E05
+  - Notes: Request types and date ranges must be validated.
+
+### User Story 2: Approve/Deny Leave Request
+- **Title:** Approve or Deny Leave Request
+- **User Story:** As a supervisor, I want to approve or deny leave requests so that I can manage team availability.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I have pending leave requests
+  When I approve or deny a request
+  Then the employee is notified and the request status updates accordingly
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E02, E03
+  - Notes: Approval/denial reasons optional.
+
+### User Story 3: Leave Accrual Balances
+- **Title:** View Leave Balances
+- **User Story:** As an employee, I want to view my current leave balances so that I know how much time off I have available.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am on my profile
+  When I view leave balances
+  Then I see up-to-date accruals for each leave type
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E02
+  - Notes: Accrual policies configurable.
+
+### User Story 4: Exclude Approved Leave from Scheduling
+- **Title:** Flag Shifts for Coverage During Leave
+- **User Story:** As a scheduler, I want approved leaves to automatically flag affected shifts for coverage so that I can ensure adequate staffing.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an employee has approved leave
+  When I view the schedule
+  Then their shifts are flagged for coverage and excluded from assignment
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 3
+  - Dependencies: E05
+  - Notes: Integration with shift management.
+
+### User Story 5: Export Approved Leaves
+- **Title:** Export Leave Report
+- **User Story:** As an HR admin, I want to export a report of approved leaves so that I can reconcile with payroll.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am on the leave management page
+  When I export leaves
+  Then I receive a CSV with all approved leaves in the selected period
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E06
+  - Notes: Export format matches payroll requirements.
+
+---
+
+## Epic E07: Training & Certification Tracking
+
+### User Story 1: Add/Update Employee Certification
+- **Title:** Manage Employee Certifications
+- **User Story:** As an HR admin, I want to add or update certifications for employees so that compliance is tracked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am on an employee profile
+  When I add or update a certification
+  Then the certification appears with issue and expiry dates
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E02, E03
+  - Notes: Certification types configurable.
+
+### User Story 2: Certification Expiry Alerts
+- **Title:** Alert for Expiring Certifications
+- **User Story:** As a supervisor, I want to receive alerts when certifications are nearing expiry so that I can schedule renewals.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a certification is expiring in 30 or 7 days
+  When I log in
+  Then I see an alert and receive a notification
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E12
+  - Notes: Alert thresholds configurable.
+
+### User Story 3: Block Assignment to Tasks Requiring Certification
+- **Title:** Enforce Certification Requirements
+- **User Story:** As a scheduler, I want to prevent assignment of employees to tasks requiring valid certifications so that safety is ensured.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an employee's certification is expired
+  When I assign them to a restricted task
+  Then the system blocks the assignment and displays a warning
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: E05, E07
+  - Notes: Certification-task mapping required.
+
+### User Story 4: Upload Certification Proof Documents
+- **Title:** Upload Certification Documents
+- **User Story:** As an HR admin, I want to upload proof documents for certifications so that records are auditable.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am editing a certification
+  When I upload a file
+  Then the document is stored and linked to the certification
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E02
+  - Notes: Support PDF/JPG/PNG.
+
+### User Story 5: Certification Status on Employee Profile
+- **Title:** Display Certification Status
+- **User Story:** As a supervisor, I want to view certification status on the employee profile so that I can verify qualifications.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I view an employee profile
+  When I check certifications
+  Then I see current status (valid/expiring/expired) for each
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 1
+  - Dependencies: E02
+  - Notes: Color-coded status.
+
+---
+
+## Epic E08: Safety Incidents & OSHA Reporting
+
+### User Story 1: Record Safety Incident
+- **Title:** Log Safety Incident
+- **User Story:** As a supervisor, I want to record safety incidents with details so that all events are tracked for compliance.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I witness an incident
+  When I submit the incident form
+  Then the incident is logged with severity, location, and involved employees
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: E02, E03
+  - Notes: Required fields validated.
+
+### User Story 2: Incident Investigation Workflow
+- **Title:** Manage Incident Status
+- **User Story:** As a safety officer, I want to manage incident status (Open, Investigating, Resolved) so that corrective actions are tracked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an incident is logged
+  When I update the status
+  Then the workflow and timestamps are recorded
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E08
+  - Notes: Status history immutable.
+
+### User Story 3: OSHA Summary Export
+- **Title:** Export OSHA Reports
+- **User Story:** As an HR admin, I want to export OSHA 300/300A summaries so that regulatory reports are accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am on the safety dashboard
+  When I export OSHA data
+  Then I receive a file with required fields for the selected period
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E08
+  - Notes: Format matches OSHA requirements.
+
+### User Story 4: Safety Metrics Dashboard
+- **Title:** View Safety KPIs
+- **User Story:** As a manager, I want to view safety KPIs so that I can monitor trends and take action.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am on the dashboard
+  When I view safety metrics
+  Then I see incident counts, rates, and trends
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 3
+  - Dependencies: E15
+  - Notes: Filters by date, location.
+
+---
+
+## Epic E09: Equipment & Asset Assignment
+
+### User Story 1: Asset Registry CRUD
+- **Title:** Manage Asset Registry
+- **User Story:** As an asset manager, I want to add, update, or remove assets so that inventory is accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am on the asset registry
+  When I perform CRUD operations
+  Then the asset list updates accordingly
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E02, E03
+  - Notes: Asset types include scanners, forklifts, PPE.
+
+### User Story 2: Assign/Return Asset to Employee
+- **Title:** Track Asset Assignment
+- **User Story:** As a supervisor, I want to assign or return assets to employees so that usage is tracked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an asset is available
+  When I assign it to an employee
+  Then the assignment is logged with timestamps
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E09
+  - Notes: Return flow required.
+
+### User Story 3: Block Asset Assignment if Certification Missing
+- **Title:** Enforce Asset Certification Requirements
+- **User Story:** As a supervisor, I want to prevent asset assignment if required certifications are missing so that safety is enforced.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an employee lacks a valid certification
+  When I assign a restricted asset
+  Then the system blocks the assignment
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E07
+  - Notes: Certification-asset mapping.
+
+### User Story 4: Asset Condition Tracking
+- **Title:** Record Asset Condition
+- **User Story:** As an asset manager, I want to record asset condition at check-in/out so that maintenance needs are flagged.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an asset is checked in/out
+  When I enter condition notes
+  Then the condition is logged and visible
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E09
+  - Notes: Condition history per asset.
+
+### User Story 5: Overdue Asset Return Report
+- **Title:** Report Overdue Assets
+- **User Story:** As an asset manager, I want to generate reports of overdue asset returns so that I can follow up.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given assets are overdue
+  When I run the report
+  Then I see a list of assets and assigned employees
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 1
+  - Dependencies: E09
+  - Notes: Exportable CSV.
+
+---
+
+## Epic E10: Performance Reviews & Goals
+
+### User Story 1: Create Review Template
+- **Title:** Define Review Templates
+- **User Story:** As an HR admin, I want to create performance review templates so that reviews are standardized.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am in the admin panel
+  When I create a template
+  Then it is available for review cycles
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E02, E03
+  - Notes: Templates include goals, competencies.
+
+### User Story 2: Assign Review Cycle to Employee
+- **Title:** Assign Performance Reviews
+- **User Story:** As a supervisor, I want to assign review cycles to employees so that performance is evaluated regularly.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a review cycle is active
+  When I assign employees
+  Then they receive notifications and access to the review form
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E10
+  - Notes: Bulk assignment supported.
+
+### User Story 3: Submit and Acknowledge Review
+- **Title:** Complete Review Workflow
+- **User Story:** As a supervisor/employee, I want to submit and acknowledge reviews so that feedback is documented.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a review is assigned
+  When I submit or acknowledge
+  Then the status updates and is locked after sign-off
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E10
+  - Notes: Immutable after both parties sign.
+
+### User Story 4: PDF Export of Completed Review
+- **Title:** Export Review as PDF
+- **User Story:** As an HR admin, I want to export completed reviews as PDF so that records are archived.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a review is completed
+  When I export
+  Then I receive a PDF with all review details
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 1
+  - Dependencies: E10
+  - Notes: PDF format matches template.
+
+### User Story 5: Role-Based Review Visibility
+- **Title:** Control Review Access
+- **User Story:** As a user, I want to see only reviews I am authorized to access so that privacy is maintained.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am logged in
+  When I view reviews
+  Then I see only my own or my team's (if supervisor)
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 1
+  - Dependencies: E03
+  - Notes: RBAC enforced.
