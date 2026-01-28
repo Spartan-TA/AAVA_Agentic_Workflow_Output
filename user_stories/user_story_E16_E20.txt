@@ -1,0 +1,410 @@
+WAREHOUSE EMPLOYEE MANAGEMENT SYSTEM - USER STORIES (CONTINUED)
+===================================================================
+
+## Epic E16: Mobile Access (PWA)
+
+### User Story 1: Responsive Mobile Views
+- **Title:** Enable Mobile-Friendly Interface
+- **User Story:** As a worker, I want responsive mobile views for clock-in/out, schedules, and leave so that I can use the system on any device.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I access the app on mobile
+  When I use core flows
+  Then all screens are usable and readable
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 3
+  - Dependencies: E04, E05, E06
+  - Notes: Test on iOS/Android.
+
+### User Story 2: Installable PWA Manifest
+- **Title:** Support PWA Installation
+- **User Story:** As a user, I want to install the app as a PWA so that I have quick access from my device.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I visit the site
+  When I add to home screen
+  Then the app installs as a PWA
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E16
+  - Notes: Manifest and icons.
+
+### User Story 3: Offline Clock Event Queue
+- **Title:** Enable Offline Clock-In/Out
+- **User Story:** As a worker, I want to clock in/out offline and sync when online so that my attendance is always recorded.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am offline
+  When I clock in/out
+  Then events are queued and synced on reconnect
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 3
+  - Dependencies: E16
+  - Notes: Conflict resolution.
+
+### User Story 4: Announcements on Mobile
+- **Title:** Display Mobile Announcements
+- **User Story:** As a worker, I want to receive announcements on mobile so that I stay informed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an announcement is published
+  When I open the app
+  Then I see the announcement
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 1
+  - Dependencies: E12
+  - Notes: Push notifications optional.
+
+### User Story 5: Lighthouse PWA Score
+- **Title:** Achieve PWA Performance Standards
+- **User Story:** As a QA, I want the PWA to score â¥ 80 on Lighthouse so that performance and accessibility are ensured.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the app is built
+  When I run Lighthouse
+  Then the PWA score is at least 80
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 1
+  - Dependencies: E16
+  - Notes: Accessibility and offline support.
+
+---
+
+## Epic E17: Onboarding & Offboarding Workflow
+
+### User Story 1: Automated Onboarding from HRIS
+- **Title:** Trigger Onboarding Tasks
+- **User Story:** As an HR admin, I want new hires from HRIS to trigger onboarding tasks so that setup is automated.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a new hire is synced
+  When onboarding starts
+  Then tasks for training, asset assignment, and schedule are generated
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 3
+  - Dependencies: E02, E03, E05, E07, E09, E13
+  - Notes: Task list per new hire.
+
+### User Story 2: Training Assignment for New Hires
+- **Title:** Assign Required Training
+- **User Story:** As a supervisor, I want required training assigned to new hires so that compliance is ensured.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given onboarding is started
+  When I view tasks
+  Then required training is listed and tracked
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E07
+  - Notes: Training completion status.
+
+### User Story 3: Asset Provisioning for New Hires
+- **Title:** Equip New Employees
+- **User Story:** As an asset manager, I want assets assigned during onboarding so that employees are equipped.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given onboarding tasks
+  When I assign assets
+  Then assignments are logged and tracked
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E09
+  - Notes: Asset checklist.
+
+### User Story 4: Automated Offboarding on Termination
+- **Title:** Process Employee Terminations
+- **User Story:** As an HR admin, I want terminations to trigger offboarding tasks so that access and assets are revoked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a termination is synced
+  When offboarding starts
+  Then access is revoked, assets collected, and schedules updated
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 3
+  - Dependencies: E13
+  - Notes: Checklist for completion.
+
+### User Story 5: Onboarding/Offboarding Status Tracking
+- **Title:** Monitor Lifecycle Progress
+- **User Story:** As a supervisor, I want to track onboarding/offboarding status so that nothing is missed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given tasks are assigned
+  When I view the dashboard
+  Then I see progress and outstanding items
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 1
+  - Dependencies: E17
+  - Notes: Status per employee.
+
+---
+
+## Epic E18: Localization & Multi-Site
+
+### User Story 1: Multi-Language UI Support
+- **Title:** Localize User Interface
+- **User Story:** As a user, I want the UI available in multiple languages so that I can use the system in my preferred language.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I select a language
+  When I use the app
+  Then all UI text is translated
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 3
+  - Dependencies: E18
+  - Notes: Language switcher.
+
+### User Story 2: Site-Specific Configuration
+- **Title:** Configure Per-Site Settings
+- **User Story:** As an admin, I want to configure settings per site so that policies reflect local requirements.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I manage multiple sites
+  When I edit site settings
+  Then changes apply only to that site
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E18
+  - Notes: Examples: holidays, shift rules.
+
+### User Story 3: Localized Notification Templates
+- **Title:** Customize Notifications by Site
+- **User Story:** As an admin, I want notification templates localized per site so that communications are relevant.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I edit templates
+  When I select a site
+  Then I can provide translations and customizations
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E12
+  - Notes: Site/language mapping.
+
+### User Story 4: Site-Based Access Control
+- **Title:** Restrict Access by Site
+- **User Story:** As a user, I want access limited to my assigned site(s) so that data privacy is maintained.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I log in
+  When I access data
+  Then I see only my site's information
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 2
+  - Dependencies: E03
+  - Notes: Multi-site RBAC.
+
+### User Story 5: Site-Specific Reporting
+- **Title:** Filter Reports by Site
+- **User Story:** As a manager, I want reports filtered by site so that I can analyze local performance.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I run a report
+  When I select a site
+  Then results reflect only that site
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 1
+  - Dependencies: E15
+  - Notes: Site filter on all reports.
+
+---
+
+## Epic E19: Automated Testing & CI/CD
+
+### User Story 1: Automated Unit & Integration Tests
+- **Title:** Implement Comprehensive Test Suite
+- **User Story:** As a developer, I want automated tests for all modules so that regressions are caught early.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given code changes
+  When tests run
+  Then all modules have â¥80% coverage
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: E01-E18
+  - Notes: Coverage reports generated.
+
+### User Story 2: CI Pipeline for Build & Test
+- **Title:** Automate Build and Test Process
+- **User Story:** As a developer, I want a CI pipeline to build and test code on every commit so that quality is maintained.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a commit
+  When the pipeline runs
+  Then build, test, and lint steps pass or fail
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E19
+  - Notes: GitHub Actions or similar.
+
+### User Story 3: Automated Deployment to Staging
+- **Title:** Deploy to Staging Automatically
+- **User Story:** As a developer, I want code deployed to staging automatically so that features are validated before release.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a successful build
+  When the pipeline completes
+  Then the app is deployed to staging
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E19
+  - Notes: Rollback supported.
+
+### User Story 4: Test Coverage Gates
+- **Title:** Enforce Coverage Thresholds
+- **User Story:** As a QA, I want pipelines to enforce coverage thresholds so that untested code is blocked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a pull request
+  When coverage is below threshold
+  Then the merge is blocked
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 1
+  - Dependencies: E19
+  - Notes: Threshold configurable.
+
+### User Story 5: Automated Regression Test Suite
+- **Title:** Run Nightly Regression Tests
+- **User Story:** As a QA, I want a regression test suite to run nightly so that issues are detected early.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the test suite
+  When it runs nightly
+  Then failures are reported to the team
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E19
+  - Notes: Email/slack alerts.
+
+---
+
+## Epic E20: Documentation & Runbooks
+
+### User Story 1: Developer API Documentation
+- **Title:** Maintain API Documentation
+- **User Story:** As a developer, I want up-to-date API docs so that integration is easy.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given new endpoints
+  When docs are generated
+  Then all endpoints are described with examples
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E13
+  - Notes: OpenAPI auto-generation.
+
+### User Story 2: User Guides for Core Flows
+- **Title:** Create End-User Documentation
+- **User Story:** As a user, I want guides for core flows (attendance, leave, scheduling) so that I can use the system effectively.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I access help
+  When I view guides
+  Then I see step-by-step instructions with screenshots
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E04, E05, E06
+  - Notes: Markdown or HTML.
+
+### User Story 3: Runbooks for Operations
+- **Title:** Document Operational Procedures
+- **User Story:** As an ops engineer, I want runbooks for common tasks (deploy, restore, troubleshoot) so that incidents are resolved quickly.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an incident
+  When I follow the runbook
+  Then I can resolve or escalate as needed
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E19
+  - Notes: Versioned docs.
+
+### User Story 4: Onboarding Checklist for New Users
+- **Title:** Provide User Onboarding Guide
+- **User Story:** As an admin, I want an onboarding checklist for new users so that adoption is smooth.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a new user
+  When onboarding starts
+  Then a checklist is available and progress is tracked
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 1
+  - Dependencies: E17
+  - Notes: Checklist per role.
+
+### User Story 5: Documentation Versioning
+- **Title:** Version Documentation by Release
+- **User Story:** As a user, I want to access documentation for current and previous releases so that I can reference changes.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I select a version
+  When I view docs
+  Then I see content for the selected release
+  ```
+- **Additional Details:**
+  - Priority: Medium
+  - Story Points: 1
+  - Dependencies: E20
+  - Notes: Version switcher.
+
+---
+
+## SUMMARY
+
+All 20 epics (E01-E20) have been successfully decomposed into detailed user stories with:
+- Clear titles and user story narratives
+- Gherkin-formatted acceptance criteria (Given, When, Then)
+- Priority levels (High/Medium/Low)
+- Story point estimates
+- Dependencies on other epics
+- Implementation notes
+
+Total user stories created: 100+ across all epics
+All stories are independently testable and ready for agile sprint planning.
