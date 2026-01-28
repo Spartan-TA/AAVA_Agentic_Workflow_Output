@@ -1,0 +1,74 @@
+EPIC E03: Role-Based Access Control (RBAC)
+
+---
+
+Title: Role-Based Access Control (RBAC) - Configure Roles & Permissions
+User Story: As an admin, I want to define roles (ADMIN, HR, SUPERVISOR, WORKER) and their permissions so that sensitive operations are restricted.
+
+Acceptance Criteria:
+Scenario: Unauthorized access returns 401
+  Given a user is not authenticated
+  When they access a protected endpoint
+  Then a 401 Unauthorized is returned
+
+Scenario: Forbidden action returns 403
+  Given a user is authenticated but lacks permission
+  When they access a restricted endpoint
+  Then a 403 Forbidden is returned
+
+Scenario: ADMIN can manage all records
+  Given a user has ADMIN role
+  When they access any endpoint
+  Then access is granted
+
+Scenario: SUPERVISOR limited to team
+  Given a user has SUPERVISOR role
+  When they access team data
+  Then access is granted
+  When they access other teams
+  Then access is denied
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Security critical
+
+---
+
+Title: Role-Based Access Control (RBAC) - Security Configuration Toggle
+User Story: As a system admin, I want to toggle between API key and OAuth2 authentication via config so that I can adapt to different security requirements.
+
+Acceptance Criteria:
+Scenario: API key mode enabled
+  Given API key mode is configured
+  When requests include valid API key
+  Then access is granted
+
+Scenario: OAuth2 mode enabled
+  Given OAuth2 mode is configured
+  When requests include valid OAuth2 token
+  Then access is granted
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Supports flexible security
+
+---
+
+Title: Role-Based Access Control (RBAC) - Security Test Coverage
+User Story: As a QA engineer, I want automated tests for security rules so that unauthorized access is prevented.
+
+Acceptance Criteria:
+Scenario: Security tests run in CI
+  Given the test suite is executed
+  When security tests run
+  Then all access control rules are validated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Prevents regressions
