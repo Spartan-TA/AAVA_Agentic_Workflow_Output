@@ -1,0 +1,412 @@
+WAREHOUSE EMPLOYEE MANAGEMENT SYSTEM - USER STORIES
+===================================================================
+
+## Epic E01: Project Scaffolding & Domain Setup
+
+### User Story 1: Initialize Spring Boot Project
+- **Title:** Initialize Spring Boot Project with Maven
+- **User Story:** As a developer, I want to initialize a Spring Boot project with Maven so that the team has a standardized foundation for development.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I have cloned the repository
+  When I run 'mvn clean install'
+  Then the project builds successfully without errors
+
+  Given the project is built
+  When I run 'mvn spring-boot:run'
+  Then the application starts on port 8080
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: None
+  - Notes: Use latest LTS Spring Boot version.
+
+### User Story 2: Configure Base Package Structure
+- **Title:** Set Up Base Package Structure
+- **User Story:** As a developer, I want a clearly defined package structure for core modules so that code is organized and maintainable.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the project is initialized
+  When I inspect the source code
+  Then I see packages for employee, scheduling, attendance, and safety modules
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E01-1
+  - Notes: Follow standard naming conventions.
+
+### User Story 3: Database Migration Tool Integration
+- **Title:** Integrate Flyway/Liquibase for DB Migrations
+- **User Story:** As a developer, I want Flyway or Liquibase configured so that database schema changes are versioned and repeatable.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the application starts
+  When the database is empty
+  Then Flyway/Liquibase applies the baseline migration successfully
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E01-1
+  - Notes: Baseline migration must create core tables.
+
+### User Story 4: Enable Spring Boot Actuator
+- **Title:** Enable Actuator Health Endpoint
+- **User Story:** As an operator, I want the Actuator health endpoint enabled so that I can monitor application health.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the application is running
+  When I access '/actuator/health'
+  Then I receive a 200 OK response with status UP
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 1
+  - Dependencies: E01-1
+  - Notes: Secure actuator endpoints as needed.
+
+### User Story 5: Document Build and Run Steps
+- **Title:** Add Build/Run Instructions to README
+- **User Story:** As a developer, I want clear build and run instructions in the README so that onboarding is fast and consistent.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I open the README file
+  When I follow the build and run steps
+  Then I can start the application successfully
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 1
+  - Dependencies: E01-1
+  - Notes: Include prerequisites and troubleshooting.
+
+---
+
+## Epic E02: Employee Master Data (CRUD)
+
+### User Story 1: Create Employee Record
+- **Title:** Create Employee API
+- **User Story:** As an HR user, I want to create a new employee record so that employee data is centrally managed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I have HR role
+  When I POST valid employee data to /employees
+  Then a new employee is created with a unique badgeId
+
+  Given I POST employee data with an existing badgeId
+  When the request is processed
+  Then I receive a validation error
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: E01
+  - Notes: badgeId must be unique.
+
+### User Story 2: Retrieve Employee Records
+- **Title:** Get Employees with Pagination and Filtering
+- **User Story:** As an HR user, I want to retrieve employee records with pagination and filters so that I can efficiently manage large datasets.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given employees exist
+  When I GET /employees?page=1&size=20
+  Then I receive a paginated list of employees
+
+  Given employees exist
+  When I GET /employees?department=Shipping
+  Then only employees from Shipping department are returned
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: E02-1
+  - Notes: Support filtering by department, role, status.
+
+### User Story 3: Update Employee Record
+- **Title:** Update Employee API
+- **User Story:** As an HR user, I want to update employee details so that records remain current.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an employee exists
+  When I PUT/PATCH updated data to /employees/{id}
+  Then the employee record is updated
+
+  Given I update badgeId to a duplicate
+  When the request is processed
+  Then I receive a validation error
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E02-1
+  - Notes: Support partial updates.
+
+### User Story 4: Soft-Delete Employee
+- **Title:** Soft-Delete Employee API
+- **User Story:** As an HR user, I want to soft-delete an employee so that historical data is preserved.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an employee exists
+  When I DELETE /employees/{id}
+  Then the employee status is set to 'inactive' and not removed from the database
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E02-1
+  - Notes: Deleted employees are excluded from active lists.
+
+### User Story 5: OpenAPI Documentation
+- **Title:** Generate OpenAPI Schemas with Examples
+- **User Story:** As a developer, I want OpenAPI docs with request/response examples for employee APIs so that integration is straightforward.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the API is running
+  When I access /swagger-ui.html
+  Then I see all employee endpoints with example payloads
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 1
+  - Dependencies: E02-1
+  - Notes: Keep docs up to date with API changes.
+
+---
+
+## Epic E03: Role-Based Access Control (RBAC)
+
+### User Story 1: Implement Role-Based Endpoint Security
+- **Title:** Secure Endpoints by Role
+- **User Story:** As a system administrator, I want endpoints secured by user role so that only authorized users can access sensitive data.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am not authenticated
+  When I access a protected endpoint
+  Then I receive a 401 Unauthorized response
+
+  Given I am authenticated as WORKER
+  When I access an ADMIN-only endpoint
+  Then I receive a 403 Forbidden response
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: E01, E02
+  - Notes: Use Spring Security.
+
+### User Story 2: Method-Level Security for Sensitive Operations
+- **Title:** Restrict Sensitive Operations by Role
+- **User Story:** As an HR user, I want only authorized roles to perform sensitive actions so that PII is protected.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am an ADMIN
+  When I update any employee record
+  Then the update succeeds
+
+  Given I am a SUPERVISOR
+  When I update an employee outside my team
+  Then I receive a 403 Forbidden response
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: E01, E02
+  - Notes: Row-level security for team-based access.
+
+### User Story 3: API Key/OAuth2 Toggle
+- **Title:** Support API Key and OAuth2 Authentication
+- **User Story:** As a system administrator, I want to toggle between API key and OAuth2 authentication so that integration is flexible.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the system is configured for API key
+  When I provide a valid key
+  Then I am authenticated
+
+  Given the system is configured for OAuth2
+  When I provide a valid token
+  Then I am authenticated
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 5
+  - Dependencies: E01, E02
+  - Notes: Configurable via application properties.
+
+### User Story 4: Automated Security Tests
+- **Title:** Cover Security Rules with Automated Tests
+- **User Story:** As a QA engineer, I want automated tests for security rules so that regressions are caught early.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the test suite runs
+  When security tests execute
+  Then all role-based access rules are verified
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E03-1, E03-2
+  - Notes: Cover positive and negative scenarios.
+
+---
+
+## Epic E04: Time & Attendance (Clock In/Out)
+
+### User Story 1: Clock-In Endpoint
+- **Title:** Employee Clock-In API
+- **User Story:** As a warehouse employee, I want to clock in at the start of my shift so that my attendance is recorded.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am authenticated
+  When I POST to /attendance/clock-in with valid data
+  Then my clock-in event is recorded with timestamp and device info
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: E02, E03
+  - Notes: Optionally capture geofence.
+
+### User Story 2: Clock-Out Endpoint
+- **Title:** Employee Clock-Out API
+- **User Story:** As a warehouse employee, I want to clock out at the end of my shift so that my work hours are tracked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am authenticated
+  When I POST to /attendance/clock-out
+  Then my clock-out event is recorded and associated with my shift
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E04-1
+  - Notes: Validate against open clock-in.
+
+### User Story 3: Calculate Hours Worked
+- **Title:** Calculate Shift Hours
+- **User Story:** As a supervisor, I want the system to calculate hours worked per shift so that payroll is accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given clock-in and clock-out events exist
+  When I view the attendance report
+  Then total hours worked per shift are displayed
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E04-1, E04-2
+  - Notes: Handle overnight shifts.
+
+### User Story 4: Missed Punches and Corrections Workflow
+- **Title:** Handle Missed Punches and Corrections
+- **User Story:** As an employee, I want to request corrections for missed punches so that my attendance is accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I missed a clock-in/out
+  When I submit a correction request
+  Then a supervisor is notified for approval
+
+  Given a correction is approved
+  When I view my attendance
+  Then the corrected event is reflected
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: E04-1, E04-2
+  - Notes: Track correction history.
+
+### User Story 5: Export Attendance Reports
+- **Title:** Export Attendance Data (CSV)
+- **User Story:** As a payroll user, I want to export attendance data as CSV so that I can process payroll.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given attendance data exists
+  When I request an export
+  Then a CSV file is generated with all relevant fields
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E04-3
+  - Notes: Include employee, date, shift, hours.
+
+---
+
+## Epic E05: Shift & Schedule Management
+
+### User Story 1: Create and Manage Shift Templates
+- **Title:** CRUD Shift Templates
+- **User Story:** As an HR user, I want to create, update, and delete shift templates so that recurring schedules can be managed efficiently.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am an HR user
+  When I POST/PUT/DELETE shift templates
+  Then the templates are created, updated, or removed accordingly
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: E02, E03, E04
+  - Notes: Templates include start/end time, days, rules.
+
+### User Story 2: Assign Shifts to Employees
+- **Title:** Assign Shifts and Rotations
+- **User Story:** As a supervisor, I want to assign shifts and rotations to employees so that staffing is planned.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given shift templates exist
+  When I assign shifts to employees
+  Then assignments are saved and visible to workers
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 3
+  - Dependencies: E05-1
+  - Notes: Support bulk assignment.
+
+### User Story 3: Detect and Prevent Scheduling Conflicts
+- **Title:** Conflict Detection in Scheduling
+- **User Story:** As a scheduler, I want the system to detect and prevent scheduling conflicts so that employees are not double-booked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an employee has a shift assigned
+  When I try to assign an overlapping shift
+  Then I receive a conflict error and the assignment is blocked
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E05-2
+  - Notes: Include blackout dates and warehouse calendar.
+
+### User Story 4: Employee View of Upcoming Shifts
+- **Title:** Worker Shift Calendar
+- **User Story:** As a worker, I want to view my upcoming shifts so that I can plan my schedule.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am a worker
+  When I view my schedule
+  Then I see all upcoming assigned shifts
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E05-2
+  - Notes: Mobile-friendly view.
+
+### User Story 5: Audit Trail for Shift Changes
+- **Title:** Audit Shift Assignments
+- **User Story:** As an auditor, I want all shift assignments and changes to be logged so that compliance is ensured.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a shift assignment is created or modified
+  When I view the audit log
+  Then I see actor, timestamp, and before/after values
+  ```
+- **Additional Details:**
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: E14
+  - Notes: Immutable log.
