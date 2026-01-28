@@ -1,0 +1,47 @@
+# Epic E19: Advanced Scheduling (AI/Optimization)
+
+## User Story 1: Advanced Shift Rotations and Overtime Rules
+**Title:** Advanced Shift Rotations and Overtime Rules  
+**Narrative:** As a scheduler, I want to configure advanced shift rotations and overtime rules so that staffing is optimized.  
+**Acceptance Criteria (Gherkin):**
+```
+Given the scheduling module
+When I configure rotations and overtime
+Then rules are enforced in shift assignments
+```
+**Priority:** Medium  
+**Story Points:** 3  
+**Dependencies:** E05  
+**Notes:** Support exceptions and overrides.
+
+---
+
+## User Story 2: Handle Blackout Dates and Operation Calendars
+**Title:** Handle Blackout Dates and Operation Calendars  
+**Narrative:** As a scheduler, I want to block scheduling on blackout dates and operation calendars so that compliance is maintained.  
+**Acceptance Criteria (Gherkin):**
+```
+Given blackout dates and calendars
+When I assign shifts
+Then scheduling is blocked on those dates
+```
+**Priority:** Medium  
+**Story Points:** 2  
+**Dependencies:** E05, E19  
+**Notes:** Notify affected employees.
+
+---
+
+## User Story 3: Bulk Shift Assignment and Conflict Detection
+**Title:** Bulk Shift Assignment and Conflict Detection  
+**Narrative:** As a supervisor, I want to assign shifts in bulk and detect conflicts so that scheduling is efficient.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a bulk assignment
+When I assign shifts
+Then conflicts are detected and prevented
+```
+**Priority:** Medium  
+**Story Points:** 2  
+**Dependencies:** E19  
+**Notes:** Support audit logging.
