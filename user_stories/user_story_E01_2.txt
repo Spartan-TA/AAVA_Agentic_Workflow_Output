@@ -1,0 +1,16 @@
+Title: Configure Base Packages and Core Modules
+
+User Story: As a developer, I want base packages and core modules (employee, scheduling, attendance, safety) set up so that development is organized and modular.
+
+Acceptance Criteria:
+
+Scenario: Module Structure
+Given the project is built
+When I inspect the source tree
+Then I see base packages for employee, scheduling, attendance, and safety
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01-1
+- Notes: Ensures modularity.
