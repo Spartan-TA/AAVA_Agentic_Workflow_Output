@@ -1,0 +1,12 @@
+Title: Asset Assignment and Tracking
+User Story: As an asset manager I want to assign and track equipment issued to employees So that accountability and condition are maintained
+Acceptance Criteria:
+Scenario: Assign asset to employee
+Given a valid certification
+When I check out a forklift to an employee
+Then the assignment is recorded and asset status updates
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Overdue returns reportable
