@@ -1,0 +1,86 @@
+EPIC E05: Shift & Schedule Management
+
+---
+
+Title: Create Shift Templates
+User Story: As an HR manager, I want to create recurring shift templates so that I can standardize scheduling across the warehouse.
+
+Acceptance Criteria:
+Scenario: Create shift template
+  Given I am authenticated as HR
+  When I create a new shift template with start/end times and recurrence
+  Then the template is saved and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03, E04
+- Notes: Templates support daily/weekly recurrence
+
+---
+
+Title: Assign Shifts to Employees
+User Story: As a supervisor, I want to assign shifts to employees so that staffing needs are met.
+
+Acceptance Criteria:
+Scenario: Assign shift to employee
+  Given I am a supervisor
+  When I select employees and assign them to a shift
+  Then the system validates for conflicts and saves the assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03, E04
+- Notes: Bulk assignment supported
+
+---
+
+Title: Detect Scheduling Conflicts
+User Story: As a supervisor, I want the system to detect scheduling conflicts so that I avoid double-booking employees.
+
+Acceptance Criteria:
+Scenario: Prevent overlapping shifts
+  Given an employee has an existing shift
+  When I attempt to assign an overlapping shift
+  Then the system prevents the assignment and shows an error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Includes blackout dates
+
+---
+
+Title: View Personal Upcoming Shifts
+User Story: As a worker, I want to view my upcoming shifts so that I can plan my schedule.
+
+Acceptance Criteria:
+Scenario: View my shifts
+  Given I am logged in
+  When I navigate to my schedule
+  Then I see a list of my upcoming shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Mobile-friendly
+
+---
+
+Title: Audit Shift Assignments
+User Story: As an auditor, I want all shift assignments to be logged so that compliance is maintained.
+
+Acceptance Criteria:
+Scenario: View audit log
+  Given a shift assignment is made
+  When I view the audit log
+  Then I see the actor, timestamp, and before/after state
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E14
+- Notes: Tamper-evident storage
