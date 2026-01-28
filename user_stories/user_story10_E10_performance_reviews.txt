@@ -1,0 +1,81 @@
+# Epic E10: Performance Reviews & Goals
+
+## User Story 1: Create Review Cycles and Templates
+**Title:** Create Review Cycles and Templates  
+**Narrative:** As an HR user, I want to create quarterly/annual review cycles and templates so that performance reviews are standardized.  
+**Acceptance Criteria (Gherkin):**
+```
+Given the review module
+When I create a cycle and template
+Then it is available for assignment to employees
+```
+**Priority:** Medium  
+**Story Points:** 3  
+**Dependencies:** E02, E03  
+**Notes:** Support competencies and goals.
+
+---
+
+## User Story 2: Assign Reviews to Employees
+**Title:** Assign Reviews to Employees  
+**Narrative:** As a supervisor, I want to assign reviews to employees so that feedback is structured.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a review cycle
+When I assign to employees
+Then reviews are created and visible to both parties
+```
+**Priority:** Medium  
+**Story Points:** 2  
+**Dependencies:** E10  
+**Notes:** Notify employees of assignments.
+
+---
+
+## User Story 3: Submit and Acknowledge Reviews
+**Title:** Submit and Acknowledge Reviews  
+**Narrative:** As an employee, I want to submit and acknowledge reviews so that the process is complete.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a review assignment
+When I submit my review
+Then it is saved and visible to my supervisor
+When both parties acknowledge
+Then the review is locked and history is immutable
+```
+**Priority:** Medium  
+**Story Points:** 2  
+**Dependencies:** E10  
+**Notes:** Support comments and ratings.
+
+---
+
+## User Story 4: Export Reviews to PDF
+**Title:** Export Reviews to PDF  
+**Narrative:** As an HR user, I want to export reviews to PDF so that records are archived and shared.  
+**Acceptance Criteria (Gherkin):**
+```
+Given completed reviews
+When I request an export
+Then a PDF file is generated with all review details
+```
+**Priority:** Medium  
+**Story Points:** 2  
+**Dependencies:** E10  
+**Notes:** Include signatures/acknowledgements.
+
+---
+
+## User Story 5: Role-Based Review Visibility
+**Title:** Role-Based Review Visibility  
+**Narrative:** As a supervisor, I want review visibility restricted by role so that privacy is maintained.  
+**Acceptance Criteria (Gherkin):**
+```
+Given review records
+When I access as HR, supervisor, or employee
+Then only permitted reviews are visible
+```
+**Priority:** Medium  
+**Story Points:** 2  
+**Dependencies:** E03, E10  
+**Notes:** Enforce access control.
