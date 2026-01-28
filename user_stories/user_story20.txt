@@ -1,0 +1,12 @@
+Title: Review Submission and Acknowledgement
+User Story: As a supervisor I want to submit and acknowledge performance reviews with employees So that feedback is documented and immutable after sign-off
+Acceptance Criteria:
+Scenario: Submit and sign-off review
+Given a completed review form
+When both supervisor and employee acknowledge
+Then the review is locked and PDF exportable
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Role-based visibility
