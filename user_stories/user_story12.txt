@@ -1,0 +1,12 @@
+Title: Supervisor Leave Approval
+User Story: As a supervisor I want to approve or deny leave requests So that staffing levels are maintained
+Acceptance Criteria:
+Scenario: Approve leave
+Given a pending leave request
+When I approve it
+Then the employee's balance updates and scheduled shifts are flagged for coverage
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Approved leaves exportable
