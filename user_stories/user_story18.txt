@@ -1,0 +1,12 @@
+Title: Asset Usage Block for Invalid Certs
+User Story: As a system I want to block asset checkout if required certifications are missing or expired So that only qualified employees use equipment
+Acceptance Criteria:
+Scenario: Attempt checkout with expired cert
+Given an employee with expired PPE training
+When I try to assign PPE
+Then the system blocks the checkout and logs the attempt
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Asset and employee history logs
