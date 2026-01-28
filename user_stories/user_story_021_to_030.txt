@@ -1,0 +1,103 @@
+**US-021**
+- Title: Integrate Leave with Scheduling
+- User Story: As a Supervisor, I want approved leave to block shift assignments so that schedules are conflict-free.
+- Acceptance Criteria:
+    - Given approved leave,
+      When generating schedules,
+      Then the employee is not assigned during leave.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: US-019, US-015, Notes: Prevents assignment conflicts.
+
+---
+
+### Epic E07: Training & Certification Tracking
+
+**US-022**
+- Title: Record Employee Certifications
+- User Story: As an HR Manager, I want to record certifications (e.g., forklift) for employees so that qualifications are tracked.
+- Acceptance Criteria:
+    - Given certification details,
+      When I add to an employee,
+      Then it is stored with expiration date.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Supports multiple certs per employee.
+
+**US-023**
+- Title: Notify on Certification Expiry
+- User Story: As a Supervisor, I want to be notified when employee certifications are about to expire so that renewals are timely.
+- Acceptance Criteria:
+    - Given a cert expiring in 30 days,
+      When the date approaches,
+      Then I receive a notification.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: US-022, Notes: Notification via email/SMS.
+
+**US-024**
+- Title: Block Unqualified Assignments
+- User Story: As a Scheduler, I want to prevent assignment of tasks requiring certification to unqualified employees so that safety is ensured.
+- Acceptance Criteria:
+    - Given a task requires certification,
+      When assigning to an unqualified employee,
+      Then the system blocks the assignment.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: US-022, US-015, Notes: Enforced at scheduling.
+
+**US-025**
+- Title: Track Certification Renewals
+- User Story: As an HR Manager, I want to track certification renewals so that compliance is maintained.
+- Acceptance Criteria:
+    - Given a renewed cert,
+      When I update the record,
+      Then the new expiration date is stored.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: US-022, Notes: Renewal history tracked.
+
+---
+
+### Epic E08: Safety Incidents & OSHA Reporting
+
+**US-026**
+- Title: Record Safety Incidents and Near-Misses
+- User Story: As a Supervisor, I want to record incidents and near-misses so that safety issues are tracked.
+- Acceptance Criteria:
+    - Given incident details,
+      When I submit a report,
+      Then it is stored and timestamped.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Supports attachments.
+
+**US-027**
+- Title: Incident Investigation Workflow
+- User Story: As a Safety Officer, I want to manage investigation steps for incidents so that root causes are identified.
+- Acceptance Criteria:
+    - Given a reported incident,
+      When I update investigation status,
+      Then the workflow progresses (e.g., assigned, in review, closed).
+- Additional Details: Priority: High, Story Points: 3, Dependencies: US-026, Notes: Status history tracked.
+
+**US-028**
+- Title: Generate OSHA Reports
+- User Story: As a Safety Officer, I want to generate OSHA-compliant reports so that regulatory requirements are met.
+- Acceptance Criteria:
+    - Given incident data,
+      When I generate a report,
+      Then the output matches OSHA format.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: US-026, US-027, Notes: Export as PDF/CSV.
+
+---
+
+### Epic E09: Equipment & Asset Assignment
+
+**US-029**
+- Title: Assign Equipment to Employees
+- User Story: As a Supervisor, I want to assign assets (scanners, forklifts, PPE) to employees so that usage is tracked.
+- Acceptance Criteria:
+    - Given available equipment,
+      When I assign to an employee,
+      Then the assignment is recorded.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: E02, E03, E07, Notes: Prevents double-assignment.
+
+**US-030**
+- Title: Track Equipment Checkout and Return
+- User Story: As a Warehouse Worker, I want to check out and return equipment so that asset usage is logged.
+- Acceptance Criteria:
+    - Given assigned equipment,
+      When I check out,
+      Then the time and user are logged.
+    - When I return,
+      Then the asset is marked available.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: US-029, Notes: Supports audit trail.
