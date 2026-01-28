@@ -1,0 +1,84 @@
+### E04 - Time & Attendance (Clock In/Out)
+
+**User Story 4.1: Clock-In Endpoint with Validation**
+User Story: As a worker I want to clock in via a secure endpoint So that my attendance is accurately recorded.
+
+Acceptance Criteria:
+Scenario: Clock-in event
+Given a valid employee and location
+When I POST to /attendance/clock-in
+Then my clock-in is recorded with timestamp, device, and geofence data
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Geofence is optional but preferred.
+
+---
+
+**User Story 4.2: Clock-Out Endpoint and Shift Calculation**
+User Story: As a worker I want to clock out So that my work hours are tracked.
+
+Acceptance Criteria:
+Scenario: Clock-out event
+Given a valid clock-in
+When I POST to /attendance/clock-out
+Then my shift duration is calculated and stored
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04.1
+- Notes: Handles overnight shifts.
+
+---
+
+**User Story 4.3: Missed Punch Correction Workflow**
+User Story: As a supervisor I want to handle missed punches and corrections So that attendance data remains accurate.
+
+Acceptance Criteria:
+Scenario: Missed punch correction
+Given a missed clock event
+When a correction is submitted
+Then an approval task is created for supervisor review
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04.1
+- Notes: Correction history must be auditable.
+
+---
+
+**User Story 4.4: Attendance Reporting and Export**
+User Story: As an HR user I want to export attendance reports in CSV So that payroll processing is efficient.
+
+Acceptance Criteria:
+Scenario: Attendance export
+Given attendance records exist
+When I request a CSV export
+Then the file contains daily totals and all relevant fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04.1
+- Notes: Export must match payroll requirements.
+
+---
+
+**User Story 4.5: Device and Location Capture**
+User Story: As an admin I want to capture device and location data on clock events So that I can audit attendance fraud.
+
+Acceptance Criteria:
+Scenario: Device/location capture
+Given a clock-in/out event
+When it is recorded
+Then device ID and location are stored with the event
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04.1
+- Notes: Device/location data must be queryable.
