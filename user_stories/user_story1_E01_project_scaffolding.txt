@@ -1,0 +1,83 @@
+# Epic E01: Project Scaffolding & Domain Setup
+
+## User Story 1: Initialize Spring Boot Project
+**Title:** Initialize Spring Boot Project  
+**Narrative:** As a developer, I want to initialize a Spring Boot project with Maven so that the team has a standardized foundation for all modules.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a new repository
+When I run the Maven initialization command
+Then a Spring Boot project is created with the correct base structure
+And the application builds and runs on port 8080
+```
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** None  
+**Notes:** Ensure README includes build/run instructions.
+
+---
+
+## User Story 2: Configure Base Packages and Core Modules
+**Title:** Configure Base Packages and Core Modules  
+**Narrative:** As a developer, I want to set up base packages and core modules (employee, scheduling, attendance, safety) so that code is organized and extensible.  
+**Acceptance Criteria (Gherkin):**
+```
+Given the initialized project
+When I inspect the package structure
+Then I see separate packages for employee, scheduling, attendance, and safety
+And each module contains a placeholder class
+```
+**Priority:** High  
+**Story Points:** 2  
+**Dependencies:** E01  
+**Notes:** Follow standard naming conventions.
+
+---
+
+## User Story 3: Set Up Database Migration Tool
+**Title:** Set Up Flyway/Liquibase for DB Migrations  
+**Narrative:** As a developer, I want to add Flyway or Liquibase to manage database migrations so that schema changes are versioned and repeatable.  
+**Acceptance Criteria (Gherkin):**
+```
+Given the project dependencies
+When I run the application
+Then Flyway/Liquibase executes the baseline migration
+And the database schema is created as per initial design
+```
+**Priority:** High  
+**Story Points:** 2  
+**Dependencies:** E01  
+**Notes:** Document migration process in README.
+
+---
+
+## User Story 4: Enable Actuator for Health Checks
+**Title:** Enable Spring Boot Actuator  
+**Narrative:** As an operations engineer, I want Actuator endpoints enabled so that I can monitor application health.  
+**Acceptance Criteria (Gherkin):**
+```
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns status UP
+```
+**Priority:** High  
+**Story Points:** 1  
+**Dependencies:** E01  
+**Notes:** Secure actuator endpoints for production.
+
+---
+
+## User Story 5: Document Project Setup
+**Title:** Document Project Setup in README  
+**Narrative:** As a developer, I want clear build and run instructions in the README so that onboarding is fast and consistent.  
+**Acceptance Criteria (Gherkin):**
+```
+Given the repository
+When I open the README
+Then I see sections for build, run, and migration steps
+And instructions are accurate and up-to-date
+```
+**Priority:** High  
+**Story Points:** 1  
+**Dependencies:** E01  
+**Notes:** Include troubleshooting tips.
