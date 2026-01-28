@@ -1,0 +1,47 @@
+# Epic E17: Onboarding & Offboarding Workflow
+
+## User Story 1: Automate Provisioning for New Hires
+**Title:** Automate Provisioning for New Hires  
+**Narrative:** As an HR user, I want new hires provisioned with accounts, initial schedules, and required training so that onboarding is efficient.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a new hire from HRIS
+When onboarding starts
+Then accounts, schedules, and training tasks are created automatically
+```
+**Priority:** Medium  
+**Story Points:** 3  
+**Dependencies:** E02, E03, E05, E07, E13  
+**Notes:** Notify responsible parties.
+
+---
+
+## User Story 2: Automate Offboarding for Terminations
+**Title:** Automate Offboarding for Terminations  
+**Narrative:** As an HR user, I want access and asset deprovisioning automated for terminations so that risk is reduced.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a termination event
+When offboarding starts
+Then access is revoked, assets are collected, and schedules updated
+```
+**Priority:** Medium  
+**Story Points:** 3  
+**Dependencies:** E09, E13  
+**Notes:** Track completion of offboarding tasks.
+
+---
+
+## User Story 3: Generate Onboarding/Offboarding Tasks
+**Title:** Generate Onboarding/Offboarding Tasks  
+**Narrative:** As a supervisor, I want onboarding/offboarding tasks generated for each event so that nothing is missed.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a new hire or termination
+When the event occurs
+Then a checklist of tasks is generated and tracked to completion
+```
+**Priority:** Medium  
+**Story Points:** 2  
+**Dependencies:** E17  
+**Notes:** Support reminders and escalation.
