@@ -1,0 +1,82 @@
+# Epic E03: Role-Based Access Control (RBAC)
+
+## User Story 1: Add Spring Security and Roles
+**Title:** Add Spring Security and Define Roles  
+**Narrative:** As a system administrator, I want to configure roles (ADMIN, HR, SUPERVISOR, WORKER) so that access is restricted appropriately.  
+**Acceptance Criteria (Gherkin):**
+```
+Given the security configuration
+When I assign roles to users
+Then users can only access endpoints permitted for their role
+```
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** E01, E02  
+**Notes:** Use role constants.
+
+---
+
+## User Story 2: Implement Endpoint and Method Security
+**Title:** Implement Endpoint and Method Security  
+**Narrative:** As a developer, I want to secure sensitive endpoints and methods so that only authorized roles can perform critical actions.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a secured endpoint
+When an unauthorized user attempts access
+Then the request returns 401 Unauthorized
+When a user lacks permission
+Then the request returns 403 Forbidden
+```
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** E03  
+**Notes:** Cover all sensitive operations.
+
+---
+
+## User Story 3: Row-Level Security for Supervisors
+**Title:** Row-Level Security for Supervisors  
+**Narrative:** As a supervisor, I want to access only my team's records so that privacy is maintained.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a supervisor user
+When accessing employee data
+Then only records for their team are visible
+```
+**Priority:** High  
+**Story Points:** 5  
+**Dependencies:** E02, E03  
+**Notes:** Map supervisor to team.
+
+---
+
+## User Story 4: API Key/OAuth2 Toggle
+**Title:** Support API Key/OAuth2 Toggle via Config  
+**Narrative:** As a system administrator, I want to toggle between API key and OAuth2 authentication so that integration is flexible.  
+**Acceptance Criteria (Gherkin):**
+```
+Given the application config
+When I set the authentication mode
+Then endpoints require either API key or OAuth2 as configured
+```
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** E03  
+**Notes:** Document configuration steps.
+
+---
+
+## User Story 5: Security Test Coverage
+**Title:** Cover Security Rules with Automated Tests  
+**Narrative:** As a QA engineer, I want automated tests for all security rules so that vulnerabilities are detected early.  
+**Acceptance Criteria (Gherkin):**
+```
+Given the test suite
+When I run security tests
+Then unauthorized and forbidden actions are correctly blocked
+And all roles are covered
+```
+**Priority:** High  
+**Story Points:** 2  
+**Dependencies:** E03  
+**Notes:** Include negative test cases.
