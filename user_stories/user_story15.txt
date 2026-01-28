@@ -1,0 +1,12 @@
+Title: Safety Incident Reporting
+User Story: As a supervisor I want to record safety incidents and near-misses So that investigations and corrective actions can be tracked
+Acceptance Criteria:
+Scenario: Submit incident report
+Given a workplace incident
+When I POST to /safety/incidents with required details
+Then the incident is logged and status set to Open
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: OSHA exportable
