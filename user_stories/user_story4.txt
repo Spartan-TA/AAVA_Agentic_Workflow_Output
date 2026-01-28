@@ -1,0 +1,12 @@
+Title: Employee Data Validation
+User Story: As a system I want to enforce unique badge IDs and required fields So that duplicate or incomplete employee records are prevented
+Acceptance Criteria:
+Scenario: Badge ID uniqueness
+Given an existing employee with badgeId X
+When I try to create another employee with badgeId X
+Then the request is rejected with a validation error
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Soft-delete must not allow badgeId reuse
