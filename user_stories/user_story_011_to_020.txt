@@ -1,0 +1,106 @@
+### Epic E04: Time & Attendance (Clock In/Out)
+
+**US-011**
+- Title: Clock In Endpoint with Geofence
+- User Story: As a Warehouse Worker, I want to clock in only when within the warehouse geofence so that attendance is accurate.
+- Acceptance Criteria:
+    - Given I am within the geofence,
+      When I POST to /attendance/clock-in,
+      Then my clock-in is recorded.
+    - Given I am outside the geofence,
+      When I attempt to clock in,
+      Then I receive an error.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: E02, E03, Notes: Geofence coordinates configurable.
+
+**US-012**
+- Title: Clock Out Endpoint and Hours Calculation
+- User Story: As a Warehouse Worker, I want to clock out and have hours worked calculated so that my attendance is tracked.
+- Acceptance Criteria:
+    - Given I am clocked in,
+      When I POST to /attendance/clock-out,
+      Then my clock-out is recorded and hours are calculated.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: US-011, Notes: Handles overnight shifts.
+
+**US-013**
+- Title: Handle Missed Punches
+- User Story: As a Supervisor, I want to correct missed punches for my team so that attendance records are accurate.
+- Acceptance Criteria:
+    - Given a missed punch,
+      When I submit a correction,
+      Then the record is updated and flagged as corrected.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: US-011, US-012, Notes: Audit trail required.
+
+---
+
+### Epic E05: Shift & Schedule Management
+
+**US-014**
+- Title: Create Shift Templates
+- User Story: As an HR Manager, I want to define shift templates (start/end times, breaks) so that scheduling is standardized.
+- Acceptance Criteria:
+    - Given shift details,
+      When I POST to /shifts/templates,
+      Then a new template is created.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, E04, Notes: Templates reusable.
+
+**US-015**
+- Title: Assign Shifts to Employees
+- User Story: As a Supervisor, I want to assign shifts to employees so that coverage is ensured.
+- Acceptance Criteria:
+    - Given a shift template,
+      When I assign it to an employee,
+      Then the employee's schedule is updated.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: US-014, Notes: Prevent double-booking.
+
+**US-016**
+- Title: Define Overtime Rules
+- User Story: As an HR Manager, I want to set overtime rules so that extra hours are tracked and compensated.
+- Acceptance Criteria:
+    - Given overtime thresholds,
+      When an employee exceeds regular hours,
+      Then overtime is calculated.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: US-014, Notes: Rules configurable per department.
+
+**US-017**
+- Title: Manage Shift Rotations
+- User Story: As a Supervisor, I want to set up shift rotations so that employees rotate fairly.
+- Acceptance Criteria:
+    - Given a rotation schedule,
+      When I assign it,
+      Then employees are rotated as per the schedule.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: US-014, Notes: Supports weekly/monthly rotations.
+
+---
+
+### Epic E06: Leave & Absence Management
+
+**US-018**
+- Title: Request Paid Time Off (PTO)
+- User Story: As a Warehouse Worker, I want to request PTO so that my absences are tracked and approved.
+- Acceptance Criteria:
+    - Given available PTO balance,
+      When I submit a request,
+      Then the request is pending approval.
+    - When I lack sufficient balance,
+      Then I receive an error.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: E02, E03, E05, Notes: PTO balance visible to user.
+
+**US-019**
+- Title: Approve or Reject Leave Requests
+- User Story: As a Supervisor, I want to approve or reject leave requests so that team coverage is maintained.
+- Acceptance Criteria:
+    - Given a pending request,
+      When I approve it,
+      Then the employee is notified and schedule updated.
+    - When I reject it,
+      Then the employee is notified with reason.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: US-018, Notes: Approval workflow.
+
+**US-020**
+- Title: Track Leave Accrual Balances
+- User Story: As an HR Manager, I want to track accrual of PTO and sick leave so that balances are accurate.
+- Acceptance Criteria:
+    - Given accrual rules,
+      When time passes,
+      Then balances are updated automatically.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: US-018, Notes: Configurable accrual rates.
