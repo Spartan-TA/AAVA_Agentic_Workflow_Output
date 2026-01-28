@@ -1,0 +1,12 @@
+Title: Incident Investigation Workflow
+User Story: As a safety officer I want to manage the investigation and resolution of incidents So that corrective actions are documented
+Acceptance Criteria:
+Scenario: Update incident status
+Given an incident under investigation
+When I add findings and corrective actions
+Then the status updates to Resolved and is reflected in OSHA reports
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Metrics dashboard required
