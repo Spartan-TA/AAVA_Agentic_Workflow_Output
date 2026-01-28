@@ -1,0 +1,16 @@
+Title: Add README with Build and Run Steps
+
+User Story: As a developer, I want a README with build/run instructions so that onboarding is easy.
+
+Acceptance Criteria:
+
+Scenario: Documentation
+Given I open the README
+When I follow the steps
+Then I can build and run the project successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01-1
+- Notes: Reduces onboarding time.
