@@ -1,0 +1,12 @@
+Title: Certification Tracking
+User Story: As a safety manager I want to track employee certifications and expirations So that only qualified staff are assigned to sensitive tasks
+Acceptance Criteria:
+Scenario: Certification expiry alert
+Given a certification expiring in 30 days
+When the system checks certifications
+Then an alert is sent to the employee and supervisor
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Proof documents uploadable
