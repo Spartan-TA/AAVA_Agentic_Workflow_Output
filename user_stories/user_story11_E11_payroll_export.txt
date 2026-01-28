@@ -1,0 +1,63 @@
+# Epic E11: Payroll Export Integration
+
+## User Story 1: Generate Payroll-Ready Files
+**Title:** Generate Payroll-Ready Export Files  
+**Narrative:** As a payroll manager, I want to generate files from approved attendance and leave so that payroll runs are accurate.  
+**Acceptance Criteria (Gherkin):**
+```
+Given approved attendance and leave data
+When I generate a payroll export
+Then the file matches the provider schema
+```
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** E04, E06  
+**Notes:** Support multiple provider formats.
+
+---
+
+## User Story 2: Reconcile Totals with Reports
+**Title:** Reconcile Export Totals with Reports  
+**Narrative:** As a payroll manager, I want export totals to match internal reports so that errors are avoided.  
+**Acceptance Criteria (Gherkin):**
+```
+Given exported payroll data
+When I compare with attendance and leave reports
+Then totals reconcile without discrepancies
+```
+**Priority:** High  
+**Story Points:** 2  
+**Dependencies:** E11  
+**Notes:** Flag mismatches.
+
+---
+
+## User Story 3: Secure Delivery via SFTP/API
+**Title:** Secure Delivery of Payroll Files  
+**Narrative:** As an IT admin, I want payroll files delivered securely via SFTP or API so that data is protected.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a payroll export file
+When I deliver via SFTP or API
+Then delivery is encrypted and logged
+```
+**Priority:** High  
+**Story Points:** 2  
+**Dependencies:** E11  
+**Notes:** Retry failed deliveries with backoff.
+
+---
+
+## User Story 4: Audit Log for Payroll Exports
+**Title:** Audit Payroll Export Events  
+**Narrative:** As a compliance officer, I want every payroll export logged so that delivery is traceable.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a payroll export event
+When the export occurs
+Then an audit log entry is created with timestamp, actor, and status
+```
+**Priority:** High  
+**Story Points:** 2  
+**Dependencies:** E11, E14  
+**Notes:** Include failed attempts.
