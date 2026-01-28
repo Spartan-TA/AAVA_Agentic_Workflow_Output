@@ -1,0 +1,79 @@
+# Epic E05: Shift & Schedule Management
+
+## User Story 1: Create Shift Templates
+**Title:** Create and Manage Shift Templates  
+**Narrative:** As a scheduler, I want to create recurring shift templates so that scheduling is efficient.  
+**Acceptance Criteria (Gherkin):**
+```
+Given the shift management module
+When I create a shift template
+Then it is saved and available for assignment
+```
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** E02, E03, E04  
+**Notes:** Support rotations and overtime rules.
+
+---
+
+## User Story 2: Assign Shifts to Employees
+**Title:** Assign Shifts to Employees  
+**Narrative:** As a supervisor, I want to assign shifts to employees so that staffing is planned.  
+**Acceptance Criteria (Gherkin):**
+```
+Given available shift templates
+When I assign shifts to employees
+Then assignments are saved and visible to workers
+```
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** E05  
+**Notes:** Support bulk assignment.
+
+---
+
+## User Story 3: Detect and Prevent Scheduling Conflicts
+**Title:** Detect and Prevent Scheduling Conflicts  
+**Narrative:** As a scheduler, I want the system to detect and prevent conflicts so that employees are not double-booked.  
+**Acceptance Criteria (Gherkin):**
+```
+Given existing shift assignments
+When I assign a new shift
+Then conflicts are detected and prevented
+```
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** E05  
+**Notes:** Include blackout dates and operation calendars.
+
+---
+
+## User Story 4: Personal Shift View for Workers
+**Title:** Workers View Personal Upcoming Shifts  
+**Narrative:** As a worker, I want to see my upcoming shifts so that I can plan my schedule.  
+**Acceptance Criteria (Gherkin):**
+```
+Given my employee profile
+When I view my schedule
+Then all upcoming shifts are listed
+```
+**Priority:** Medium  
+**Story Points:** 2  
+**Dependencies:** E05  
+**Notes:** Mobile-friendly view.
+
+---
+
+## User Story 5: Audit Entries for Shift Changes
+**Title:** Audit Shift Assignment Changes  
+**Narrative:** As a compliance officer, I want all shift changes to be audited so that accountability is maintained.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a shift assignment change
+When the change occurs
+Then an audit entry is created with actor, timestamp, before/after
+```
+**Priority:** High  
+**Story Points:** 2  
+**Dependencies:** E05, E14  
+**Notes:** Include bulk changes.
