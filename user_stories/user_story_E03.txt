@@ -1,0 +1,84 @@
+### E03 - Role Based Access Control (RBAC)
+
+**User Story 3.1: Implement Role-Based Endpoint Security**
+User Story: As an admin I want to restrict endpoints based on user roles So that sensitive data is protected.
+
+Acceptance Criteria:
+Scenario: Endpoint access by role
+Given a user with a specific role
+When they access a protected endpoint
+Then access is granted or denied according to their role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Roles: ADMIN, HR, SUPERVISOR, WORKER.
+
+---
+
+**User Story 3.2: Method-Level Security**
+User Story: As a developer I want to enforce method-level security So that only authorized roles can perform sensitive operations.
+
+Acceptance Criteria:
+Scenario: Method invocation
+Given a method with security annotation
+When called by an unauthorized role
+Then a 403 Forbidden is returned
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03.1
+- Notes: Security rules must be covered by tests.
+
+---
+
+**User Story 3.3: API Key/OAuth2 Toggle**
+User Story: As a system admin I want to toggle between API key and OAuth2 authentication So that I can adapt to different security requirements.
+
+Acceptance Criteria:
+Scenario: Authentication toggle
+Given the config is set to API key or OAuth2
+When a request is made
+Then the correct authentication mechanism is enforced
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03.1
+- Notes: Toggle via configuration.
+
+---
+
+**User Story 3.4: Row-Level Security Constraints**
+User Story: As a supervisor I want to access only my team's records So that data privacy is maintained.
+
+Acceptance Criteria:
+Scenario: Team data access
+Given a supervisor is logged in
+When they query employee data
+Then only their team's records are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03.1
+- Notes: Must be enforced at both API and DB layers.
+
+---
+
+**User Story 3.5: Unauthorized and Forbidden Responses**
+User Story: As a user I want clear 401/403 responses for unauthorized/forbidden actions So that I understand access issues.
+
+Acceptance Criteria:
+Scenario: Unauthorized/forbidden access
+Given an unauthenticated or unauthorized request
+When accessing a protected endpoint
+Then a 401 or 403 is returned with a clear message
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E03.1
+- Notes: Error messages must not leak sensitive info.
