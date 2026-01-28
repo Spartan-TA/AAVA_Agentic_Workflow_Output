@@ -1,0 +1,63 @@
+# Epic E07: Training & Certification Tracking
+
+## User Story 1: CRUD for Certifications
+**Title:** Manage Employee Certifications  
+**Narrative:** As an HR user, I want to create, update, and delete certifications for employees so that compliance is tracked.  
+**Acceptance Criteria (Gherkin):**
+```
+Given the certification module
+When I add or update a certification
+Then it is saved and visible on the employee profile
+```
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** E02, E03  
+**Notes:** Support document uploads.
+
+---
+
+## User Story 2: Alert for Expiring Certifications
+**Title:** Alert for Expiring Certifications  
+**Narrative:** As a supervisor, I want alerts for certifications expiring in 30/7 days so that renewals are not missed.  
+**Acceptance Criteria (Gherkin):**
+```
+Given an expiring certification
+When it is within 30 or 7 days of expiry
+Then an alert is generated for the employee and supervisor
+```
+**Priority:** High  
+**Story Points:** 2  
+**Dependencies:** E07  
+**Notes:** Integrate with notifications.
+
+---
+
+## User Story 3: Block Assignment to Tasks Requiring Certification
+**Title:** Block Unqualified Assignments  
+**Narrative:** As a scheduler, I want to prevent assignment of tasks to employees with expired certifications so that safety is ensured.  
+**Acceptance Criteria (Gherkin):**
+```
+Given a task requiring certification
+When an employee's certification is expired
+Then assignment is blocked and a warning is shown
+```
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** E05, E07  
+**Notes:** Check certification status during scheduling.
+
+---
+
+## User Story 4: Certification Status on Employee Profile
+**Title:** Show Certification Status on Profile  
+**Narrative:** As an employee, I want to see my certification status on my profile so that I know when renewals are due.  
+**Acceptance Criteria (Gherkin):**
+```
+Given my employee profile
+When I view certifications
+Then status and expiry dates are visible
+```
+**Priority:** Medium  
+**Story Points:** 2  
+**Dependencies:** E07  
+**Notes:** Highlight expired or expiring certs.
