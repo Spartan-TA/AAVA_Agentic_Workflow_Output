@@ -1,0 +1,28 @@
+### E19: Advanced Scheduling (AI/Optimization)
+
+**User Story 1**
+- Title: Predict Staffing Needs with AI
+- User Story: As a scheduler, I want AI to predict staffing needs so that I can plan ahead.
+- Acceptance Criteria:
+    - Given historical data,
+      When I run the prediction,
+      Then suggested staffing levels are generated.
+- Additional Details: Priority: Low, Story Points: 3, Dependencies: E05, E15, Notes: For optimization.
+
+**User Story 2**
+- Title: Auto-Suggest Shift Assignments
+- User Story: As a scheduler, I want the system to auto-suggest shift assignments so that manual effort is reduced.
+- Acceptance Criteria:
+    - Given open shifts,
+      When I request suggestions,
+      Then the system proposes assignments based on constraints.
+- Additional Details: Priority: Low, Story Points: 2, Dependencies: E05, E15, Notes: For efficiency.
+
+**User Story 3**
+- Title: Enforce Scheduling Constraints
+- User Story: As a scheduler, I want a constraint solver to enforce rules (max hours, rest periods) so that assignments are compliant.
+- Acceptance Criteria:
+    - Given assignment rules,
+      When I schedule shifts,
+      Then violations are detected and prevented.
+- Additional Details: Priority: Low, Story Points: 2, Dependencies: E05, E15, Notes: For compliance.
