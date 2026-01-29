@@ -1,0 +1,46 @@
+### E06: Leave & Absence Management
+
+**User Story 1**
+- Title: Request Leave (PTO, Sick, Unpaid)
+- User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my absences are tracked.
+- Acceptance Criteria:
+    - Given my account,
+      When I submit a leave request,
+      Then it is recorded and pending approval.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: E02, E03, E05, Notes: Core leave flow.
+
+**User Story 2**
+- Title: Approve or Deny Leave Requests
+- User Story: As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+- Acceptance Criteria:
+    - Given a pending request,
+      When I approve or deny it,
+      Then the employee is notified and the balance updates.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Approval workflow.
+
+**User Story 3**
+- Title: Update Leave Accrual Balances
+- User Story: As an HR user, I want leave balances to update automatically so that accrual policies are enforced.
+- Acceptance Criteria:
+    - Given an approved leave,
+      When the leave is taken,
+      Then the employee's balance is reduced accordingly.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: For compliance.
+
+**User Story 4**
+- Title: Integrate Leave with Scheduling
+- User Story: As a scheduler, I want approved leaves to auto-flag scheduled shifts for coverage so that gaps are filled.
+- Acceptance Criteria:
+    - Given an approved leave,
+      When a shift overlaps,
+      Then the shift is flagged for coverage.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: For coverage.
+
+**User Story 5**
+- Title: Export Leave Data
+- User Story: As an admin, I want to export approved leaves so that payroll and compliance are supported.
+- Acceptance Criteria:
+    - Given leave records,
+      When I export data,
+      Then all approved leaves are included in the export.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: For reporting.
