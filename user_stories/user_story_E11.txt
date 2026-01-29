@@ -1,0 +1,46 @@
+### E11: Payroll Export Integration
+
+**User Story 1**
+- Title: Generate Payroll-Ready Export Files
+- User Story: As a payroll manager, I want to generate payroll files from attendance and leave data so that payroll runs are accurate.
+- Acceptance Criteria:
+    - Given attendance and leave records,
+      When I generate an export,
+      Then the file matches the provider schema.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E04, E06, Notes: For payroll.
+
+**User Story 2**
+- Title: Secure Delivery of Payroll Files
+- User Story: As an admin, I want to deliver payroll files via SFTP or API so that data is transmitted securely.
+- Acceptance Criteria:
+    - Given an export file,
+      When I deliver it,
+      Then the transfer is encrypted and logged.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E04, E06, Notes: For compliance.
+
+**User Story 3**
+- Title: Reconcile Payroll Totals with Reports
+- User Story: As a payroll manager, I want to reconcile export totals with attendance/leave reports so that errors are caught.
+- Acceptance Criteria:
+    - Given an export,
+      When I compare totals,
+      Then they match the source reports.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E04, E06, Notes: For accuracy.
+
+**User Story 4**
+- Title: Retry Failed Deliveries with Backoff
+- User Story: As an admin, I want failed payroll deliveries retried with exponential backoff so that transient errors are handled.
+- Acceptance Criteria:
+    - Given a failed delivery,
+      When a retry is triggered,
+      Then the system waits and retries up to N times.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E04, E06, Notes: For reliability.
+
+**User Story 5**
+- Title: Audit Log for Payroll Exports
+- User Story: As an auditor, I want an audit log for every payroll export so that all actions are traceable.
+- Acceptance Criteria:
+    - Given an export,
+      When it is generated or delivered,
+      Then an audit entry is created with timestamp and actor.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E04, E06, Notes: For compliance.
