@@ -1,0 +1,66 @@
+### Epic E01: Project Scaffolding & Domain Setup
+
+#### 1. Initialize Spring Boot Project
+User Story: As a developer I want to initialize a Spring Boot project with Maven So that I have a standardized foundation for all modules.
+Acceptance Criteria:
+Scenario: Project initialization
+Given I have cloned the repository
+When I run `mvn clean install`
+Then the project builds successfully and runs on port 8080
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Include README with build/run steps.
+
+#### 2. Configure Base Package Structure
+User Story: As a developer I want to set up base packages for employee, scheduling, attendance, and safety modules So that code is organized and maintainable.
+Acceptance Criteria:
+Scenario: Package structure verification
+Given the project is initialized
+When I inspect the source code
+Then base packages for each module are present
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Initialization story
+- Notes: Follow domain-driven design principles.
+
+#### 3. Add Flyway/Liquibase for DB Migrations
+User Story: As a developer I want to add Flyway or Liquibase for database migrations So that schema changes are versioned and repeatable.
+Acceptance Criteria:
+Scenario: Baseline migration runs
+Given the database is empty
+When I start the application
+Then Flyway/Liquibase applies the baseline migration
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Initialization story
+- Notes: Document migration process in README.
+
+#### 4. Enable Actuator Health Endpoint
+User Story: As an operator I want to access the Actuator health endpoint So that I can monitor application health.
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access `/actuator/health`
+Then the endpoint returns status UP
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Initialization story
+- Notes: Secure actuator endpoints.
+
+#### 5. Document Build and Run Steps
+User Story: As a developer I want clear documentation for building and running the project So that onboarding is fast and consistent.
+Acceptance Criteria:
+Scenario: README verification
+Given the repository is cloned
+When I open the README
+Then I see build and run instructions
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Initialization story
+- Notes: Include environment setup details.
