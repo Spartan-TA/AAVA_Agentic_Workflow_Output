@@ -1,0 +1,25 @@
+Title: Record Safety Incidents and Near-Misses
+
+User Story:
+As a Safety Officer, I want to record safety incidents and near-misses in the system so that we can track, investigate, and prevent future occurrences.
+
+Acceptance Criteria:
+Scenario 1: Submit a new incident report
+  Given I am on the safety incident reporting page
+  When I submit a new incident or near-miss
+  Then the report is logged and assigned a unique ID
+
+Scenario 2: Attach photos and documents to report
+  Given I am submitting an incident report
+  When I upload supporting photos or documents
+  Then they are securely stored and linked to the report
+
+Scenario 3: Notify relevant parties
+  Given a new incident is reported
+  When the report is submitted
+  Then safety and HR teams are notified for follow-up
+
+Priority: High
+Story Points: 8
+Dependencies: E02, E03
+Notes: Must support mobile submission and secure document storage.
