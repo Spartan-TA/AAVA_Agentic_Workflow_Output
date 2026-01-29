@@ -1,0 +1,79 @@
+### Epic E13: Integration Layer (HRIS/WMS APIs)
+
+#### 1. Expose REST APIs for HRIS and WMS
+User Story: As a developer I want to expose REST APIs for HRIS and WMS integration So that master data is synchronized.
+Acceptance Criteria:
+Scenario: API exposure
+Given the integration module
+When I access API endpoints
+Then HRIS and WMS data is available
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Documented in OpenAPI.
+
+#### 2. Secure APIs with JWT/OAuth2
+User Story: As a developer I want APIs secured with JWT/OAuth2 So that data is protected.
+Acceptance Criteria:
+Scenario: API security
+Given API endpoints
+When I authenticate with JWT/OAuth2
+Then access is granted per token
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: API exposure
+- Notes: Token expiry handled.
+
+#### 3. HRIS Sync Job for New Hires/Terms
+User Story: As an HR user I want a sync job to create/update employees from HRIS So that onboarding/offboarding is automated.
+Acceptance Criteria:
+Scenario: HRIS sync
+Given new hires/terms in HRIS
+When the sync job runs
+Then employees are created/updated in the system
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: API exposure
+- Notes: Idempotent sync.
+
+#### 4. WMS Link for Department/Location Data
+User Story: As a developer I want to link WMS data for department and location So that employee assignments are accurate.
+Acceptance Criteria:
+Scenario: WMS data link
+Given WMS data
+When I sync departments/locations
+Then employee records are updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: API exposure
+- Notes: Handle mapping errors.
+
+#### 5. Idempotent Webhooks for Events
+User Story: As a developer I want webhooks for events to be idempotent So that duplicate processing is avoided.
+Acceptance Criteria:
+Scenario: Webhook idempotency
+Given repeated event delivery
+When webhook is triggered
+Then event is processed only once
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: API exposure
+- Notes: Event ID tracked.
+
+#### 6. Document APIs in OpenAPI
+User Story: As a developer I want all integration APIs documented in OpenAPI So that consumers can integrate easily.
+Acceptance Criteria:
+Scenario: OpenAPI documentation
+Given the integration layer
+When I access docs
+Then all endpoints are described with examples
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: API exposure
+- Notes: Keep docs updated.
