@@ -1,0 +1,25 @@
+Title: Configure Shift Rotations
+
+User Story:
+As a Scheduling Manager, I want to configure shift rotations (e.g., 4-on/4-off, rotating weekends) so that I can ensure fair and balanced coverage among employees.
+
+Acceptance Criteria:
+Scenario 1: Create a new shift rotation pattern
+  Given I am on the shift rotation configuration page
+  When I define a rotation pattern and assign employees
+  Then the rotation is reflected in the scheduling calendar
+
+Scenario 2: Modify an existing rotation
+  Given a rotation pattern exists
+  When I update the rotation sequence or participants
+  Then future schedules are updated accordingly
+
+Scenario 3: Prevent overlapping rotations
+  Given an employee is already assigned to a rotation
+  When I attempt to assign them to another overlapping rotation
+  Then the system displays a conflict warning
+
+Priority: High
+Story Points: 8
+Dependencies: E02, E03, E04
+Notes: Must support both fixed and flexible rotation patterns.
