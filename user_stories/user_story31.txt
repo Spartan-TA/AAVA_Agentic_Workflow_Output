@@ -1,0 +1,25 @@
+Title: Upload Proof of Certification Documents
+
+User Story:
+As an Employee, I want to upload proof of my certifications (e.g., scanned certificates) so that my compliance status can be verified by HR and supervisors.
+
+Acceptance Criteria:
+Scenario 1: Upload certification document
+  Given I am on my profile page
+  When I upload a certification document
+  Then the document is stored securely and linked to my certification record
+
+Scenario 2: HR reviews uploaded documents
+  Given a document is uploaded
+  When HR reviews the document
+  Then they can approve or reject the proof
+
+Scenario 3: Notify employee of approval status
+  Given HR has reviewed the document
+  When the status is updated
+  Then I receive a notification of approval or rejection
+
+Priority: High
+Story Points: 5
+Dependencies: E02, E03
+Notes: Documents must be stored securely and be auditable.
