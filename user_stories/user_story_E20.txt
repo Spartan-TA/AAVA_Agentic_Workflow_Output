@@ -1,0 +1,37 @@
+### E20: Self-Service Portal
+
+**User Story 1**
+- Title: Allow Employees to Update Profile
+- User Story: As an employee, I want to update my profile so that my information is current.
+- Acceptance Criteria:
+    - Given my profile,
+      When I edit and save changes,
+      Then the updates are reflected immediately.
+- Additional Details: Priority: Low, Story Points: 2, Dependencies: E02, E03, E11, Notes: For accuracy.
+
+**User Story 2**
+- Title: Enable Document Uploads
+- User Story: As an employee, I want to upload documents (e.g., certifications) so that my records are complete.
+- Acceptance Criteria:
+    - Given the portal,
+      When I upload a document,
+      Then it is stored and accessible.
+- Additional Details: Priority: Low, Story Points: 2, Dependencies: E02, E03, E11, Notes: For compliance.
+
+**User Story 3**
+- Title: Provide Access to Pay Stubs
+- User Story: As an employee, I want to view and download my pay stubs so that I can track my earnings.
+- Acceptance Criteria:
+    - Given my account,
+      When I access pay stubs,
+      Then I can view and download them securely.
+- Additional Details: Priority: Low, Story Points: 2, Dependencies: E02, E03, E11, Notes: For transparency.
+
+**User Story 4**
+- Title: Display Benefits Information
+- User Story: As an employee, I want to view my benefits information so that I understand my coverage.
+- Acceptance Criteria:
+    - Given my portal,
+      When I view benefits,
+      Then all current benefits are displayed.
+- Additional Details: Priority: Low, Story Points: 2, Dependencies: E02, E03, E11, Notes: For employee satisfaction.
