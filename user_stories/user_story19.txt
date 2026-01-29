@@ -1,0 +1,26 @@
+Title: Create Recurring Shift Templates
+
+User Story:
+As a Scheduling Manager, I want to create recurring shift templates (daily, weekly, custom patterns) so that I can efficiently plan and assign shifts for employees over extended periods.
+
+Acceptance Criteria:
+Scenario 1: Create a weekly recurring shift template
+  Given I am on the shift template creation page
+  When I select 'weekly recurrence' and specify days/times
+  And I save the template
+  Then the template is available for future shift assignments
+
+Scenario 2: Apply a recurring shift template to a department
+  Given a recurring shift template exists
+  When I assign it to a department
+  Then all employees in that department see the assigned shifts in their schedules
+
+Scenario 3: Edit a recurring shift template
+  Given a recurring shift template exists
+  When I edit the template's pattern or times
+  Then all future unassigned shifts are updated accordingly
+
+Priority: High
+Story Points: 8
+Dependencies: E02, E03, E04
+Notes: Must support exceptions for holidays and blackout dates.
