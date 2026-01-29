@@ -1,0 +1,46 @@
+### E16: Mobile Access (PWA)
+
+#### User Story 1
+**Title:** Mobile Clock-In/Out
+**User Story:** As a WORKER I want to clock in/out via mobile So that attendance is easy on any device
+**Acceptance Criteria (Gherkin):**
+```
+Given mobile device
+When I access clock-in/out
+Then the flow is usable and responsive
+
+Given offline mode
+When I clock in/out
+Then the event is queued and synced when online
+```
+**Additional Details:** Priority: Medium, Story Points: 3, Dependencies: E04, E05, E06, E12, Notes: PWA manifest
+
+#### User Story 2
+**Title:** Mobile Schedule & Leave Request
+**User Story:** As a WORKER I want to view my schedule and request leave via mobile So that I can manage my work on the go
+**Acceptance Criteria (Gherkin):**
+```
+Given mobile device
+When I view schedule
+Then upcoming shifts are displayed responsively
+
+Given leave request
+When I submit via mobile
+Then the request is processed and status shown
+```
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E04, E05, E06, E12, Notes: Offline support
+
+#### User Story 3
+**Title:** Mobile Announcements
+**User Story:** As a WORKER I want to see announcements on mobile So that I am informed wherever I am
+**Acceptance Criteria (Gherkin):**
+```
+Given active announcements
+When I view mobile dashboard
+Then announcements are displayed
+
+Given no announcements
+When I view dashboard
+Then no messages are shown
+```
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E04, E05, E06, E12, Notes: Lighthouse PWA score
