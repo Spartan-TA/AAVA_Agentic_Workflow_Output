@@ -1,0 +1,21 @@
+Title: Configure Database Migration Tool
+
+User Story: As a developer, I want to set up Flyway/Liquibase for database migrations so that schema changes are versioned and repeatable.
+
+Acceptance Criteria:
+
+Scenario: Baseline migration runs on startup
+  Given the application is started for the first time
+  When Flyway/Liquibase executes
+  Then the baseline migration is applied to the database
+
+Scenario: Migration history is tracked
+  Given multiple migrations are applied
+  When I query the migration history table
+  Then all migrations are listed with timestamps
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Use environment variables for DB connection
