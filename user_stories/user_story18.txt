@@ -1,0 +1,26 @@
+Title: Attendance Reports Dashboard
+
+User Story: As a Supervisor I want to view attendance reports for my team on a dashboard So that I can monitor punctuality, missed punches, and compliance in real time
+
+Acceptance Criteria:
+
+Scenario: Dashboard displays daily attendance summary
+  Given attendance records for today
+  When I access the dashboard
+  Then I see a summary of clock-ins, clock-outs, and missed punches for my team
+
+Scenario: Filter by date and employee
+  Given attendance records for multiple dates and employees
+  When I filter by date or employee
+  Then the dashboard updates to show relevant data
+
+Scenario: Export report from dashboard
+  Given the dashboard is displaying attendance data
+  When I click export
+  Then a CSV file is generated with the current view
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Dashboard should be role-based; support export and filtering features.
