@@ -1,0 +1,46 @@
+### E12: Notifications & Announcements
+
+#### User Story 1
+**Title:** Notification Channel Opt-In
+**User Story:** As a WORKER I want to opt-in/out of notification channels So that I control how I receive updates
+**Acceptance Criteria (Gherkin):**
+```
+Given notification settings
+When I opt-in to email/SMS/in-app
+Then I receive notifications via selected channels
+
+Given opt-out
+When I update settings
+Then notifications are not sent to that channel
+```
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: Per-channel config
+
+#### User Story 2
+**Title:** Localized Notification Templates
+**User Story:** As an ADMIN I want notification templates localized So that messages are clear for all users
+**Acceptance Criteria (Gherkin):**
+```
+Given a notification template
+When I select language
+Then the message is sent in the chosen language
+
+Given unsupported language
+When I send notification
+Then default language is used
+```
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: Spanish/English
+
+#### User Story 3
+**Title:** Announcement Dashboard
+**User Story:** As a WORKER I want to see announcements on my dashboard So that I am informed of important updates
+**Acceptance Criteria (Gherkin):**
+```
+Given active announcements
+When I view my dashboard
+Then I see all current announcements
+
+Given no announcements
+When I view dashboard
+Then no messages are shown
+```
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: Delivery status tracked
