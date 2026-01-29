@@ -1,0 +1,79 @@
+### Epic E05: Shift & Schedule Management
+
+#### 1. Create Recurring Shift Templates
+User Story: As an HR user I want to define recurring shift templates So that scheduling is efficient.
+Acceptance Criteria:
+Scenario: Shift template creation
+Given the scheduling module
+When I create a new template
+Then it can be applied to future schedules
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Support daily/weekly recurrence.
+
+#### 2. Manage Shift Rotations and Overtime Rules
+User Story: As a supervisor I want to set up shift rotations and overtime rules So that coverage and compliance are maintained.
+Acceptance Criteria:
+Scenario: Rotation and overtime setup
+Given the scheduling module
+When I configure rotations and overtime
+Then rules are enforced in assignments
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift templates
+- Notes: Overtime flagged in reports.
+
+#### 3. Assign Shifts to Employees
+User Story: As a supervisor I want to assign shifts to employees So that staffing is planned.
+Acceptance Criteria:
+Scenario: Shift assignment
+Given employees and shift templates
+When I assign shifts
+Then employees see their upcoming shifts
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift templates
+- Notes: Bulk assignment supported.
+
+#### 4. Handle Blackout Dates and Operation Calendars
+User Story: As an HR user I want to set blackout dates and operation calendars So that scheduling avoids conflicts.
+Acceptance Criteria:
+Scenario: Blackout date setup
+Given the calendar module
+When I add blackout dates
+Then shifts cannot be scheduled on those dates
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Calendar visible to all users.
+
+#### 5. Detect and Prevent Scheduling Conflicts
+User Story: As a supervisor I want the system to detect and prevent scheduling conflicts So that double-booking is avoided.
+Acceptance Criteria:
+Scenario: Conflict detection
+Given overlapping shifts
+When I try to assign conflicting shifts
+Then the system blocks the assignment
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift assignment
+- Notes: Alert user to conflicts.
+
+#### 6. Generate Audit Entries for Schedule Changes
+User Story: As a compliance officer I want audit entries for schedule changes So that history is tracked.
+Acceptance Criteria:
+Scenario: Audit entry created
+Given a schedule change
+When I modify a shift assignment
+Then an audit entry is logged with actor and timestamp
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Audit log exportable.
