@@ -1,0 +1,53 @@
+### Epic E16: Mobile Access (PWA)
+
+#### 1. Responsive Views for Core Flows
+User Story: As a worker I want responsive views for clock-in/out, schedules, leave requests, and announcements So that I can use the system on mobile devices.
+Acceptance Criteria:
+Scenario: Mobile view usability
+Given a mobile device
+When I access core flows
+Then UI is responsive and usable
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Test on major devices.
+
+#### 2. Installable PWA Manifest
+User Story: As a worker I want the app to be installable as a PWA So that I can access it offline.
+Acceptance Criteria:
+Scenario: PWA installation
+Given the app
+When I install it
+Then it appears on my device home screen
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Mobile views
+- Notes: Manifest includes icons and metadata.
+
+#### 3. Offline Queue for Clock Events with Conflict Resolution
+User Story: As a worker I want clock events queued offline and resolved on reconnect So that attendance is not lost.
+Acceptance Criteria:
+Scenario: Offline clock event
+Given no network
+When I clock in/out
+Then event is queued and synced when online
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Mobile views
+- Notes: Handle duplicate/conflicting events.
+
+#### 4. Achieve Lighthouse PWA Score â¥ 80
+User Story: As a developer I want the PWA to score at least 80 on Lighthouse So that performance and usability are high.
+Acceptance Criteria:
+Scenario: Lighthouse audit
+Given the PWA
+When I run Lighthouse
+Then score is â¥ 80
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Mobile views
+- Notes: Optimize for speed and accessibility.
