@@ -1,0 +1,31 @@
+### E11: Payroll Export Integration
+
+#### User Story 1
+**Title:** Payroll File Generation
+**User Story:** As an HR I want to generate payroll files from attendance and leave data So that payroll runs are automated
+**Acceptance Criteria (Gherkin):**
+```
+Given approved attendance and leave data
+When I generate payroll export
+Then the file matches provider schema
+
+Given missing data
+When I generate export
+Then an error is shown
+```
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: E04, E06, Notes: SFTP/API delivery
+
+#### User Story 2
+**Title:** Export Delivery & Retry
+**User Story:** As an ADMIN I want failed payroll exports retried automatically So that delivery is reliable
+**Acceptance Criteria (Gherkin):**
+```
+Given a failed export delivery
+When retry logic triggers
+Then the export is retried with backoff
+
+Given repeated failures
+When retries are exhausted
+Then an alert is generated
+```
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E04, E06, Notes: Audit log for exports
