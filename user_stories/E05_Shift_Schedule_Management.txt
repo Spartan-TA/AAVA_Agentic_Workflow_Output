@@ -1,0 +1,61 @@
+### E05: Shift & Schedule Management
+
+#### User Story 1
+**Title:** Shift Template CRUD
+**User Story:** As an ADMIN I want to create, update, and delete shift templates So that scheduling is standardized
+**Acceptance Criteria (Gherkin):**
+```
+Given shift template data
+When I POST/PUT/DELETE /shifts/templates
+Then templates are created, updated, or deleted
+
+Given conflicting template times
+When I create a template
+Then a conflict error is returned
+```
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: E02, E03, E04, Notes: Blackout dates supported
+
+#### User Story 2
+**Title:** Shift Assignment
+**User Story:** As a SUPERVISOR I want to assign shifts to employees in bulk So that staffing is efficient
+**Acceptance Criteria (Gherkin):**
+```
+Given a list of employees
+When I assign shifts
+Then assignments are created and conflicts are detected/prevented
+
+Given a scheduling conflict
+When I assign a shift
+Then the system blocks the assignment
+```
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: E02, E03, E04, Notes: Bulk-assign UI/API
+
+#### User Story 3
+**Title:** Personal Shift View
+**User Story:** As a WORKER I want to view my upcoming shifts So that I can plan my schedule
+**Acceptance Criteria (Gherkin):**
+```
+Given my user account
+When I access my schedule
+Then I see all upcoming assigned shifts
+
+Given no assigned shifts
+When I access my schedule
+Then I see a message indicating no shifts
+```
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E02, E03, E04, Notes: Responsive UI
+
+#### User Story 4
+**Title:** Audit Entry for Scheduling
+**User Story:** As an ADMIN I want audit entries for schedule changes So that compliance is maintained
+**Acceptance Criteria (Gherkin):**
+```
+Given a schedule change
+When I view the audit log
+Then I see actor, timestamp, before/after details
+
+Given no changes
+When I view the audit log
+Then no entries are present
+```
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E02, E03, E04, Notes: Centralized logging
