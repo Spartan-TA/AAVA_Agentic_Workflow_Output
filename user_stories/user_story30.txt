@@ -1,0 +1,25 @@
+Title: Track Certification Expirations and Renewals
+
+User Story:
+As a Training Coordinator, I want the system to track certification expiration dates and send renewal reminders so that employees remain compliant and assignments are not disrupted.
+
+Acceptance Criteria:
+Scenario 1: Display expiration dates on employee profiles
+  Given certifications are tracked
+  When I view an employee profile
+  Then their certification expiration dates are displayed
+
+Scenario 2: Send renewal reminders
+  Given a certification is expiring within 30 days
+  When the date approaches
+  Then the employee and supervisor receive a renewal notification
+
+Scenario 3: Block assignments for expired certifications
+  Given a certification is expired
+  When I attempt to assign the employee to a restricted role
+  Then the system prevents the assignment and displays a warning
+
+Priority: High
+Story Points: 8
+Dependencies: E02, E03
+Notes: Renewal reminders must integrate with notifications and audit trail.
