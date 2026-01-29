@@ -1,0 +1,31 @@
+### E18: Localization & Multi-Warehouse
+
+#### User Story 1
+**Title:** Multi-Warehouse Support
+**User Story:** As an ADMIN I want to manage multiple warehouses So that operations are centralized
+**Acceptance Criteria (Gherkin):**
+```
+Given multiple warehouse data
+When I add or update warehouses
+Then each has unique settings and schedules
+
+Given employee assignment
+When I assign to a warehouse
+Then employee is linked to correct location
+```
+**Additional Details:** Priority: Low, Story Points: 3, Dependencies: E01, E02, E05, Notes: Warehouse-specific calendars
+
+#### User Story 2
+**Title:** Spanish/English Localization
+**User Story:** As a WORKER I want to use the system in Spanish or English So that I understand all messages
+**Acceptance Criteria (Gherkin):**
+```
+Given language preference
+When I select Spanish or English
+Then all UI and notifications are localized
+
+Given unsupported language
+When I select
+Then default language is used
+```
+**Additional Details:** Priority: Low, Story Points: 2, Dependencies: E01, E02, E05, Notes: Localized templates
