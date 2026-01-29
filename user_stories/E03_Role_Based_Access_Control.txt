@@ -1,0 +1,46 @@
+### E03: Role Based Access Control (RBAC)
+
+#### User Story 1
+**Title:** Role Assignment
+**User Story:** As an ADMIN I want to assign roles to users So that access is controlled based on responsibilities
+**Acceptance Criteria (Gherkin):**
+```
+Given a user account
+When I assign the ADMIN, HR, SUPERVISOR, or WORKER role
+Then the user receives permissions for that role
+
+Given a user with no role
+When accessing protected endpoints
+Then the request is denied with 401
+```
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: E01, E02, Notes: Role management UI/API
+
+#### User Story 2
+**Title:** Endpoint Security Enforcement
+**User Story:** As a SUPERVISOR I want access only to my team's data So that sensitive information is protected
+**Acceptance Criteria (Gherkin):**
+```
+Given a SUPERVISOR user
+When accessing employee data
+Then only team members' records are visible
+
+Given unauthorized access attempt
+When accessing restricted endpoints
+Then a 403 Forbidden is returned
+```
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: E01, E02, Notes: Row-level security
+
+#### User Story 3
+**Title:** API Key/OAuth2 Toggle
+**User Story:** As an ADMIN I want to toggle between API key and OAuth2 authentication So that integration options are flexible
+**Acceptance Criteria (Gherkin):**
+```
+Given the security config
+When I select API key mode
+Then endpoints require API key authentication
+
+Given OAuth2 mode
+When accessing endpoints
+Then OAuth2 tokens are validated
+```
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, E02, Notes: Configurable via properties
