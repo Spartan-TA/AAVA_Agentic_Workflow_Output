@@ -1,0 +1,26 @@
+Title: Actuator Health Endpoint
+
+User Story: As a System Administrator I want to verify the health status of the Warehouse EMS system via an Actuator endpoint So that I can monitor uptime and quickly detect issues
+
+Acceptance Criteria:
+
+Scenario: Health endpoint returns UP when system is operational
+  Given the application is running
+  When I access /actuator/health
+  Then the response status is 200 and the body contains "UP"
+
+Scenario: Health endpoint returns DOWN when a critical dependency fails
+  Given a database outage
+  When I access /actuator/health
+  Then the response status is 503 and the body contains "DOWN"
+
+Scenario: Health endpoint is secured
+  Given an unauthenticated request
+  When I access /actuator/health
+  Then the response is forbidden
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Ensure endpoint is documented in README; restrict access to authorized roles.
