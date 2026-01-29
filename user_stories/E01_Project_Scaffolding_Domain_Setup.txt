@@ -1,0 +1,50 @@
+### E01: Project Scaffolding & Domain Setup
+
+#### User Story 1
+**Title:** Spring Boot Project Initialization
+**User Story:** As a DEVELOPER I want to initialize a Spring Boot project with base modules So that the team has a standardized foundation for development
+**Acceptance Criteria (Gherkin):**
+```
+Given a new repository
+When I run the build command
+Then the project builds successfully and runs on port 8080
+
+Given the project is initialized
+When I access the Actuator health endpoint
+Then I receive a status of UP
+
+Given the repository
+When I view the README
+Then I see clear build and run instructions
+```
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: None, Notes: Base for all other modules
+
+#### User Story 2
+**Title:** Database Migration Setup
+**User Story:** As a DEVELOPER I want Flyway/Liquibase configured for DB migrations So that schema changes are versioned and repeatable
+**Acceptance Criteria (Gherkin):**
+```
+Given the project is built
+When I start the application
+Then Flyway/Liquibase runs baseline migration and creates initial tables
+
+Given a new migration file is added
+When I run the migration
+Then the schema updates without errors
+```
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, Notes: Enables future DB changes
+
+#### User Story 3
+**Title:** Base Package Structure
+**User Story:** As a DEVELOPER I want a standardized package structure for core modules So that code is organized and maintainable
+**Acceptance Criteria (Gherkin):**
+```
+Given the project repository
+When I browse the source code
+Then I see packages for employee, scheduling, attendance, safety
+
+Given a new module is added
+When I follow the package structure
+Then it aligns with existing conventions
+```
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, Notes: Ensures consistency
