@@ -1,0 +1,37 @@
+### E08: Safety Incidents & OSHA Reporting
+
+**User Story 1**
+- Title: Record Safety Incidents and Near-Misses
+- User Story: As a supervisor, I want to record incidents with severity, location, and involved employees so that safety data is tracked.
+- Acceptance Criteria:
+    - Given the incident API,
+      When I POST a new incident,
+      Then all required fields are validated and saved.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: For compliance.
+
+**User Story 2**
+- Title: Manage Incident Investigation Workflow
+- User Story: As a safety officer, I want to update incident status through OpenâInvestigatingâResolved so that investigations are tracked.
+- Acceptance Criteria:
+    - Given an incident,
+      When I update the status,
+      Then the workflow transitions are enforced.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: For process control.
+
+**User Story 3**
+- Title: Export OSHA Summary Reports
+- User Story: As an admin, I want to export OSHA 300/300A summaries so that regulatory reporting is supported.
+- Acceptance Criteria:
+    - Given incident data,
+      When I export OSHA reports,
+      Then all required fields are included in the export.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: For compliance.
+
+**User Story 4**
+- Title: Provide Safety Metrics Dashboard
+- User Story: As a manager, I want dashboard endpoints for safety KPIs so that I can monitor trends.
+- Acceptance Criteria:
+    - Given the dashboard,
+      When I access safety metrics,
+      Then I see up-to-date KPIs for incidents and near-misses.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: For analytics.
