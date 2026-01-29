@@ -1,0 +1,28 @@
+### E18: Localization & Multi-Tenant
+
+**User Story 1**
+- Title: Support Multiple Warehouse Tenants
+- User Story: As an admin, I want to support multiple warehouses with isolated data so that each operates independently.
+- Acceptance Criteria:
+    - Given a tenant,
+      When I log in,
+      Then I only see data for my warehouse.
+- Additional Details: Priority: Low, Story Points: 3, Dependencies: E01, E02, E05, Notes: For multi-site support.
+
+**User Story 2**
+- Title: Implement UI Localization
+- User Story: As a user, I want the UI localized so that I can use the app in my preferred language.
+- Acceptance Criteria:
+    - Given my locale,
+      When I use the app,
+      Then all UI text is in my language.
+- Additional Details: Priority: Low, Story Points: 2, Dependencies: E01, E02, E05, Notes: For inclusivity.
+
+**User Story 3**
+- Title: Make System Timezone-Aware
+- User Story: As a user, I want all times displayed in my warehouse's timezone so that schedules are accurate.
+- Acceptance Criteria:
+    - Given my warehouse,
+      When I view schedules,
+      Then all times are adjusted to the correct timezone.
+- Additional Details: Priority: Low, Story Points: 2, Dependencies: E01, E02, E05, Notes: For accuracy.
