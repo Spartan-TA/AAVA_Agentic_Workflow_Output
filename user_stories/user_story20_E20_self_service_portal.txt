@@ -1,0 +1,105 @@
+### Epic E20: Self-Service Portal
+
+#### 1. Enable Employee Login to Portal
+User Story: As a worker I want to log in to the self-service portal So that I can access my information.
+Acceptance Criteria:
+Scenario: Portal login
+Given I am a registered employee
+When I enter credentials
+Then I am logged in and see my dashboard
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Secure session management.
+
+#### 2. Allow Profile Updates for Allowed Fields
+User Story: As a worker I want to update allowed fields in my profile So that my information is current.
+Acceptance Criteria:
+Scenario: Profile update
+Given I am logged in
+When I edit allowed fields
+Then changes are saved and visible
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Portal login
+- Notes: HR approval for sensitive fields.
+
+#### 3. Submit Schedule Swap Requests
+User Story: As a worker I want to submit schedule swap requests So that I can manage my shifts.
+Acceptance Criteria:
+Scenario: Schedule swap request
+Given I am assigned a shift
+When I request a swap
+Then the request is sent to my supervisor for approval
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Portal login, E05
+- Notes: Track swap status.
+
+#### 4. Request Leave from Portal
+User Story: As a worker I want to request leave from the portal So that my time off is managed.
+Acceptance Criteria:
+Scenario: Leave request via portal
+Given I am logged in
+When I submit a leave request
+Then it is processed per workflow
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Portal login, E06
+- Notes: Show leave balances.
+
+#### 5. Enroll in Training via Portal
+User Story: As a worker I want to enroll in training via the portal So that I can maintain certifications.
+Acceptance Criteria:
+Scenario: Training enrollment
+Given available trainings
+When I enroll
+Then my enrollment is recorded and supervisor notified
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Portal login, E07
+- Notes: Show training status.
+
+#### 6. View Pay Stubs in Portal
+User Story: As a worker I want to view my pay stubs in the portal So that I can track my earnings.
+Acceptance Criteria:
+Scenario: Pay stub access
+Given pay stubs are available
+When I view my profile
+Then pay stubs are listed and downloadable
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Portal login, E11
+- Notes: Secure access.
+
+#### 7. Supervisor Approval Queues for Requests
+User Story: As a supervisor I want approval queues for schedule swaps, leave, and training So that I can manage requests efficiently.
+Acceptance Criteria:
+Scenario: Approval queue
+Given pending requests
+When I access my queue
+Then I can approve or deny requests
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Portal login, E05, E06, E07, E10
+- Notes: Notification sent on decision.
+
+#### 8. Send Notifications and Log Audit Entries for Portal Actions
+User Story: As a developer I want portal actions to trigger notifications and audit logs So that users are informed and actions are traceable.
+Acceptance Criteria:
+Scenario: Notification and audit logging
+Given a portal action
+When it occurs
+Then notifications are sent and audit entry is created
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Portal login, E12, E14
+- Notes: Include actor and timestamp.
