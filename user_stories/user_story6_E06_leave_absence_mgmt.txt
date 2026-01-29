@@ -1,0 +1,79 @@
+### Epic E06: Leave & Absence Management
+
+#### 1. Request PTO, Sick, and Unpaid Leave
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that my time off is tracked.
+Acceptance Criteria:
+Scenario: Leave request submission
+Given I am logged in
+When I submit a leave request
+Then it is recorded and pending approval
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Support multiple leave types.
+
+#### 2. Approve or Deny Leave Requests
+User Story: As a supervisor I want to approve or deny leave requests So that staffing is managed.
+Acceptance Criteria:
+Scenario: Leave approval workflow
+Given a pending leave request
+When I approve or deny it
+Then the employee is notified and balances update
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave request
+- Notes: Approval status tracked.
+
+#### 3. Update Accrual Balances and Policies
+User Story: As an HR user I want leave accrual balances and policies to update automatically So that compliance is maintained.
+Acceptance Criteria:
+Scenario: Accrual balance update
+Given an approved leave
+When the leave is taken
+Then accrual balances decrease per policy
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Leave approval
+- Notes: Policy configuration supported.
+
+#### 4. Integrate Leave with Scheduling and Payroll
+User Story: As a developer I want leave data to exclude employees from scheduling and payroll hours So that records are accurate.
+Acceptance Criteria:
+Scenario: Leave integration
+Given approved leave
+When generating schedules and payroll
+Then affected employees are excluded
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Leave approval
+- Notes: Integration hooks provided.
+
+#### 5. Auto-Flag Scheduled Shifts for Coverage
+User Story: As a supervisor I want scheduled shifts to auto-flag for coverage when leave is approved So that gaps are filled.
+Acceptance Criteria:
+Scenario: Shift coverage flag
+Given an approved leave overlapping a shift
+When I view the schedule
+Then the shift is flagged for coverage
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave approval
+- Notes: Notification sent to supervisor.
+
+#### 6. Export Approved Leaves
+User Story: As an HR user I want to export approved leaves So that reporting is easy.
+Acceptance Criteria:
+Scenario: Leave export
+Given approved leave records
+When I request an export
+Then a file is generated with leave details
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave approval
+- Notes: Support CSV format.
