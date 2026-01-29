@@ -1,0 +1,43 @@
+### Epic E04 - Time & Attendance (Clock In/Out)
+
+**User Story 1**
+- Title: Clock-In Endpoint with Validation
+- User Story: As a worker, I want to clock in via an endpoint with device and optional geofence capture so that my attendance is accurately recorded.
+- Acceptance Criteria:
+  - Given valid clock-in data,
+    When I POST to `/attendance/clock-in`,
+    Then my clock-in is recorded with device info.
+  - Given out-of-geofence location,
+    When I POST to `/attendance/clock-in`,
+    Then I receive a validation error.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Geofence optional.
+
+**User Story 2**
+- Title: Clock-Out Endpoint and Shift Association
+- User Story: As a worker, I want to clock out and have my shift automatically associated so that hours worked are tracked.
+- Acceptance Criteria:
+  - Given valid clock-out data,
+    When I POST to `/attendance/clock-out`,
+    Then my clock-out is recorded and shift is linked.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Shift association.
+
+**User Story 3**
+- Title: Missed Punch Correction Workflow
+- User Story: As a worker, I want to request corrections for missed punches so that my attendance record is accurate.
+- Acceptance Criteria:
+  - Given a missed punch,
+    When I submit a correction request,
+    Then an approval task is created for my supervisor.
+  - Given supervisor approval,
+    When the correction is approved,
+    Then my attendance is updated.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Approval workflow.
+
+**User Story 4**
+- Title: Attendance Reporting and Export
+- User Story: As a supervisor, I want to export attendance reports in CSV format so that I can review and share attendance data.
+- Acceptance Criteria:
+  - Given attendance records,
+    When I request a CSV export,
+    Then a file is generated with daily totals.
+- Additional Details: Priority: High, Story Points: 1, Dependencies: E02, E03, Notes: Exportable reports.
