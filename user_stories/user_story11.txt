@@ -1,0 +1,26 @@
+Title: Row-Level Security Constraints
+
+User Story: As a System Administrator I want to enforce row-level security constraints So that users can only access records relevant to their assigned teams or departments
+
+Acceptance Criteria:
+
+Scenario: SUPERVISOR can only access team records
+  Given a user with SUPERVISOR role
+  When they request employee data
+  Then only records for their assigned team are returned
+
+Scenario: HR can access all employee records
+  Given a user with HR role
+  When they request employee data
+  Then all employee records are accessible
+
+Scenario: Unauthorized access is blocked
+  Given a user attempts to access records outside their scope
+  When the request is made
+  Then the response is 403 Forbidden
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E01, E02
+- Notes: Implement row-level filters in queries; test coverage required for all role scenarios.
