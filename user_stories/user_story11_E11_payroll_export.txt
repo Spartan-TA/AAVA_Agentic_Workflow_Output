@@ -1,0 +1,79 @@
+### Epic E11: Payroll Export Integration
+
+#### 1. Generate Payroll-Ready Files from Attendance and Leave
+User Story: As a payroll admin I want to generate payroll-ready files from approved attendance and leave So that payroll processing is automated.
+Acceptance Criteria:
+Scenario: Payroll file generation
+Given approved attendance and leave data
+When I request export
+Then a file matching provider schema is generated
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04, E06
+- Notes: Support multiple provider formats.
+
+#### 2. Map Data to External Payroll Provider Formats
+User Story: As a developer I want to map internal data to external payroll provider formats So that integration is seamless.
+Acceptance Criteria:
+Scenario: Data mapping
+Given provider requirements
+When I export payroll data
+Then fields match provider schema
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Payroll file generation
+- Notes: Configurable mappings.
+
+#### 3. Secure Delivery via SFTP/API
+User Story: As a payroll admin I want payroll files delivered securely via SFTP or API So that data privacy is ensured.
+Acceptance Criteria:
+Scenario: Secure delivery
+Given a payroll file
+When I send via SFTP/API
+Then delivery is encrypted and logged
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Payroll file generation
+- Notes: Retry on failure.
+
+#### 4. Reconcile Totals with Attendance Reports
+User Story: As a payroll admin I want exported totals to reconcile with attendance reports So that errors are caught.
+Acceptance Criteria:
+Scenario: Totals reconciliation
+Given exported payroll and attendance reports
+When I compare totals
+Then they match or discrepancies are flagged
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Payroll file generation
+- Notes: Automated checks.
+
+#### 5. Retry Failed Deliveries with Backoff
+User Story: As a developer I want failed payroll deliveries retried with exponential backoff So that reliability is improved.
+Acceptance Criteria:
+Scenario: Delivery retry
+Given a failed delivery
+When the system retries
+Then backoff is applied and success/failure is logged
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Secure delivery
+- Notes: Alert on repeated failures.
+
+#### 6. Audit Log for Every Export
+User Story: As a compliance officer I want an audit log for every payroll export So that actions are traceable.
+Acceptance Criteria:
+Scenario: Export audit logging
+Given a payroll export
+When it is performed
+Then an audit entry is created with actor and timestamp
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Payroll file generation
+- Notes: Exportable log.
