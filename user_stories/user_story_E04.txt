@@ -1,0 +1,46 @@
+### E04: Time & Attendance (Clock In/Out)
+
+**User Story 1**
+- Title: Implement Clock-In/Clock-Out Endpoints
+- User Story: As a worker, I want to clock in and out via API so that my attendance is recorded.
+- Acceptance Criteria:
+    - Given a valid request,
+      When I POST to /attendance/clock-in or /clock-out,
+      Then my event is recorded with timestamp and device info.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Core attendance.
+
+**User Story 2**
+- Title: Validate Geofence for Clock Events
+- User Story: As a supervisor, I want clock-in/out events validated by geofence so that only on-premise events are accepted.
+- Acceptance Criteria:
+    - Given a clock-in request,
+      When the location is outside the geofence,
+      Then the request is rejected.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Optional, for compliance.
+
+**User Story 3**
+- Title: Calculate Hours Worked Per Shift
+- User Story: As a payroll manager, I want hours worked to be calculated automatically per shift so that payroll is accurate.
+- Acceptance Criteria:
+    - Given clock-in/out events,
+      When the day ends,
+      Then total hours are computed and stored.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: For payroll.
+
+**User Story 4**
+- Title: Handle Missed Punches and Corrections
+- User Story: As a worker, I want to request corrections for missed punches so that my attendance is accurate.
+- Acceptance Criteria:
+    - Given a missed punch,
+      When I submit a correction,
+      Then an approval task is created for my supervisor.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Workflow integration.
+
+**User Story 5**
+- Title: Export Attendance Reports
+- User Story: As an admin, I want to export attendance data as CSV so that I can analyze and share records.
+- Acceptance Criteria:
+    - Given attendance data,
+      When I request an export,
+      Then a CSV file is generated with all relevant fields.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: For compliance/audit.
