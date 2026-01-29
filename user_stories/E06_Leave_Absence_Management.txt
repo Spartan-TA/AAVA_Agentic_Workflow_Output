@@ -1,0 +1,46 @@
+### E06: Leave & Absence Management
+
+#### User Story 1
+**Title:** Leave Request Submission
+**User Story:** As a WORKER I want to request PTO or sick leave So that my time off is tracked
+**Acceptance Criteria (Gherkin):**
+```
+Given sufficient leave balance
+When I submit a leave request
+Then the request is created and pending approval
+
+Given insufficient balance
+When I submit a leave request
+Then I receive a balance error
+```
+**Additional Details:** Priority: Medium, Story Points: 3, Dependencies: E02, E03, E05, Notes: Accrual policies enforced
+
+#### User Story 2
+**Title:** Leave Approval Workflow
+**User Story:** As a SUPERVISOR I want to approve or deny leave requests So that staffing is managed
+**Acceptance Criteria (Gherkin):**
+```
+Given a pending leave request
+When I approve
+Then the employee's balance is updated and shift flagged for coverage
+
+Given a denied request
+When I deny
+Then the employee is notified and balance unchanged
+```
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Approval UI/API
+
+#### User Story 3
+**Title:** Leave Export for Payroll
+**User Story:** As an HR I want to export approved leave data So that payroll calculations are accurate
+**Acceptance Criteria (Gherkin):**
+```
+Given approved leaves
+When I export leave data
+Then the file includes all approved leaves for the period
+
+Given no approved leaves
+When I export
+Then the file is empty or shows no records
+```
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Integration hooks
