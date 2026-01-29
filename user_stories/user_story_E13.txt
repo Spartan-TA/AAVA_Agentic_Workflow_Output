@@ -1,0 +1,46 @@
+### E13: Integration Layer (HRIS/WMS APIs)
+
+**User Story 1**
+- Title: Expose JWT/OAuth2-Secured REST APIs
+- User Story: As an integration developer, I want REST APIs secured with JWT/OAuth2 so that external systems can sync data securely.
+- Acceptance Criteria:
+    - Given the API,
+      When I authenticate,
+      Then I can access endpoints per my permissions.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, E02, E03, Notes: For integration.
+
+**User Story 2**
+- Title: Implement HRIS Sync Job
+- User Story: As an admin, I want a sync job that creates/updates employees from HRIS so that master data is consistent.
+- Acceptance Criteria:
+    - Given new/updated HRIS data,
+      When the sync runs,
+      Then employees are created or updated accordingly.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, E02, E03, Notes: For automation.
+
+**User Story 3**
+- Title: Integrate with WMS for Department/Location
+- User Story: As a system integrator, I want to link WMS data for department and location so that assignments are accurate.
+- Acceptance Criteria:
+    - Given WMS data,
+      When I sync,
+      Then department/location fields are updated.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, E02, E03, Notes: For accuracy.
+
+**User Story 4**
+- Title: Support Idempotent Webhooks for Events
+- User Story: As a developer, I want webhooks for key events (hire, term, shift) so that external systems stay in sync.
+- Acceptance Criteria:
+    - Given an event,
+      When a webhook is sent,
+      Then it is idempotent and documented.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, E02, E03, Notes: For reliability.
+
+**User Story 5**
+- Title: Document APIs with OpenAPI
+- User Story: As a developer, I want all integration APIs documented with OpenAPI so that consumers can integrate easily.
+- Acceptance Criteria:
+    - Given the API docs,
+      When I view them,
+      Then all endpoints and schemas are described.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, E02, E03, Notes: For clarity.
