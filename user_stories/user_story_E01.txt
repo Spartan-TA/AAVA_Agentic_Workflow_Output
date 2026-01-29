@@ -1,0 +1,40 @@
+### Epic E01 - Project Scaffolding & Domain Setup
+
+**User Story 1**
+- Title: Initialize Spring Boot Project Structure
+- User Story: As a developer, I want a pre-configured Spring Boot (Maven) project with base packages so that I can quickly start implementing core modules with consistent structure.
+- Acceptance Criteria:
+  - Given a fresh clone of the repository,
+    When I run `mvn clean install`,
+    Then the project builds successfully and runs on port 8080.
+  - Given the repository,
+    When I open the README,
+    Then I see clear build and run instructions.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: None, Notes: Foundation for all other modules.
+
+**User Story 2**
+- Title: Core Module Setup
+- User Story: As a developer, I want core modules for employee, scheduling, attendance, and safety to be scaffolded so that future development can be organized and modular.
+- Acceptance Criteria:
+  - Given the project structure,
+    When I inspect the codebase,
+    Then I see separate packages for employee, scheduling, attendance, and safety.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: None, Notes: Ensures modularity.
+
+**User Story 3**
+- Title: Database Migration Tool Integration
+- User Story: As a developer, I want Flyway/Liquibase integrated for DB migrations so that schema changes are versioned and repeatable.
+- Acceptance Criteria:
+  - Given the project,
+    When I run the application,
+    Then Flyway/Liquibase executes baseline migration successfully.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: None, Notes: Enables DB version control.
+
+**User Story 4**
+- Title: Actuator Health Endpoint
+- User Story: As an operator, I want Actuator enabled so that I can monitor application health and metrics.
+- Acceptance Criteria:
+  - Given the application is running,
+    When I access `/actuator/health`,
+    Then I receive a response with status UP.
+- Additional Details: Priority: High, Story Points: 1, Dependencies: None, Notes: Required for monitoring.
