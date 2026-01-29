@@ -1,0 +1,46 @@
+### E12: Notifications & Announcements
+
+**User Story 1**
+- Title: Send In-App and Email/SMS Notifications
+- User Story: As a user, I want to receive notifications for shifts, expiring certs, approvals, and announcements so that I stay informed.
+- Acceptance Criteria:
+    - Given a notification event,
+      When it triggers,
+      Then I receive it via my chosen channels.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: E03, E05, E06, E07, Notes: For communication.
+
+**User Story 2**
+- Title: Allow Users to Opt-In/Out Per Channel
+- User Story: As a user, I want to opt-in or out of notification channels so that I control my preferences.
+- Acceptance Criteria:
+    - Given my settings,
+      When I change preferences,
+      Then only selected channels are used.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: For user control.
+
+**User Story 3**
+- Title: Localize Notification Templates
+- User Story: As an admin, I want notification templates localized so that users receive messages in their language.
+- Acceptance Criteria:
+    - Given a user locale,
+      When a notification is sent,
+      Then the template matches their language.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: For inclusivity.
+
+**User Story 4**
+- Title: Track Notification Delivery Status
+- User Story: As an admin, I want to track delivery status of notifications so that failures are visible.
+- Acceptance Criteria:
+    - Given a notification,
+      When it is sent,
+      Then the delivery status is updated and viewable.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: For reliability.
+
+**User Story 5**
+- Title: Display Announcements on Dashboard
+- User Story: As a user, I want to see announcements on my dashboard so that important info is visible.
+- Acceptance Criteria:
+    - Given an announcement,
+      When I log in,
+      Then it is displayed prominently on my dashboard.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: For visibility.
