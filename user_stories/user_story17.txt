@@ -1,0 +1,26 @@
+Title: Attendance Export (CSV)
+
+User Story: As a Payroll Specialist I want to export attendance records in CSV format So that payroll processing and compliance reporting are streamlined
+
+Acceptance Criteria:
+
+Scenario: Export attendance for a date range
+  Given attendance records exist for multiple dates
+  When I request an export for a specific date range
+  Then a CSV file is generated with all relevant records
+
+Scenario: Export includes corrections and approvals
+  Given attendance records with corrections
+  When I export attendance
+  Then the CSV includes correction status and approval details
+
+Scenario: Export is accessible only to authorized roles
+  Given a user with HR or Payroll role
+  When they request an export
+  Then the export is permitted
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Ensure export matches payroll provider schema; restrict access to authorized roles.
