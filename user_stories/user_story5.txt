@@ -1,0 +1,26 @@
+Title: Create Employee Record
+
+User Story: As an HR Administrator I want to create a new employee record with all required fields So that new hires are registered in the system and can be managed across modules
+
+Acceptance Criteria:
+
+Scenario: Successful employee creation
+  Given valid employee details (name, badgeId, role, department, shiftGroup, hireDate, status)
+  When I submit a POST request to /employees
+  Then the employee is created and a unique badgeId is assigned
+
+Scenario: Duplicate badgeId is rejected
+  Given an existing employee with badgeId X
+  When I attempt to create another employee with badgeId X
+  Then the request is rejected with a validation error
+
+Scenario: OpenAPI schema is available
+  Given the API documentation endpoint
+  When I access the employee POST schema
+  Then all required fields and examples are present
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01
+- Notes: Ensure badgeId uniqueness at the DB level; follow OpenAPI standards for documentation.
