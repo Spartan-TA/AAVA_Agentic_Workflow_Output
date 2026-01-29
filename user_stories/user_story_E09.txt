@@ -1,0 +1,49 @@
+### E09: Equipment & Asset Assignment
+
+**User Story 1**
+- Title: Manage Asset Registry
+- User Story: As an asset manager, I want to CRUD assets (scanners, forklifts, PPE) so that inventory is tracked.
+- Acceptance Criteria:
+    - Given the asset API,
+      When I create, update, or delete an asset,
+      Then the registry reflects the change.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: E02, E03, E07, Notes: For accountability.
+
+**User Story 2**
+- Title: Assign and Track Asset Check-In/Out
+- User Story: As a supervisor, I want to assign and track asset check-in/out so that usage is monitored.
+- Acceptance Criteria:
+    - Given an asset,
+      When I check it out to an employee,
+      Then the assignment is recorded.
+    - Given a return,
+      When I check in the asset,
+      Then the status updates.
+- Additional Details: Priority: Medium, Story Points: 3, Dependencies: E02, E03, E07, Notes: For tracking.
+
+**User Story 3**
+- Title: Block Asset Use Without Valid Certification
+- User Story: As a supervisor, I want to block asset assignment if required certifications are invalid so that only qualified staff use equipment.
+- Acceptance Criteria:
+    - Given an asset requiring certification,
+      When the employee's cert is expired,
+      Then the system prevents check-out.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E07, Notes: For safety.
+
+**User Story 4**
+- Title: Maintain Asset Condition State
+- User Story: As an asset manager, I want to record asset condition so that maintenance is tracked.
+- Acceptance Criteria:
+    - Given an asset,
+      When I update its condition,
+      Then the status is visible in the registry.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E07, Notes: For maintenance.
+
+**User Story 5**
+- Title: Report Overdue Asset Returns
+- User Story: As an admin, I want to generate reports of overdue asset returns so that follow-up is possible.
+- Acceptance Criteria:
+    - Given asset assignments,
+      When an asset is overdue,
+      Then it appears in the overdue report.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E07, Notes: For accountability.
