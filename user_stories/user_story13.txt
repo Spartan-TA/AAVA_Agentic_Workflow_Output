@@ -1,0 +1,26 @@
+Title: Endpoint Security Documentation
+
+User Story: As a Developer I want documentation of endpoint security rules So that consumers of the API understand required roles and authentication methods for each endpoint
+
+Acceptance Criteria:
+
+Scenario: Security documentation available in OpenAPI
+  Given the OpenAPI documentation endpoint
+  When I view the API docs
+  Then each endpoint lists required roles and authentication method
+
+Scenario: Documentation is updated with new endpoints
+  Given a new endpoint is added
+  When the API docs are regenerated
+  Then the security requirements are included
+
+Scenario: Consumers can easily identify access requirements
+  Given the documentation
+  When an external developer reviews the docs
+  Then they can determine what credentials and roles are needed for each operation
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Document security requirements in OpenAPI and README; keep docs up to date with code changes.
