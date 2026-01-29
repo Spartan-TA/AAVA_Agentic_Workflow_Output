@@ -1,0 +1,26 @@
+Title: Delete Employee Record (Soft Delete)
+
+User Story: As an HR Administrator I want to soft-delete employee records So that terminated or inactive employees are retained for audit but excluded from active operations
+
+Acceptance Criteria:
+
+Scenario: Employee is soft-deleted
+  Given an existing employee
+  When I send a DELETE request to /employees/{id}
+  Then the employee status is set to 'inactive' and the record is not removed from the database
+
+Scenario: Soft-deleted employees are excluded from active lists
+  Given an employee is soft-deleted
+  When I fetch the list of active employees
+  Then the soft-deleted employee does not appear
+
+Scenario: Soft-deleted employees are included in audit exports
+  Given an employee is soft-deleted
+  When I generate an audit export
+  Then the employee record is included with a status of 'inactive'
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Ensure soft-delete flag is used; do not physically remove records from the database.
