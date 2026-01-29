@@ -1,0 +1,25 @@
+Title: Approve Leave Requests
+
+User Story:
+As a Supervisor, I want to review and approve or deny leave requests (PTO, sick, unpaid) so that I can manage team coverage and ensure compliance with company policies.
+
+Acceptance Criteria:
+Scenario 1: View pending leave requests
+  Given I am a supervisor
+  When I access the leave approval dashboard
+  Then I see all pending requests for my team
+
+Scenario 2: Approve or deny a request
+  Given a leave request is pending
+  When I approve or deny the request
+  Then the employee is notified of the decision
+
+Scenario 3: Prevent approval if coverage is insufficient
+  Given a leave request is submitted
+  When approving would leave the team understaffed
+  Then the system displays a warning and suggests alternate coverage
+
+Priority: Medium
+Story Points: 5
+Dependencies: E02, E03, E05
+Notes: Approval workflow must integrate with scheduling and notifications.
