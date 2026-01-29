@@ -1,0 +1,61 @@
+### E02: Employee Master Data (CRUD)
+
+#### User Story 1
+**Title:** Employee Creation API
+**User Story:** As an HR I want to create new employee records So that I can onboard staff into the system
+**Acceptance Criteria (Gherkin):**
+```
+Given valid employee data
+When I POST to /employees
+Then a new employee record is created with a unique badgeId
+
+Given duplicate badgeId
+When I POST to /employees
+Then I receive a validation error
+```
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: E01, Notes: Unique badgeId enforced
+
+#### User Story 2
+**Title:** Employee Data Retrieval
+**User Story:** As an ADMIN I want to retrieve employee records with filtering and pagination So that I can manage large employee lists efficiently
+**Acceptance Criteria (Gherkin):**
+```
+Given multiple employees exist
+When I GET /employees with filters (department, status)
+Then I receive a paginated list matching the filters
+
+Given no filters
+When I GET /employees
+Then I receive all employees paginated
+```
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, Notes: Supports OpenAPI schemas
+
+#### User Story 3
+**Title:** Employee Update API
+**User Story:** As an HR I want to update employee details So that records remain accurate
+**Acceptance Criteria (Gherkin):**
+```
+Given an existing employee
+When I PUT/PATCH to /employees/{id}
+Then the employee record is updated
+
+Given invalid data
+When I PUT/PATCH to /employees/{id}
+Then I receive a validation error
+```
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, Notes: Supports partial updates
+
+#### User Story 4
+**Title:** Employee Deletion (Soft Delete)
+**User Story:** As an ADMIN I want to soft-delete employee records So that historical data is preserved
+**Acceptance Criteria (Gherkin):**
+```
+Given an employee record
+When I DELETE /employees/{id}
+Then the employee status is set to inactive (soft-delete)
+
+Given a soft-deleted employee
+When I GET /employees
+Then the employee is excluded from active lists unless filtered
+```
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, Notes: No hard deletes
