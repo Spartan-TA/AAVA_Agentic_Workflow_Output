@@ -1,0 +1,13 @@
+User Story 3
+Title: Project Scaffolding & Domain Setup - Database Migration Tool Integration
+User Story narrative: As a developer, I want Flyway or Liquibase integrated for database migrations so that schema changes are versioned and repeatable.
+Acceptance Criteria:
+Scenario: Database Migration
+  Given the project is running
+  When I start the application
+  Then Flyway/Liquibase runs the baseline migration without errors
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: User Story 1
+Notes: Migration scripts should be in a dedicated directory.
