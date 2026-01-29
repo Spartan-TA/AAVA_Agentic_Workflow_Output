@@ -1,0 +1,46 @@
+### E20: Document Management
+
+#### User Story 1
+**Title:** Employee Document Upload
+**User Story:** As an HR I want to upload and store employee documents So that records are complete
+**Acceptance Criteria (Gherkin):**
+```
+Given document file
+When I upload for an employee
+Then the document is stored and versioned
+
+Given unsupported file type
+When I upload
+Then an error is returned
+```
+**Additional Details:** Priority: Medium, Story Points: 3, Dependencies: E02, E03, Notes: Versioning enforced
+
+#### User Story 2
+**Title:** Role-Based Document Access
+**User Story:** As an ADMIN I want to control document access by role So that sensitive files are protected
+**Acceptance Criteria (Gherkin):**
+```
+Given a document
+When accessed by HR or ADMIN
+Then the document is visible
+
+Given access by unauthorized user
+When accessing
+Then access is denied
+```
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E02, E03, Notes: Access control
+
+#### User Story 3
+**Title:** Document Version History
+**User Story:** As an HR I want to view document version history So that changes are tracked
+**Acceptance Criteria (Gherkin):**
+```
+Given multiple versions of a document
+When I view history
+Then all versions and timestamps are displayed
+
+Given no previous versions
+When I view history
+Then only current version is shown
+```
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E02, E03, Notes: Immutable history
