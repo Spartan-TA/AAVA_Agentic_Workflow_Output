@@ -1,0 +1,25 @@
+Title: Track Required Certifications
+
+User Story:
+As a Training Coordinator, I want to track required certifications (e.g., forklift, first aid) for each role so that only qualified employees are assigned to specific tasks.
+
+Acceptance Criteria:
+Scenario 1: Assign certification requirements to roles
+  Given I am on the role management page
+  When I assign required certifications to a role
+  Then only employees with valid certifications can be assigned to that role
+
+Scenario 2: View certification status for employees
+  Given certification requirements are set
+  When I view an employee profile
+  Then their certification status is displayed
+
+Scenario 3: Block assignment if certification is missing
+  Given an employee lacks a required certification
+  When I attempt to assign them to a restricted role
+  Then the system prevents the assignment and displays a warning
+
+Priority: High
+Story Points: 8
+Dependencies: E02, E03
+Notes: Must support multiple certifications per role and integrate with asset assignment.
