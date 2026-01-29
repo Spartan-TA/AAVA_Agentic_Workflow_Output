@@ -1,0 +1,25 @@
+Title: Track Leave Accrual Balances
+
+User Story:
+As an Employee, I want to view my current leave accrual balances (PTO, sick, unpaid) so that I can plan my time off responsibly.
+
+Acceptance Criteria:
+Scenario 1: Display leave balances on dashboard
+  Given I am logged into the system
+  When I access my dashboard
+  Then my current leave balances are displayed
+
+Scenario 2: Update balances after leave approval
+  Given a leave request is approved
+  When the leave period starts
+  Then my leave balance is reduced accordingly
+
+Scenario 3: Prevent negative balances
+  Given my leave balance is zero
+  When I attempt to request additional leave
+  Then the system prevents submission and displays an error
+
+Priority: Medium
+Story Points: 3
+Dependencies: E02, E03, E05
+Notes: Balances must sync with payroll and update in real-time.
