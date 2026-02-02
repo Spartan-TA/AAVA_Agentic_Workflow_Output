@@ -1,0 +1,79 @@
+[E14] Audit Trail & Compliance
+
+Title: Log Sensitive Changes with Actor and Timestamp
+User Story: As a compliance officer I want all sensitive changes logged with actor and timestamp so that actions are traceable.
+Acceptance Criteria:
+Scenario: Sensitive Change Logging
+Given a create/update/delete action
+When the action is performed
+Then an audit log entry is created with actor and timestamp
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Cover employee PII, schedules, approvals, payroll
+
+---
+
+Title: Store Audit Logs in Immutable Table
+User Story: As a compliance officer I want audit logs stored in an immutable table so that records cannot be tampered with.
+Acceptance Criteria:
+Scenario: Immutable Audit Log Storage
+Given audit log entries
+When I attempt to modify or delete logs
+Then the system prevents changes
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Log Sensitive Changes
+- Notes: Use append-only storage
+
+---
+
+Title: Export Audit Logs by Date/User/Entity
+User Story: As a compliance officer I want to export audit logs by date, user, or entity so that investigations are efficient.
+Acceptance Criteria:
+Scenario: Audit Log Export
+Given audit log data
+When I filter by date/user/entity and export
+Then the file contains matching entries
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Store Audit Logs in Immutable Table
+- Notes: Support CSV/PDF format
+
+---
+
+Title: Validate Audit Coverage with Automated Tests
+User Story: As a QA engineer I want automated tests to validate audit coverage so that no sensitive actions are missed.
+Acceptance Criteria:
+Scenario: Audit Coverage Testing
+Given the test suite
+When I run audit tests
+Then all sensitive actions are covered
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Log Sensitive Changes
+- Notes: Include negative cases
+
+---
+
+Title: Log Before/After Values for Changes
+User Story: As a compliance officer I want before/after values logged for changes so that forensic analysis is possible.
+Acceptance Criteria:
+Scenario: Before/After Value Logging
+Given a change to sensitive data
+When the change is made
+Then before and after values are stored in the audit log
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Log Sensitive Changes
+- Notes: Support diff view
