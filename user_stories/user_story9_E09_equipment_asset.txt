@@ -1,0 +1,79 @@
+[E09] Equipment & Asset Assignment
+
+Title: CRUD for Asset Registry
+User Story: As an asset manager I want to create, read, update, and delete assets so that equipment inventory is maintained.
+Acceptance Criteria:
+Scenario: Asset Registry CRUD
+Given the asset module
+When I perform CRUD operations
+Then assets are correctly managed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Include asset condition field
+
+---
+
+Title: Assign Assets to Employees
+User Story: As a supervisor I want to assign assets (scanners, forklifts, PPE) to employees so that accountability is tracked.
+Acceptance Criteria:
+Scenario: Asset Assignment
+Given available assets
+When I assign an asset to an employee
+Then the assignment is recorded
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Asset Registry CRUD
+- Notes: Support check-in/out workflow
+
+---
+
+Title: Block Asset Use if Certification Missing
+User Story: As a supervisor I want to prevent asset use if required certification is missing so that safety is enforced.
+Acceptance Criteria:
+Scenario: Certification Check for Asset Use
+Given an asset requiring certification
+When an employee lacks valid certification
+Then the system blocks the assignment
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Assign Assets to Employees
+- Notes: Show error message
+
+---
+
+Title: Track Asset Checkout/Return History
+User Story: As an asset manager I want to track asset checkout and return history so that usage is auditable.
+Acceptance Criteria:
+Scenario: Asset History Tracking
+Given asset assignments
+When assets are checked out or returned
+Then history is logged per asset and employee
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Assign Assets to Employees
+- Notes: Include timestamps
+
+---
+
+Title: Report Overdue Asset Returns
+User Story: As an asset manager I want to report overdue asset returns so that assets are recovered promptly.
+Acceptance Criteria:
+Scenario: Overdue Asset Report
+Given asset checkout data
+When assets are overdue for return
+Then a report lists overdue assets and responsible employees
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Track Asset Checkout/Return History
+- Notes: Notify supervisors
