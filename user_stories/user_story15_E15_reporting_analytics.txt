@@ -1,0 +1,79 @@
+[E15] Reporting & Analytics
+
+Title: Generate Attendance and Overtime Reports
+User Story: As a manager I want attendance and overtime reports so that staffing decisions are data-driven.
+Acceptance Criteria:
+Scenario: Attendance Report Generation
+Given attendance data
+When I generate a report
+Then totals and overtime are calculated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Support filters by date/department
+
+---
+
+Title: Export Reports as CSV/PDF
+User Story: As a manager I want to export reports as CSV or PDF so that sharing is easy.
+Acceptance Criteria:
+Scenario: Report Export
+Given report data
+When I request export
+Then the file is generated within 10s for up to 50k rows
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Generate Attendance and Overtime Reports
+- Notes: Support role-based access
+
+---
+
+Title: Dashboard for Role-Based Metrics
+User Story: As a supervisor I want a dashboard with metrics relevant to my role so that I see actionable insights.
+Acceptance Criteria:
+Scenario: Role-Based Dashboard
+Given my user role
+When I access the dashboard
+Then metrics relevant to my team are displayed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Generate Attendance and Overtime Reports
+- Notes: Support supervisor/worker views
+
+---
+
+Title: Metrics Endpoints for BI Integration
+User Story: As a BI analyst I want metrics endpoints available so that I can integrate with external BI tools.
+Acceptance Criteria:
+Scenario: Metrics API Access
+Given metrics endpoints
+When I query the API
+Then data is returned for BI integration
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Generate Attendance and Overtime Reports
+- Notes: Document endpoint usage
+
+---
+
+Title: Filter Reports by Date, Department, Shift
+User Story: As a manager I want to filter reports by date, department, and shift so that analysis is flexible.
+Acceptance Criteria:
+Scenario: Report Filtering
+Given report data
+When I apply filters
+Then results update accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Generate Attendance and Overtime Reports
+- Notes: Support multi-select filters
