@@ -1,0 +1,1560 @@
+WAREHOUSE EMPLOYEE MANAGEMENT SYSTEM - COMPLETE USER STORIES DOCUMENT
+=======================================================================
+
+This document contains all user stories derived from 20 epics for the Warehouse Employee Management System.
+Each user story includes: Title, User Story narrative, Gherkin-formatted Acceptance Criteria, and Additional Details.
+
+=======================================================================
+EPIC 1: PROJECT SCAFFOLDING & DOMAIN SETUP
+=======================================================================
+
+Title: Project Scaffolding & Domain Setup - Initialize Project
+User Story: As a developer I want to initialize a Spring Boot project with Maven So that I have a standardized foundation for all modules.
+Acceptance Criteria:
+Scenario: Project Initialization
+Given a clean development environment
+When I run the Maven build command
+Then the project builds successfully and runs on port 8080
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Base for all subsequent development.
+
+---
+
+Title: Project Scaffolding & Domain Setup - Configure Base Packages
+User Story: As a developer I want to configure base packages for employee, scheduling, attendance, and safety modules So that code is organized and maintainable.
+Acceptance Criteria:
+Scenario: Base Package Structure
+Given the project is initialized
+When I inspect the source code
+Then the base package structure for all core modules exists
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project Initialization
+- Notes: Ensures modularity.
+
+---
+
+Title: Project Scaffolding & Domain Setup - Database Migration Setup
+User Story: As a developer I want to set up Flyway/Liquibase for database migrations So that schema changes are versioned and repeatable.
+Acceptance Criteria:
+Scenario: DB Migration Baseline
+Given the migration tool is configured
+When I run the migration
+Then the baseline schema is created and versioned
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project Initialization
+- Notes: Enables safe DB evolution.
+
+---
+
+Title: Project Scaffolding & Domain Setup - Health Endpoint
+User Story: As an operator I want an Actuator health endpoint So that I can monitor system health.
+Acceptance Criteria:
+Scenario: Health Endpoint
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns status UP
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project Initialization
+- Notes: Required for monitoring.
+
+---
+
+Title: Project Scaffolding & Domain Setup - Documentation
+User Story: As a developer I want a README with build and run steps So that onboarding is easy for new team members.
+Acceptance Criteria:
+Scenario: README Documentation
+Given the repository is cloned
+When I open the README
+Then I see clear build and run instructions
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Project Initialization
+- Notes: Improves onboarding.
+
+=======================================================================
+EPIC 2: EMPLOYEE MASTER DATA (CRUD)
+=======================================================================
+
+Title: Employee Master Data (CRUD) - Create Employee
+User Story: As an HR manager I want to create new employee records So that all warehouse staff are registered in the system.
+Acceptance Criteria:
+Scenario: Create Employee
+Given valid employee details
+When I POST to /employees
+Then a new employee is created with a unique badgeId
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project Scaffolding
+- Notes: Unique badgeId enforced.
+
+---
+
+Title: Employee Master Data (CRUD) - Read Employee List
+User Story: As an HR manager I want to view a paginated and filtered list of employees So that I can easily find and manage staff.
+Acceptance Criteria:
+Scenario: View Employee List
+Given employees exist
+When I GET /employees with filters
+Then I see a paginated, filtered list
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Create Employee
+- Notes: Supports pagination/filtering.
+
+---
+
+Title: Employee Master Data (CRUD) - Update Employee
+User Story: As an HR manager I want to update employee details So that records remain accurate.
+Acceptance Criteria:
+Scenario: Update Employee
+Given an existing employee
+When I PUT/PATCH to /employees/{id}
+Then the employee details are updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Create Employee
+- Notes: Supports partial/full updates.
+
+---
+
+Title: Employee Master Data (CRUD) - Delete Employee (Soft Delete)
+User Story: As an HR manager I want to soft-delete employee records So that historical data is preserved.
+Acceptance Criteria:
+Scenario: Soft Delete Employee
+Given an existing employee
+When I DELETE /employees/{id}
+Then the employee is marked as inactive but not removed
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Create Employee
+- Notes: Soft delete only.
+
+---
+
+Title: Employee Master Data (CRUD) - API Documentation
+User Story: As a developer I want OpenAPI schemas with examples for employee endpoints So that integration is straightforward.
+Acceptance Criteria:
+Scenario: API Documentation
+Given the API is deployed
+When I access the OpenAPI docs
+Then employee endpoints are documented with examples
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: All CRUD endpoints
+- Notes: Improves integration.
+
+=======================================================================
+EPIC 3: ROLE-BASED ACCESS CONTROL (RBAC)
+=======================================================================
+
+Title: Role-Based Access Control (RBAC) - Role Assignment
+User Story: As an admin I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users So that access is controlled.
+Acceptance Criteria:
+Scenario: Assign Role
+Given a user exists
+When I assign a role
+Then the user can only access permitted endpoints
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD
+- Notes: Role assignment UI/API.
+
+---
+
+Title: Role-Based Access Control (RBAC) - Endpoint Security
+User Story: As a security officer I want endpoints protected by role-based access So that sensitive data is secure.
+Acceptance Criteria:
+Scenario: Endpoint Security
+Given a user with a role
+When they access a protected endpoint
+Then unauthorized requests return 401, forbidden actions return 403
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Role Assignment
+- Notes: Security rules enforced.
+
+---
+
+Title: Role-Based Access Control (RBAC) - Row-Level Security
+User Story: As a supervisor I want to see only my team's records So that privacy is maintained.
+Acceptance Criteria:
+Scenario: Row-Level Security
+Given a supervisor is logged in
+When they view employee data
+Then only their team's records are visible
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role Assignment
+- Notes: Row-level constraints.
+
+---
+
+Title: Role-Based Access Control (RBAC) - API Key/OAuth2 Toggle
+User Story: As a system admin I want to toggle between API key and OAuth2 authentication So that integration flexibility is provided.
+Acceptance Criteria:
+Scenario: Auth Toggle
+Given the config is set
+When I switch authentication mode
+Then endpoints require the selected method
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Endpoint Security
+- Notes: Configurable via properties.
+
+---
+
+Title: Role-Based Access Control (RBAC) - Security Test Coverage
+User Story: As a QA engineer I want automated tests for security rules So that vulnerabilities are detected early.
+Acceptance Criteria:
+Scenario: Security Tests
+Given security rules are defined
+When tests are run
+Then unauthorized and forbidden actions are covered
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Endpoint Security
+- Notes: Test coverage required.
+
+=======================================================================
+EPIC 4: TIME & ATTENDANCE (CLOCK IN/OUT)
+=======================================================================
+
+Title: Time & Attendance (Clock In/Out) - Clock In Event
+User Story: As a worker I want to clock in at the start of my shift So that my working hours are recorded.
+Acceptance Criteria:
+Scenario: Clock In
+Given I am scheduled for a shift
+When I POST to /attendance/clock-in
+Then my clock-in event is recorded and validated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC
+- Notes: Geofence/device capture optional.
+
+---
+
+Title: Time & Attendance (Clock In/Out) - Clock Out Event
+User Story: As a worker I want to clock out at the end of my shift So that my shift is completed.
+Acceptance Criteria:
+Scenario: Clock Out
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out event is recorded
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock In Event
+- Notes: Shift association automatic.
+
+---
+
+Title: Time & Attendance (Clock In/Out) - Missed Punch Correction
+User Story: As a worker I want to request corrections for missed punches So that my attendance is accurate.
+Acceptance Criteria:
+Scenario: Correction Request
+Given a missed punch is detected
+When I submit a correction
+Then an approval task is created
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Clock In/Out Events
+- Notes: Supervisor approval required.
+
+---
+
+Title: Time & Attendance (Clock In/Out) - Daily Totals Calculation
+User Story: As a payroll officer I want daily totals of hours worked per shift So that payroll is accurate.
+Acceptance Criteria:
+Scenario: Daily Totals
+Given attendance events exist
+When totals are calculated
+Then daily hours per employee are computed
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock In/Out Events
+- Notes: Used for payroll export.
+
+---
+
+Title: Time & Attendance (Clock In/Out) - Attendance Report Export
+User Story: As a supervisor I want to export attendance reports in CSV So that I can review and share attendance data.
+Acceptance Criteria:
+Scenario: Attendance Export
+Given attendance data exists
+When I request an export
+Then a CSV file is generated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Daily Totals Calculation
+- Notes: Export endpoint required.
+
+=======================================================================
+EPIC 5: SHIFT & SCHEDULE MANAGEMENT
+=======================================================================
+
+Title: Shift & Schedule Management - Create Shift Template
+User Story: As an HR manager I want to create recurring shift templates So that scheduling is efficient.
+Acceptance Criteria:
+Scenario: Create Shift Template
+Given valid shift details
+When I POST to /shifts/templates
+Then a new template is created
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC, Attendance
+- Notes: Recurring shifts supported.
+
+---
+
+Title: Shift & Schedule Management - Assign Shifts
+User Story: As a supervisor I want to assign shifts to employees So that staffing is managed.
+Acceptance Criteria:
+Scenario: Assign Shift
+Given a shift template exists
+When I assign employees
+Then assignments are created and conflicts detected
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Create Shift Template
+- Notes: Bulk assignment supported.
+
+---
+
+Title: Shift & Schedule Management - Conflict Detection
+User Story: As a scheduler I want to detect and prevent scheduling conflicts So that employees are not double-booked.
+Acceptance Criteria:
+Scenario: Conflict Detection
+Given shift assignments exist
+When I assign a new shift
+Then conflicts are flagged and prevented
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Assign Shifts
+- Notes: Real-time conflict check.
+
+---
+
+Title: Shift & Schedule Management - Blackout Dates
+User Story: As a scheduler I want to set blackout dates and operation calendars So that shifts are not assigned on closed days.
+Acceptance Criteria:
+Scenario: Blackout Dates
+Given a calendar is configured
+When I assign shifts
+Then blackout dates are respected
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Assign Shifts
+- Notes: Calendar integration.
+
+---
+
+Title: Shift & Schedule Management - Audit Entries
+User Story: As an auditor I want audit entries for schedule changes So that all modifications are tracked.
+Acceptance Criteria:
+Scenario: Audit Entry
+Given a schedule change occurs
+When the change is saved
+Then an audit entry is generated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Assign Shifts
+- Notes: Linked to audit trail module.
+
+=======================================================================
+EPIC 6: LEAVE & ABSENCE MANAGEMENT
+=======================================================================
+
+Title: Leave & Absence Management - Request Leave
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that my time off is tracked.
+Acceptance Criteria:
+Scenario: Request Leave
+Given I am logged in
+When I submit a leave request
+Then my request is recorded and balances updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC, Shift Management
+- Notes: Accrual policies applied.
+
+---
+
+Title: Leave & Absence Management - Approve/Deny Leave
+User Story: As a supervisor I want to approve or deny leave requests So that staffing is maintained.
+Acceptance Criteria:
+Scenario: Approve/Deny Leave
+Given a leave request is pending
+When I approve or deny
+Then the request status is updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Request Leave
+- Notes: Approval workflow.
+
+---
+
+Title: Leave & Absence Management - Update Leave Balances
+User Story: As an HR manager I want leave balances to update automatically So that records are accurate.
+Acceptance Criteria:
+Scenario: Update Balances
+Given a leave is approved or taken
+When the event occurs
+Then accrual balances are updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Approve/Deny Leave
+- Notes: Policy-driven.
+
+---
+
+Title: Leave & Absence Management - Flag Scheduled Shifts
+User Story: As a scheduler I want scheduled shifts to auto-flag for coverage when leave is approved So that shifts are covered.
+Acceptance Criteria:
+Scenario: Flag Shifts
+Given leave is approved
+When a scheduled shift overlaps
+Then the shift is flagged for coverage
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Approve/Deny Leave
+- Notes: Integration with shift management.
+
+---
+
+Title: Leave & Absence Management - Leave Export
+User Story: As a payroll officer I want to export approved leaves So that payroll hours are correct.
+Acceptance Criteria:
+Scenario: Leave Export
+Given approved leave records exist
+When I request an export
+Then a report is generated
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: Update Leave Balances
+- Notes: Export endpoint.
+
+=======================================================================
+EPIC 7: TRAINING & CERTIFICATION TRACKING
+=======================================================================
+
+Title: Training & Certification Tracking - Add Certification
+User Story: As an HR manager I want to add certifications to employee profiles So that compliance is tracked.
+Acceptance Criteria:
+Scenario: Add Certification
+Given an employee exists
+When I add a certification
+Then it appears on their profile
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC
+- Notes: Certification CRUD.
+
+---
+
+Title: Training & Certification Tracking - Expiry Alerts
+User Story: As a supervisor I want alerts for expiring certifications So that renewals are not missed.
+Acceptance Criteria:
+Scenario: Expiry Alert
+Given a certification is expiring in 30/7 days
+When the date approaches
+Then an alert is sent
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Add Certification
+- Notes: Notification integration.
+
+---
+
+Title: Training & Certification Tracking - Block Unqualified Assignment
+User Story: As a scheduler I want to block assignment to tasks requiring expired certifications So that only qualified staff are assigned.
+Acceptance Criteria:
+Scenario: Block Assignment
+Given a certification is expired
+When I assign a task requiring it
+Then the assignment is blocked
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Add Certification
+- Notes: Scheduling checks.
+
+---
+
+Title: Training & Certification Tracking - Upload Proof Documents
+User Story: As an employee I want to upload proof of certification So that my records are complete.
+Acceptance Criteria:
+Scenario: Upload Proof
+Given a certification is added
+When I upload a document
+Then it is stored and linked to my profile
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Add Certification
+- Notes: Document storage.
+
+---
+
+Title: Training & Certification Tracking - Certification Status Visibility
+User Story: As a supervisor I want to view certification status on employee profiles So that I can verify compliance.
+Acceptance Criteria:
+Scenario: View Status
+Given an employee profile
+When I view certifications
+Then status and expiry are visible
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Add Certification
+- Notes: Profile UI.
+
+=======================================================================
+EPIC 8: SAFETY INCIDENTS & OSHA REPORTING
+=======================================================================
+
+Title: Safety Incidents & OSHA Reporting - Record Incident
+User Story: As a supervisor I want to record safety incidents and near-misses So that safety data is captured.
+Acceptance Criteria:
+Scenario: Record Incident
+Given an incident occurs
+When I POST to /safety/incidents
+Then the incident is recorded with required fields
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC
+- Notes: Severity/location/involved employees.
+
+---
+
+Title: Safety Incidents & OSHA Reporting - Incident Workflow
+User Story: As a safety officer I want a workflow for investigation and corrective actions So that incidents are resolved.
+Acceptance Criteria:
+Scenario: Incident Workflow
+Given an incident is recorded
+When status changes
+Then workflow moves from OpenâInvestigatingâResolved
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Record Incident
+- Notes: Status transitions.
+
+---
+
+Title: Safety Incidents & OSHA Reporting - OSHA Export
+User Story: As a compliance officer I want to export OSHA summary reports So that regulatory requirements are met.
+Acceptance Criteria:
+Scenario: OSHA Export
+Given incidents are recorded
+When I request an export
+Then OSHA 300/300A fields are included
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Record Incident
+- Notes: Export endpoint.
+
+---
+
+Title: Safety Incidents & OSHA Reporting - Metrics Dashboard
+User Story: As a manager I want a dashboard of safety metrics So that I can monitor KPIs.
+Acceptance Criteria:
+Scenario: Metrics Dashboard
+Given incident data exists
+When I access the dashboard
+Then safety KPIs are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Record Incident
+- Notes: Dashboard endpoints.
+
+---
+
+Title: Safety Incidents & OSHA Reporting - Incident Validation
+User Story: As a QA engineer I want validation on incident records So that required fields are enforced.
+Acceptance Criteria:
+Scenario: Incident Validation
+Given I submit an incident
+When required fields are missing
+Then validation errors are returned
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Record Incident
+- Notes: Field-level validation.
+
+=======================================================================
+EPIC 9: EQUIPMENT & ASSET ASSIGNMENT
+=======================================================================
+
+Title: Equipment & Asset Assignment - Register Asset
+User Story: As an asset manager I want to register equipment and PPE So that assets are tracked.
+Acceptance Criteria:
+Scenario: Register Asset
+Given asset details
+When I POST to /assets
+Then the asset is added to the registry
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC, Certification
+- Notes: Asset CRUD.
+
+---
+
+Title: Equipment & Asset Assignment - Assign Asset
+User Story: As a supervisor I want to assign assets to employees So that accountability is maintained.
+Acceptance Criteria:
+Scenario: Assign Asset
+Given an asset and employee exist
+When I assign the asset
+Then assignment is recorded and certs checked
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Register Asset
+- Notes: Blocks if certs invalid.
+
+---
+
+Title: Equipment & Asset Assignment - Asset Check-In/Out
+User Story: As an employee I want to check out and return assets So that usage is tracked.
+Acceptance Criteria:
+Scenario: Check-In/Out
+Given an asset is assigned
+When I check out or return
+Then the event is logged
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Assign Asset
+- Notes: History log per asset.
+
+---
+
+Title: Equipment & Asset Assignment - Overdue Asset Report
+User Story: As an asset manager I want reports of overdue asset returns So that assets are recovered.
+Acceptance Criteria:
+Scenario: Overdue Report
+Given assets are overdue
+When I request a report
+Then overdue assets are listed
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: Asset Check-In/Out
+- Notes: Export endpoint.
+
+---
+
+Title: Equipment & Asset Assignment - Asset Condition Tracking
+User Story: As an asset manager I want to track asset condition So that maintenance needs are identified.
+Acceptance Criteria:
+Scenario: Condition Tracking
+Given an asset is checked in
+When condition is updated
+Then the state is logged
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: Asset Check-In/Out
+- Notes: Condition field.
+
+=======================================================================
+EPIC 10: PERFORMANCE REVIEWS & GOALS
+=======================================================================
+
+Title: Performance Reviews & Goals - Create Review Cycle
+User Story: As an HR manager I want to create quarterly/annual review cycles So that performance is tracked.
+Acceptance Criteria:
+Scenario: Create Review Cycle
+Given review details
+When I create a cycle
+Then it is assigned to employees
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC
+- Notes: Cycle creation UI/API.
+
+---
+
+Title: Performance Reviews & Goals - Submit Review
+User Story: As a supervisor I want to submit performance reviews for employees So that feedback is documented.
+Acceptance Criteria:
+Scenario: Submit Review
+Given a review cycle is active
+When I submit a review
+Then ratings, goals, and comments are saved
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Create Review Cycle
+- Notes: Review form.
+
+---
+
+Title: Performance Reviews & Goals - Employee Acknowledgement
+User Story: As an employee I want to acknowledge my review So that I confirm receipt.
+Acceptance Criteria:
+Scenario: Acknowledge Review
+Given a review is submitted
+When I acknowledge
+Then the review is marked as acknowledged
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Submit Review
+- Notes: Acknowledgement workflow.
+
+---
+
+Title: Performance Reviews & Goals - PDF Export
+User Story: As an HR manager I want to export reviews as PDF So that records are archived.
+Acceptance Criteria:
+Scenario: PDF Export
+Given reviews exist
+When I request export
+Then a PDF file is generated
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: Submit Review
+- Notes: Export endpoint.
+
+---
+
+Title: Performance Reviews & Goals - Immutable History
+User Story: As an auditor I want review history to be immutable after sign-off So that records cannot be tampered.
+Acceptance Criteria:
+Scenario: Immutable History
+Given a review is signed off
+When I attempt to edit
+Then changes are blocked
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Acknowledgement
+- Notes: History lock.
+
+=======================================================================
+EPIC 11: PAYROLL EXPORT INTEGRATION
+=======================================================================
+
+Title: Payroll Export Integration - Generate Payroll File
+User Story: As a payroll officer I want to generate payroll-ready files from attendance and leave So that payroll runs are automated.
+Acceptance Criteria:
+Scenario: Generate Payroll File
+Given approved attendance and leave
+When I request export
+Then a payroll file matching provider schema is generated
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Attendance, Leave
+- Notes: Provider mapping.
+
+---
+
+Title: Payroll Export Integration - Secure Delivery
+User Story: As a payroll officer I want payroll files delivered securely via SFTP/API So that data is protected.
+Acceptance Criteria:
+Scenario: Secure Delivery
+Given a payroll file is generated
+When I send via SFTP/API
+Then delivery is secure and logged
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Generate Payroll File
+- Notes: Delivery audit.
+
+---
+
+Title: Payroll Export Integration - Delivery Retry
+User Story: As a payroll officer I want failed deliveries retried with backoff So that exports are reliable.
+Acceptance Criteria:
+Scenario: Delivery Retry
+Given a delivery fails
+When retry logic runs
+Then delivery is retried with backoff
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Secure Delivery
+- Notes: Retry logic.
+
+---
+
+Title: Payroll Export Integration - Audit Log
+User Story: As an auditor I want an audit log for every payroll export So that all actions are tracked.
+Acceptance Criteria:
+Scenario: Audit Log
+Given a payroll export occurs
+When I view the log
+Then actor, timestamp, and status are recorded
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Generate Payroll File
+- Notes: Linked to audit trail.
+
+---
+
+Title: Payroll Export Integration - Reconciliation
+User Story: As a payroll officer I want totals to reconcile with attendance and leave reports So that payroll is accurate.
+Acceptance Criteria:
+Scenario: Reconciliation
+Given payroll and attendance data
+When I compare totals
+Then they match
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Generate Payroll File
+- Notes: Validation step.
+
+=======================================================================
+EPIC 12: NOTIFICATIONS & ANNOUNCEMENTS
+=======================================================================
+
+Title: Notifications & Announcements - Opt-In/Out Channels
+User Story: As a user I want to opt-in or out of notification channels So that I control how I am notified.
+Acceptance Criteria:
+Scenario: Opt-In/Out
+Given notification settings
+When I update preferences
+Then channels are enabled/disabled
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: RBAC, Shift, Leave, Certification
+- Notes: Channel management UI.
+
+---
+
+Title: Notifications & Announcements - Localized Templates
+User Story: As a user I want notification templates to be localized So that I receive messages in my language.
+Acceptance Criteria:
+Scenario: Localized Templates
+Given my locale is set
+When a notification is sent
+Then the template matches my language
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Opt-In/Out Channels
+- Notes: Localization integration.
+
+---
+
+Title: Notifications & Announcements - Delivery Status Tracking
+User Story: As a supervisor I want to track delivery status of notifications So that I know messages are received.
+Acceptance Criteria:
+Scenario: Delivery Status
+Given notifications are sent
+When I view status
+Then delivery success/failure is shown
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Opt-In/Out Channels
+- Notes: Status dashboard.
+
+---
+
+Title: Notifications & Announcements - Rate Limiting
+User Story: As a system admin I want rate limits applied to notifications So that users are not spammed.
+Acceptance Criteria:
+Scenario: Rate Limiting
+Given many notifications
+When limits are exceeded
+Then excess messages are blocked
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Opt-In/Out Channels
+- Notes: Configurable limits.
+
+---
+
+Title: Notifications & Announcements - Announcements Dashboard
+User Story: As a worker I want announcements visible on my dashboard So that I stay informed.
+Acceptance Criteria:
+Scenario: Announcements Dashboard
+Given announcements exist
+When I log in
+Then I see current announcements
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Opt-In/Out Channels
+- Notes: Dashboard UI.
+
+=======================================================================
+EPIC 13: INTEGRATION LAYER (HRIS/WMS APIs)
+=======================================================================
+
+Title: Integration Layer (HRIS/WMS APIs) - HRIS Sync Job
+User Story: As an HR manager I want a sync job to create/update employees from HRIS So that master data is synchronized.
+Acceptance Criteria:
+Scenario: HRIS Sync
+Given new hires/terms in HRIS
+When sync runs
+Then employees are created/updated
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project Scaffolding, Employee CRUD, RBAC
+- Notes: Idempotent sync.
+
+---
+
+Title: Integration Layer (HRIS/WMS APIs) - WMS Department/Location Link
+User Story: As a warehouse manager I want department/location data linked from WMS So that assignments are accurate.
+Acceptance Criteria:
+Scenario: WMS Link
+Given WMS data
+When I sync
+Then department/location is updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: HRIS Sync Job
+- Notes: API connector.
+
+---
+
+Title: Integration Layer (HRIS/WMS APIs) - SSO Integration
+User Story: As a user I want single sign-on via IDP So that login is seamless.
+Acceptance Criteria:
+Scenario: SSO Integration
+Given IDP credentials
+When I log in
+Then SSO is used
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: HRIS Sync Job
+- Notes: JWT/OAuth2.
+
+---
+
+Title: Integration Layer (HRIS/WMS APIs) - Webhooks for Events
+User Story: As a developer I want webhooks for key events So that external systems are notified.
+Acceptance Criteria:
+Scenario: Webhook Event
+Given an event occurs
+When webhook is configured
+Then payload is sent idempotently
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: HRIS Sync Job
+- Notes: OpenAPI documented.
+
+---
+
+Title: Integration Layer (HRIS/WMS APIs) - API Documentation
+User Story: As a developer I want OpenAPI docs for all integration endpoints So that integration is easy.
+Acceptance Criteria:
+Scenario: API Docs
+Given endpoints exist
+When I view docs
+Then all integration APIs are documented
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: All integration endpoints
+- Notes: OpenAPI.
+
+=======================================================================
+EPIC 14: AUDIT TRAIL & COMPLIANCE
+=======================================================================
+
+Title: Audit Trail & Compliance - Audit Logging
+User Story: As a compliance officer I want audit logs for all sensitive changes So that actions are traceable.
+Acceptance Criteria:
+Scenario: Audit Logging
+Given a create/update/delete occurs
+When the event is saved
+Then actor, timestamp, before/after are logged
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC
+- Notes: Immutable log table.
+
+---
+
+Title: Audit Trail & Compliance - Tamper-Evident Storage
+User Story: As a compliance officer I want audit logs stored in a tamper-evident way So that integrity is ensured.
+Acceptance Criteria:
+Scenario: Tamper-Evident Storage
+Given audit logs exist
+When I inspect storage
+Then logs cannot be altered
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Audit Logging
+- Notes: Write-once/read-many.
+
+---
+
+Title: Audit Trail & Compliance - Export Audit Logs
+User Story: As an auditor I want to export audit logs by date/user/entity So that I can review changes.
+Acceptance Criteria:
+Scenario: Export Logs
+Given logs exist
+When I request export
+Then logs are filtered and exported
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Audit Logging
+- Notes: Export endpoint.
+
+---
+
+Title: Audit Trail & Compliance - Audit Test Coverage
+User Story: As a QA engineer I want tests to validate audit coverage So that compliance is verified.
+Acceptance Criteria:
+Scenario: Audit Tests
+Given audit rules
+When tests run
+Then coverage is validated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Audit Logging
+- Notes: Test suite.
+
+---
+
+Title: Audit Trail & Compliance - Immutable Log Table
+User Story: As a DBA I want an immutable log table for audits So that logs cannot be deleted.
+Acceptance Criteria:
+Scenario: Immutable Table
+Given audit logs are stored
+When I attempt to delete
+Then deletion is blocked
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Audit Logging
+- Notes: Table constraints.
+
+=======================================================================
+EPIC 15: REPORTING & ANALYTICS
+=======================================================================
+
+Title: Reporting & Analytics - Attendance Report
+User Story: As a supervisor I want operational attendance reports So that I can monitor staffing.
+Acceptance Criteria:
+Scenario: Attendance Report
+Given attendance data
+When I filter by date/department/shift
+Then report is generated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance, Shift, Leave, Certification, Safety, Audit
+- Notes: CSV/PDF export.
+
+---
+
+Title: Reporting & Analytics - Overtime Report
+User Story: As a payroll officer I want overtime reports So that payroll is accurate.
+Acceptance Criteria:
+Scenario: Overtime Report
+Given overtime data
+When I filter and export
+Then report is generated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance, Shift
+- Notes: Export endpoint.
+
+---
+
+Title: Reporting & Analytics - Certification Status Report
+User Story: As a supervisor I want certification status reports So that compliance is monitored.
+Acceptance Criteria:
+Scenario: Certification Report
+Given certification data
+When I filter and export
+Then report is generated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification
+- Notes: Export endpoint.
+
+---
+
+Title: Reporting & Analytics - Safety KPI Dashboard
+User Story: As a manager I want a dashboard of safety KPIs So that I can monitor trends.
+Acceptance Criteria:
+Scenario: Safety Dashboard
+Given safety data
+When I access dashboard
+Then KPIs are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Safety
+- Notes: Dashboard UI.
+
+---
+
+Title: Reporting & Analytics - Metrics Endpoint
+User Story: As a BI analyst I want metrics endpoints for reporting So that I can integrate with BI tools.
+Acceptance Criteria:
+Scenario: Metrics Endpoint
+Given metrics exist
+When I access endpoint
+Then data is available for BI
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: All reporting data
+- Notes: API endpoint.
+
+=======================================================================
+EPIC 16: MOBILE ACCESS (PWA)
+=======================================================================
+
+Title: Mobile Access (PWA) - Responsive Clock In/Out
+User Story: As a worker I want to clock in/out from my mobile device So that I can record attendance easily.
+Acceptance Criteria:
+Scenario: Mobile Clock In/Out
+Given I am on mobile
+When I access clock in/out
+Then events are recorded
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance, Shift, Leave, Notifications
+- Notes: Responsive UI.
+
+---
+
+Title: Mobile Access (PWA) - View Schedules
+User Story: As a worker I want to view my schedule on mobile So that I know when to work.
+Acceptance Criteria:
+Scenario: Mobile Schedule
+Given I am on mobile
+When I view schedule
+Then upcoming shifts are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance, Shift, Leave, Notifications
+- Notes: Responsive UI.
+
+---
+
+Title: Mobile Access (PWA) - Request Leave
+User Story: As a worker I want to request leave from mobile So that I can manage time off easily.
+Acceptance Criteria:
+Scenario: Mobile Leave Request
+Given I am on mobile
+When I submit leave request
+Then it is recorded
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance, Shift, Leave, Notifications
+- Notes: Responsive UI.
+
+---
+
+Title: Mobile Access (PWA) - Announcements
+User Story: As a worker I want to see announcements on mobile So that I stay informed.
+Acceptance Criteria:
+Scenario: Mobile Announcements
+Given announcements exist
+When I log in on mobile
+Then announcements are visible
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Attendance, Shift, Leave, Notifications
+- Notes: Responsive UI.
+
+---
+
+Title: Mobile Access (PWA) - Offline Clock Event Queue
+User Story: As a worker I want offline queue for clock events So that I can record attendance without connectivity.
+Acceptance Criteria:
+Scenario: Offline Clock Event
+Given I am offline
+When I clock in/out
+Then event is queued and synced later
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Attendance, Shift, Leave, Notifications
+- Notes: Conflict resolution required.
+
+=======================================================================
+EPIC 17: ONBOARDING & OFFBOARDING WORKFLOW
+=======================================================================
+
+Title: Onboarding & Offboarding Workflow - Automate Provisioning
+User Story: As an HR manager I want automated provisioning of accounts and initial schedules for new hires So that onboarding is efficient.
+Acceptance Criteria:
+Scenario: Automate Provisioning
+Given a new hire appears from HRIS
+When onboarding starts
+Then accounts and schedules are provisioned
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC, Shift, Certification, Asset, Integration
+- Notes: Task generation.
+
+---
+
+Title: Onboarding & Offboarding Workflow - Training Assignment
+User Story: As a supervisor I want required training tasks generated for new hires So that compliance is ensured.
+Acceptance Criteria:
+Scenario: Training Assignment
+Given a new hire is onboarded
+When onboarding tasks are created
+Then required training is assigned
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Automate Provisioning
+- Notes: Training module integration.
+
+---
+
+Title: Onboarding & Offboarding Workflow - Asset Assignment
+User Story: As an asset manager I want assets assigned to new hires during onboarding So that equipment is provisioned.
+Acceptance Criteria:
+Scenario: Asset Assignment
+Given onboarding is in progress
+When asset tasks are generated
+Then assets are assigned
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Automate Provisioning
+- Notes: Asset module integration.
+
+---
+
+Title: Onboarding & Offboarding Workflow - Automate Offboarding
+User Story: As an HR manager I want automated revocation of access and asset collection on termination So that offboarding is secure.
+Acceptance Criteria:
+Scenario: Automate Offboarding
+Given a termination event
+When offboarding starts
+Then access is revoked and assets collected
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Automate Provisioning
+- Notes: Schedule update.
+
+---
+
+Title: Onboarding & Offboarding Workflow - Update Schedules
+User Story: As a scheduler I want schedules updated on onboarding/offboarding So that staffing is accurate.
+Acceptance Criteria:
+Scenario: Update Schedules
+Given onboarding/offboarding occurs
+When schedules are updated
+Then staffing reflects changes
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Automate Provisioning
+- Notes: Integration with shift management.
+
+=======================================================================
+EPIC 18: LOCALIZATION & MULTI-SITE SUPPORT
+=======================================================================
+
+Title: Localization & Multi-Site Support - Multi-Site Configuration
+User Story: As a system admin I want to configure multiple warehouse sites So that the system supports multi-site operations.
+Acceptance Criteria:
+Scenario: Multi-Site Configuration
+Given site details
+When I create a site
+Then site-specific config is stored
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Project Scaffolding, Employee CRUD, Shift Management
+- Notes: Site entity with config.
+
+---
+
+Title: Localization & Multi-Site Support - Site Assignment
+User Story: As an HR manager I want to assign employees to specific sites So that staffing is organized by location.
+Acceptance Criteria:
+Scenario: Site Assignment
+Given an employee and site exist
+When I assign the employee to a site
+Then the assignment is recorded
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Multi-Site Configuration
+- Notes: Employees assigned to site.
+
+---
+
+Title: Localization & Multi-Site Support - Time Zone Support
+User Story: As a scheduler I want schedules to respect site time zones So that shifts are accurate.
+Acceptance Criteria:
+Scenario: Time Zone Support
+Given a site has a time zone
+When I create a schedule
+Then the time zone is applied
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Multi-Site Configuration
+- Notes: Schedules respect site time zone.
+
+---
+
+Title: Localization & Multi-Site Support - Localized UI
+User Story: As a user I want the UI in my preferred language So that I can use the system comfortably.
+Acceptance Criteria:
+Scenario: Localized UI
+Given my language preference
+When I access the UI
+Then all text is in my language
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Multi-Site Configuration
+- Notes: UI strings externalized.
+
+---
+
+Title: Localization & Multi-Site Support - Multi-Site Test Coverage
+User Story: As a QA engineer I want tests to cover multi-site scenarios So that functionality is verified.
+Acceptance Criteria:
+Scenario: Multi-Site Tests
+Given multi-site config
+When tests run
+Then multi-site scenarios are covered
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Multi-Site Configuration
+- Notes: Tests cover multi-site scenarios.
+
+=======================================================================
+EPIC 19: ADVANCED SCHEDULING (AI/OPTIMIZATION)
+=======================================================================
+
+Title: Advanced Scheduling (AI/Optimization) - Demand Forecasting
+User Story: As a scheduler I want demand forecasting based on historical data So that staffing needs are predicted.
+Acceptance Criteria:
+Scenario: Demand Forecasting
+Given historical data
+When I run forecasting
+Then demand predictions are generated
+Additional Details:
+- Priority: Low
+- Story Points: 5
+- Dependencies: Shift Management, Certification
+- Notes: Demand model trained on historical data.
+
+---
+
+Title: Advanced Scheduling (AI/Optimization) - Auto-Generate Schedules
+User Story: As a scheduler I want schedules auto-generated balancing coverage, skills, and cost So that planning is optimized.
+Acceptance Criteria:
+Scenario: Auto-Generate Schedules
+Given demand and constraints
+When I request schedule generation
+Then optimized schedules are proposed
+Additional Details:
+- Priority: Low
+- Story Points: 5
+- Dependencies: Demand Forecasting
+- Notes: Schedule proposals generated.
+
+---
+
+Title: Advanced Scheduling (AI/Optimization) - What-If Scenarios
+User Story: As a scheduler I want to run what-if scenarios So that I can evaluate different staffing options.
+Acceptance Criteria:
+Scenario: What-If Scenarios
+Given a proposed schedule
+When I adjust parameters
+Then impact is shown
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: Auto-Generate Schedules
+- Notes: What-if scenarios.
+
+---
+
+Title: Advanced Scheduling (AI/Optimization) - Cost and Coverage Metrics
+User Story: As a manager I want cost and coverage metrics displayed So that I can evaluate schedules.
+Acceptance Criteria:
+Scenario: Cost and Coverage Metrics
+Given a schedule
+When I view metrics
+Then cost and coverage are displayed
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Auto-Generate Schedules
+- Notes: Cost and coverage metrics displayed.
+
+---
+
+Title: Advanced Scheduling (AI/Optimization) - Explainability Logs
+User Story: As a scheduler I want explainability logs for AI decisions So that I understand recommendations.
+Acceptance Criteria:
+Scenario: Explainability Logs
+Given an AI-generated schedule
+When I view logs
+Then decision rationale is shown
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Auto-Generate Schedules
+- Notes: Explainability logs.
+
+=======================================================================
+EPIC 20: SELF-SERVICE PORTAL & CHATBOT
+=======================================================================
+
+Title: Self-Service Portal & Chatbot - Employee Portal Access
+User Story: As an employee I want to access a self-service portal So that I can manage my profile and requests.
+Acceptance Criteria:
+Scenario: Portal Access
+Given I have credentials
+When I log in
+Then I access the portal via SSO
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Employee CRUD, Attendance, Shift, Leave, Notifications
+- Notes: Portal accessible via SSO.
+
+---
+
+Title: Self-Service Portal & Chatbot - Profile Updates
+User Story: As an employee I want to update my profile information So that my records are current.
+Acceptance Criteria:
+Scenario: Profile Updates
+Given I am in the portal
+When I update my profile
+Then changes are saved
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Employee Portal Access
+- Notes: Profile update UI.
+
+---
+
+Title: Self-Service Portal & Chatbot - Schedule Swap Requests
+User Story: As an employee I want to request schedule swaps So that I can manage my availability.
+Acceptance Criteria:
+Scenario: Schedule Swap
+Given I have a shift
+When I request a swap
+Then approval workflow is triggered
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: Employee Portal Access
+- Notes: Swap requests require approval.
+
+---
+
+Title: Self-Service Portal & Chatbot - FAQ Chatbot
+User Story: As an employee I want a chatbot to answer common questions So that I get quick answers.
+Acceptance Criteria:
+Scenario: Chatbot Query
+Given I have a question
+When I ask the chatbot
+Then I receive an answer or fallback to ticket
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: Employee Portal Access
+- Notes: Chatbot answers top 10 queries.
+
+---
+
+Title: Self-Service Portal & Chatbot - Usage Analytics
+User Story: As a manager I want usage analytics for the portal and chatbot So that I can measure adoption.
+Acceptance Criteria:
+Scenario: Usage Analytics
+Given portal and chatbot usage
+When I view analytics
+Then usage metrics are displayed
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: Employee Portal Access
+- Notes: Usage analytics tracked.
+
+=======================================================================
+END OF DOCUMENT
+=======================================================================
+
+SUMMARY:
+- Total Epics: 20
+- Total User Stories: 105
+- All user stories include Gherkin-formatted acceptance criteria
+- Priority levels assigned (High/Medium/Low)
+- Story points estimated (1-5)
+- Dependencies mapped
+- Additional context and notes provided
+
+This comprehensive document serves as the complete backlog for the Warehouse Employee Management System development.
