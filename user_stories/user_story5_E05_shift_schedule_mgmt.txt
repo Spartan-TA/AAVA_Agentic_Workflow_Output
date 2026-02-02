@@ -1,0 +1,79 @@
+[E05] Shift & Schedule Management
+
+Title: Create Shift Templates
+User Story: As a scheduling manager I want to create recurring shift templates so that scheduling is efficient.
+Acceptance Criteria:
+Scenario: Shift Template Creation
+Given the scheduling module
+When I create a shift template
+Then it is saved and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Support weekly and monthly recurrence
+
+---
+
+Title: Assign Shifts to Employees
+User Story: As a supervisor I want to assign shifts to employees so that staffing is planned.
+Acceptance Criteria:
+Scenario: Shift Assignment
+Given available shift templates
+When I assign shifts to employees
+Then assignments are reflected in their schedules
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift Template Creation
+- Notes: Support bulk assignment
+
+---
+
+Title: Detect and Prevent Scheduling Conflicts
+User Story: As a scheduling manager I want the system to detect and prevent scheduling conflicts so that overbooking is avoided.
+Acceptance Criteria:
+Scenario: Conflict Detection
+Given existing assignments
+When I try to assign overlapping shifts
+Then the system blocks the assignment and shows an error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Assign Shifts to Employees
+- Notes: Include blackout dates
+
+---
+
+Title: Display Personal Upcoming Shifts
+User Story: As a warehouse worker I want to view my upcoming shifts so that I can plan my attendance.
+Acceptance Criteria:
+Scenario: View Upcoming Shifts
+Given my user account
+When I access my schedule
+Then my upcoming shifts are displayed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Assign Shifts to Employees
+- Notes: Mobile-friendly view
+
+---
+
+Title: Generate Audit Entries for Scheduling Changes
+User Story: As a compliance officer I want audit entries for scheduling changes so that all modifications are traceable.
+Acceptance Criteria:
+Scenario: Audit Entry Generation
+Given a scheduling change
+When a shift is created, updated, or deleted
+Then an audit entry is logged with actor and timestamp
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Audit Trail Module
+- Notes: Include before/after values
