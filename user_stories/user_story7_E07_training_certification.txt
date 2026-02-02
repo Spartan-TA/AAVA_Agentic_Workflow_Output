@@ -1,0 +1,79 @@
+[E07] Training & Certification Tracking
+
+Title: CRUD for Certifications
+User Story: As an HR manager I want to create, read, update, and delete certifications for employees so that compliance is tracked.
+Acceptance Criteria:
+Scenario: Certification CRUD
+Given the certification module
+When I perform CRUD operations
+Then certifications are correctly managed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Include expiration dates
+
+---
+
+Title: Alert Before Certification Expiry
+User Story: As a supervisor I want alerts 30/7 days before certification expiry so that renewals are timely.
+Acceptance Criteria:
+Scenario: Expiry Alert
+Given an expiring certification
+When the expiry date is within 30 or 7 days
+Then an alert is sent to the employee and supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Certification CRUD
+- Notes: Support email/SMS notifications
+
+---
+
+Title: Block Assignment to Tasks Requiring Expired Certs
+User Story: As a scheduling manager I want to block assignment of employees to tasks requiring expired certifications so that safety is ensured.
+Acceptance Criteria:
+Scenario: Assignment Block
+Given an expired certification
+When I try to assign the employee to a restricted task
+Then the system prevents the assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Certification CRUD
+- Notes: Show error message
+
+---
+
+Title: Upload Proof Documents for Certifications
+User Story: As an employee I want to upload proof documents for certifications so that records are complete.
+Acceptance Criteria:
+Scenario: Proof Document Upload
+Given a certification record
+When I upload a document
+Then the file is stored and linked to the certification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification CRUD
+- Notes: Support PDF/JPG formats
+
+---
+
+Title: Display Certification Status on Employee Profile
+User Story: As a supervisor I want to see certification status on employee profiles so that qualification is visible.
+Acceptance Criteria:
+Scenario: Certification Status Display
+Given an employee profile
+When I view the profile
+Then current certification status is shown
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Certification CRUD
+- Notes: Highlight expired or expiring certs
