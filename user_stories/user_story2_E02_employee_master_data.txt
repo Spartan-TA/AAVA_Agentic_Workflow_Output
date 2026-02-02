@@ -1,0 +1,79 @@
+[E02] Employee Master Data (CRUD)
+
+Title: Create Employee Domain Model
+User Story: As a developer I want to define the Employee entity with fields (name, badgeId, role, department, shiftGroup, hireDate, status) so that employee records are standardized.
+Acceptance Criteria:
+Scenario: Employee Entity Definition
+Given the domain model
+When I inspect the Employee entity
+Then all required fields are present and mapped
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Use validation annotations
+
+---
+
+Title: Implement Employee CRUD APIs
+User Story: As an HR manager I want to create, read, update, and delete employee records via API so that employee data is maintained accurately.
+Acceptance Criteria:
+Scenario: Employee CRUD Operations
+Given the API endpoints
+When I perform POST/GET/PUT/PATCH/DELETE on /employees
+Then the correct changes are reflected in the database
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee Domain Model
+- Notes: Support pagination and filtering
+
+---
+
+Title: Enforce Unique Badge ID
+User Story: As an HR manager I want badgeId to be unique for each employee so that identification errors are prevented.
+Acceptance Criteria:
+Scenario: Badge ID Uniqueness
+Given an existing employee with badgeId X
+When I try to create another employee with badgeId X
+Then the system rejects the request with a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD APIs
+- Notes: Add DB unique constraint
+
+---
+
+Title: Support Soft-Delete for Employees
+User Story: As an HR manager I want to soft-delete employees so that historical data is preserved for compliance.
+Acceptance Criteria:
+Scenario: Soft-Delete Employee
+Given an active employee
+When I delete the employee
+Then the status is set to inactive and record remains in the database
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD APIs
+- Notes: Filter out inactive employees by default
+
+---
+
+Title: Provide OpenAPI Schemas with Examples
+User Story: As a developer I want OpenAPI documentation with example payloads for employee endpoints so that integration is easier.
+Acceptance Criteria:
+Scenario: OpenAPI Documentation
+Given the API is deployed
+When I access the OpenAPI docs
+Then schemas and examples for employee endpoints are available
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Employee CRUD APIs
+- Notes: Use Swagger annotations
