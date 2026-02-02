@@ -1,0 +1,79 @@
+[E04] Time & Attendance (Clock In/Out)
+
+Title: Implement Clock-In/Out Endpoints
+User Story: As a warehouse worker I want to clock in and out via API so that my work hours are accurately recorded.
+Acceptance Criteria:
+Scenario: Clock-In/Out Event
+Given an active employee
+When I POST to /attendance/clock-in or /clock-out
+Then the event is validated and recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Capture device and optional geofence
+
+---
+
+Title: Calculate Hours Worked per Shift
+User Story: As a payroll manager I want hours worked per shift to be calculated automatically so that payroll is accurate.
+Acceptance Criteria:
+Scenario: Shift Hours Calculation
+Given clock-in and clock-out events
+When the shift ends
+Then total hours are computed and stored
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock-In/Out Endpoints
+- Notes: Handle overnight shifts
+
+---
+
+Title: Handle Missed Punches and Corrections
+User Story: As a supervisor I want a workflow for missed punches and corrections so that attendance records are accurate.
+Acceptance Criteria:
+Scenario: Correction Workflow
+Given a missed punch
+When a correction is submitted
+Then an approval task is created for supervisor
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Clock-In/Out Endpoints
+- Notes: Track correction history
+
+---
+
+Title: Export Attendance Reports (CSV)
+User Story: As a payroll manager I want to export attendance reports in CSV format so that payroll processing is streamlined.
+Acceptance Criteria:
+Scenario: Attendance Report Export
+Given attendance data
+When I request a CSV export
+Then the file contains daily totals and is downloadable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Calculate Hours Worked
+- Notes: Include filters by date/employee
+
+---
+
+Title: Associate Clock Events with Shifts
+User Story: As a scheduling manager I want clock-in/out events to be automatically associated with scheduled shifts so that reporting is accurate.
+Acceptance Criteria:
+Scenario: Shift Association
+Given a clock-in event
+When the event matches a scheduled shift
+Then the event is linked to the shift record
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift Management
+- Notes: Handle overlapping shifts
