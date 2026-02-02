@@ -1,0 +1,79 @@
+[E16] Mobile Access (PWA)
+
+Title: Responsive Views for Core Flows
+User Story: As a warehouse worker I want responsive views for clock-in/out, schedules, leave requests, and announcements so that I can use the system on any device.
+Acceptance Criteria:
+Scenario: Responsive UI
+Given a mobile device
+When I access core flows
+Then UI adapts to screen size
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Test on common devices
+
+---
+
+Title: Installable PWA Manifest
+User Story: As a worker I want to install the app as a PWA so that I have quick access from my device.
+Acceptance Criteria:
+Scenario: PWA Installation
+Given the app
+When I install as PWA
+Then it is available from home screen
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Responsive Views for Core Flows
+- Notes: Include icons and splash screen
+
+---
+
+Title: Offline Queue for Clock Events
+User Story: As a worker I want clock events queued offline so that I can clock in/out even without connectivity.
+Acceptance Criteria:
+Scenario: Offline Clock Event Queue
+Given no network connection
+When I clock in/out
+Then the event is queued and synced when online
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Responsive Views for Core Flows
+- Notes: Handle conflict resolution
+
+---
+
+Title: Lighthouse PWA Score â¥ 80
+User Story: As a QA engineer I want the PWA to score at least 80 on Lighthouse so that performance and usability are high.
+Acceptance Criteria:
+Scenario: Lighthouse Score Validation
+Given the deployed PWA
+When I run Lighthouse audit
+Then the score is â¥ 80
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Responsive Views for Core Flows
+- Notes: Optimize for performance
+
+---
+
+Title: Mobile-Friendly Announcements
+User Story: As a worker I want announcements to be mobile-friendly so that I stay informed on the go.
+Acceptance Criteria:
+Scenario: Mobile Announcement Display
+Given active announcements
+When I view on mobile
+Then announcements are readable and accessible
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Responsive Views for Core Flows
+- Notes: Support push notifications
