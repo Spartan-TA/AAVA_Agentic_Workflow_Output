@@ -1,0 +1,79 @@
+[E01] Project Scaffolding & Domain Setup
+
+Title: Initialize Spring Boot Project Structure
+User Story: As a developer I want to initialize a Spring Boot project with Maven so that all modules have a standardized foundation for development.
+Acceptance Criteria:
+Scenario: Project Initialization
+Given a new repository
+When I run the Maven initialization command
+Then the project builds and runs on port 8080 and the base package structure is created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Ensure README includes build/run steps
+
+---
+
+Title: Configure Database Migration Tool
+User Story: As a developer I want to set up Flyway/Liquibase for DB migrations so that schema changes are versioned and repeatable.
+Acceptance Criteria:
+Scenario: Migration Tool Setup
+Given Flyway/Liquibase is configured
+When I run the migration
+Then baseline migration is applied and future migrations are tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project Initialization
+- Notes: DB migration scripts should be in /resources/db/migration
+
+---
+
+Title: Enable Actuator Health Endpoints
+User Story: As an ops engineer I want to enable Spring Boot Actuator endpoints so that I can monitor application health.
+Acceptance Criteria:
+Scenario: Health Endpoint Availability
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns UP status
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project Initialization
+- Notes: Secure actuator endpoints for production
+
+---
+
+Title: Document Build and Run Steps
+User Story: As a developer I want a README with build and run instructions so that onboarding is faster and consistent.
+Acceptance Criteria:
+Scenario: README Documentation
+Given the repository is cloned
+When I open README.md
+Then I see clear build and run steps for local and production
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Project Initialization
+- Notes: Include environment variable setup
+
+---
+
+Title: Establish Core Domain Modules
+User Story: As a developer I want to scaffold core modules (employee, scheduling, attendance, safety) so that future features are organized.
+Acceptance Criteria:
+Scenario: Core Module Scaffolding
+Given the project structure
+When I generate domain packages
+Then employee, scheduling, attendance, and safety modules exist
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project Initialization
+- Notes: Use package naming conventions
