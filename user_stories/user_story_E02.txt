@@ -1,0 +1,81 @@
+# E02: Employee Master Data (CRUD)
+
+## User Story 2.1: Create Employee API Endpoints
+- **Title:** Implement Employee CRUD Endpoints
+- **User Story:** As an HR user, I want to create, read, update, and delete employee records so that employee data is managed centrally.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: CRUD operations on employees
+    Given I have HR role
+    When I POST, GET, PUT, PATCH, or DELETE /employees
+    Then the operations succeed and data is persisted
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 5
+  * Dependencies: E01
+  * Notes: Use DTOs for API requests and responses.
+
+## User Story 2.2: Enforce Unique Badge ID
+- **Title:** Enforce Unique Badge ID for Employees
+- **User Story:** As an HR user, I want each employee to have a unique badge ID so that duplicate records are prevented.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Duplicate badge ID rejected
+    Given an employee exists with badgeId "12345"
+    When I try to create another employee with badgeId "12345"
+    Then the request is rejected with a validation error
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E02.1
+  * Notes: Validation at both DB and API layers.
+
+## User Story 2.3: Support Soft Delete for Employees
+- **Title:** Support Soft Delete for Employees
+- **User Story:** As an HR user, I want to soft-delete employee records so that historical data is retained.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Employee is soft-deleted
+    Given an employee exists
+    When I DELETE the employee
+    Then the employee status is set to "INACTIVE" and record is not removed from the database
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E02.1
+  * Notes: Soft-deleted employees are excluded from active queries.
+
+## User Story 2.4: Implement Pagination and Filtering
+- **Title:** Implement Pagination and Filtering for Employee List
+- **User Story:** As an HR user, I want to paginate and filter employee lists so that I can efficiently find records.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Paginated and filtered employee list
+    Given there are more than 20 employees
+    When I GET /employees?page=1&size=10&department=Shipping
+    Then I receive 10 employees from the Shipping department
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E02.1
+  * Notes: Filtering by department, role, status, etc.
+
+## User Story 2.5: Provide OpenAPI Schemas with Examples
+- **Title:** Provide OpenAPI Schemas for Employee APIs
+- **User Story:** As a developer, I want OpenAPI documentation with request/response examples so that integration is straightforward.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: OpenAPI docs available
+    Given the application is running
+    When I access /swagger-ui.html
+    Then I see Employee API endpoints with example payloads
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E02.1
+  * Notes: Use Swagger annotations.
