@@ -1,0 +1,91 @@
+Epic E10: Performance Reviews & Goals
+
+---
+
+User Story 1: Create Review Templates
+As HR, I want to create quarterly and annual review templates so that performance reviews are standardized.
+
+Acceptance Criteria:
+Scenario: Template creation
+  Given valid review criteria
+  When I create a template
+  Then it is saved and reusable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Templates support competencies and goals
+
+---
+
+User Story 2: Assign Reviews to Employees
+As a supervisor, I want to assign reviews to employees so that feedback cycles are initiated.
+
+Acceptance Criteria:
+Scenario: Review assignment
+  Given a review cycle
+  When I assign to employees
+  Then reviews are created
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Assignment workflow logged
+
+---
+
+User Story 3: Submit and Acknowledge Reviews
+As an employee, I want to submit my self-review and acknowledge supervisor feedback so that the process is collaborative.
+
+Acceptance Criteria:
+Scenario: Self-review submission
+  Given a review assigned
+  When I submit my self-review
+  Then it is saved
+
+Scenario: Supervisor feedback
+  Given a completed self-review
+  When supervisor submits feedback
+  Then employee can acknowledge
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Immutable after sign-off
+
+---
+
+User Story 4: PDF Export of Reviews
+As HR, I want to export reviews as PDF so that records are archived.
+
+Acceptance Criteria:
+Scenario: PDF export
+  Given completed reviews
+  When I request export
+  Then PDF files are generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: PDF format standardized
+
+---
+
+User Story 5: Role-Based Visibility
+As a supervisor, I want visibility of reviews only for my team so that privacy is maintained.
+
+Acceptance Criteria:
+Scenario: Visibility check
+  Given a supervisor user
+  When I access reviews
+  Then only team reviews are visible
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Access rules enforced
