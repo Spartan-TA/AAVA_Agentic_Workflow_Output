@@ -1,0 +1,67 @@
+Epic E02: Employee Master Data (CRUD)
+
+---
+
+User Story 1: Create Employee Domain Model
+As a developer, I want to define the Employee domain model with fields (name, badgeId, role, department, shiftGroup, hireDate, status) so that employee records are standardized.
+
+Acceptance Criteria:
+Scenario: Employee entity creation
+  Given the domain model is defined
+  When I create an employee record
+  Then all required fields are present and validated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: badgeId must be unique
+
+---
+
+User Story 2: Employee CRUD API Endpoints
+As an HR user, I want to create, read, update, patch, and delete employee records via API so that employee data is managed efficiently.
+
+Acceptance Criteria:
+Scenario: Create employee
+  Given valid employee data
+  When I POST to /employees
+  Then a new employee is created
+
+Scenario: Update employee
+  Given an existing employee
+  When I PUT/PATCH to /employees/{id}
+  Then the employee data is updated
+
+Scenario: Delete employee
+  Given an employee exists
+  When I DELETE /employees/{id}
+  Then the employee is soft-deleted
+
+Scenario: Pagination and filtering
+  Given multiple employees
+  When I GET /employees with filters
+  Then results are paginated and filtered
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: E01
+- Notes: OpenAPI schemas with examples required
+
+---
+
+User Story 3: Employee DTOs for Web
+As a frontend developer, I want web DTOs for employee data so that the UI can display and manipulate employee records.
+
+Acceptance Criteria:
+Scenario: DTO mapping
+  Given an employee entity
+  When I request employee data via API
+  Then the response matches the DTO schema
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: DTOs must hide sensitive fields
