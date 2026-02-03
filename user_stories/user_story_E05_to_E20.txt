@@ -1,0 +1,1021 @@
+# E05: Shift & Schedule Management
+
+## User Story 5.1: Create and Manage Shift Templates
+- **Title:** Create and Manage Shift Templates
+- **User Story:** As a supervisor, I want to create recurring shift templates so that scheduling is efficient.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Shift template CRUD
+    Given I am a supervisor
+    When I create, update, or delete a shift template
+    Then the template is saved and available for scheduling
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E02, E03, E04
+  * Notes: Support for different shift patterns.
+
+## User Story 5.2: Assign Shifts to Employees
+- **Title:** Assign Shifts to Employees
+- **User Story:** As a supervisor, I want to assign shifts to employees so that coverage is ensured.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Assign shift to employee
+    Given a shift template exists
+    When I assign it to an employee
+    Then the employee sees the shift in their schedule
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E05.1
+  * Notes: Bulk assignment supported.
+
+## User Story 5.3: Detect and Prevent Scheduling Conflicts
+- **Title:** Detect and Prevent Scheduling Conflicts
+- **User Story:** As a scheduler, I want the system to detect and prevent conflicts so that employees are not double-booked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Scheduling conflict detected
+    Given an employee is already assigned to a shift
+    When I try to assign an overlapping shift
+    Then the system prevents the assignment and shows an error
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E05.1
+  * Notes: Includes blackout dates and operation calendars.
+
+## User Story 5.4: Generate Audit Entries for Schedule Changes
+- **Title:** Generate Audit Entries for Schedule Changes
+- **User Story:** As an auditor, I want all schedule changes to be logged so that compliance is maintained.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Audit entry created for schedule change
+    Given a shift assignment is modified
+    When the change is saved
+    Then an audit entry is created with actor, timestamp, and details
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E05.1
+  * Notes: Integrates with audit trail module.
+
+---
+
+# E06: Leave & Absence Management
+
+## User Story 6.1: Request Leave
+- **Title:** Employee Leave Request
+- **User Story:** As an employee, I want to request PTO, sick, or unpaid leave so that my absences are tracked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Submit leave request
+    Given I am logged in as an employee
+    When I submit a leave request with dates and type
+    Then the request is recorded and pending approval
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E02, E03, E05
+  * Notes: Validates against accrual balances.
+
+## User Story 6.2: Approve or Deny Leave Requests
+- **Title:** Supervisor Leave Approval Workflow
+- **User Story:** As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Approve leave request
+    Given a leave request is pending
+    When I approve or deny the request
+    Then the employee is notified and balances are updated
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E06.1
+  * Notes: Approval triggers schedule updates.
+
+## User Story 6.3: Update Leave Balances and Policies
+- **Title:** Update Leave Balances and Policies
+- **User Story:** As an HR user, I want leave balances to update automatically so that accruals are accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Leave balance updates
+    Given an approved leave request
+    When the request is processed
+    Then the employee's leave balance is reduced accordingly
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E06.2
+  * Notes: Supports multiple leave types.
+
+## User Story 6.4: Integrate Leave with Scheduling and Payroll
+- **Title:** Integrate Leave with Scheduling and Payroll
+- **User Story:** As a payroll administrator, I want approved leaves to be excluded from scheduling and payroll hours so that pay is accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Leave integration with scheduling
+    Given an employee has approved leave
+    When schedules and payroll are generated
+    Then the leave period is excluded from work hours
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E06.3
+  * Notes: Hooks for downstream integration.
+
+---
+
+# E07: Training & Certification Tracking
+
+## User Story 7.1: Manage Employee Certifications
+- **Title:** Manage Employee Certifications
+- **User Story:** As an HR user, I want to add, update, and remove employee certifications so that compliance is tracked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Certification CRUD
+    Given I am an HR user
+    When I create, update, or delete a certification
+    Then the certification is reflected on the employee profile
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E02, E03
+  * Notes: Includes document upload.
+
+## User Story 7.2: Alert for Expiring Certifications
+- **Title:** Alert for Expiring Certifications
+- **User Story:** As a supervisor, I want to receive alerts for certifications expiring in 30 or 7 days so that renewals are not missed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Expiry alert generated
+    Given a certification expires in 30 or 7 days
+    When the system checks expiration dates
+    Then an alert is sent to the employee and supervisor
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E07.1
+  * Notes: Alerts via in-app and email.
+
+## User Story 7.3: Block Assignment to Unqualified Tasks
+- **Title:** Block Assignment to Unqualified Tasks
+- **User Story:** As a scheduler, I want to prevent assignment of employees to tasks requiring expired certifications so that safety is ensured.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Assignment blocked for expired cert
+    Given an employee's certification is expired
+    When I try to assign them to a restricted task
+    Then the system blocks the assignment and shows an error
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E07.1
+  * Notes: Integrated with scheduling.
+
+## User Story 7.4: Display Certification Status on Profile
+- **Title:** Display Certification Status on Employee Profile
+- **User Story:** As a supervisor, I want to see certification status on employee profiles so that I can verify qualifications.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Certification status visible
+    Given an employee has certifications
+    When I view their profile
+    Then I see current status and expiration dates
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E07.1
+  * Notes: Includes visual indicators for expired/expiring.
+
+---
+
+# E08: Safety Incidents & OSHA Reporting
+
+## User Story 8.1: Record Safety Incidents and Near-Misses
+- **Title:** Record Safety Incidents and Near-Misses
+- **User Story:** As a safety officer, I want to record incidents and near-misses with details so that safety data is captured.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Incident recorded
+    Given I am a safety officer
+    When I POST to /safety/incidents with required fields
+    Then the incident is saved and validated
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E02, E03
+  * Notes: Includes severity, location, involved employees.
+
+## User Story 8.2: Manage Incident Investigation Workflow
+- **Title:** Manage Incident Investigation Workflow
+- **User Story:** As a safety manager, I want to track incident status from Open to Resolved so that investigations are managed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Incident status workflow
+    Given an incident is Open
+    When I update status to Investigating or Resolved
+    Then the status is updated and history is tracked
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E08.1
+  * Notes: Status transitions enforced.
+
+## User Story 8.3: Export OSHA Summary Reports
+- **Title:** Export OSHA Summary Reports
+- **User Story:** As a compliance officer, I want to export OSHA 300/300A summary so that regulatory requirements are met.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: OSHA report export
+    Given incidents are recorded
+    When I request a summary export
+    Then a file is generated with OSHA-required fields
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E08.1
+  * Notes: Format per OSHA guidelines.
+
+## User Story 8.4: Provide Safety Metrics Dashboard
+- **Title:** Provide Safety Metrics Dashboard
+- **User Story:** As a safety manager, I want a dashboard of safety KPIs so that trends are visible.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Safety metrics available
+    Given incidents are logged
+    When I access the dashboard endpoint
+    Then I see counts and trends of incidents by type and severity
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E08.1
+  * Notes: Role-based access.
+
+---
+
+# E09: Equipment & Asset Assignment
+
+## User Story 9.1: Manage Asset Registry
+- **Title:** Manage Asset Registry
+- **User Story:** As an asset manager, I want to add, update, and remove assets so that inventory is accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Asset CRUD
+    Given I am an asset manager
+    When I create, update, or delete an asset
+    Then the asset registry is updated accordingly
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E02, E03, E07
+  * Notes: Includes asset type and condition.
+
+## User Story 9.2: Assign and Track Asset Checkout/Return
+- **Title:** Assign and Track Asset Checkout/Return
+- **User Story:** As a supervisor, I want to assign assets to employees and track check-in/out so that asset usage is accountable.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Asset checkout and return
+    Given an asset is available
+    When I assign it to an employee
+    Then the checkout is recorded and history is updated
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E09.1
+  * Notes: Prevents double assignment.
+
+## User Story 9.3: Block Asset Use if Certification Missing
+- **Title:** Block Asset Use if Certification Missing
+- **User Story:** As a supervisor, I want to prevent asset assignment if required certifications are missing so that safety is ensured.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Asset assignment blocked for missing cert
+    Given an employee lacks a required certification
+    When I try to assign a restricted asset
+    Then the system blocks the assignment and shows an error
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E09.1, E07
+  * Notes: Applies to forklifts, etc.
+
+## User Story 9.4: View Asset Assignment History
+- **Title:** View Asset Assignment History
+- **User Story:** As an asset manager, I want to view the history of asset assignments so that accountability is maintained.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Asset history visible
+    Given an asset has been checked out and returned
+    When I view the asset details
+    Then I see a log of all assignments and returns
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E09.1
+  * Notes: Filter by asset or employee.
+
+---
+
+# E10: Performance Reviews & Goals
+
+## User Story 10.1: Create Performance Review Templates
+- **Title:** Create Performance Review Templates
+- **User Story:** As an HR user, I want to create templates for performance reviews so that evaluations are standardized.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Review template CRUD
+    Given I am an HR user
+    When I create, update, or delete a review template
+    Then the template is available for review cycles
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E02, E03
+  * Notes: Supports quarterly/annual cycles.
+
+## User Story 10.2: Assign and Track Performance Reviews
+- **Title:** Assign and Track Performance Reviews
+- **User Story:** As a supervisor, I want to assign reviews to employees and track completion so that feedback is timely.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Assign review to employee
+    Given a review cycle is open
+    When I assign a review to an employee
+    Then the review appears in their tasks
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E10.1
+  * Notes: Tracks status and deadlines.
+
+## User Story 10.3: Submit and Acknowledge Reviews
+- **Title:** Submit and Acknowledge Reviews
+- **User Story:** As an employee, I want to submit and acknowledge performance reviews so that the process is complete.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Review submission and acknowledgement
+    Given a review is assigned
+    When the supervisor submits and the employee acknowledges
+    Then the review is marked as complete and immutable
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E10.2
+  * Notes: PDF export available.
+
+## User Story 10.4: Role-Based Visibility of Reviews
+- **Title:** Role-Based Visibility of Reviews
+- **User Story:** As an HR user, I want only authorized roles to view reviews so that privacy is maintained.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Review access control
+    Given a review exists
+    When a user without permission tries to view it
+    Then access is denied
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E10.1
+  * Notes: Immutable after sign-off.
+
+---
+
+# E11: Payroll Export Integration
+
+## User Story 11.1: Generate Payroll Export Files
+- **Title:** Generate Payroll Export Files
+- **User Story:** As a payroll administrator, I want to generate payroll-ready files from attendance and leave so that payroll processing is automated.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Payroll export file generated
+    Given approved attendance and leave records
+    When I trigger a payroll export
+    Then a file matching provider schema is generated
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E04, E06
+  * Notes: Supports multiple formats.
+
+## User Story 11.2: Secure Delivery of Payroll Files
+- **Title:** Secure Delivery of Payroll Files
+- **User Story:** As a payroll administrator, I want payroll files delivered securely via SFTP or API so that sensitive data is protected.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Payroll file delivered securely
+    Given a payroll export is generated
+    When delivery is initiated
+    Then the file is sent via SFTP or API with encryption
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E11.1
+  * Notes: Delivery failures retried with backoff.
+
+## User Story 11.3: Reconcile Payroll Totals with Reports
+- **Title:** Reconcile Payroll Totals with Reports
+- **User Story:** As a payroll administrator, I want to reconcile payroll totals with attendance and leave reports so that errors are detected.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Payroll totals match reports
+    Given a payroll export is generated
+    When I compare totals with reports
+    Then the values reconcile and discrepancies are flagged
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E11.1
+  * Notes: Audit log for every export.
+
+---
+
+# E12: Notifications & Announcements
+
+## User Story 12.1: Send In-App and Email/SMS Notifications
+- **Title:** Send In-App and Email/SMS Notifications
+- **User Story:** As a supervisor, I want to send notifications for shift changes, expiring certs, and approvals so that employees are informed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Notification sent for shift change
+    Given a shift is changed
+    When the change is saved
+    Then affected employees receive notifications via selected channels
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E03, E05, E06, E07
+  * Notes: Supports in-app, email, SMS.
+
+## User Story 12.2: Allow Users to Opt-In/Out per Channel
+- **Title:** Allow Users to Opt-In/Out per Notification Channel
+- **User Story:** As an employee, I want to choose which notification channels I receive so that I am not overwhelmed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: User manages notification preferences
+    Given I am logged in
+    When I update my notification settings
+    Then my preferences are saved and respected
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E12.1
+  * Notes: Quiet hours configurable.
+
+## User Story 12.3: Track Notification Delivery Status
+- **Title:** Track Notification Delivery Status
+- **User Story:** As a supervisor, I want to see if notifications were delivered so that I can follow up if needed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Notification delivery tracked
+    Given a notification is sent
+    When I view the delivery log
+    Then I see status (delivered, failed, pending) for each recipient
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E12.1
+  * Notes: Rate limits applied.
+
+## User Story 12.4: Display Announcements on Dashboard
+- **Title:** Display Announcements on Dashboard
+- **User Story:** As an employee, I want to see important announcements on my dashboard so that I am always informed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Announcement visible on dashboard
+    Given an active announcement exists
+    When I log in
+    Then the announcement is displayed on my dashboard
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E12.1
+  * Notes: Templates localized.
+
+---
+
+# E13: Integration Layer (HRIS/WMS APIs)
+
+## User Story 13.1: Expose Secure REST APIs for HRIS and WMS
+- **Title:** Expose Secure REST APIs for HRIS and WMS
+- **User Story:** As an integration engineer, I want secure REST APIs for HRIS and WMS so that master data is synchronized.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Secure API endpoints available
+    Given the application is running
+    When I authenticate with JWT or OAuth2
+    Then I can access HRIS and WMS endpoints as documented
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E01, E02, E03
+  * Notes: OpenAPI documentation required.
+
+## User Story 13.2: Implement HRIS Sync Job
+- **Title:** Implement HRIS Sync Job
+- **User Story:** As an HRIS admin, I want a sync job that creates/updates employees from HRIS so that records are up to date.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: HRIS sync creates/updates employees
+    Given new or updated employees in HRIS
+    When the sync job runs
+    Then employee records are created or updated in the system
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E13.1
+  * Notes: Idempotent processing.
+
+## User Story 13.3: Integrate WMS for Department/Location Data
+- **Title:** Integrate WMS for Department/Location Data
+- **User Story:** As a warehouse manager, I want department and location data synced from WMS so that assignments are accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: WMS department/location sync
+    Given department/location changes in WMS
+    When the integration runs
+    Then the system updates assignments accordingly
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E13.1
+  * Notes: Handles mapping and errors.
+
+## User Story 13.4: Support Webhooks for Key Events
+- **Title:** Support Webhooks for Key Events
+- **User Story:** As a developer, I want webhooks for events like new hires or terminations so that downstream systems are notified.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Webhook triggered on new hire
+    Given a new employee is created
+    When the event occurs
+    Then a webhook is sent to the configured endpoint
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E13.1
+  * Notes: Idempotency required.
+
+---
+
+# E14: Audit Trail & Compliance
+
+## User Story 14.1: Log All Sensitive Changes
+- **Title:** Log All Sensitive Changes
+- **User Story:** As an auditor, I want all create, update, and delete actions on sensitive data to be logged so that compliance is ensured.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Audit log entry created
+    Given a sensitive change occurs
+    When the action is performed
+    Then an audit log entry is created with actor, timestamp, before/after values
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E03
+  * Notes: Covers employee PII, schedules, approvals, payroll.
+
+## User Story 14.2: Store Audit Logs in Tamper-Evident Manner
+- **Title:** Store Audit Logs in Tamper-Evident Manner
+- **User Story:** As a compliance officer, I want audit logs stored immutably so that tampering is detectable.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Audit log is immutable
+    Given an audit log entry is created
+    When I attempt to modify or delete it
+    Then the system prevents the change
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E14.1
+  * Notes: Use append-only storage.
+
+## User Story 14.3: Export Audit Logs by Date/User/Entity
+- **Title:** Export Audit Logs by Date/User/Entity
+- **User Story:** As an auditor, I want to export audit logs filtered by date, user, or entity so that investigations are efficient.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Audit log export
+    Given audit logs exist
+    When I filter by date, user, or entity
+    Then I receive a file with matching entries
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E14.1
+  * Notes: Export in CSV or PDF.
+
+## User Story 14.4: Validate Audit Coverage with Tests
+- **Title:** Validate Audit Coverage with Tests
+- **User Story:** As a QA engineer, I want automated tests to validate audit coverage so that all sensitive actions are logged.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Audit coverage test
+    Given sensitive actions are performed in tests
+    When I check the audit log
+    Then all actions are present with correct details
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E14.1
+  * Notes: Coverage for all modules.
+
+---
+
+# E15: Reporting & Analytics
+
+## User Story 15.1: Generate Operational Reports
+- **Title:** Generate Operational Reports
+- **User Story:** As a manager, I want reports on attendance, overtime, leave, certifications, and safety so that I can make informed decisions.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Operational report generated
+    Given data exists for the selected period
+    When I generate a report
+    Then the report includes all relevant metrics and is exportable as CSV or PDF
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E04, E05, E06, E07, E08, E14
+  * Notes: Filters by date, department, shift.
+
+## User Story 15.2: Provide Role-Based Dashboards
+- **Title:** Provide Role-Based Dashboards
+- **User Story:** As a supervisor, I want dashboards tailored to my role so that I see relevant KPIs.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Role-based dashboard access
+    Given I am logged in as a supervisor
+    When I access the dashboard
+    Then I see metrics relevant to my team and permissions
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E15.1
+  * Notes: Access controlled.
+
+## User Story 15.3: Export Large Reports Efficiently
+- **Title:** Export Large Reports Efficiently
+- **User Story:** As a manager, I want to export reports with up to 50,000 rows within 10 seconds so that analysis is not delayed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Large report export performance
+    Given a report with 50,000 rows
+    When I request an export
+    Then the file is generated within 10 seconds
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E15.1
+  * Notes: Optimize queries and export logic.
+
+## User Story 15.4: Expose Metrics Endpoints for BI Tools
+- **Title:** Expose Metrics Endpoints for BI Tools
+- **User Story:** As a data analyst, I want metrics endpoints so that BI tools can consume operational data.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Metrics endpoint available
+    Given the application is running
+    When I access the metrics endpoint
+    Then I receive data in a format consumable by BI tools
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E15.1
+  * Notes: Secure and documented.
+
+---
+
+# E16: Mobile Access (PWA)
+
+## User Story 16.1: Provide Responsive Mobile Views
+- **Title:** Provide Responsive Mobile Views
+- **User Story:** As a warehouse worker, I want to use the app on my mobile device so that I can clock in/out and view schedules easily.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Mobile view adapts to device
+    Given I access the app on a mobile device
+    When I use core features
+    Then the UI is responsive and usable
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E04, E05, E06, E12
+  * Notes: Core flows include clock-in/out, schedules, leave.
+
+## User Story 16.2: Implement Installable PWA Manifest
+- **Title:** Implement Installable PWA Manifest
+- **User Story:** As a user, I want to install the app as a PWA so that I can access it like a native app.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: App installable as PWA
+    Given I access the app in a browser
+    When I choose to install
+    Then the app is added to my device home screen
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E16.1
+  * Notes: Meets PWA standards.
+
+## User Story 16.3: Support Offline Queue for Clock Events
+- **Title:** Support Offline Queue for Clock Events
+- **User Story:** As a worker, I want to clock in/out offline and sync when online so that my attendance is not lost.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Offline clock event queued
+    Given I am offline
+    When I clock in or out
+    Then the event is queued and synced when online, with conflict resolution
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E16.1
+  * Notes: Handles duplicate/conflicting events.
+
+## User Story 16.4: Achieve Lighthouse PWA Score â¥ 80
+- **Title:** Achieve Lighthouse PWA Score â¥ 80
+- **User Story:** As a product manager, I want the PWA to score at least 80 on Lighthouse so that quality is assured.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Lighthouse PWA score
+    Given the app is deployed
+    When I run a Lighthouse audit
+    Then the PWA score is 80 or higher
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E16.1
+  * Notes: Optimize for performance, accessibility, and best practices.
+
+---
+
+# E17: Onboarding & Offboarding Workflow
+
+## User Story 17.1: Automate New Hire Provisioning from HRIS
+- **Title:** Automate New Hire Provisioning from HRIS
+- **User Story:** As an HR user, I want new hires from HRIS to trigger account and schedule provisioning so that onboarding is efficient.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: New hire triggers onboarding tasks
+    Given a new employee appears from HRIS
+    When the sync job runs
+    Then accounts, initial schedule, and training tasks are created
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E02, E03, E05, E07, E09, E13
+  * Notes: Includes asset assignment.
+
+## User Story 17.2: Generate Required Training and Asset Assignment Tasks
+- **Title:** Generate Required Training and Asset Assignment Tasks
+- **User Story:** As a supervisor, I want onboarding to generate training and asset tasks so that compliance is ensured.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Onboarding tasks generated
+    Given a new hire is provisioned
+    When onboarding starts
+    Then required training and asset assignment tasks are created
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E17.1
+  * Notes: Tasks tracked to completion.
+
+## User Story 17.3: Automate Offboarding on Termination
+- **Title:** Automate Offboarding on Termination
+- **User Story:** As an HR user, I want terminated employees to be deprovisioned automatically so that access and assets are recovered.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Offboarding triggers deprovisioning
+    Given an employee is terminated
+    When offboarding runs
+    Then access is revoked, assets are collected, and schedules updated
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E17.1
+  * Notes: Integrates with asset and schedule modules.
+
+---
+
+# E18: Localization & Multi-Tenant
+
+## User Story 18.1: Support Multiple Warehouse Tenants
+- **Title:** Support Multiple Warehouse Tenants
+- **User Story:** As a system administrator, I want to support multiple warehouse tenants so that each operates in isolation.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Tenant isolation enforced
+    Given multiple tenants exist
+    When users access the system
+    Then data is isolated per tenant and not visible across tenants
+  ```
+- **Additional Details:**
+  * Priority: Low
+  * Story Points: 3
+  * Dependencies: E01, E02
+  * Notes: Tenant context required for all queries.
+
+## User Story 18.2: Configure Locale-Specific Settings
+- **Title:** Configure Locale-Specific Settings
+- **User Story:** As an administrator, I want to configure locale-specific settings (language, time zone, formats) per warehouse so that the system is user-friendly.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Locale settings applied per tenant
+    Given a tenant has specific locale settings
+    When users log in
+    Then UI and data formats reflect the configured locale
+  ```
+- **Additional Details:**
+  * Priority: Low
+  * Story Points: 2
+  * Dependencies: E18.1
+  * Notes: Supports language and time zone.
+
+## User Story 18.3: Localize UI and Notifications
+- **Title:** Localize UI and Notifications
+- **User Story:** As a user, I want the UI and notifications in my preferred language so that I can understand all communications.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: UI and notifications localized
+    Given my profile is set to a supported language
+    When I use the system
+    Then all UI and notifications are in my language
+  ```
+- **Additional Details:**
+  * Priority: Low
+  * Story Points: 2
+  * Dependencies: E18.2
+  * Notes: Fallback to default language.
+
+---
+
+# E19: Advanced Scheduling Optimization
+
+## User Story 19.1: Implement Constraint-Based Scheduling Engine
+- **Title:** Implement Constraint-Based Scheduling Engine
+- **User Story:** As a scheduler, I want a constraint-based engine for shift assignments so that skills, availability, and costs are optimized.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Optimized schedule generated
+    Given employee skills, availability, and cost data
+    When I generate a schedule
+    Then the engine produces an optimized assignment with no conflicts
+  ```
+- **Additional Details:**
+  * Priority: Low
+  * Story Points: 5
+  * Dependencies: E05, E07
+  * Notes: Supports custom constraints.
+
+## User Story 19.2: Allow Manual Overrides of Optimized Schedules
+- **Title:** Allow Manual Overrides of Optimized Schedules
+- **User Story:** As a supervisor, I want to manually override optimized schedules so that exceptions can be handled.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Manual override of schedule
+    Given an optimized schedule exists
+    When I make a manual change
+    Then the override is applied and logged
+  ```
+- **Additional Details:**
+  * Priority: Low
+  * Story Points: 2
+  * Dependencies: E19.1
+  * Notes: Overrides tracked in audit log.
+
+## User Story 19.3: Visualize Scheduling Constraints and Results
+- **Title:** Visualize Scheduling Constraints and Results
+- **User Story:** As a scheduler, I want to see which constraints affected scheduling so that I understand the results.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Constraints visualization
+    Given a schedule is generated
+    When I view the results
+    Then I see which constraints were applied and any violations
+  ```
+- **Additional Details:**
+  * Priority: Low
+  * Story Points: 2
+  * Dependencies: E19.1
+  * Notes: UI highlights constraint impacts.
+
+---
+
+# E20: Continuous Deployment & Observability
+
+## User Story 20.1: Set Up CI/CD Pipeline for Automated Builds and Deployments
+- **Title:** Set Up CI/CD Pipeline for Automated Builds and Deployments
+- **User Story:** As a DevOps engineer, I want a CI/CD pipeline so that builds, tests, and deployments are automated.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: CI/CD pipeline runs on commit
+    Given code is pushed to the repository
+    When the pipeline runs
+    Then the application is built, tested, and deployed automatically
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E01
+  * Notes: Integrates with container registry.
+
+## User Story 20.2: Containerize Application for Deployment
+- **Title:** Containerize Application for Deployment
+- **User Story:** As a DevOps engineer, I want the application containerized so that deployments are consistent across environments.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Application runs in container
+    Given the container image is built
+    When I run the container
+    Then the application starts and is accessible on port 8080
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E20.1
+  * Notes: Dockerfile and compose files provided.
+
+## User Story 20.3: Implement Structured Logging and Metrics
+- **Title:** Implement Structured Logging and Metrics
+- **User Story:** As an operator, I want structured logs and metrics so that application health and issues are observable.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Structured logs and metrics available
+    Given the application is running
+    When I access logs and metrics endpoints
+    Then logs are structured and metrics are exposed for monitoring
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E20.1
+  * Notes: Integrates with ELK/Prometheus.
+
+## User Story 20.4: Enable Distributed Tracing for Services
+- **Title:** Enable Distributed Tracing for Services
+- **User Story:** As an SRE, I want distributed tracing enabled so that I can trace requests across services.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Distributed tracing enabled
+    Given the application is deployed
+    When I trace a request
+    Then I can follow the request across all services with trace IDs
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E20.1
+  * Notes: Use OpenTelemetry or similar.
