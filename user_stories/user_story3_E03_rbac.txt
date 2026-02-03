@@ -1,0 +1,74 @@
+Epic E03: Role-Based Access Control (RBAC)
+
+---
+
+User Story 1: Implement Role Definitions
+As a system admin, I want roles (ADMIN, HR, SUPERVISOR, WORKER) defined so that access can be controlled based on responsibilities.
+
+Acceptance Criteria:
+Scenario: Role assignment
+  Given a user account
+  When I assign a role
+  Then the user has permissions per role definition
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Roles must be configurable
+
+---
+
+User Story 2: Endpoint and Method Security
+As a developer, I want to secure endpoints and methods based on role so that only authorized users can perform sensitive actions.
+
+Acceptance Criteria:
+Scenario: Unauthorized access
+  Given a user without required role
+  When they access a protected endpoint
+  Then they receive 401 or 403
+
+Scenario: Admin access
+  Given an ADMIN user
+  When they access any endpoint
+  Then access is granted
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Security rules covered by tests
+
+---
+
+User Story 3: Row-Level Constraints
+As a supervisor, I want to only access employee records for my team so that data privacy is maintained.
+
+Acceptance Criteria:
+Scenario: Supervisor access
+  Given a SUPERVISOR user
+  When they request employee data
+  Then only team members' records are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Team membership must be defined
+
+---
+
+User Story 4: API Key/OAuth2 Toggle
+As a system admin, I want to toggle between API key and OAuth2 authentication so that integration partners can use preferred auth methods.
+
+Acceptance Criteria:
+Scenario: Auth method toggle
+  Given system configuration
+  When I switch auth method
+  Then endpoints require the selected method
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Document toggle steps
