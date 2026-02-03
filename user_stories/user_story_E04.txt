@@ -1,0 +1,65 @@
+# E04: Time & Attendance (Clock In/Out)
+
+## User Story 4.1: Implement Clock-In/Clock-Out Endpoints
+- **Title:** Implement Clock-In/Clock-Out Endpoints
+- **User Story:** As a warehouse worker, I want to clock in and out via an endpoint so that my attendance is accurately recorded.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Clock-in event recorded
+    Given I am authenticated
+    When I POST to /attendance/clock-in with my badgeId
+    Then my clock-in time is recorded
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E02, E03
+  * Notes: Device and location capture optional.
+
+## User Story 4.2: Associate Attendance with Shifts
+- **Title:** Associate Attendance with Shifts
+- **User Story:** As a supervisor, I want attendance events to be automatically linked to scheduled shifts so that hours are calculated correctly.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Attendance linked to shift
+    Given a worker clocks in during a scheduled shift
+    When the event is recorded
+    Then the attendance is associated with that shift
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E04.1
+  * Notes: Handles overlapping shifts.
+
+## User Story 4.3: Handle Missed Punches and Corrections
+- **Title:** Handle Missed Punches and Corrections
+- **User Story:** As a worker, I want to request corrections for missed punches so that my attendance is accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Missed punch correction workflow
+    Given I missed a clock-out
+    When I submit a correction request
+    Then a supervisor approval task is created
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E04.1
+  * Notes: Corrections require approval.
+
+## User Story 4.4: Export Attendance Reports
+- **Title:** Export Attendance Reports
+- **User Story:** As an HR user, I want to export attendance data to CSV so that I can analyze and share records.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Attendance report export
+    Given attendance records exist
+    When I request an export
+    Then a CSV file is generated with daily totals
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E04.1
+  * Notes: Include all relevant fields.
