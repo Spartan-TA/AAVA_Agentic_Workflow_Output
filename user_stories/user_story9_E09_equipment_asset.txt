@@ -1,0 +1,91 @@
+Epic E09: Equipment & Asset Assignment
+
+---
+
+User Story 1: Asset Registry CRUD
+As a warehouse manager, I want to create, update, and delete asset records so that equipment is tracked.
+
+Acceptance Criteria:
+Scenario: Asset creation
+  Given valid asset data
+  When I create an asset
+  Then it is saved in the registry
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Asset types include scanners, forklifts, PPE
+
+---
+
+User Story 2: Asset Check-In/Check-Out
+As a worker, I want to check out and return assets so that usage is tracked.
+
+Acceptance Criteria:
+Scenario: Check-out
+  Given an available asset
+  When I check it out
+  Then it is assigned to me
+
+Scenario: Check-in
+  Given an assigned asset
+  When I return it
+  Then it is marked available
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: History log maintained
+
+---
+
+User Story 3: Certification Validation for Asset Use
+As a supervisor, I want to block asset use if required certifications are missing so that only qualified staff operate equipment.
+
+Acceptance Criteria:
+Scenario: Certification check
+  Given an asset requiring certification
+  When a worker without valid cert tries to check out
+  Then the system blocks the action
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Certification rules enforced
+
+---
+
+User Story 4: Asset Condition State
+As a manager, I want to maintain asset condition state so that maintenance needs are tracked.
+
+Acceptance Criteria:
+Scenario: Condition update
+  Given an asset
+  When I update condition
+  Then the new state is saved
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Condition history logged
+
+---
+
+User Story 5: Overdue Asset Return Reports
+As a supervisor, I want reports of overdue asset returns so that I can follow up.
+
+Acceptance Criteria:
+Scenario: Overdue report
+  Given assets checked out past due
+  When I request a report
+  Then overdue assets are listed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Report includes employee and asset details
