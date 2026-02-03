@@ -1,0 +1,101 @@
+Epic E04: Time & Attendance (Clock In/Out)
+
+---
+
+User Story 1: Clock-In/Clock-Out Endpoints
+As a worker, I want to clock in and out via API so that my attendance is accurately recorded.
+
+Acceptance Criteria:
+Scenario: Valid clock-in
+  Given I am scheduled for a shift
+  When I POST to /attendance/clock-in
+  Then my clock-in event is recorded
+
+Scenario: Valid clock-out
+  Given I am clocked in
+  When I POST to /attendance/clock-out
+  Then my clock-out event is recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Geofence/device capture optional
+
+---
+
+User Story 2: Geofence and Device Capture
+As a supervisor, I want clock events to capture location and device info so that I can verify attendance authenticity.
+
+Acceptance Criteria:
+Scenario: Geofence validation
+  Given a clock-in request
+  When location is outside allowed area
+  Then the request is rejected
+
+Scenario: Device capture
+  Given a clock-in event
+  When device info is submitted
+  Then it is stored with the event
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Configurable geofence
+
+---
+
+User Story 3: Calculate Hours Worked
+As payroll, I want hours worked per shift to be calculated so that payroll is accurate.
+
+Acceptance Criteria:
+Scenario: Shift association
+  Given clock-in and clock-out events
+  When I request daily totals
+  Then hours worked are computed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Handle overnight shifts
+
+---
+
+User Story 4: Missed Punches and Corrections Workflow
+As a worker, I want to request corrections for missed punches so that my attendance record is accurate.
+
+Acceptance Criteria:
+Scenario: Missed punch correction
+  Given a missed punch
+  When I submit a correction request
+  Then an approval task is created
+
+Scenario: Correction approval
+  Given a pending correction
+  When a supervisor approves
+  Then the attendance record is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Correction workflow must be auditable
+
+---
+
+User Story 5: Attendance Reports Export
+As payroll, I want to export attendance reports in CSV so that I can process payroll.
+
+Acceptance Criteria:
+Scenario: Export attendance
+  Given attendance data exists
+  When I request a CSV export
+  Then the file is generated and downloadable
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Export includes corrections
