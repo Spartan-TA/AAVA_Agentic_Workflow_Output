@@ -1,0 +1,86 @@
+Epic E05: Shift & Schedule Management
+
+---
+
+User Story 1: Create Shift Templates
+As an HR user, I want to create recurring shift templates so that scheduling is efficient.
+
+Acceptance Criteria:
+Scenario: Template creation
+  Given valid shift details
+  When I create a template
+  Then it is saved and reusable
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Templates support rotations
+
+---
+
+User Story 2: Assign Shifts to Employees
+As a supervisor, I want to assign shifts to employees so that staffing is planned.
+
+Acceptance Criteria:
+Scenario: Bulk assignment
+  Given a list of employees and a template
+  When I assign shifts
+  Then assignments are created
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03, E04
+- Notes: Audit entries generated
+
+---
+
+User Story 3: Handle Blackout Dates and Calendars
+As a scheduler, I want to configure blackout dates and operation calendars so that shifts are not assigned during warehouse closures.
+
+Acceptance Criteria:
+Scenario: Blackout date configuration
+  Given a calendar
+  When I add blackout dates
+  Then shifts are not assigned on those dates
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Supports holidays and maintenance
+
+---
+
+User Story 4: Conflict Detection
+As a supervisor, I want the system to detect scheduling conflicts so that double-booking is prevented.
+
+Acceptance Criteria:
+Scenario: Conflict detection
+  Given overlapping shifts
+  When I assign a shift
+  Then the system warns and blocks the assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Conflicts include overtime rules
+
+---
+
+User Story 5: Employee Shift Visibility
+As a worker, I want to view my upcoming shifts so that I can plan my schedule.
+
+Acceptance Criteria:
+Scenario: View personal shifts
+  Given I am logged in
+  When I access my schedule
+  Then upcoming shifts are displayed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Mobile-friendly view
