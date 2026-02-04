@@ -1,0 +1,64 @@
+Title: Shift & Schedule Management - Shift Template CRUD
+User Story: As an admin, I want to create, update, and delete shift templates so that recurring schedules are easy to manage.
+Acceptance Criteria:
+Scenario: Manage shift templates
+  Given I have access
+  When I perform CRUD on shift templates
+  Then templates are created, updated, or deleted as requested
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03, E04
+Notes: Include overtime rules.
+
+Title: Shift & Schedule Management - Assign Shifts
+User Story: As a supervisor, I want to assign shifts to employees in bulk so that scheduling is efficient.
+Acceptance Criteria:
+Scenario: Bulk assign shifts
+  Given a list of employees
+  When I assign a shift template
+  Then all selected employees are scheduled accordingly
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03, E04
+Notes: Detect conflicts.
+
+Title: Shift & Schedule Management - Conflict Detection
+User Story: As a supervisor, I want the system to detect and prevent scheduling conflicts so that employees are not double-booked.
+Acceptance Criteria:
+Scenario: Conflict prevention
+  Given an employee with an existing shift
+  When I try to assign an overlapping shift
+  Then the system blocks the assignment and shows an error
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03, E04
+Notes: Include blackout dates.
+
+Title: Shift & Schedule Management - Worker Shift View
+User Story: As a worker, I want to view my upcoming shifts so that I can plan my work.
+Acceptance Criteria:
+Scenario: View shifts
+  Given I am logged in
+  When I access my schedule
+  Then I see all upcoming assigned shifts
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03, E04
+Notes: Personal view only.
+
+Title: Shift & Schedule Management - Audit Entries
+User Story: As an admin, I want audit entries generated for schedule changes so that all modifications are traceable.
+Acceptance Criteria:
+Scenario: Audit schedule change
+  Given a shift is assigned or changed
+  When the action occurs
+  Then an audit entry is created with actor and timestamp
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03, E04
+Notes: Integrate with audit trail.
