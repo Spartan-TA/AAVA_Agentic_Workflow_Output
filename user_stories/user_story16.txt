@@ -1,0 +1,64 @@
+Title: Mobile Access (PWA) - Responsive Clock In/Out
+User Story: As a worker, I want to clock in/out from my mobile device so that I can record attendance easily.
+Acceptance Criteria:
+Scenario: Mobile clock in/out
+  Given I am on mobile
+  When I clock in/out
+  Then my attendance is recorded
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E04, E05, E06, E12
+Notes: Responsive UI.
+
+Title: Mobile Access (PWA) - View Schedules
+User Story: As a worker, I want to view my schedule on mobile so that I can plan my work.
+Acceptance Criteria:
+Scenario: Mobile schedule view
+  Given I am on mobile
+  When I view my schedule
+  Then I see upcoming shifts
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E04, E05, E06, E12
+Notes: Offline support.
+
+Title: Mobile Access (PWA) - Request Leave
+User Story: As a worker, I want to request leave from my mobile device so that I can manage absences on the go.
+Acceptance Criteria:
+Scenario: Mobile leave request
+  Given I am on mobile
+  When I request leave
+  Then the request is submitted
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E04, E05, E06, E12
+Notes: PWA manifest.
+
+Title: Mobile Access (PWA) - Announcements
+User Story: As a worker, I want to see announcements on mobile so that I stay informed.
+Acceptance Criteria:
+Scenario: Mobile announcements
+  Given announcements exist
+  When I log in on mobile
+  Then I see all current announcements
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: E04, E05, E06, E12
+Notes: Push notifications.
+
+Title: Mobile Access (PWA) - Offline Clock Event Queue
+User Story: As a worker, I want clock events to queue offline and sync when online so that no punches are lost.
+Acceptance Criteria:
+Scenario: Offline clock event
+  Given I am offline
+  When I clock in/out
+  Then the event is queued and syncs when online
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: E04, E05, E06, E12
+Notes: Conflict resolution.
