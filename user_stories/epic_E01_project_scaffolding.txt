@@ -1,0 +1,81 @@
+EPIC E01: PROJECT SCAFFOLDING & DOMAIN SETUP
+
+===========================================
+
+Title: Project Scaffolding - Spring Boot Project Initialization
+User Story: As a developer, I want to initialize a Spring Boot (Maven) project with the correct base packages so that all modules have a consistent foundation.
+Acceptance Criteria:
+Scenario: Project builds and runs
+  Given the project is cloned from the repository
+  When I run the build and start the application
+  Then the application starts on port 8080 and the health endpoint returns UP
+
+Additional Details: 
+Priority: High
+Story Points: 3
+Dependencies: None
+Notes: Ensure README contains build/run steps.
+
+---
+
+Title: Project Scaffolding - Core Module Setup
+User Story: As a developer, I want to set up core modules for employee, scheduling, attendance, and safety so that the project structure supports future feature development.
+Acceptance Criteria:
+Scenario: Core modules exist
+  Given the project is built
+  When I inspect the package structure
+  Then I see separate packages for employee, scheduling, attendance, and safety
+
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: None
+Notes: Follow domain-driven design best practices.
+
+---
+
+Title: Project Scaffolding - Database Migration Tooling
+User Story: As a developer, I want to add Flyway or Liquibase for database migrations so that schema changes are versioned and repeatable.
+Acceptance Criteria:
+Scenario: Baseline migration runs
+  Given the application starts for the first time
+  When Flyway/Liquibase executes
+  Then the baseline migration is applied without errors
+
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: None
+Notes: Choose either Flyway or Liquibase as per team standards.
+
+---
+
+Title: Project Scaffolding - Actuator Health Endpoint
+User Story: As a DevOps engineer, I want Actuator enabled so that I can monitor the application's health status.
+Acceptance Criteria:
+Scenario: Health endpoint is available
+  Given the application is running
+  When I access /actuator/health
+  Then the response is UP
+
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: None
+Notes: Expose only non-sensitive actuator endpoints by default.
+
+---
+
+Title: Project Scaffolding - Documentation
+User Story: As a developer, I want a README with build and run instructions so that new team members can onboard quickly.
+Acceptance Criteria:
+Scenario: README completeness
+  Given a new developer joins
+  When they follow the README
+  Then they can build and run the project successfully
+
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: None
+Notes: Include environment prerequisites and troubleshooting tips.
