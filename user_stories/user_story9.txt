@@ -1,0 +1,51 @@
+Title: Equipment & Asset Assignment - Asset Registry CRUD
+User Story: As an admin, I want to manage the asset registry so that all equipment is tracked.
+Acceptance Criteria:
+Scenario: Manage assets
+  Given I have access
+  When I perform CRUD on assets
+  Then assets are created, updated, or deleted
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E07
+Notes: Include asset condition.
+
+Title: Equipment & Asset Assignment - Assign/Return Assets
+User Story: As a supervisor, I want to assign and track equipment check-in/out so that accountability is maintained.
+Acceptance Criteria:
+Scenario: Assign asset
+  Given an available asset
+  When I assign to an employee
+  Then the assignment is recorded and history updated
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E07
+Notes: Prevent double assignment.
+
+Title: Equipment & Asset Assignment - Certification Check
+User Story: As a system, I want to block asset assignment if required certifications are missing so that safety is enforced.
+Acceptance Criteria:
+Scenario: Block assignment
+  Given an employee without valid cert
+  When I assign restricted equipment
+  Then the system blocks the assignment
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03, E07
+Notes: Check on assignment.
+
+Title: Equipment & Asset Assignment - Overdue Asset Report
+User Story: As an admin, I want to report overdue asset returns so that lost equipment is minimized.
+Acceptance Criteria:
+Scenario: Overdue report
+  Given assets are overdue
+  When I generate the report
+  Then I see all overdue assets and assigned employees
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: E02, E03, E07
+Notes: Include return dates.
