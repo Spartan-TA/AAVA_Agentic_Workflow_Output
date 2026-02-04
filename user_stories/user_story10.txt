@@ -1,0 +1,51 @@
+Title: Performance Reviews & Goals - Create Review Cycle
+User Story: As an HR user, I want to create quarterly/annual review cycles so that performance can be evaluated regularly.
+Acceptance Criteria:
+Scenario: Create review cycle
+  Given I have access
+  When I create a cycle
+  Then the cycle is available for assignment
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Template-based.
+
+Title: Performance Reviews & Goals - Assign Reviews
+User Story: As a supervisor, I want to assign reviews to employees so that feedback is collected.
+Acceptance Criteria:
+Scenario: Assign review
+  Given a review cycle
+  When I assign to employees
+  Then the review appears in their profile
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Role-based.
+
+Title: Performance Reviews & Goals - Submit & Acknowledge Reviews
+User Story: As an employee, I want to submit and acknowledge reviews so that feedback is documented.
+Acceptance Criteria:
+Scenario: Submit review
+  Given a pending review
+  When I submit and acknowledge
+  Then the review is finalized and immutable
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: PDF export.
+
+Title: Performance Reviews & Goals - Review History
+User Story: As an HR user, I want immutable review history so that records are auditable.
+Acceptance Criteria:
+Scenario: View history
+  Given completed reviews
+  When I view history
+  Then all past reviews are visible and uneditable
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: E02, E03
+Notes: After sign-off.
