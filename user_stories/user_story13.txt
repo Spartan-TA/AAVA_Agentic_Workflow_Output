@@ -1,0 +1,51 @@
+Title: Integration Layer (HRIS/WMS APIs) - HRIS Sync
+User Story: As a system, I want to sync new hires and terminations from HRIS so that employee records are up to date.
+Acceptance Criteria:
+Scenario: HRIS sync
+  Given new hire/term data
+  When the sync job runs
+  Then employees are created/updated accordingly
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E01, E02, E03
+Notes: Idempotent.
+
+Title: Integration Layer (HRIS/WMS APIs) - WMS Department/Location Link
+User Story: As a system, I want to link employee records to WMS departments and locations so that assignments are accurate.
+Acceptance Criteria:
+Scenario: WMS link
+  Given department/location data
+  When the link job runs
+  Then employee records are updated
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02, E03
+Notes: Sync on schedule.
+
+Title: Integration Layer (HRIS/WMS APIs) - SSO Integration
+User Story: As a user, I want to log in via SSO so that authentication is seamless.
+Acceptance Criteria:
+Scenario: SSO login
+  Given SSO is configured
+  When I log in
+  Then I am authenticated via the IDP
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02, E03
+Notes: Support JWT/OAuth2.
+
+Title: Integration Layer (HRIS/WMS APIs) - Webhook Events
+User Story: As an external system, I want to receive webhooks for key events so that integrations are real-time.
+Acceptance Criteria:
+Scenario: Webhook event
+  Given an event occurs
+  When the webhook fires
+  Then the external system receives the payload
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02, E03
+Notes: Documented in OpenAPI.
