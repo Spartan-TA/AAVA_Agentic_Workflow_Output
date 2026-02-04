@@ -1,0 +1,51 @@
+Title: Time & Attendance (Clock In/Out) - Clock In
+User Story: As a worker, I want to clock in with location and device capture so that my attendance is accurately recorded.
+Acceptance Criteria:
+Scenario: Clock in
+  Given I am at the warehouse
+  When I POST to /attendance/clock-in
+  Then my clock-in event is recorded with location and device info
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03
+Notes: Geofence optional.
+
+Title: Time & Attendance (Clock In/Out) - Clock Out
+User Story: As a worker, I want to clock out so that my shift hours are tracked.
+Acceptance Criteria:
+Scenario: Clock out
+  Given I am clocked in
+  When I POST to /attendance/clock-out
+  Then my clock-out event is recorded and hours are calculated
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Automatic shift association.
+
+Title: Time & Attendance (Clock In/Out) - Missed Punch Correction
+User Story: As a worker, I want to request corrections for missed punches so that my attendance is accurate.
+Acceptance Criteria:
+Scenario: Request correction
+  Given I missed a punch
+  When I submit a correction request
+  Then a supervisor approval task is created
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03
+Notes: Approval workflow required.
+
+Title: Time & Attendance (Clock In/Out) - Attendance Reports
+User Story: As an HR user, I want to export attendance reports so that payroll processing is accurate.
+Acceptance Criteria:
+Scenario: Export attendance
+  Given attendance data exists
+  When I export as CSV
+  Then the file contains daily totals per employee
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Include corrections.
