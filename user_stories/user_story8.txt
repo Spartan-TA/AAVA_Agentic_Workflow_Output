@@ -1,0 +1,51 @@
+Title: Safety Incidents & OSHA Reporting - Record Incident
+User Story: As a worker, I want to record safety incidents or near-misses so that hazards are tracked.
+Acceptance Criteria:
+Scenario: Record incident
+  Given an incident occurs
+  When I submit the form
+  Then the incident is saved with severity, location, and involved employees
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Validation required.
+
+Title: Safety Incidents & OSHA Reporting - Incident Workflow
+User Story: As a safety officer, I want a workflow for investigating and resolving incidents so that corrective actions are tracked.
+Acceptance Criteria:
+Scenario: Incident workflow
+  Given an open incident
+  When I update status
+  Then the incident moves through OpenâInvestigatingâResolved
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Status transitions.
+
+Title: Safety Incidents & OSHA Reporting - OSHA Summary Export
+User Story: As a safety officer, I want to export OSHA 300/300A summaries so that regulatory reporting is simplified.
+Acceptance Criteria:
+Scenario: Export OSHA summary
+  Given incident data
+  When I export
+  Then the file matches OSHA 300/300A schema
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: CSV/PDF formats.
+
+Title: Safety Incidents & OSHA Reporting - Safety Metrics Dashboard
+User Story: As a manager, I want a dashboard of safety KPIs so that I can monitor trends.
+Acceptance Criteria:
+Scenario: View dashboard
+  Given incidents are recorded
+  When I access the dashboard
+  Then I see metrics like incident rate, severity, and open cases
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Role-based access.
