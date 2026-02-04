@@ -1,0 +1,51 @@
+Title: Advanced Scheduling - Rotating Shifts
+User Story: As a scheduler, I want to create rotating shift patterns so that coverage is balanced.
+Acceptance Criteria:
+Scenario: Create rotation
+  Given I have access
+  When I define a rotation
+  Then shifts are assigned in a repeating pattern
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: None
+Notes: Support custom patterns.
+
+Title: Advanced Scheduling - Blackout Dates
+User Story: As a scheduler, I want to define blackout dates so that no shifts are assigned during closures.
+Acceptance Criteria:
+Scenario: Set blackout
+  Given a closure date
+  When I add a blackout
+  Then no shifts are scheduled on that date
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: None
+Notes: Integrate with calendar.
+
+Title: Advanced Scheduling - Overtime Rules
+User Story: As an admin, I want to define overtime rules so that extra hours are compensated correctly.
+Acceptance Criteria:
+Scenario: Set overtime
+  Given overtime policy
+  When I define rules
+  Then overtime is calculated per policy
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: None
+Notes: Policy-driven.
+
+Title: Advanced Scheduling - Schedule Optimization
+User Story: As a scheduler, I want the system to suggest optimal schedules so that conflicts and overtime are minimized.
+Acceptance Criteria:
+Scenario: Optimize schedule
+  Given staffing data
+  When I run optimization
+  Then the system suggests a conflict-free schedule
+Additional Details:
+Priority: Medium
+Story Points: 3
+Dependencies: None
+Notes: Use heuristics or rules.
