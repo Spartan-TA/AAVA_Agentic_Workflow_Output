@@ -1,0 +1,52 @@
+### E19: Advanced Scheduling (AI/Optimization)
+
+#### User Story 1
+Title: Demand Forecasting for Scheduling
+
+User Story: As a scheduler, I want demand forecasting for shifts So that schedules match operational needs.
+
+Acceptance Criteria:
+Scenario: Demand forecast
+Given historical data
+When forecasting is run
+Then demand predictions are generated
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E05, E06, E07
+- Notes: Forecasting algorithm configurable
+
+#### User Story 2
+Title: Auto-Generate Schedules Balancing Skills and Availability
+
+User Story: As a scheduler, I want auto-generated schedules that balance skills, availability, and labor cost So that staffing is optimized.
+
+Acceptance Criteria:
+Scenario: Schedule optimization
+Given employee data and constraints
+When scheduling is run
+Then optimized schedules are generated
+
+Additional Details:
+- Priority: Low
+- Story Points: 5
+- Dependencies: E05, E06, E07
+- Notes: Optimization logic documented
+
+#### User Story 3
+Title: Schedule Adjustment Recommendations
+
+User Story: As a supervisor, I want recommendations for schedule adjustments So that I can respond to changes.
+
+Acceptance Criteria:
+Scenario: Adjustment recommendation
+Given schedule changes or demand spikes
+When recommendations are generated
+Then actionable suggestions are provided
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E05, E06, E07
+- Notes: Recommendations include skill gaps
