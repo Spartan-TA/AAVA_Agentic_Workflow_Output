@@ -1,0 +1,86 @@
+### E02: Employee Master Data (CRUD)
+
+#### User Story 1
+Title: Create Employee Record
+
+User Story: As an HR user, I want to create an employee record with name, badgeId, role, department, shiftGroup, hireDate, and status So that employee information is stored centrally.
+
+Acceptance Criteria:
+Scenario: Employee creation
+Given the employee creation form
+When I submit valid employee details
+Then a new employee record is created and badgeId is unique
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Validation for badgeId uniqueness
+
+#### User Story 2
+Title: Update Employee Information
+
+User Story: As an HR user, I want to update employee information So that records remain accurate.
+
+Acceptance Criteria:
+Scenario: Employee update
+Given an existing employee record
+When I edit and submit updated details
+Then the employee record is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Audit trail for changes
+
+#### User Story 3
+Title: Delete Employee Record (Soft Delete)
+
+User Story: As an HR user, I want to soft-delete an employee record So that historical data is preserved.
+
+Acceptance Criteria:
+Scenario: Employee soft-delete
+Given an employee record
+When I initiate a delete action
+Then the record is marked inactive and not removed from the database
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Deleted records excluded from active lists
+
+#### User Story 4
+Title: Employee List Filtering & Pagination
+
+User Story: As an HR user, I want to filter and paginate employee records So that I can efficiently manage large datasets.
+
+Acceptance Criteria:
+Scenario: Filtering and pagination
+Given a list of employees
+When I apply filters and pagination
+Then only relevant records are displayed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Filters by department, status, role
+
+#### User Story 5
+Title: OpenAPI Documentation for Employee APIs
+
+User Story: As a developer, I want OpenAPI schemas for employee CRUD endpoints So that integration is standardized.
+
+Acceptance Criteria:
+Scenario: API documentation
+Given the employee endpoints
+When I access OpenAPI docs
+Then schemas and examples are available
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01
+- Notes: Must include request/response examples
