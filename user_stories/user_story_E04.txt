@@ -1,0 +1,49 @@
+Epic: E04 - Time & Attendance (Clock In/Out)
+
+User Story 1
+Title: Implement Clock-In Endpoint with Geofence
+User Story: As a worker, I want to clock in via API with geofence validation so that attendance is accurate.
+Acceptance Criteria:
+  - Given my location within geofence, When I POST to /attendance/clockin, Then my clock-in is recorded.
+  - Given my location outside geofence, When I POST to /attendance/clockin, Then a 403 error is returned.
+Additional Details:
+  Priority: High
+  Story Points: 5
+  Dependencies: E02, E03
+  Notes: Prevents fraudulent clock-ins.
+
+User Story 2
+Title: Implement Clock-Out Endpoint
+User Story: As a worker, I want to clock out via API so that my work hours are tracked.
+Acceptance Criteria:
+  - Given I am clocked in, When I POST to /attendance/clockout, Then my clock-out is recorded.
+  - Given I am not clocked in, When I POST to /attendance/clockout, Then a 400 error is returned.
+Additional Details:
+  Priority: High
+  Story Points: 3
+  Dependencies: E02, E03
+  Notes: Completes attendance cycle.
+
+User Story 3
+Title: Calculate Hours Worked per Employee
+User Story: As a supervisor, I want to view hours worked per employee so that payroll and compliance are accurate.
+Acceptance Criteria:
+  - Given an employee ID, When I GET /attendance/hours/{id}, Then total hours worked are returned.
+  - Given a date range, When I GET /attendance/hours/{id}?start=2024-06-01&end=2024-06-07, Then hours for that period are returned.
+Additional Details:
+  Priority: High
+  Story Points: 3
+  Dependencies: E02, E03
+  Notes: Supports payroll integration.
+
+User Story 4
+Title: Handle Missed Punches and Corrections
+User Story: As an HR user, I want to correct missed punches so that attendance records are accurate.
+Acceptance Criteria:
+  - Given a missed punch, When I submit a correction request, Then it is logged for review.
+  - Given a correction request, When it is approved, Then the attendance record is updated.
+Additional Details:
+  Priority: High
+  Story Points: 5
+  Dependencies: E02, E03
+  Notes: Ensures data integrity.
