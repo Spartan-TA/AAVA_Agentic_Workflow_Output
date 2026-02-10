@@ -1,0 +1,69 @@
+### E01: Project Scaffolding & Domain Setup
+
+#### User Story 1
+Title: Initialize Spring Boot Project
+
+User Story: As a developer, I want to initialize a Spring Boot project with Maven So that I have a standardized foundation for all modules.
+
+Acceptance Criteria:
+Scenario: Project initialization
+Given a clean workspace
+When I run the Maven initialization command
+Then a Spring Boot project is created with the correct base package structure
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run instructions
+
+#### User Story 2
+Title: Configure Core Modules
+
+User Story: As a developer, I want to set up core modules for employee, scheduling, attendance, and safety So that each domain is isolated and maintainable.
+
+Acceptance Criteria:
+Scenario: Core module setup
+Given the initialized project
+When I create modules for employee, scheduling, attendance, and safety
+Then each module is accessible and compiles without errors
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01
+- Notes: Modules must follow naming conventions
+
+#### User Story 3
+Title: Database Migration Setup
+
+User Story: As a developer, I want to add Flyway/Liquibase for DB migrations So that database changes are versioned and repeatable.
+
+Acceptance Criteria:
+Scenario: Migration tool integration
+Given the project with database connectivity
+When I add Flyway/Liquibase configuration
+Then baseline migration runs successfully and tables are created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Migration scripts must be documented
+
+#### User Story 4
+Title: Enable Actuator Health Endpoint
+
+User Story: As a DevOps engineer, I want to enable Spring Boot Actuator So that I can monitor application health.
+
+Acceptance Criteria:
+Scenario: Health endpoint availability
+Given the running application
+When I access /actuator/health
+Then the endpoint returns UP status
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Health endpoint must be secured
