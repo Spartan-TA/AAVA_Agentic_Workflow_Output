@@ -1,0 +1,69 @@
+### E10: Performance Reviews & Goals
+
+#### User Story 1
+Title: Create Review Templates
+
+User Story: As an HR user, I want to create quarterly and annual review templates So that performance reviews are standardized.
+
+Acceptance Criteria:
+Scenario: Template creation
+Given the template form
+When I submit template details
+Then a review template is created
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Template fields configurable
+
+#### User Story 2
+Title: Assign Reviews to Employees
+
+User Story: As a supervisor, I want to assign reviews to employees So that feedback cycles are initiated.
+
+Acceptance Criteria:
+Scenario: Review assignment
+Given a review template and employee list
+When I assign reviews
+Then employees receive review tasks
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Assignment workflow
+
+#### User Story 3
+Title: Submit and Acknowledge Reviews
+
+User Story: As an employee, I want to submit and acknowledge reviews So that feedback is documented.
+
+Acceptance Criteria:
+Scenario: Review submission
+Given a review task
+When I submit and acknowledge
+Then the review is recorded and immutable after sign-off
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: PDF export supported
+
+#### User Story 4
+Title: Role-Based Review Visibility
+
+User Story: As an HR user, I want role-based visibility of reviews So that confidentiality is maintained.
+
+Acceptance Criteria:
+Scenario: Review visibility
+Given a review record
+When accessed by different roles
+Then visibility is restricted as per role
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Access rules documented
