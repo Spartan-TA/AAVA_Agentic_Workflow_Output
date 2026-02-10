@@ -1,0 +1,69 @@
+### E03: Role-Based Access Control (RBAC)
+
+#### User Story 1
+Title: Implement Role-Based Endpoint Security
+
+User Story: As a system administrator, I want to restrict API access based on user roles So that sensitive operations are protected.
+
+Acceptance Criteria:
+Scenario: Role-based access
+Given a user with a specific role
+When they access a protected endpoint
+Then access is granted or denied based on role
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Roles: ADMIN, HR, SUPERVISOR, WORKER
+
+#### User Story 2
+Title: API Key and OAuth2 Toggle
+
+User Story: As a DevOps engineer, I want to toggle between API key and OAuth2 authentication So that security can be configured per environment.
+
+Acceptance Criteria:
+Scenario: Authentication toggle
+Given the application configuration
+When I switch between API key and OAuth2
+Then endpoints enforce the selected authentication method
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Configurable via properties
+
+#### User Story 3
+Title: Row-Level Security for Employee Data
+
+User Story: As a supervisor, I want to access only my team's employee records So that privacy is maintained.
+
+Acceptance Criteria:
+Scenario: Row-level access
+Given a supervisor user
+When they query employee data
+Then only records for their team are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Team assignment logic required
+
+#### User Story 4
+Title: Unauthorized and Forbidden Response Handling
+
+User Story: As a developer, I want unauthorized and forbidden actions to return proper HTTP status codes So that clients handle errors correctly.
+
+Acceptance Criteria:
+Scenario: Error response
+Given an unauthorized or forbidden request
+When the endpoint is accessed
+Then 401 or 403 is returned
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01, E02
+- Notes: Standardized error messages
