@@ -1,0 +1,69 @@
+### E14: Audit Trail & Compliance
+
+#### User Story 1
+Title: Centralized Audit Logging for Sensitive Changes
+
+User Story: As a compliance officer, I want centralized audit logging for sensitive changes So that all actions are traceable.
+
+Acceptance Criteria:
+Scenario: Audit log entry
+Given a sensitive change (employee PII, schedules, approvals, payroll)
+When the change occurs
+Then an audit log entry is created with actor, timestamp, before/after
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03
+- Notes: Immutable log table
+
+#### User Story 2
+Title: Export Audit Logs by Date/User/Entity
+
+User Story: As an auditor, I want to export audit logs by date, user, or entity So that compliance reviews are efficient.
+
+Acceptance Criteria:
+Scenario: Audit log export
+Given audit log data
+When I request export
+Then logs are exported in CSV format
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Export filters supported
+
+#### User Story 3
+Title: Tamper-Evident Storage for Audit Logs
+
+User Story: As a compliance officer, I want audit logs stored in a tamper-evident manner So that forensic analysis is possible.
+
+Acceptance Criteria:
+Scenario: Tamper-evident storage
+Given audit log entries
+When logs are stored
+Then integrity is verifiable
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03
+- Notes: Hashing or blockchain-based storage
+
+#### User Story 4
+Title: Test Coverage for Audit Logging
+
+User Story: As a developer, I want tests to validate audit logging coverage So that all sensitive actions are logged.
+
+Acceptance Criteria:
+Scenario: Audit logging tests
+Given sensitive actions
+When tests are run
+Then audit logs are generated for all actions
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Test cases documented
