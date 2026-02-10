@@ -1,0 +1,73 @@
+Epic: E02 - Employee Master Data (CRUD)
+
+User Story 1
+Title: Create Employee Domain Model
+User Story: As a developer, I want to define the Employee domain model with fields name, badgeId, role, department, shiftGroup, hireDate, and status so that employee data is structured.
+Acceptance Criteria:
+  - Given the Employee entity, When I inspect its fields, Then it includes name, badgeId, role, department, shiftGroup, hireDate, and status.
+  - Given the Employee entity, When I persist it, Then all fields are stored in the database.
+Additional Details:
+  Priority: High
+  Story Points: 3
+  Dependencies: E01
+  Notes: Foundation for CRUD operations.
+
+User Story 2
+Title: Implement Create Employee API
+User Story: As an HR user, I want to create a new employee record via API so that onboarding is efficient.
+Acceptance Criteria:
+  - Given valid employee data, When I POST to /employees, Then a new employee is created and a 201 response is returned.
+  - Given invalid employee data, When I POST to /employees, Then a 400 error is returned with validation messages.
+Additional Details:
+  Priority: High
+  Story Points: 3
+  Dependencies: E01
+  Notes: Supports onboarding workflow.
+
+User Story 3
+Title: Implement Read Employee API
+User Story: As a supervisor, I want to retrieve employee details via API so that I can view their information.
+Acceptance Criteria:
+  - Given an employee ID, When I GET /employees/{id}, Then the employee details are returned.
+  - Given a non-existent ID, When I GET /employees/{id}, Then a 404 error is returned.
+Additional Details:
+  Priority: High
+  Story Points: 2
+  Dependencies: E01
+  Notes: Enables employee lookup.
+
+User Story 4
+Title: Implement Update Employee API
+User Story: As an HR user, I want to update employee details via API so that records remain accurate.
+Acceptance Criteria:
+  - Given an employee ID and valid update data, When I PUT /employees/{id}, Then the employee record is updated.
+  - Given invalid update data, When I PUT /employees/{id}, Then a 400 error is returned.
+Additional Details:
+  Priority: High
+  Story Points: 3
+  Dependencies: E01
+  Notes: Supports data corrections.
+
+User Story 5
+Title: Implement Delete Employee API
+User Story: As an admin, I want to delete employee records via API so that terminated employees are removed.
+Acceptance Criteria:
+  - Given an employee ID, When I DELETE /employees/{id}, Then the employee is removed and a 204 response is returned.
+  - Given a non-existent ID, When I DELETE /employees/{id}, Then a 404 error is returned.
+Additional Details:
+  Priority: High
+  Story Points: 2
+  Dependencies: E01
+  Notes: Ensures data hygiene.
+
+User Story 6
+Title: List Employees with Filtering and Pagination
+User Story: As an HR user, I want to list employees with filtering by department, role, and status so that I can manage large datasets.
+Acceptance Criteria:
+  - Given filter parameters, When I GET /employees?department=Warehouse&role=Worker, Then only matching employees are returned.
+  - Given pagination parameters, When I GET /employees?page=2&size=10, Then the correct page of results is returned.
+Additional Details:
+  Priority: High
+  Story Points: 3
+  Dependencies: E01
+  Notes: Supports efficient data access.
