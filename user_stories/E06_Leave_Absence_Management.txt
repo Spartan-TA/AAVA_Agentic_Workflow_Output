@@ -1,0 +1,34 @@
+### E06: Leave & Absence Management
+
+#### Title: Leave Request Workflow
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that my time off is tracked and approved
+Acceptance Criteria:
+Scenario: Leave request submitted
+Given I am authenticated
+When I submit a leave request
+Then a supervisor receives approval task
+
+Scenario: Leave approved/denied
+Given a leave request exists
+When supervisor acts
+Then balances update and scheduled shifts flagged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E05
+- Notes: Integration hooks for scheduling/payroll
+
+#### Title: Accrual Balances & Policies
+User Story: As an HR user I want to manage leave accrual balances and policies So that leave is compliant and accurate
+Acceptance Criteria:
+Scenario: Accrual balance updated
+Given leave is approved
+When accrual policy applies
+Then balances update per policy
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Leave Request Workflow
+- Notes: Exports show approved leaves
