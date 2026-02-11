@@ -1,0 +1,46 @@
+### E06 - Leave & Absence Management
+
+**User Story 1**
+- Title: Request Leave (PTO, Sick, Unpaid)
+- User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my absences are tracked.
+- Acceptance Criteria:
+  - Given I am logged in,
+    When I submit a leave request,
+    Then the request is recorded and pending approval.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Leave workflow.
+
+**User Story 2**
+- Title: Approve or Deny Leave Requests
+- User Story: As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+- Acceptance Criteria:
+  - Given a leave request is pending,
+    When I approve or deny,
+    Then the employee is notified and balances update.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Supervisor workflow.
+
+**User Story 3**
+- Title: Update Leave Accrual Balances
+- User Story: As an HR user, I want leave accrual balances updated automatically so that records are accurate.
+- Acceptance Criteria:
+  - Given a leave is approved,
+    When the balance is updated,
+    Then the employee's accrual reflects the change.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Policy compliance.
+
+**User Story 4**
+- Title: Flag Scheduled Shifts for Coverage
+- User Story: As a scheduler, I want scheduled shifts auto-flagged for coverage when leave is approved so that staffing gaps are addressed.
+- Acceptance Criteria:
+  - Given a leave overlaps a scheduled shift,
+    When leave is approved,
+    Then the shift is flagged for coverage.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: Staffing continuity.
+
+**User Story 5**
+- Title: Export Approved Leaves
+- User Story: As an HR user, I want to export approved leaves so that payroll and compliance reporting is easier.
+- Acceptance Criteria:
+  - Given approved leave data exists,
+    When I request an export,
+    Then the data is downloadable in CSV format.
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E02, E03, E05, Notes: Reporting.
