@@ -1,0 +1,46 @@
+### E18 - Localization & Multi-Tenant
+
+**User Story 1**
+- Title: Support Multiple Warehouses (Tenants) with Isolated Data
+- User Story: As a system admin, I want multiple warehouses supported as tenants with isolated data so that privacy is maintained.
+- Acceptance Criteria:
+  - Given tenants exist,
+    When I query data,
+    Then only data for the current tenant is returned.
+- Additional Details: Priority: Low, Story Points: 3, Dependencies: E01, E02, E05, Notes: Privacy.
+
+**User Story 2**
+- Title: UI Localization for English/Spanish
+- User Story: As a worker, I want UI localization for English and Spanish so that I can use the app in my preferred language.
+- Acceptance Criteria:
+  - Given translations exist,
+    When I switch locale,
+    Then UI strings are displayed in the selected language.
+- Additional Details: Priority: Low, Story Points: 2, Dependencies: E01, E02, E05, Notes: Accessibility.
+
+**User Story 3**
+- Title: Timezone-Aware Scheduling
+- User Story: As a worker, I want scheduling to be timezone-aware so that shift times are accurate.
+- Acceptance Criteria:
+  - Given I set my timezone,
+    When I view schedules,
+    Then dates/times are shown in my timezone.
+- Additional Details: Priority: Low, Story Points: 2, Dependencies: E01, E02, E05, Notes: Accuracy.
+
+**User Story 4**
+- Title: Locale Switcher in UI
+- User Story: As a worker, I want a locale switcher in the UI so that I can change language easily.
+- Acceptance Criteria:
+  - Given the switcher exists,
+    When I select a locale,
+    Then the UI updates immediately.
+- Additional Details: Priority: Low, Story Points: 1, Dependencies: E01, E02, E05, Notes: Usability.
+
+**User Story 5**
+- Title: Automated Tests for Tenant Isolation
+- User Story: As a developer, I want automated tests for tenant isolation so that cross-tenant data leaks are prevented.
+- Acceptance Criteria:
+  - Given tests are written,
+    When I run them,
+    Then only tenant-specific data is accessible.
+- Additional Details: Priority: Low, Story Points: 1, Dependencies: E01, E02, E05, Notes: Security.
