@@ -1,0 +1,48 @@
+Epic: E02 - Employee Master Data (CRUD)
+
+===========================================
+
+1. Title: Employee Creation
+   User Story: As an HR manager, I want to create employee records with name, badgeId, role, department, shiftGroup, hireDate, and status so that employee data is centralized.
+   Acceptance Criteria:
+     Scenario: Create employee
+       Given I have valid employee data
+       When I POST to /employees
+       Then a new employee is created with a unique badgeId
+   Additional Details: Priority: High, Story Points: 5, Dependencies: E01, Notes: Validate badgeId uniqueness.
+
+2. Title: Employee Update
+   User Story: As an HR manager, I want to update employee details so that records remain accurate and current.
+   Acceptance Criteria:
+     Scenario: Update employee
+       Given an existing employee record
+       When I PUT/PATCH to /employees/{id}
+       Then the employee details are updated
+   Additional Details: Priority: High, Story Points: 3, Dependencies: Employee Creation, Notes: Support partial updates.
+
+3. Title: Employee Deletion (Soft Delete)
+   User Story: As an HR manager, I want to soft-delete employee records so that historical data is preserved.
+   Acceptance Criteria:
+     Scenario: Soft delete employee
+       Given an employee exists
+       When I DELETE /employees/{id}
+       Then the employee is marked as inactive but not removed from the database
+   Additional Details: Priority: High, Story Points: 2, Dependencies: Employee Creation, Notes: Implement status flag.
+
+4. Title: Employee Listing with Filtering
+   User Story: As an HR manager, I want to list employees with pagination and filtering so that I can easily find relevant records.
+   Acceptance Criteria:
+     Scenario: List employees
+       Given employees exist
+       When I GET /employees with filters
+       Then the response is paginated and filtered as requested
+   Additional Details: Priority: High, Story Points: 3, Dependencies: Employee Creation, Notes: Support department/role filters.
+
+5. Title: OpenAPI Schema Documentation
+   User Story: As a developer, I want OpenAPI schemas with examples for employee APIs so that integration is straightforward.
+   Acceptance Criteria:
+     Scenario: API documentation available
+       Given the API is implemented
+       When I access the OpenAPI docs
+       Then schemas and examples are present for employee endpoints
+   Additional Details: Priority: High, Story Points: 2, Dependencies: Employee CRUD endpoints, Notes: Keep docs up to date.
