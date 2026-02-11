@@ -1,0 +1,48 @@
+Epic: E05 - Shift & Schedule Management
+
+===========================================
+
+1. Title: Shift Template Creation
+   User Story: As an HR manager, I want to create recurring shift templates so that scheduling is streamlined.
+   Acceptance Criteria:
+     Scenario: Create shift template
+       Given I am logged in
+       When I POST to /shifts/templates
+       Then a new shift template is created
+   Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, E04, Notes: Support rotation and overtime rules.
+
+2. Title: Shift Assignment to Employees
+   User Story: As a supervisor, I want to assign shifts to employees so that staffing is planned.
+   Acceptance Criteria:
+     Scenario: Assign shift
+       Given employees exist
+       When I assign a shift
+       Then the employee's schedule is updated
+   Additional Details: Priority: High, Story Points: 5, Dependencies: Shift Template Creation, Notes: Bulk assignment supported.
+
+3. Title: Conflict Detection & Prevention
+   User Story: As a scheduler, I want the system to detect and prevent scheduling conflicts so that shifts do not overlap.
+   Acceptance Criteria:
+     Scenario: Conflict prevention
+       Given a shift is being assigned
+       When a conflict is detected
+       Then the assignment is blocked and an error is shown
+   Additional Details: Priority: High, Story Points: 5, Dependencies: Shift Assignment to Employees, Notes: Include blackout dates.
+
+4. Title: Personal Shift View
+   User Story: As a worker, I want to view my upcoming shifts so that I can plan my work.
+   Acceptance Criteria:
+     Scenario: View personal shifts
+       Given I am logged in
+       When I access my schedule
+       Then my upcoming shifts are displayed
+   Additional Details: Priority: High, Story Points: 2, Dependencies: Shift Assignment to Employees, Notes: Mobile-friendly view.
+
+5. Title: Audit Entry Generation
+   User Story: As a compliance officer, I want audit entries generated for shift changes so that records are traceable.
+   Acceptance Criteria:
+     Scenario: Audit entry created
+       Given a shift is created or modified
+       When the action occurs
+       Then an audit entry is logged with actor and timestamp
+   Additional Details: Priority: High, Story Points: 2, Dependencies: Shift Assignment to Employees, Notes: Link to E14.
