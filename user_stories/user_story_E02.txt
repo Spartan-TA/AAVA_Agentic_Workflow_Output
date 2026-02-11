@@ -1,0 +1,49 @@
+### E02 - Employee Master Data (CRUD)
+
+**User Story 1**
+- Title: Create Employee Entity and Repository
+- User Story: As a developer, I want to create an Employee entity and repository so that employee records can be persisted.
+- Acceptance Criteria:
+  - Given the Employee entity is defined,
+    When I save a new employee,
+    Then the record is stored in the database.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Foundation for CRUD.
+
+**User Story 2**
+- Title: Implement Employee CRUD APIs
+- User Story: As an HR user, I want to create, read, update, and delete employee records via APIs so that employee data is managed efficiently.
+- Acceptance Criteria:
+  - Given the API is available,
+    When I POST/GET/PUT/PATCH/DELETE to /employees,
+    Then the corresponding employee record is created, retrieved, updated, or deleted.
+  - Given a badgeId is used,
+    When I create an employee,
+    Then badgeId is unique.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E01, Notes: Supports all CRUD operations.
+
+**User Story 3**
+- Title: Support Soft-Delete for Employees
+- User Story: As an HR user, I want to soft-delete employee records so that historical data is preserved.
+- Acceptance Criteria:
+  - Given an employee record exists,
+    When I delete the employee,
+    Then the record is marked as inactive but not removed from the database.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Compliance requirement.
+
+**User Story 4**
+- Title: Enable Pagination and Filtering
+- User Story: As an HR user, I want to paginate and filter employee records so that large datasets are manageable.
+- Acceptance Criteria:
+  - Given multiple employee records exist,
+    When I request /employees with pagination and filter parameters,
+    Then only the relevant subset is returned.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Usability for large data.
+
+**User Story 5**
+- Title: Provide OpenAPI Schemas with Examples
+- User Story: As a developer, I want OpenAPI schemas with examples for employee APIs so that integration is easier.
+- Acceptance Criteria:
+  - Given the API documentation is generated,
+    When I view the OpenAPI schema,
+    Then all endpoints have example requests and responses.
+- Additional Details: Priority: High, Story Points: 1, Dependencies: E01, Notes: Integration support.
