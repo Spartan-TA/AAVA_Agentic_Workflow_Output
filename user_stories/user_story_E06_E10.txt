@@ -1,0 +1,387 @@
+# Warehouse Employee Management User Stories - Epics E06-E10
+
+## E06: Leave & Absence Management
+
+### User Story 6.1: Request Leave
+- **Title:** Employee Leave Request
+- **User Story:** As a WORKER I want to request PTO, sick, or unpaid leave so that my absences are tracked and approved.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Submit leave request
+    Given I am logged in as a worker
+    When I submit a leave request with dates and type
+    Then the request is created and pending approval
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E02, E03, E05
+  * Notes: Leave types configurable.
+
+### User Story 6.2: Approve or Deny Leave
+- **Title:** Supervisor Leave Approval
+- **User Story:** As a SUPERVISOR I want to approve or deny leave requests so that team coverage is maintained.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Approve leave request
+    Given a leave request is pending
+    When I approve or deny the request
+    Then the employee and schedule are updated accordingly
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: User Story 6.1
+  * Notes: Approval workflow with notifications.
+
+### User Story 6.3: Update Leave Balances
+- **Title:** Track Leave Accruals and Balances
+- **User Story:** As an HR I want leave balances to update automatically so that accruals and usage are accurate.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Leave balance updates on approval
+    Given an employee has a leave balance
+    When a leave request is approved
+    Then the balance is decremented by the approved amount
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: User Story 6.2
+  * Notes: Supports different accrual policies.
+
+### User Story 6.4: Exclude Approved Leave from Scheduling
+- **Title:** Auto-Flag Scheduled Shifts for Leave
+- **User Story:** As a SUPERVISOR I want scheduled shifts to be auto-flagged when an employee is on approved leave so that coverage can be arranged.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Scheduled shifts flagged for coverage
+    Given an employee has approved leave
+    When I view the schedule
+    Then affected shifts are flagged for coverage
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: User Story 6.2, E05
+  * Notes: Integration with scheduling module.
+
+### User Story 6.5: Export Leave Data
+- **Title:** Export Approved Leave Records
+- **User Story:** As an HR I want to export approved leave records so that payroll and compliance are accurate.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Export leave data as CSV
+    Given approved leave records exist
+    When I request an export
+    Then a CSV file is generated with all relevant leave data
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: User Story 6.2
+  * Notes: Export includes employee, dates, type, and approval status.
+
+---
+
+## E07: Training & Certification Tracking
+
+### User Story 7.1: Track Employee Certifications
+- **Title:** CRUD for Certifications
+- **User Story:** As an HR I want to manage employee certifications so that compliance and training records are up to date.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Add and update certifications
+    Given an employee profile
+    When I add or update a certification
+    Then the certification is saved and visible on the profile
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E02, E03
+  * Notes: Includes certification type, issue, and expiry dates.
+
+### User Story 7.2: Alert on Expiring Certifications
+- **Title:** Certification Expiry Alerts
+- **User Story:** As a SUPERVISOR I want to receive alerts before certifications expire so that renewals are not missed.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Alert 30 and 7 days before expiry
+    Given a certification is expiring soon
+    When the alert window is reached
+    Then the supervisor and employee receive a notification
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: User Story 7.1
+  * Notes: Alerts at 30 and 7 days.
+
+### User Story 7.3: Block Assignment for Expired Certifications
+- **Title:** Prevent Assignment to Unqualified Employees
+- **User Story:** As a SUPERVISOR I want the system to block assignment to tasks requiring valid certifications so that only qualified employees are assigned.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Assignment blocked for expired certs
+    Given an employee's certification is expired
+    When I try to assign them to a restricted task
+    Then the system prevents the assignment and shows an error
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: User Story 7.1, E05
+  * Notes: Enforced at scheduling and asset assignment.
+
+### User Story 7.4: Upload Proof of Certification
+- **Title:** Upload Certification Documents
+- **User Story:** As an HR I want to upload proof documents for certifications so that records are verifiable.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Upload and view certification proof
+    Given an employee certification
+    When I upload a document
+    Then the document is stored and viewable from the employee profile
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: User Story 7.1
+  * Notes: Supports PDF, JPG, PNG.
+
+---
+
+## E08: Safety Incidents & OSHA Reporting
+
+### User Story 8.1: Record Safety Incidents
+- **Title:** Submit Safety Incident Report
+- **User Story:** As a WORKER I want to report safety incidents or near-misses so that hazards are documented and addressed.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Submit incident with required fields
+    Given I am logged in as a worker
+    When I submit a safety incident with severity, location, and description
+    Then the incident is recorded and assigned a status of Open
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E02, E03
+  * Notes: Required fields validated.
+
+### User Story 8.2: Incident Investigation Workflow
+- **Title:** Investigate and Resolve Incidents
+- **User Story:** As a SUPERVISOR I want to manage the investigation workflow for incidents so that corrective actions are tracked.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Incident status workflow
+    Given an incident is Open
+    When I update the status to Investigating or Resolved
+    Then the status and investigation notes are saved
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: User Story 8.1
+  * Notes: Status transitions: Open â Investigating â Resolved.
+
+### User Story 8.3: OSHA Report Generation
+- **Title:** Generate OSHA Summary Reports
+- **User Story:** As an ADMIN I want to generate OSHA 300/300A summary reports so that regulatory requirements are met.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Export OSHA summary
+    Given incident data exists
+    When I request an OSHA report
+    Then a summary file is generated with required fields
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: User Story 8.1
+  * Notes: Exportable as CSV/PDF.
+
+### User Story 8.4: Safety Metrics Dashboard
+- **Title:** View Safety Metrics Dashboard
+- **User Story:** As a SUPERVISOR I want to view safety KPIs so that I can monitor trends and take action.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Dashboard shows safety metrics
+    Given incident data exists
+    When I view the dashboard
+    Then I see metrics for incidents, near-misses, and resolution times
+  ```
+- **Additional Details:**
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: User Story 8.1
+  * Notes: Metrics endpoints available.
+
+---
+
+## E09: Equipment & Asset Assignment
+
+### User Story 9.1: Manage Asset Registry
+- **Title:** CRUD for Equipment and Assets
+- **User Story:** As an ADMIN I want to manage a registry of warehouse equipment so that all assets are tracked.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Add and update assets
+    Given I am an admin
+    When I add or update an asset
+    Then the asset is saved in the registry
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E02, E03, E07
+  * Notes: Includes asset type, serial, condition.
+
+### User Story 9.2: Assign and Track Equipment
+- **Title:** Assign Equipment to Employees
+- **User Story:** As a SUPERVISOR I want to assign and track equipment checkout/return so that accountability is maintained.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Check out and return equipment
+    Given an asset and employee exist
+    When I check out equipment to an employee
+    Then the assignment is recorded and asset status is updated
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: User Story 9.1
+  * Notes: Tracks check-in/out history.
+
+### User Story 9.3: Block Assignment Without Valid Certification
+- **Title:** Prevent Equipment Use Without Certification
+- **User Story:** As a SUPERVISOR I want the system to block equipment assignment if required certifications are missing so that safety is enforced.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Block assignment for missing certs
+    Given an employee lacks a required certification
+    When I try to assign restricted equipment
+    Then the system prevents the assignment and shows an error
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: User Story 9.1, E07
+  * Notes: Enforced at assignment time.
+
+### User Story 9.4: Asset Condition Tracking
+- **Title:** Track Asset Condition and Maintenance
+- **User Story:** As an ADMIN I want to record asset condition and maintenance status so that equipment is safe and reliable.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Update asset condition
+    Given an asset exists
+    When I update its condition or maintenance status
+    Then the changes are logged and visible in the asset history
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: User Story 9.1
+  * Notes: Supports scheduled maintenance.
+
+### User Story 9.5: Overdue Asset Return Reports
+- **Title:** Report Overdue Equipment Returns
+- **User Story:** As a SUPERVISOR I want to see reports of overdue asset returns so that follow-up actions can be taken.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Generate overdue returns report
+    Given assets are checked out
+    When the return date is past due
+    Then the asset appears in the overdue report
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: User Story 9.2
+  * Notes: Report includes employee and asset details.
+
+---
+
+## E10: Performance Reviews & Goals
+
+### User Story 10.1: Create Review Templates
+- **Title:** Define Performance Review Templates
+- **User Story:** As an HR I want to create templates for performance reviews so that evaluations are consistent.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Create and view review templates
+    Given I am an HR user
+    When I create a new review template
+    Then the template is saved and available for use
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E02, E03
+  * Notes: Templates include competencies and rating scales.
+
+### User Story 10.2: Assign Reviews to Employees
+- **Title:** Assign Performance Reviews
+- **User Story:** As a SUPERVISOR I want to assign performance reviews to employees so that feedback cycles are initiated.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Assign review to employee
+    Given a review template exists
+    When I assign it to an employee
+    Then the review appears in the employee's profile
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: User Story 10.1
+  * Notes: Supports quarterly and annual cycles.
+
+### User Story 10.3: Submit and Acknowledge Reviews
+- **Title:** Submit and Acknowledge Performance Reviews
+- **User Story:** As a SUPERVISOR and WORKER I want to submit and acknowledge reviews so that feedback is documented and agreed upon.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Submit and acknowledge review
+    Given a review is assigned
+    When the supervisor submits ratings and comments
+    Then the employee can acknowledge the review
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: User Story 10.2
+  * Notes: Both parties must acknowledge.
+
+### User Story 10.4: Export Reviews as PDF
+- **Title:** Export Performance Reviews
+- **User Story:** As an HR I want to export completed reviews as PDF so that records are archived and shared.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Export review as PDF
+    Given a review is completed
+    When I request an export
+    Then a PDF file is generated with all review details
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: User Story 10.3
+  * Notes: PDF includes signatures and timestamps.
+
+### User Story 10.5: Immutable Review History
+- **Title:** Lock Reviews After Sign-Off
+- **User Story:** As an HR I want reviews to be immutable after sign-off so that records cannot be altered.
+- **Acceptance Criteria:**
+  ```
+  Scenario: Review locked after acknowledgment
+    Given a review is acknowledged by both parties
+    When I attempt to edit the review
+    Then the system prevents changes and displays a message
+  ```
+- **Additional Details:**
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: User Story 10.3
+  * Notes: Supports audit/compliance.
