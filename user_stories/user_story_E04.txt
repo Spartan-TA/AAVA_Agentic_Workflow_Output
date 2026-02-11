@@ -1,0 +1,46 @@
+### E04 - Time & Attendance (Clock In/Out)
+
+**User Story 1**
+- Title: Implement Clock-In/Clock-Out Endpoints
+- User Story: As a worker, I want to clock in and out via endpoints so that my attendance is accurately recorded.
+- Acceptance Criteria:
+  - Given the endpoint is available,
+    When I POST to /attendance/clock-in or /clock-out,
+    Then my attendance event is validated and recorded.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Core attendance feature.
+
+**User Story 2**
+- Title: Associate Clock Events with Shifts
+- User Story: As a worker, I want my clock events automatically associated with my scheduled shift so that hours worked are tracked.
+- Acceptance Criteria:
+  - Given a clock event is recorded,
+    When I am scheduled for a shift,
+    Then the event is linked to the shift.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Accurate tracking.
+
+**User Story 3**
+- Title: Handle Missed Punches and Corrections
+- User Story: As a worker, I want to submit corrections for missed punches so that my attendance is accurate.
+- Acceptance Criteria:
+  - Given a missed punch occurs,
+    When I submit a correction,
+    Then an approval task is created for my supervisor.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Workflow for corrections.
+
+**User Story 4**
+- Title: Export Attendance Reports
+- User Story: As an HR user, I want to export attendance reports in CSV format so that payroll processing is streamlined.
+- Acceptance Criteria:
+  - Given attendance data exists,
+    When I request a CSV export,
+    Then the report is generated and downloadable.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Payroll integration.
+
+**User Story 5**
+- Title: Capture Device and Geofence Data
+- User Story: As a supervisor, I want device and geofence data captured during clock-in/out so that attendance is validated.
+- Acceptance Criteria:
+  - Given a clock event is submitted,
+    When device and geofence info is provided,
+    Then the event is validated and stored with location/device metadata.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Optional for compliance.
