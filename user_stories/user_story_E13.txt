@@ -1,0 +1,46 @@
+### E13 - Integration Layer (HRIS/WMS APIs)
+
+**User Story 1**
+- Title: Expose JWT/OAuth2-Secured REST APIs
+- User Story: As a developer, I want REST APIs secured with JWT/OAuth2 so that integrations are safe.
+- Acceptance Criteria:
+  - Given APIs are exposed,
+    When I authenticate,
+    Then access is granted only with valid tokens.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, E02, E03, Notes: Security.
+
+**User Story 2**
+- Title: HRIS Sync Job for New Hires/Terms
+- User Story: As an HR user, I want a sync job that creates/updates employees from HRIS so that master data is current.
+- Acceptance Criteria:
+  - Given HRIS integration is configured,
+    When a sync job runs,
+    Then new hires and terminations are reflected in the system.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, E02, E03, Notes: Data consistency.
+
+**User Story 3**
+- Title: WMS Link for Department/Location
+- User Story: As a warehouse manager, I want WMS integration for department/location so that employee assignments are accurate.
+- Acceptance Criteria:
+  - Given WMS integration is configured,
+    When department/location data is synced,
+    Then employee records are updated.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, E02, E03, Notes: Accurate assignments.
+
+**User Story 4**
+- Title: Idempotent Webhooks for Events
+- User Story: As a developer, I want webhooks for events to be idempotent so that duplicate processing is avoided.
+- Acceptance Criteria:
+  - Given a webhook is triggered,
+    When the same event is sent multiple times,
+    Then only one processing occurs.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E01, E02, E03, Notes: Reliability.
+
+**User Story 5**
+- Title: Document APIs in OpenAPI
+- User Story: As a developer, I want APIs documented in OpenAPI so that integration is easier.
+- Acceptance Criteria:
+  - Given APIs exist,
+    When I view documentation,
+    Then all endpoints are described with schemas and examples.
+- Additional Details: Priority: High, Story Points: 1, Dependencies: E01, E02, E03, Notes: Integration support.
