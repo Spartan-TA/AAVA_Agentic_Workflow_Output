@@ -1,0 +1,46 @@
+### E12 - Notifications & Announcements
+
+**User Story 1**
+- Title: In-App and Email/SMS Notifications
+- User Story: As a worker, I want to receive notifications for shift changes, expiring certs, approvals, and announcements so that I stay informed.
+- Acceptance Criteria:
+  - Given a notification event occurs,
+    When I am opted in,
+    Then I receive notifications via chosen channels.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: Real-time updates.
+
+**User Story 2**
+- Title: Opt-In/Out Per Notification Channel
+- User Story: As a worker, I want to opt-in/out per channel so that I control how I receive notifications.
+- Acceptance Criteria:
+  - Given notification settings exist,
+    When I update preferences,
+    Then only selected channels are used.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: User control.
+
+**User Story 3**
+- Title: Localized Notification Templates
+- User Story: As a worker, I want notification templates localized so that messages are in my preferred language.
+- Acceptance Criteria:
+  - Given templates exist,
+    When I receive a notification,
+    Then it is in my selected locale.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: Localization.
+
+**User Story 4**
+- Title: Track Delivery Status and Apply Rate Limits
+- User Story: As a system admin, I want delivery status tracked and rate limits applied so that notifications are reliable and not spammy.
+- Acceptance Criteria:
+  - Given notifications are sent,
+    When I view delivery logs,
+    Then status and rate limits are visible.
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: Reliability.
+
+**User Story 5**
+- Title: Display Announcements on Dashboard
+- User Story: As a worker, I want announcements visible on my dashboard so that important updates are not missed.
+- Acceptance Criteria:
+  - Given announcements exist,
+    When I log in,
+    Then current announcements are displayed.
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E03, E05, E06, E07, Notes: Visibility.
