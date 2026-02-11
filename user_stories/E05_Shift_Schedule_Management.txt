@@ -1,0 +1,53 @@
+### E05: Shift & Schedule Management
+
+#### Title: Create Shift Templates
+User Story: As an HR user I want to create recurring shift templates So that scheduling is consistent and efficient
+Acceptance Criteria:
+Scenario: Shift template created
+Given I have shift details
+When I POST to `/shifts/templates`
+Then a new template is created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Support blackout dates
+
+#### Title: Assign Shifts to Employees
+User Story: As a supervisor I want to assign shifts to employees So that staffing is adequate
+Acceptance Criteria:
+Scenario: Bulk assignment
+Given a shift template exists
+When I assign to multiple employees
+Then assignments are created and conflicts detected/prevented
+
+Scenario: Worker views shifts
+Given I am a worker
+When I view my schedule
+Then I see upcoming shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Create Shift Templates
+- Notes: Audit entries generated
+
+#### Title: Overtime Rules & Rotations
+User Story: As an HR user I want to define overtime rules and shift rotations So that compliance and fairness are maintained
+Acceptance Criteria:
+Scenario: Overtime rule applied
+Given overtime rules exist
+When an employee exceeds hours
+Then overtime is flagged
+
+Scenario: Rotation applied
+Given rotation schedule exists
+When shifts are assigned
+Then rotation is followed
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Create Shift Templates
+- Notes: Warehouse operation calendars supported
