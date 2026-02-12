@@ -1,0 +1,20 @@
+Title: Safety Incident Recording and Workflow
+
+User Story: As a safety manager, I want to record safety incidents, track investigation workflow, and generate OSHA reports so that compliance and safety culture are improved.
+
+Acceptance Criteria:
+Scenario: Incident recording
+Given a safety incident occurs
+When I POST to /safety/incidents
+Then the incident is recorded with severity, location, and involved employees
+And the status workflow is tracked (OpenâInvestigatingâResolved)
+
+Scenario: OSHA report generation
+When I export OSHA reports
+Then the correct fields are included
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Metrics dashboard endpoints required.
