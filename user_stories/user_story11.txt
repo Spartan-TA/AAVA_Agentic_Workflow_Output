@@ -1,0 +1,19 @@
+Title: Shift Template Management
+
+User Story: As a scheduler, I want to create, update, and delete recurring shift templates and assign them to employees so that scheduling is efficient and consistent.
+
+Acceptance Criteria:
+Scenario: Shift template CRUD operations
+Given I am authenticated as a scheduler
+When I CRUD shift templates
+Then templates are saved and available for assignment
+
+Scenario: Template assignment
+When I assign templates to employees
+Then their schedules are updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC, Time & Attendance
+- Notes: Support bulk assignment and audit entries.
