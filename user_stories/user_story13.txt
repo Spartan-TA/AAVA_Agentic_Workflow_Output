@@ -1,0 +1,20 @@
+Title: Leave Request and Approval
+
+User Story: As an employee, I want to request PTO, sick, or unpaid leave, and as a supervisor, I want to approve or deny these requests so that leave is managed compliantly.
+
+Acceptance Criteria:
+Scenario: Leave request submission
+Given I am an employee
+When I submit a leave request
+Then the request is pending supervisor approval
+
+Scenario: Leave approval/denial
+Given I am a supervisor
+When I approve or deny a request
+Then the employee is notified and balances are updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC, Shift Management
+- Notes: Integrate with scheduling and payroll.
