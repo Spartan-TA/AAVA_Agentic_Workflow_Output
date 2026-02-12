@@ -1,0 +1,16 @@
+Title: Leave Accrual and Balance Update
+
+User Story: As a system, I want to update leave balances and auto-flag scheduled shifts for coverage when leave is approved so that staffing plans remain accurate.
+
+Acceptance Criteria:
+Scenario: Leave balance update
+Given a leave is approved
+When the approval is processed
+Then the employee's leave balance is updated
+And scheduled shifts during the leave are flagged for coverage
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Leave Request and Approval
+- Notes: Export approved leaves for payroll.
