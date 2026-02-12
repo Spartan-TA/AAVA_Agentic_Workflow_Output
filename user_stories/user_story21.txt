@@ -1,0 +1,16 @@
+Title: Integration Layer for HRIS/WMS
+
+User Story: As an integration engineer, I want to expose REST APIs and connectors for HRIS, WMS, and IDP so that master data is synchronized and SSO is enabled.
+
+Acceptance Criteria:
+Scenario: HRIS synchronization
+Given a new hire event in HRIS
+When the sync job runs
+Then the employee is created or updated in the system
+And APIs are secured with JWT/OAuth2
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project Scaffolding, Employee CRUD API, RBAC
+- Notes: Webhooks must be idempotent and documented.
