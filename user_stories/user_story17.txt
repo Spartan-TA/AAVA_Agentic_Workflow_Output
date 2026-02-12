@@ -1,0 +1,19 @@
+Title: Equipment Assignment and Validation
+
+User Story: As an asset manager, I want to assign equipment to employees, track check-in/out, and block use if required certifications are missing so that asset accountability and safety are maintained.
+
+Acceptance Criteria:
+Scenario: Certification validation
+Given an employee lacks a required certification
+When I attempt to assign equipment
+Then the assignment is blocked
+
+Scenario: Check-in/out tracking
+When equipment is checked out or returned
+Then the history log is updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC, Certification Tracking
+- Notes: Reports of overdue returns required.
