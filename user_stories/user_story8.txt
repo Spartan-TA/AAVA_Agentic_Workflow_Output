@@ -1,0 +1,16 @@
+Title: Time & Attendance Clock In/Out
+
+User Story: As a warehouse worker, I want to clock in and out via an endpoint, optionally capturing geofence and device info, so that my hours are accurately tracked.
+
+Acceptance Criteria:
+Scenario: Clock in/out event recording
+Given I am authenticated
+When I POST to /attendance/clock-in or /clock-out
+Then my attendance event is recorded with timestamp, location, and device info
+And my shift association is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Validate input and handle edge cases.
