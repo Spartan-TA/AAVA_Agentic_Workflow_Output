@@ -1,0 +1,16 @@
+Title: Performance Review Workflow
+
+User Story: As a supervisor, I want to create performance review cycles, assign goals, and track acknowledgements so that structured feedback is provided.
+
+Acceptance Criteria:
+Scenario: Review cycle creation and assignment
+Given a review cycle is created
+When it is assigned to employees
+Then supervisors and employees can submit and acknowledge reviews
+And the history is immutable after sign-off
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC
+- Notes: PDF export and role-based visibility required.
