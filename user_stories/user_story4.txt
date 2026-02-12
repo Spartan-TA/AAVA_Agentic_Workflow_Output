@@ -1,0 +1,17 @@
+Title: Employee CRUD API
+
+User Story: As an HR user, I want to create, read, update, and delete employee records via API so that employee master data is managed centrally.
+
+Acceptance Criteria:
+Scenario: Employee record management
+Given I have HR role and valid credentials
+When I POST/GET/PUT/PATCH/DELETE to /employees
+Then the employee record is created, retrieved, updated, or soft-deleted as requested
+And badgeId is unique
+And deleted employees are not returned in default queries
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project Scaffolding
+- Notes: Support pagination, filtering, and OpenAPI documentation.
