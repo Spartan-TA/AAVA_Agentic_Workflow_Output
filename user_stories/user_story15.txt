@@ -1,0 +1,20 @@
+Title: Certification Tracking and Alerts
+
+User Story: As a compliance officer, I want to track employee certifications, expirations, and upload proof documents so that only qualified staff are assigned to sensitive roles.
+
+Acceptance Criteria:
+Scenario: Expiration alerts
+Given a certification is expiring in 30 or 7 days
+When the system checks certification status
+Then an alert is generated for the employee and supervisor
+
+Scenario: Assignment validation
+Given an assignment requires a valid certification
+When the certification is expired
+Then the assignment is blocked
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Certification status visible on employee profile.
