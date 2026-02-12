@@ -1,0 +1,9 @@
+Title: Add Pagination and Filtering to Employee List
+User Story: As a supervisor, I want to filter and paginate employee lists so that I can efficiently find records.
+Acceptance Criteria:
+Given multiple employees exist
+When I request a paginated and filtered list
+Then only matching employees are returned
+Priority: High
+Story Points: 2
+Dependencies: E01
