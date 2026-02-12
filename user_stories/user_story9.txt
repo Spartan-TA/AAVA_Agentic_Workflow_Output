@@ -1,9 +1,0 @@
-Title: Secure Endpoints and Methods by Role
-User Story: As a security officer, I want endpoints and methods secured by role so that unauthorized access is prevented.
-Acceptance Criteria:
-Given a user with insufficient permissions
-When they access a restricted endpoint
-Then they receive 401 or 403 as appropriate
-Priority: High
-Story Points: 3
-Dependencies: E01, E02

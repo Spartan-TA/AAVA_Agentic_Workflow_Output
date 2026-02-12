@@ -1,9 +1,0 @@
-Title: Document Employee APIs with OpenAPI
-User Story: As a developer, I want OpenAPI documentation with examples so that API consumers understand the endpoints.
-Acceptance Criteria:
-Given the API is deployed
-When I access the OpenAPI docs
-Then all employee endpoints are documented with request/response examples
-Priority: High
-Story Points: 1
-Dependencies: E01

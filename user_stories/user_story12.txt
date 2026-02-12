@@ -1,9 +1,0 @@
-Title: Implement Clock In/Out Endpoints
-User Story: As a worker, I want to clock in and out via API so that my attendance is accurately recorded.
-Acceptance Criteria:
-Given a valid employee
-When they POST to /attendance/clock-in or /clock-out
-Then the event is recorded with timestamp and device info
-Priority: High
-Story Points: 3
-Dependencies: E02, E03

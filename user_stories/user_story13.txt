@@ -1,9 +1,0 @@
-Title: Capture Geofence and Device Info on Clock Events
-User Story: As a supervisor, I want clock events to include location and device so that I can verify attendance authenticity.
-Acceptance Criteria:
-Given a clock event
-When it is submitted
-Then geofence and device details are stored (if available)
-Priority: High
-Story Points: 2
-Dependencies: E02, E03

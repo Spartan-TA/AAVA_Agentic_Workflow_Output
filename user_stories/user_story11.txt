@@ -1,9 +1,0 @@
-Title: Enforce Row-Level Security for Supervisors
-User Story: As a supervisor, I want to access only my team's records so that data privacy is maintained.
-Acceptance Criteria:
-Given a supervisor is logged in
-When they access employee data
-Then only their team's records are visible
-Priority: High
-Story Points: 2
-Dependencies: E01, E02

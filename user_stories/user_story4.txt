@@ -1,9 +1,0 @@
-Title: Implement Employee Entity and Repository
-User Story: As a developer, I want an Employee entity with fields (name, badgeId, role, department, shiftGroup, hireDate, status) so that employee data is structured and persisted.
-Acceptance Criteria:
-Given the database is migrated
-When I create an employee record
-Then all fields are stored and retrievable
-Priority: High
-Story Points: 2
-Dependencies: E01

@@ -1,9 +1,0 @@
-Title: Enable Actuator for Health Monitoring
-User Story: As an operator, I want an Actuator health endpoint so that I can monitor the application's health status.
-Acceptance Criteria:
-Given the application is running
-When I access /actuator/health
-Then the endpoint returns status UP
-Priority: High
-Story Points: 1
-Dependencies: None

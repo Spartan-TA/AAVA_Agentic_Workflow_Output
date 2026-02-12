@@ -1,9 +1,0 @@
-Title: Define User Roles and Permissions
-User Story: As an admin, I want roles (ADMIN, HR, SUPERVISOR, WORKER) defined so that access can be controlled.
-Acceptance Criteria:
-Given the system is running
-When a user logs in
-Then their role is assigned and enforced
-Priority: High
-Story Points: 2
-Dependencies: E01, E02
