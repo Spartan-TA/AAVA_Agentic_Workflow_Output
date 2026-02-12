@@ -1,0 +1,9 @@
+Title: Support API Key or OAuth2 Authentication
+User Story: As a system integrator, I want to toggle between API Key and OAuth2 authentication so that integration is flexible.
+Acceptance Criteria:
+Given the configuration is set
+When I authenticate using the selected method
+Then access is granted or denied accordingly
+Priority: High
+Story Points: 2
+Dependencies: E01, E02
