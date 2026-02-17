@@ -1,0 +1,61 @@
+### E05 - Shift & Schedule Management
+
+**User Story 1: Shift Template CRUD**
+- Title: Manage Shift Templates
+- User Story: As an HR user, I want to create, update, and delete shift templates so that recurring schedules are easy to manage.
+- Acceptance Criteria:
+  - Given the shift template form,
+    When I submit,
+    Then a new template is created.
+  - Given an existing template,
+    When I update or delete,
+    Then changes are reflected.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: E02, E03, E04, Notes: Recurring shifts.
+
+**User Story 2: Shift Assignment**
+- Title: Assign Shifts to Employees
+- User Story: As a supervisor, I want to assign shifts to employees so that staffing is planned.
+- Acceptance Criteria:
+  - Given the assignment interface,
+    When I bulk-assign shifts,
+    Then employees receive their schedules.
+  - Given a conflict,
+    When I assign,
+    Then the system prevents overlapping shifts.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: E02, E03, E04, Notes: Conflict detection.
+
+**User Story 3: Blackout Dates Management**
+- Title: Manage Blackout Dates
+- User Story: As an HR user, I want to set blackout dates and warehouse operation calendars so that shifts are not scheduled during closures.
+- Acceptance Criteria:
+  - Given the calendar interface,
+    When I add blackout dates,
+    Then shifts are not assigned during those periods.
+  - Given a scheduled shift,
+    When blackout is added,
+    Then affected shifts are flagged.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, E04, Notes: Calendar integration.
+
+**User Story 4: Personal Shift View**
+- Title: View Upcoming Shifts
+- User Story: As a worker, I want to view my upcoming shifts so that I can plan my attendance.
+- Acceptance Criteria:
+  - Given my profile,
+    When I view shifts,
+    Then all upcoming assignments are listed.
+  - Given a change,
+    When my shift is updated,
+    Then I see the new schedule.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, E04, Notes: Worker visibility.
+
+**User Story 5: Audit Entry Generation**
+- Title: Generate Audit Entries for Scheduling
+- User Story: As a compliance officer, I want audit entries generated for shift assignments so that changes are tracked.
+- Acceptance Criteria:
+  - Given a shift assignment,
+    When I assign or update,
+    Then an audit entry is created with actor, timestamp, before/after.
+  - Given audit logs,
+    When I export,
+    Then all scheduling changes are visible.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, E04, Notes: Compliance.
