@@ -1,0 +1,49 @@
+### E01 - Project Scaffolding & Domain Setup
+
+**User Story 1: Project Initialization**
+- Title: Initialize Spring Boot Project
+- User Story: As a developer, I want to initialize a Spring Boot (Maven) project so that all modules have a consistent foundation.
+- Acceptance Criteria:
+  - Given the project repository is cloned,
+    When I run `mvn clean install`,
+    Then the build completes successfully and the application runs on port 8080.
+  - Given the README file,
+    When I follow build/run instructions,
+    Then the application starts and Actuator health endpoint returns UP.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: None, Notes: Foundation for all modules.
+
+**User Story 2: Core Module Setup**
+- Title: Configure Base Packages and Core Modules
+- User Story: As a developer, I want to set up base packages and core modules (employee, scheduling, attendance, safety) so that the codebase is organized and ready for feature development.
+- Acceptance Criteria:
+  - Given the project structure,
+    When I inspect the base packages,
+    Then modules for employee, scheduling, attendance, and safety exist.
+  - Given the codebase,
+    When I add new features,
+    Then they are placed in the correct module/package.
+- Additional Details: Priority: High, Story Points: 5, Dependencies: Project Initialization, Notes: Enables modular development.
+
+**User Story 3: Database Migration Setup**
+- Title: Add Flyway/Liquibase for DB Migrations
+- User Story: As a developer, I want to add Flyway or Liquibase so that database schema changes are versioned and reproducible.
+- Acceptance Criteria:
+  - Given the migration tool is configured,
+    When I run the application,
+    Then baseline migration is executed and DB schema is created.
+  - Given a new migration file,
+    When I deploy,
+    Then the migration runs automatically.
+- Additional Details: Priority: High, Story Points: 3, Dependencies: Project Initialization, Notes: Ensures DB consistency.
+
+**User Story 4: Actuator Enablement**
+- Title: Enable Actuator for Monitoring
+- User Story: As a DevOps engineer, I want to enable Spring Boot Actuator so that health and metrics endpoints are available.
+- Acceptance Criteria:
+  - Given the application is running,
+    When I access `/actuator/health`,
+    Then the endpoint returns UP.
+  - Given monitoring tools,
+    When I query Actuator endpoints,
+    Then metrics and health data are available.
+- Additional Details: Priority: High, Story Points: 2, Dependencies: Project Initialization, Notes: Required for observability.
