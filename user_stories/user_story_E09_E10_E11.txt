@@ -1,0 +1,348 @@
+====================================================================
+USER STORIES FOR WAREHOUSE EMPLOYEE MANAGEMENT PLATFORM
+====================================================================
+
+------------------------------------------------------------
+Epic E09: Equipment & Asset Assignment
+------------------------------------------------------------
+
+User Story 1: Asset Registry CRUD
+
+Title: Asset Registry CRUD
+User Story: As an asset manager, I want to create, update, and delete asset records so that equipment inventory is maintained.
+Acceptance Criteria:
+  Scenario: Asset creation/update/delete
+    Given asset manager is logged in
+    When they manage assets
+    Then changes are reflected in registry
+
+Additional Details:
+  Priority: Medium
+  Story Points: 2
+  Dependencies: E02, E03, E07
+  Notes: Supports inventory
+
+---
+
+User Story 2: Asset Check-In/Out Endpoints
+
+Title: Asset Check-In/Out Endpoints
+User Story: As a supervisor, I want endpoints to check assets in and out to employees so that asset usage is tracked.
+Acceptance Criteria:
+  Scenario: Asset check-out
+    Given asset is available
+    When supervisor assigns to employee
+    Then asset is marked as checked out
+
+  Scenario: Asset check-in
+    Given asset is checked out
+    When employee returns asset
+    Then asset is marked as checked in
+
+Additional Details:
+  Priority: Medium
+  Story Points: 2
+  Dependencies: User Story 1
+  Notes: Accountability
+
+---
+
+User Story 3: Block Assignment When Certification Invalid
+
+Title: Block Assignment When Certification Invalid
+User Story: As a supervisor, I want asset assignment blocked if employee's certification is invalid so that safety is ensured.
+Acceptance Criteria:
+  Scenario: Assignment blocked
+    Given employee lacks valid certification
+    When supervisor assigns asset
+    Then assignment is rejected
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Safety compliance
+
+---
+
+User Story 4: Asset History Log
+
+Title: Asset History Log
+User Story: As an asset manager, I want to view asset assignment history per asset and employee so that usage is auditable.
+Acceptance Criteria:
+  Scenario: History log visible
+    Given asset has assignment history
+    When manager views asset or employee profile
+    Then history log is displayed
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Auditability
+
+---
+
+User Story 5: Overdue Returns Report
+
+Title: Overdue Returns Report
+User Story: As an asset manager, I want reports of overdue asset returns so that follow-up actions can be taken.
+Acceptance Criteria:
+  Scenario: Overdue report generated
+    Given assets are overdue
+    When manager requests report
+    Then overdue assets and responsible employees are listed
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Accountability
+
+---
+
+User Story 6: Asset Condition State Tracking
+
+Title: Asset Condition State Tracking
+User Story: As an asset manager, I want to track asset condition state so that maintenance needs are identified.
+Acceptance Criteria:
+  Scenario: Condition state update
+    Given asset is checked in
+    When manager updates condition
+    Then state is recorded
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Prevents equipment failure
+
+------------------------------------------------------------
+Epic E10: Performance Reviews & Goals
+------------------------------------------------------------
+
+User Story 1: Create Review Cycles
+
+Title: Create Review Cycles
+User Story: As an HR user, I want to create quarterly and annual review cycles so that employee performance is evaluated regularly.
+Acceptance Criteria:
+  Scenario: Review cycle creation
+    Given HR user is logged in
+    When they create a review cycle
+    Then cycle is saved and available for assignment
+
+Additional Details:
+  Priority: Medium
+  Story Points: 2
+  Dependencies: E02, E03
+  Notes: Structured feedback
+
+---
+
+User Story 2: Assign Reviews to Employees
+
+Title: Assign Reviews to Employees
+User Story: As a supervisor, I want to assign reviews to employees so that performance evaluation is tracked.
+Acceptance Criteria:
+  Scenario: Review assignment
+    Given review cycle exists
+    When supervisor assigns to employee
+    Then review is visible to employee
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Tracks evaluation
+
+---
+
+User Story 3: Submit and Acknowledge Reviews
+
+Title: Submit and Acknowledge Reviews
+User Story: As an employee, I want to submit and acknowledge reviews so that feedback is documented.
+Acceptance Criteria:
+  Scenario: Employee submits review
+    Given review is assigned
+    When employee submits feedback
+    Then review is updated
+
+  Scenario: Supervisor acknowledges review
+    Given review is submitted
+    When supervisor acknowledges
+    Then review is marked as complete
+
+Additional Details:
+  Priority: Medium
+  Story Points: 2
+  Dependencies: User Story 2
+  Notes: Feedback loop
+
+---
+
+User Story 4: PDF Export of Reviews
+
+Title: PDF Export of Reviews
+User Story: As an HR user, I want to export reviews as PDF so that records are archived.
+Acceptance Criteria:
+  Scenario: PDF export
+    Given reviews exist
+    When HR user requests export
+    Then PDF file is generated
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Recordkeeping
+
+---
+
+User Story 5: Role-Based Visibility of Reviews
+
+Title: Role-Based Visibility of Reviews
+User Story: As an HR user, I want role-based visibility of reviews so that only authorized users access sensitive feedback.
+Acceptance Criteria:
+  Scenario: Visibility enforced
+    Given user has role
+    When they access reviews
+    Then only permitted reviews are visible
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Privacy
+
+---
+
+User Story 6: Immutable History After Sign-Off
+
+Title: Immutable History After Sign-Off
+User Story: As an HR user, I want review history to be immutable after sign-off so that records cannot be tampered with.
+Acceptance Criteria:
+  Scenario: History locked
+    Given review is signed off
+    When user attempts to edit
+    Then edit is rejected
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 3
+  Notes: Compliance
+
+------------------------------------------------------------
+Epic E11: Payroll Export Integration
+------------------------------------------------------------
+
+User Story 1: Generate Payroll-Ready Files
+
+Title: Generate Payroll-Ready Files
+User Story: As a payroll administrator, I want to generate payroll-ready files from approved attendance and leave so that payroll runs are accurate.
+Acceptance Criteria:
+  Scenario: Payroll file generation
+    Given attendance and leave records exist
+    When payroll export is triggered
+    Then file matches provider schema
+
+Additional Details:
+  Priority: High
+  Story Points: 2
+  Dependencies: E04, E06
+  Notes: Reduces manual errors
+
+---
+
+User Story 2: Mapping to External Payroll Formats
+
+Title: Mapping to External Payroll Formats
+User Story: As a payroll administrator, I want mapping to external payroll provider formats so that integration is seamless.
+Acceptance Criteria:
+  Scenario: Format mapping
+    Given provider schema is configured
+    When export is generated
+    Then file matches required format
+
+Additional Details:
+  Priority: High
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Supports multiple providers
+
+---
+
+User Story 3: Secure Delivery via SFTP/API
+
+Title: Secure Delivery via SFTP/API
+User Story: As a payroll administrator, I want secure delivery of payroll files via SFTP or API so that sensitive data is protected.
+Acceptance Criteria:
+  Scenario: SFTP delivery
+    Given SFTP is configured
+    When export is sent
+    Then delivery is secure and logged
+
+  Scenario: API delivery
+    Given API endpoint is configured
+    When export is sent
+    Then delivery is secure and logged
+
+Additional Details:
+  Priority: High
+  Story Points: 2
+  Dependencies: User Story 1
+  Notes: Security compliance
+
+---
+
+User Story 4: Failed Deliveries Retried with Backoff
+
+Title: Failed Deliveries Retried with Backoff
+User Story: As a payroll administrator, I want failed deliveries retried with exponential backoff so that exports are reliable.
+Acceptance Criteria:
+  Scenario: Retry on failure
+    Given delivery fails
+    When retry logic runs
+    Then delivery is retried with increasing delay
+
+Additional Details:
+  Priority: High
+  Story Points: 1
+  Dependencies: User Story 3
+  Notes: Reliability
+
+---
+
+User Story 5: Audit Log for Every Export
+
+Title: Audit Log for Every Export
+User Story: As an administrator, I want an audit log for every payroll export so that actions are traceable.
+Acceptance Criteria:
+  Scenario: Audit entry created
+    Given export is triggered
+    When file is delivered
+    Then audit log records actor, timestamp, and status
+
+Additional Details:
+  Priority: High
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Compliance
+
+---
+
+User Story 6: Totals Reconcile with Reports
+
+Title: Totals Reconcile with Reports
+User Story: As a payroll administrator, I want exported totals to reconcile with attendance and leave reports so that payroll is accurate.
+Acceptance Criteria:
+  Scenario: Totals match
+    Given reports and exports exist
+    When totals are compared
+    Then values match or discrepancies are flagged
+
+Additional Details:
+  Priority: High
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Prevents errors
