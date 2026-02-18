@@ -1,0 +1,10 @@
+Title: Integrate Flyway/Liquibase for DB Migrations
+User Story: As a developer, I want to integrate Flyway or Liquibase for database migrations so that schema changes are versioned and repeatable.
+Acceptance Criteria:
+  - Given the project, when I start the application, then Flyway/Liquibase runs the baseline migration automatically.
+  - Given a new migration, when I apply it, then the database schema updates without data loss.
+Additional Details:
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: user_story1.txt
+  - Notes: Supports future DB changes.
