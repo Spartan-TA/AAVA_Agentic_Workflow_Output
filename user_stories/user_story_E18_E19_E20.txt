@@ -1,0 +1,473 @@
+====================================================================
+USER STORIES FOR WAREHOUSE EMPLOYEE MANAGEMENT PLATFORM
+====================================================================
+
+------------------------------------------------------------
+Epic E18: Localization & Multi-Site
+------------------------------------------------------------
+
+User Story 1: Multi-Language Support
+
+Title: Multi-Language Support
+User Story: As a worker, I want the platform to support multiple languages so that I can use it in my preferred language.
+Acceptance Criteria:
+  Scenario: Language selection
+    Given worker is logged in
+    When they select language
+    Then UI updates to chosen language
+
+Additional Details:
+  Priority: Low
+  Story Points: 2
+  Dependencies: E01, E02, E05
+  Notes: Usability
+
+---
+
+User Story 2: Localized Notification Templates
+
+Title: Localized Notification Templates
+User Story: As a worker, I want notification templates to be localized so that messages are clear.
+Acceptance Criteria:
+  Scenario: Notification localization
+    Given worker has language preference
+    When notification is sent
+    Then message is in preferred language
+
+Additional Details:
+  Priority: Low
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Consistency
+
+---
+
+User Story 3: Localized Date/Time Formats
+
+Title: Localized Date/Time Formats
+User Story: As a worker, I want date/time formats to match my locale so that information is clear.
+Acceptance Criteria:
+  Scenario: Date/time localization
+    Given worker has locale preference
+    When UI displays dates/times
+    Then formats match locale
+
+Additional Details:
+  Priority: Low
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Clarity
+
+---
+
+User Story 4: Localized Error Messages
+
+Title: Localized Error Messages
+User Story: As a worker, I want error messages to be localized so that troubleshooting is easier.
+Acceptance Criteria:
+  Scenario: Error message localization
+    Given worker has language preference
+    When error occurs
+    Then message is in preferred language
+
+Additional Details:
+  Priority: Low
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Support
+
+---
+
+User Story 5: Localized Announcements
+
+Title: Localized Announcements
+User Story: As a worker, I want announcements to be localized so that important information is not missed.
+Acceptance Criteria:
+  Scenario: Announcement localization
+    Given worker has language preference
+    When announcement is posted
+    Then message is in preferred language
+
+Additional Details:
+  Priority: Low
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Communication
+
+---
+
+User Story 6: Multi-Site Support
+
+Title: Multi-Site Support
+User Story: As a warehouse manager, I want to manage multiple warehouse sites with site-specific policies so that operations scale globally.
+Acceptance Criteria:
+  Scenario: Site assignment
+    Given employees are assigned to sites
+    When data is filtered by site
+    Then only relevant site data is shown
+
+  Scenario: Site-specific policies
+    Given policies are configured per site
+    When policy is applied
+    Then correct site policy is used
+
+Additional Details:
+  Priority: Low
+  Story Points: 2
+  Dependencies: User Story 1
+  Notes: Scalability
+
+---
+
+User Story 7: Time Zone Support
+
+Title: Time Zone Support
+User Story: As a worker, I want time zones respected for my site so that schedules and timestamps are accurate.
+Acceptance Criteria:
+  Scenario: Time zone handling
+    Given worker is assigned to site with time zone
+    When schedules and timestamps are displayed
+    Then correct time zone is used
+
+Additional Details:
+  Priority: Low
+  Story Points: 1
+  Dependencies: User Story 6
+  Notes: Accuracy
+
+------------------------------------------------------------
+Epic E19: Advanced Scheduling (AI/Optimization)
+------------------------------------------------------------
+
+User Story 1: Advanced Shift Rotations
+
+Title: Advanced Shift Rotations
+User Story: As a scheduler, I want to create advanced shift rotations so that staffing is optimized.
+Acceptance Criteria:
+  Scenario: Rotation creation
+    Given scheduler is logged in
+    When rotation is created
+    Then shifts are assigned per rotation rules
+
+Additional Details:
+  Priority: Low
+  Story Points: 2
+  Dependencies: E05, E06, E07
+  Notes: Optimization
+
+---
+
+User Story 2: Overtime Rules Management
+
+Title: Overtime Rules Management
+User Story: As an HR user, I want to manage overtime rules so that compliance is maintained.
+Acceptance Criteria:
+  Scenario: Overtime rule creation
+    Given HR user is logged in
+    When rule is created
+    Then overtime is calculated per rule
+
+Additional Details:
+  Priority: Low
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Compliance
+
+---
+
+User Story 3: Blackout Dates for Scheduling
+
+Title: Blackout Dates for Scheduling
+User Story: As a scheduler, I want to set blackout dates so that shifts are not assigned during closures.
+Acceptance Criteria:
+  Scenario: Blackout date set
+    Given scheduler is logged in
+    When blackout date is created
+    Then shifts are blocked on those dates
+
+Additional Details:
+  Priority: Low
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Prevents errors
+
+---
+
+User Story 4: Warehouse Operation Calendars
+
+Title: Warehouse Operation Calendars
+User Story: As a scheduler, I want to manage operation calendars so that scheduling aligns with warehouse hours.
+Acceptance Criteria:
+  Scenario: Calendar management
+    Given scheduler is logged in
+    When calendar is updated
+    Then shifts are scheduled per calendar
+
+Additional Details:
+  Priority: Low
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Alignment
+
+---
+
+User Story 5: Bulk Assignment of Shifts
+
+Title: Bulk Assignment of Shifts
+User Story: As a supervisor, I want to bulk-assign shifts to employees so that scheduling is efficient.
+Acceptance Criteria:
+  Scenario: Bulk assignment
+    Given shift template exists
+    When supervisor assigns to multiple employees
+    Then assignments are created
+
+Additional Details:
+  Priority: Low
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Efficiency
+
+---
+
+User Story 6: Conflict Detection for Advanced Scheduling
+
+Title: Conflict Detection for Advanced Scheduling
+User Story: As a scheduler, I want conflict detection for advanced scheduling so that errors are prevented.
+Acceptance Criteria:
+  Scenario: Conflict detected
+    Given overlapping shifts are assigned
+    When schedule is saved
+    Then conflicts are flagged
+
+Additional Details:
+  Priority: Low
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Prevents errors
+
+---
+
+User Story 7: Demand Forecasting Model
+
+Title: Demand Forecasting Model
+User Story: As a scheduler, I want a demand forecasting model trained on historical data so that staffing is optimized.
+Acceptance Criteria:
+  Scenario: Forecast generation
+    Given historical data exists
+    When forecast model runs
+    Then demand predictions are generated
+
+Additional Details:
+  Priority: Low
+  Story Points: 3
+  Dependencies: User Story 1
+  Notes: AI/ML integration
+
+---
+
+User Story 8: Optimization Engine for Shift Assignments
+
+Title: Optimization Engine for Shift Assignments
+User Story: As a scheduler, I want an optimization engine to propose optimal shift assignments so that efficiency is maximized.
+Acceptance Criteria:
+  Scenario: Optimization proposal
+    Given forecast and constraints exist
+    When optimization engine runs
+    Then optimal shift assignments are proposed
+
+  Scenario: Supervisor review and approval
+    Given optimization proposal exists
+    When supervisor reviews
+    Then they can approve or modify assignments
+
+Additional Details:
+  Priority: Low
+  Story Points: 3
+  Dependencies: User Story 7
+  Notes: AI/ML integration
+
+------------------------------------------------------------
+Epic E20: Self-Service Portal
+------------------------------------------------------------
+
+User Story 1: Employee Profile Management
+
+Title: Employee Profile Management
+User Story: As an employee, I want to manage my profile so that my information is up-to-date.
+Acceptance Criteria:
+  Scenario: Profile update
+    Given employee is logged in
+    When they update profile
+    Then changes are saved
+
+Additional Details:
+  Priority: Medium
+  Story Points: 2
+  Dependencies: E02, E03, E06, E10, E11
+  Notes: Self-service
+
+---
+
+User Story 2: View Schedules and Attendance
+
+Title: View Schedules and Attendance
+User Story: As an employee, I want to view my schedules and attendance so that I can track my work.
+Acceptance Criteria:
+  Scenario: Schedule and attendance view
+    Given employee is logged in
+    When they access portal
+    Then schedules and attendance are displayed
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Transparency
+
+---
+
+User Story 3: Request Leave from Portal
+
+Title: Request Leave from Portal
+User Story: As an employee, I want to request leave from the portal so that my absences are tracked.
+Acceptance Criteria:
+  Scenario: Leave request
+    Given employee is logged in
+    When they request leave
+    Then request is submitted
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Convenience
+
+---
+
+User Story 4: View Announcements and Notifications
+
+Title: View Announcements and Notifications
+User Story: As an employee, I want to view announcements and notifications from the portal so that I stay informed.
+Acceptance Criteria:
+  Scenario: Announcement/notification view
+    Given employee is logged in
+    When they access portal
+    Then announcements and notifications are displayed
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Communication
+
+---
+
+User Story 5: Access Training and Certification Records
+
+Title: Access Training and Certification Records
+User Story: As an employee, I want to access my training and certification records from the portal so that I know my status.
+Acceptance Criteria:
+  Scenario: Training/certification view
+    Given employee is logged in
+    When they access portal
+    Then training and certification records are displayed
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Compliance
+
+---
+
+User Story 6: Self-Service Asset Assignment Requests
+
+Title: Self-Service Asset Assignment Requests
+User Story: As an employee, I want to request asset assignment from the portal so that equipment needs are addressed.
+Acceptance Criteria:
+  Scenario: Asset request
+    Given employee is logged in
+    When they request asset
+    Then request is submitted and tracked
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Convenience
+
+---
+
+User Story 7: View Pay Stubs and Tax Forms
+
+Title: View Pay Stubs and Tax Forms
+User Story: As an employee, I want to view pay stubs and tax forms from the portal so that financial information is accessible.
+Acceptance Criteria:
+  Scenario: Pay stub/tax form view
+    Given employee is logged in
+    When they access portal
+    Then pay stubs and tax forms are displayed
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Financial transparency
+
+---
+
+User Story 8: Document Upload for Employees
+
+Title: Document Upload for Employees
+User Story: As an employee, I want to upload documents from the portal so that required paperwork is submitted.
+Acceptance Criteria:
+  Scenario: Document upload
+    Given employee is logged in
+    When they upload document
+    Then document is stored and linked to profile
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Self-service
+
+---
+
+User Story 9: Supervisor Team Management Portal
+
+Title: Supervisor Team Management Portal
+User Story: As a supervisor, I want a portal to manage my team so that oversight is centralized.
+Acceptance Criteria:
+  Scenario: Team roster view
+    Given supervisor is logged in
+    When they access portal
+    Then team roster and pending approvals are displayed
+
+Additional Details:
+  Priority: Medium
+  Story Points: 2
+  Dependencies: User Story 1
+  Notes: Management efficiency
+
+---
+
+User Story 10: Audit Log for Self-Service Changes
+
+Title: Audit Log for Self-Service Changes
+User Story: As an administrator, I want audit logs for self-service changes so that actions are traceable.
+Acceptance Criteria:
+  Scenario: Audit entry created
+    Given employee makes change
+    When change is saved
+    Then audit log records actor, timestamp, and change
+
+Additional Details:
+  Priority: Medium
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Compliance
+
+====================================================================
+END OF USER STORIES DOCUMENT
+====================================================================
