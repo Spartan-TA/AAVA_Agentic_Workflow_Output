@@ -1,0 +1,57 @@
+### E14 - Audit Trail & Compliance
+
+#### User Story 1
+Title: Audit Logging for Sensitive Changes
+User Story: As an ADMIN, I want audit logs for all sensitive changes so that compliance is ensured.
+Acceptance Criteria:
+Scenario: Audit Log Creation
+Given a create/update/delete action
+When it occurs
+Then actor, timestamp, before/after are logged
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Immutable log table
+
+#### User Story 2
+Title: Export Audit Logs by Date/User/Entity
+User Story: As an HR, I want to export audit logs by date, user, or entity so that investigations are possible.
+Acceptance Criteria:
+Scenario: Audit Log Export
+Given audit log records
+When HR requests export
+Then logs are filtered and exported
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E03
+- Notes: Export format configurable
+
+#### User Story 3
+Title: Tamper-Evident Storage for Audit Logs
+User Story: As a DevOps Engineer, I want audit logs stored in a tamper-evident way so that forensic analysis is reliable.
+Acceptance Criteria:
+Scenario: Tamper-Evidence
+Given audit log storage
+When logs are written
+Then tamper-evidence is enforced
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E03
+- Notes: Storage mechanism documented
+
+#### User Story 4
+Title: Test Audit Log Coverage
+User Story: As a QA Engineer, I want tests to validate audit log coverage so that no sensitive change is missed.
+Acceptance Criteria:
+Scenario: Audit Log Test
+Given test cases
+When tests run
+Then all sensitive changes are logged
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E03
+- Notes: Test coverage required
