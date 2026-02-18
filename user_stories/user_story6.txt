@@ -1,0 +1,10 @@
+Title: Employee CRUD - Read Employee API
+User Story: As an HR manager I want to retrieve employee records via API So that I can view employee details.
+Acceptance Criteria:
+  - Given an employee badgeId, when I GET /employees/{id}, then the employee details are returned.
+  - Supports pagination and filtering.
+Additional Details:
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: user_story5.txt
+  - Notes: Filtering by department, status, etc.
