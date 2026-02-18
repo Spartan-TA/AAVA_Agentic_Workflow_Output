@@ -1,0 +1,71 @@
+### E13 - Integration Layer (HRIS/WMS APIs)
+
+#### User Story 1
+Title: Secure REST API Exposure
+User Story: As a Developer, I want REST APIs secured with JWT/OAuth2 so that integrations are safe.
+Acceptance Criteria:
+Scenario: API Security
+Given API endpoints
+When accessed with valid token
+Then data is returned
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Security documented
+
+#### User Story 2
+Title: HRIS Sync Job for Employee Data
+User Story: As an HR, I want a sync job to create/update employees from HRIS so that master data is current.
+Acceptance Criteria:
+Scenario: HRIS Sync
+Given HRIS data
+When sync job runs
+Then employees are created/updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Idempotent sync
+
+#### User Story 3
+Title: WMS Department/Location Link
+User Story: As a SUPERVISOR, I want department/location data linked from WMS so that assignments are accurate.
+Acceptance Criteria:
+Scenario: WMS Link
+Given WMS API
+When SUPERVISOR requests department/location
+Then data is returned and linked
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01, E02, E03
+- Notes: Linkage documented
+
+#### User Story 4
+Title: Webhooks for Event Notification
+User Story: As a Developer, I want webhooks for events so that external systems are notified.
+Acceptance Criteria:
+Scenario: Webhook Trigger
+Given an event
+When it occurs
+Then webhook is sent idempotently
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01, E02, E03
+- Notes: Webhook retries
+
+#### User Story 5
+Title: OpenAPI Documentation for Integration
+User Story: As a Developer, I want OpenAPI documentation for all integration endpoints so that consumers understand usage.
+Acceptance Criteria:
+Scenario: API Documentation
+Given integration endpoints
+When Developer accesses docs
+Then OpenAPI specs are available
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01, E02, E03
+- Notes: Documentation must be complete
