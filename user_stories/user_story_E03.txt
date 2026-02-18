@@ -1,0 +1,57 @@
+### E03 - Role-Based Access Control (RBAC)
+
+#### User Story 1
+Title: Implement Role-Based Endpoint Security
+User Story: As an ADMIN, I want endpoint security based on roles so that only authorized users can access sensitive data.
+Acceptance Criteria:
+Scenario: Unauthorized Access
+Given a user without ADMIN role
+When they access an ADMIN endpoint
+Then they receive a 403 Forbidden response
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Security rules must be tested
+
+#### User Story 2
+Title: Row-Level Security for Supervisors
+User Story: As a SUPERVISOR, I want to access only my team's records so that data privacy is maintained.
+Acceptance Criteria:
+Scenario: Team Data Access
+Given a SUPERVISOR
+When they access employee data
+Then only their team's records are visible
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Team assignment must be enforced
+
+#### User Story 3
+Title: API Key/OAuth2 Toggle
+User Story: As a DevOps Engineer, I want to toggle between API key and OAuth2 authentication via config so that integration flexibility is supported.
+Acceptance Criteria:
+Scenario: Authentication Toggle
+Given the config file
+When I change the authentication mode
+Then endpoints require the selected method
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Must be documented
+
+#### User Story 4
+Title: Test Security Rules
+User Story: As a QA Engineer, I want automated tests for security rules so that unauthorized access is prevented.
+Acceptance Criteria:
+Scenario: Security Test Coverage
+Given test cases for each role
+When tests run
+Then unauthorized and forbidden actions are validated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Must cover all endpoints
