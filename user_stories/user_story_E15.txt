@@ -1,0 +1,57 @@
+### E15 - Reporting & Analytics
+
+#### User Story 1
+Title: Filter Reports by Date, Department, Shift
+User Story: As an HR, I want to filter operational reports by date, department, and shift so that insights are actionable.
+Acceptance Criteria:
+Scenario: Report Filtering
+Given report data
+When HR applies filters
+Then only matching records are shown
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Filters must be fast
+
+#### User Story 2
+Title: Export Reports in CSV/PDF
+User Story: As an ADMIN, I want to export reports in CSV/PDF so that data can be shared.
+Acceptance Criteria:
+Scenario: Report Export
+Given filtered report
+When ADMIN requests export
+Then file is generated within 10s for up to 50k rows
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Export performance required
+
+#### User Story 3
+Title: Role-Based Dashboard Access
+User Story: As a SUPERVISOR, I want dashboard access controlled by role so that sensitive data is protected.
+Acceptance Criteria:
+Scenario: Dashboard Access
+Given dashboard endpoints
+When SUPERVISOR logs in
+Then only authorized metrics are visible
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Access control required
+
+#### User Story 4
+Title: Metrics Endpoints for BI Integration
+User Story: As a Developer, I want metrics endpoints available for BI tools so that analytics are automated.
+Acceptance Criteria:
+Scenario: Metrics Endpoint
+Given operational metrics
+When Developer accesses endpoint
+Then data is returned for BI integration
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Endpoint documented
