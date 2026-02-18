@@ -1,0 +1,71 @@
+### E12 - Notifications & Announcements
+
+#### User Story 1
+Title: Configure Notification Channels
+User Story: As a WORKER, I want to opt-in/out of notification channels so that I receive updates in my preferred way.
+Acceptance Criteria:
+Scenario: Channel Configuration
+Given notification settings
+When WORKER updates preferences
+Then notifications are sent only to selected channels
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: In-app, email, SMS supported
+
+#### User Story 2
+Title: Localize Notification Templates
+User Story: As an HR, I want notification templates localized so that all users understand messages.
+Acceptance Criteria:
+Scenario: Template Localization
+Given notification templates
+When HR adds translations
+Then users receive localized messages
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Locale support required
+
+#### User Story 3
+Title: Track Notification Delivery Status
+User Story: As an ADMIN, I want to track delivery status of notifications so that failures are identified.
+Acceptance Criteria:
+Scenario: Delivery Tracking
+Given notification logs
+When ADMIN reviews status
+Then delivery outcomes are visible
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Failure alerts
+
+#### User Story 4
+Title: Apply Notification Rate Limits
+User Story: As a DevOps Engineer, I want rate limits applied to notifications so that users are not spammed.
+Acceptance Criteria:
+Scenario: Rate Limiting
+Given notification settings
+When limits are exceeded
+Then excess notifications are blocked
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Configurable limits
+
+#### User Story 5
+Title: Announcements on Dashboard
+User Story: As a WORKER, I want announcements visible on my dashboard so that I stay informed.
+Acceptance Criteria:
+Scenario: Announcement Visibility
+Given dashboard access
+When announcements are posted
+Then they are displayed to all users
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E05, E06, E07
+- Notes: Dashboard integration
