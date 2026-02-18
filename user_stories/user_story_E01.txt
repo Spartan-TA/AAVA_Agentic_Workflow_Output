@@ -1,0 +1,57 @@
+### E01 - Project Scaffolding & Domain Setup
+
+**User Story 1**
+Title: Initialize Spring Boot Project Structure
+User Story: As a Developer I want a standardized Spring Boot project scaffold So that all modules follow a consistent structure
+Acceptance Criteria:
+Scenario: Project initialization
+Given I have cloned the repository
+When I run the build command
+Then The project builds successfully and runs on port 8080
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run instructions
+
+**User Story 2**
+Title: Configure Core Domain Modules
+User Story: As a Developer I want base packages for employee, scheduling, attendance, and safety modules So that future development is organized and maintainable
+Acceptance Criteria:
+Scenario: Base package structure
+Given The project is initialized
+When I inspect the source code
+Then I see separate packages for employee, scheduling, attendance, and safety
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01-1
+- Notes: Follow naming conventions
+
+**User Story 3**
+Title: Enable Database Migrations with Flyway/Liquibase
+User Story: As a Developer I want Flyway or Liquibase configured for DB migrations So that database changes are versioned and repeatable
+Acceptance Criteria:
+Scenario: Baseline migration
+Given The database is empty
+When I start the application
+Then The baseline migration runs and the schema is created
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01-1
+- Notes: Migration scripts must be in version control
+
+**User Story 4**
+Title: Enable Spring Boot Actuator
+User Story: As a DevOps Engineer I want Actuator endpoints enabled So that I can monitor application health
+Acceptance Criteria:
+Scenario: Health endpoint
+Given The application is running
+When I access /actuator/health
+Then I receive a status of UP
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01-1
+- Notes: Secure actuator endpoints as needed
