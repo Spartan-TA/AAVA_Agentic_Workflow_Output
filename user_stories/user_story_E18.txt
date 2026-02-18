@@ -1,0 +1,71 @@
+### E18 - Localization & Multi-Tenant
+
+#### User Story 1
+Title: Tenant Isolation for Data and Config
+User Story: As an ADMIN, I want tenant isolation for data and config so that multiple warehouses/regions are supported.
+Acceptance Criteria:
+Scenario: Tenant Isolation
+Given multiple tenants
+When ADMIN manages data
+Then data/config is isolated per tenant
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Tenant ID in all entities
+
+#### User Story 2
+Title: Locale Configuration per Tenant
+User Story: As an HR, I want locale-specific date/time, currency, and language so that regional needs are met.
+Acceptance Criteria:
+Scenario: Locale Setup
+Given tenant settings
+When HR configures locale
+Then UI and data reflect locale
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E01, E02
+- Notes: Locale config required
+
+#### User Story 3
+Title: Translation of UI Strings
+User Story: As a Developer, I want translations for UI strings so that users see content in their language.
+Acceptance Criteria:
+Scenario: UI Translation
+Given UI strings
+When translations are added
+Then users see localized content
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E01, E02
+- Notes: Translation coverage required
+
+#### User Story 4
+Title: Timezone-Aware Timestamps
+User Story: As a SUPERVISOR, I want timestamps to be timezone-aware so that scheduling is accurate across regions.
+Acceptance Criteria:
+Scenario: Timezone Handling
+Given scheduling data
+When SUPERVISOR views
+Then timestamps reflect tenant timezone
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E01, E02
+- Notes: Timezone tests required
+
+#### User Story 5
+Title: Validate Tenant Isolation via Tests
+User Story: As a QA Engineer, I want tests to validate tenant isolation so that data does not leak between tenants.
+Acceptance Criteria:
+Scenario: Isolation Test
+Given multiple tenants
+When tests run
+Then data/config is isolated
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E01, E02
+- Notes: Test coverage required
