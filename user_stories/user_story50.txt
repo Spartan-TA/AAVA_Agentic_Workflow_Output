@@ -1,0 +1,10 @@
+Title: Payroll Export - Failed Delivery Retry
+User Story: As a payroll specialist I want failed payroll exports to be retried automatically So that errors are minimized.
+Acceptance Criteria:
+  - Given a failed export, when detected, then the system retries with exponential backoff.
+  - All attempts are logged.
+Additional Details:
+  - Priority: High
+  - Story Points: 2
+  - Dependencies: user_story50.txt
+  - Notes: Notification on repeated failure.
