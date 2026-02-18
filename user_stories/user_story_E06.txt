@@ -1,0 +1,57 @@
+### E06 - Leave & Absence Management
+
+#### User Story 1
+Title: Request Leave
+User Story: As a WORKER, I want to request PTO, sick, or unpaid leave so that my absences are tracked.
+Acceptance Criteria:
+Scenario: Leave Request
+Given a WORKER
+When they submit a leave request
+Then the request is recorded and balance checked
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Accrual policies applied
+
+#### User Story 2
+Title: Approve/Deny Leave Requests
+User Story: As a SUPERVISOR, I want to approve or deny leave requests so that coverage is ensured.
+Acceptance Criteria:
+Scenario: Leave Approval
+Given a pending leave request
+When SUPERVISOR reviews
+Then they can approve or deny
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Scheduled shifts auto-flagged
+
+#### User Story 3
+Title: Update Leave Balances
+User Story: As an HR, I want leave balances to update automatically so that records are accurate.
+Acceptance Criteria:
+Scenario: Balance Update
+Given an approved leave
+When leave is taken
+Then balances are updated
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E05
+- Notes: Integration with scheduling
+
+#### User Story 4
+Title: Export Approved Leaves
+User Story: As an HR, I want to export approved leaves so that payroll and coverage planning are facilitated.
+Acceptance Criteria:
+Scenario: Leave Export
+Given approved leave records
+When HR requests export
+Then a report is generated
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E05
+- Notes: Export format configurable
