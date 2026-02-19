@@ -1,0 +1,81 @@
+EPIC E07: Training & Certification Tracking
+
+---
+
+Title: Track Employee Certifications
+User Story: As an HR admin I want to record employee certifications and expirations So that compliance is maintained
+Acceptance Criteria:
+Scenario: Add certification to employee
+Given an employee profile
+When I add a certification with expiry date
+Then it is saved and visible on the profile
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Support multiple cert types
+
+---
+
+Title: Alert on Expiring Certifications
+User Story: As a supervisor I want to receive alerts before certifications expire So that renewals are not missed
+Acceptance Criteria:
+Scenario: Certification expiry alert
+Given a certification is expiring in 30 or 7 days
+When the system checks expirations
+Then an alert is sent to the employee and supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Email and in-app notifications
+
+---
+
+Title: Block Assignment to Tasks Requiring Certification
+User Story: As a scheduler I want to prevent assignment of tasks to employees with expired certifications So that only qualified staff are assigned
+Acceptance Criteria:
+Scenario: Block unqualified assignment
+Given an employee's certification is expired
+When I try to assign them to a restricted task
+Then the system blocks the assignment and shows an error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Integrate with scheduling and asset assignment
+
+---
+
+Title: Upload Proof of Certification
+User Story: As an employee I want to upload proof documents for certifications So that records are complete
+Acceptance Criteria:
+Scenario: Upload certification document
+Given I have a valid certification
+When I upload a document
+Then it is attached to my profile and viewable by HR
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Support PDF/JPG/PNG uploads
+
+---
+
+Title: Show Certification Status on Profile
+User Story: As a supervisor I want to view certification status on employee profiles So that I can verify qualifications
+Acceptance Criteria:
+Scenario: View certification status
+Given I view an employee profile
+When I check certifications
+Then I see current status and expiry dates
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Status color-coded (valid/expiring/expired)
