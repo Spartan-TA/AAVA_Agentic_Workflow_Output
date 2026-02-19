@@ -1,0 +1,81 @@
+EPIC E12: Notifications & Announcements
+
+---
+
+Title: Send Shift Change Notifications
+User Story: As a worker I want to receive notifications for shift changes So that I am always informed of my schedule
+Acceptance Criteria:
+Scenario: Shift change notification
+Given my shift is updated
+When the change is saved
+Then I receive an in-app and email/SMS notification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05
+- Notes: Opt-in/out per channel
+
+---
+
+Title: Notify on Expiring Certifications
+User Story: As an employee I want to be notified when my certifications are expiring So that I can renew them in time
+Acceptance Criteria:
+Scenario: Certification expiry notification
+Given my certification is expiring soon
+When the system checks expirations
+Then I receive a notification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E07
+- Notes: Templates localized
+
+---
+
+Title: Approval Workflow Notifications
+User Story: As a supervisor I want to receive notifications for pending approvals So that I can act promptly
+Acceptance Criteria:
+Scenario: Approval notification
+Given a request is pending my approval
+When the request is created
+Then I receive a notification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03, E06
+- Notes: Delivery status tracked
+
+---
+
+Title: Announcements on Dashboard
+User Story: As a worker I want to see company announcements on my dashboard So that I stay informed
+Acceptance Criteria:
+Scenario: Announcement display
+Given an announcement is published
+When I log in
+Then I see the announcement on my dashboard
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03
+- Notes: Announcements visible until dismissed
+
+---
+
+Title: Configure Quiet Hours for Notifications
+User Story: As a worker I want to configure quiet hours for notifications So that I am not disturbed outside work hours
+Acceptance Criteria:
+Scenario: Quiet hours respected
+Given I have set quiet hours
+When a notification is triggered during that time
+Then it is delayed until quiet hours end
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03
+- Notes: Rate limits applied
