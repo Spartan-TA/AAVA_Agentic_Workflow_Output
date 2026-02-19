@@ -1,0 +1,65 @@
+EPIC E04: Time & Attendance (Clock In/Out)
+
+---
+
+Title: Record Clock In/Out Events
+User Story: As a warehouse worker I want to clock in and out via an endpoint So that my attendance is accurately tracked
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am scheduled for a shift
+When I POST to /attendance/clock-in with valid data
+Then my clock-in event is recorded and associated with my shift
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Device and geofence capture optional
+
+---
+
+Title: Calculate Hours Worked per Shift
+User Story: As a payroll admin I want the system to calculate hours worked per shift So that payroll is accurate
+Acceptance Criteria:
+Scenario: Shift hours calculation
+Given a worker clocks in and out
+When the shift ends
+Then the total hours worked are computed and stored
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Handle overnight shifts
+
+---
+
+Title: Handle Missed Punches and Corrections
+User Story: As a supervisor I want to correct missed or erroneous clock events So that attendance records are accurate
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch is detected
+When a correction is submitted
+Then an approval task is created for supervisor review
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Corrections tracked in audit log
+
+---
+
+Title: Export Attendance Reports
+User Story: As a payroll admin I want to export attendance data as CSV So that I can process payroll efficiently
+Acceptance Criteria:
+Scenario: Export attendance report
+Given attendance records exist
+When I request a CSV export
+Then the file is generated with correct totals
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Include filters for date and employee
