@@ -1,0 +1,81 @@
+EPIC E15: Reporting & Analytics
+
+---
+
+Title: Generate Attendance and Overtime Reports
+User Story: As a manager I want reports on attendance and overtime So that I can monitor workforce utilization
+Acceptance Criteria:
+Scenario: Attendance report
+Given attendance data exists
+When I filter by date/department/shift
+Then I see attendance and overtime totals
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Export as CSV/PDF
+
+---
+
+Title: Leave Balance Reporting
+User Story: As an HR admin I want reports on leave balances So that I can ensure compliance with policies
+Acceptance Criteria:
+Scenario: Leave balance report
+Given leave data exists
+When I generate a report
+Then I see current balances per employee
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Role-based access
+
+---
+
+Title: Certification Status Dashboard
+User Story: As a supervisor I want a dashboard of certification status So that I can ensure qualified staffing
+Acceptance Criteria:
+Scenario: Certification dashboard
+Given certification data exists
+When I access the dashboard
+Then I see counts of valid, expiring, and expired certs
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Metrics endpoints for BI
+
+---
+
+Title: Safety KPI Reporting
+User Story: As a safety officer I want reports on safety KPIs So that I can track incident trends
+Acceptance Criteria:
+Scenario: Safety KPI report
+Given incident data exists
+When I generate a report
+Then I see metrics like incident rate and severity
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Exportable within 10s for 50k rows
+
+---
+
+Title: Access-Controlled Dashboards
+User Story: As a user I want dashboards to show only data I am authorized to see So that sensitive information is protected
+Acceptance Criteria:
+Scenario: Dashboard access control
+Given I am logged in
+When I access dashboards
+Then I see only data for my role and permissions
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Role-based filtering
