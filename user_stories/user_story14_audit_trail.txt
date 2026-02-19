@@ -1,0 +1,65 @@
+EPIC E14: Audit Trail & Compliance
+
+---
+
+Title: Audit Logging for Sensitive Changes
+User Story: As a compliance officer I want all sensitive changes to be logged centrally So that actions are traceable
+Acceptance Criteria:
+Scenario: Audit log entry
+Given a create/update/delete on sensitive data
+When the action occurs
+Then an audit entry is created with actor, timestamp, before/after
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03
+- Notes: Covers employee PII, schedules, approvals, payroll
+
+---
+
+Title: Tamper-Evident Audit Storage
+User Story: As a compliance officer I want audit logs stored in a tamper-evident way So that integrity is guaranteed
+Acceptance Criteria:
+Scenario: Tamper-evident log
+Given audit logs are written
+When I attempt to modify them
+Then unauthorized changes are detected and blocked
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03
+- Notes: Immutable log table
+
+---
+
+Title: Export Audit Logs by Date/User/Entity
+User Story: As an auditor I want to export audit logs filtered by date, user, or entity So that investigations are efficient
+Acceptance Criteria:
+Scenario: Export audit logs
+Given audit logs exist
+When I filter by date/user/entity
+Then I receive a filtered export
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03
+- Notes: Export as CSV/PDF
+
+---
+
+Title: Test Audit Coverage
+User Story: As a developer I want automated tests to validate audit coverage So that no sensitive action is missed
+Acceptance Criteria:
+Scenario: Audit coverage test
+Given the test suite runs
+When sensitive actions are performed
+Then audit entries are created for each
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03
+- Notes: Include negative tests
