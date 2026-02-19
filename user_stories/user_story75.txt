@@ -1,9 +1,0 @@
-Title: Onboarding - New Hire Sync from HRIS
-User Story: As an HR manager I want new hires to appear automatically from HRIS So that onboarding is streamlined.
-Acceptance Criteria:
-  - Given a new hire in HRIS, when the sync runs, then the employee appears in the system with all required fields.
-Additional Details:
-  - Priority: Medium
-  - Story Points: 2
-  - Dependencies: user_story60.txt
-  - Notes: Onboarding tasks generated.
