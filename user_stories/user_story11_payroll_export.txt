@@ -1,0 +1,81 @@
+EPIC E11: Payroll Export Integration
+
+---
+
+Title: Generate Payroll-Ready Export Files
+User Story: As a payroll admin I want to generate payroll-ready files from attendance and leave data So that I can process payroll efficiently
+Acceptance Criteria:
+Scenario: Payroll export file generation
+Given attendance and leave data is approved
+When I generate a payroll export
+Then the file matches the provider schema
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04, E06
+- Notes: Support multiple provider formats
+
+---
+
+Title: Secure Delivery of Payroll Files
+User Story: As a payroll admin I want payroll files delivered securely via SFTP or API So that sensitive data is protected
+Acceptance Criteria:
+Scenario: Secure file delivery
+Given a payroll file is generated
+When I configure SFTP/API credentials
+Then the file is delivered securely
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Delivery status tracked
+
+---
+
+Title: Reconcile Payroll Totals with Reports
+User Story: As a payroll admin I want to reconcile payroll export totals with attendance reports So that errors are detected early
+Acceptance Criteria:
+Scenario: Payroll totals reconciliation
+Given a payroll export is generated
+When I compare totals with attendance reports
+Then the numbers match or discrepancies are flagged
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Automated reconciliation check
+
+---
+
+Title: Retry Failed Payroll Deliveries
+User Story: As a system admin I want failed payroll deliveries to be retried with backoff So that transient errors are handled automatically
+Acceptance Criteria:
+Scenario: Retry failed delivery
+Given a delivery fails
+When the system retries
+Then retries occur with exponential backoff until success or max attempts
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E06
+- Notes: Audit log for every export
+
+---
+
+Title: Audit Payroll Exports
+User Story: As a compliance officer I want an audit log for every payroll export So that all actions are traceable
+Acceptance Criteria:
+Scenario: Payroll export audit log
+Given a payroll export occurs
+When the export is completed or fails
+Then an audit entry is created with details
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04, E06
+- Notes: Exportable by date/user
