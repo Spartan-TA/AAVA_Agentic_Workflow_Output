@@ -1,0 +1,65 @@
+EPIC E08: Safety Incidents & OSHA Reporting
+
+---
+
+Title: Record Safety Incidents
+User Story: As a worker I want to record safety incidents and near-misses So that hazards are documented and addressed
+Acceptance Criteria:
+Scenario: Submit safety incident
+Given I witness an incident
+When I submit a report with required fields
+Then the incident is recorded and status is Open
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Required fields: severity, location, description
+
+---
+
+Title: Manage Incident Investigation Workflow
+User Story: As a safety officer I want to progress incidents through investigation and resolution So that corrective actions are tracked
+Acceptance Criteria:
+Scenario: Incident workflow
+Given an incident is Open
+When investigation starts and actions are taken
+Then the status updates to Investigating and then Resolved
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Workflow status transitions
+
+---
+
+Title: Export OSHA Summary Reports
+User Story: As a compliance officer I want to export OSHA 300/300A summary reports So that regulatory requirements are met
+Acceptance Criteria:
+Scenario: Export OSHA report
+Given incident data exists
+When I request a summary
+Then a report is generated with OSHA-required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Export as CSV/PDF
+
+---
+
+Title: Provide Safety Metrics Dashboard
+User Story: As a manager I want a dashboard of safety KPIs So that I can monitor trends and take action
+Acceptance Criteria:
+Scenario: View safety dashboard
+Given incidents are recorded
+When I access the dashboard
+Then I see metrics like incident rate, severity, and open cases
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: API endpoints for dashboard widgets
