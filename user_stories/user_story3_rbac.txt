@@ -1,0 +1,65 @@
+EPIC E03: Role-Based Access Control (RBAC)
+
+---
+
+Title: Implement Role-Based Access Control
+User Story: As a system admin I want to restrict access to sensitive endpoints based on user roles So that only authorized users can perform certain actions
+Acceptance Criteria:
+Scenario: Unauthorized access returns 401
+Given I am not authenticated
+When I access a protected endpoint
+Then I receive a 401 Unauthorized response
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Use Spring Security
+
+---
+
+Title: Enforce Role Permissions
+User Story: As a supervisor I want to access only my team's employee records So that I cannot view or modify unrelated data
+Acceptance Criteria:
+Scenario: Row-level security for supervisors
+Given I am logged in as a supervisor
+When I request employee data
+Then I only see employees in my team
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Row-level constraints for SUPERVISOR role
+
+---
+
+Title: Support API Key/OAuth2 Toggle
+User Story: As a system admin I want to toggle between API key and OAuth2 authentication So that security can be adapted to deployment needs
+Acceptance Criteria:
+Scenario: Auth mode toggle via config
+Given the system is configured for API key or OAuth2
+When I authenticate using the selected method
+Then access is granted if credentials are valid
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Configurable via application properties
+
+---
+
+Title: Cover Security Rules with Tests
+User Story: As a developer I want automated tests for security rules So that unauthorized and forbidden actions are reliably blocked
+Acceptance Criteria:
+Scenario: Security test coverage
+Given the test suite runs
+When security tests execute
+Then unauthorized requests return 401 and forbidden actions return 403
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Include positive and negative test cases
