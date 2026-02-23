@@ -1,0 +1,24 @@
+Title: Role-Based Endpoint Security
+User Story: As an admin, I want endpoints secured by user role so that only authorized users can perform sensitive actions.
+Acceptance Criteria:
+  Given a user with no token,
+  When they access a protected endpoint,
+  Then they receive a 401 Unauthorized.
+
+  Given a user with insufficient role,
+  When they perform a forbidden action,
+  Then they receive a 403 Forbidden.
+
+  Given an ADMIN user,
+  When they manage records,
+  Then all actions are permitted.
+
+  Given a SUPERVISOR,
+  When they access records,
+  Then only their team is visible.
+
+Additional Details:
+  Priority: High
+  Story Points: 5
+  Dependencies: Employee CRUD API, Project Scaffolding
+  Notes: Security rules covered by tests.
