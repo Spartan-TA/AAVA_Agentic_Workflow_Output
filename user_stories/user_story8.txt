@@ -1,0 +1,31 @@
+Title: Record and Manage Safety Incidents
+
+User Story:
+As a safety manager, I want to record incidents and near-misses, track their investigation workflow, and generate OSHA-compliant reports so that safety and compliance are improved.
+
+Acceptance Criteria:
+Scenario 1: Record incident
+  Given an incident occurs
+  When I POST to /safety/incidents with required fields
+  Then the incident is logged with status "Open"
+
+Scenario 2: Investigation workflow
+  Given an incident is logged
+  When I update its status
+  Then it transitions through Investigating and Resolved states
+
+Scenario 3: OSHA export
+  Given incidents are recorded
+  When I export OSHA 300/300A data
+  Then the export contains all required fields
+
+Scenario 4: Metrics dashboard
+  Given incidents exist
+  When I access the dashboard endpoint
+  Then I see safety KPIs and trends
+
+Additional Details:
+Priority: High
+Story Points: 8
+Dependencies: E02, E03
+Notes: All fields must be validated.
