@@ -1,0 +1,76 @@
+EPIC E04: TIME & ATTENDANCE (CLOCK IN/OUT)
+
+===========================================
+
+Title: Time & Attendance (Clock In/Out) - Clock In
+User Story: As a worker, I want to clock in with device and geofence capture so that attendance is accurate.
+Acceptance Criteria:
+Scenario: Clock In
+Given a worker at location
+When POST /attendance/clock-in
+Then event is validated and shift association is automatic.
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Geofence optional.
+
+===========================================
+
+Title: Time & Attendance (Clock In/Out) - Clock Out
+User Story: As a worker, I want to clock out so that hours worked are recorded.
+Acceptance Criteria:
+Scenario: Clock Out
+Given a worker
+When POST /attendance/clock-out
+Then hours are calculated for shift.
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Shift association.
+
+===========================================
+
+Title: Time & Attendance (Clock In/Out) - Missed Punch Correction
+User Story: As a worker, I want to request corrections for missed punches so that attendance is accurate.
+Acceptance Criteria:
+Scenario: Correction Workflow
+Given a missed punch
+When correction is requested
+Then approval task is created.
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Approval workflow.
+
+===========================================
+
+Title: Time & Attendance (Clock In/Out) - Attendance Reports
+User Story: As a supervisor, I want to export attendance reports in CSV so that payroll processing is efficient.
+Acceptance Criteria:
+Scenario: Export Attendance
+Given attendance data
+When export is triggered
+Then CSV file is generated.
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Payroll integration.
+
+===========================================
+
+Title: Time & Attendance (Clock In/Out) - Daily Totals
+User Story: As a supervisor, I want daily totals computed for each employee so that shift hours are tracked.
+Acceptance Criteria:
+Scenario: Daily Totals
+Given attendance records
+When totals are computed
+Then daily hours per employee are available.
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Shift tracking.
