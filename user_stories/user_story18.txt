@@ -1,0 +1,31 @@
+Title: Support Localization
+
+User Story:
+As a non-English-speaking employee, I want the application to support multiple languages so that I can use it comfortably in my preferred language.
+
+Acceptance Criteria:
+Scenario 1: Language selection
+  Given I access the app
+  When I select a language
+  Then all UI text updates accordingly
+
+Scenario 2: Localized notifications
+  Given my language preference is set
+  When I receive notifications
+  Then they are in my language
+
+Scenario 3: Localized templates
+  Given templates exist
+  When I use forms or reports
+  Then they are localized
+
+Scenario 4: Fallback to default
+  Given a translation is missing
+  When I access the feature
+  Then the default language is used
+
+Additional Details:
+Priority: Low
+Story Points: 5
+Dependencies: None
+Notes: All user-facing text must be externalized.
