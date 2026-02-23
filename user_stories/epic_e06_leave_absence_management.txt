@@ -1,0 +1,61 @@
+EPIC E06: LEAVE & ABSENCE MANAGEMENT
+
+===========================================
+
+Title: Leave & Absence Management - Request Leave
+User Story: As a worker, I want to request PTO, sick, or unpaid leave so that my absences are tracked.
+Acceptance Criteria:
+Scenario: Leave Request
+Given leave balances
+When leave is requested
+Then balances update and request is logged.
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Leave types.
+
+===========================================
+
+Title: Leave & Absence Management - Approve/Deny Leave
+User Story: As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+Acceptance Criteria:
+Scenario: Leave Approval
+Given a leave request
+When supervisor acts
+Then request is approved/denied and balances update.
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Approval workflow.
+
+===========================================
+
+Title: Leave & Absence Management - Integration Hooks
+User Story: As a developer, I want integration hooks to exclude leave from scheduling and payroll so that absences are handled correctly.
+Acceptance Criteria:
+Scenario: Integration Hook
+Given approved leave
+When scheduling/payroll runs
+Then leave is excluded from hours.
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Integration.
+
+===========================================
+
+Title: Leave & Absence Management - Leave Export
+User Story: As an HR user, I want to export approved leaves so that records are available for reporting.
+Acceptance Criteria:
+Scenario: Leave Export
+Given approved leaves
+When export is triggered
+Then leave records are exported.
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E05
+- Notes: Reporting.
