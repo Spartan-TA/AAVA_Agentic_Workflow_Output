@@ -1,0 +1,31 @@
+Title: Deployment & Observability
+
+User Story:
+As a DevOps engineer, I want automated deployment pipelines and observability (metrics, logs, alerts) so that releases are reliable and issues are detected early.
+
+Acceptance Criteria:
+Scenario 1: Automated deployment
+  Given code is merged to main
+  When the pipeline runs
+  Then the application is built, tested, and deployed automatically
+
+Scenario 2: Metrics and logs
+  Given the application is running
+  When I access observability tools
+  Then I see real-time metrics and logs
+
+Scenario 3: Alerts
+  Given thresholds are breached
+  When monitoring detects issues
+  Then alerts are sent to the on-call team
+
+Scenario 4: Rollback support
+  Given a deployment fails
+  When rollback is triggered
+  Then the previous stable version is restored
+
+Additional Details:
+Priority: High
+Story Points: 8
+Dependencies: None
+Notes: Observability must cover all critical paths.
