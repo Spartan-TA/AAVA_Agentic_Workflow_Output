@@ -1,0 +1,31 @@
+Title: Manage Shift Templates and Schedules
+
+User Story:
+As a supervisor, I want to create and assign recurring shift templates, rotations, and overtime rules to employees so that scheduling is efficient and conflicts are minimized.
+
+Acceptance Criteria:
+Scenario 1: Create shift template
+  Given I am a supervisor
+  When I POST a new shift template
+  Then the template is saved and available for assignment
+
+Scenario 2: Assign shifts
+  Given shift templates exist
+  When I assign shifts to employees
+  Then assignments are created and visible to workers
+
+Scenario 3: Detect conflicts
+  Given overlapping shifts are assigned
+  When I attempt to save the schedule
+  Then the system prevents the conflict and displays an error
+
+Scenario 4: Bulk assignment
+  Given multiple employees
+  When I bulk-assign shifts
+  Then all assignments are processed and audit entries are generated
+
+Additional Details:
+Priority: High
+Story Points: 13
+Dependencies: E02, E03, E04
+Notes: Blackout dates and operation calendars must be supported.
