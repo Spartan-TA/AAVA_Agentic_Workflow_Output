@@ -1,0 +1,31 @@
+Title: Centralized Audit Trail
+
+User Story:
+As a compliance officer, I want all sensitive changes to be logged with actor, timestamp, and before/after values so that we meet audit and forensic requirements.
+
+Acceptance Criteria:
+Scenario 1: Log sensitive changes
+  Given a create/update/delete occurs
+  When the action is performed
+  Then an audit entry is created with all details
+
+Scenario 2: Immutable log
+  Given audit entries exist
+  When I attempt to modify them
+  Then modification is prevented
+
+Scenario 3: Export audit log
+  Given audit entries exist
+  When I export by date, user, or entity
+  Then I receive the filtered log
+
+Scenario 4: Test coverage
+  Given audit logging is implemented
+  When tests are run
+  Then all sensitive actions are covered
+
+Additional Details:
+Priority: High
+Story Points: 8
+Dependencies: E03
+Notes: Tamper-evident storage required.
