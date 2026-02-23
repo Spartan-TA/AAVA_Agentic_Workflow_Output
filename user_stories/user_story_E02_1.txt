@@ -1,0 +1,21 @@
+Title: Employee Master Data (CRUD) - Create Employee
+
+User Story: As an HR manager, I want to create new employee records so that all warehouse staff are registered in the system.
+
+Acceptance Criteria:
+Scenario: Create employee with unique badgeId
+  Given the employee does not exist
+  When I POST to /employees with valid data
+  Then the employee is created and assigned a unique badgeId
+  And the response matches the OpenAPI schema
+
+Scenario: Attempt to create employee with duplicate badgeId
+  Given an employee with badgeId X exists
+  When I POST to /employees with badgeId X
+  Then the request is rejected with an error
+
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: Project scaffolding complete
+Notes: badgeId must be unique; OpenAPI documentation required.
