@@ -1,0 +1,31 @@
+Title: Mobile Access for Core Flows
+
+User Story:
+As a warehouse worker, I want to clock in/out, view schedules, request leave, and see announcements on my mobile device so that I can perform key tasks on the go.
+
+Acceptance Criteria:
+Scenario 1: Responsive views
+  Given I access the app on mobile
+  When I use core features
+  Then all flows are usable and responsive
+
+Scenario 2: Installable PWA
+  Given I use a supported browser
+  When I install the app
+  Then it is available as a PWA
+
+Scenario 3: Offline support
+  Given I am offline
+  When I clock in/out
+  Then events are queued and synced when online
+
+Scenario 4: PWA performance
+  Given the PWA is audited
+  When tested with Lighthouse
+  Then the score is at least 80
+
+Additional Details:
+Priority: Medium
+Story Points: 13
+Dependencies: E04, E05, E06, E12
+Notes: Offline conflict resolution required.
