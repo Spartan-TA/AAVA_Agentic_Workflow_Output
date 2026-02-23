@@ -1,0 +1,31 @@
+Title: Employee Clock In/Out with Validation
+
+User Story:
+As a warehouse worker, I want to clock in and out via an endpoint with optional geofence and device capture so that my attendance is accurately recorded for payroll and compliance.
+
+Acceptance Criteria:
+Scenario 1: Clock in
+  Given I am at the warehouse
+  When I POST to /attendance/clock-in with valid data
+  Then my clock-in event is recorded and associated with my shift
+
+Scenario 2: Clock out
+  Given I am clocked in
+  When I POST to /attendance/clock-out
+  Then my clock-out event is recorded and hours worked are calculated
+
+Scenario 3: Missed punch correction
+  Given I missed a clock event
+  When I submit a correction request
+  Then an approval task is created for my supervisor
+
+Scenario 4: Export attendance
+  Given attendance data exists
+  When I request a CSV export
+  Then I receive a report of attendance records
+
+Additional Details:
+Priority: High
+Story Points: 8
+Dependencies: E02, E03
+Notes: Support device and geofence validation.
