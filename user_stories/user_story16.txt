@@ -1,0 +1,20 @@
+Title: Safety Incident Reporting
+User Story: As a worker, I want to report safety incidents and near-misses so that corrective actions can be taken.
+Acceptance Criteria:
+  Given an incident form,
+  When I submit details,
+  Then the incident is recorded with status Open.
+
+  Given an incident,
+  When it is investigated,
+  Then status updates to Investigating.
+
+  Given corrective actions are completed,
+  When status is updated,
+  Then it becomes Resolved.
+
+Additional Details:
+  Priority: High
+  Story Points: 5
+  Dependencies: Employee CRUD, RBAC
+  Notes: OSHA export supported.
