@@ -1,0 +1,20 @@
+Title: Equipment Assignment & Tracking
+User Story: As a supervisor, I want to assign and track equipment to employees so that accountability is maintained.
+Acceptance Criteria:
+  Given an asset registry,
+  When I check out equipment,
+  Then it is assigned to the employee.
+
+  Given a certification is missing,
+  When I assign equipment,
+  Then the system blocks the assignment.
+
+  Given equipment is overdue,
+  When I view reports,
+  Then overdue items are listed.
+
+Additional Details:
+  Priority: Medium
+  Story Points: 5
+  Dependencies: Employee CRUD, RBAC, Certification
+  Notes: History log per asset.
