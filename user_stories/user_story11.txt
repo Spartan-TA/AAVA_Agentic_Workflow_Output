@@ -1,0 +1,36 @@
+Title: Export Payroll Data
+
+User Story:
+As a payroll administrator, I want to generate payroll-ready files from approved attendance and leave data, mapped to provider formats, and deliver them securely so that payroll runs are accurate and efficient.
+
+Acceptance Criteria:
+Scenario 1: Generate export
+  Given approved attendance and leave data
+  When I generate a payroll export
+  Then the file matches the provider schema
+
+Scenario 2: Reconcile totals
+  Given an export is generated
+  When I compare totals with reports
+  Then they reconcile exactly
+
+Scenario 3: Secure delivery
+  Given an export file
+  When I deliver it via SFTP or API
+  Then delivery is secure and logged
+
+Scenario 4: Retry failed deliveries
+  Given a delivery fails
+  When the system retries
+  Then retries use exponential backoff
+
+Scenario 5: Audit log
+  Given exports are generated
+  When I review the audit log
+  Then every export is logged with status
+
+Additional Details:
+Priority: High
+Story Points: 8
+Dependencies: E04, E06
+Notes: Provider mapping must be configurable.
