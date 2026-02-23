@@ -1,0 +1,16 @@
+Title: Leave Accrual & Policy Enforcement
+User Story: As an HR user, I want leave accruals and policies enforced so that balances are accurate and compliant.
+Acceptance Criteria:
+  Given a leave policy,
+  When an employee accrues leave,
+  Then their balance updates per policy.
+
+  Given a leave request exceeding balance,
+  When submitted,
+  Then the system rejects the request.
+
+Additional Details:
+  Priority: Medium
+  Story Points: 3
+  Dependencies: Leave Request & Approval
+  Notes: Integration hooks for payroll.
