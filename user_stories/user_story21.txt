@@ -1,0 +1,20 @@
+Title: Integration Layer APIs
+User Story: As a system integrator, I want secure REST APIs and webhooks for HRIS, WMS, and SSO so that master data is synchronized.
+Acceptance Criteria:
+  Given JWT/OAuth2 is configured,
+  When I call the API,
+  Then only authorized requests succeed.
+
+  Given a new hire in HRIS,
+  When sync runs,
+  Then the employee is created or updated.
+
+  Given a webhook event,
+  When delivered,
+  Then it is idempotent.
+
+Additional Details:
+  Priority: High
+  Story Points: 8
+  Dependencies: Project Scaffolding, Employee CRUD, RBAC
+  Notes: OpenAPI documented.
