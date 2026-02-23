@@ -1,0 +1,20 @@
+Title: Notification Preferences & Delivery
+User Story: As a user, I want to configure notification preferences and receive in-app/email/SMS alerts so that I stay informed.
+Acceptance Criteria:
+  Given notification channels,
+  When I opt in/out,
+  Then my preferences are saved.
+
+  Given a shift change or expiring cert,
+  When triggered,
+  Then I receive a notification per my settings.
+
+  Given quiet hours are set,
+  When a notification is sent,
+  Then it is deferred until allowed.
+
+Additional Details:
+  Priority: Medium
+  Story Points: 5
+  Dependencies: RBAC, Shift, Leave, Certification
+  Notes: Delivery status tracked.
