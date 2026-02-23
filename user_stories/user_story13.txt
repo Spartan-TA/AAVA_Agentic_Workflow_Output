@@ -1,0 +1,20 @@
+Title: Leave Request & Approval
+User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my time off is tracked and approved.
+Acceptance Criteria:
+  Given a leave request,
+  When I submit it,
+  Then my supervisor can approve or deny.
+
+  Given an approved leave,
+  When I view my balance,
+  Then it updates accordingly.
+
+  Given a scheduled shift during leave,
+  When leave is approved,
+  Then the shift is flagged for coverage.
+
+Additional Details:
+  Priority: Medium
+  Story Points: 5
+  Dependencies: Employee CRUD, RBAC, Shift Management
+  Notes: Exports show approved leaves.
