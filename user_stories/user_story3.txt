@@ -1,0 +1,36 @@
+Title: Enforce Role-Based Access Control
+
+User Story:
+As a system administrator, I want to restrict access to sensitive endpoints and data based on user roles (ADMIN, HR, SUPERVISOR, WORKER) so that only authorized users can perform certain actions.
+
+Acceptance Criteria:
+Scenario 1: Unauthorized access
+  Given a user is not authenticated
+  When they access a protected endpoint
+  Then they receive a 401 Unauthorized response
+
+Scenario 2: Forbidden actions
+  Given a user is authenticated but lacks permission
+  When they attempt a restricted action
+  Then they receive a 403 Forbidden response
+
+Scenario 3: ADMIN access
+  Given a user has the ADMIN role
+  When they access any endpoint
+  Then they can manage all records
+
+Scenario 4: SUPERVISOR access
+  Given a user has the SUPERVISOR role
+  When they access team data
+  Then they are limited to their assigned team
+
+Scenario 5: Security tests
+  Given security rules are defined
+  When tests are run
+  Then all rules are covered and enforced
+
+Additional Details:
+Priority: High
+Story Points: 8
+Dependencies: E01, E02
+Notes: Support API key/OAuth2 toggle via config.
