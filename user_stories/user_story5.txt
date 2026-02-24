@@ -1,0 +1,60 @@
+Title: Shift & Schedule Management
+User Story 1: As an HR user I want to create recurring shift templates So that scheduling is efficient
+Acceptance Criteria:
+Scenario: Shift template creation
+Given I am authenticated as HR
+When I create a shift template
+Then it is saved and available for assignment
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee master data, RBAC
+- Notes: Support weekly/monthly recurrence
+
+User Story 2: As a supervisor I want to assign shifts to employees in bulk So that staffing is streamlined
+Acceptance Criteria:
+Scenario: Bulk shift assignment
+Given shift templates exist
+When I assign shifts to multiple employees
+Then assignments are created and audit entries generated
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Shift templates
+- Notes: Prevent conflicts
+
+User Story 3: As a system I want to detect and prevent scheduling conflicts So that coverage is reliable
+Acceptance Criteria:
+Scenario: Conflict detection
+Given shifts are assigned
+When a conflict is detected
+Then assignment is blocked and user notified
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Include blackout dates
+
+User Story 4: As a worker I want to view my upcoming shifts So that I can plan my work
+Acceptance Criteria:
+Scenario: Personal shift view
+Given shifts are assigned
+When I access my schedule
+Then I see upcoming shifts
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift assignment
+- Notes: Mobile-friendly view
+
+User Story 5: As a system I want to generate audit entries for schedule changes So that compliance is maintained
+Acceptance Criteria:
+Scenario: Audit logging
+Given a schedule change occurs
+When the change is saved
+Then an audit entry is generated
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Audit trail module
+- Notes: Store actor, timestamp, before/after
