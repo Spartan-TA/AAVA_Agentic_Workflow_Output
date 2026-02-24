@@ -1,0 +1,60 @@
+Title: Leave & Absence Management
+User Story 1: As a worker I want to request PTO, sick, or unpaid leave So that my time off is tracked
+Acceptance Criteria:
+Scenario: Leave request
+Given I am authenticated
+When I submit a leave request
+Then my balance is checked and request is created
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee master data, RBAC, Shift management
+- Notes: Validate accrual policies
+
+User Story 2: As a supervisor I want to approve or deny leave requests So that staffing is managed
+Acceptance Criteria:
+Scenario: Leave approval
+Given a leave request exists
+When I approve or deny
+Then the employee is notified and balances updated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave request
+- Notes: Record approval history
+
+User Story 3: As a system I want to auto-flag scheduled shifts for coverage when leave is approved So that gaps are filled
+Acceptance Criteria:
+Scenario: Shift coverage flag
+Given leave is approved
+When scheduled shifts overlap
+Then shifts are flagged for coverage
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Shift management
+- Notes: Notify supervisors
+
+User Story 4: As a payroll admin I want to export approved leaves So that payroll calculations are accurate
+Acceptance Criteria:
+Scenario: Leave export
+Given approved leaves exist
+When I export leave data
+Then the file includes all relevant fields
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Payroll integration
+- Notes: Support CSV format
+
+User Story 5: As a system I want to update leave balances according to policies So that accruals are correct
+Acceptance Criteria:
+Scenario: Balance update
+Given a leave is taken
+When policy is applied
+Then balances are updated accordingly
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Leave request
+- Notes: Support carryover rules
