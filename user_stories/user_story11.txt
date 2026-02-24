@@ -1,0 +1,60 @@
+Title: Payroll Export Integration
+User Story 1: As a payroll admin I want to generate payroll-ready files from approved attendance and leave So that payroll runs are accurate
+Acceptance Criteria:
+Scenario: Payroll file generation
+Given attendance and leave data exists
+When I generate payroll file
+Then file matches provider schema
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Attendance, Leave management
+- Notes: Support multiple formats
+
+User Story 2: As a system I want to securely deliver payroll files via SFTP/API So that data is protected
+Acceptance Criteria:
+Scenario: Secure delivery
+Given payroll file is generated
+When delivery is triggered
+Then file is sent securely and delivery status tracked
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Payroll file generation
+- Notes: Retry failed deliveries
+
+User Story 3: As a payroll admin I want to reconcile totals with reports So that errors are minimized
+Acceptance Criteria:
+Scenario: Totals reconciliation
+Given payroll file is generated
+When I compare with reports
+Then totals match and discrepancies flagged
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Reporting module
+- Notes: Audit log for every export
+
+User Story 4: As a system I want to retry failed deliveries with backoff So that files are not lost
+Acceptance Criteria:
+Scenario: Delivery retry
+Given delivery fails
+When retry logic is triggered
+Then file is resent with exponential backoff
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Secure delivery
+- Notes: Log all attempts
+
+User Story 5: As a system I want to log every payroll export for audit So that compliance is maintained
+Acceptance Criteria:
+Scenario: Export audit log
+Given payroll export occurs
+When file is delivered
+Then log entry is created with actor, timestamp, status
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Audit trail module
+- Notes: Exportable log
