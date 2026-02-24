@@ -1,0 +1,60 @@
+Title: Audit Trail & Compliance
+User Story 1: As a system I want to log every create/update/delete with actor, timestamp, before/after So that changes are auditable
+Acceptance Criteria:
+Scenario: Audit logging
+Given a sensitive change occurs
+When action is performed
+Then log entry is created with all details
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC
+- Notes: Immutable log table
+
+User Story 2: As a compliance officer I want to export audit logs by date, user, or entity So that forensic analysis is possible
+Acceptance Criteria:
+Scenario: Audit log export
+Given logs exist
+When I filter and export
+Then file includes selected entries
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Audit logging
+- Notes: Support CSV/PDF formats
+
+User Story 3: As a QA engineer I want tests to validate audit coverage So that gaps are detected
+Acceptance Criteria:
+Scenario: Audit test coverage
+Given audit logging is implemented
+When tests are run
+Then all sensitive actions are covered
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Audit logging
+- Notes: Include negative cases
+
+User Story 4: As a system I want to store audit logs in tamper-evident storage So that compliance is maintained
+Acceptance Criteria:
+Scenario: Tamper-evident storage
+Given logs are written
+When storage is inspected
+Then logs cannot be altered or deleted
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Audit logging
+- Notes: Use append-only DB
+
+User Story 5: As a compliance officer I want to view audit logs for sensitive entities So that oversight is possible
+Acceptance Criteria:
+Scenario: Audit log view
+Given logs exist
+When I access logs for an entity
+Then all relevant entries are displayed
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Audit logging
+- Notes: Filter by entity
