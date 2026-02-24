@@ -1,0 +1,60 @@
+Title: Time & Attendance (Clock In/Out)
+User Story 1: As a worker I want to clock in and out via endpoints So that my attendance is recorded
+Acceptance Criteria:
+Scenario: Clock in/out event
+Given I am authenticated
+When I POST to /attendance/clock-in or /clock-out
+Then my event is recorded with validation
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: RBAC, Employee master data
+- Notes: Validate device and location
+
+User Story 2: As a system I want to calculate hours worked per shift So that payroll is accurate
+Acceptance Criteria:
+Scenario: Hours calculation
+Given attendance events exist
+When daily totals are computed
+Then hours worked per shift are available
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock in/out events
+- Notes: Handle overnight shifts
+
+User Story 3: As a worker I want to submit corrections for missed punches So that my attendance is accurate
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch is detected
+When I submit a correction
+Then an approval task is created for supervisor
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Clock in/out events
+- Notes: Track correction status
+
+User Story 4: As a supervisor I want to export attendance reports in CSV So that I can review and share data
+Acceptance Criteria:
+Scenario: Attendance export
+Given attendance data exists
+When I request a CSV export
+Then the file is generated and downloadable
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Attendance data
+- Notes: Include filters for date/employee
+
+User Story 5: As a system I want to associate clock events with shifts automatically So that reporting is seamless
+Acceptance Criteria:
+Scenario: Shift association
+Given clock events are recorded
+When shifts are matched
+Then events are linked to correct shift
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift management
+- Notes: Handle edge cases
