@@ -1,0 +1,60 @@
+Title: Performance Reviews & Goals
+User Story 1: As an HR user I want to create quarterly/annual review templates So that performance reviews are standardized
+Acceptance Criteria:
+Scenario: Review template creation
+Given I am authenticated as HR
+When I create a review template
+Then it is saved and available for assignment
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee master data, RBAC
+- Notes: Support competencies and ratings
+
+User Story 2: As a supervisor I want to assign reviews to employees So that feedback is structured
+Acceptance Criteria:
+Scenario: Review assignment
+Given templates exist
+When I assign reviews
+Then employees receive review tasks
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review templates
+- Notes: Notify employees
+
+User Story 3: As an employee I want to submit and acknowledge reviews So that feedback is recorded
+Acceptance Criteria:
+Scenario: Review submission
+Given a review is assigned
+When I submit and acknowledge
+Then review is saved and history is immutable after sign-off
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Review assignment
+- Notes: PDF export supported
+
+User Story 4: As a supervisor I want role-based visibility for reviews So that privacy is maintained
+Acceptance Criteria:
+Scenario: Review visibility
+Given reviews exist
+When I access reviews
+Then only authorized roles can view/edit
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: RBAC
+- Notes: Enforce via API
+
+User Story 5: As an HR user I want to export reviews as PDF So that records are archived
+Acceptance Criteria:
+Scenario: Review export
+Given reviews are completed
+When I export as PDF
+Then file is generated and downloadable
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review submission
+- Notes: Include all review fields
