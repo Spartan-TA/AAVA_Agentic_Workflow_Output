@@ -1,0 +1,36 @@
+### E06 - Leave & Absence Management
+
+**User Story 1**
+- Title: Request Leave
+- User Story: As a WORKER I want to request PTO, sick, or unpaid leave So that my absences are tracked
+- Acceptance Criteria:
+  - Given the leave request form, When I submit valid data, Then a leave request is created
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05
+
+**User Story 2**
+- Title: Approve or Deny Leave
+- User Story: As a SUPERVISOR I want to approve or deny leave requests So that staffing is managed
+- Acceptance Criteria:
+  - Given a pending leave request, When I approve/deny, Then the employee is notified and balances update
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05
+
+**User Story 3**
+- Title: Update Leave Balances
+- User Story: As an HR I want leave balances to update automatically So that accruals are accurate
+- Acceptance Criteria:
+  - Given an approved leave, When processed, Then the employee's balance is reduced accordingly
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05
+
+**User Story 4**
+- Title: Flag Scheduled Shifts for Coverage
+- User Story: As a SUPERVISOR I want scheduled shifts to be flagged when a leave is approved So that coverage can be arranged
+- Acceptance Criteria:
+  - Given an approved leave, When it overlaps with a scheduled shift, Then the shift is flagged for coverage
+- Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05
+
+**User Story 5**
+- Title: Export Approved Leaves
+- User Story: As an HR I want to export a list of approved leaves So that payroll and scheduling are informed
+- Acceptance Criteria:
+  - Given approved leaves, When I export, Then a report is generated
+- Additional Details: Priority: Medium, Story Points: 1, Dependencies: E02, E03, E05
