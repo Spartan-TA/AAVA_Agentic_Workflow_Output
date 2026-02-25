@@ -1,0 +1,32 @@
+### E01 - Project Scaffolding & Domain Setup
+
+**User Story 1**
+- Title: Initialize Spring Boot Project Structure
+- User Story: As a DEVELOPER I want to initialize a Spring Boot project with Maven So that all modules follow a standard structure
+- Acceptance Criteria:
+  - Given a new repository, When I run the build, Then the project compiles and runs on port 8080
+  - Given the repository, When I view the README, Then I see clear build and run instructions
+- Additional Details: Priority: High, Story Points: 3, Dependencies: None, Notes: Foundation for all modules
+
+**User Story 2**
+- Title: Configure Core Domain Modules
+- User Story: As a DEVELOPER I want to set up base packages for employee, scheduling, attendance, and safety So that each domain is isolated and maintainable
+- Acceptance Criteria:
+  - Given the source code, When I inspect the package structure, Then I see separate packages for each core module
+  - Given the project, When I add new features, Then they fit into the correct domain package
+- Additional Details: Priority: High, Story Points: 3, Dependencies: None
+
+**User Story 3**
+- Title: Enable Database Migration Tooling
+- User Story: As a DEVELOPER I want to add Flyway or Liquibase for database migrations So that schema changes are versioned and repeatable
+- Acceptance Criteria:
+  - Given the project, When I run the application, Then baseline migration is applied automatically
+  - Given a new migration, When I deploy, Then the schema updates without manual intervention
+- Additional Details: Priority: High, Story Points: 2, Dependencies: None
+
+**User Story 4**
+- Title: Expose Actuator Health Endpoint
+- User Story: As a DEVOPS ENGINEER I want to enable the Actuator health endpoint So that system health can be monitored
+- Acceptance Criteria:
+  - Given the running application, When I GET /actuator/health, Then the response is UP
+- Additional Details: Priority: High, Story Points: 1, Dependencies: None
