@@ -1,0 +1,370 @@
+===========================================
+WAREHOUSE EMPLOYEE MANAGEMENT SYSTEM
+USER STORIES - EPICS E11 TO E15
+===========================================
+
+### E11: Payroll Export Integration
+
+**User Story 1: Generate Payroll Export Files**
+- Title: Generate Payroll Export Files
+- User Story: As a payroll admin, I want to generate payroll-ready files from attendance and leave, so that payroll processing is automated.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Generate payroll export
+    Given approved attendance and leave records exist
+    When I request a payroll export
+    Then a file is generated matching provider schema
+    And totals reconcile with reports
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E04, E06
+  * Notes: Supports multiple provider formats.
+
+**User Story 2: Secure Delivery of Payroll Files**
+- Title: Secure Delivery of Payroll Files
+- User Story: As a payroll admin, I want payroll files delivered securely via SFTP or API, so that sensitive data is protected.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Secure payroll file delivery
+    Given a payroll export file is generated
+    When I configure SFTP/API delivery
+    Then the file is sent securely
+    And delivery status is tracked
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E04, E06
+  * Notes: Delivery retries with backoff.
+
+**User Story 3: Export Failure Handling**
+- Title: Export Failure Handling
+- User Story: As an admin, I want failed payroll exports to be retried automatically, so that errors are minimized.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Retry failed payroll export
+    Given a payroll export delivery fails
+    When the system detects failure
+    Then retries are scheduled with exponential backoff
+    And failures are logged in audit trail
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E04, E06
+  * Notes: Alerts for repeated failures.
+
+**User Story 4: Payroll Export Audit Logging**
+- Title: Payroll Export Audit Logging
+- User Story: As an auditor, I want every payroll export to be logged, so that compliance is maintained.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Audit payroll export
+    Given a payroll export is generated or delivered
+    When the event occurs
+    Then an audit log entry is created with actor, timestamp, and status
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 1
+  * Dependencies: E04, E06
+  * Notes: Links to E14 audit trail.
+
+---
+
+### E12: Notifications & Announcements
+
+**User Story 1: Notification Channel Preferences**
+- Title: Notification Channel Preferences
+- User Story: As an employee, I want to opt in or out of notification channels (in-app, email, SMS), so that I control how I receive updates.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Set notification preferences
+    Given I am logged in as an employee
+    When I update my notification channel preferences
+    Then my choices are saved
+    And notifications are delivered accordingly
+  ```
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E03, E05, E06, E07
+  * Notes: Quiet hours configurable.
+
+**User Story 2: Localized Notification Templates**
+- Title: Localized Notification Templates
+- User Story: As an admin, I want notification templates to be localized, so that messages are clear for all users.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Localized notification template
+    Given notification templates exist
+    When I configure locale-specific versions
+    Then notifications are sent in the user's preferred language
+  ```
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E03, E05, E06, E07
+  * Notes: Supports multiple languages.
+
+**User Story 3: Delivery Status Tracking**
+- Title: Delivery Status Tracking
+- User Story: As an admin, I want to track notification delivery status, so that I can ensure messages are received.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Track notification delivery
+    Given notifications are sent
+    When delivery status is updated
+    Then I can view sent, delivered, failed statuses per user
+  ```
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E03, E05, E06, E07
+  * Notes: Rate limits applied.
+
+**User Story 4: Announcements Dashboard**
+- Title: Announcements Dashboard
+- User Story: As an employee, I want to view announcements on my dashboard, so that I stay informed of important updates.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: View dashboard announcements
+    Given announcements are published
+    When I access my dashboard
+    Then I see all current announcements
+  ```
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: E03, E05, E06, E07
+  * Notes: Announcements expire after configurable period.
+
+---
+
+### E13: Integration Layer (HRIS/WMS APIs)
+
+**User Story 1: Secure REST API Endpoints**
+- Title: Secure REST API Endpoints
+- User Story: As a developer, I want REST API endpoints secured with JWT/OAuth2, so that integrations are protected.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Secure API access
+    Given API endpoints exist
+    When I authenticate with JWT/OAuth2
+    Then access is granted
+    And unauthorized requests are rejected
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E01, E02, E03
+  * Notes: API key toggle supported.
+
+**User Story 2: HRIS Sync Job**
+- Title: HRIS Sync Job
+- User Story: As an HR admin, I want a sync job to create/update employees from HRIS, so that master data is consistent.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: HRIS sync job
+    Given HRIS integration is configured
+    When the sync job runs
+    Then new hires and terminations are processed
+    And employee records are updated
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E01, E02, E03
+  * Notes: Idempotent processing.
+
+**User Story 3: WMS Department/Location Link**
+- Title: WMS Department/Location Link
+- User Story: As a warehouse manager, I want to link departments and locations from WMS, so that scheduling and reporting are accurate.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Link WMS department/location
+    Given WMS integration is configured
+    When department/location data is synced
+    Then records are updated in the system
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E01, E02, E03
+  * Notes: Supports multiple WMS providers.
+
+**User Story 4: Webhooks for Events**
+- Title: Webhooks for Events
+- User Story: As a developer, I want webhooks for key events (new hire, termination, shift assignment), so that external systems stay updated.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Event webhook delivery
+    Given a key event occurs
+    When webhook is configured
+    Then a POST is sent to the external endpoint
+    And delivery is retried on failure
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E01, E02, E03
+  * Notes: Webhook payloads documented.
+
+**User Story 5: OpenAPI Documentation**
+- Title: OpenAPI Documentation
+- User Story: As a developer, I want API endpoints documented in OpenAPI, so that integration is easy.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Access OpenAPI docs
+    Given APIs are available
+    When I access the documentation endpoint
+    Then I see OpenAPI schemas and examples
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 1
+  * Dependencies: E01, E02, E03
+  * Notes: Docs auto-generated.
+
+---
+
+### E14: Audit Trail & Compliance
+
+**User Story 1: Audit Logging for Sensitive Changes**
+- Title: Audit Logging for Sensitive Changes
+- User Story: As an admin, I want every create/update/delete of sensitive data to be logged, so that compliance is maintained.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Log sensitive change
+    Given a sensitive record is modified
+    When the change occurs
+    Then an audit log entry is created with actor, timestamp, before/after values
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 3
+  * Dependencies: E03
+  * Notes: Covers employee PII, schedules, approvals, payroll.
+
+**User Story 2: Tamper-Evident Storage**
+- Title: Tamper-Evident Storage
+- User Story: As an auditor, I want audit logs stored in a tamper-evident manner, so that forensic analysis is possible.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Tamper-evident audit log
+    Given audit logs are written
+    When I attempt to modify a log entry
+    Then modification is prevented
+    And logs are immutable
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E03
+  * Notes: Supports hash chaining.
+
+**User Story 3: Audit Log Export**
+- Title: Audit Log Export
+- User Story: As an admin, I want to export audit logs by date, user, or entity, so that investigations are supported.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Export audit logs
+    Given audit logs exist
+    When I filter by date/user/entity
+    Then a CSV file is generated
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 2
+  * Dependencies: E03
+  * Notes: Export includes all relevant fields.
+
+**User Story 4: Audit Coverage Tests**
+- Title: Audit Coverage Tests
+- User Story: As a QA engineer, I want tests to validate audit coverage, so that gaps are detected.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Validate audit coverage
+    Given tests are run
+    When sensitive actions occur
+    Then audit log entries are verified for each action
+  ```
+- Additional Details:
+  * Priority: High
+  * Story Points: 1
+  * Dependencies: E03
+  * Notes: Automated test suite.
+
+---
+
+### E15: Reporting & Analytics
+
+**User Story 1: Attendance & Overtime Reports**
+- Title: Attendance & Overtime Reports
+- User Story: As an HR manager, I want operational reports for attendance and overtime, so that staffing decisions are data-driven.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Generate attendance/overtime report
+    Given attendance and overtime data exists
+    When I filter by date, department, shift
+    Then a report is generated within 10s for up to 50k rows
+  ```
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 3
+  * Dependencies: E04, E05, E06, E07, E08, E14
+  * Notes: Export as CSV/PDF.
+
+**User Story 2: Leave Balance & Certification Status Reports**
+- Title: Leave Balance & Certification Status Reports
+- User Story: As an HR manager, I want reports for leave balances and certification status, so that compliance is tracked.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Generate leave/certification report
+    Given leave and certification data exists
+    When I request a report
+    Then a summary is generated with filters
+  ```
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E04, E05, E06, E07, E08, E14
+  * Notes: Role-based access.
+
+**User Story 3: Safety KPIs Dashboard**
+- Title: Safety KPIs Dashboard
+- User Story: As a safety manager, I want a dashboard for safety KPIs, so that risks are visible.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: View safety KPIs dashboard
+    Given safety incident data exists
+    When I access the dashboard
+    Then I see metrics for frequency, severity, resolution time
+  ```
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 2
+  * Dependencies: E04, E05, E06, E07, E08, E14
+  * Notes: Metrics endpoints for BI.
+
+**User Story 4: Metrics API Endpoints**
+- Title: Metrics API Endpoints
+- User Story: As a developer, I want API endpoints for metrics, so that BI tools can integrate.
+- Acceptance Criteria in Gherkin format:
+  ```
+  Scenario: Access metrics API
+    Given metrics endpoints exist
+    When I query the API
+    Then I receive operational data for reporting
+  ```
+- Additional Details:
+  * Priority: Medium
+  * Story Points: 1
+  * Dependencies: E04, E05, E06, E07, E08, E14
+  * Notes: Access controlled.
+
+===========================================
+END OF USER STORIES E11-E15
+===========================================
