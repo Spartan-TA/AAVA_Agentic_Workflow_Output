@@ -1,0 +1,16 @@
+Title: User Registration - Email and Password
+
+User Story Narrative:
+As a new user, I want to register for an account using my email and password so that I can access personalized features of the application.
+
+Acceptance Criteria (Gherkin):
+Given I am on the registration page,
+When I enter a valid email and password and submit the form,
+Then my account is created,
+And I receive a confirmation email.
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Password must meet security requirements (min 8 characters, 1 uppercase, 1 number).
