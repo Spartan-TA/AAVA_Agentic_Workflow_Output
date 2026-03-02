@@ -1,0 +1,277 @@
+### E06 - Leave & Absence Management
+
+**Title:** Request Leave  
+User Story: As an employee, I want to request PTO, sick, or unpaid leave So that my time off is tracked and approved.  
+Acceptance Criteria:  
+Scenario: Leave Request  
+Given leave balance  
+When I submit a leave request  
+Then the request is recorded and pending approval  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Employee Master Data, RBAC, Schedule Management  
+- Notes: Accrual policies enforced
+
+**Title:** Approve/Deny Leave  
+User Story: As a supervisor, I want to approve or deny leave requests So that staffing plans are maintained.  
+Acceptance Criteria:  
+Scenario: Leave Approval  
+Given a pending leave request  
+When I approve or deny  
+Then the employee is notified and balances update  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Request Leave  
+- Notes: Scheduled shifts auto-flagged for coverage
+
+**Title:** Update Leave Balances  
+User Story: As an HR user, I want leave balances to update automatically So that accruals and usage are accurate.  
+Acceptance Criteria:  
+Scenario: Balance Update  
+Given an approved leave  
+When leave is taken  
+Then balances decrease accordingly  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Approve/Deny Leave  
+- Notes: Integration hooks for payroll
+
+**Title:** Export Approved Leaves  
+User Story: As a payroll manager, I want to export approved leaves So that payroll calculations exclude time off.  
+Acceptance Criteria:  
+Scenario: Leave Export  
+Given approved leave records  
+When I request an export  
+Then a file is generated with leave details  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Update Leave Balances  
+- Notes: Export format matches payroll requirements
+
+---
+
+### E07 - Training & Certification Tracking
+
+**Title:** Track Employee Certifications  
+User Story: As a safety manager, I want to track employee certifications and expirations So that only qualified staff are assigned to sensitive tasks.  
+Acceptance Criteria:  
+Scenario: Certification Tracking  
+Given employee certification data  
+When I view profiles  
+Then certification status and expiry are visible  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Employee Master Data, RBAC  
+- Notes: CRUD for certifications
+
+**Title:** Certification Expiry Alerts  
+User Story: As a supervisor, I want alerts for expiring certifications So that renewals are handled proactively.  
+Acceptance Criteria:  
+Scenario: Expiry Alert  
+Given certifications expiring in 30/7 days  
+When I log in  
+Then alerts are shown for affected employees  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Track Employee Certifications  
+- Notes: Alerts via dashboard and notifications
+
+**Title:** Block Assignment to Expired Cert Tasks  
+User Story: As a scheduler, I want to block assignment of employees to tasks requiring valid certifications So that compliance is enforced.  
+Acceptance Criteria:  
+Scenario: Assignment Block  
+Given an expired certification  
+When I assign a task  
+Then the system prevents assignment  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Track Employee Certifications  
+- Notes: Scheduling checks enforced
+
+**Title:** Upload Certification Proof Documents  
+User Story: As an employee, I want to upload proof documents for certifications So that records are complete and verifiable.  
+Acceptance Criteria:  
+Scenario: Document Upload  
+Given a certification  
+When I upload a document  
+Then it is attached to the employee profile  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Track Employee Certifications  
+- Notes: Supported file types documented
+
+---
+
+### E08 - Safety Incidents & OSHA Reporting
+
+**Title:** Record Safety Incident  
+User Story: As a safety officer, I want to record incidents and near-misses with severity, location, description, and involved employees So that safety data is tracked for compliance.  
+Acceptance Criteria:  
+Scenario: Incident Recording  
+Given incident details  
+When I POST to /safety/incidents  
+Then the incident is validated and stored  
+Additional Details:  
+- Priority: High  
+- Story Points: 3  
+- Dependencies: Employee Master Data, RBAC  
+- Notes: Validation required
+
+**Title:** Incident Investigation Workflow  
+User Story: As a safety manager, I want a workflow for investigating and resolving incidents So that corrective actions are documented.  
+Acceptance Criteria:  
+Scenario: Investigation Workflow  
+Given an open incident  
+When I change status to Investigating or Resolved  
+Then workflow steps are tracked  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Record Safety Incident  
+- Notes: Status workflow enforced
+
+**Title:** OSHA Summary Export  
+User Story: As a compliance officer, I want to export OSHA 300/300A summaries So that regulatory reporting is simplified.  
+Acceptance Criteria:  
+Scenario: OSHA Export  
+Given incident records  
+When I request an export  
+Then OSHA fields are included in the file  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Record Safety Incident  
+- Notes: Export format matches OSHA requirements
+
+**Title:** Safety Metrics Dashboard  
+User Story: As a manager, I want a dashboard of safety KPIs So that trends and risks are visible.  
+Acceptance Criteria:  
+Scenario: Metrics Dashboard  
+Given incident and investigation data  
+When I access the dashboard  
+Then metrics endpoints return relevant KPIs  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Record Safety Incident  
+- Notes: Metrics endpoints available
+
+---
+
+### E09 - Equipment & Asset Assignment
+
+**Title:** Asset Registry CRUD  
+User Story: As an asset manager, I want to create, update, and delete asset records So that equipment inventory is accurate.  
+Acceptance Criteria:  
+Scenario: Asset CRUD  
+Given asset details  
+When I POST/PUT/DELETE assets  
+Then the registry updates accordingly  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Employee Master Data, RBAC, Certification Tracking  
+- Notes: Asset types include scanners, forklifts, PPE
+
+**Title:** Asset Check-In/Out  
+User Story: As an employee, I want to check out and return assets So that usage is tracked and accountability enforced.  
+Acceptance Criteria:  
+Scenario: Asset Checkout  
+Given a valid asset and employee  
+When I check out or return  
+Then the event is logged  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Asset Registry CRUD  
+- Notes: Blocks when certs invalid
+
+**Title:** Block Asset Use if Certification Missing  
+User Story: As a supervisor, I want to prevent asset use if required certifications are missing So that safety is ensured.  
+Acceptance Criteria:  
+Scenario: Certification Block  
+Given an employee without valid cert  
+When I attempt asset checkout  
+Then the system blocks the action  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Asset Registry CRUD  
+- Notes: History log visible per asset and employee
+
+**Title:** Overdue Asset Return Report  
+User Story: As an asset manager, I want reports of overdue asset returns So that follow-up actions can be taken.  
+Acceptance Criteria:  
+Scenario: Overdue Report  
+Given asset checkout data  
+When I generate a report  
+Then overdue returns are listed  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Asset Check-In/Out  
+- Notes: Report includes employee and asset details
+
+---
+
+### E10 - Performance Reviews & Goals
+
+**Title:** Create Review Cycle  
+User Story: As an HR user, I want to create quarterly and annual review cycles So that structured feedback is collected.  
+Acceptance Criteria:  
+Scenario: Review Cycle Creation  
+Given cycle details  
+When I POST to /reviews/cycles  
+Then a new cycle is created  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Employee Master Data, RBAC  
+- Notes: Templates for goals and competencies
+
+**Title:** Assign Reviews to Employees  
+User Story: As a supervisor, I want to assign reviews to employees So that performance is evaluated regularly.  
+Acceptance Criteria:  
+Scenario: Review Assignment  
+Given a review cycle  
+When I assign employees  
+Then reviews are visible in their profiles  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Create Review Cycle  
+- Notes: Role-based visibility
+
+**Title:** Submit & Acknowledge Reviews  
+User Story: As an employee, I want to submit and acknowledge reviews So that feedback is documented and agreed upon.  
+Acceptance Criteria:  
+Scenario: Review Submission  
+Given an assigned review  
+When I submit and acknowledge  
+Then the review is marked complete  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Assign Reviews to Employees  
+- Notes: Immutable history after sign-off
+
+**Title:** Export Reviews as PDF  
+User Story: As an HR user, I want to export reviews as PDF So that records can be archived and shared.  
+Acceptance Criteria:  
+Scenario: PDF Export  
+Given completed reviews  
+When I request export  
+Then a PDF file is generated  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Submit & Acknowledge Reviews  
+- Notes: Export includes ratings and comments
