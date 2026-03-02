@@ -1,0 +1,16 @@
+Title: Logout
+
+User Story Narrative:
+As a logged-in user, I want to log out of my account so that I can ensure my session is secure.
+
+Acceptance Criteria (Gherkin):
+Given I am logged in,
+When I click the "Logout" button,
+Then I am logged out,
+And redirected to the login page.
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Login
+- Notes: Invalidate session token on logout.
