@@ -1,0 +1,12 @@
+User Story 3
+Title: Enable Spring Boot Actuator Health Endpoint
+User Story: As an operator, I want to access the Actuator health endpoint so that I can verify the application's health status.
+Acceptance Criteria (Gherkin):
+  Given the application is running,
+  When I access '/actuator/health',
+  Then the endpoint should return a status of "UP".
+Additional Details:
+  Priority: High
+  Story Points: 1
+  Dependencies: User Story 1
+  Notes: Required for monitoring and readiness checks.
