@@ -1,0 +1,16 @@
+Title: User Login - Email and Password
+
+User Story Narrative:
+As a registered user, I want to log in using my email and password so that I can securely access my account.
+
+Acceptance Criteria (Gherkin):
+Given I am on the login page,
+When I enter a valid email and password,
+Then I am logged into my account,
+And I am redirected to the dashboard.
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Registration
+- Notes: Lock account after 5 failed attempts.
