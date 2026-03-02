@@ -1,0 +1,16 @@
+Title: Email Verification
+
+User Story Narrative:
+As a new user, I want to verify my email address after registration so that I can activate my account.
+
+Acceptance Criteria (Gherkin):
+Given I have registered,
+When I receive a verification email and click the link,
+Then my account is activated,
+And I can log in.
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Registration
+- Notes: Verification link expires in 48 hours.
