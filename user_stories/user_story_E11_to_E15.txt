@@ -1,0 +1,277 @@
+### E11 - Payroll Export Integration
+
+**Title:** Generate Payroll-Ready Export  
+User Story: As a payroll manager, I want to generate payroll-ready files from attendance and leave So that payroll runs are accurate and efficient.  
+Acceptance Criteria:  
+Scenario: Payroll Export  
+Given approved attendance and leave  
+When I generate export  
+Then file matches provider schema  
+Additional Details:  
+- Priority: High  
+- Story Points: 3  
+- Dependencies: Attendance, Leave Management  
+- Notes: Secure delivery via SFTP/API
+
+**Title:** Reconcile Payroll Totals  
+User Story: As a payroll manager, I want payroll totals to reconcile with attendance and leave reports So that errors are minimized.  
+Acceptance Criteria:  
+Scenario: Payroll Reconciliation  
+Given exported payroll data  
+When I compare totals  
+Then they match attendance and leave reports  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Generate Payroll-Ready Export  
+- Notes: Reconciliation process documented
+
+**Title:** Retry Failed Payroll Deliveries  
+User Story: As a DevOps engineer, I want failed payroll deliveries to retry with backoff So that exports are reliably delivered.  
+Acceptance Criteria:  
+Scenario: Delivery Retry  
+Given a failed delivery  
+When retry logic triggers  
+Then delivery is retried with exponential backoff  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Generate Payroll-Ready Export  
+- Notes: Audit log for every export
+
+**Title:** Audit Payroll Export  
+User Story: As a compliance officer, I want an audit log for every payroll export So that processing is traceable.  
+Acceptance Criteria:  
+Scenario: Export Audit  
+Given payroll exports  
+When I review logs  
+Then each export has actor, timestamp, and status  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Generate Payroll-Ready Export  
+- Notes: Audit log exportable
+
+---
+
+### E12 - Notifications & Announcements
+
+**Title:** Notification Channel Opt-In/Out  
+User Story: As a user, I want to opt-in or out of notification channels (in-app, email, SMS) So that I control how I receive updates.  
+Acceptance Criteria:  
+Scenario: Channel Opt-In  
+Given notification preferences  
+When I update settings  
+Then notifications are sent only to selected channels  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: RBAC, Schedule, Leave, Certification  
+- Notes: Templates localized
+
+**Title:** Localized Notification Templates  
+User Story: As a manager, I want notification templates to be localized So that messages are clear for all users.  
+Acceptance Criteria:  
+Scenario: Template Localization  
+Given a notification  
+When I send it  
+Then it appears in the user's preferred language  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Notification Channel Opt-In/Out  
+- Notes: English/Spanish supported
+
+**Title:** Track Notification Delivery Status  
+User Story: As a system admin, I want to track notification delivery status So that failures can be addressed.  
+Acceptance Criteria:  
+Scenario: Delivery Tracking  
+Given sent notifications  
+When I review status  
+Then delivery success or failure is logged  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Notification Channel Opt-In/Out  
+- Notes: Rate limits applied
+
+**Title:** Announcements on Dashboard  
+User Story: As a supervisor, I want announcements to be visible on the dashboard So that important updates reach all users.  
+Acceptance Criteria:  
+Scenario: Announcement Display  
+Given an announcement  
+When users log in  
+Then it is visible on their dashboard  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Notification Channel Opt-In/Out  
+- Notes: Quiet hours configuration supported
+
+---
+
+### E13 - Integration Layer (HRIS/WMS APIs)
+
+**Title:** Secure REST APIs for HRIS/WMS  
+User Story: As an integration engineer, I want REST APIs secured with JWT/OAuth2 So that external systems can safely synchronize data.  
+Acceptance Criteria:  
+Scenario: API Security  
+Given API endpoints  
+When accessed with valid token  
+Then data is exchanged securely  
+Additional Details:  
+- Priority: High  
+- Story Points: 3  
+- Dependencies: Project Scaffolding, Employee Master Data, RBAC  
+- Notes: API documented in OpenAPI
+
+**Title:** HRIS Sync Job for Employees  
+User Story: As an HRIS admin, I want a sync job that creates/updates employees from HRIS So that master data is consistent.  
+Acceptance Criteria:  
+Scenario: HRIS Sync  
+Given new hire/term data  
+When sync job runs  
+Then employee records are created/updated  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Secure REST APIs for HRIS/WMS  
+- Notes: Idempotent webhooks
+
+**Title:** WMS Link for Department/Location  
+User Story: As a warehouse manager, I want WMS integration for department and location data So that employee assignments are accurate.  
+Acceptance Criteria:  
+Scenario: WMS Link  
+Given department/location changes  
+When sync occurs  
+Then employee assignments update  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Secure REST APIs for HRIS/WMS  
+- Notes: API documented in OpenAPI
+
+**Title:** SSO Integration via IDP  
+User Story: As a user, I want SSO integration via IDP So that I can log in with my corporate credentials.  
+Acceptance Criteria:  
+Scenario: SSO Login  
+Given IDP configuration  
+When I log in  
+Then authentication is handled via SSO  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Secure REST APIs for HRIS/WMS  
+- Notes: SSO documented
+
+---
+
+### E14 - Audit Trail & Compliance
+
+**Title:** Audit Logging for Sensitive Changes  
+User Story: As a compliance officer, I want centralized audit logging for sensitive changes So that forensic analysis is possible.  
+Acceptance Criteria:  
+Scenario: Audit Log Entry  
+Given a create/update/delete action  
+When it occurs  
+Then actor, timestamp, before/after are logged  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: RBAC  
+- Notes: Immutable log table
+
+**Title:** Export Audit Log by Date/User/Entity  
+User Story: As a compliance officer, I want to export audit logs by date, user, or entity So that investigations are supported.  
+Acceptance Criteria:  
+Scenario: Audit Log Export  
+Given audit log data  
+When I filter and export  
+Then relevant entries are included  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Audit Logging for Sensitive Changes  
+- Notes: Export format documented
+
+**Title:** Tamper-Evident Storage  
+User Story: As a system admin, I want audit logs stored in a tamper-evident manner So that compliance requirements are met.  
+Acceptance Criteria:  
+Scenario: Tamper-Evident Storage  
+Given audit log entries  
+When stored  
+Then logs cannot be altered without detection  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Audit Logging for Sensitive Changes  
+- Notes: Tests validate coverage
+
+**Title:** Test Audit Log Coverage  
+User Story: As a QA engineer, I want tests to validate audit log coverage So that all sensitive actions are tracked.  
+Acceptance Criteria:  
+Scenario: Audit Log Test  
+Given test cases for sensitive actions  
+When executed  
+Then audit logs are generated for each  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: Audit Logging for Sensitive Changes  
+- Notes: Coverage report generated
+
+---
+
+### E15 - Reporting & Analytics
+
+**Title:** Generate Operational Reports  
+User Story: As a manager, I want operational reports for attendance, overtime, leave balances, certification status, and safety KPIs So that I can make data-driven decisions.  
+Acceptance Criteria:  
+Scenario: Report Generation  
+Given report criteria  
+When I request a report  
+Then data is filtered by date, department, shift  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 3  
+- Dependencies: Attendance, Schedule, Leave, Certification, Safety, Audit  
+- Notes: Export CSV/PDF supported
+
+**Title:** Export Reports within 10s for 50k Rows  
+User Story: As a manager, I want reports to export within 10 seconds for up to 50,000 rows So that large datasets are handled efficiently.  
+Acceptance Criteria:  
+Scenario: Large Export  
+Given large report data  
+When I export  
+Then file is generated within 10 seconds  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Generate Operational Reports  
+- Notes: Performance tested
+
+**Title:** Role-Based Dashboards  
+User Story: As a supervisor, I want dashboards tailored to my role So that relevant metrics are highlighted.  
+Acceptance Criteria:  
+Scenario: Dashboard Access  
+Given user role  
+When I access dashboard  
+Then metrics are filtered by role  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Generate Operational Reports  
+- Notes: Access controlled
+
+**Title:** Metrics Endpoints for BI  
+User Story: As a BI analyst, I want metrics endpoints available So that external tools can integrate for analytics.  
+Acceptance Criteria:  
+Scenario: Metrics API  
+Given metrics endpoints  
+When accessed  
+Then data is returned for BI integration  
+Additional Details:  
+- Priority: Medium  
+- Story Points: 2  
+- Dependencies: Generate Operational Reports  
+- Notes: API documented
