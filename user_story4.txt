@@ -1,0 +1,16 @@
+Title: Profile Management
+
+User Story Narrative:
+As a logged-in user, I want to update my profile information so that my account details are accurate and up to date.
+
+Acceptance Criteria (Gherkin):
+Given I am logged in,
+When I navigate to my profile page and update my information,
+Then my changes are saved,
+And I see a confirmation message.
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: User Login
+- Notes: Email change requires re-verification.
