@@ -1,0 +1,15 @@
+Title: Admin - View User List
+
+User Story Narrative:
+As an admin, I want to view a list of all registered users so that I can manage user accounts.
+
+Acceptance Criteria (Gherkin):
+Given I am logged in as an admin,
+When I navigate to the user management page,
+Then I see a list of all registered users with basic details.
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: User Registration, Admin Role
+- Notes: List should be paginated.
