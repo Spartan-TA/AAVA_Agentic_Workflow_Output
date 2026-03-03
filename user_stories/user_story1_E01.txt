@@ -1,0 +1,53 @@
+### E01: Project Scaffolding & Domain Setup
+
+#### 1. Initialize Spring Boot Project Structure
+User Story: As a developer I want a standardized Spring Boot project structure So that all modules follow consistent conventions and are easy to maintain
+Acceptance Criteria:
+Scenario: Project builds and runs
+Given I have cloned the repository
+When I run the build and start the application
+Then the project runs on port 8080 and the base package structure is present
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Include README with build/run steps
+
+#### 2. Configure Database Migration Tool
+User Story: As a developer I want Flyway/Liquibase configured for DB migrations So that database changes are versioned and repeatable
+Acceptance Criteria:
+Scenario: Baseline migration runs
+Given the application starts with a clean database
+When the migration tool executes
+Then the baseline schema is created without errors
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project structure
+- Notes: Support both Flyway and Liquibase via profiles
+
+#### 3. Add Spring Boot Actuator for Health Checks
+User Story: As an operator I want Actuator endpoints enabled So that I can monitor application health
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access /actuator/health
+Then the response is {"status":"UP"}
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project structure
+- Notes: Expose only necessary endpoints
+
+#### 4. Create Core Domain Modules
+User Story: As a developer I want core modules (employee, scheduling, attendance, safety) scaffolded So that future features can be developed independently
+Acceptance Criteria:
+Scenario: Core packages exist
+Given the project is generated
+When I browse the codebase
+Then I see base packages for employee, scheduling, attendance, and safety
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project structure
+- Notes: Use package-by-feature convention
