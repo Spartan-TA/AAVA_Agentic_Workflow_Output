@@ -1,0 +1,66 @@
+### E03: Role-Based Access Control (RBAC)
+
+#### 1. Implement Role Definitions and Assignment
+User Story: As an admin I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users So that access is controlled
+Acceptance Criteria:
+Scenario: Assign role to user
+Given a user exists
+When I assign the SUPERVISOR role
+Then the user has supervisor permissions
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Store roles in DB
+
+#### 2. Secure Endpoints with Method/Endpoint Security
+User Story: As a developer I want endpoints secured by role So that only authorized users can access sensitive data
+Acceptance Criteria:
+Scenario: Unauthorized access returns 401
+Given I am not authenticated
+When I access a protected endpoint
+Then I receive a 401 Unauthorized response
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Use Spring Security annotations
+
+#### 3. Enforce Row-Level Security for Supervisors
+User Story: As a supervisor I want to access only my team's records So that I cannot view other teams' data
+Acceptance Criteria:
+Scenario: Supervisor access limited
+Given I am a supervisor
+When I GET /employees
+Then I see only employees in my team
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02
+- Notes: Implement row-level filters
+
+#### 4. Support API Key/OAuth2 Toggle via Config
+User Story: As a system admin I want to toggle between API key and OAuth2 authentication So that integration options are flexible
+Acceptance Criteria:
+Scenario: Switch authentication mode
+Given the system is configured for API key
+When I update config to OAuth2
+Then endpoints require OAuth2 tokens
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Document config options
+
+#### 5. Automated Security Test Coverage
+User Story: As a QA I want automated tests for security rules So that unauthorized actions are prevented
+Acceptance Criteria:
+Scenario: Forbidden actions return 403
+Given I am a worker
+When I try to delete an employee
+Then I receive a 403 Forbidden response
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02
+- Notes: Cover all roles and endpoints
