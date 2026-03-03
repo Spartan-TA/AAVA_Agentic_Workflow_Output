@@ -1,0 +1,18 @@
+Title: Training & Certification Tracking
+User Story: As a safety manager I want to track employee certifications and expirations So that only qualified staff are assigned to sensitive tasks
+Acceptance Criteria:
+Scenario: Certification expiring alert
+Given a certification expires in 30 days
+When I view the dashboard
+Then I see an alert for upcoming expiration
+
+Scenario: Block assignment with expired cert
+Given an employee's certification is expired
+When I assign them to a restricted task
+Then the assignment is blocked
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC
+- Notes: Upload proof documents; status visible on profile.
