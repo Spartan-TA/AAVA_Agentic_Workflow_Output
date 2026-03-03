@@ -1,0 +1,18 @@
+Title: Notifications & Announcements
+User Story: As a supervisor I want to send shift change notifications and announcements to my team So that everyone is informed in real time
+Acceptance Criteria:
+Scenario: Send notification
+Given a shift change occurs
+When I trigger a notification
+Then affected users receive in-app and email/SMS alerts
+
+Scenario: Opt-in/out and quiet hours
+Given a user configures notification preferences
+When an event occurs during quiet hours
+Then notifications are delayed or suppressed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: RBAC, Schedule Management, Leave Management, Certification Tracking
+- Notes: Localized templates; delivery status tracked.
