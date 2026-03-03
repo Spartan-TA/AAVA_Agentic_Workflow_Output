@@ -1,0 +1,13 @@
+Title: Calculate Hours Worked
+User Story: As a payroll admin I want the system to calculate hours worked per shift So that payroll is accurate
+Acceptance Criteria:
+Scenario: Daily totals computed
+Given clock-in and clock-out events exist for a day
+When I view the attendance report
+Then total hours worked are displayed for each employee
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Clock In/Out
+- Notes: Handle overnight and split shifts.
