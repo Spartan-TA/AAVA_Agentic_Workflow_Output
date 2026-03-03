@@ -1,0 +1,18 @@
+Title: Integration Layer (HRIS/WMS APIs)
+User Story: As an integration engineer I want to expose and consume APIs for HRIS and WMS So that employee and department data stays synchronized
+Acceptance Criteria:
+Scenario: HRIS sync job
+Given new hires in HRIS
+When the sync job runs
+Then new employees are created in the system
+
+Scenario: JWT/OAuth2-secured APIs
+Given an external system authenticates
+When it calls the API
+Then only authorized access is allowed
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Project Scaffolding, Employee CRUD API, RBAC
+- Notes: Idempotent webhooks; OpenAPI documentation.
