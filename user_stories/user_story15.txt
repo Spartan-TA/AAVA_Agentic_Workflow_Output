@@ -1,0 +1,18 @@
+Title: Performance Reviews & Goals
+User Story: As a supervisor I want to conduct and record performance reviews for my team So that feedback and goals are documented
+Acceptance Criteria:
+Scenario: Create review cycle
+Given a new review period
+When I create a review template
+Then it is available for assignment to employees
+
+Scenario: Submit and acknowledge review
+Given a completed review
+When both supervisor and employee acknowledge
+Then the review is locked and archived
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee CRUD API, RBAC
+- Notes: PDF export; immutable after sign-off.
