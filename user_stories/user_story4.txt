@@ -1,0 +1,23 @@
+Title: Employee CRUD API
+User Story: As an HR user I want to create, read, update, and delete employee records So that I can manage warehouse staff information efficiently
+Acceptance Criteria:
+Scenario: Create employee
+Given I have valid employee data
+When I POST to /employees
+Then the employee is created and returned with a unique badgeId
+
+Scenario: Update employee
+Given an existing employee
+When I PUT updated data to /employees/{id}
+Then the employee record is updated
+
+Scenario: Delete employee (soft-delete)
+Given an existing employee
+When I DELETE /employees/{id}
+Then the employee is marked as inactive but not removed from the database
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project Scaffolding, Database Migration
+- Notes: Support pagination, filtering, and OpenAPI documentation.
