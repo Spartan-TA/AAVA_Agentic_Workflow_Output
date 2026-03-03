@@ -1,0 +1,290 @@
+### E16: Mobile Access (PWA)
+
+#### 1. Responsive Mobile Views for Core Flows
+User Story: As a worker I want to use core features on mobile So that I can clock in/out, view shifts, and request leave
+Acceptance Criteria:
+Scenario: Mobile usability
+Given I access the app on a phone
+When I use core flows
+Then all screens are responsive and usable
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Test on common devices
+
+#### 2. Installable PWA Manifest
+User Story: As a worker I want to install the app as a PWA So that I have quick access
+Acceptance Criteria:
+Scenario: Install PWA
+Given I use a supported browser
+When I add to home screen
+Then the app installs as a PWA
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Manifest and icons included
+
+#### 3. Offline Queue for Clock Events
+User Story: As a worker I want to clock in/out offline So that my attendance is not lost
+Acceptance Criteria:
+Scenario: Offline clock-in
+Given I am offline
+When I clock in
+Then the event is queued and synced when online
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04
+- Notes: Handle conflicts on sync
+
+#### 4. Lighthouse PWA Score â¥ 80
+User Story: As a QA I want the PWA to score at least 80 on Lighthouse So that performance and accessibility are high
+Acceptance Criteria:
+Scenario: Lighthouse audit
+Given the app is deployed
+When I run Lighthouse
+Then the PWA score is 80 or higher
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E04, E05, E06, E12
+- Notes: Address audit findings
+
+---
+
+### E17: Onboarding & Offboarding Workflow
+
+#### 1. Automate New Hire Provisioning from HRIS
+User Story: As an HR user I want new hires provisioned automatically from HRIS So that onboarding is efficient
+Acceptance Criteria:
+Scenario: New hire appears
+Given a new hire in HRIS
+When the sync runs
+Then the employee is created and onboarding tasks are generated
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E13
+- Notes: Assign initial schedule and training
+
+#### 2. Generate Training and Asset Assignment Tasks
+User Story: As a supervisor I want onboarding tasks for training and asset assignment So that new hires are ready to work
+Acceptance Criteria:
+Scenario: Tasks generated
+Given a new hire is created
+When onboarding starts
+Then tasks for required training and asset assignment are created
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E07, E09
+- Notes: Track completion status
+
+#### 3. Automate Offboarding on Termination
+User Story: As an HR user I want offboarding automated on termination So that access and assets are recovered
+Acceptance Criteria:
+Scenario: Offboarding triggered
+Given an employee is terminated
+When the event is processed
+Then access is revoked, assets are collected, and schedules updated
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E09, E13
+- Notes: Notify responsible parties
+
+#### 4. Update Schedules and Access on Lifecycle Changes
+User Story: As a system admin I want schedules and access updated automatically on onboarding/offboarding So that no manual steps are missed
+Acceptance Criteria:
+Scenario: Schedule updated
+Given an employee is offboarded
+When the workflow completes
+Then all future shifts are unassigned and access is disabled
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E05, E13
+- Notes: Log all changes
+
+---
+
+### E18: Localization & Multi-Tenant
+
+#### 1. Support Multiple Warehouses/Regions
+User Story: As an admin I want to manage multiple warehouses and regions So that operations are separated
+Acceptance Criteria:
+Scenario: Create warehouse
+Given I provide warehouse details
+When I POST to /warehouses
+Then a new warehouse is created and scoped data is isolated
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Enforce tenant isolation
+
+#### 2. Localization of UI and Notifications
+User Story: As a worker I want the UI and notifications in my preferred language So that I can understand all information
+Acceptance Criteria:
+Scenario: Set language preference
+Given I select Spanish
+When I use the app
+Then all UI and notifications are in Spanish
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E12
+- Notes: Support at least EN/ES
+
+#### 3. Tenant-Aware Authentication and Authorization
+User Story: As a system admin I want authentication and authorization scoped to tenants So that users access only their warehouse data
+Acceptance Criteria:
+Scenario: Tenant isolation enforced
+Given I am assigned to Warehouse A
+When I log in
+Then I cannot access Warehouse B data
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03
+- Notes: Enforce in all queries
+
+#### 4. Regional Settings for Time, Currency, and Formats
+User Story: As a user I want time, currency, and formats localized So that data matches my region
+Acceptance Criteria:
+Scenario: Regional formats applied
+Given I am in Germany
+When I view dates and times
+Then they are formatted as DD.MM.YYYY and 24h time
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E12
+- Notes: Configurable per tenant
+
+---
+
+### E19: Observability & Monitoring
+
+#### 1. Structured Application Logging
+User Story: As a developer I want structured logs for all modules So that issues are traceable
+Acceptance Criteria:
+Scenario: Log entry format
+Given the app runs
+When an event occurs
+Then logs are structured (JSON) with module, user, and trace ID
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Integrate with log aggregator
+
+#### 2. Application Metrics and Health Endpoints
+User Story: As an operator I want metrics and health endpoints So that I can monitor system status
+Acceptance Criteria:
+Scenario: Metrics endpoint available
+Given the app is running
+When I access /actuator/metrics
+Then key metrics are returned
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Expose Prometheus format
+
+#### 3. Alerting on Error and Performance Thresholds
+User Story: As an operator I want alerts for errors and slow performance So that I can respond quickly
+Acceptance Criteria:
+Scenario: Alert triggered
+Given error rate exceeds threshold
+When the condition is met
+Then an alert is sent to the ops team
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Integrate with alerting system
+
+#### 4. Dashboard for Real-Time Monitoring
+User Story: As an operator I want a real-time dashboard So that I can view system health at a glance
+Acceptance Criteria:
+Scenario: View dashboard
+Given the app is running
+When I access the dashboard
+Then I see real-time metrics and alerts
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01
+- Notes: Use Grafana or similar
+
+---
+
+### E20: CI/CD & Deployment Automation
+
+#### 1. GitHub Actions Pipeline for Build/Test
+User Story: As a developer I want automated build and test pipelines So that code quality is enforced
+Acceptance Criteria:
+Scenario: Pipeline runs on PR
+Given a pull request is opened
+When the pipeline runs
+Then build and tests pass or fail with results
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Fail on test errors
+
+#### 2. Automated Deployment to Staging/Prod
+User Story: As a release manager I want automated deployment to staging and production So that releases are consistent
+Acceptance Criteria:
+Scenario: Deploy on merge
+Given code is merged to main
+When the pipeline runs
+Then the app is deployed to staging/production
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Use environment variables
+
+#### 3. Rollback on Deployment Failure
+User Story: As an operator I want automatic rollback on deployment failure So that downtime is minimized
+Acceptance Criteria:
+Scenario: Deployment fails
+Given a deployment error
+When the pipeline detects failure
+Then the previous version is restored automatically
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Notify team on rollback
+
+#### 4. Artifact Versioning and Release Notes
+User Story: As a developer I want build artifacts versioned and release notes generated So that releases are traceable
+Acceptance Criteria:
+Scenario: Artifact versioned
+Given a build completes
+When the pipeline finishes
+Then artifacts are tagged and release notes are published
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Link to GitHub releases
+
+#### 5. Security and Code Quality Scans in Pipeline
+User Story: As a security lead I want code scanned for vulnerabilities in CI/CD So that risks are detected early
+Acceptance Criteria:
+Scenario: Security scan runs
+Given a PR is opened
+When the pipeline runs
+Then code is scanned and results are reported
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E01
+- Notes: Fail build on critical issues
