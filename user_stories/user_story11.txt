@@ -1,0 +1,33 @@
+### E11 â Payroll Export Integration
+
+**User Story 1: Generate Payroll Export Files**
+- **User Story:** As a payroll admin, I want to generate payroll-ready files from attendance and leave so that payroll is automated.
+- **Acceptance Criteria:**
+  - Given approved data,
+  - When I export,
+  - Then the file matches provider schema.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E04, E06; Notes: Support CSV, XML.
+
+**User Story 2: Map Data to Provider Format**
+- **User Story:** As a developer, I want to map internal data to external payroll formats so that integration is seamless.
+- **Acceptance Criteria:**
+  - Given provider specs,
+  - When I configure mapping,
+  - Then exports match required fields.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E11-1; Notes: Configurable mapping.
+
+**User Story 3: Secure Delivery via SFTP/API**
+- **User Story:** As a payroll admin, I want to deliver exports securely so that sensitive data is protected.
+- **Acceptance Criteria:**
+  - Given an export,
+  - When I send via SFTP/API,
+  - Then delivery is encrypted and logged.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E11-1; Notes: Retry on failure.
+
+**User Story 4: Audit Payroll Exports**
+- **User Story:** As an auditor, I want every export logged so that I can trace payroll runs.
+- **Acceptance Criteria:**
+  - Given an export,
+  - When it is generated/delivered,
+  - Then an audit entry is created.
+- **Additional Details:** Priority: High; Story Points: 1; Dependencies: E14; Notes: Include totals and status.
