@@ -1,0 +1,26 @@
+Title: Method-Level Security and Row-Level Constraints
+
+User Story: As a developer, I want to enforce method and row-level security so that users can only access permitted records.
+
+Acceptance Criteria:
+
+Scenario: SUPERVISOR sees only team records
+Given a SUPERVISOR
+When accessing employee data
+Then only their team's records are visible
+
+Scenario: HR user sees all records
+Given an HR user
+When accessing employee data
+Then all records are visible
+
+Scenario: WORKER sees only own record
+Given a WORKER
+When accessing employee data
+Then only their own record is visible
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E03
+- Notes: Fine-grained access
