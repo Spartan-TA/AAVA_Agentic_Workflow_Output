@@ -1,0 +1,31 @@
+Title: Implement Role-Based Endpoint Security
+
+User Story: As an admin, I want to restrict API access based on user roles so that sensitive data is protected.
+
+Acceptance Criteria:
+
+Scenario: Unauthorized access returns 401
+Given a non-authenticated user
+When accessing a protected endpoint
+Then a 401 Unauthorized is returned
+
+Scenario: Insufficient role returns 403
+Given a user with insufficient role
+When accessing a restricted endpoint
+Then a 403 Forbidden is returned
+
+Scenario: ADMIN has full access
+Given an ADMIN
+When accessing any endpoint
+Then access is granted
+
+Scenario: SUPERVISOR has limited access
+Given a SUPERVISOR
+When accessing team data
+Then access is granted; otherwise, denied
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Security rules must be covered by tests
