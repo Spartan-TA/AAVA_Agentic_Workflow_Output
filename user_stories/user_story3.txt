@@ -1,0 +1,41 @@
+### E03 â Role-Based Access Control (RBAC)
+
+**User Story 1: Implement Role Model**
+- **User Story:** As an admin, I want to define roles (ADMIN, HR, SUPERVISOR, WORKER) so that access is controlled.
+- **Acceptance Criteria:**
+  - Given the system is running,
+  - When I assign roles,
+  - Then users have permissions per their role.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E01, E02; Notes: Use Spring Security.
+
+**User Story 2: Secure Endpoints by Role**
+- **User Story:** As a developer, I want endpoints protected by role so that unauthorized access is prevented.
+- **Acceptance Criteria:**
+  - Given a user with insufficient role,
+  - When they access a protected endpoint,
+  - Then they receive 401 or 403 as appropriate.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E03-1; Notes: Cover all sensitive endpoints.
+
+**User Story 3: Row-Level Security**
+- **User Story:** As a supervisor, I want to access only my team's data so that privacy is maintained.
+- **Acceptance Criteria:**
+  - Given a supervisor,
+  - When they list employees,
+  - Then only their team's records are visible.
+- **Additional Details:** Priority: High; Story Points: 3; Dependencies: E03-1; Notes: Enforce in queries.
+
+**User Story 4: API Key/OAuth2 Toggle**
+- **User Story:** As an admin, I want to switch between API key and OAuth2 authentication so that integration is flexible.
+- **Acceptance Criteria:**
+  - Given the config is changed,
+  - When I authenticate,
+  - Then the system uses the selected method.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E03-1; Notes: Document toggle steps.
+
+**User Story 5: Security Test Coverage**
+- **User Story:** As a QA, I want automated tests for security rules so that regressions are caught early.
+- **Acceptance Criteria:**
+  - Given the test suite runs,
+  - When endpoints are tested,
+  - Then unauthorized/forbidden actions are verified.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E03-2; Notes: Cover all roles.
