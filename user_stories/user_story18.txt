@@ -1,0 +1,33 @@
+### E18 â Localization
+
+**User Story 1: Localize UI Labels**
+- **User Story:** As a worker, I want UI labels in my preferred language so that I can use the app easily.
+- **Acceptance Criteria:**
+  - Given my locale,
+  - When I log in,
+  - Then all labels are in my language.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: None; Notes: Support EN/ES.
+
+**User Story 2: Localize Notification Templates**
+- **User Story:** As an admin, I want notification templates localized so that users receive messages in their language.
+- **Acceptance Criteria:**
+  - Given a user's locale,
+  - When a notification is sent,
+  - Then the template matches their language.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E12; Notes: Reuse translation files.
+
+**User Story 3: Localize Date/Time Formats**
+- **User Story:** As a worker, I want date/time formats localized so that schedules are clear.
+- **Acceptance Criteria:**
+  - Given my locale,
+  - When I view dates/times,
+  - Then they are formatted appropriately.
+- **Additional Details:** Priority: Medium; Story Points: 1; Dependencies: None; Notes: Support 24h/12h, MM/DD/YYYY, DD/MM/YYYY.
+
+**User Story 4: Language Switcher**
+- **User Story:** As a user, I want to switch languages in the UI so that I can change preferences easily.
+- **Acceptance Criteria:**
+  - Given I am logged in,
+  - When I change language,
+  - Then the UI updates immediately.
+- **Additional Details:** Priority: Medium; Story Points: 1; Dependencies: E18-1; Notes: Persist preference.
