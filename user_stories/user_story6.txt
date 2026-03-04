@@ -1,0 +1,41 @@
+### E06 â Leave & Absence Management
+
+**User Story 1: Request Leave**
+- **User Story:** As an employee, I want to request PTO, sick, or unpaid leave so that my time off is tracked.
+- **Acceptance Criteria:**
+  - Given I am logged in,
+  - When I submit a leave request,
+  - Then it is recorded and pending approval.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E02, E03, E05; Notes: Validate leave type.
+
+**User Story 2: Approve/Deny Leave**
+- **User Story:** As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+- **Acceptance Criteria:**
+  - Given a pending request,
+  - When I take action,
+  - Then the request status updates and the employee is notified.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E06-1; Notes: Record reason for denial.
+
+**User Story 3: Update Accrual Balances**
+- **User Story:** As an HR user, I want leave balances updated automatically so that accruals are accurate.
+- **Acceptance Criteria:**
+  - Given an approved leave,
+  - When the leave is processed,
+  - Then the employee's balance is reduced accordingly.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E06-2; Notes: Support multiple policies.
+
+**User Story 4: Exclude from Scheduling**
+- **User Story:** As a scheduler, I want approved leaves to auto-flag shifts for coverage so that absences are covered.
+- **Acceptance Criteria:**
+  - Given an approved leave,
+  - When shifts overlap,
+  - Then those shifts are flagged for reassignment.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E05, E06-2; Notes: Notify supervisors.
+
+**User Story 5: Export Approved Leaves**
+- **User Story:** As an HR user, I want to export approved leaves so that payroll and compliance are supported.
+- **Acceptance Criteria:**
+  - Given approved leaves,
+  - When I export data,
+  - Then a CSV is generated with all relevant details.
+- **Additional Details:** Priority: Medium; Story Points: 1; Dependencies: E06-3; Notes: Include leave type and dates.
