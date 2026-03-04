@@ -1,0 +1,21 @@
+Title: Bulk Shift Assignment and Audit Logging
+
+User Story: As a supervisor, I want to assign shifts in bulk and have all changes audited so that scheduling is efficient and traceable.
+
+Acceptance Criteria:
+
+Scenario: Bulk assign shifts
+Given a group of employees
+When I bulk-assign shifts
+Then all assignments are created and audit entries logged
+
+Scenario: Query audit log
+Given the audit log
+When I query by date or user
+Then all shift changes are visible
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E05
+- Notes: Compliance
