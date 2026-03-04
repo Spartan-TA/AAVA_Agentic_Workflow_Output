@@ -1,0 +1,49 @@
+### E05 â Shift & Schedule Management
+
+**User Story 1: Create Shift Templates**
+- **User Story:** As an admin, I want to define recurring shift templates so that scheduling is efficient.
+- **Acceptance Criteria:**
+  - Given shift details,
+  - When I create a template,
+  - Then it is available for assignment.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E02, E03, E04; Notes: Support weekly, rotating shifts.
+
+**User Story 2: Assign Shifts to Employees**
+- **User Story:** As a supervisor, I want to assign shifts to employees so that staffing is planned.
+- **Acceptance Criteria:**
+  - Given a shift template,
+  - When I assign employees,
+  - Then assignments are saved and visible.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E05-1; Notes: Bulk assignment supported.
+
+**User Story 3: Detect Scheduling Conflicts**
+- **User Story:** As a supervisor, I want conflicts detected/prevented so that double-booking is avoided.
+- **Acceptance Criteria:**
+  - Given an employee's schedule,
+  - When I assign a conflicting shift,
+  - Then the system blocks the action and shows an error.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E05-2; Notes: Check for overlaps.
+
+**User Story 4: View Personal Upcoming Shifts**
+- **User Story:** As a worker, I want to view my upcoming shifts so that I can plan my time.
+- **Acceptance Criteria:**
+  - Given I am logged in,
+  - When I view my schedule,
+  - Then I see all assigned future shifts.
+- **Additional Details:** Priority: High; Story Points: 1; Dependencies: E05-2; Notes: Mobile-friendly view.
+
+**User Story 5: Blackout Dates & Operation Calendar**
+- **User Story:** As an admin, I want to set blackout dates and operation calendars so that no shifts are scheduled on holidays.
+- **Acceptance Criteria:**
+  - Given a blackout date,
+  - When I generate schedules,
+  - Then no shifts are assigned on those dates.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E05-1; Notes: Integrate with HR calendar.
+
+**User Story 6: Audit Shift Assignments**
+- **User Story:** As an auditor, I want all shift changes logged so that I can review scheduling history.
+- **Acceptance Criteria:**
+  - Given a shift assignment,
+  - When it is created/updated/deleted,
+  - Then an audit entry is generated.
+- **Additional Details:** Priority: High; Story Points: 1; Dependencies: E14; Notes: Include actor and timestamp.
