@@ -1,0 +1,41 @@
+### E04 â Time & Attendance (Clock In/Out)
+
+**User Story 1: Clock In Endpoint**
+- **User Story:** As a worker, I want to clock in via API so that my shift start is recorded.
+- **Acceptance Criteria:**
+  - Given I am scheduled,
+  - When I POST to /attendance/clock-in,
+  - Then my clock-in is recorded with timestamp and device info.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E02, E03; Notes: Validate location if geofence enabled.
+
+**User Story 2: Clock Out Endpoint**
+- **User Story:** As a worker, I want to clock out via API so that my shift end is recorded.
+- **Acceptance Criteria:**
+  - Given I am clocked in,
+  - When I POST to /attendance/clock-out,
+  - Then my clock-out is recorded and hours are calculated.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E04-1; Notes: Prevent double clock-out.
+
+**User Story 3: Handle Missed Punches**
+- **User Story:** As a worker, I want to request corrections for missed punches so that my hours are accurate.
+- **Acceptance Criteria:**
+  - Given a missed punch,
+  - When I submit a correction,
+  - Then an approval task is created for my supervisor.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E04-1; Notes: Track correction status.
+
+**User Story 4: Attendance Reports Export**
+- **User Story:** As an HR user, I want to export attendance data to CSV so that I can process payroll.
+- **Acceptance Criteria:**
+  - Given attendance records,
+  - When I request export,
+  - Then a CSV file is generated with daily totals.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E04-2; Notes: Include corrections.
+
+**User Story 5: Automatic Shift Association**
+- **User Story:** As a worker, I want my clock events linked to scheduled shifts so that reporting is accurate.
+- **Acceptance Criteria:**
+  - Given a clock-in/out,
+  - When the event is recorded,
+  - Then it is associated with the correct shift.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E05; Notes: Handle overnight shifts.
