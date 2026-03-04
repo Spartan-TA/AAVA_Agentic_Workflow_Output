@@ -1,0 +1,26 @@
+Title: Leave Accrual and Balance Management
+
+User Story: As an HR user, I want leave balances to accrue and update automatically so that policies are enforced.
+
+Acceptance Criteria:
+
+Scenario: Accrual updates at pay period end
+Given accrual policies
+When a pay period ends
+Then balances update per policy
+
+Scenario: Balance reduces on approved leave
+Given a leave request
+When approved
+Then the balance is reduced accordingly
+
+Scenario: View current balances
+Given the employee profile
+When viewed
+Then current balances are displayed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E06
+- Notes: Policy-driven
