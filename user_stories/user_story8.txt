@@ -1,0 +1,33 @@
+### E08 â Safety Incidents & OSHA Reporting
+
+**User Story 1: Record Safety Incident**
+- **User Story:** As a supervisor, I want to record safety incidents so that all events are tracked for compliance.
+- **Acceptance Criteria:**
+  - Given an incident,
+  - When I POST to /safety/incidents,
+  - Then the incident is saved with validation.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E02, E03; Notes: Required fields: severity, location, description.
+
+**User Story 2: Incident Workflow Status**
+- **User Story:** As a safety officer, I want incidents to progress through OpenâInvestigatingâResolved so that follow-up is tracked.
+- **Acceptance Criteria:**
+  - Given an incident,
+  - When status is updated,
+  - Then the workflow state changes accordingly.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E08-1; Notes: Only authorized roles can update.
+
+**User Story 3: OSHA Report Export**
+- **User Story:** As a compliance officer, I want to export OSHA 300/300A reports so that regulatory requirements are met.
+- **Acceptance Criteria:**
+  - Given incident data,
+  - When I export,
+  - Then all required OSHA fields are included.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E08-1; Notes: Support PDF and CSV.
+
+**User Story 4: Safety Metrics Dashboard**
+- **User Story:** As a manager, I want to view safety KPIs so that I can monitor trends and take action.
+- **Acceptance Criteria:**
+  - Given incidents are recorded,
+  - When I access the dashboard,
+  - Then I see metrics by date, severity, and location.
+- **Additional Details:** Priority: High; Story Points: 2; Dependencies: E08-1; Notes: Role-based access.
