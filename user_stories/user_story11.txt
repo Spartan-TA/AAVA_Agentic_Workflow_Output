@@ -1,0 +1,26 @@
+Title: Attendance Calculation and Shift Association
+
+User Story: As a supervisor, I want attendance events to be associated with scheduled shifts so that hours worked are calculated automatically.
+
+Acceptance Criteria:
+
+Scenario: Hours worked calculated
+Given clock-in/out events
+When processed
+Then hours worked per shift are computed
+
+Scenario: Missed punch detection
+Given a missed punch
+When detected
+Then a correction task is generated
+
+Scenario: Export daily totals
+Given attendance data
+When exporting
+Then daily totals are included in CSV
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E04
+- Notes: Payroll integration
