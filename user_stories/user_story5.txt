@@ -1,0 +1,21 @@
+Title: Enforce Unique Badge ID for Employees
+
+User Story: As an HR user, I want to ensure each employee has a unique badgeId so that identity conflicts are prevented.
+
+Acceptance Criteria:
+
+Scenario: Prevent duplicate badgeId creation
+Given the API
+When I attempt to create an employee with an existing badgeId
+Then I receive a validation error
+
+Scenario: Query employee by unique badgeId
+Given the employee list
+When I query by badgeId
+Then only one employee is returned
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02
+- Notes: Data integrity
