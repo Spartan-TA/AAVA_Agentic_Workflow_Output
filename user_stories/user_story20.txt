@@ -1,0 +1,41 @@
+### E20 â Self-Service Portal
+
+**User Story 1: View Personal Profile**
+- **User Story:** As a worker, I want to view my profile and employment details so that I can verify my information.
+- **Acceptance Criteria:**
+  - Given I am logged in,
+  - When I access my profile,
+  - Then all personal and job details are visible.
+- **Additional Details:** Priority: Medium; Story Points: 1; Dependencies: E02; Notes: Read-only for most fields.
+
+**User Story 2: Update Contact Information**
+- **User Story:** As a worker, I want to update my contact info so that HR has my latest details.
+- **Acceptance Criteria:**
+  - Given I am logged in,
+  - When I edit contact info,
+  - Then changes are saved and pending HR approval.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E02; Notes: Approval workflow.
+
+**User Story 3: View Pay Stubs & Leave Balances**
+- **User Story:** As a worker, I want to view my pay stubs and leave balances so that I can track my earnings and time off.
+- **Acceptance Criteria:**
+  - Given I am logged in,
+  - When I access pay/leave,
+  - Then all records are visible and downloadable.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E11, E06; Notes: PDF export.
+
+**User Story 4: Submit Requests (Leave, Asset, Training)**
+- **User Story:** As a worker, I want to submit leave, asset, and training requests so that I can manage my needs.
+- **Acceptance Criteria:**
+  - Given I am logged in,
+  - When I submit a request,
+  - Then it is routed to the correct workflow.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E06, E09, E07; Notes: Track status.
+
+**User Story 5: Track Request Status**
+- **User Story:** As a worker, I want to track the status of my requests so that I know when they are approved or denied.
+- **Acceptance Criteria:**
+  - Given a submitted request,
+  - When I view status,
+  - Then current state and history are visible.
+- **Additional Details:** Priority: Medium; Story Points: 1; Dependencies: E20-4; Notes: Notify on status change.
