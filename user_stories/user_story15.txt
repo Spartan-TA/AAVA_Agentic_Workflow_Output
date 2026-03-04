@@ -1,0 +1,21 @@
+Title: Employee Shift Visibility
+
+User Story: As a worker, I want to view my upcoming shifts so that I can plan my attendance.
+
+Acceptance Criteria:
+
+Scenario: View upcoming shifts
+Given my account
+When I access my schedule
+Then I see all upcoming assigned shifts
+
+Scenario: Real-time schedule updates
+Given a schedule update
+When it occurs
+Then my view reflects the change in real time
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E05
+- Notes: Real-time updates
