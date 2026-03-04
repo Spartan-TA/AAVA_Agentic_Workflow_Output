@@ -1,0 +1,33 @@
+### E16 â Mobile Access (PWA)
+
+**User Story 1: Responsive Mobile Views**
+- **User Story:** As a worker, I want responsive views for clock-in/out, schedules, and leave so that I can use the app on my phone.
+- **Acceptance Criteria:**
+  - Given I access the app on mobile,
+  - When I use core flows,
+  - Then all screens are usable and readable.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E04, E05, E06, E12; Notes: Test on iOS/Android.
+
+**User Story 2: Installable PWA Manifest**
+- **User Story:** As a worker, I want to install the app as a PWA so that I can access it offline.
+- **Acceptance Criteria:**
+  - Given the app,
+  - When I add to home screen,
+  - Then it installs as a PWA.
+- **Additional Details:** Priority: Medium; Story Points: 1; Dependencies: E16-1; Notes: Lighthouse score â¥ 80.
+
+**User Story 3: Offline Clock Event Queue**
+- **User Story:** As a worker, I want to clock in/out offline and sync when online so that my hours are not lost.
+- **Acceptance Criteria:**
+  - Given no connectivity,
+  - When I clock in/out,
+  - Then the event is queued and synced later.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E16-1; Notes: Handle conflicts.
+
+**User Story 4: Mobile Announcements**
+- **User Story:** As a worker, I want to receive announcements on mobile so that I stay informed.
+- **Acceptance Criteria:**
+  - Given an announcement,
+  - When I open the app,
+  - Then it is visible and dismissible.
+- **Additional Details:** Priority: Medium; Story Points: 1; Dependencies: E12, E16-1; Notes: Push notifications optional.
