@@ -1,0 +1,41 @@
+### E15 â Reporting & Analytics
+
+**User Story 1: Attendance & Overtime Reports**
+- **User Story:** As a manager, I want attendance and overtime reports so that I can monitor workforce trends.
+- **Acceptance Criteria:**
+  - Given attendance data,
+  - When I filter by date/department/shift,
+  - Then a report is generated and exportable.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E04, E05, E14; Notes: Support CSV/PDF.
+
+**User Story 2: Leave Balance Reports**
+- **User Story:** As an HR user, I want leave balance reports so that I can track accruals and usage.
+- **Acceptance Criteria:**
+  - Given leave data,
+  - When I run the report,
+  - Then balances are shown per employee.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E06, E14; Notes: Exportable.
+
+**User Story 3: Certification Status Reports**
+- **User Story:** As a supervisor, I want certification status reports so that I can ensure compliance.
+- **Acceptance Criteria:**
+  - Given certification data,
+  - When I run the report,
+  - Then expiring/expired certs are highlighted.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E07, E14; Notes: Filter by department.
+
+**User Story 4: Safety KPI Dashboard**
+- **User Story:** As a safety officer, I want a dashboard of safety KPIs so that I can monitor incidents.
+- **Acceptance Criteria:**
+  - Given incident data,
+  - When I access the dashboard,
+  - Then metrics are displayed by date, severity, and location.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E08, E14; Notes: Role-based access.
+
+**User Story 5: Metrics Endpoints for BI**
+- **User Story:** As a BI engineer, I want metrics endpoints so that I can integrate with external BI tools.
+- **Acceptance Criteria:**
+  - Given metrics,
+  - When I call the endpoint,
+  - Then data is returned in a consumable format.
+- **Additional Details:** Priority: Medium; Story Points: 2; Dependencies: E15-1; Notes: Secure endpoints.
