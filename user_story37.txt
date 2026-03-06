@@ -1,0 +1,26 @@
+Title: Incident Investigation and Corrective Actions Workflow
+
+User Story: As a safety manager I want to manage the workflow for incident investigation and corrective actions so that all incidents are properly reviewed and resolved.
+
+Acceptance Criteria:
+
+Scenario: Incident status workflow
+Given a new incident is recorded
+When investigation begins
+Then the status changes to 'Investigating'
+
+Scenario: Corrective actions documented
+Given an incident is under investigation
+When corrective actions are identified
+Then they are recorded and linked to the incident
+
+Scenario: Incident resolved
+Given corrective actions are completed
+When the incident is closed
+Then the status changes to 'Resolved' and all actions are logged
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Ensures accountability and continuous improvement.
