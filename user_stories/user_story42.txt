@@ -1,0 +1,20 @@
+Title: Overdue Asset Return Reporting
+
+User Story:
+As an asset manager, I want to generate reports of overdue asset returns so that I can follow up with employees and maintain accountability for equipment.
+
+Acceptance Criteria:
+- Scenario: Generate overdue return report
+  Given assets are checked out
+  When the due date passes without return
+  Then the asset is flagged as overdue and included in the report
+
+- Scenario: Supervisor receives overdue alert
+  Given an asset is overdue
+  When the report is generated or viewed
+  Then the responsible supervisor is notified
+
+Additional Details:
+- Overdue reports must be exportable in CSV and PDF
+- Reports must include asset, employee, due date, and contact info
+- All overdue events must be logged for audit
