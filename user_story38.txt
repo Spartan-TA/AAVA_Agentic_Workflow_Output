@@ -1,0 +1,26 @@
+Title: Generate OSHA Summary and Metrics Dashboard
+
+User Story: As a compliance officer I want to generate OSHA 300/300A summary reports and view safety metrics dashboards so that I can meet regulatory reporting requirements and monitor safety KPIs.
+
+Acceptance Criteria:
+
+Scenario: Generate OSHA summary
+Given incidents are recorded
+When I request an OSHA 300/300A summary
+Then the report includes all required OSHA fields and is exportable as CSV/PDF
+
+Scenario: Metrics dashboard available
+Given incidents and corrective actions are tracked
+When I access the dashboard endpoint
+Then I see key safety metrics and trends
+
+Scenario: Access to reports is role-based
+Given a user requests a report
+When they lack the required role
+Then access is denied
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Supports regulatory compliance and management reviews.
