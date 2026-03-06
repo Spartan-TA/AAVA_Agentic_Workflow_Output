@@ -1,0 +1,20 @@
+Title: Bulk Assignment of Shifts and Audit Logging
+
+User Story:
+As a supervisor, I want to bulk-assign shifts to multiple employees and have all actions logged for audit so that scheduling is efficient and compliant.
+
+Acceptance Criteria:
+- Scenario: Supervisor bulk-assigns shifts
+  Given a supervisor selects multiple employees and shifts
+  When they perform a bulk assignment
+  Then all assignments are created and logged
+
+- Scenario: Audit log of bulk assignments
+  Given bulk assignments are made
+  When an auditor reviews the logs
+  Then each assignment action is traceable by supervisor, employee, and timestamp
+
+Additional Details:
+- Bulk assignment must prevent conflicts and respect blackout dates
+- Audit log must be exportable and filterable
+- Supervisors must only assign shifts to their own teams
