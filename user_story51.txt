@@ -1,0 +1,26 @@
+Title: Generate Payroll-Ready Export Files
+
+User Story: As a payroll administrator I want to generate payroll-ready files from approved attendance and leave data so that I can process payroll efficiently and accurately.
+
+Acceptance Criteria:
+
+Scenario: Export matches provider schema
+Given approved attendance and leave records
+When I generate a payroll export
+Then the file matches the required schema for the payroll provider
+
+Scenario: Totals reconcile with reports
+Given the export is generated
+When I compare totals with attendance and leave reports
+Then the values match
+
+Scenario: Export includes all required fields
+Given the export is generated
+When I open the file
+Then it includes employee, hours worked, leave taken, and pay period
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E04, E06
+- Notes: Reduces manual processing and errors.
