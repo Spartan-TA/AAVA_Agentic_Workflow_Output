@@ -1,0 +1,26 @@
+Title: Generate Audit Entries for Schedule Changes
+
+User Story: As a compliance officer I want all schedule changes to generate audit entries so that I can trace who made changes and when for compliance and dispute resolution.
+
+Acceptance Criteria:
+
+Scenario: Schedule change is audited
+Given a shift assignment is created, updated, or deleted
+When the action occurs
+Then an audit entry is created with user, timestamp, and before/after values
+
+Scenario: Audit log exportable
+Given audit entries exist
+When I request an export
+Then I receive a CSV file with all relevant audit data
+
+Scenario: Audit entries immutable
+Given audit entries exist
+When I attempt to modify or delete an entry
+Then the system prevents changes to audit records
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Supports compliance and labor dispute investigations.
