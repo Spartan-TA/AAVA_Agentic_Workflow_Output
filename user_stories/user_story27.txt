@@ -1,0 +1,20 @@
+Title: Leave Policy Configuration and Employee Visibility
+
+User Story:
+As an HR administrator, I want to configure leave accrual policies and allow employees to view their balances and policy details so that expectations are clear and disputes are minimized.
+
+Acceptance Criteria:
+- Scenario: HR configures leave policy
+  Given the HR admin is authenticated
+  When they update leave accrual rates or rules
+  Then the changes are saved and applied to all affected employees
+
+- Scenario: Employee views leave balance and policy
+  Given an employee is authenticated
+  When they access their leave dashboard
+  Then their current balances and policy details are displayed
+
+Additional Details:
+- Policies must support different rules by employee type or department
+- Policy changes must be versioned and auditable
+- UI must clearly distinguish between available, pending, and taken leave
