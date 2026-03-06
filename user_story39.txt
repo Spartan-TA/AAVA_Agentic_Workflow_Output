@@ -1,0 +1,26 @@
+Title: Validate and Export Incident Data
+
+User Story: As a safety manager I want incident data to be validated and exportable so that records are accurate and can be shared with regulators or management.
+
+Acceptance Criteria:
+
+Scenario: Incident data validation
+Given an incident is recorded
+When required fields are missing or invalid
+Then the system rejects the record with a validation error
+
+Scenario: Export incidents as CSV/PDF
+Given incidents exist for a period
+When I request an export
+Then I receive a CSV or PDF file with all incident details
+
+Scenario: Export includes corrective actions
+Given incidents have corrective actions
+When I export the data
+Then corrective actions are included in the export
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Supports compliance and management reporting.
