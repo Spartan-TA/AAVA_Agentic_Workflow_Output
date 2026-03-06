@@ -1,0 +1,20 @@
+Title: Export and Filter Audit Logs by Date, User, and Entity
+
+User Story:
+As a compliance officer, I want to export and filter audit logs by date, user, and entity so that I can efficiently investigate and report on system changes.
+
+Acceptance Criteria:
+- Scenario: Export audit log by date range
+  Given audit logs exist
+  When the officer filters by date range and exports
+  Then only matching entries are included in the export
+
+- Scenario: Filter by user or entity
+  Given audit logs exist
+  When the officer filters by user or entity
+  Then only relevant entries are displayed and exportable
+
+Additional Details:
+- Export must be available in CSV and PDF formats
+- All filter criteria must be combinable
+- Exported logs must match displayed data
