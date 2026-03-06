@@ -1,0 +1,20 @@
+Title: Tamper-Evident and Immutable Audit Log Storage
+
+User Story:
+As a compliance officer, I want audit logs to be stored in a tamper-evident and immutable format so that no one can alter or delete audit records after creation.
+
+Acceptance Criteria:
+- Scenario: Attempt to modify or delete audit log
+  Given an audit log entry exists
+  When a user attempts to modify or delete it
+  Then the system prevents the action and logs the attempt
+
+- Scenario: Tamper-evidence is verifiable
+  Given audit logs are exported
+  When an auditor reviews the export
+  Then any tampering or gaps are detectable
+
+Additional Details:
+- Immutability must be enforced at the database/storage level
+- Tamper-evidence may use cryptographic hashes or append-only logs
+- All access and export attempts must be logged
