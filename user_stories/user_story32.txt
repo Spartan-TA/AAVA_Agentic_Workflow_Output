@@ -1,0 +1,20 @@
+Title: Certification Status Visibility on Employee Profile
+
+User Story:
+As a supervisor or HR manager, I want to view the current certification status for each employee on their profile so that I can quickly assess qualification and compliance.
+
+Acceptance Criteria:
+- Scenario: View employee profile with certification status
+  Given a supervisor or HR manager is authenticated
+  When they view an employee profile
+  Then all current certifications, expiry dates, and status (valid/expiring/expired) are displayed
+
+- Scenario: Status updates in real time
+  Given a certification is renewed or expires
+  When the profile is viewed
+  Then the status reflects the latest information
+
+Additional Details:
+- Status must be color-coded and filterable
+- Expiring/expired certifications must be highlighted
+- Employees must also be able to view their own status
