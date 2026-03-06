@@ -1,0 +1,26 @@
+Title: Track Employee Certifications and Expirations
+
+User Story: As an HR manager I want to record required certifications for employees and track their expiration dates so that only qualified staff are assigned to sensitive roles.
+
+Acceptance Criteria:
+
+Scenario: Add certification to employee
+Given an employee profile
+When I POST a certification record
+Then the certification and expiration date are saved for the employee
+
+Scenario: Certification expiration tracked
+Given a certification with an expiration date
+When the date approaches (30/7 days before)
+Then the system sends alerts to the employee and supervisor
+
+Scenario: Expired certifications block assignments
+Given a certification is expired
+When I attempt to assign the employee to a restricted task
+Then the system prevents the assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Ensures compliance and workplace safety.
