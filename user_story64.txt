@@ -1,0 +1,26 @@
+Title: Integration Monitoring and Audit Logging
+
+User Story: As a system administrator I want to monitor integration jobs and log all API and webhook actions for audit so that failures are detected quickly and all actions are traceable.
+
+Acceptance Criteria:
+
+Scenario: Integration job status visible
+Given integration jobs run on schedule
+When I view the monitoring dashboard
+Then I see the status (success/failure) and last run time for each job
+
+Scenario: API and webhook actions logged
+Given APIs and webhooks are used
+When I review the audit log
+Then all actions are recorded with user, timestamp, and status
+
+Scenario: Audit log exportable
+Given audit entries exist
+When I request an export
+Then I receive a CSV file with all relevant audit data
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Supports compliance and operational reliability.
