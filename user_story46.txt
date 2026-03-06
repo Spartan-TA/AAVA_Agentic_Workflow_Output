@@ -1,0 +1,26 @@
+Title: Create and Manage Performance Review Templates
+
+User Story: As an HR manager I want to create, update, and delete performance review templates so that reviews are standardized and aligned with company goals.
+
+Acceptance Criteria:
+
+Scenario: Create review template
+Given review criteria and structure
+When I POST to /reviews/templates
+Then a new template is created and available for assignment
+
+Scenario: Update review template
+Given an existing template
+When I PATCH the template
+Then the structure and criteria are updated
+
+Scenario: Delete review template
+Given an existing template
+When I DELETE the template
+Then it is removed from the system
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Enables consistent and fair performance reviews.
