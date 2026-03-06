@@ -1,0 +1,20 @@
+Title: Mobile Announcements and Notifications
+
+User Story:
+As a warehouse worker, I want to receive and view announcements and notifications on my mobile device so that I stay informed about shift changes, approvals, and important updates.
+
+Acceptance Criteria:
+- Scenario: Receive in-app notifications on mobile
+  Given a worker is authenticated on mobile
+  When a notification event occurs
+  Then the notification is delivered and visible in the mobile app
+
+- Scenario: View announcements on mobile dashboard
+  Given announcements are posted
+  When the worker accesses the mobile dashboard
+  Then all current announcements are displayed
+
+Additional Details:
+- Mobile UI must support push notifications and badge counts
+- Announcements must be dismissible and filterable
+- All notification actions must be logged and synced
