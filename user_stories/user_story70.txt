@@ -1,0 +1,20 @@
+Title: Mobile Schedule Viewing and Leave Request
+
+User Story:
+As a warehouse worker, I want to view my upcoming shifts and request leave from my mobile device so that I can manage my schedule and time off conveniently.
+
+Acceptance Criteria:
+- Scenario: View upcoming shifts on mobile
+  Given a worker is authenticated on mobile
+  When they access their schedule
+  Then all upcoming assigned shifts are displayed
+
+- Scenario: Request leave from mobile
+  Given a worker is authenticated on mobile
+  When they submit a leave request
+  Then the request is processed and confirmation is shown
+
+Additional Details:
+- Mobile UI must be responsive and offline-friendly
+- All actions must be logged and synced when online
+- Leave requests must check for accrual balance and conflicts
