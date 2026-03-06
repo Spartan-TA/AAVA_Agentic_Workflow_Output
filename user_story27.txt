@@ -1,0 +1,26 @@
+Title: Track Leave Accrual Balances and Policies
+
+User Story: As an HR manager I want to define leave accrual policies and track employee leave balances so that leave requests are validated against available balances and policies.
+
+Acceptance Criteria:
+
+Scenario: Define accrual policy
+Given a leave type (PTO, sick, unpaid)
+When I configure an accrual rate
+Then the system applies the policy to all eligible employees
+
+Scenario: Leave balance updates on approval
+Given an employee's leave request is approved
+When the leave is taken
+Then the employee's leave balance is decremented accordingly
+
+Scenario: Insufficient balance blocks request
+Given an employee with insufficient leave balance
+When they request leave
+Then the request is rejected with an appropriate message
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E05
+- Notes: Ensures compliance with company and legal policies.
