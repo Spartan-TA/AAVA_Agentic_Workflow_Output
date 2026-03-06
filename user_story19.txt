@@ -1,0 +1,26 @@
+Title: Export Attendance Reports as CSV
+
+User Story: As a payroll administrator I want to export attendance records as CSV files so that I can reconcile time worked and import data into payroll systems.
+
+Acceptance Criteria:
+
+Scenario: Export attendance for date range
+Given attendance records exist
+When I request an export for a specific date range
+Then a CSV file is generated with all relevant records
+
+Scenario: Export includes all required fields
+Given the export is generated
+When I open the CSV file
+Then it includes employee, date, clock-in/out times, hours worked, and corrections
+
+Scenario: Export handles large datasets
+Given a large number of records
+When I request an export
+Then the file is generated within 10 seconds for up to 50,000 rows
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Supports payroll and compliance reporting.
