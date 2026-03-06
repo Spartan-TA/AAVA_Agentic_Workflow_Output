@@ -1,0 +1,20 @@
+Title: Idempotent Webhooks for System Events
+
+User Story:
+As a system integrator, I want webhooks for system events (employee changes, shift updates) to be idempotent so that duplicate notifications do not cause inconsistent data in downstream systems.
+
+Acceptance Criteria:
+- Scenario: Webhook is processed once per event
+  Given a webhook is sent for an event
+  When the same event is received multiple times
+  Then it is processed only once and duplicates are ignored
+
+- Scenario: Webhook delivery is logged
+  Given webhooks are sent
+  When the delivery log is reviewed
+  Then all deliveries, attempts, and statuses are visible
+
+Additional Details:
+- Webhook payloads must include unique event IDs
+- All webhook actions must be logged and auditable
+- Delivery failures must trigger retries and alerts
