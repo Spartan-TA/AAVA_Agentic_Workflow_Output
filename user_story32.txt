@@ -1,0 +1,26 @@
+Title: Upload Proof Documents for Certifications
+
+User Story: As an employee or HR user I want to upload and manage proof documents for certifications so that compliance records are complete and auditable.
+
+Acceptance Criteria:
+
+Scenario: Upload certification document
+Given an employee profile
+When I POST a document to the certification record
+Then the file is stored and linked to the certification
+
+Scenario: View/download proof document
+Given a certification with a document
+When I access the certification details
+Then I can view or download the proof document
+
+Scenario: Document access is secured
+Given a user without permission
+When they attempt to access a certification document
+Then access is denied
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Supports audits and regulatory inspections.
