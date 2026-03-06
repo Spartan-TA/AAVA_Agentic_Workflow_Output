@@ -1,0 +1,21 @@
+Title: Update Employee Record via API
+
+User Story: As an HR user I want to update employee details using PUT or PATCH So that employee information remains accurate and up to date
+
+Acceptance Criteria:
+
+Scenario: Successful employee update
+Given an existing employee with ID 100
+When I send a PATCH to /employees/100 with a new department
+Then the employee's department is updated and returned in the response
+
+Scenario: Attempt to update badgeId to a duplicate
+Given two employees with badgeIds 'A1' and 'B2'
+When I attempt to update employee B's badgeId to 'A1'
+Then the API responds with a validation error and the badgeId is not changed
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Support both full (PUT) and partial (PATCH) updates.
