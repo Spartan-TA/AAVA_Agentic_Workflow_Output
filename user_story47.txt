@@ -1,0 +1,26 @@
+Title: Review Cycles and Assignment to Employees
+
+User Story: As an HR manager I want to create quarterly and annual review cycles and assign them to employees so that performance reviews are conducted on schedule.
+
+Acceptance Criteria:
+
+Scenario: Create review cycle
+Given review period details
+When I POST to /reviews/cycles
+Then a new review cycle is created
+
+Scenario: Assign review to employee
+Given a review cycle and employee
+When I POST to /reviews/assign
+Then the review is assigned to the employee and supervisor
+
+Scenario: Review cycle visible to employee and supervisor
+Given a review is assigned
+When the employee or supervisor logs in
+Then the review is visible in their dashboard
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Ensures timely and consistent performance management.
