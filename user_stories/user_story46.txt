@@ -1,0 +1,25 @@
+Title: Role-Based Visibility of Performance Reviews
+
+User Story:
+As an HR manager, I want to control which roles can view, edit, or export performance reviews so that sensitive feedback is only accessible to authorized users.
+
+Acceptance Criteria:
+- Scenario: Supervisor views direct report's review
+  Given a supervisor is authenticated
+  When they access a direct report's review
+  Then the review is visible and editable if in progress
+
+- Scenario: Employee views their own review
+  Given an employee is authenticated
+  When they access their own review
+  Then the review is visible but not editable after sign-off
+
+- Scenario: Unauthorized user attempts access
+  Given a user is not authorized
+  When they attempt to view or export a review
+  Then the system returns 403 Forbidden
+
+Additional Details:
+- Role-based access must be enforced in API and UI
+- All access attempts must be logged
+- Export must be available only to HR and supervisors
