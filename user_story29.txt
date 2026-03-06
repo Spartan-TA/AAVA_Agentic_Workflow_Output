@@ -1,0 +1,26 @@
+Title: Export Leave Balances and Approved Leaves
+
+User Story: As an HR user I want to export leave balances and approved leaves for a given period so that I can report on time off and ensure compliance with company policy.
+
+Acceptance Criteria:
+
+Scenario: Export leave balances
+Given leave balances exist for employees
+When I request an export
+Then I receive a CSV file with balances for all employees
+
+Scenario: Export approved leaves
+Given approved leave requests exist
+When I request an export for a date range
+Then I receive a CSV file with all approved leaves in that period
+
+Scenario: Export includes all required fields
+Given the export is generated
+When I open the CSV file
+Then it includes employee, leave type, dates, status, and approver
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Supports compliance and payroll reconciliation.
