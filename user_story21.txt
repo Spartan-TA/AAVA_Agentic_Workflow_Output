@@ -1,0 +1,26 @@
+Title: Assign Shifts to Employees and Bulk Assignment
+
+User Story: As a supervisor I want to assign shifts to individual employees or in bulk so that I can efficiently manage team schedules and ensure adequate staffing.
+
+Acceptance Criteria:
+
+Scenario: Assign shift to employee
+Given a valid employee and shift template
+When I POST to /schedules/assign
+Then the shift is assigned to the employee
+
+Scenario: Bulk assign shifts
+Given a list of employees and a shift template
+When I POST to /schedules/bulk-assign
+Then the shift is assigned to all selected employees
+
+Scenario: Assignment conflicts detected
+Given an employee already has a shift assigned
+When I attempt to assign an overlapping shift
+Then the system prevents the assignment and returns a conflict error
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03, E04
+- Notes: Reduces manual scheduling errors and ensures coverage.
