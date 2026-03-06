@@ -1,0 +1,20 @@
+Title: Goal Tracking and Comments in Performance Reviews
+
+User Story:
+As an employee or supervisor, I want to track goals, add comments, and update progress in performance reviews so that feedback is actionable and development is continuous.
+
+Acceptance Criteria:
+- Scenario: Add or update goals and comments
+  Given a review is in progress
+  When the employee or supervisor adds goals or comments
+  Then the updates are saved and visible to both parties
+
+- Scenario: Progress updates are tracked
+  Given goals are updated over time
+  When the review is viewed
+  Then all progress updates and comments are shown in chronological order
+
+Additional Details:
+- Goals must support status (not started, in progress, completed)
+- Comments must be timestamped and attributed
+- All updates must be auditable and included in the final review export
