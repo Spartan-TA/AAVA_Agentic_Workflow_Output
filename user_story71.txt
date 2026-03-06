@@ -1,0 +1,26 @@
+Title: Responsive Mobile Views for Core Flows
+
+User Story: As a warehouse worker I want responsive mobile views for clock-in/out, schedules, leave requests, and announcements so that I can access all core features from my mobile device.
+
+Acceptance Criteria:
+
+Scenario: Mobile view for clock-in/out
+Given I access the app on a mobile device
+When I clock in or out
+Then the interface is optimized for mobile and the action is successful
+
+Scenario: Mobile view for schedules and leave
+Given I access the app on a mobile device
+When I view my schedule or request leave
+Then the interface is optimized for mobile
+
+Scenario: Announcements visible on mobile
+Given announcements are posted
+When I access the dashboard on mobile
+Then all announcements are visible and readable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E04, E05, E06, E12
+- Notes: Improves usability for frontline workers.
