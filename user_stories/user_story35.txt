@@ -1,0 +1,20 @@
+Title: Export OSHA 300/300A Summary Reports
+
+User Story:
+As a compliance officer, I want to export OSHA 300/300A summary reports from recorded incidents so that regulatory reporting requirements are met efficiently.
+
+Acceptance Criteria:
+- Scenario: Export OSHA 300/300A report
+  Given incidents are recorded in the system
+  When the officer exports the OSHA report
+  Then all required fields are included and the file matches the OSHA schema
+
+- Scenario: Export includes only qualifying incidents
+  Given incidents are flagged for OSHA reporting
+  When the report is generated
+  Then only qualifying incidents are included
+
+Additional Details:
+- Export must be available in CSV and PDF formats
+- OSHA-specific fields must be mapped and validated
+- Exported files must be timestamped and logged
