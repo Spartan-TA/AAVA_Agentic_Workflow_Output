@@ -1,0 +1,26 @@
+Title: Notify and Audit Leave Requests and Approvals
+
+User Story: As an HR user I want leave requests and approvals to trigger notifications and be logged for audit so that all stakeholders are informed and actions are traceable.
+
+Acceptance Criteria:
+
+Scenario: Employee notified of approval/denial
+Given a leave request is approved or denied
+When the status changes
+Then the employee receives a notification (in-app/email/SMS)
+
+Scenario: Supervisor notified of new request
+Given an employee submits a leave request
+When the request is created
+Then the supervisor receives a notification
+
+Scenario: Leave actions logged for audit
+Given leave requests and approvals occur
+When I review the audit log
+Then all actions are recorded with user, timestamp, and action
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Ensures transparency and compliance.
