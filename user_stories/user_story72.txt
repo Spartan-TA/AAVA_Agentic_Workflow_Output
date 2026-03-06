@@ -1,0 +1,20 @@
+Title: PWA Installability and Lighthouse Score
+
+User Story:
+As a product owner, I want the mobile web app to be installable as a PWA and achieve a high Lighthouse PWA score so that users have a reliable, offline-friendly experience.
+
+Acceptance Criteria:
+- Scenario: App is installable as a PWA
+  Given a user accesses the mobile web app
+  When they choose to install
+  Then the app is added to their device home screen with an icon
+
+- Scenario: Lighthouse PWA score meets threshold
+  Given the app is audited with Lighthouse
+  When the PWA audit is run
+  Then the score is 90 or above
+
+Additional Details:
+- App must include a manifest and service worker
+- Offline support must cover all core flows (clock-in/out, schedule, leave, announcements)
+- All install and audit actions must be logged
