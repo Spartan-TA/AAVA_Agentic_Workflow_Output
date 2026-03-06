@@ -1,0 +1,20 @@
+Title: Access Control for Reports and Exports
+
+User Story:
+As an admin, I want access to operational reports and exports to be controlled by user role so that sensitive data is protected and only authorized users can view or export reports.
+
+Acceptance Criteria:
+- Scenario: Supervisor accesses team reports
+  Given a supervisor is authenticated
+  When they access reports
+  Then only data for their team is available for viewing and export
+
+- Scenario: Unauthorized user attempts export
+  Given a user is not authorized
+  When they attempt to export a report
+  Then the system returns 403 Forbidden
+
+Additional Details:
+- Access controls must be enforced in API and UI
+- All report and export access must be logged
+- Exported files must include access metadata
