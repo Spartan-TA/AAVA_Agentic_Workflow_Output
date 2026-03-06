@@ -1,0 +1,26 @@
+Title: Export Reports as CSV/PDF and Dashboard Access
+
+User Story: As a supervisor I want to export reports as CSV or PDF and access dashboards with role-based filters so that I can analyze data and share insights with management.
+
+Acceptance Criteria:
+
+Scenario: Export report as CSV/PDF
+Given a report is generated
+When I request an export
+Then I receive a CSV or PDF file with all relevant data
+
+Scenario: Dashboard access is role-based
+Given dashboards are available
+When I log in with my role
+Then I see only the data I am authorized to view
+
+Scenario: Reports filter by date, department, shift
+Given reports are generated
+When I apply filters
+Then the data updates accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E07, E08, E14
+- Notes: Supports operational reviews and compliance.
