@@ -1,0 +1,26 @@
+Title: Support Filtering and Searching Employee Records
+
+User Story: As an HR user I want to filter and search employee records by name, badgeId, department, role, and status so that I can quickly find relevant employees.
+
+Acceptance Criteria:
+
+Scenario: Filter by department and role
+Given multiple employees exist
+When I GET /employees?department=Shipping&role=WORKER
+Then I receive only employees in Shipping with the WORKER role
+
+Scenario: Search by name or badgeId
+Given multiple employees exist
+When I GET /employees?search=Smith
+Then I receive employees whose name or badgeId matches 'Smith'
+
+Scenario: Filter by status
+Given employees with different statuses exist
+When I GET /employees?status=active
+Then I receive only active employees
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Improves usability for HR and supervisors.
