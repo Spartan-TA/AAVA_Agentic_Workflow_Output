@@ -1,0 +1,20 @@
+Title: Required Training and Certification Tasks for Onboarding
+
+User Story:
+As a supervisor, I want onboarding to automatically generate required training and certification tasks for new hires so that compliance and safety requirements are met before work begins.
+
+Acceptance Criteria:
+- Scenario: Training tasks are generated for new hire
+  Given a new employee is provisioned
+  When onboarding begins
+  Then required training and certification tasks are assigned based on role and department
+
+- Scenario: Certification status is tracked
+  Given training is completed
+  When the supervisor reviews the employee profile
+  Then certification status and proof documents are visible
+
+Additional Details:
+- Training requirements must be configurable by role and department
+- All training and certification actions must be logged and auditable
+- Incomplete tasks must block assignment to restricted shifts or equipment
