@@ -1,0 +1,26 @@
+Title: Audit Logging and Notifications for Safety Incidents
+
+User Story: As a compliance officer I want all safety incident actions to be logged and relevant parties notified so that there is a clear audit trail and timely response to incidents.
+
+Acceptance Criteria:
+
+Scenario: Incident actions logged
+Given an incident is created, updated, or resolved
+When the action occurs
+Then an audit entry is created with user, timestamp, and action
+
+Scenario: Notifications sent to stakeholders
+Given a new incident or status change
+When the action occurs
+Then relevant parties (safety manager, supervisor, HR) are notified
+
+Scenario: Audit log exportable
+Given audit entries exist
+When I request an export
+Then I receive a CSV file with all relevant audit data
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Supports compliance and rapid response to safety issues.
