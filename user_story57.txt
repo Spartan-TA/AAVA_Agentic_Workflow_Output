@@ -1,0 +1,26 @@
+Title: Notification Opt-In/Out and Quiet Hours Configuration
+
+User Story: As a warehouse worker I want to opt-in or out of notification channels and configure quiet hours so that I am not disturbed outside of working hours.
+
+Acceptance Criteria:
+
+Scenario: Opt-in/out per channel
+Given notification channels are available
+When I update my preferences
+Then I can enable or disable in-app, email, or SMS notifications
+
+Scenario: Configure quiet hours
+Given notification preferences
+When I set quiet hours
+Then notifications are suppressed during the configured period
+
+Scenario: Delivery status tracked
+Given notifications are sent
+When I view my notification history
+Then I see the delivery status for each notification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E03, E05, E06, E07
+- Notes: Improves user experience and reduces notification fatigue.
