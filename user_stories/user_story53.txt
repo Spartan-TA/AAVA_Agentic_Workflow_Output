@@ -1,0 +1,20 @@
+Title: Notification Rate Limits and Quiet Hours Configuration
+
+User Story:
+As a user, I want to configure quiet hours and have rate limits applied to notifications so that I am not disturbed outside of working hours or overwhelmed by repeated alerts.
+
+Acceptance Criteria:
+- Scenario: Quiet hours suppress notifications
+  Given a user has set quiet hours
+  When a notification event occurs during those hours
+  Then the notification is delayed until quiet hours end
+
+- Scenario: Rate limits prevent repeated alerts
+  Given multiple notification events occur in a short period
+  When rate limits are reached
+  Then only the first notification is delivered and others are suppressed or batched
+
+Additional Details:
+- Quiet hours and rate limits must be configurable per user
+- Suppressed notifications must be logged and viewable in the app
+- Admins can override for critical alerts
