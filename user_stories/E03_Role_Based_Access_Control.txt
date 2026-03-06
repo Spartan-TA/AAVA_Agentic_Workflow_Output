@@ -1,0 +1,94 @@
+### E03: Role Based Access Control (RBAC)
+
+**User Story 1**
+Title: Implement Role-Based Endpoint Security
+
+User Story: As an ADMIN I want to restrict endpoints by user role So that only authorized users can access sensitive data
+
+Acceptance Criteria:
+Scenario: Accessing restricted endpoint
+Given a user with HR role
+When I access an ADMIN-only endpoint
+Then I receive a 403 Forbidden error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Roles: ADMIN, HR, SUPERVISOR, WORKER
+
+---
+
+**User Story 2**
+Title: API Authentication with OAuth2
+
+User Story: As a Developer I want to secure APIs with OAuth2 So that only authenticated users can access the system
+
+Acceptance Criteria:
+Scenario: Unauthenticated request
+Given no authentication token
+When I call any API endpoint
+Then I receive a 401 Unauthorized error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Support API key toggle via config
+
+---
+
+**User Story 3**
+Title: Row-Level Security for Supervisors
+
+User Story: As a SUPERVISOR I want to access only my team's data So that I cannot view or edit other teams' information
+
+Acceptance Criteria:
+Scenario: Accessing another team's data
+Given a supervisor assigned to Team A
+When I attempt to access Team B's employee data
+Then access is denied
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Team assignment must be enforced
+
+---
+
+**User Story 4**
+Title: Security Test Coverage
+
+User Story: As a QA I want automated tests for security rules So that unauthorized access is prevented
+
+Acceptance Criteria:
+Scenario: Running security tests
+Given the test suite
+When I run security tests
+Then all unauthorized actions are blocked and tested
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Must cover all roles and endpoints
+
+---
+
+**User Story 5**
+Title: Configurable Auth Method
+
+User Story: As a DevOps Engineer I want to toggle between API key and OAuth2 authentication So that I can adapt to different environments
+
+Acceptance Criteria:
+Scenario: Switching auth method
+Given a configuration change
+When I set auth method to API key
+Then all endpoints require a valid API key
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Document how to switch methods
