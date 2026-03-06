@@ -1,0 +1,26 @@
+Title: Configure Database Migration Tool (Flyway/Liquibase)
+
+User Story: As a developer I want to add Flyway or Liquibase to the project so that database schema changes are versioned and applied automatically.
+
+Acceptance Criteria:
+
+Scenario: Migration tool runs baseline migration
+Given the application is started with a fresh database
+When the application initializes
+Then the baseline migration is applied and schema is created
+
+Scenario: Migration scripts are versioned
+Given the repository
+When I browse the db/migration folder
+Then I see versioned migration scripts for initial schema
+
+Scenario: Migration failures are logged
+Given a migration script has an error
+When the application starts
+Then the error is logged and the application fails to start
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Ensures DB consistency across environments.
