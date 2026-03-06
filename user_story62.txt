@@ -1,0 +1,26 @@
+Title: Webhooks for Events and Idempotency
+
+User Story: As a system integrator I want to configure webhooks for key events and ensure idempotent delivery so that external systems are notified reliably and duplicate processing is avoided.
+
+Acceptance Criteria:
+
+Scenario: Webhook configured for new hire
+Given a webhook endpoint is registered
+When a new employee is created
+Then a webhook is sent to the endpoint with employee details
+
+Scenario: Idempotent webhook delivery
+Given a webhook is delivered
+When the same event is retried
+Then the external system processes it only once
+
+Scenario: Webhook failures retried
+Given a webhook delivery fails
+When the system retries
+Then exponential backoff is applied and failures are logged
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02, E03
+- Notes: Ensures reliable integration with external systems.
