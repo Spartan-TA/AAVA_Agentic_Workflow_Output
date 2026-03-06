@@ -1,0 +1,20 @@
+Title: JWT/OAuth2-Secured REST APIs for HRIS and WMS
+
+User Story:
+As a system integrator, I want all REST APIs for HRIS and WMS to be secured with JWT or OAuth2 so that only authorized systems can access or update employee and department data.
+
+Acceptance Criteria:
+- Scenario: API call with valid JWT/OAuth2 token
+  Given a client presents a valid token
+  When they call the API
+  Then the request is authenticated and processed
+
+- Scenario: API call with invalid or missing token
+  Given a client presents an invalid or missing token
+  When they call the API
+  Then the response is 401 Unauthorized
+
+Additional Details:
+- Security configuration must be switchable via application settings
+- All endpoints must be documented in OpenAPI
+- Automated tests must cover all security scenarios
