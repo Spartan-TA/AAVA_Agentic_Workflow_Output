@@ -1,0 +1,26 @@
+Title: Integration Hooks to Exclude Approved Leave from Scheduling and Payroll
+
+User Story: As a system integrator I want approved leave to automatically exclude employees from scheduling and payroll calculations so that staffing and pay are accurate.
+
+Acceptance Criteria:
+
+Scenario: Approved leave blocks shift assignment
+Given an employee has approved leave for a date
+When the scheduler runs
+Then the employee is not assigned to any shifts on that date
+
+Scenario: Approved leave excluded from payroll hours
+Given an employee has approved unpaid leave
+When payroll is calculated
+Then hours for the leave period are not included in pay
+
+Scenario: Integration hooks documented
+Given the system exposes integration points
+When I review the documentation
+Then I see how leave status affects scheduling and payroll modules
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Ensures data consistency across modules.
