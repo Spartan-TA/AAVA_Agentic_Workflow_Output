@@ -1,0 +1,26 @@
+Title: Record Safety Incidents and Near-Misses
+
+User Story: As a safety manager I want to record incidents and near-misses with severity, location, and involved employees so that I can track safety trends and take corrective action.
+
+Acceptance Criteria:
+
+Scenario: Record new incident
+Given an incident occurs
+When I POST to /safety/incidents
+Then the incident is saved with all required details
+
+Scenario: Incident includes severity and location
+Given an incident is recorded
+When I view the incident details
+Then severity and location are present
+
+Scenario: Involved employees linked
+Given an incident involves employees
+When the incident is saved
+Then all involved employees are linked to the record
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Foundation for OSHA compliance and safety improvement.
