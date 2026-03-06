@@ -1,0 +1,20 @@
+Title: Notification Channel Opt-In/Out and Preferences
+
+User Story:
+As a user, I want to opt in or out of in-app, email, and SMS notifications for different event types so that I receive only the notifications that matter to me.
+
+Acceptance Criteria:
+- Scenario: User updates notification preferences
+  Given a user is authenticated
+  When they change their notification settings
+  Then their preferences are saved and respected for future notifications
+
+- Scenario: Notification is delivered only to opted-in channels
+  Given a user has opted out of SMS
+  When a notification event occurs
+  Then the user receives the notification only via in-app and email
+
+Additional Details:
+- Preferences must be editable in the user profile
+- All changes must be logged
+- Default preferences must be configurable by admin
