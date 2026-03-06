@@ -1,0 +1,26 @@
+Title: Reporting of Overdue Asset Returns and Compliance
+
+User Story: As a supervisor I want to receive reports of overdue asset returns and compliance issues so that I can follow up with employees and ensure assets are returned on time.
+
+Acceptance Criteria:
+
+Scenario: Generate overdue asset report
+Given assets are overdue for return
+When I request a report
+Then I receive a list of all overdue assets and responsible employees
+
+Scenario: Supervisor notified of overdue returns
+Given an asset is overdue
+When the system processes asset records
+Then the supervisor receives a notification
+
+Scenario: Export compliance report
+Given compliance issues exist (e.g., missing certification, overdue return)
+When I request an export
+Then I receive a CSV file with all compliance issues
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Supports accountability and loss prevention.
