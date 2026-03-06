@@ -1,0 +1,94 @@
+### E01: Project Scaffolding & Domain Setup
+
+**User Story 1**
+Title: Initialize Spring Boot Project Structure
+
+User Story: As a Developer I want a standardized Spring Boot project structure So that all modules follow a consistent architecture
+
+Acceptance Criteria:
+Scenario: Project initialization
+Given a new repository
+When I clone and build the project
+Then the application starts on port 8080 and the base package structure is present
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run instructions
+
+---
+
+**User Story 2**
+Title: Enable Database Migration Tool
+
+User Story: As a Developer I want Flyway/Liquibase configured So that database schema changes are versioned and repeatable
+
+Acceptance Criteria:
+Scenario: Running migrations
+Given a clean database
+When I start the application
+Then baseline migrations are applied automatically
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project structure
+- Notes: Migration scripts must be idempotent
+
+---
+
+**User Story 3**
+Title: Enable Actuator Health Endpoints
+
+User Story: As a DevOps Engineer I want Actuator enabled So that I can monitor application health
+
+Acceptance Criteria:
+Scenario: Health endpoint check
+Given the application is running
+When I GET /actuator/health
+Then the response is UP with HTTP 200
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project setup
+- Notes: Health endpoint must not expose sensitive info
+
+---
+
+**User Story 4**
+Title: Core Module Scaffolding
+
+User Story: As a Developer I want base modules for employee, scheduling, attendance, and safety So that future features can be developed independently
+
+Acceptance Criteria:
+Scenario: Module presence
+Given the project structure
+When I browse the codebase
+Then core modules exist as separate packages
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project structure
+- Notes: Each module must have a placeholder class
+
+---
+
+**User Story 5**
+Title: Document Build and Run Steps
+
+User Story: As a New Developer I want clear README instructions So that I can set up the project quickly
+
+Acceptance Criteria:
+Scenario: Following README
+Given a new developer
+When I follow the README steps
+Then the project builds and runs successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project setup
+- Notes: README must be kept up to date
