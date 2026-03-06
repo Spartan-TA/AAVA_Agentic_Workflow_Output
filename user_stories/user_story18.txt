@@ -1,0 +1,20 @@
+Title: CRUD Operations for Shift Templates
+
+User Story:
+As a scheduling manager, I want to create, update, view, and delete recurring shift templates so that I can efficiently manage warehouse staffing patterns.
+
+Acceptance Criteria:
+- Scenario: Create a new shift template
+  Given the scheduling manager is authenticated
+  When they submit a valid shift template
+  Then the template is saved and available for assignment
+
+- Scenario: Update or delete a shift template
+  Given an existing shift template
+  When the manager updates or deletes it
+  Then the changes are reflected in the system
+
+Additional Details:
+- Shift templates must include start/end times, recurrence, and applicable roles
+- Deletion must check for active assignments and prevent orphaned shifts
+- All changes must be auditable
