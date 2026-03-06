@@ -1,0 +1,26 @@
+Title: Audit Logging for Payroll Exports
+
+User Story: As a compliance officer I want every payroll export to be logged with actor, timestamp, and delivery status so that I can trace payroll runs and investigate issues.
+
+Acceptance Criteria:
+
+Scenario: Export action logged
+Given a payroll export is generated
+When the export is delivered
+Then an audit entry is created with user, timestamp, and status
+
+Scenario: Export failures logged
+Given a delivery fails
+When the system retries or aborts
+Then all attempts and errors are logged
+
+Scenario: Audit log exportable
+Given audit entries exist
+When I request an export
+Then I receive a CSV file with all relevant audit data
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04, E06
+- Notes: Supports compliance and payroll reconciliation.
