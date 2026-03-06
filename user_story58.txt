@@ -1,0 +1,26 @@
+Title: Announcement Management and Dashboard Visibility
+
+User Story: As an HR user I want to create, update, and delete announcements and have them visible on the dashboard so that important information is communicated to all employees.
+
+Acceptance Criteria:
+
+Scenario: Create announcement
+Given announcement details
+When I POST to /announcements
+Then the announcement is visible on the dashboard for all users
+
+Scenario: Update announcement
+Given an existing announcement
+When I PATCH the announcement
+Then the updated information is reflected on the dashboard
+
+Scenario: Delete announcement
+Given an existing announcement
+When I DELETE the announcement
+Then it is removed from the dashboard
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E03, E05, E06, E07
+- Notes: Supports timely communication and engagement.
