@@ -1,0 +1,94 @@
+### E02: Employee Master Data (CRUD)
+
+**User Story 1**
+Title: Create Employee API Endpoint
+
+User Story: As an HR I want to add new employees via API So that employee records are up to date
+
+Acceptance Criteria:
+Scenario: Adding a new employee
+Given valid employee data
+When I POST to /employees
+Then a new employee is created with a unique badgeId
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: badgeId must be unique
+
+---
+
+**User Story 2**
+Title: Retrieve Employee List with Filtering
+
+User Story: As an HR I want to retrieve a paginated, filterable list of employees So that I can find employees efficiently
+
+Acceptance Criteria:
+Scenario: Filtering employees
+Given multiple employees exist
+When I GET /employees?department=Shipping
+Then only employees in Shipping are returned, paginated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Support filtering by department, role, status
+
+---
+
+**User Story 3**
+Title: Update Employee Details
+
+User Story: As an HR I want to update employee details So that records remain accurate
+
+Acceptance Criteria:
+Scenario: Updating employee info
+Given an existing employee
+When I PATCH /employees/{id} with new data
+Then the employee record is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Only allowed fields can be updated
+
+---
+
+**User Story 4**
+Title: Soft Delete Employee
+
+User Story: As an HR I want to soft-delete an employee So that historical data is preserved
+
+Acceptance Criteria:
+Scenario: Deleting an employee
+Given an active employee
+When I DELETE /employees/{id}
+Then the employee is marked as inactive but not removed from the database
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Deleted employees are excluded from active lists
+
+---
+
+**User Story 5**
+Title: Validate Unique Badge ID
+
+User Story: As an HR I want to be prevented from creating duplicate badge IDs So that each employee is uniquely identifiable
+
+Acceptance Criteria:
+Scenario: Duplicate badgeId
+Given an existing badgeId
+When I attempt to create another employee with the same badgeId
+Then I receive a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01
+- Notes: Error message must be clear
