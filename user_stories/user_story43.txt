@@ -1,0 +1,20 @@
+Title: Create and Manage Performance Review Templates
+
+User Story:
+As an HR manager, I want to create and manage quarterly and annual performance review templates so that reviews are consistent and aligned with company goals.
+
+Acceptance Criteria:
+- Scenario: Create a new review template
+  Given the HR manager is authenticated
+  When they submit a valid template
+  Then the template is saved and available for assignment
+
+- Scenario: Update or delete a review template
+  Given an existing template
+  When the manager updates or deletes it
+  Then the changes are reflected in the system
+
+Additional Details:
+- Templates must include goals, competencies, rating scales, and comment sections
+- Deletion must check for active review cycles
+- All changes must be auditable
