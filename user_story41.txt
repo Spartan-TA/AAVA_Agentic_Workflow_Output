@@ -1,0 +1,26 @@
+Title: Assign Equipment and PPE to Employees
+
+User Story: As a supervisor I want to assign scanners, forklifts, and PPE to employees so that asset usage is tracked and only qualified staff use equipment.
+
+Acceptance Criteria:
+
+Scenario: Assign asset to employee
+Given an available asset and qualified employee
+When I POST to /assets/assign
+Then the asset is checked out to the employee
+
+Scenario: Asset assignment blocked by missing certification
+Given an employee lacks required certification
+When I attempt to assign a restricted asset
+Then the system prevents the assignment
+
+Scenario: Asset status updated
+Given an asset is assigned or returned
+When the action occurs
+Then the asset status is updated accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E07
+- Notes: Ensures accountability and safety compliance.
