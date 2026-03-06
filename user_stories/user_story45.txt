@@ -1,0 +1,20 @@
+Title: PDF Export and Immutable Review History
+
+User Story:
+As an HR administrator, I want to export completed performance reviews as PDFs and ensure the history is immutable after sign-off so that records are secure and auditable.
+
+Acceptance Criteria:
+- Scenario: Export completed review as PDF
+  Given a review is completed and acknowledged
+  When the administrator exports it
+  Then a PDF file is generated with all review details
+
+- Scenario: Review history is immutable after sign-off
+  Given a review is signed off by both parties
+  When an edit is attempted
+  Then the system prevents changes and logs the attempt
+
+Additional Details:
+- PDF exports must include all ratings, comments, and acknowledgements
+- Immutable history must be enforced at the database level
+- All export and edit attempts must be logged
