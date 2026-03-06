@@ -1,0 +1,26 @@
+Title: Provide OpenAPI Documentation and DTOs for Employee APIs
+
+User Story: As an API consumer I want OpenAPI documentation and example DTOs for employee endpoints so that I can easily integrate with the system and understand the data contract.
+
+Acceptance Criteria:
+
+Scenario: OpenAPI schema includes employee endpoints
+Given the application is running
+When I access /swagger-ui or /v3/api-docs
+Then I see documentation for all employee CRUD endpoints
+
+Scenario: Example DTOs are present
+Given the OpenAPI documentation
+When I view the request/response schemas
+Then I see example DTOs for employee data
+
+Scenario: Documentation is kept up to date
+Given changes to employee APIs
+When I review the OpenAPI docs
+Then they reflect the latest API structure and fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Enables frontend and integration development.
