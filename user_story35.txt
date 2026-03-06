@@ -1,0 +1,26 @@
+Title: Reporting and Export of Certification Status
+
+User Story: As a compliance officer I want to generate and export reports of certification status across all employees so that I can demonstrate compliance during audits and inspections.
+
+Acceptance Criteria:
+
+Scenario: Generate certification status report
+Given certifications are tracked for employees
+When I request a report
+Then I receive a summary of valid, expiring, and expired certifications by employee
+
+Scenario: Export certification report as CSV
+Given the report is generated
+When I request an export
+Then I receive a CSV file with all relevant certification data
+
+Scenario: Access to reports is role-based
+Given a user requests a report
+When they lack the required role
+Then access is denied
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Supports regulatory audits and internal reviews.
