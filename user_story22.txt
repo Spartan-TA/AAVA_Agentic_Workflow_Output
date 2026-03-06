@@ -1,0 +1,26 @@
+Title: Manage Blackout Dates and Warehouse Operation Calendars
+
+User Story: As a scheduler I want to define blackout dates and operation calendars so that shifts are not assigned on holidays or non-operational days.
+
+Acceptance Criteria:
+
+Scenario: Add blackout date
+Given a valid date
+When I POST to /calendar/blackout
+Then the date is added as a blackout and no shifts can be scheduled
+
+Scenario: Remove blackout date
+Given an existing blackout date
+When I DELETE /calendar/blackout/{date}
+Then the date is removed and shifts can be scheduled
+
+Scenario: Operation calendar visible
+Given the operation calendar is configured
+When I view the calendar endpoint
+Then all blackout and operational dates are visible
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Prevents scheduling errors and ensures compliance with labor laws.
