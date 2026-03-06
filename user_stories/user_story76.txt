@@ -1,0 +1,20 @@
+Title: Asset Assignment and Collection During Onboarding/Offboarding
+
+User Story:
+As an asset manager, I want onboarding to assign required assets to new hires and offboarding to collect all assets so that equipment is tracked and returned efficiently.
+
+Acceptance Criteria:
+- Scenario: Assign assets during onboarding
+  Given a new hire is provisioned
+  When onboarding tasks are generated
+  Then required assets (PPE, scanners, etc.) are assigned and logged
+
+- Scenario: Collect assets during offboarding
+  Given an employee is terminated
+  When offboarding is triggered
+  Then all assigned assets are flagged for return and collection is tracked
+
+Additional Details:
+- Asset assignments must check for required certifications
+- All asset actions must be logged and auditable
+- Overdue asset returns must trigger alerts to supervisors
