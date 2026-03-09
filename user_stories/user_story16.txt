@@ -1,0 +1,16 @@
+Title: Clock-In/Out Endpoints
+
+User Story: As a Warehouse Worker, I want to clock in and out via API so that my attendance is recorded.
+
+Acceptance Criteria:
+
+Scenario: Clock event recording
+Given the attendance endpoint
+When I POST /attendance/clock-in or /clock-out
+Then my event is validated and recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Core attendance feature.
