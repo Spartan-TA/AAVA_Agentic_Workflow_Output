@@ -1,0 +1,21 @@
+Title: Implement Employee CRUD APIs
+
+User Story: As an HR Admin, I want to create, read, update, and delete employee records via APIs so that employee data is managed centrally.
+
+Acceptance Criteria:
+
+Scenario: CRUD operations success
+Given the API
+When I POST/GET/PUT/PATCH/DELETE /employees
+Then the operations succeed as per OpenAPI schema
+
+Scenario: Unique badgeId enforcement
+Given a badgeId
+When I try to create a duplicate
+Then the system rejects it
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: User Story 6
+- Notes: Supports all CRUD operations.
