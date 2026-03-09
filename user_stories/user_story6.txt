@@ -1,0 +1,16 @@
+Title: Create Employee Domain Model
+
+User Story: As a Backend Developer, I want to define the Employee entity with fields (name, badgeId, role, department, shiftGroup, hireDate, status) so that employee records are structured.
+
+Acceptance Criteria:
+
+Scenario: Employee entity validation
+Given the codebase
+When I inspect the Employee entity
+Then all required fields are present
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Foundation for CRUD APIs.
