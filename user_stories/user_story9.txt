@@ -1,0 +1,12 @@
+Title: Employee Deletion API with Soft-Delete
+User Story: As an HR manager I want to delete employee records with soft-delete So that records are not permanently lost and can be restored if needed
+Acceptance Criteria:
+Scenario: Employee soft-delete
+Given an existing employee record
+When I DELETE /employees/{id}
+Then the employee record is marked as deleted but not removed from the database
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Deleted records excluded from default queries; OpenAPI schema includes examples
