@@ -1,0 +1,12 @@
+Title: Employee Update API
+User Story: As an HR manager I want to update employee records So that changes in employee details are reflected accurately
+Acceptance Criteria:
+Scenario: Employee update via API
+Given an existing employee record
+When I PUT or PATCH /employees/{id} with valid updates
+Then the employee record is updated and validation is enforced
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Partial updates supported; OpenAPI schema includes examples
