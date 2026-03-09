@@ -1,0 +1,13 @@
+User Story 2: Configure Core Modules
+As a developer, I want to configure the core modules (controller, service, repository, domain) so that the Warehouse EMS backend is modular and maintainable.
+
+Acceptance Criteria:
+- Each module is defined as a separate package
+- Sample classes/interfaces are created for each layer
+- Dependency injection is set up for services and repositories
+- Modules are documented in the README
+
+Test Cases:
+- Verify sample controller, service, repository, and domain classes exist
+- Confirm dependency injection works by running the application
+- Check README for module documentation
