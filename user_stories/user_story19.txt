@@ -1,0 +1,16 @@
+Title: Handle Missed Punches and Corrections
+
+User Story: As a Worker, I want to request corrections for missed punches so that my attendance is accurate.
+
+Acceptance Criteria:
+
+Scenario: Correction request workflow
+Given a missed punch
+When I submit a correction
+Then an approval task is created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 16
+- Notes: Workflow for corrections.
