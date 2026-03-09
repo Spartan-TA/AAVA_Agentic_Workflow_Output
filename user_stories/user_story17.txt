@@ -1,0 +1,16 @@
+Title: Geofence and Device Capture for Attendance
+
+User Story: As a Supervisor, I want attendance events to capture location and device info so that compliance is ensured.
+
+Acceptance Criteria:
+
+Scenario: Location and device logging
+Given a clock-in/out event
+When geofence is enabled
+Then location and device are logged
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 16
+- Notes: Optional compliance feature.
