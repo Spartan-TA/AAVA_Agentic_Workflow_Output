@@ -1,0 +1,16 @@
+Title: Add Actuator for Monitoring
+
+User Story: As a DevOps Engineer, I want to enable Actuator endpoints so that system health can be monitored.
+
+Acceptance Criteria:
+
+Scenario: Health endpoint accessibility
+Given the running application
+When I access /actuator/health
+Then I see system status as UP
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 1
+- Notes: Required for production readiness.
