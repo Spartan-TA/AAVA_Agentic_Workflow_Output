@@ -1,0 +1,16 @@
+Title: Generate OpenAPI Schemas with Examples
+
+User Story: As a Developer, I want OpenAPI schemas for employee APIs so that integration is standardized.
+
+Acceptance Criteria:
+
+Scenario: OpenAPI schema validation
+Given the API docs
+When I view schemas
+Then they match the employee entity and include examples
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 7
+- Notes: Supports integration.
