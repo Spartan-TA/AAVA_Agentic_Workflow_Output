@@ -1,0 +1,16 @@
+Title: Endpoint Security Enforcement
+
+User Story: As a Security Engineer, I want to secure endpoints based on roles so that sensitive operations are restricted.
+
+Acceptance Criteria:
+
+Scenario: Unauthorized access handling
+Given an endpoint
+When an unauthorized user accesses
+Then 401 or 403 is returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 11
+- Notes: Protects PII.
