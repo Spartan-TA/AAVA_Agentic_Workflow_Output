@@ -1,0 +1,12 @@
+Title: Spring Boot Project Initialization
+User Story: As a developer I want to initialize a Spring Boot (Maven) project So that I have a standardized foundation for the Warehouse EMS modules
+Acceptance Criteria:
+Scenario: Project setup and build
+Given a clean repository
+When I run the build command
+Then the project builds successfully and runs on port 8080
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps; Actuator health endpoint returns UP
