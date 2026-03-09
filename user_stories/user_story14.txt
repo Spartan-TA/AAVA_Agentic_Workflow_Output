@@ -1,0 +1,16 @@
+Title: API Key/OAuth2 Toggle via Config
+
+User Story: As a DevOps Engineer, I want to toggle API key or OAuth2 authentication via config so that security can be adapted.
+
+Acceptance Criteria:
+
+Scenario: Authentication mode switching
+Given the config
+When I switch auth mode
+Then endpoints enforce the selected method
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 11
+- Notes: Flexible security.
