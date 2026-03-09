@@ -1,0 +1,16 @@
+Title: Support Soft-Delete for Employees
+
+User Story: As an HR Admin, I want to soft-delete employees so that historical data is preserved.
+
+Acceptance Criteria:
+
+Scenario: Soft-delete execution
+Given an employee
+When I delete
+Then status changes to 'inactive' and record is not physically removed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 7
+- Notes: Compliance requirement.
