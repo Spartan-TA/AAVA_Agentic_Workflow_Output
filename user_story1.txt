@@ -1,0 +1,14 @@
+User Story 1: Initialize Spring Boot Project
+As a developer, I want to initialize a new Spring Boot project with the required dependencies and folder structure so that the Warehouse EMS backend has a solid and scalable foundation.
+
+Acceptance Criteria:
+- Project is created using Spring Initializr or equivalent
+- Includes dependencies: Spring Web, Spring Data JPA, Spring Security, Actuator, Lombok
+- Folder structure follows industry best practices (separate layers for controller, service, repository, domain)
+- Application builds and runs successfully with no errors
+- README includes instructions to run the project
+
+Test Cases:
+- Build and run the application; verify it starts without errors
+- Check for presence of required dependencies in build file
+- Verify folder structure matches documented standards
