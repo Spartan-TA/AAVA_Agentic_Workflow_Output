@@ -1,0 +1,16 @@
+Title: Calculate Hours Worked per Shift
+
+User Story: As a Payroll Admin, I want hours worked to be calculated per shift so that payroll is accurate.
+
+Acceptance Criteria:
+
+Scenario: Hours calculation
+Given attendance records
+When I view daily totals
+Then hours are computed per shift
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 16
+- Notes: Supports payroll.
