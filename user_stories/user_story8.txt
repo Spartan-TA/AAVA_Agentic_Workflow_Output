@@ -1,0 +1,31 @@
+Title: Implement Role-Based Access Control (RBAC)
+
+User Story: As a security admin I want to restrict API access based on user roles So that sensitive employee data is protected
+
+Acceptance Criteria:
+
+Scenario: Unauthorized requests return 401
+Given a request without authentication
+When I access a protected endpoint
+Then I receive a 401 Unauthorized response
+
+Scenario: Forbidden actions return 403
+Given a user with insufficient permissions
+When I attempt to perform a restricted action
+Then I receive a 403 Forbidden response
+
+Scenario: ADMIN can manage all records
+Given a user with ADMIN role
+When I access any employee endpoint
+Then all actions are permitted
+
+Scenario: SUPERVISOR limited to team
+Given a user with SUPERVISOR role
+When I access employee endpoints
+Then I can only manage records for my team
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee CRUD APIs, Project Scaffolding
+- Notes: Use Spring Security; roles: ADMIN, HR, SUPERVISOR, WORKER; cover with unit/integration tests
