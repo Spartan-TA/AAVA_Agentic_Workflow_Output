@@ -1,0 +1,146 @@
+WAREHOUSE EMS USER STORIES - COMPLETE COLLECTION
+
+This document contains all user stories derived from 20 epics for the Warehouse Employee Management System.
+
+E01 - PROJECT SCAFFOLDING
+1. Initialize Spring Boot project structure Priority High SP 2
+2. Configure base package structure Priority High SP 2 Depends E01-1
+3. Integrate Flyway Liquibase for DB migrations Priority High SP 3 Depends E01-1
+4. Enable Spring Boot Actuator Priority High SP 1 Depends E01-1
+5. Document build and run steps Priority High SP 1 Depends E01-1
+
+E02 - EMPLOYEE MASTER DATA
+1. Create Employee domain model Priority High SP 2 Depends E01
+2. Implement Employee CRUD APIs Priority High SP 5 Depends E02-1
+3. Enforce unique badge ID Priority High SP 2 Depends E02-2
+4. Support pagination and filtering Priority High SP 3 Depends E02-2
+5. Provide OpenAPI schemas with examples Priority High SP 2 Depends E02-2
+
+E03 - RBAC
+1. Implement role definitions Priority High SP 2 Depends E01 E02
+2. Secure endpoints by role Priority High SP 3 Depends E03-1
+3. Enforce row-level security Priority High SP 5 Depends E03-2
+4. Support API key OAuth2 toggle Priority High SP 3 Depends E03-1
+5. Return proper HTTP status codes Priority High SP 1 Depends E03-2
+6. Cover security rules with automated tests Priority High SP 3 Depends E03-2 E03-3
+
+E04 - TIME AND ATTENDANCE
+1. Implement clock-in endpoint Priority High SP 3 Depends E02 E03
+2. Implement clock-out endpoint Priority High SP 3 Depends E04-1
+3. Associate clock events with shifts Priority High SP 2 Depends E04-1 E05
+4. Handle missed punches and corrections Priority High SP 3 Depends E04-1 E03
+5. Export attendance reports Priority High SP 2 Depends E04-2
+
+E05 - SHIFT AND SCHEDULE MANAGEMENT
+1. Create shift templates Priority High SP 3 Depends E02 E03 E04
+2. Assign shifts to employees Priority High SP 3 Depends E05-1
+3. Detect and prevent scheduling conflicts Priority High SP 3 Depends E05-2
+4. View personal upcoming shifts Priority High SP 2 Depends E05-2
+5. Generate audit entries for schedule changes Priority High SP 2 Depends E05-2 E14
+
+E06 - LEAVE AND ABSENCE MANAGEMENT
+1. Request leave Priority Medium SP 2 Depends E02 E03 E05
+2. Approve or deny leave requests Priority Medium SP 2 Depends E06-1
+3. Update accrual balances Priority Medium SP 2 Depends E06-2
+4. Exclude approved leave from scheduling and payroll Priority Medium SP 2 Depends E06-2 E05
+5. Export approved leaves Priority Medium SP 1 Depends E06-2
+
+E07 - TRAINING AND CERTIFICATION TRACKING
+1. CRUD for certifications Priority High SP 3 Depends E02 E03
+2. Alert before certification expiry Priority High SP 2 Depends E07-1
+3. Block assignment to tasks requiring expired certs Priority High SP 3 Depends E07-1 E05
+4. Upload proof documents for certifications Priority High SP 2 Depends E07-1
+5. Show certification status on employee profile Priority High SP 2 Depends E07-1
+
+E08 - SAFETY INCIDENTS AND OSHA REPORTING
+1. Record safety incidents and near-misses Priority High SP 3 Depends E02 E03
+2. Incident status workflow Priority High SP 2 Depends E08-1
+3. Export OSHA 300 300A summary Priority High SP 2 Depends E08-1
+4. Metrics dashboard endpoints Priority High SP 2 Depends E08-1
+
+E09 - EQUIPMENT AND ASSET ASSIGNMENT
+1. Asset registry CRUD Priority Medium SP 3 Depends E02 E03 E07
+2. Assign assets to employees Priority Medium SP 2 Depends E09-1
+3. Track asset check-in check-out Priority Medium SP 2 Depends E09-2
+4. Block asset use if certification missing Priority Medium SP 2 Depends E09-2 E07
+5. View asset and employee assignment history Priority Medium SP 2 Depends E09-3
+6. Report overdue asset returns Priority Medium SP 1 Depends E09-3
+
+E10 - PERFORMANCE REVIEWS AND GOALS
+1. Create review templates Priority Medium SP 2 Depends E02 E03
+2. Assign reviews to employees Priority Medium SP 2 Depends E10-1
+3. Submit and acknowledge reviews Priority Medium SP 2 Depends E10-2
+4. Export reviews as PDF Priority Medium SP 1 Depends E10-3
+5. Enforce role-based visibility Priority Medium SP 2 Depends E10-3 E03
+6. Make reviews immutable after sign-off Priority Medium SP 1 Depends E10-3
+
+E11 - PAYROLL EXPORT INTEGRATION
+1. Generate payroll-ready export files Priority High SP 3 Depends E04 E06
+2. Reconcile export totals with reports Priority High SP 2 Depends E11-1
+3. Secure delivery via SFTP or API Priority High SP 2 Depends E11-1
+4. Retry failed deliveries with backoff Priority High SP 2 Depends E11-3
+5. Audit log for every export Priority High SP 1 Depends E11-1 E14
+
+E12 - NOTIFICATIONS AND ANNOUNCEMENTS
+1. In-app and email SMS notifications Priority Medium SP 3 Depends E03 E05 E06 E07
+2. User opt-in opt-out for notification channels Priority Medium SP 2 Depends E12-1
+3. Localized notification templates Priority Medium SP 2 Depends E12-1 E18
+4. Track delivery status Priority Medium SP 2 Depends E12-1
+5. Apply rate limits to notifications Priority Medium SP 2 Depends E12-1
+6. Announcements visible on dashboard Priority Medium SP 1 Depends E12-1
+
+E13 - INTEGRATION LAYER
+1. Expose JWT OAuth2-secured REST APIs Priority High SP 3 Depends E01 E02 E03
+2. HRIS sync job for new hires terms Priority High SP 3 Depends E13-1
+3. WMS link for department location Priority High SP 2 Depends E13-1
+4. Idempotent webhooks for events Priority High SP 2 Depends E13-1
+5. Document all APIs in OpenAPI Priority High SP 1 Depends E13-1
+
+E14 - AUDIT TRAIL AND COMPLIANCE
+1. Centralized audit logging for sensitive changes Priority High SP 3 Depends E03
+2. Tamper-evident storage for audit logs Priority High SP 3 Depends E14-1
+3. Export audit logs by date user entity Priority High SP 2 Depends E14-1
+4. Automated tests validate audit coverage Priority High SP 2 Depends E14-1
+
+E15 - REPORTING AND ANALYTICS
+1. Generate operational reports Priority Medium SP 3 Depends E04 E05 E06 E07 E08 E14
+2. Filter reports by date department shift Priority Medium SP 2 Depends E15-1
+3. Export reports as CSV PDF Priority Medium SP 2 Depends E15-1
+4. Role-based dashboards Priority Medium SP 2 Depends E15-1
+5. Metrics endpoints for BI integration Priority Medium SP 2 Depends E15-1
+
+E16 - MOBILE ACCESS PWA
+1. Responsive views for core flows Priority Medium SP 3 Depends E04 E05 E06 E12
+2. Installable PWA manifest Priority Medium SP 2 Depends E16-1
+3. Offline queue for clock events Priority Medium SP 3 Depends E16-1
+4. Achieve Lighthouse PWA score Priority Medium SP 1 Depends E16-1
+
+E17 - ONBOARDING AND OFFBOARDING WORKFLOW
+1. Automate account provisioning for new hires Priority Medium SP 2 Depends E02 E03 E13
+2. Generate initial schedule and training tasks Priority Medium SP 2 Depends E17-1 E05 E07
+3. Assign assets to new hires Priority Medium SP 2 Depends E17-1 E09
+4. Automate offboarding for terminated employees Priority Medium SP 3 Depends E17-1 E09
+
+E18 - LOCALIZATION AND MULTI-TENANT
+1. Tenant isolation for data and config Priority Low SP 3 Depends E01 E03 E05 E14
+2. Locale-aware date time handling Priority Low SP 2 Depends E18-1
+3. Translations for UI strings Priority Low SP 2 Depends E18-1
+4. Holiday calendars per region Priority Low SP 2 Depends E18-1 E05
+5. Automated tests validate tenant isolation Priority Low SP 2 Depends E18-1
+
+E19 - ADVANCED SCHEDULING OPTIMIZATION
+1. Implement constraint solver for shift assignments Priority Low SP 5 Depends E05 E07
+2. Support what-if scenarios Priority Low SP 3 Depends E19-1
+3. Allow manual override of solver results Priority Low SP 2 Depends E19-1
+4. Audit log for schedule changes Priority Low SP 2 Depends E19-3 E14
+
+E20 - CONTINUOUS DEPLOYMENT AND MONITORING
+1. CI CD pipeline for automated tests and deployments Priority High SP 3 Depends E01 E14
+2. Automated security scans in pipeline Priority High SP 2 Depends E20-1
+3. Zero-downtime deployments Priority High SP 2 Depends E20-1
+4. Centralized logging and metrics Priority High SP 2 Depends E20-1
+5. Alerts for errors and latency Priority High SP 2 Depends E20-4
+6. Document runbooks for operations Priority High SP 1 Depends E20-1
+
+TOTAL: 106 User Stories across 20 Epics
+Estimated Total Story Points: 235
