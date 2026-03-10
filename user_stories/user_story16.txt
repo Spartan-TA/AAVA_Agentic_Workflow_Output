@@ -1,0 +1,21 @@
+Title: View Upcoming Shifts
+
+User Story: As a worker I want to view my upcoming shifts So that I can plan my work schedule
+
+Acceptance Criteria:
+
+Scenario: Worker sees personal shift schedule
+Given I am logged in as a worker
+When I access my schedule
+Then I see a list of my upcoming shifts
+
+Scenario: Supervisor sees team shifts
+Given I am a supervisor
+When I access the team schedule
+Then I see upcoming shifts for my team members
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Shift Templates and Schedules
+- Notes: Support mobile and web views; filter by date range
