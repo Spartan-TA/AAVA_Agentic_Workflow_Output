@@ -1,0 +1,26 @@
+Title: Record Safety Incidents and Workflow
+
+User Story: As a safety manager I want to record incidents and manage investigation workflow So that corrective actions are tracked and reported
+
+Acceptance Criteria:
+
+Scenario: Record new safety incident
+Given a valid incident report
+When I POST to /safety/incidents
+Then the incident is recorded with all required fields
+
+Scenario: Incident status workflow
+Given an incident is recorded
+When I update the status
+Then it transitions from Open to Investigating to Resolved
+
+Scenario: OSHA summary export
+Given incidents are recorded
+When I export OSHA 300/300A
+Then the file contains all required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee CRUD APIs, RBAC
+- Notes: Support for near-miss reporting; dashboard metrics endpoint
