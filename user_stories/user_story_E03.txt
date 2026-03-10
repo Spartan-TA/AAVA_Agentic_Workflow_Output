@@ -1,0 +1,51 @@
+### E03: Role Based Access Control (RBAC)
+
+**User Story 1**
+Title: Implement Role-Based Endpoint Security
+User Story: As an admin, I want to restrict API endpoints by user role so that only authorized users can access sensitive data.
+Acceptance Criteria:
+Scenario: Unauthorized requests return 401
+  Given a user is not authenticated
+  When they access a protected endpoint
+  Then the API returns 401 Unauthorized
+Additional Details: Priority: High, Story Points: 3, Dependencies: E01, E02, Notes: Security baseline.
+
+**User Story 2**
+Title: Add Row-Level Security for Supervisors
+User Story: As a supervisor, I want to access only my team's records so that I cannot view or modify other teams' data.
+Acceptance Criteria:
+Scenario: Supervisor limited to team
+  Given a supervisor is logged in
+  When they query employee data
+  Then only their team's records are returned
+Additional Details: Priority: High, Story Points: 3, Dependencies: E03-1, Notes: Data privacy.
+
+**User Story 3**
+Title: Configure Roles (ADMIN, HR, SUPERVISOR, WORKER)
+User Story: As an admin, I want to define user roles so that permissions can be managed consistently.
+Acceptance Criteria:
+Scenario: Roles assigned and enforced
+  Given a user is assigned a role
+  When they perform actions
+  Then permissions are enforced according to their role
+Additional Details: Priority: High, Story Points: 2, Dependencies: E03-1, Notes: Foundation for RBAC.
+
+**User Story 4**
+Title: Support API Key/OAuth2 Authentication Toggle
+User Story: As a developer, I want to toggle between API key and OAuth2 authentication so that the system can adapt to different security needs.
+Acceptance Criteria:
+Scenario: Configurable authentication
+  Given the config is set
+  When I start the application
+  Then the chosen authentication method is enforced
+Additional Details: Priority: Medium, Story Points: 3, Dependencies: E03-1, Notes: Flexibility.
+
+**User Story 5**
+Title: Cover Security Rules with Automated Tests
+User Story: As a developer, I want automated tests for security rules so that unauthorized actions are prevented.
+Acceptance Criteria:
+Scenario: Security tests pass
+  Given the test suite
+  When I run security tests
+  Then all unauthorized and forbidden actions are correctly blocked
+Additional Details: Priority: High, Story Points: 2, Dependencies: E03-1, Notes: Prevent regressions.
