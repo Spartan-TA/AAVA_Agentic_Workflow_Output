@@ -1,0 +1,36 @@
+Title: Initialize Project Scaffolding
+
+User Story: As a developer I want to initialize a Spring Boot project with standardized modules and configuration So that all teams have a consistent foundation for further development
+
+Acceptance Criteria:
+
+Scenario: Project builds and runs on port 8080
+Given the project is cloned from the repository
+When I run the build and start the application
+Then the application starts successfully on port 8080
+
+Scenario: README contains build and run instructions
+Given the project repository is accessed
+When I open the README file
+Then I see clear steps for building and running the project
+
+Scenario: Actuator health endpoint returns UP
+Given the application is running
+When I access the /actuator/health endpoint
+Then the response status is UP
+
+Scenario: Base package structure is created
+Given the project is initialized
+When I browse the source directories
+Then I see separate packages for employee, scheduling, attendance, and safety modules
+
+Scenario: Flyway/Liquibase runs baseline migration
+Given the application starts for the first time
+When the database is empty
+Then Flyway/Liquibase applies the baseline migration successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: Ensure Maven wrapper is included; use Java 17+; Dockerfile for local dev; verify Actuator is secured in non-dev environments
