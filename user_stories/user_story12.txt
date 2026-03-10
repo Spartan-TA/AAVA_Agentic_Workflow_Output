@@ -1,0 +1,26 @@
+Title: Handle Missed Punches and Corrections
+
+User Story: As a supervisor I want to correct missed or erroneous clock-in/out events So that attendance records are accurate
+
+Acceptance Criteria:
+
+Scenario: Missed punch correction request
+Given an employee missed a punch
+When I submit a correction request
+Then an approval task is created for review
+
+Scenario: Correction approval workflow
+Given a correction request is pending
+When a supervisor approves it
+Then the attendance record is updated
+
+Scenario: Correction rejection
+Given a correction request is pending
+When a supervisor rejects it
+Then the attendance record remains unchanged and the employee is notified
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Time & Attendance Clock In/Out
+- Notes: Track correction history; notify involved parties
