@@ -1,0 +1,13 @@
+CREATE TABLE employee (
+    id SERIAL PRIMARY KEY,
+    badge_id VARCHAR(32) NOT NULL UNIQUE,
+    name VARCHAR(128) NOT NULL,
+    role VARCHAR(32) NOT NULL,
+    department VARCHAR(64) NOT NULL,
+    shift_group VARCHAR(32),
+    hire_date DATE NOT NULL,
+    status VARCHAR(16) NOT NULL,
+    deleted BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
