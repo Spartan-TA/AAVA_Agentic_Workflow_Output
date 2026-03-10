@@ -1,0 +1,26 @@
+Title: Assign and Track Equipment & Assets
+
+User Story: As an asset manager I want to assign equipment to employees and track check-in/out So that asset usage and condition are monitored
+
+Acceptance Criteria:
+
+Scenario: Asset registry CRUD
+Given I have asset management permissions
+When I create, update, or delete an asset
+Then the registry reflects the changes
+
+Scenario: Check-in/out endpoints
+Given an asset is available
+When I check it out to an employee
+Then the assignment is recorded and history updated
+
+Scenario: Block checkout if certification invalid
+Given an employee lacks required certification
+When I attempt to assign restricted equipment
+Then the system blocks the checkout
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Employee CRUD APIs, RBAC, Certification Tracking
+- Notes: Track asset condition; overdue return reports
