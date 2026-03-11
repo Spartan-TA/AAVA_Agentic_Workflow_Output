@@ -1,0 +1,12 @@
+Title: User Profile - Edit Profile Information
+User Story: As a registered user I want to edit my profile information So that I can keep my details up to date
+Acceptance Criteria: 
+Scenario: Successful profile update
+Given I am on my profile page
+When I update my information and save changes
+Then my profile is updated and I see a confirmation message
+Additional Details: 
+Priority: Medium
+Story Points: 3
+Dependencies: User database, Profile page
+Notes: Changes should be reflected immediately
