@@ -1,0 +1,12 @@
+Title: Password Reset
+User Story: As a registered user I want to reset my password So that I can regain access to my account if I forget my credentials
+Acceptance Criteria:
+Scenario: Successful password reset
+  Given I am on the password reset page
+  When I enter my registered email and submit
+  Then I should receive a password reset link via email
+Additional Details:
+  Priority: Medium
+  Story Points: 3
+  Dependencies: Email service, Authentication module
+  Notes: Reset link should expire after 24 hours.
