@@ -1,0 +1,94 @@
+### E04: Time & Attendance (Clock In/Out)
+
+#### 1. Title: Employee Clock-In Endpoint
+User Story: As a worker I want to clock in at the start of my shift So that my attendance is recorded
+Acceptance Criteria:
+Scenario: Successful clock-in
+Given I am scheduled for a shift
+When I POST to `/attendance/clock-in` with my badgeId
+Then my clock-in time is recorded and associated with my shift
+
+Scenario: Geofence validation
+Given I am outside the warehouse geofence
+When I attempt to clock in
+Then I receive a 400 error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Capture device info
+
+---
+
+#### 2. Title: Employee Clock-Out Endpoint
+User Story: As a worker I want to clock out at the end of my shift So that my worked hours are calculated
+Acceptance Criteria:
+Scenario: Successful clock-out
+Given I am clocked in
+When I POST to `/attendance/clock-out`
+Then my clock-out time is recorded and hours worked are computed
+
+Scenario: Missed clock-in
+Given I did not clock in
+When I try to clock out
+Then I receive an error and instructions to request correction
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Validate shift association
+
+---
+
+#### 3. Title: Handle Missed Punches and Corrections
+User Story: As a worker I want to request corrections for missed punches So that my attendance is accurate
+Acceptance Criteria:
+Scenario: Submit correction
+Given I missed a clock-in/out
+When I submit a correction request
+Then an approval task is created for my supervisor
+
+Scenario: Supervisor approval
+Given a pending correction
+When the supervisor approves
+Then the attendance record is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Track correction history
+
+---
+
+#### 4. Title: Attendance Reports Export
+User Story: As an HR user I want to export attendance data to CSV So that I can analyze and share reports
+Acceptance Criteria:
+Scenario: Export report
+Given attendance records exist
+When I request a CSV export
+Then a file is generated with all relevant fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Include filters for date, department
+
+---
+
+#### 5. Title: Automatic Shift Association
+User Story: As a worker I want my clock-in/out events automatically linked to my scheduled shift So that hours are calculated correctly
+Acceptance Criteria:
+Scenario: Shift association
+Given I clock in during my scheduled shift
+When the event is recorded
+Then it is linked to the correct shift
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Handle overlapping shifts
