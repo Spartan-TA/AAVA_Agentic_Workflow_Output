@@ -1,0 +1,12 @@
+Title: User Authentication - Password Reset Completion
+User Story: As a user with a reset link I want to set a new password So that I can access my account again
+Acceptance Criteria: 
+Scenario: Password reset
+Given I have a valid reset link
+When I enter a new password and submit
+Then my password is updated and I can log in with the new password
+Additional Details: 
+Priority: High
+Story Points: 2
+Dependencies: Authentication module
+Notes: Validate password strength requirements
