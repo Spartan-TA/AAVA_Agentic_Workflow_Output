@@ -1,0 +1,79 @@
+### E17: Onboarding & Offboarding Workflow
+
+#### 1. Title: Automated Onboarding from HRIS
+User Story: As an HR user I want new hires from HRIS to trigger onboarding tasks So that provisioning is automated
+Acceptance Criteria:
+Scenario: New hire onboarding
+Given a new hire appears in HRIS
+When synced
+Then onboarding tasks are generated for accounts, schedule, and training
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Notify responsible parties
+
+---
+
+#### 2. Title: Initial Schedule Assignment for New Hires
+User Story: As a supervisor I want new hires to receive an initial schedule automatically So that they are ready to work
+Acceptance Criteria:
+Scenario: Assign schedule
+Given a new hire
+When onboarding is triggered
+Then an initial schedule is assigned based on role and shift group
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Configurable templates
+
+---
+
+#### 3. Title: Required Training Assignment for New Hires
+User Story: As a supervisor I want required training tasks assigned to new hires So that compliance is ensured
+Acceptance Criteria:
+Scenario: Assign training
+Given a new hire
+When onboarding is triggered
+Then required training and certifications are assigned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Track completion
+
+---
+
+#### 4. Title: Automated Offboarding on Termination
+User Story: As an HR user I want terminated employees to be deprovisioned automatically So that access and assets are recovered
+Acceptance Criteria:
+Scenario: Offboarding triggered
+Given a termination in HRIS
+When synced
+Then access is revoked, assets are collected, and schedules updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Notify IT and asset managers
+
+---
+
+#### 5. Title: Offboarding Task Tracking
+User Story: As a supervisor I want to track completion of all offboarding tasks So that nothing is missed
+Acceptance Criteria:
+Scenario: Track tasks
+Given an offboarding is in progress
+When I view the checklist
+Then all tasks and statuses are visible
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Escalate overdue tasks
