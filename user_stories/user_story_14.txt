@@ -1,0 +1,12 @@
+Title: User Authentication - Session Timeout
+User Story: As a user I want my session to timeout after inactivity So that my account remains secure if I forget to log out
+Acceptance Criteria: 
+Scenario: Automatic logout
+Given I am logged in but inactive
+When the timeout period expires
+Then I am automatically logged out and redirected to the login page
+Additional Details: 
+Priority: Medium
+Story Points: 2
+Dependencies: Session management
+Notes: Default timeout: 30 minutes; show warning before timeout
