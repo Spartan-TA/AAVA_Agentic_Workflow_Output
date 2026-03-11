@@ -1,0 +1,89 @@
+### E09: Equipment & Asset Assignment
+
+#### 1. Title: Manage Asset Registry (CRUD)
+User Story: As an asset manager I want to add, update, and remove assets So that inventory is accurate
+Acceptance Criteria:
+Scenario: Add asset
+Given asset details
+When I POST to `/assets`
+Then the asset is added to the registry
+
+Scenario: Remove asset
+Given an asset is obsolete
+When I DELETE it
+Then it is removed from the registry
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Track asset type, condition
+
+---
+
+#### 2. Title: Assign and Track Asset Checkout/Return
+User Story: As a supervisor I want to assign assets to employees and track check-in/out So that accountability is maintained
+Acceptance Criteria:
+Scenario: Assign asset
+Given an available asset
+When I assign it to an employee
+Then the assignment is recorded with timestamp
+
+Scenario: Return asset
+Given an asset is checked out
+When it is returned
+Then the return is recorded and condition updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Track overdue returns
+
+---
+
+#### 3. Title: Block Asset Assignment for Invalid Certifications
+User Story: As a supervisor I want to prevent asset assignment if required certifications are missing So that only qualified employees use equipment
+Acceptance Criteria:
+Scenario: Certification check
+Given an employee lacks a valid cert
+When I assign a restricted asset
+Then the system blocks the assignment
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Enforce for forklifts, etc.
+
+---
+
+#### 4. Title: Asset Assignment History Log
+User Story: As an asset manager I want to view assignment history for each asset and employee So that usage is auditable
+Acceptance Criteria:
+Scenario: View history
+Given an asset or employee
+When I view the history
+Then all check-in/out events are listed with timestamps
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Exportable log
+
+---
+
+#### 5. Title: Overdue Asset Return Reports
+User Story: As a supervisor I want to generate reports of overdue asset returns So that I can follow up
+Acceptance Criteria:
+Scenario: Overdue report
+Given assets are overdue
+When I generate the report
+Then all overdue assignments are listed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Filter by asset type, employee
