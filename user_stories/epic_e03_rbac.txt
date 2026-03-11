@@ -1,0 +1,61 @@
+EPIC E03: ROLE BASED ACCESS CONTROL (RBAC)
+
+===========================================
+
+Title: RBAC - Role Definitions & Security
+User Story: As an admin, I want to define roles (ADMIN, HR, SUPERVISOR, WORKER) so that access is restricted appropriately.
+Acceptance Criteria:
+Scenario: Role-based access
+  Given a user with a specific role
+  When accessing protected endpoints
+  Then only permitted actions are allowed, others return 403
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01,E02
+- Notes: Cover all endpoints.
+
+---
+
+Title: RBAC - Method/Endpoint Security
+User Story: As a developer, I want to secure endpoints and methods based on roles so that sensitive operations are protected.
+Acceptance Criteria:
+Scenario: Endpoint security
+  Given a non-authorized user
+  When accessing a restricted endpoint
+  Then a 401 or 403 is returned
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01,E02
+- Notes: Include row-level constraints where needed.
+
+---
+
+Title: RBAC - API Key/OAuth2 Toggle
+User Story: As a system admin, I want to toggle between API key and OAuth2 authentication via config so that integration flexibility is supported.
+Acceptance Criteria:
+Scenario: Auth toggle
+  Given the config is set
+  When I authenticate
+  Then the system uses the selected method
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01,E02
+- Notes: Document toggle usage.
+
+---
+
+Title: RBAC - Security Test Coverage
+User Story: As a QA, I want security rules covered by automated tests so that unauthorized access is prevented.
+Acceptance Criteria:
+Scenario: Security test
+  Given security tests
+  When run
+  Then all unauthorized actions are blocked
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01,E02
+- Notes: Include negative tests.
