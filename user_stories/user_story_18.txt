@@ -1,0 +1,12 @@
+Title: Notifications - Mark as Read
+User Story: As a user I want to mark notifications as read So that I can manage which notifications I have reviewed
+Acceptance Criteria: 
+Scenario: Mark notification read
+Given I have unread notifications
+When I click on a notification
+Then it is marked as read and the unread count decreases
+Additional Details: 
+Priority: Medium
+Story Points: 1
+Dependencies: Notification service
+Notes: Provide option to mark all as read
