@@ -1,0 +1,99 @@
+### E06: Leave & Absence Management
+
+#### 1. Title: Employee Leave Request
+User Story: As a worker I want to request PTO, sick, or unpaid leave So that my time off is tracked
+Acceptance Criteria:
+Scenario: Submit leave request
+Given I am logged in
+When I submit a leave request
+Then the request is pending approval and my balance is checked
+
+Scenario: Insufficient balance
+Given I have no PTO left
+When I request PTO
+Then I receive an error
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Validate accrual policies
+
+---
+
+#### 2. Title: Supervisor Leave Approval Workflow
+User Story: As a supervisor I want to approve or deny leave requests So that staffing is maintained
+Acceptance Criteria:
+Scenario: Approve leave
+Given a pending request
+When I approve it
+Then the employee's leave is scheduled and balances updated
+
+Scenario: Deny leave
+Given a pending request
+When I deny it
+Then the employee is notified with a reason
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Track approval history
+
+---
+
+#### 3. Title: Update Leave Accrual Balances
+User Story: As an HR user I want leave balances to update automatically So that records are accurate
+Acceptance Criteria:
+Scenario: Leave taken
+Given an approved leave
+When the leave date passes
+Then the employee's balance is reduced accordingly
+
+Scenario: Accrual policy applied
+Given a new accrual period
+When it starts
+Then balances are incremented per policy
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Support multiple leave types
+
+---
+
+#### 4. Title: Integration with Scheduling and Payroll
+User Story: As a system I want approved leaves to exclude employees from scheduling and payroll calculations So that staffing and pay are accurate
+Acceptance Criteria:
+Scenario: Scheduled shift auto-flag
+Given an approved leave overlaps a shift
+When the leave is approved
+Then the shift is flagged for coverage
+
+Scenario: Payroll export
+Given approved unpaid leave
+When payroll is exported
+Then hours are adjusted accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Hooks for downstream systems
+
+---
+
+#### 5. Title: Export Approved Leaves
+User Story: As an HR user I want to export approved leave records So that I can report on absences
+Acceptance Criteria:
+Scenario: Export leaves
+Given approved leave records
+When I export
+Then a CSV file is generated with all relevant details
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Filter by date, type
