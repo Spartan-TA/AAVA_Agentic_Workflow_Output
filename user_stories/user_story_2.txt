@@ -1,0 +1,12 @@
+Title: User Registration - Email Verification
+User Story: As a new user I want to verify my email address So that I can activate my account and ensure security
+Acceptance Criteria: 
+Scenario: Email verification link
+Given I have registered with a valid email
+When I receive the verification email and click the link
+Then my account is activated and I can log in
+Additional Details: 
+Priority: High
+Story Points: 2
+Dependencies: Email service, Registration module
+Notes: Verification link should expire after 24 hours
