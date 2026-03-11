@@ -1,0 +1,12 @@
+Title: User Registration - Basic Account Creation
+User Story: As a new user I want to register for an account So that I can access personalized features of the application
+Acceptance Criteria: 
+Scenario: Successful registration
+Given I am on the registration page
+When I enter valid information and submit the form
+Then my account is created and I am redirected to the welcome page
+Additional Details: 
+Priority: High
+Story Points: 3
+Dependencies: User database, Email service
+Notes: Registration form must validate email and password strength
