@@ -1,0 +1,12 @@
+Title: User Profile - View Account Activity
+User Story: As a registered user I want to view my recent account activity So that I can monitor for unauthorized access
+Acceptance Criteria: 
+Scenario: Activity log
+Given I am on my profile page
+When I select the activity log tab
+Then I see a list of recent logins and actions
+Additional Details: 
+Priority: Low
+Story Points: 3
+Dependencies: Activity logging, Profile page
+Notes: Show timestamp and device info for each activity
