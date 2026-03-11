@@ -1,0 +1,94 @@
+### E01: Project Scaffolding & Domain Setup
+
+#### 1. Title: Initialize Spring Boot Project Structure
+User Story: As a developer I want a standardized Spring Boot project structure So that all modules follow consistent conventions and onboarding is faster
+Acceptance Criteria:
+Scenario: Project builds and runs
+Given I have cloned the repository
+When I run `mvn clean install` and `mvn spring-boot:run`
+Then the application should start on port 8080 and display a health endpoint
+
+Scenario: Base package structure exists
+Given the repository is initialized
+When I browse the source code
+Then I should see base packages for employee, scheduling, attendance, and safety modules
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Include README with build/run instructions
+
+---
+
+#### 2. Title: Database Migration Setup (Flyway/Liquibase)
+User Story: As a developer I want automated database migrations So that schema changes are versioned and applied consistently
+Acceptance Criteria:
+Scenario: Baseline migration runs
+Given a fresh database
+When I start the application
+Then Flyway/Liquibase should apply the baseline migration without errors
+
+Scenario: Migration history is tracked
+Given migrations have run
+When I query the migration table
+Then I should see all applied migrations with timestamps
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project structure
+- Notes: Use Flyway or Liquibase, not both
+
+---
+
+#### 3. Title: Enable Spring Boot Actuator
+User Story: As an operator I want to access health and metrics endpoints So that I can monitor application status
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I GET `/actuator/health`
+Then the response status is 200 and contains `"status":"UP"`
+
+Scenario: Metrics endpoint is available
+Given the application is running
+When I GET `/actuator/metrics`
+Then I receive application metrics
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project structure
+- Notes: Secure actuator endpoints in production
+
+---
+
+#### 4. Title: Document Build and Run Steps
+User Story: As a new developer I want clear instructions in the README So that I can build and run the project without confusion
+Acceptance Criteria:
+Scenario: README contains steps
+Given I open the README
+When I follow the build and run instructions
+Then the application starts successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project structure
+- Notes: Include environment prerequisites
+
+---
+
+#### 5. Title: Core Module Bootstrapping
+User Story: As a developer I want core modules (employee, scheduling, attendance, safety) initialized So that future features can be added independently
+Acceptance Criteria:
+Scenario: Modules are present
+Given the project is initialized
+When I browse the codebase
+Then I see separate packages for each core domain
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project structure
+- Notes: No business logic required yet
