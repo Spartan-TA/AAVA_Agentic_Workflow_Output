@@ -1,0 +1,12 @@
+Title: Edit User Profile
+User Story: As a logged-in user I want to edit my profile information So that I can keep my account details up to date
+Acceptance Criteria:
+Scenario: Successful profile update
+  Given I am on my profile page
+  When I modify my information and save changes
+  Then I should see a success message and my updated information should be reflected
+Additional Details:
+  Priority: Medium
+  Story Points: 3
+  Dependencies: Authentication module, Database module
+  Notes: Validate all input fields before saving.
