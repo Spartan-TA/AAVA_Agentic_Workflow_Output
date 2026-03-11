@@ -1,0 +1,12 @@
+Title: User Profile - Profile Picture Upload
+User Story: As a registered user I want to upload a profile picture So that I can personalize my account
+Acceptance Criteria: 
+Scenario: Successful upload
+Given I am on my profile page
+When I upload a valid image file
+Then my profile picture is updated and displayed
+Additional Details: 
+Priority: Low
+Story Points: 2
+Dependencies: File storage, Profile page
+Notes: Supported formats: JPG, PNG; Max size: 2MB
