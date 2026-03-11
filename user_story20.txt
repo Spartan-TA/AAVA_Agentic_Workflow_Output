@@ -1,0 +1,12 @@
+Title: Data Export
+User Story: As a user I want to export my data So that I can have a backup or transfer to another platform
+Acceptance Criteria:
+Scenario: Successful data export
+  Given I am logged in
+  When I request a data export from my account settings
+  Then I should receive a downloadable file containing all my data
+Additional Details:
+  Priority: Low
+  Story Points: 4
+  Dependencies: Database module, File generation system
+  Notes: Comply with GDPR requirements.
