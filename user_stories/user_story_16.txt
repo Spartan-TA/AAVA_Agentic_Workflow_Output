@@ -1,0 +1,12 @@
+Title: User Dashboard - Customize Dashboard Layout
+User Story: As a user I want to customize my dashboard layout So that I can prioritize the information most relevant to me
+Acceptance Criteria: 
+Scenario: Layout customization
+Given I am on my dashboard
+When I drag and drop widgets to rearrange them
+Then my layout preferences are saved and persist across sessions
+Additional Details: 
+Priority: Low
+Story Points: 5
+Dependencies: Dashboard module, User preferences
+Notes: Allow hiding/showing widgets
