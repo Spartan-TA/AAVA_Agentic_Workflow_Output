@@ -1,0 +1,79 @@
+### E08: Safety Incidents & OSHA Reporting
+
+#### 1. Title: Record Safety Incidents and Near-Misses
+User Story: As a supervisor I want to record safety incidents and near-misses So that all events are tracked
+Acceptance Criteria:
+Scenario: Submit incident
+Given an incident occurs
+When I POST to `/safety/incidents`
+Then the incident is recorded with all required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Validate severity, location, involved employees
+
+---
+
+#### 2. Title: Incident Investigation Workflow
+User Story: As a safety officer I want to manage incident investigation status So that corrective actions are tracked
+Acceptance Criteria:
+Scenario: Status workflow
+Given an incident is recorded
+When I update status to "Investigating" or "Resolved"
+Then the status is updated and history is tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Track all status changes
+
+---
+
+#### 3. Title: Generate OSHA Summary Reports
+User Story: As a compliance officer I want to generate OSHA 300/300A reports So that regulatory requirements are met
+Acceptance Criteria:
+Scenario: Export OSHA report
+Given incident data
+When I request an OSHA export
+Then a file is generated with all required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Format per OSHA guidelines
+
+---
+
+#### 4. Title: Safety Metrics Dashboard
+User Story: As a manager I want to view safety KPIs and incident metrics So that I can monitor trends
+Acceptance Criteria:
+Scenario: View dashboard
+Given incidents are recorded
+When I access the dashboard
+Then I see metrics by type, severity, and status
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Filter by date, department
+
+---
+
+#### 5. Title: Validate Incident Data
+User Story: As a QA I want all incident submissions validated So that data quality is ensured
+Acceptance Criteria:
+Scenario: Required fields
+Given a submission is missing required data
+When I POST the incident
+Then I receive a 400 error
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E02, E03
+- Notes: Validate all fields
