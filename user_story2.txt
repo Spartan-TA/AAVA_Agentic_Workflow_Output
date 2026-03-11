@@ -1,0 +1,12 @@
+Title: User Registration
+User Story: As a new user I want to register an account So that I can access the platform's features
+Acceptance Criteria:
+Scenario: Successful registration
+  Given I am on the registration page
+  When I fill in all required fields with valid information and submit
+  Then I should receive a confirmation email and be redirected to the login page
+Additional Details:
+  Priority: High
+  Story Points: 5
+  Dependencies: Email service, Database module
+  Notes: Include email verification workflow.
