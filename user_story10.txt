@@ -1,0 +1,12 @@
+Title: Delete Post
+User Story: As a post author I want to delete my posts So that I can remove content I no longer want published
+Acceptance Criteria:
+Scenario: Successful post deletion
+  Given I am viewing my own post
+  When I click delete and confirm the action
+  Then the post should be removed and I should see a confirmation message
+Additional Details:
+  Priority: Medium
+  Story Points: 2
+  Dependencies: Authentication module, Content management system
+  Notes: Implement soft delete with recovery option.
