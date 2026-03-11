@@ -1,0 +1,79 @@
+### E19: Advanced Scheduling (AI/Optimization)
+
+#### 1. Title: Demand Forecasting for Scheduling
+User Story: As a scheduler I want the system to forecast staffing demand So that I can plan shifts proactively
+Acceptance Criteria:
+Scenario: Forecast generated
+Given historical data
+When I request a forecast
+Then the system suggests demand per shift
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E05, E15
+- Notes: Use attendance and order data
+
+---
+
+#### 2. Title: AI-Based Optimal Shift Assignment Suggestions
+User Story: As a scheduler I want AI to suggest optimal shift assignments So that coverage and fairness are maximized
+Acceptance Criteria:
+Scenario: Suggest assignments
+Given forecasted demand
+When I run the optimizer
+Then shift assignments are suggested based on rules
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E05, E15
+- Notes: Consider preferences, overtime, skills
+
+---
+
+#### 3. Title: What-If Scenario Planning
+User Story: As a manager I want to simulate schedule changes and see impacts So that I can make informed decisions
+Acceptance Criteria:
+Scenario: Simulate change
+Given a proposed change
+When I run a simulation
+Then impacts on coverage, overtime, and cost are displayed
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E05, E15
+- Notes: Save/load scenarios
+
+---
+
+#### 4. Title: Optimization Rule Configuration
+User Story: As an admin I want to configure optimization rules and constraints So that scheduling aligns with policies
+Acceptance Criteria:
+Scenario: Update rules
+Given new constraints
+When I update settings
+Then the optimizer uses the new rules
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E05, E15
+- Notes: UI for rule management
+
+---
+
+#### 5. Title: Export Optimized Schedules
+User Story: As a scheduler I want to export optimized schedules So that I can share and implement them
+Acceptance Criteria:
+Scenario: Export schedule
+Given an optimized schedule
+When I export
+Then a CSV/PDF is generated
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E05, E15
+- Notes: Include assignment rationale
