@@ -1,0 +1,358 @@
+EPIC E11: PAYROLL EXPORT INTEGRATION
+
+===========================================
+
+Title: Payroll Export - Generate Payroll Files
+User Story: As a payroll admin, I want to generate payroll-ready files from approved attendance and leave so that payroll runs are accurate.
+Acceptance Criteria:
+Scenario: Generate payroll file
+  Given approved data
+  When I export
+  Then the file matches provider schema
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04,E06
+- Notes: Support multiple providers.
+
+---
+
+Title: Payroll Export - Secure Delivery
+User Story: As a payroll admin, I want to deliver payroll files securely via SFTP or API so that sensitive data is protected.
+Acceptance Criteria:
+Scenario: Secure delivery
+  Given a payroll file
+  When I send via SFTP/API
+  Then the transfer is secure and logged
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04,E06
+- Notes: Retry on failure.
+
+---
+
+Title: Payroll Export - Reconciliation
+User Story: As a payroll admin, I want to reconcile export totals with reports so that errors are detected.
+Acceptance Criteria:
+Scenario: Reconcile totals
+  Given exported data
+  When I compare to reports
+  Then totals match
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04,E06
+- Notes: Alert on mismatch.
+
+---
+
+Title: Payroll Export - Audit Log
+User Story: As an auditor, I want every payroll export logged so that compliance is ensured.
+Acceptance Criteria:
+Scenario: Audit export
+  Given an export
+  When it is performed
+  Then an audit entry is created
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E04,E06
+- Notes: Include user, timestamp, status.
+
+
+===========================================
+EPIC E12: NOTIFICATIONS & ANNOUNCEMENTS
+===========================================
+
+Title: Notifications - In-app & Email/SMS Notifications
+User Story: As a user, I want to receive notifications for shift changes, expiring certs, approvals, and announcements so that I stay informed.
+Acceptance Criteria:
+Scenario: Receive notification
+  Given a relevant event
+  When it occurs
+  Then I receive a notification via my chosen channel
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03,E05,E06,E07
+- Notes: Support opt-in/out.
+
+---
+
+Title: Notifications - Quiet Hours
+User Story: As a user, I want to configure quiet hours so that I am not disturbed outside work hours.
+Acceptance Criteria:
+Scenario: Quiet hours
+  Given my quiet hours
+  When a notification is triggered
+  Then it is delayed until allowed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03,E05,E06,E07
+- Notes: User-configurable.
+
+---
+
+Title: Notifications - Delivery Status Tracking
+User Story: As an admin, I want to track notification delivery status so that I can troubleshoot issues.
+Acceptance Criteria:
+Scenario: Track delivery
+  Given a sent notification
+  When I check status
+  Then delivery is confirmed or failed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03,E05,E06,E07
+- Notes: Retry on failure.
+
+---
+
+Title: Notifications - Localized Templates
+User Story: As a user, I want notification templates to be localized so that I receive messages in my preferred language.
+Acceptance Criteria:
+Scenario: Localized notification
+  Given my language preference
+  When a notification is sent
+  Then it uses the correct language template
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03,E05,E06,E07
+- Notes: Support all supported locales.
+
+---
+
+Title: Notifications - Announcements Dashboard
+User Story: As a worker, I want to view announcements on my dashboard so that I do not miss important updates.
+Acceptance Criteria:
+Scenario: View announcements
+  Given announcements
+  When I log in
+  Then all current announcements are visible
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E03,E05,E06,E07
+- Notes: Mark as read.
+
+
+===========================================
+EPIC E13: INTEGRATION LAYER (HRIS/WMS APIs)
+===========================================
+
+Title: Integration Layer - HRIS Sync
+User Story: As an integration engineer, I want to sync new hires and terms from HRIS so that employee data is up to date.
+Acceptance Criteria:
+Scenario: HRIS sync
+  Given new/terminated employees in HRIS
+  When the sync job runs
+  Then employees are created/updated in EMS
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01,E02,E03
+- Notes: Idempotent sync.
+
+---
+
+Title: Integration Layer - WMS Department/Location Link
+User Story: As an integration engineer, I want to link WMS department/location data so that assignments are accurate.
+Acceptance Criteria:
+Scenario: WMS link
+  Given department/location data
+  When linked
+  Then assignments reflect WMS structure
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01,E02,E03
+- Notes: Sync on schedule.
+
+---
+
+Title: Integration Layer - SSO via IDP
+User Story: As a user, I want to log in via SSO so that access is seamless.
+Acceptance Criteria:
+Scenario: SSO login
+  Given valid IDP credentials
+  When I log in
+  Then I am authenticated via SSO
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01,E02,E03
+- Notes: Support SAML/OAuth2.
+
+---
+
+Title: Integration Layer - Webhooks for Events
+User Story: As a developer, I want to receive webhooks for key events so that external systems stay in sync.
+Acceptance Criteria:
+Scenario: Webhook event
+  Given a configured webhook
+  When an event occurs
+  Then a POST is sent to the endpoint
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01,E02,E03
+- Notes: Document all events.
+
+---
+
+Title: Integration Layer - OpenAPI Documentation
+User Story: As a developer, I want all APIs documented in OpenAPI so that integration is easy.
+Acceptance Criteria:
+Scenario: OpenAPI docs
+  Given the API
+  When I access docs
+  Then all endpoints are described
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01,E02,E03
+- Notes: Keep up to date.
+
+
+===========================================
+EPIC E14: AUDIT TRAIL & COMPLIANCE
+===========================================
+
+Title: Audit Trail - Log Sensitive Changes
+User Story: As an auditor, I want all sensitive changes (employee PII, schedules, approvals, payroll) logged so that compliance is met.
+Acceptance Criteria:
+Scenario: Log sensitive change
+  Given a create/update/delete
+  When performed
+  Then actor, timestamp, before/after are logged
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Tamper-evident storage.
+
+---
+
+Title: Audit Trail - Immutable Log Table
+User Story: As an auditor, I want logs stored in an immutable table so that records cannot be altered.
+Acceptance Criteria:
+Scenario: Immutable log
+  Given audit logs
+  When accessed
+  Then no edits or deletes are possible
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Enforce via DB constraints.
+
+---
+
+Title: Audit Trail - Export Audit Logs
+User Story: As an auditor, I want to export logs by date, user, or entity so that investigations are supported.
+Acceptance Criteria:
+Scenario: Export logs
+  Given audit data
+  When I export
+  Then a file is generated with selected filters
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E03
+- Notes: Support CSV/PDF.
+
+---
+
+Title: Audit Trail - Test Coverage
+User Story: As a QA, I want automated tests to validate audit coverage so that no sensitive change is missed.
+Acceptance Criteria:
+Scenario: Audit test
+  Given test cases
+  When run
+  Then all sensitive actions are logged
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E03
+- Notes: Cover all modules.
+
+
+===========================================
+EPIC E15: REPORTING & ANALYTICS
+===========================================
+
+Title: Reporting & Analytics - Attendance & Overtime Reports
+User Story: As a manager, I want reports on attendance and overtime so that I can monitor staffing efficiency.
+Acceptance Criteria:
+Scenario: Attendance report
+  Given attendance data
+  When I generate a report
+  Then results are filterable by date, department, shift
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04,E05,E06,E07,E08,E14
+- Notes: Export CSV/PDF.
+
+---
+
+Title: Reporting & Analytics - Leave Balance Reports
+User Story: As an HR user, I want reports on leave balances so that I can manage accruals.
+Acceptance Criteria:
+Scenario: Leave balance report
+  Given leave data
+  When I generate a report
+  Then balances are shown per employee
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04,E05,E06,E07,E08,E14
+- Notes: Exportable.
+
+---
+
+Title: Reporting & Analytics - Certification Status Reports
+User Story: As a supervisor, I want reports on certification status so that compliance is visible.
+Acceptance Criteria:
+Scenario: Certification report
+  Given certification data
+  When I generate a report
+  Then all employees with expiring/expired certs are listed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E04,E05,E06,E07,E08,E14
+- Notes: Exportable.
+
+---
+
+Title: Reporting & Analytics - Safety KPI Dashboard
+User Story: As a safety manager, I want a dashboard of safety KPIs so that I can track incident trends.
+Acceptance Criteria:
+Scenario: Safety KPI dashboard
+  Given incident data
+  When I view the dashboard
+  Then key KPIs are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04,E05,E06,E07,E08,E14
+- Notes: Filterable.
+
+---
+
+Title: Reporting & Analytics - Metrics Endpoints for BI
+User Story: As a BI engineer, I want metrics endpoints so that I can integrate with BI tools.
+Acceptance Criteria:
+Scenario: Metrics endpoint
+  Given metrics data
+  When I access the endpoint
+  Then data is returned in a BI-friendly format
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04,E05,E06,E07,E08,E14
+- Notes: Documented.
