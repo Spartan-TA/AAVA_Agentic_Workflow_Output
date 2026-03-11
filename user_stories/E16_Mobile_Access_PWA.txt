@@ -1,0 +1,84 @@
+### E16: Mobile Access (PWA)
+
+#### 1. Title: Responsive Mobile Views for Core Flows
+User Story: As a worker I want to clock in/out, view schedules, request leave, and see announcements on mobile So that I can use the system anywhere
+Acceptance Criteria:
+Scenario: Mobile usability
+Given I access the app on mobile
+When I use core flows
+Then all screens are responsive and usable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Test on iOS/Android
+
+---
+
+#### 2. Title: Installable PWA Manifest
+User Story: As a worker I want to install the app as a PWA So that I can access it like a native app
+Acceptance Criteria:
+Scenario: PWA install
+Given I access the app
+When I add to home screen
+Then the app installs as a PWA with icon and splash screen
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Lighthouse PWA score >90
+
+---
+
+#### 3. Title: Offline Queue for Clock Events
+User Story: As a worker I want to clock in/out offline and sync when online So that attendance is not disrupted
+Acceptance Criteria:
+Scenario: Offline clock-in
+Given I am offline
+When I clock in
+Then the event is queued and synced when online
+
+Scenario: Conflict resolution
+Given conflicting events
+When syncing
+Then the user is prompted to resolve
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Handle edge cases
+
+---
+
+#### 4. Title: Mobile Leave Request and Approval
+User Story: As a worker I want to request leave and as a supervisor approve/deny leave on mobile So that processes are efficient
+Acceptance Criteria:
+Scenario: Mobile leave request
+Given I am on mobile
+When I request leave
+Then the workflow is identical to desktop
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Push notifications
+
+---
+
+#### 5. Title: Announcements and Notifications on Mobile
+User Story: As a worker I want to receive and view announcements and notifications on mobile So that I stay informed
+Acceptance Criteria:
+Scenario: Mobile notifications
+Given an announcement is sent
+When I am on mobile
+Then I receive a push notification and can view details
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Support push and in-app
