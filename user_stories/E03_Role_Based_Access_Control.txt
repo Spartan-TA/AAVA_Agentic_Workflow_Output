@@ -1,0 +1,94 @@
+### E03: Role Based Access Control (RBAC)
+
+#### 1. Title: Implement User Roles and Permissions
+User Story: As an admin I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users So that access is restricted appropriately
+Acceptance Criteria:
+Scenario: Role assignment
+Given a user
+When I assign the HR role
+Then the user can access HR endpoints but not ADMIN-only endpoints
+
+Scenario: Unauthorized access
+Given a WORKER
+When they access an ADMIN endpoint
+Then they receive a 403 Forbidden
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Use Spring Security
+
+---
+
+#### 2. Title: Secure Endpoints with Method/Endpoint Security
+User Story: As a developer I want endpoint and method-level security So that only authorized roles can perform sensitive actions
+Acceptance Criteria:
+Scenario: Endpoint protection
+Given an endpoint restricted to ADMIN
+When a non-ADMIN user calls it
+Then access is denied with 403
+
+Scenario: Method-level security
+Given a service method
+When called by unauthorized role
+Then access is denied
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Cover all sensitive endpoints
+
+---
+
+#### 3. Title: Support API Key/OAuth2 Authentication Toggle
+User Story: As a system admin I want to toggle between API key and OAuth2 authentication So that integration options are flexible
+Acceptance Criteria:
+Scenario: API key enabled
+Given API key auth is configured
+When a request includes a valid key
+Then access is granted
+
+Scenario: OAuth2 enabled
+Given OAuth2 is configured
+When a valid token is presented
+Then access is granted
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Configurable via properties
+
+---
+
+#### 4. Title: Row-Level Security for Sensitive Data
+User Story: As a supervisor I want to access only my team's data So that privacy is maintained
+Acceptance Criteria:
+Scenario: Supervisor access
+Given a supervisor manages team A
+When they GET `/employees`
+Then only employees from team A are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Enforce at query level
+
+---
+
+#### 5. Title: Automated Security Tests
+User Story: As a QA I want automated tests for security rules So that unauthorized access is prevented
+Acceptance Criteria:
+Scenario: Test unauthorized access
+Given a test user
+When they access restricted endpoints
+Then tests assert 401/403 responses
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Cover all roles and endpoints
