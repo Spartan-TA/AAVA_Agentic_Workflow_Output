@@ -1,0 +1,12 @@
+Title: User Authentication - Multi-Factor Authentication Setup
+User Story: As a security-conscious user I want to enable multi-factor authentication So that I can add an extra layer of security to my account
+Acceptance Criteria: 
+Scenario: MFA setup
+Given I am on the security settings page
+When I enable MFA and scan the QR code
+Then MFA is activated and required for future logins
+Additional Details: 
+Priority: Medium
+Story Points: 5
+Dependencies: MFA service, Authentication module
+Notes: Support authenticator apps like Google Authenticator
