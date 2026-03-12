@@ -1,0 +1,395 @@
+# Warehouse Employee Management â User Stories (Epics E16-E20)
+
+---
+
+## Epic E16: Mobile Access (PWA)
+
+### US-E16-001
+**Title:** Provide Responsive Mobile Views for Core Flows
+
+**User Story:** As a worker I want to clock in/out, view schedules, and request leave on mobile So that I can manage work on the go
+
+**Acceptance Criteria:**
+Scenario: Mobile usability
+Given a mobile device
+When I access the app
+Then core flows are fully usable and responsive
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Tested on Android/iOS
+
+---
+
+### US-E16-002
+**Title:** Implement Installable PWA Manifest
+
+**User Story:** As a user I want to install the app as a PWA So that I have quick access from my device
+
+**Acceptance Criteria:**
+Scenario: PWA installation
+Given a supported browser
+When I add to home screen
+Then the app installs as a PWA
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Manifest and icons provided
+
+---
+
+### US-E16-003
+**Title:** Support Offline Clock-In/Out with Sync
+
+**User Story:** As a worker I want to clock in/out offline and sync when online So that attendance is not disrupted
+
+**Acceptance Criteria:**
+Scenario: Offline clock event
+Given no network connectivity
+When I clock in/out
+Then the event is queued and synced when online
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Conflict resolution logic
+
+---
+
+### US-E16-004
+**Title:** Achieve Lighthouse PWA Score â¥ 80
+
+**User Story:** As a product owner I want the PWA to score at least 80 on Lighthouse So that performance and usability are high
+
+**Acceptance Criteria:**
+Scenario: Lighthouse audit
+Given the deployed PWA
+When I run Lighthouse
+Then the score is 80 or higher
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Includes performance, accessibility, best practices
+
+---
+
+## Epic E17: Onboarding & Offboarding Workflow
+
+### US-E17-001
+**Title:** Automate New Hire Provisioning from HRIS
+
+**User Story:** As an HR user I want new hires from HRIS to trigger account and schedule provisioning So that onboarding is fast and consistent
+
+**Acceptance Criteria:**
+Scenario: New hire onboarding
+Given a new hire in HRIS
+When the sync job runs
+Then an account, schedule, and training tasks are created
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Asset assignment tasks generated
+
+---
+
+### US-E17-002
+**Title:** Automate Offboarding and Access Revocation
+
+**User Story:** As an HR user I want terminated employees to have access and assets revoked automatically So that security is maintained
+
+**Acceptance Criteria:**
+Scenario: Offboarding automation
+Given a terminated employee
+When offboarding is triggered
+Then access is revoked, assets collected, and schedules updated
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Notifications sent to asset managers
+
+---
+
+### US-E17-003
+**Title:** Track Onboarding/Offboarding Task Completion
+
+**User Story:** As a supervisor I want to track completion of onboarding/offboarding tasks So that nothing is missed
+
+**Acceptance Criteria:**
+Scenario: Task tracking
+Given onboarding/offboarding tasks
+When tasks are completed
+Then status is updated and visible in the dashboard
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Overdue tasks flagged
+
+---
+
+### US-E17-004
+**Title:** Notify Stakeholders of Onboarding/Offboarding Events
+
+**User Story:** As an HR user I want stakeholders notified of onboarding/offboarding events So that everyone is informed
+
+**Acceptance Criteria:**
+Scenario: Stakeholder notification
+Given an onboarding/offboarding event
+When the event occurs
+Then relevant stakeholders receive notifications
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Channels include email and in-app
+
+---
+
+## Epic E18: Localization & Multi-Tenant
+
+### US-E18-001
+**Title:** Support Multiple Warehouses with Isolated Data
+
+**User Story:** As a system admin I want each warehouse to have isolated data So that privacy and separation are enforced
+
+**Acceptance Criteria:**
+Scenario: Multi-tenant data isolation
+Given multiple warehouses
+When users access data
+Then only their warehouse's data is visible
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 3
+- Dependencies: None
+- Notes: Tenant context required for all queries
+
+---
+
+### US-E18-002
+**Title:** Implement UI Localization (en, es)
+
+**User Story:** As a user I want the UI in English or Spanish So that I can use the system in my preferred language
+
+**Acceptance Criteria:**
+Scenario: UI localization
+Given a language preference
+When I log in
+Then the UI is displayed in the selected language
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: None
+- Notes: All user-facing text localized
+
+---
+
+### US-E18-003
+**Title:** Ensure Timezone-Aware Operations
+
+**User Story:** As a scheduler I want all times to be timezone-aware So that schedules are accurate across locations
+
+**Acceptance Criteria:**
+Scenario: Timezone handling
+Given users in different timezones
+When viewing schedules
+Then all times are displayed in local timezone
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 2
+- Dependencies: None
+- Notes: Timezone stored per warehouse/user
+
+---
+
+### US-E18-004
+**Title:** Localize Notification and Report Outputs
+
+**User Story:** As a user I want notifications and reports in my language So that communication is clear
+
+**Acceptance Criteria:**
+Scenario: Localized outputs
+Given a language preference
+When I receive a notification or report
+Then it is in the selected language
+
+**Additional Details:**
+- Priority: Medium
+- Story Points: 1
+- Dependencies: None
+- Notes: Consistent with UI localization
+
+---
+
+## Epic E19: Observability & Monitoring
+
+### US-E19-001
+**Title:** Implement Structured Application Logging
+
+**User Story:** As a developer I want structured logs So that troubleshooting and monitoring are effective
+
+**Acceptance Criteria:**
+Scenario: Structured logging
+Given application events
+When logs are generated
+Then they follow a structured format (JSON)
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Includes request IDs
+
+---
+
+### US-E19-002
+**Title:** Expose Application Metrics via Actuator
+
+**User Story:** As an operator I want application metrics exposed So that I can monitor health and performance
+
+**Acceptance Criteria:**
+Scenario: Metrics endpoint
+Given the app is running
+When I access /actuator/metrics
+Then key metrics are available
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Metrics include requests, errors, latency
+
+---
+
+### US-E19-003
+**Title:** Enable Distributed Tracing
+
+**User Story:** As a developer I want distributed tracing enabled So that I can trace requests across services
+
+**Acceptance Criteria:**
+Scenario: Distributed trace
+Given a multi-service request
+When tracing is enabled
+Then trace IDs are propagated and visible in logs
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Integrates with tracing tools (e.g., Zipkin)
+
+---
+
+### US-E19-004
+**Title:** Configure Alerting for Critical Errors
+
+**User Story:** As an operator I want alerts for critical errors So that I can respond quickly
+
+**Acceptance Criteria:**
+Scenario: Error alerting
+Given a critical error
+When it occurs
+Then an alert is sent to the on-call team
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Alert channels configurable
+
+---
+
+## Epic E20: Deployment & CI/CD
+
+### US-E20-001
+**Title:** Dockerize Application for Deployment
+
+**User Story:** As a DevOps engineer I want the app packaged as a Docker image So that deployments are consistent
+
+**Acceptance Criteria:**
+Scenario: Docker build
+Given the source code
+When I build the Docker image
+Then the app runs successfully in a container
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Dockerfile included in repo
+
+---
+
+### US-E20-002
+**Title:** Provide Kubernetes Manifests for Deployment
+
+**User Story:** As a DevOps engineer I want Kubernetes manifests So that I can deploy the app to a cluster
+
+**Acceptance Criteria:**
+Scenario: Kubernetes deployment
+Given the manifests
+When applied to a cluster
+Then the app is deployed and accessible
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Includes service, deployment, configmap
+
+---
+
+### US-E20-003
+**Title:** Implement CI/CD Pipeline for Automated Builds and Deployments
+
+**User Story:** As a developer I want automated CI/CD pipelines So that builds and deployments are reliable
+
+**Acceptance Criteria:**
+Scenario: CI/CD pipeline
+Given a code commit
+When the pipeline runs
+Then tests are executed and the app is deployed automatically
+
+**Additional Details:**
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Supports blue-green/canary deployment
+
+---
+
+### US-E20-004
+**Title:** Support Blue-Green or Canary Deployments
+
+**User Story:** As a DevOps engineer I want to deploy new versions with zero downtime So that releases are safe
+
+**Acceptance Criteria:**
+Scenario: Blue-green/canary deployment
+Given a new app version
+When deployed
+Then traffic is routed with no downtime and rollback is possible
+
+**Additional Details:**
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Deployment strategy configurable
+
+---
+
+# END OF USER STORIES DOCUMENT
