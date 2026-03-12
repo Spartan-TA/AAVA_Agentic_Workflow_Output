@@ -1,0 +1,61 @@
+EPIC E16: Mobile Access (PWA)
+
+---
+
+Title: Mobile Access - Clock In/Out on Mobile
+User Story: As a WORKER I want to clock in/out using my mobile device So that I can record attendance from anywhere in the warehouse.
+Acceptance Criteria:
+Scenario: Mobile clock in/out
+Given I am on a mobile device
+When I clock in/out
+Then the event is recorded and queued if offline
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Offline queue with conflict resolution
+
+---
+
+Title: Mobile Access - View Schedule on Mobile
+User Story: As a WORKER I want to view my schedule on my mobile device So that I can plan my shifts.
+Acceptance Criteria:
+Scenario: Mobile schedule view
+Given I am logged in on mobile
+When I view my schedule
+Then I see all upcoming shifts
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Responsive design required
+
+---
+
+Title: Mobile Access - Request Leave on Mobile
+User Story: As a WORKER I want to request leave from my mobile device So that I can manage time off easily.
+Acceptance Criteria:
+Scenario: Mobile leave request
+Given I am logged in on mobile
+When I request leave
+Then the request is submitted and tracked
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: PWA manifest required
+
+---
+
+Title: Mobile Access - Announcements on Mobile
+User Story: As a WORKER I want to receive announcements on my mobile device So that I stay informed.
+Acceptance Criteria:
+Scenario: Mobile announcements
+Given announcements are posted
+When I view the dashboard on mobile
+Then I see all relevant announcements
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Announcements visible offline
