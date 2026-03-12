@@ -1,0 +1,30 @@
+Title: Track Training & Certification Status
+
+User Story: As a safety manager I want to track required certifications, their expirations, and ensure only qualified employees are assigned to equipment-sensitive roles so that safety and compliance are maintained in the warehouse.
+
+Acceptance Criteria:
+Scenario: Add certification
+  Given an employee needs a certification
+  When I add a certification record with expiry date
+  Then the certification is saved and visible on the employee profile
+
+Scenario: Expiry alerts
+  Given a certification is expiring in 30 or 7 days
+  When the system checks certification status
+  Then an alert is generated for the employee and supervisor
+
+Scenario: Block unqualified assignments
+  Given a certification is expired or missing
+  When an assignment to a sensitive task is attempted
+  Then the system blocks the assignment and notifies the supervisor
+
+Scenario: Upload proof documents
+  Given a certification is added or renewed
+  When I upload proof documents
+  Then the documents are stored and linked to the certification record
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee Master Data, Role-Based Access Control
+- Notes: Certification status must be visible on employee profile; scheduling checks required for compliance.
