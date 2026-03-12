@@ -1,0 +1,321 @@
+[E05] Shift & Schedule Management
+
+User Story 1
+Title: Create and Manage Shift Templates
+User Story: As an HR user, I want to create recurring shift templates so that scheduling is efficient.
+Acceptance Criteria:
+  Scenario: Shift template CRUD
+    Given I am authorized
+    When I create, update, or delete a shift template
+    Then the template is persisted and available for assignment
+Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, E04, Notes: Supports rotation rules
+
+User Story 2
+Title: Assign Shifts to Employees
+User Story: As a supervisor, I want to assign shifts to employees so that staffing is planned.
+Acceptance Criteria:
+  Scenario: Shift assignment
+    Given shift templates exist
+    When I assign a shift to an employee
+    Then the assignment is saved and visible to the employee
+Additional Details: Priority: High, Story Points: 3, Dependencies: E05-1, Notes: Bulk assignment supported
+
+User Story 3
+Title: Detect and Prevent Scheduling Conflicts
+User Story: As a scheduler, I want to detect and prevent scheduling conflicts so that employees are not double-booked.
+Acceptance Criteria:
+  Scenario: Conflict detection
+    Given an employee has a shift
+    When I try to assign an overlapping shift
+    Then the system prevents the assignment and shows an error
+Additional Details: Priority: High, Story Points: 3, Dependencies: E05-2, Notes: Includes blackout dates
+
+User Story 4
+Title: Display Upcoming Shifts to Workers
+User Story: As a worker, I want to see my upcoming shifts so that I can plan my schedule.
+Acceptance Criteria:
+  Scenario: View personal shifts
+    Given I am logged in
+    When I view my schedule
+    Then I see all my upcoming assigned shifts
+Additional Details: Priority: High, Story Points: 2, Dependencies: E05-2, Notes: Mobile-friendly
+
+User Story 5
+Title: Generate Audit Entries for Shift Changes
+User Story: As an auditor, I want all shift changes to be logged so that I can track scheduling history.
+Acceptance Criteria:
+  Scenario: Audit log for shifts
+    Given a shift is created, updated, or deleted
+    When the action occurs
+    Then an audit entry is generated with actor, timestamp, and details
+Additional Details: Priority: High, Story Points: 2, Dependencies: E14, Notes: Immutable log
+
+User Story 6
+Title: Support Warehouse Operation Calendars and Blackout Dates
+User Story: As a scheduler, I want to configure operation calendars and blackout dates so that shifts are not scheduled during closures.
+Acceptance Criteria:
+  Scenario: Blackout date enforcement
+    Given a blackout date is set
+    When I try to schedule a shift on that date
+    Then the system prevents the assignment
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E05-1, Notes: Calendar UI
+
+---
+
+[E06] Leave & Absence Management
+
+User Story 1
+Title: Request Leave (PTO, Sick, Unpaid)
+User Story: As an employee, I want to request leave so that my time off is tracked.
+Acceptance Criteria:
+  Scenario: Leave request submission
+    Given I am logged in
+    When I submit a leave request
+    Then the request is saved and pending approval
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E05, Notes: PTO, sick, unpaid
+
+User Story 2
+Title: Approve or Deny Leave Requests
+User Story: As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+Acceptance Criteria:
+  Scenario: Leave approval workflow
+    Given a leave request is pending
+    When I approve or deny it
+    Then the employee is notified and the status is updated
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E06-1, Notes: Notification integration
+
+User Story 3
+Title: Update Leave Accrual Balances
+User Story: As an HR user, I want leave balances to update automatically so that accrual policies are enforced.
+Acceptance Criteria:
+  Scenario: Balance update
+    Given a leave is approved
+    When the accrual policy applies
+    Then the employee's balance is updated accordingly
+Additional Details: Priority: Medium, Story Points: 3, Dependencies: E06-2, Notes: Policy-driven
+
+User Story 4
+Title: Exclude Approved Leaves from Scheduling and Payroll
+User Story: As a scheduler, I want approved leaves to auto-flag scheduled shifts for coverage so that staffing gaps are filled.
+Acceptance Criteria:
+  Scenario: Auto-flag for coverage
+    Given a leave is approved
+    When the employee has scheduled shifts
+    Then the shifts are flagged for coverage and excluded from payroll hours
+Additional Details: Priority: Medium, Story Points: 3, Dependencies: E06-2, Notes: Integration with scheduling and payroll
+
+User Story 5
+Title: Export Approved Leaves
+User Story: As an HR user, I want to export approved leaves so that records are auditable.
+Acceptance Criteria:
+  Scenario: Leave export
+    Given approved leaves exist
+    When I export leave data
+    Then the file includes all relevant fields and statuses
+Additional Details: Priority: Low, Story Points: 1, Dependencies: E06-2, Notes: CSV export
+
+---
+
+[E07] Training & Certification Tracking
+
+User Story 1
+Title: CRUD for Certifications
+User Story: As an HR user, I want to create, update, and delete certifications so that employee qualifications are tracked.
+Acceptance Criteria:
+  Scenario: Certification CRUD
+    Given I am authorized
+    When I manage certifications
+    Then the changes are reflected in the system
+Additional Details: Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Certification type, expiry, proof
+
+User Story 2
+Title: Upload Proof Documents for Certifications
+User Story: As an employee, I want to upload proof of certification so that compliance is documented.
+Acceptance Criteria:
+  Scenario: Upload proof
+    Given I have a certification
+    When I upload a document
+    Then the file is attached to my certification record
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E07-1, Notes: File storage
+
+User Story 3
+Title: Alert Before Certification Expiry
+User Story: As a supervisor, I want alerts 30 and 7 days before certification expiry so that renewals are not missed.
+Acceptance Criteria:
+  Scenario: Expiry alerts
+    Given a certification is expiring soon
+    When the alert window is reached
+    Then notifications are sent to the employee and supervisor
+Additional Details: Priority: High, Story Points: 2, Dependencies: E12, Notes: Notification integration
+
+User Story 4
+Title: Block Assignment to Tasks Requiring Expired Certifications
+User Story: As a scheduler, I want to block assignment to tasks if required certifications are expired so that only qualified staff are assigned.
+Acceptance Criteria:
+  Scenario: Assignment block
+    Given a certification is expired
+    When I try to assign the employee to a restricted task
+    Then the system prevents the assignment and shows an error
+Additional Details: Priority: High, Story Points: 3, Dependencies: E07-1, Notes: Scheduling integration
+
+User Story 5
+Title: Display Certification Status on Employee Profile
+User Story: As a supervisor, I want to see certification status on employee profiles so that I can verify qualifications.
+Acceptance Criteria:
+  Scenario: Certification status visible
+    Given I view an employee profile
+    When certifications exist
+    Then status and expiry are clearly displayed
+Additional Details: Priority: Medium, Story Points: 1, Dependencies: E07-1, Notes: UI update
+
+---
+
+[E08] Safety Incidents & OSHA Reporting
+
+User Story 1
+Title: Record Safety Incidents and Near-Misses
+User Story: As a supervisor, I want to record safety incidents and near-misses so that all events are tracked.
+Acceptance Criteria:
+  Scenario: Incident recording
+    Given I am authorized
+    When I submit an incident
+    Then the record includes severity, location, description, and involved employees
+Additional Details: Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Validation required
+
+User Story 2
+Title: Manage Incident Status Workflow
+User Story: As a safety officer, I want to manage incident status (OpenâInvestigatingâResolved) so that investigations are tracked.
+Acceptance Criteria:
+  Scenario: Status workflow
+    Given an incident is open
+    When I update the status
+    Then the workflow transitions correctly and is logged
+Additional Details: Priority: High, Story Points: 2, Dependencies: E08-1, Notes: Status history
+
+User Story 3
+Title: Export OSHA 300/300A Fields
+User Story: As a compliance officer, I want to export OSHA 300/300A data so that regulatory reports are generated.
+Acceptance Criteria:
+  Scenario: OSHA export
+    Given incidents are recorded
+    When I export OSHA data
+    Then the file matches required fields and format
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E08-1, Notes: CSV/PDF export
+
+User Story 4
+Title: Provide Safety Metrics Dashboard
+User Story: As a manager, I want a safety metrics dashboard so that I can monitor KPIs.
+Acceptance Criteria:
+  Scenario: Metrics dashboard
+    Given incidents exist
+    When I view the dashboard
+    Then key safety KPIs are displayed
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E08-1, Notes: API endpoints for BI
+
+---
+
+[E09] Equipment & Asset Assignment
+
+User Story 1
+Title: CRUD for Asset Registry
+User Story: As an asset manager, I want to create, update, and delete assets so that equipment inventory is maintained.
+Acceptance Criteria:
+  Scenario: Asset CRUD
+    Given I am authorized
+    When I manage assets
+    Then the registry is updated accordingly
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, E07, Notes: Asset type, condition
+
+User Story 2
+Title: Assign and Track Asset Check-In/Out
+User Story: As a supervisor, I want to assign assets to employees and track check-in/out so that usage is accountable.
+Acceptance Criteria:
+  Scenario: Asset assignment
+    Given an asset exists
+    When I assign or check-in/out
+    Then the transaction is logged with timestamp and user
+Additional Details: Priority: Medium, Story Points: 3, Dependencies: E09-1, Notes: History log
+
+User Story 3
+Title: Block Asset Use if Certification is Invalid
+User Story: As a supervisor, I want to prevent asset use if required certifications are invalid so that only qualified staff use equipment.
+Acceptance Criteria:
+  Scenario: Certification check
+    Given an asset requires certification
+    When the employee's certification is expired or missing
+    Then the system blocks check-out and shows an error
+Additional Details: Priority: High, Story Points: 2, Dependencies: E07, Notes: Integration with certification module
+
+User Story 4
+Title: View Asset and Employee Assignment History
+User Story: As an asset manager, I want to view the history of asset assignments per asset and employee so that accountability is clear.
+Acceptance Criteria:
+  Scenario: Assignment history
+    Given assets and assignments exist
+    When I view history
+    Then all past check-in/out events are listed
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E09-2, Notes: UI and API
+
+User Story 5
+Title: Report Overdue Asset Returns
+User Story: As a supervisor, I want to report overdue asset returns so that assets are recovered promptly.
+Acceptance Criteria:
+  Scenario: Overdue report
+    Given assets are checked out
+    When the due date passes
+    Then the asset is flagged as overdue and included in reports
+Additional Details: Priority: Low, Story Points: 1, Dependencies: E09-2, Notes: Notification integration
+
+---
+
+[E10] Performance Reviews & Goals
+
+User Story 1
+Title: Create Review Templates (Quarterly/Annual)
+User Story: As an HR user, I want to create review templates so that performance reviews are standardized.
+Acceptance Criteria:
+  Scenario: Template CRUD
+    Given I am authorized
+    When I create, update, or delete a template
+    Then the template is available for review cycles
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E02, E03, Notes: Template fields: goals, competencies
+
+User Story 2
+Title: Assign Review Cycles to Employees
+User Story: As a supervisor, I want to assign review cycles to employees so that performance is evaluated regularly.
+Acceptance Criteria:
+  Scenario: Assign review cycle
+    Given templates exist
+    When I assign a cycle
+    Then the employee is notified and the review is scheduled
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E10-1, Notes: Notification integration
+
+User Story 3
+Title: Submit and Acknowledge Reviews
+User Story: As an employee, I want to submit and acknowledge reviews so that feedback is documented.
+Acceptance Criteria:
+  Scenario: Review submission
+    Given a review is assigned
+    When I submit or acknowledge
+    Then the workflow progresses and is logged
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E10-2, Notes: Role-based visibility
+
+User Story 4
+Title: Export Reviews as PDF
+User Story: As an HR user, I want to export reviews as PDF so that records are archived.
+Acceptance Criteria:
+  Scenario: PDF export
+    Given reviews exist
+    When I export a review
+    Then a PDF is generated with all details
+Additional Details: Priority: Low, Story Points: 1, Dependencies: E10-3, Notes: Download via UI
+
+User Story 5
+Title: Enforce Immutable History After Sign-Off
+User Story: As an auditor, I want review history to be immutable after sign-off so that records are tamper-proof.
+Acceptance Criteria:
+  Scenario: Immutable history
+    Given a review is signed off
+    When I attempt to edit it
+    Then the system prevents changes and logs the attempt
+Additional Details: Priority: High, Story Points: 2, Dependencies: E10-3, Notes: Audit trail
