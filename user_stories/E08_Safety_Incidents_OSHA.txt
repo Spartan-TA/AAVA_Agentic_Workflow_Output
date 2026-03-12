@@ -1,0 +1,61 @@
+EPIC E08: Safety Incidents & OSHA Reporting
+
+---
+
+Title: Safety Incidents - Record Incident
+User Story: As a SUPERVISOR I want to record safety incidents and near-misses So that corrective actions can be taken.
+Acceptance Criteria:
+Scenario: Record incident
+Given an incident occurs
+When I POST to /safety/incidents
+Then the incident is recorded with all required fields
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Severity, location, involved employees required
+
+---
+
+Title: Safety Incidents - Incident Workflow
+User Story: As a Safety Officer I want to manage incident workflow (Open, Investigating, Resolved) So that incidents are tracked to closure.
+Acceptance Criteria:
+Scenario: Update incident status
+Given an incident is recorded
+When I update the status
+Then the workflow state is updated and history is logged
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Status changes auditable
+
+---
+
+Title: Safety Incidents - OSHA Export
+User Story: As an HR I want to export OSHA 300/300A summary fields So that regulatory reporting is supported.
+Acceptance Criteria:
+Scenario: Export OSHA summary
+Given incidents are recorded
+When I export OSHA data
+Then the file includes all required OSHA fields
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Export format matches OSHA requirements
+
+---
+
+Title: Safety Incidents - Safety Metrics Dashboard
+User Story: As a SUPERVISOR I want to view safety metrics dashboards So that I can monitor safety KPIs.
+Acceptance Criteria:
+Scenario: View safety dashboard
+Given incidents are recorded
+When I access the dashboard
+Then I see metrics for incidents, near-misses, and corrective actions
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Metrics endpoints available
