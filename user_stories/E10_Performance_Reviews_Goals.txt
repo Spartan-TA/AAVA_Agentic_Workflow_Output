@@ -1,0 +1,61 @@
+EPIC E10: Performance Reviews & Goals
+
+---
+
+Title: Performance Reviews - Create Review Cycle
+User Story: As an HR I want to create quarterly/annual performance review cycles So that structured feedback is collected.
+Acceptance Criteria:
+Scenario: Create review cycle
+Given review period details
+When I create a cycle
+Then employees and supervisors are notified and assigned
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Supports multiple templates
+
+---
+
+Title: Performance Reviews - Submit Review
+User Story: As a SUPERVISOR I want to submit performance reviews for my team So that feedback is documented.
+Acceptance Criteria:
+Scenario: Submit review
+Given a review cycle is active
+When I submit a review
+Then the review is saved and visible to HR and the employee
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Ratings, comments, goals required
+
+---
+
+Title: Performance Reviews - Employee Acknowledgement
+User Story: As a WORKER I want to acknowledge my performance review So that the process is complete.
+Acceptance Criteria:
+Scenario: Acknowledge review
+Given a review is submitted
+When I acknowledge it
+Then the review is marked as acknowledged and history is immutable
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: PDF export available
+
+---
+
+Title: Performance Reviews - Review Visibility
+User Story: As an HR I want to control review visibility by role So that privacy is maintained.
+Acceptance Criteria:
+Scenario: Role-based review access
+Given reviews exist
+When a user accesses reviews
+Then they see only reviews they are authorized to view
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Immutable after sign-off
