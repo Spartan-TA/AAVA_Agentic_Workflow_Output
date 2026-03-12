@@ -1,0 +1,247 @@
+[E16] Mobile Access (PWA)
+
+User Story 1
+Title: Implement Responsive Views for Core Flows
+User Story: As a worker, I want responsive views for clock-in/out, schedules, leave requests, and announcements so that I can use the system on any device.
+Acceptance Criteria:
+  Scenario: Responsive UI
+    Given I access the app on mobile
+    When I use core features
+    Then the UI adapts and is fully usable
+Additional Details: Priority: Medium, Story Points: 3, Dependencies: E04, E05, E06, E12, Notes: PWA best practices
+
+User Story 2
+Title: Make App Installable as PWA
+User Story: As a worker, I want to install the app as a PWA so that I have quick access on my device.
+Acceptance Criteria:
+  Scenario: PWA install
+    Given I visit the app
+    When I add to home screen
+    Then the app installs as a PWA with manifest and icon
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E16-1, Notes: Manifest and service worker
+
+User Story 3
+Title: Support Offline Queue for Clock Events
+User Story: As a worker, I want to queue clock events offline so that my attendance is recorded even without connectivity.
+Acceptance Criteria:
+  Scenario: Offline queue
+    Given I am offline
+    When I clock in/out
+    Then the event is queued and synced when online
+Additional Details: Priority: Medium, Story Points: 3, Dependencies: E16-1, Notes: Conflict resolution logic
+
+User Story 4
+Title: Achieve Lighthouse PWA Score â¥ 80
+User Story: As a developer, I want the app to score at least 80 on Lighthouse PWA audits so that quality is ensured.
+Acceptance Criteria:
+  Scenario: Lighthouse audit
+    Given the app is deployed
+    When I run Lighthouse
+    Then the PWA score is 80 or higher
+Additional Details: Priority: Medium, Story Points: 1, Dependencies: E16-1, Notes: Accessibility and performance
+
+---
+
+[E17] Onboarding & Offboarding Workflow
+
+User Story 1
+Title: Automate Account Provisioning for New Hires
+User Story: As an HR user, I want accounts provisioned automatically for new hires so that onboarding is efficient.
+Acceptance Criteria:
+  Scenario: Account provisioning
+    Given a new hire appears from HRIS
+    When onboarding starts
+    Then an account is created and access granted
+Additional Details: Priority: Medium, Story Points: 3, Dependencies: E02, E03, E13, Notes: Integration with HRIS
+
+User Story 2
+Title: Generate Initial Schedule for New Employees
+User Story: As a supervisor, I want an initial schedule generated for new employees so that they are assigned shifts promptly.
+Acceptance Criteria:
+  Scenario: Initial schedule
+    Given a new hire is onboarded
+    When onboarding tasks run
+    Then a schedule is created and visible to the employee
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E05, Notes: Default shift assignment
+
+User Story 3
+Title: Assign Required Training Tasks to New Hires
+User Story: As a supervisor, I want required training tasks generated for new hires so that compliance is ensured.
+Acceptance Criteria:
+  Scenario: Training assignment
+    Given a new hire is onboarded
+    When onboarding tasks run
+    Then required training is assigned and tracked
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E07, Notes: Certification tracking
+
+User Story 4
+Title: Assign Assets to New Employees
+User Story: As an asset manager, I want assets assigned to new employees during onboarding so that equipment is ready.
+Acceptance Criteria:
+  Scenario: Asset assignment
+    Given a new hire is onboarded
+    When onboarding tasks run
+    Then required assets are assigned and logged
+Additional Details: Priority: Medium, Story Points: 2, Dependencies: E09, Notes: Asset registry integration
+
+User Story 5
+Title: Automate Offboarding to Revoke Access and Collect Assets
+User Story: As an HR user, I want offboarding to revoke access and collect assets so that terminations are secure.
+Acceptance Criteria:
+  Scenario: Offboarding automation
+    Given an employee is terminated
+    When offboarding tasks run
+    Then access is revoked, assets are collected, and schedules are updated
+Additional Details: Priority: Medium, Story Points: 3, Dependencies: E13, Notes: Integration with HRIS and asset registry
+
+---
+
+[E18] Localization & Multi-Tenant
+
+User Story 1
+Title: Add Tenant ID to All Entities
+User Story: As a developer, I want a tenant ID on all entities so that data is isolated per warehouse/region.
+Acceptance Criteria:
+  Scenario: Tenant isolation
+    Given multiple tenants exist
+    When I query data
+    Then only data for the selected tenant is returned
+Additional Details: Priority: Low, Story Points: 2, Dependencies: E01, E02, Notes: Multi-tenant schema
+
+User Story 2
+Title: Support Locale Configuration Per Tenant
+User Story: As an admin, I want locale configuration per tenant so that date, time, currency, and language are region-specific.
+Acceptance Criteria:
+  Scenario: Locale config
+    Given a tenant is configured
+    When I set locale options
+    Then all UI and data reflect the correct locale
+Additional Details: Priority: Low, Story Points: 2, Dependencies: E18-1, Notes: UI and backend
+
+User Story 3
+Title: Translate All UI Strings
+User Story: As a user, I want all UI strings translated so that I can use the system in my language.
+Acceptance Criteria:
+  Scenario: UI translation
+    Given translations exist
+    When I select a language
+    Then all UI strings are shown in that language
+Additional Details: Priority: Low, Story Points: 2, Dependencies: E18-2, Notes: i18n framework
+
+User Story 4
+Title: Make All Timestamps Timezone-Aware
+User Story: As a user, I want all timestamps to be timezone-aware so that scheduling is accurate globally.
+Acceptance Criteria:
+  Scenario: Timezone handling
+    Given users in different regions
+    When I view times
+    Then all timestamps reflect the correct timezone
+Additional Details: Priority: Low, Story Points: 2, Dependencies: E18-2, Notes: Backend and UI
+
+User Story 5
+Title: Test Data and Config Isolation for Tenants
+User Story: As a QA engineer, I want tests for tenant isolation so that data/config is not leaked between tenants.
+Acceptance Criteria:
+  Scenario: Tenant isolation tests
+    Given multiple tenants
+    When I run tests
+    Then no data/config is shared across tenants
+Additional Details: Priority: Low, Story Points: 1, Dependencies: E18-1, Notes: Automated tests
+
+---
+
+[E19] Advanced Scheduling (AI/Optimization)
+
+User Story 1
+Title: Train ML Model on Historical Demand Data
+User Story: As a data scientist, I want to train an ML model on historical demand so that staffing predictions are accurate.
+Acceptance Criteria:
+  Scenario: Model training
+    Given historical data exists
+    When I train the model
+    Then predictions improve over time
+Additional Details: Priority: Low, Story Points: 3, Dependencies: E05, E15, Notes: Data pipeline
+
+User Story 2
+Title: Suggest Schedules to Supervisors Based on Predictions
+User Story: As a supervisor, I want the system to suggest schedules based on predictions so that planning is optimized.
+Acceptance Criteria:
+  Scenario: Schedule suggestions
+    Given predictions are available
+    When I view the schedule planner
+    Then suggested shifts are shown with rationale
+Additional Details: Priority: Low, Story Points: 2, Dependencies: E19-1, Notes: UI integration
+
+User Story 3
+Title: Enforce Scheduling Constraints (Max Hours, Rest Periods)
+User Story: As a scheduler, I want constraints enforced so that schedules are fair and compliant.
+Acceptance Criteria:
+  Scenario: Constraint enforcement
+    Given constraints are configured
+    When I generate or edit schedules
+    Then max hours and rest periods are enforced
+Additional Details: Priority: Low, Story Points: 2, Dependencies: E05, Notes: Configurable rules
+
+User Story 4
+Title: Collect Supervisor Feedback on Suggested Schedules
+User Story: As a supervisor, I want to provide feedback on suggested schedules so that the model improves.
+Acceptance Criteria:
+  Scenario: Feedback loop
+    Given suggestions are made
+    When I accept or reject them
+    Then feedback is recorded for model retraining
+Additional Details: Priority: Low, Story Points: 2, Dependencies: E19-2, Notes: Feedback UI
+
+---
+
+[E20] Continuous Deployment & Observability
+
+User Story 1
+Title: Set Up CI/CD Pipelines for Automated Testing and Deployment
+User Story: As a DevOps engineer, I want CI/CD pipelines so that code is tested and deployed automatically.
+Acceptance Criteria:
+  Scenario: CI/CD pipeline
+    Given a pull request is opened
+    When the pipeline runs
+    Then automated tests execute and deployments occur to staging/prod
+Additional Details: Priority: High, Story Points: 3, Dependencies: E01, Notes: GitHub Actions/Jenkins
+
+User Story 2
+Title: Containerize Application for Deployment
+User Story: As a DevOps engineer, I want the application containerized so that deployment is consistent.
+Acceptance Criteria:
+  Scenario: Containerization
+    Given the app is built
+    When I build the Docker image
+    Then the container runs with all dependencies
+Additional Details: Priority: High, Story Points: 2, Dependencies: E20-1, Notes: Docker/K8s
+
+User Story 3
+Title: Aggregate Logs Centrally for All Environments
+User Story: As a DevOps engineer, I want logs aggregated centrally so that troubleshooting is efficient.
+Acceptance Criteria:
+  Scenario: Centralized logging
+    Given the app is running
+    When logs are generated
+    Then they are available in ELK/Splunk
+Additional Details: Priority: High, Story Points: 2, Dependencies: E20-1, Notes: Logback/ELK integration
+
+User Story 4
+Title: Expose Metrics for Prometheus/Grafana Dashboards
+User Story: As a DevOps engineer, I want metrics exposed so that system health is monitored.
+Acceptance Criteria:
+  Scenario: Metrics exposure
+    Given the app is running
+    When Prometheus scrapes metrics
+    Then data is available for Grafana dashboards
+Additional Details: Priority: High, Story Points: 2, Dependencies: E20-1, Notes: /actuator/metrics
+
+User Story 5
+Title: Configure On-Call Alerts for Key Metrics
+User Story: As an SRE, I want on-call alerts configured for key metrics so that incidents are detected quickly.
+Acceptance Criteria:
+  Scenario: Alerting setup
+    Given key metrics thresholds are breached
+    When the alerting system is configured
+    Then on-call staff are notified immediately
+Additional Details: Priority: High, Story Points: 2, Dependencies: E20-4, Notes: PagerDuty/Slack integration
