@@ -1,0 +1,18 @@
+Title: Support Pagination and Filtering for Employees
+
+User Story:
+As a user of the employee directory,
+I want to be able to paginate and filter employee records by department, role, status, and hire date,
+So that I can efficiently find and manage relevant employee data even with large datasets.
+
+Acceptance Criteria:
+- GET /employees supports pagination parameters (page, size).
+- Filtering supported via query parameters (e.g., department, role, status, hireDate).
+- API returns total count and current page metadata.
+- Filtering and pagination work together and are covered by tests.
+- OpenAPI documentation reflects all query parameters.
+
+Additional Details:
+- Default page size and max page size are configurable.
+- Sorting by name, hireDate, and badgeId is supported.
+- Error handling for invalid filter values is implemented.
