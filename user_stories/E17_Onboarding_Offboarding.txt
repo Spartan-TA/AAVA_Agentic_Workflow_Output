@@ -1,0 +1,61 @@
+EPIC E17: Onboarding & Offboarding Workflow
+
+---
+
+Title: Onboarding - Automate New Hire Provisioning
+User Story: As an HR I want new hires to be provisioned automatically from HRIS So that onboarding is efficient.
+Acceptance Criteria:
+Scenario: New hire provisioning
+Given a new hire appears in HRIS
+When the sync job runs
+Then an account, initial schedule, and required training tasks are created
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Asset assignment tasks generated
+
+---
+
+Title: Onboarding - Offboarding Workflow
+User Story: As an HR I want to automate offboarding to revoke access and collect assets So that terminations are risk-free.
+Acceptance Criteria:
+Scenario: Offboarding automation
+Given an employee is terminated
+When the offboarding workflow runs
+Then access is revoked, assets are collected, and schedules updated
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Deprovisioning tasks tracked
+
+---
+
+Title: Onboarding - Training Assignment
+User Story: As a SUPERVISOR I want required training assigned to new hires So that compliance is ensured.
+Acceptance Criteria:
+Scenario: Assign training
+Given a new hire is provisioned
+When I review onboarding tasks
+Then required training is assigned and tracked
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Training status visible to supervisor
+
+---
+
+Title: Onboarding - Asset Assignment
+User Story: As an ADMIN I want to assign assets to new hires during onboarding So that they have required equipment.
+Acceptance Criteria:
+Scenario: Assign onboarding assets
+Given a new hire is provisioned
+When I assign assets
+Then the assignments are tracked and history logged
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Asset assignment from onboarding workflow
