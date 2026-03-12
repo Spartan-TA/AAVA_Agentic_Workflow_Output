@@ -1,0 +1,61 @@
+[E02] Employee Master Data (CRUD)
+
+User Story 1
+Title: Create Employee Entity and Repository
+User Story: As a backend developer, I want to define the Employee entity and repository so that employee data is persisted.
+Acceptance Criteria:
+  Scenario: Employee entity created
+    Given the project is running
+    When I create an employee record
+    Then the record is saved in the database with all required fields
+Additional Details: Priority: High, Story Points: 2, Dependencies: E01, Notes: Fields: name, badgeId, role, department, shiftGroup, hireDate, status
+
+User Story 2
+Title: Implement Employee CRUD APIs
+User Story: As an HR user, I want to create, read, update, patch, and delete employee records via API so that employee data is managed efficiently.
+Acceptance Criteria:
+  Scenario: CRUD endpoints
+    Given the API is running
+    When I call POST/GET/PUT/PATCH/DELETE /employees
+    Then the corresponding operation is performed and validated
+Additional Details: Priority: High, Story Points: 5, Dependencies: E02-1, Notes: Follows RESTful conventions
+
+User Story 3
+Title: Enforce Unique Badge ID
+User Story: As an HR user, I want badge IDs to be unique so that each employee is uniquely identified.
+Acceptance Criteria:
+  Scenario: Duplicate badgeId rejected
+    Given an employee with badgeId X exists
+    When I try to create another employee with badgeId X
+    Then the API returns a validation error
+Additional Details: Priority: High, Story Points: 2, Dependencies: E02-2, Notes: DB unique constraint
+
+User Story 4
+Title: Support Soft-Delete for Employees
+User Story: As an HR user, I want to soft-delete employees so that historical data is retained.
+Acceptance Criteria:
+  Scenario: Soft-delete employee
+    Given an employee exists
+    When I delete the employee
+    Then the status is set to 'inactive' and the record is not physically removed
+Additional Details: Priority: High, Story Points: 2, Dependencies: E02-2, Notes: Soft-delete flag
+
+User Story 5
+Title: Add Pagination and Filtering to Employee List
+User Story: As an HR user, I want to paginate and filter employee lists so that I can efficiently find records.
+Acceptance Criteria:
+  Scenario: Paginated and filtered results
+    Given many employees exist
+    When I request /employees with pagination and filters
+    Then I receive the correct subset of employees
+Additional Details: Priority: High, Story Points: 3, Dependencies: E02-2, Notes: Filters: department, status, etc.
+
+User Story 6
+Title: Provide OpenAPI Schemas with Examples
+User Story: As a developer, I want OpenAPI documentation with request/response examples so that integration is easy.
+Acceptance Criteria:
+  Scenario: OpenAPI docs available
+    Given the API is running
+    When I access /swagger-ui or /v3/api-docs
+    Then I see all employee endpoints with example payloads
+Additional Details: Priority: High, Story Points: 1, Dependencies: E02-2, Notes: Use Springdoc/OpenAPI
