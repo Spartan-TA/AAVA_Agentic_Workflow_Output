@@ -1,0 +1,13 @@
+USER STORY 2 (US002)
+Title: Configure Base Packages and Core Modules
+User Story: As a developer, I want to configure base packages and set up core modules (employee, scheduling, attendance, safety) so that the codebase is organized and ready for feature development.
+Acceptance Criteria:
+Scenario: Package Structure Setup
+Given the initialized project
+When I inspect the package structure
+Then base packages for each module exist
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: US001
+Notes: Follow domain-driven design principles.
