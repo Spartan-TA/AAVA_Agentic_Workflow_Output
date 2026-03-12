@@ -1,0 +1,30 @@
+Title: Assign and Track Equipment & Asset Usage
+
+User Story: As an asset manager I want to assign scanners, forklifts, and PPE to employees, track check-in/out, and enforce certification checks so that asset accountability and safe equipment operation are ensured.
+
+Acceptance Criteria:
+Scenario: Asset assignment
+  Given an asset is available
+  When I assign it to an employee
+  Then the assignment is recorded and visible in the asset registry
+
+Scenario: Certification enforcement
+  Given an asset requires a valid certification
+  When an employee without certification attempts to check out the asset
+  Then the system blocks the checkout and notifies the supervisor
+
+Scenario: Asset check-in/out
+  Given an asset is assigned
+  When the employee checks it in or out
+  Then the transaction is logged with timestamp and condition
+
+Scenario: Overdue returns
+  Given an asset is overdue for return
+  When I generate a report
+  Then all overdue assets are listed by employee
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee Master Data, Role-Based Access Control, Training & Certification Tracking
+- Notes: Asset condition state must be tracked; history log required for each asset and employee.
