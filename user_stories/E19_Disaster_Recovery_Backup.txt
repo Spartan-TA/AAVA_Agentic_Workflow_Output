@@ -1,0 +1,46 @@
+EPIC E19: Disaster Recovery & Backup
+
+---
+
+Title: Disaster Recovery - Automated Backups
+User Story: As a System Administrator I want daily automated backups So that data is protected against loss.
+Acceptance Criteria:
+Scenario: Daily backup job
+Given the system is running
+When the backup job runs
+Then all data is backed up to secure storage
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: Backup status visible to admin
+
+---
+
+Title: Disaster Recovery - Point-in-Time Restore
+User Story: As a System Administrator I want to restore data to a specific point in time So that recovery from incidents is possible.
+Acceptance Criteria:
+Scenario: Point-in-time restore
+Given backups exist
+When I initiate a restore
+Then data is restored to the selected point
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01
+- Notes: RTO/RPO targets documented
+
+---
+
+Title: Disaster Recovery - DR Runbook
+User Story: As a System Administrator I want a documented DR runbook So that recovery procedures are clear.
+Acceptance Criteria:
+Scenario: Access DR runbook
+Given I am an admin
+When I access documentation
+Then I see step-by-step DR procedures
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Runbook reviewed quarterly
