@@ -1,0 +1,35 @@
+Title: Manage Employee Master Data (CRUD)
+
+User Story: As an HR manager I want to create, view, update, and delete employee records with fields such as name, badgeId, role, department, shiftGroup, hireDate, and status so that I can maintain a single source of truth for all warehouse employees.
+
+Acceptance Criteria:
+Scenario: Create employee
+  Given I have valid employee details
+  When I submit a POST request to /employees
+  Then the employee is created with a unique badgeId and appears in the employee list
+
+Scenario: Update employee
+  Given an existing employee record
+  When I send a PUT or PATCH request with updated fields
+  Then the employee record is updated accordingly
+
+Scenario: Delete employee (soft-delete)
+  Given an existing employee
+  When I send a DELETE request
+  Then the employee is marked as deleted but not removed from the database
+
+Scenario: List and filter employees
+  Given multiple employee records exist
+  When I request the employee list with filters or pagination
+  Then I receive a filtered and paginated list of employees
+
+Scenario: API documentation
+  Given the API is running
+  When I access the OpenAPI docs
+  Then I see schemas and examples for all employee endpoints
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Project Scaffolding & Domain Setup
+- Notes: Enforce unique badgeId and support soft-delete for compliance.
