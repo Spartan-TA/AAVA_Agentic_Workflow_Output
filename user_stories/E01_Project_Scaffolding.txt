@@ -1,0 +1,61 @@
+EPIC E01: Project Scaffolding & Domain Setup
+
+---
+
+Title: Project Scaffolding - Spring Boot Initialization
+User Story: As a Developer I want to initialize a Spring Boot project with Maven So that I have a standardized foundation for all modules.
+Acceptance Criteria:
+Scenario: Project scaffolding is created
+Given I am in the project root directory
+When I run 'mvn clean install'
+Then the project builds successfully and runs on port 8080
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps
+
+---
+
+Title: Project Scaffolding - Core Module Setup
+User Story: As a Developer I want to set up base packages and core modules (employee, scheduling, attendance, safety) So that the codebase is organized and ready for feature development.
+Acceptance Criteria:
+Scenario: Core modules and packages are created
+Given the project is initialized
+When I inspect the source code
+Then I see base packages and modules for employee, scheduling, attendance, and safety
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Project initialization
+- Notes: Follows company package structure guidelines
+
+---
+
+Title: Project Scaffolding - Database Migration Tooling
+User Story: As a Developer I want to add Flyway or Liquibase for database migrations So that schema changes are versioned and repeatable.
+Acceptance Criteria:
+Scenario: Database migration runs on startup
+Given the database is empty
+When I start the application
+Then Flyway/Liquibase applies the baseline migration successfully
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project initialization
+- Notes: Baseline migration must create initial schema
+
+---
+
+Title: Project Scaffolding - Health Endpoint
+User Story: As a System Administrator I want to enable the Actuator health endpoint So that I can monitor the application's health status.
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I GET /actuator/health
+Then the response status is UP
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project initialization
+- Notes: Endpoint must be documented in README
