@@ -1,0 +1,51 @@
+[E01] Project Scaffolding & Domain Setup
+
+User Story 1
+Title: Initialize Spring Boot Project Structure
+User Story: As a developer, I want to initialize a Spring Boot (Maven) project with a standardized package structure so that all modules follow consistent conventions.
+Acceptance Criteria:
+  Scenario: Project initialization
+    Given I have cloned the repository
+    When I run the build command
+    Then the project builds successfully and runs on port 8080
+Additional Details: Priority: High, Story Points: 3, Dependencies: None, Notes: Base for all modules
+
+User Story 2
+Title: Configure Core Domain Modules
+User Story: As a developer, I want to set up core modules for employee, scheduling, attendance, and safety so that each domain is logically separated for maintainability.
+Acceptance Criteria:
+  Scenario: Core modules setup
+    Given the project is initialized
+    When I inspect the source code
+    Then I see separate packages for employee, scheduling, attendance, and safety
+Additional Details: Priority: High, Story Points: 3, Dependencies: E01-1, Notes: Follows DDD best practices
+
+User Story 3
+Title: Integrate Flyway/Liquibase for DB Migrations
+User Story: As a developer, I want to add Flyway or Liquibase for database migrations so that schema changes are versioned and repeatable.
+Acceptance Criteria:
+  Scenario: Baseline migration runs
+    Given the database is empty
+    When I start the application
+    Then Flyway/Liquibase applies the baseline migration successfully
+Additional Details: Priority: High, Story Points: 2, Dependencies: E01-1, Notes: Migration scripts in /db/migration
+
+User Story 4
+Title: Enable Spring Boot Actuator
+User Story: As a DevOps engineer, I want to enable the Actuator health endpoint so that I can monitor application health.
+Acceptance Criteria:
+  Scenario: Health endpoint returns UP
+    Given the application is running
+    When I access /actuator/health
+    Then the endpoint returns status UP
+Additional Details: Priority: High, Story Points: 1, Dependencies: E01-1, Notes: Expose only necessary endpoints
+
+User Story 5
+Title: Provide Comprehensive README
+User Story: As a developer, I want a README with build and run steps so that onboarding is fast and consistent.
+Acceptance Criteria:
+  Scenario: README completeness
+    Given I open the README
+    When I follow the instructions
+    Then I can build and run the project without issues
+Additional Details: Priority: High, Story Points: 1, Dependencies: E01-1, Notes: Include prerequisites and troubleshooting
