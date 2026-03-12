@@ -1,0 +1,30 @@
+Title: Manage Performance Reviews & Goals
+
+User Story: As an HR manager I want to create quarterly and annual review templates, track goals and competencies, and manage supervisor/employee acknowledgements so that structured feedback improves productivity and retention.
+
+Acceptance Criteria:
+Scenario: Create review cycle
+  Given review templates exist
+  When I assign a review cycle to employees
+  Then the cycle is created and visible to both supervisor and employee
+
+Scenario: Submit and acknowledge review
+  Given a review cycle is active
+  When supervisor and employee submit ratings and comments
+  Then both parties acknowledge the review and it becomes immutable
+
+Scenario: PDF export
+  Given reviews are completed
+  When I export a review
+  Then the review is available as a PDF document
+
+Scenario: Role-based visibility
+  Given reviews exist
+  When I access reviews as HR, supervisor, or employee
+  Then visibility is restricted based on role
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee Master Data, Role-Based Access Control
+- Notes: Immutable history after sign-off; competencies and goals must be tracked.
