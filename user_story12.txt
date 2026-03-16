@@ -1,0 +1,16 @@
+Title: Row-Level Security for Supervisors
+User Story: As a Supervisor I want to access and manage only the records of employees in my team So that I cannot view or modify data outside my scope
+Acceptance Criteria:
+Scenario: Supervisor access limited to team
+Given a supervisor is authenticated
+When they access employee records
+Then only employees in their team are visible and editable
+Scenario: Attempt to access out-of-scope records
+Given a supervisor is authenticated
+When they attempt to access records outside their team
+Then a 403 Forbidden response is returned
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Implement row-level security checks for supervisor role
