@@ -1,0 +1,16 @@
+Title: Role-Based Endpoint Security
+User Story: As a Security Engineer I want to restrict API endpoints based on user roles So that sensitive operations are only accessible to authorized users
+Acceptance Criteria:
+Scenario: Unauthorized access returns 401
+Given the API endpoints are secured
+When a user without authentication attempts access
+Then a 401 Unauthorized response is returned
+Scenario: Forbidden actions return 403
+Given the API endpoints are secured
+When a user with insufficient role attempts a restricted action
+Then a 403 Forbidden response is returned
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Use Spring Security for endpoint protection
