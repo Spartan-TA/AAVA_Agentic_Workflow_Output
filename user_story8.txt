@@ -1,0 +1,16 @@
+Title: Employee Record Deletion and Soft-Delete
+User Story: As an HR Manager I want to soft-delete employee records So that historical data is preserved and employees are not permanently removed
+Acceptance Criteria:
+Scenario: Soft-delete employee
+Given the employee deletion API is available
+When I DELETE an employee record
+Then the record is marked as inactive and not permanently removed
+Scenario: Retrieve inactive employees
+Given the employee retrieval API
+When I GET /employees with status filter
+Then inactive employees can be listed separately
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Ensure soft-delete is implemented and records are not physically deleted
