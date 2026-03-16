@@ -1,0 +1,16 @@
+Title: Core Module Setup
+User Story: As a Backend Developer I want to set up core modules (employee, scheduling, attendance, safety) So that the system is ready for feature development and modular expansion
+Acceptance Criteria:
+Scenario: Core modules initialized
+Given the project scaffolding is complete
+When I create the base packages for employee, scheduling, attendance, and safety
+Then each module has its own package and initial domain model
+Scenario: Module registration
+Given the modules are created
+When I run the application
+Then the modules are registered and accessible via the base package
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Follow naming conventions and ensure modular separation
