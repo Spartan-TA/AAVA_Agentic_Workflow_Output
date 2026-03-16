@@ -1,0 +1,16 @@
+Title: Role Assignment and Management
+User Story: As an Admin I want to assign and manage user roles (ADMIN, HR, SUPERVISOR, WORKER) So that access is controlled according to organizational policies
+Acceptance Criteria:
+Scenario: Assign role to user
+Given the role management API is available
+When I assign a role to a user
+Then the user receives the correct permissions
+Scenario: Update user role
+Given a user already has a role
+When I update the user's role
+Then their access changes accordingly
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Ensure role changes are auditable
