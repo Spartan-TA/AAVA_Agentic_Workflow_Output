@@ -1,0 +1,16 @@
+Title: Database Migration Baseline
+User Story: As a Database Administrator I want to configure Flyway/Liquibase for baseline migration So that the database schema is versioned and consistent across environments
+Acceptance Criteria:
+Scenario: Baseline migration runs successfully
+Given Flyway/Liquibase is set up in the project
+When I run the migration command
+Then the baseline schema is applied without errors
+Scenario: Migration logs are available
+Given the migration is executed
+When I check the logs
+Then migration steps and outcomes are recorded
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Migration scripts must be idempotent and documented in README
