@@ -1,0 +1,16 @@
+Title: Actuator Health Endpoint Configuration
+User Story: As a System Administrator I want to enable the Actuator health endpoint So that I can monitor the application's health status in real time
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access the /actuator/health endpoint
+Then the response is UP and includes relevant health indicators
+Scenario: Health endpoint is documented
+Given the README is updated
+When I review the documentation
+Then build/run steps and health endpoint usage are clearly described
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Ensure actuator endpoints are secured and visible only to authorized users
