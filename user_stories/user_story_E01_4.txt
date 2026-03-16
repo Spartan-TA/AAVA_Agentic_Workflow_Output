@@ -1,0 +1,15 @@
+Title: Actuator Health Endpoint Setup
+
+User Story: As an operator I want the Actuator health endpoint enabled So that I can monitor service health
+
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I GET /actuator/health
+Then the response status is 200 and body contains "UP"
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project Initialization
+- Notes: Endpoint must be documented in README
