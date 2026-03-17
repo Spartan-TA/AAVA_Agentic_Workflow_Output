@@ -1,0 +1,28 @@
+### E03 - Role Based Access Control (RBAC)
+
+**Title:** Implement Role-Based Endpoint Security
+**User Story:** As a system administrator, I want to restrict API endpoints by user role so that sensitive operations are protected.
+**Acceptance Criteria:**
+Scenario: Unauthorized access
+Given a user without ADMIN role
+When they access `/employees` management endpoints
+Then they receive a 403 Forbidden response
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: E01, E02, Notes: Cover all sensitive endpoints.
+
+**Title:** Row-Level Security for Supervisors
+**User Story:** As a supervisor, I want to access only my team's records so that I cannot view or modify unrelated employees.
+**Acceptance Criteria:**
+Scenario: Supervisor access
+Given a supervisor is logged in
+When they GET `/employees`
+Then only their team's employees are returned
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: E01, E02, Notes: Enforce via database or service layer.
+
+**Title:** API Key/OAuth2 Toggle
+**User Story:** As a DevOps engineer, I want to toggle between API key and OAuth2 authentication so that integration is flexible.
+**Acceptance Criteria:**
+Scenario: Auth method toggle
+Given the config is set to OAuth2
+When a request is made
+Then OAuth2 is enforced
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, E02, Notes: Document toggle in README.
