@@ -1,0 +1,82 @@
+# Spring Boot Application Configuration for Warehouse EMS
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/warehouse_ems
+    username: ems_user
+    password: ems_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  mail:
+    host: smtp.example.com
+    port: 587
+    username: ems-notify@example.com
+    password: secret
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.wms.ems: DEBUG
+security:
+  jwt:
+    secret: "supersecretkeyforjwt"
+    expiration: 86400000
+  api-key:
+    enabled: false
+    value: "changemeapikey"
+notifications:
+  sms:
+    enabled: true
+    provider: twilio
+    account-sid: "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    auth-token: "your_auth_token"
+    from-number: "+1234567890"
+  email:
+    enabled: true
+    from: "ems-notify@example.com"
+localization:
+  default-locale: en_US
+  supported-locales:
+    - en_US
+    - es_ES
+    - fr_FR
+---
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:postgresql://localhost:5432/warehouse_ems_test
+    username: ems_test
+    password: ems_test_password
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+logging:
+  level:
+    root: WARN
