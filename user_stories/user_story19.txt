@@ -1,0 +1,19 @@
+### E19 - Advanced Scheduling Optimization
+
+**Title:** Optimize Shift Scheduling
+**User Story:** As a scheduler, I want the system to suggest optimal shift assignments so that staffing is efficient.
+**Acceptance Criteria:**
+Scenario: Scheduling optimization
+Given employee availability and rules
+When I generate a schedule
+Then the system suggests assignments minimizing overtime and conflicts
+**Additional Details:** Priority: Medium, Story Points: 5, Dependencies: E05, Notes: Use optimization algorithm.
+
+**Title:** Blackout Date Handling
+**User Story:** As a scheduler, I want to define blackout dates so that no shifts are scheduled during warehouse closures.
+**Acceptance Criteria:**
+Scenario: Blackout date enforcement
+Given a blackout date
+When I schedule shifts
+Then the system prevents assignments on those dates
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E05, Notes: Sync with warehouse calendar.
