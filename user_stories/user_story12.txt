@@ -1,0 +1,28 @@
+### E12 - Notifications & Announcements
+
+**Title:** In-App Notification Delivery
+**User Story:** As a worker, I want to receive in-app notifications for shift changes and approvals so that I am always informed.
+**Acceptance Criteria:**
+Scenario: Notification delivery
+Given a shift change
+When it is approved
+Then I receive an in-app notification
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: Users can opt-in/out.
+
+**Title:** Email/SMS Notification Delivery
+**User Story:** As a supervisor, I want to send email/SMS notifications for critical events so that important updates are not missed.
+**Acceptance Criteria:**
+Scenario: Email/SMS delivery
+Given a certification is expiring
+When the alert is triggered
+Then the employee receives an email/SMS
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: Track delivery status.
+
+**Title:** Announcements Dashboard
+**User Story:** As an admin, I want to post announcements visible on the dashboard so that all users are informed of important news.
+**Acceptance Criteria:**
+Scenario: Announcement visibility
+Given an announcement is posted
+When users log in
+Then the announcement is visible on their dashboard
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E03, E05, E06, E07, Notes: Support localization.
