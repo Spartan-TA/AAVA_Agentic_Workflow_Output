@@ -1,0 +1,37 @@
+### E02 - Employee Master Data (CRUD)
+
+**Title:** Create Employee Record
+**User Story:** As an HR user, I want to create a new employee record so that employee data is centrally managed.
+**Acceptance Criteria:**
+Scenario: Employee creation
+Given I provide valid employee details
+When I POST to `/employees`
+Then a new employee is created with a unique badgeId
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: E01, Notes: badgeId must be unique.
+
+**Title:** Update Employee Details
+**User Story:** As an HR user, I want to update employee information so that records remain accurate.
+**Acceptance Criteria:**
+Scenario: Employee update
+Given an existing employee
+When I PUT/PATCH to `/employees/{id}`
+Then the employee details are updated
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, Notes: Changes should be tracked for audit.
+
+**Title:** Delete (Soft-Delete) Employee
+**User Story:** As an HR user, I want to soft-delete an employee so that records are not permanently lost.
+**Acceptance Criteria:**
+Scenario: Employee soft-delete
+Given an active employee
+When I DELETE `/employees/{id}`
+Then the employee status is set to inactive
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, Notes: Soft-deleted employees are excluded from active lists.
+
+**Title:** List and Filter Employees
+**User Story:** As a supervisor, I want to list and filter employees so that I can easily find relevant records.
+**Acceptance Criteria:**
+Scenario: Employee listing
+Given multiple employees exist
+When I GET `/employees?department=Shipping`
+Then only employees in Shipping are returned
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E01, Notes: Support pagination and filtering.
