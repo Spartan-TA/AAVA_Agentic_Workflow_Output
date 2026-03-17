@@ -1,0 +1,34 @@
+# Maven
+/target/
+*.log
+*.tmp
+*.bak
+*.swp
+
+# IDEs
+/.idea/
+*.iml
+*.ipr
+*.iws
+/.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+
+# Environment
+.env
+
+# Application
+/src/main/resources/application-local.yml
+/src/main/resources/application-dev.yml
+/src/main/resources/application-prod.yml
+
+# Test containers
+/test-output/
+
+# Others
+node_modules/
