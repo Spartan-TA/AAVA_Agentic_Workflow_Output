@@ -1,0 +1,19 @@
+### E15 - Reporting & Analytics
+
+**Title:** Generate Attendance Report
+**User Story:** As a supervisor, I want to generate attendance reports by date and department so that I can monitor staffing.
+**Acceptance Criteria:**
+Scenario: Attendance report
+Given attendance data
+When I filter by date and department
+Then the report is generated within 10 seconds for up to 50k rows
+**Additional Details:** Priority: Medium, Story Points: 3, Dependencies: E04, E05, E06, E07, E08, E14, Notes: Export as CSV/PDF.
+
+**Title:** Certification Status Dashboard
+**User Story:** As an HR user, I want to view certification status dashboards so that compliance risks are visible.
+**Acceptance Criteria:**
+Scenario: Certification dashboard
+Given certification data
+When I access the dashboard
+Then I see expiring and expired certifications
+**Additional Details:** Priority: Medium, Story Points: 2, Dependencies: E04, E05, E06, E07, E08, E14, Notes: Role-based access.
