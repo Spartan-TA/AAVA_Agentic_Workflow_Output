@@ -1,0 +1,28 @@
+### E04 - Time & Attendance (Clock In/Out)
+
+**Title:** Employee Clock-In
+**User Story:** As a worker, I want to clock in at the start of my shift so that my attendance is recorded.
+**Acceptance Criteria:**
+Scenario: Valid clock-in
+Given I am scheduled for a shift
+When I POST to `/attendance/clock-in`
+Then my clock-in event is recorded with timestamp and device info
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Optionally capture geofence.
+
+**Title:** Employee Clock-Out
+**User Story:** As a worker, I want to clock out at the end of my shift so that my worked hours are calculated.
+**Acceptance Criteria:**
+Scenario: Valid clock-out
+Given I am clocked in
+When I POST to `/attendance/clock-out`
+Then my clock-out event is recorded and hours are computed
+**Additional Details:** Priority: High, Story Points: 2, Dependencies: E02, E03, Notes: Handle missed punches.
+
+**Title:** Attendance Correction Workflow
+**User Story:** As a supervisor, I want to approve corrections for missed punches so that attendance data remains accurate.
+**Acceptance Criteria:**
+Scenario: Correction approval
+Given a correction request exists
+When I approve it
+Then the attendance record is updated and an audit entry is created
+**Additional Details:** Priority: High, Story Points: 3, Dependencies: E02, E03, Notes: Correction tasks visible in dashboard.
