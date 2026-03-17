@@ -1,0 +1,15 @@
+Title: Clock-In/Out Endpoint with Geofence
+
+User Story: As a worker, I want to clock in and out using a geofenced endpoint So that attendance is accurately captured.
+
+Acceptance Criteria:
+Scenario: Clock-in with geofence
+Given a worker at the warehouse location
+When the worker clocks in/out
+Then the event is recorded only if within geofence
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Device capture required
