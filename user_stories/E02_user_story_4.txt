@@ -1,0 +1,15 @@
+Title: Provide OpenAPI Schemas with Examples
+
+User Story: As a developer, I want OpenAPI schemas for employee APIs So that integration is easier and documentation is clear.
+
+Acceptance Criteria:
+Scenario: OpenAPI schema generation
+Given the API implementation
+When I access the API documentation
+Then schemas and example payloads are available
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01
+- Notes: OpenAPI must be updated with every API change
