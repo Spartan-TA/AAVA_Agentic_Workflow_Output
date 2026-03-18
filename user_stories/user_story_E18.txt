@@ -1,0 +1,61 @@
+EPIC E18: Localization & Multi-Tenant
+
+===========================================
+
+Title: Localize User Interface
+User Story: As a user, I want the UI to be available in my preferred language so that I can use the system comfortably.
+Acceptance Criteria:
+Scenario: Changing language
+Given multiple languages are supported
+When I select my language
+Then all UI text is displayed in that language
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E18
+- Notes: Supports English, Spanish, French initially.
+
+===========================================
+
+Title: Support Tenant Branding
+User Story: As a tenant admin, I want to customize branding (logo, colors) so that the system reflects my company identity.
+Acceptance Criteria:
+Scenario: Customizing branding
+Given I am a tenant admin
+When I upload a logo and select colors
+Then the UI updates for my tenant only
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E18
+- Notes: CSS variable-based theming.
+
+===========================================
+
+Title: Data Isolation for Tenants
+User Story: As a system, I want tenant data to be isolated so that no tenant can access another's data.
+Acceptance Criteria:
+Scenario: Data isolation
+Given multiple tenants exist
+When a user accesses data
+Then only their tenant's data is visible and accessible
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E18
+- Notes: Row-level security enforced.
+
+===========================================
+
+Title: Localize Notifications
+User Story: As a user, I want notifications to be sent in my preferred language so that I understand all communications.
+Acceptance Criteria:
+Scenario: Sending localized notification
+Given my language preference is set
+When a notification is sent
+Then it is in my preferred language
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E12
+- Notes: Template-based localization.
