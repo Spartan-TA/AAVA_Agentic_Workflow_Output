@@ -1,0 +1,56 @@
+### E14: Audit Trail & Compliance
+
+**User Story 14.1**
+Title: Audit Logging for Sensitive Changes
+
+User Story: As a Compliance Officer I want all create, update, and delete actions on sensitive data to be logged So that I can audit system usage.
+
+Acceptance Criteria:
+Scenario: Audit logging
+Given a sensitive action occurs
+When the action is performed
+Then the actor, timestamp, before/after values are logged immutably
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03
+- Notes: Log table must be tamper-evident
+
+---
+
+**User Story 14.2**
+Title: Audit Log Export by Date/User/Entity
+
+User Story: As an Auditor I want to export audit logs by date, user, or entity So that I can investigate incidents.
+
+Acceptance Criteria:
+Scenario: Log export
+Given logs exist
+When I filter and export
+Then the output contains all relevant entries
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Export formats: CSV, PDF
+
+---
+
+**User Story 14.3**
+Title: Automated Audit Coverage Tests
+
+User Story: As a QA Engineer I want automated tests to validate audit coverage So that no sensitive action is missed.
+
+Acceptance Criteria:
+Scenario: Coverage validation
+Given test cases for sensitive actions
+When tests run
+Then all actions are verified to be logged
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E03
+- Notes: Test failures must block deployment
