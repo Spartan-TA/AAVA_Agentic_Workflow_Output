@@ -1,0 +1,61 @@
+EPIC E08: Safety Incidents & OSHA Reporting
+
+===========================================
+
+Title: Log Safety Incidents
+User Story: As a supervisor, I want to record safety incidents and near-misses with details so that we can track and investigate them.
+Acceptance Criteria:
+Scenario: Logging an incident
+Given I am on the safety incident form
+When I submit details including severity, location, and involved employees
+Then the incident is saved and status is set to Open
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Mandatory fields enforced.
+
+===========================================
+
+Title: Investigate and Resolve Incidents
+User Story: As a safety officer, I want to progress incidents through investigation and resolution so that corrective actions are tracked.
+Acceptance Criteria:
+Scenario: Updating incident status
+Given an incident is Open
+When I update the status to Investigating or Resolved
+Then the change is logged and corrective actions can be added
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Workflow supports multiple states.
+
+===========================================
+
+Title: Generate OSHA Reports
+User Story: As a compliance officer, I want to export OSHA 300/300A summary fields so that we can meet regulatory requirements.
+Acceptance Criteria:
+Scenario: Exporting OSHA report
+Given incidents are logged
+When I request an OSHA export for a date range
+Then a CSV file is generated with required fields
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E08
+- Notes: Complies with OSHA standards.
+
+===========================================
+
+Title: View Safety KPIs
+User Story: As a warehouse manager, I want to view safety metrics and trends so that I can monitor and improve safety culture.
+Acceptance Criteria:
+Scenario: Viewing dashboard
+Given incidents are recorded
+When I open the safety dashboard
+Then I see KPIs such as incident rate, days since last incident, and open investigations
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E15
+- Notes: Real-time metrics preferred.
