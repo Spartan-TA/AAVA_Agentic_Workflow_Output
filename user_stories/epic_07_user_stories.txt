@@ -1,0 +1,75 @@
+### E07: Training & Certification Tracking
+
+**User Story 7.1**
+Title: Certification Record Management
+
+User Story: As an HR Admin I want to add, edit, or remove employee certifications So that compliance records are up to date.
+
+Acceptance Criteria:
+Scenario: Certification management
+Given I am an HR Admin
+When I manage certifications
+Then the changes are reflected in the employee's profile and audit logged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Certification types and expiry dates required
+
+---
+
+**User Story 7.2**
+Title: Certification Expiry Alerts
+
+User Story: As a Supervisor I want to receive alerts when certifications are nearing expiry So that renewals can be scheduled.
+
+Acceptance Criteria:
+Scenario: Expiry alert
+Given an employee's certification is expiring in 30 or 7 days
+When the system runs the expiry check
+Then an alert is sent to the employee and supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Alert channels configurable
+
+---
+
+**User Story 7.3**
+Title: Block Assignment for Expired Certifications
+
+User Story: As a Scheduler I want to prevent assignment of tasks requiring valid certifications to employees with expired or missing certs So that safety is ensured.
+
+Acceptance Criteria:
+Scenario: Assignment block
+Given an employee's certification is expired
+When assigning them to a restricted task
+Then the system blocks the assignment and displays an error
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Certification-task mapping required
+
+---
+
+**User Story 7.4**
+Title: Upload Certification Proof Documents
+
+User Story: As an Employee I want to upload proof of certification So that my records are complete.
+
+Acceptance Criteria:
+Scenario: Document upload
+Given I have a new or renewed certification
+When I upload the document
+Then it is stored securely and visible to HR and my supervisor
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: File type and size restrictions apply
