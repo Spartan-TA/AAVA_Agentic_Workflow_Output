@@ -1,0 +1,76 @@
+EPIC E11: Payroll Export Integration
+
+===========================================
+
+Title: Generate Payroll Files
+User Story: As a payroll admin, I want to generate payroll-ready files from approved attendance and leave data so that I can process payroll efficiently.
+Acceptance Criteria:
+Scenario: Generating export
+Given attendance and leave data is approved
+When I generate a payroll export
+Then the file matches the provider schema and totals reconcile with reports
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E04, E06
+- Notes: Supports multiple payroll providers.
+
+===========================================
+
+Title: Map Payroll Data to Provider Schema
+User Story: As a system, I want to map internal payroll data to external provider formats so that exports are compatible.
+Acceptance Criteria:
+Scenario: Mapping data
+Given a provider format is selected
+When I generate an export
+Then the file fields match the provider's required schema
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E11
+- Notes: Configurable field mappings.
+
+===========================================
+
+Title: Deliver Payroll Files Securely
+User Story: As a payroll admin, I want payroll files delivered via SFTP or API so that sensitive data is transmitted securely.
+Acceptance Criteria:
+Scenario: Secure delivery
+Given a payroll file is generated
+When I select SFTP or API delivery
+Then the file is transmitted securely and delivery status is logged
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E11
+- Notes: Encrypted transmission required.
+
+===========================================
+
+Title: Retry Failed Payroll Exports
+User Story: As a system, I want failed payroll exports to be retried with exponential backoff so that all files are eventually delivered.
+Acceptance Criteria:
+Scenario: Retry logic
+Given a delivery fails
+When the system retries
+Then retries occur with increasing intervals and are logged
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E11
+- Notes: Maximum retry attempts configurable.
+
+===========================================
+
+Title: Audit Payroll Export Actions
+User Story: As an auditor, I want every payroll export action to be logged so that I can trace file generation and delivery.
+Acceptance Criteria:
+Scenario: Logging exports
+Given a payroll export is generated or delivered
+When the action occurs
+Then an audit entry is created with actor, timestamp, and status
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E14
+- Notes: Immutable audit trail.
