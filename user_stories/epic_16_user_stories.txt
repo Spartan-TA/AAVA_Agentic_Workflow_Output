@@ -1,0 +1,75 @@
+### E16: Mobile Access (PWA)
+
+**User Story 16.1**
+Title: Mobile Clock-In/Out
+
+User Story: As a Worker I want to clock in and out from my mobile device So that my attendance is recorded conveniently.
+
+Acceptance Criteria:
+Scenario: Mobile clock event
+Given I am on mobile
+When I clock in/out
+Then the event is queued if offline and synced when online
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E04
+- Notes: Offline queue with conflict resolution
+
+---
+
+**User Story 16.2**
+Title: Mobile Schedule and Leave Access
+
+User Story: As a Worker I want to view my schedule and request leave from my mobile device So that I can manage my work-life balance.
+
+Acceptance Criteria:
+Scenario: Mobile access
+Given I am on mobile
+When I access schedules or leave
+Then the views are responsive and fully functional
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E05, E06
+- Notes: PWA manifest required
+
+---
+
+**User Story 16.3**
+Title: Mobile Announcements and Notifications
+
+User Story: As a Worker I want to receive and view announcements and notifications on my mobile device So that I stay informed.
+
+Acceptance Criteria:
+Scenario: Mobile notifications
+Given announcements exist
+When I log in on mobile
+Then I see all relevant notifications
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E12
+- Notes: Push notifications supported
+
+---
+
+**User Story 16.4**
+Title: PWA Performance and Installability
+
+User Story: As a Product Owner I want the mobile app to meet PWA standards So that users have a reliable experience.
+
+Acceptance Criteria:
+Scenario: PWA audit
+Given the app is audited
+When tested with Lighthouse
+Then the PWA score is at least 80
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Must be installable on Android/iOS
