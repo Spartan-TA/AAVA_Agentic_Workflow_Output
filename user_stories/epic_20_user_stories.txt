@@ -1,0 +1,56 @@
+### E20: CI/CD & Deployment Automation
+
+**User Story 20.1**
+Title: Automated Build and Test Pipeline
+
+User Story: As a Developer I want code changes to trigger automated builds and tests So that integration issues are caught early.
+
+Acceptance Criteria:
+Scenario: Pipeline execution
+Given code is pushed
+When the pipeline runs
+Then builds and tests execute automatically and results are reported
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: Failures block deployment
+
+---
+
+**User Story 20.2**
+Title: Automated Deployment to Environments
+
+User Story: As a DevOps Engineer I want deployments to dev, staging, and prod to be automated So that releases are consistent and reliable.
+
+Acceptance Criteria:
+Scenario: Automated deployment
+Given a build is successful
+When deployment is triggered
+Then the application is deployed to the target environment
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: Rollback supported
+
+---
+
+**User Story 20.3**
+Title: Environment-Specific Configuration Management
+
+User Story: As a DevOps Engineer I want to manage configuration per environment So that secrets and settings are handled securely.
+
+Acceptance Criteria:
+Scenario: Configuration management
+Given deployments to different environments
+When configuration is applied
+Then environment-specific values are used securely
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Use vaults or secret managers
