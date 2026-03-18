@@ -1,0 +1,41 @@
+### E01: Project Scaffolding & Domain Setup
+
+**User Story 1**
+Title: Initialize Project Structure
+User Story: As a DEVELOPER I want a standardized project scaffold with core modules So that I can ensure consistency and accelerate feature delivery.
+Acceptance Criteria:
+Scenario: Project builds and runs
+  Given the repository is cloned
+  When I run the build command
+  Then the project compiles and runs on port 8080
+Scenario: Health endpoint is available
+  Given the application is running
+  When I access /actuator/health
+  Then I receive a status of UP
+Scenario: Baseline migration runs
+  Given a fresh database
+  When the application starts
+  Then Flyway/Liquibase applies the baseline migration
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: None
+Notes: README must include build/run steps.
+
+**User Story 2**
+Title: Establish Base Package Structure
+User Story: As a DEVELOPER I want a clear base package structure for core modules So that future development is organized and maintainable.
+Acceptance Criteria:
+Scenario: Core modules present
+  Given the project is scaffolded
+  When I inspect the source
+  Then I see packages for employee, scheduling, attendance, safety
+Scenario: New modules follow conventions
+  Given a new module is added
+  When I generate its package
+  Then it follows the established structure
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: None
+Notes: Enforce via code review.
