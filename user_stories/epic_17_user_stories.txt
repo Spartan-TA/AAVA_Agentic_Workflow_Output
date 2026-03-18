@@ -1,0 +1,56 @@
+### E17: Onboarding & Offboarding Workflow
+
+**User Story 17.1**
+Title: Automated Onboarding Task Generation
+
+User Story: As an HR Admin I want onboarding tasks (account setup, schedule, training) to be generated automatically for new hires So that nothing is missed.
+
+Acceptance Criteria:
+Scenario: Onboarding automation
+Given a new hire is created
+When onboarding starts
+Then tasks for account, schedule, and training are assigned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E05, E07, E13
+- Notes: Tasks visible to HR and supervisors
+
+---
+
+**User Story 17.2**
+Title: Automated Offboarding Task Generation
+
+User Story: As an HR Admin I want offboarding tasks (access revocation, asset return, schedule update) to be generated automatically for terminations So that risk is minimized.
+
+Acceptance Criteria:
+Scenario: Offboarding automation
+Given a termination is processed
+When offboarding starts
+Then tasks for access, assets, and schedules are assigned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E05, E09, E13
+- Notes: Asset collection tracked
+
+---
+
+**User Story 17.3**
+Title: Onboarding/Offboarding Progress Tracking
+
+User Story: As a Supervisor I want to track onboarding and offboarding progress for my team So that I can follow up as needed.
+
+Acceptance Criteria:
+Scenario: Progress tracking
+Given tasks are assigned
+When I view progress
+Then I see status and outstanding items
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Progress visible on dashboard
