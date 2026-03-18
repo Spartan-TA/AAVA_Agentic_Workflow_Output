@@ -1,0 +1,75 @@
+### E01: Project Scaffolding & Domain Setup
+
+**User Story 1.1**
+Title: Initialize Spring Boot Project Structure
+
+User Story: As a developer I want a standardized Spring Boot project scaffold So that all modules follow a consistent structure and best practices.
+
+Acceptance Criteria:
+Scenario: Project initialization
+Given a new repository
+When I run the build command
+Then the application starts on port 8080 and the base package structure is present
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps
+
+---
+
+**User Story 1.2**
+Title: Configure Core Domain Modules
+
+User Story: As a developer I want core modules (employee, scheduling, attendance, safety) pre-configured So that teams can develop features independently.
+
+Acceptance Criteria:
+Scenario: Core module setup
+Given the project scaffold
+When I inspect the codebase
+Then I see separate packages for employee, scheduling, attendance, and safety
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01.1
+- Notes: Follows DDD best practices
+
+---
+
+**User Story 1.3**
+Title: Database Migration Tool Integration
+
+User Story: As a developer I want Flyway or Liquibase integrated for DB migrations So that schema changes are versioned and repeatable.
+
+Acceptance Criteria:
+Scenario: Baseline migration runs
+Given a clean database
+When I start the application
+Then Flyway/Liquibase applies the baseline migration successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01.1
+- Notes: Migration scripts must be in version control
+
+---
+
+**User Story 1.4**
+Title: Enable Actuator for Health Checks
+
+User Story: As an SRE I want Actuator endpoints enabled So that I can monitor application health and metrics.
+
+Acceptance Criteria:
+Scenario: Health endpoint available
+Given the application is running
+When I GET /actuator/health
+Then I receive a 200 OK with status UP
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01.1
+- Notes: Secure actuator endpoints as needed
