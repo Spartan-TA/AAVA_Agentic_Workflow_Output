@@ -1,0 +1,61 @@
+EPIC E07: Training & Certification Tracking
+
+===========================================
+
+Title: Certification CRUD
+User Story: As an HR manager, I want to add, edit, and remove employee certifications so that records are up to date.
+Acceptance Criteria:
+Scenario: Adding a certification
+Given I am on an employee's profile
+When I add a new certification with type and expiry date
+Then the certification is saved and visible on the profile
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Supports multiple certification types.
+
+===========================================
+
+Title: Certification Expiry Notifications
+User Story: As a supervisor, I want to receive alerts before certifications expire so that I can ensure renewals are completed.
+Acceptance Criteria:
+Scenario: Expiry alert
+Given an employee's certification is expiring in 30 or 7 days
+When the system runs the daily check
+Then a notification is sent to the supervisor and employee
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E12
+- Notes: Configurable alert thresholds.
+
+===========================================
+
+Title: Prevent Assignment to Tasks Requiring Certification
+User Story: As a scheduler, I want to prevent assignment of employees to tasks requiring valid certifications so that safety and compliance are maintained.
+Acceptance Criteria:
+Scenario: Assignment check
+Given an employee's certification is expired or missing
+When I attempt to assign them to a restricted task
+Then the system blocks the assignment and displays an error
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E05
+- Notes: Real-time validation required.
+
+===========================================
+
+Title: Upload Certification Documents
+User Story: As an employee, I want to upload proof documents for my certifications so that my records are complete.
+Acceptance Criteria:
+Scenario: Uploading proof
+Given I am on my certification page
+When I upload a PDF or image file
+Then the document is stored and linked to my certification record
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02
+- Notes: File size and type validation required.
