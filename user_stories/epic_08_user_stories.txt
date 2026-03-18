@@ -1,0 +1,75 @@
+### E08: Safety Incidents & OSHA Reporting
+
+**User Story 8.1**
+Title: Safety Incident Submission
+
+User Story: As an Employee I want to report safety incidents or near-misses So that hazards are addressed promptly.
+
+Acceptance Criteria:
+Scenario: Incident report
+Given I witness or am involved in an incident
+When I submit a report
+Then the incident is logged with required fields and status set to Open
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Severity, location, and involved employees required
+
+---
+
+**User Story 8.2**
+Title: Incident Investigation Workflow
+
+User Story: As a Safety Officer I want to manage the investigation and resolution of incidents So that corrective actions are tracked.
+
+Acceptance Criteria:
+Scenario: Investigation workflow
+Given an incident is Open
+When I update the status to Investigating or Resolved
+Then the workflow and corrective actions are recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Status transitions must be auditable
+
+---
+
+**User Story 8.3**
+Title: OSHA Summary Report Generation
+
+User Story: As an Admin I want to generate OSHA 300/300A summary reports So that regulatory requirements are met.
+
+Acceptance Criteria:
+Scenario: OSHA report
+Given incidents are recorded
+When I generate a report
+Then the output matches OSHA field requirements and is exportable
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Export formats: CSV, PDF
+
+---
+
+**User Story 8.4**
+Title: Safety Metrics Dashboard
+
+User Story: As a Supervisor I want to view safety KPIs and incident trends So that I can monitor and improve safety culture.
+
+Acceptance Criteria:
+Scenario: Metrics dashboard
+Given I access the dashboard
+When I filter by date or department
+Then relevant metrics and trends are displayed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Dashboard endpoints must be performant
