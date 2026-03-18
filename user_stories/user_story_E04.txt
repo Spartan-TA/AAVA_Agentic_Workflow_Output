@@ -1,0 +1,63 @@
+### E04: Time & Attendance (Clock In/Out)
+
+**User Story 1**
+Title: Clock In/Out with Validation
+User Story: As a WORKER I want to clock in and out So that my attendance is accurately recorded.
+Acceptance Criteria:
+Scenario: Successful clock-in
+  Given my shift is scheduled
+  When I POST to /attendance/clock-in
+  Then my clock-in is recorded
+Scenario: Geofence validation
+  Given I am outside the warehouse
+  When I attempt to clock in
+  Then my request is rejected
+Scenario: Device capture
+  Given I clock in
+  When I submit
+  Then my device info is stored
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: E02, E03
+Notes: Optional geofence.
+
+**User Story 2**
+Title: Handle Missed Punches and Corrections
+User Story: As a SUPERVISOR I want to approve corrections for missed punches So that attendance is accurate.
+Acceptance Criteria:
+Scenario: Worker submits correction
+  Given I missed a punch
+  When I request a correction
+  Then a task is created for supervisor approval
+Scenario: Supervisor approves
+  Given a correction task
+  When I approve
+  Then the attendance record is updated
+Scenario: Supervisor rejects
+  Given a correction task
+  When I reject
+  Then the worker is notified
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E02, E03
+Notes: Approval workflow.
+
+**User Story 3**
+Title: Attendance Reporting
+User Story: As an HR I want to export attendance reports So that payroll can be processed.
+Acceptance Criteria:
+Scenario: Export CSV
+  Given attendance data exists
+  When I export
+  Then I receive a CSV file
+Scenario: Daily totals computed
+  Given multiple punches
+  When I view the report
+  Then daily totals are shown
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Reports must be accurate.
