@@ -1,0 +1,61 @@
+EPIC E16: Mobile Access (PWA)
+
+===========================================
+
+Title: Mobile-Optimized Core Flows
+User Story: As a worker, I want to clock in/out, view schedules, request leave, and see announcements on my mobile device so that I can perform tasks easily.
+Acceptance Criteria:
+Scenario: Using mobile views
+Given I access the app on a mobile device
+When I use core flows
+Then all screens are responsive and usable
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: E04, E05, E06, E12
+- Notes: Touch-optimized UI.
+
+===========================================
+
+Title: Install App as PWA
+User Story: As a user, I want to install the app as a PWA so that I can access it from my home screen.
+Acceptance Criteria:
+Scenario: Installing PWA
+Given I visit the app in a supported browser
+When I add to home screen
+Then the app installs with a manifest and icon
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E16
+- Notes: Works offline for core features.
+
+===========================================
+
+Title: Offline Clock-In/Out Support
+User Story: As a worker, I want to clock in/out even when offline so that my attendance is recorded reliably.
+Acceptance Criteria:
+Scenario: Offline clock-in
+Given I am offline
+When I clock in/out
+Then the event is queued and synced when online, with conflict resolution
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E04
+- Notes: Service worker implementation.
+
+===========================================
+
+Title: Meet PWA Quality Standards
+User Story: As a product owner, I want the PWA to achieve a Lighthouse score of at least 80 so that quality is ensured.
+Acceptance Criteria:
+Scenario: Running Lighthouse audit
+Given the PWA is deployed
+When I run Lighthouse
+Then the score is â¥ 80 for performance, accessibility, and best practices
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E16
+- Notes: Automated in CI/CD.
