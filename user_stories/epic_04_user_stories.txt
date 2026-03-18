@@ -1,0 +1,75 @@
+### E04: Time & Attendance (Clock In/Out)
+
+**User Story 4.1**
+Title: Clock-In/Clock-Out Endpoints
+
+User Story: As a warehouse worker I want to clock in and out via API So that my working hours are accurately recorded.
+
+Acceptance Criteria:
+Scenario: Clock in/out
+Given a valid employee
+When I POST to /attendance/clock-in or /clock-out
+Then my event is recorded with timestamp
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Device and location capture optional
+
+---
+
+**User Story 4.2**
+Title: Calculate Hours Worked Per Shift
+
+User Story: As a supervisor I want the system to calculate hours worked per shift So that payroll and compliance are accurate.
+
+Acceptance Criteria:
+Scenario: Shift total calculation
+Given clock-in and clock-out events
+When I view shift summary
+Then total hours are computed correctly
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04.1
+- Notes: Handle overnight shifts
+
+---
+
+**User Story 4.3**
+Title: Handle Missed Punches and Corrections
+
+User Story: As a worker I want to request corrections for missed punches So that my attendance is accurate.
+
+Acceptance Criteria:
+Scenario: Missed punch correction
+Given a missed clock-in/out
+When I submit a correction request
+Then a supervisor is notified for approval
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04.1
+- Notes: Correction workflow required
+
+---
+
+**User Story 4.4**
+Title: Export Attendance Reports
+
+User Story: As an HR user I want to export attendance data as CSV So that I can analyze and share reports.
+
+Acceptance Criteria:
+Scenario: CSV export
+Given attendance records
+When I request export
+Then a CSV file is generated with all relevant fields
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E04.1
+- Notes: Include filters for date/employee
