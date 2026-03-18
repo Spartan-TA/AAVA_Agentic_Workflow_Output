@@ -1,0 +1,61 @@
+EPIC E06: Leave & Absence Management
+
+===========================================
+
+Title: Employee Leave Request
+User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my absence is recorded and processed.
+Acceptance Criteria:
+Scenario: Submitting a leave request
+Given I am logged in as an employee
+When I submit a leave request with valid dates and type
+Then the request is created and routed to my supervisor for approval
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Validates against available balance.
+
+===========================================
+
+Title: Supervisor Leave Approval
+User Story: As a supervisor, I want to approve or deny leave requests so that staffing levels are maintained.
+Acceptance Criteria:
+Scenario: Approving a leave request
+Given a pending leave request exists
+When I approve the request
+Then the employee's leave balance is updated and the schedule is flagged for coverage
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Notification sent to employee.
+
+===========================================
+
+Title: Track Leave Accruals
+User Story: As an employee, I want to view my leave accrual balances so that I know how much leave I can take.
+Acceptance Criteria:
+Scenario: Viewing leave balance
+Given I am logged in as an employee
+When I view my leave dashboard
+Then my current PTO, sick, and unpaid leave balances are displayed
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02
+- Notes: Accrual rules configurable per policy.
+
+===========================================
+
+Title: Exclude Approved Leave from Scheduling and Payroll
+User Story: As a system, I want approved leaves to automatically update schedules and payroll exports so that employees are not scheduled or paid incorrectly.
+Acceptance Criteria:
+Scenario: Leave integration
+Given a leave request is approved
+When the schedule and payroll export are generated
+Then the employee is excluded from scheduled shifts and payroll hours for the leave period
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E05, E11
+- Notes: Critical for payroll accuracy.
