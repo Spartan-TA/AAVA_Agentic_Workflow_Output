@@ -1,0 +1,76 @@
+EPIC E13: Integration Layer (HRIS/WMS APIs)
+
+===========================================
+
+Title: Secure REST API Endpoints
+User Story: As an integration developer, I want to access JWT/OAuth2-secured REST APIs so that I can synchronize data with external systems.
+Acceptance Criteria:
+Scenario: API authentication
+Given I have valid credentials
+When I call the API
+Then I receive data only if authorized
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02, E03
+- Notes: Token-based authentication.
+
+===========================================
+
+Title: Sync Employees from HRIS
+User Story: As a system, I want to sync new hires and terminations from HRIS so that employee records are up to date.
+Acceptance Criteria:
+Scenario: HRIS sync job
+Given new hires/terms exist in HRIS
+When the sync job runs
+Then employee records are created or updated accordingly
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02
+- Notes: Scheduled sync jobs.
+
+===========================================
+
+Title: Sync Location and Department from WMS
+User Story: As a system, I want to sync location and department data from WMS so that employee assignments are accurate.
+Acceptance Criteria:
+Scenario: WMS sync
+Given location/department changes in WMS
+When the sync job runs
+Then employee assignments are updated
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02
+- Notes: Real-time or batch sync.
+
+===========================================
+
+Title: Event Webhooks
+User Story: As an integration partner, I want to receive webhooks for key events so that I can trigger downstream processes.
+Acceptance Criteria:
+Scenario: Webhook delivery
+Given a subscribed event occurs
+When the webhook is triggered
+Then the payload is delivered idempotently to the configured endpoint
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E13
+- Notes: Retry logic for failed webhooks.
+
+===========================================
+
+Title: API Documentation
+User Story: As a developer, I want OpenAPI documentation for all endpoints so that I can integrate efficiently.
+Acceptance Criteria:
+Scenario: Viewing API docs
+Given I access the documentation endpoint
+When I view the docs
+Then all endpoints, schemas, and examples are present
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E13
+- Notes: Auto-generated from code.
