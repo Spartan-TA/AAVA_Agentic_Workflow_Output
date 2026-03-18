@@ -1,0 +1,94 @@
+### E05: Shift & Schedule Management
+
+**User Story 5.1**
+Title: Create and Manage Shift Templates
+
+User Story: As an HR user I want to define recurring shift templates So that scheduling is efficient and consistent.
+
+Acceptance Criteria:
+Scenario: Shift template CRUD
+Given the shift management UI
+When I create/edit/delete a template
+Then the template is persisted and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03, E04
+- Notes: Support for rotations and overtime rules
+
+---
+
+**User Story 5.2**
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor I want to assign shifts to employees So that staffing requirements are met.
+
+Acceptance Criteria:
+Scenario: Shift assignment
+Given available employees and shifts
+When I assign shifts
+Then assignments are saved and visible to employees
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E05.1
+- Notes: Bulk assignment supported
+
+---
+
+**User Story 5.3**
+Title: Detect and Prevent Scheduling Conflicts
+
+User Story: As a scheduler I want the system to prevent overlapping or conflicting shifts So that employees are not double-booked.
+
+Acceptance Criteria:
+Scenario: Conflict detection
+Given an employee with a scheduled shift
+When I try to assign an overlapping shift
+Then the system blocks the action and shows an error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E05.2
+- Notes: Includes blackout dates and operation calendars
+
+---
+
+**User Story 5.4**
+Title: View Personal Upcoming Shifts
+
+User Story: As a worker I want to view my upcoming shifts So that I can plan accordingly.
+
+Acceptance Criteria:
+Scenario: View schedule
+Given assigned shifts
+When I log in
+Then I see a list/calendar of my upcoming shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E05.2
+- Notes: Mobile-friendly view
+
+---
+
+**User Story 5.5**
+Title: Audit Shift Assignment Changes
+
+User Story: As an auditor I want all shift assignment changes logged So that compliance is ensured.
+
+Acceptance Criteria:
+Scenario: Audit log entry
+Given a shift assignment change
+When the change is made
+Then an audit entry is created with actor, timestamp, and details
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E05.2
+- Notes: Integrate with central audit trail
