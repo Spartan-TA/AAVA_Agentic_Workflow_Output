@@ -1,0 +1,75 @@
+### E15: Reporting & Analytics
+
+**User Story 15.1**
+Title: Attendance and Overtime Reports
+
+User Story: As a Supervisor I want to generate attendance and overtime reports by date, department, and shift So that I can manage staffing.
+
+Acceptance Criteria:
+Scenario: Report generation
+Given attendance data exists
+When I filter and export
+Then the report is generated within 10 seconds for up to 50k rows
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E04, E05, E06, E14
+- Notes: Export formats: CSV, PDF
+
+---
+
+**User Story 15.2**
+Title: Leave Balance and Certification Status Reports
+
+User Story: As an HR Admin I want to report on leave balances and certification statuses So that compliance is maintained.
+
+Acceptance Criteria:
+Scenario: Compliance report
+Given leave and certification data
+When I generate the report
+Then it reflects current balances and expiry statuses
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E06, E07, E14
+- Notes: Role-based access enforced
+
+---
+
+**User Story 15.3**
+Title: Safety KPI Dashboard
+
+User Story: As a Safety Officer I want to view safety KPIs and trends So that I can monitor and improve safety performance.
+
+Acceptance Criteria:
+Scenario: KPI dashboard
+Given incident data
+When I access the dashboard
+Then KPIs and trends are displayed and filterable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E08, E14
+- Notes: Metrics endpoints available for BI
+
+---
+
+**User Story 15.4**
+Title: Role-Based Analytics Dashboards
+
+User Story: As a Manager I want dashboards tailored to my role So that I see relevant analytics.
+
+Acceptance Criteria:
+Scenario: Role-based dashboard
+Given I log in
+When I access analytics
+Then I see dashboards filtered by my permissions
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E14
+- Notes: Dashboards must be performant
