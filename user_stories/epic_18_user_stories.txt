@@ -1,0 +1,56 @@
+### E18: Localization & Multi-Tenant
+
+**User Story 18.1**
+Title: Multi-Language UI Support
+
+User Story: As a User I want to select my preferred language So that I can use the system comfortably.
+
+Acceptance Criteria:
+Scenario: Language selection
+Given multiple languages are supported
+When I select a language
+Then all UI elements are displayed in that language
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: None
+- Notes: Language files managed centrally
+
+---
+
+**User Story 18.2**
+Title: Tenant-Specific Configuration
+
+User Story: As a System Admin I want each tenant to have separate configuration and data So that multiple warehouses can use the system securely.
+
+Acceptance Criteria:
+Scenario: Tenant isolation
+Given multiple tenants exist
+When a user logs in
+Then they only see data for their tenant
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: None
+- Notes: Tenant isolation enforced at all layers
+
+---
+
+**User Story 18.3**
+Title: Localized Notification Templates
+
+User Story: As a User I want notifications and announcements in my preferred language So that I understand all communications.
+
+Acceptance Criteria:
+Scenario: Localized notifications
+Given my language preference
+When notifications are sent
+Then templates are localized accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E12
+- Notes: Fallback to default language if missing
