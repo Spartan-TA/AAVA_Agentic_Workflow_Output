@@ -1,0 +1,59 @@
+### E03: Role Based Access Control (RBAC)
+
+**User Story 1**
+Title: Enforce Role-Based Permissions
+User Story: As an ADMIN I want to assign roles and restrict access So that sensitive operations are protected.
+Acceptance Criteria:
+Scenario: Unauthorized request returns 401
+  Given I am not authenticated
+  When I access a protected endpoint
+  Then I receive a 401 error
+Scenario: Forbidden action returns 403
+  Given I am a WORKER
+  When I try to access ADMIN-only endpoint
+  Then I receive a 403 error
+Scenario: ADMIN manages all records
+  Given I am an ADMIN
+  When I access any employee record
+  Then I have full permissions
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: E01, E02
+Notes: Security rules covered by tests.
+
+**User Story 2**
+Title: Row-Level Security for Supervisors
+User Story: As a SUPERVISOR I want to access only my team's records So that I cannot view or modify unrelated data.
+Acceptance Criteria:
+Scenario: Supervisor sees only team
+  Given I am a SUPERVISOR
+  When I list employees
+  Then I see only my direct reports
+Scenario: Attempt to access others blocked
+  Given I am a SUPERVISOR
+  When I access another team's employee
+  Then I receive a 403 error
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E01, E02
+Notes: Team assignment required.
+
+**User Story 3**
+Title: API Key/OAuth2 Toggle
+User Story: As a DEVOPS I want to toggle between API key and OAuth2 So that I can support different integration scenarios.
+Acceptance Criteria:
+Scenario: API key enabled
+  Given API key mode is on
+  When I authenticate with a valid key
+  Then I gain access
+Scenario: OAuth2 enabled
+  Given OAuth2 mode is on
+  When I authenticate via OAuth2
+  Then I gain access
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02
+Notes: Configurable via properties.
