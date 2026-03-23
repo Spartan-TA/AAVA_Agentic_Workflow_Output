@@ -1,0 +1,12 @@
+Title: Project Scaffolding & Domain Setup
+User Story: As a developer I want to initialize a Spring Boot project with standardized modules so that delivery is accelerated and consistency is enforced across the warehouse EMS.
+Acceptance Criteria:
+Scenario: Successful project scaffolding
+Given I have cloned the repository
+When I build and run the project
+Then it should run on port 8080, the README should have build/run steps, Actuator health endpoint returns UP, base package structure is created, and Flyway/Liquibase runs baseline migration.
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: None
+- Notes: Ensure all modules (employee, scheduling, attendance, safety) are included in base setup.
