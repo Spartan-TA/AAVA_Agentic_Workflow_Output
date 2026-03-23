@@ -1,0 +1,12 @@
+Title: Mobile Access (PWA)
+User Story: As a warehouse worker I want responsive mobile views for core flows (clock-in/out, schedules, leave, announcements) so that I can use the system on shared or personal devices, even offline.
+Acceptance Criteria:
+Scenario: Mobile access and offline support
+Given I access the EMS from a mobile device
+When I use core flows
+Then the app is installable as a PWA, offline queue for clock events is available with conflict resolution, and Lighthouse PWA score is met.
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Time & Attendance (Clock In/Out), Shift & Schedule Management, Leave & Absence Management, Notifications & Announcements
+- Notes: Responsive views; offline-friendly via PWA manifest.
