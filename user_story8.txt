@@ -1,0 +1,12 @@
+Title: Safety Incidents & OSHA Reporting
+User Story: As a safety officer I want to record incidents and generate OSHA reports so that safety culture is improved and regulatory requirements are met.
+Acceptance Criteria:
+Scenario: Incident recording and OSHA reporting
+Given an incident occurs in the warehouse
+When I record the incident with severity, location, description, and involved employees
+Then the status workflow (Open, Investigating, Resolved) is tracked, OSHA 300/300A fields are exportable, and metrics dashboard endpoints are available.
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee Master Data (CRUD), Role Based Access Control (RBAC)
+- Notes: Workflow for investigation and corrective actions.
