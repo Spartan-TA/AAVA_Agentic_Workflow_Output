@@ -1,0 +1,65 @@
+### E03: Role Based Access Control (RBAC)
+
+**User Story 1: Role-Based Endpoint Security**
+Title: Secure Endpoints by Role
+User Story: As a system administrator I want to restrict API endpoints by user role So that only authorized users can perform sensitive actions
+Acceptance Criteria:
+Scenario: Unauthorized access
+Given a user is not authenticated
+When they access a protected endpoint
+Then a 401 Unauthorized is returned
+Scenario: Forbidden action
+Given a user is authenticated as WORKER
+When they attempt to access an ADMIN-only endpoint
+Then a 403 Forbidden is returned
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Roles: ADMIN, HR, SUPERVISOR, WORKER
+
+**User Story 2: Method-Level Security**
+Title: Enforce Method-Level Security
+User Story: As a developer I want to enforce security at the method level So that business logic is protected even if endpoints are bypassed
+Acceptance Criteria:
+Scenario: SUPERVISOR limited to team
+Given a SUPERVISOR user
+When they access employee data
+Then they only see employees in their team
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Use Spring Security annotations
+
+**User Story 3: API Key/OAuth2 Toggle**
+Title: Support API Key and OAuth2 Authentication
+User Story: As a system administrator I want to toggle between API key and OAuth2 authentication So that integration with different clients is flexible
+Acceptance Criteria:
+Scenario: API key enabled
+Given API key auth is configured
+When a request includes a valid API key
+Then access is granted
+Scenario: OAuth2 enabled
+Given OAuth2 is configured
+When a valid token is provided
+Then access is granted
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Configurable via application properties
+
+**User Story 4: Security Test Coverage**
+Title: Automated Security Tests
+User Story: As a QA engineer I want automated tests for security rules So that unauthorized access is prevented
+Acceptance Criteria:
+Scenario: Security tests run
+Given the test suite is executed
+When security tests are run
+Then all access rules are validated and coverage is reported
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Must cover all roles and endpoints
