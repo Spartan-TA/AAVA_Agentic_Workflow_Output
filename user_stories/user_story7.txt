@@ -1,0 +1,12 @@
+Title: Enforce Unique Badge ID
+User Story: As a system I want to enforce unique badgeId for each employee So that duplicate records are prevented.
+Acceptance Criteria:
+Scenario: Duplicate badgeId rejected
+Given an employee with badgeId 123 exists
+When I try to create another with badgeId 123
+Then the API returns a validation error
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Employee create API
+- Notes: BadgeId must be unique
