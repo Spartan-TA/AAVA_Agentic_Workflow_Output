@@ -1,0 +1,12 @@
+Title: Employee CRUD API - Create Employee
+User Story: As an HR admin I want to create new employee records with name, badgeId, role, department, shiftGroup, hireDate, and status So that all employee data is centrally managed.
+Acceptance Criteria:
+Scenario: Create employee via API
+Given valid employee data
+When I POST to /employees
+Then a new employee is created, badgeId is unique, and the response matches OpenAPI schema
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Must validate required fields
