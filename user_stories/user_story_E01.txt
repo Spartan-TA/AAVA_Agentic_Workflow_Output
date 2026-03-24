@@ -1,0 +1,57 @@
+### E01: Project Scaffolding & Domain Setup
+
+**User Story 1: Project Initialization**
+Title: Initialize Spring Boot Project Structure
+User Story: As a developer I want to initialize a Spring Boot project with Maven So that I have a standardized foundation for all modules
+Acceptance Criteria:
+Scenario: Project builds and runs
+Given the repository is cloned
+When I run `mvn spring-boot:run`
+Then the application starts on port 8080 and shows "UP" on the Actuator health endpoint
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run instructions
+
+**User Story 2: Core Module & Package Setup**
+Title: Set Up Core Modules and Base Packages
+User Story: As a developer I want to create base packages and core modules (employee, scheduling, attendance, safety) So that code is organized and scalable
+Acceptance Criteria:
+Scenario: Base package structure exists
+Given the project is initialized
+When I inspect the source tree
+Then I see separate packages for employee, scheduling, attendance, and safety
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project Initialization
+- Notes: Follows company package naming conventions
+
+**User Story 3: Database Migration Tool Integration**
+Title: Integrate Flyway/Liquibase for DB Migrations
+User Story: As a developer I want to add Flyway or Liquibase So that database schema changes are versioned and repeatable
+Acceptance Criteria:
+Scenario: Baseline migration runs
+Given the application starts
+When migrations are applied
+Then the baseline schema is created and versioned
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project Initialization
+- Notes: Migration scripts stored in version control
+
+**User Story 4: Health Monitoring Enablement**
+Title: Enable Spring Boot Actuator
+User Story: As an operator I want Actuator endpoints enabled So that I can monitor application health
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I GET /actuator/health
+Then the response is {"status":"UP"}
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project Initialization
+- Notes: Secure actuator endpoints as needed
