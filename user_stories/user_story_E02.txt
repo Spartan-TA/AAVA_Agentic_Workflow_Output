@@ -1,0 +1,69 @@
+### E02: Employee Master Data (CRUD)
+
+**User Story 1: Employee Creation API**
+Title: Create Employee Records via API
+User Story: As an HR user I want to create employee records with name, badgeId, role, department, shiftGroup, hireDate, and status So that all employee data is centralized
+Acceptance Criteria:
+Scenario: Valid employee creation
+Given required fields are provided
+When I POST to /employees
+Then a new employee is created with a unique badgeId
+Scenario: Duplicate badgeId
+Given an employee with badgeId X exists
+When I POST another employee with badgeId X
+Then the request is rejected with a validation error
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: badgeId must be unique
+
+**User Story 2: Employee Data Retrieval**
+Title: Retrieve Employee Records with Filtering and Pagination
+User Story: As an HR user I want to retrieve employee records with filtering and pagination So that I can efficiently manage large employee lists
+Acceptance Criteria:
+Scenario: Paginated retrieval
+Given there are more than 20 employees
+When I GET /employees?page=1&size=20
+Then I receive 20 employees and pagination metadata
+Scenario: Filter by department
+Given employees in multiple departments
+When I GET /employees?department=Shipping
+Then only employees in Shipping are returned
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Filtering by all fields supported
+
+**User Story 3: Employee Update and Soft Delete**
+Title: Update and Soft-Delete Employee Records
+User Story: As an HR user I want to update employee details and soft-delete records So that data remains accurate and recoverable
+Acceptance Criteria:
+Scenario: Update employee
+Given an employee exists
+When I PATCH /employees/{id} with new data
+Then the employee record is updated
+Scenario: Soft-delete employee
+Given an employee exists
+When I DELETE /employees/{id}
+Then the employee is marked as inactive but not removed from the database
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Soft-deleted employees are excluded from active queries
+
+**User Story 4: OpenAPI Documentation**
+Title: Document Employee APIs with OpenAPI
+User Story: As a developer I want all employee APIs documented in OpenAPI with examples So that integration is easy and clear
+Acceptance Criteria:
+Scenario: OpenAPI schema available
+Given the API is deployed
+When I access /v3/api-docs
+Then all employee endpoints are documented with request/response examples
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01
+- Notes: Keep docs up to date with API changes
