@@ -1,0 +1,65 @@
+### E04: Time & Attendance (Clock In/Out)
+
+**User Story 1: Clock-In/Clock-Out Endpoints**
+Title: Record Clock-In and Clock-Out Events
+User Story: As a worker I want to clock in and out via API So that my attendance is accurately tracked
+Acceptance Criteria:
+Scenario: Valid clock-in
+Given my shift is scheduled
+When I POST to /attendance/clock-in with my badgeId
+Then my clock-in is recorded with timestamp and device info
+Scenario: Valid clock-out
+Given I am clocked in
+When I POST to /attendance/clock-out
+Then my clock-out is recorded and hours are calculated
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Device and geofence data captured
+
+**User Story 2: Missed Punches and Corrections**
+Title: Handle Missed Punches and Corrections
+User Story: As a supervisor I want to approve corrections for missed punches So that attendance records are accurate
+Acceptance Criteria:
+Scenario: Missed punch correction
+Given a worker missed a clock-in
+When they submit a correction request
+Then an approval task is created for the supervisor
+Scenario: Correction approved
+Given a correction is pending
+When the supervisor approves
+Then the attendance record is updated
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: All corrections logged for audit
+
+**User Story 3: Attendance Reporting**
+Title: Export Attendance Reports
+User Story: As an HR user I want to export attendance data as CSV So that I can reconcile payroll
+Acceptance Criteria:
+Scenario: Export attendance
+Given attendance records exist
+When I request a CSV export
+Then the file contains all relevant fields and totals
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Export includes shift association and corrections
+
+**User Story 4: Automatic Shift Association**
+Title: Associate Clock Events with Shifts
+User Story: As a system I want clock-in/out events to be automatically linked to scheduled shifts So that hours worked per shift are calculated
+Acceptance Criteria:
+Scenario: Clock-in during shift
+Given a worker clocks in during their scheduled shift
+When the event is recorded
+Then it is associated with the correct shift
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Handles overlapping and overnight shifts
