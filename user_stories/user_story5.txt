@@ -1,0 +1,12 @@
+Title: Employee CRUD API - Read, Update, Delete
+User Story: As an HR admin I want to view, update, and soft-delete employee records So that employee data stays current and historical records are preserved.
+Acceptance Criteria:
+Scenario: Update and soft-delete employee
+Given an existing employee
+When I PATCH or DELETE /employees/{id}
+Then the record is updated or marked as deleted, not physically removed
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee create API
+- Notes: Support pagination and filtering
