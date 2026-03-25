@@ -1,0 +1,64 @@
+---
+## E03: Role-Based Access Control (RBAC)
+
+### Story 1: Implement User Roles and Permissions
+- **User Story:** As an admin, I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users so that access is controlled.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a user with role X
+  When accessing a protected endpoint
+  Then access is granted or denied based on role permissions
+  ```
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E01, E02
+- **Notes:** Roles stored in DB or config.
+
+### Story 2: Secure Endpoints with Method/Endpoint Security
+- **User Story:** As a developer, I want to secure sensitive endpoints so that only authorized roles can perform certain actions.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Unauthorized Access
+    Given a user is not authenticated
+    When accessing a protected endpoint
+    Then a 401 Unauthorized is returned
+
+  Scenario: Forbidden Action
+    Given a user is authenticated but lacks permission
+    When accessing a restricted endpoint
+    Then a 403 Forbidden is returned
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E03-1
+- **Notes:** Test coverage required.
+
+### Story 3: Row-Level Security for Supervisors
+- **User Story:** As a supervisor, I want to access only my team's records so that I cannot view or modify other teams' data.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a supervisor is logged in
+  When listing employees
+  Then only employees in their department/team are visible
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E03-1, E02
+- **Notes:** Enforce via query filters.
+
+### Story 4: API Key/OAuth2 Toggle via Config
+- **User Story:** As a DevOps engineer, I want to toggle between API key and OAuth2 authentication so that integration scenarios are supported.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the application config is set to API key mode
+  When authenticating
+  Then API key headers are required
+
+  Given the config is set to OAuth2
+  When authenticating
+  Then OAuth2 tokens are required
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E03-1
+- **Notes:** Configurable at runtime.
