@@ -1,0 +1,20 @@
+Title: Equipment & Asset Assignment - Asset Registry CRUD
+
+User Story: As an asset manager, I want to add, update, and delete assets so that equipment inventory is accurate.
+
+Acceptance Criteria:
+Scenario: Add Asset
+Given valid asset details
+When I POST /assets
+Then the asset is added to registry
+
+Scenario: Update/Delete Asset
+Given an existing asset
+When I PUT/PATCH/DELETE /assets/{id}
+Then the asset is updated or deleted
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Asset condition state tracked
