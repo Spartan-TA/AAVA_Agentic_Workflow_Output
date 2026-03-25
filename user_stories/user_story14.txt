@@ -1,0 +1,20 @@
+Title: Leave & Absence Management - Leave Request
+
+User Story: As an employee, I want to request PTO, sick, or unpaid leave so that my time off is tracked.
+
+Acceptance Criteria:
+Scenario: Request Leave
+Given available leave balance
+When I submit a leave request
+Then the request is created and pending approval
+
+Scenario: Leave Approval
+Given a pending leave request
+When supervisor approves/denies
+Then the balance updates and scheduled shifts are flagged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: E02, E03, E05
+- Notes: Approved leaves excluded from scheduling/payroll
