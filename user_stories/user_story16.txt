@@ -1,0 +1,20 @@
+Title: Training & Certification Tracking - Certification CRUD
+
+User Story: As a supervisor, I want to add, update, and delete employee certifications so that compliance is maintained.
+
+Acceptance Criteria:
+Scenario: Add Certification
+Given valid certification details
+When I POST /certifications
+Then the certification is added to employee profile
+
+Scenario: Update/Delete Certification
+Given an existing certification
+When I PUT/PATCH/DELETE /certifications/{id}
+Then the certification is updated or deleted
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Upload proof documents
