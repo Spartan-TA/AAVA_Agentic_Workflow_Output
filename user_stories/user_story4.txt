@@ -1,0 +1,15 @@
+Title: Employee Master Data - Badge ID Enforcement
+
+User Story: As a system, I want to enforce unique badge IDs for employees so that duplicate badge assignments are prevented.
+
+Acceptance Criteria:
+Scenario: Duplicate Badge ID
+Given an existing employee with badgeId X
+When I try to create another employee with badgeId X
+Then the request is rejected with a validation error
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Validation must occur at API and DB level
