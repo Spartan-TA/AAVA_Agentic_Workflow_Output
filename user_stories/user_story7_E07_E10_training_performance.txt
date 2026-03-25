@@ -1,0 +1,287 @@
+---
+## E07: Training & Certification Tracking
+
+### Story 1: CRUD Certification Records
+- **User Story:** As an HR user, I want to create, update, and delete certification records for employees so that qualifications are tracked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Add Certification
+    Given an employee exists
+    When I add a certification with type and expiry
+    Then the certification is stored and visible on their profile
+
+  Scenario: Delete Certification
+    Given a certification is no longer valid
+    When I delete it
+    Then it is removed from the employee's record
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E02, E03
+- **Notes:** Forklift, safety, etc.
+
+### Story 2: Alert on Expiring Certifications
+- **User Story:** As a supervisor, I want to be alerted before certifications expire so that renewals can be scheduled.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a certification is expiring in 30 or 7 days
+  When I view alerts
+  Then I see a notification for the expiring certification
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E12
+- **Notes:** Email/SMS/in-app.
+
+### Story 3: Block Assignment to Tasks Requiring Certification
+- **User Story:** As a scheduler, I want to prevent assignment of employees to tasks requiring valid certifications if their cert is expired.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an employee's certification is expired
+  When I assign them to a task requiring that cert
+  Then the system blocks the assignment and notifies me
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E05, E07-1
+- **Notes:** Applies to shift assignment.
+
+### Story 4: Upload Proof of Certification Documents
+- **User Story:** As an HR user, I want to upload proof documents for certifications so that compliance can be verified.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a certification record
+  When I upload a document
+  Then the file is stored and linked to the certification
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E07-1
+- **Notes:** PDF/JPG/PNG support.
+
+### Story 5: Display Certification Status on Employee Profile
+- **User Story:** As a supervisor, I want to view certification status on employee profiles so that I can quickly verify qualifications.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I view an employee profile
+  When certifications exist
+  Then I see a list with type, expiry, and status (valid/expiring/expired)
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E07-1
+- **Notes:** Color-coded status.
+
+---
+## E08: Safety Incidents & OSHA Reporting
+
+### Story 1: Record Safety Incidents and Near Misses
+- **User Story:** As a worker, I want to report safety incidents and near misses so that hazards are tracked and addressed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Submit Incident
+    Given I am logged in
+    When I submit an incident with severity, location, and description
+    Then the incident is recorded and assigned status "Open"
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E02, E03
+- **Notes:** Attach photos if possible.
+
+### Story 2: Incident Investigation Workflow
+- **User Story:** As a safety officer, I want to manage incident investigation workflow so that corrective actions are tracked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an incident is "Open"
+  When I start investigation
+  Then status changes to "Investigating"
+
+  When investigation is complete
+  Then status changes to "Resolved"
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E08-1
+- **Notes:** Track investigator and actions.
+
+### Story 3: OSHA Report Generation
+- **User Story:** As a compliance officer, I want to generate OSHA 300/300A reports so that regulatory requirements are met.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given incidents are recorded
+  When I request an OSHA report
+  Then a CSV/PDF is generated with required fields
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E08-1
+- **Notes:** Export endpoint.
+
+### Story 4: Safety Metrics Dashboard
+- **User Story:** As a manager, I want to view safety KPIs so that I can monitor trends and take action.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given incidents exist
+  When I view the dashboard
+  Then I see metrics for incident count, severity, and resolution time
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E08-1
+- **Notes:** Role-based access.
+
+---
+## E09: Equipment & Asset Assignment
+
+### Story 1: CRUD Asset Registry
+- **User Story:** As an asset manager, I want to create, update, and delete assets so that all equipment is tracked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Add Asset
+    Given valid asset details
+    When I POST to /assets
+    Then the asset is stored in the registry
+
+  Scenario: Delete Asset
+    Given an asset is obsolete
+    When I DELETE /assets/{id}
+    Then it is removed from the registry
+  ```
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E02, E03, E07
+- **Notes:** Scanners, forklifts, PPE.
+
+### Story 2: Assign and Return Assets to Employees
+- **User Story:** As a supervisor, I want to assign and track asset check-out/return so that equipment usage is accountable.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Assign Asset
+    Given an asset and employee exist
+    When I assign the asset
+    Then the assignment is logged
+
+  Scenario: Return Asset
+    Given an asset is assigned
+    When it is returned
+    Then the return is logged and asset is available
+  ```
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E09-1
+- **Notes:** Track condition on return.
+
+### Story 3: Block Asset Assignment if Certification Invalid
+- **User Story:** As a supervisor, I want to prevent assignment of certain assets if the employee lacks valid certification.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an employee's certification is expired
+  When I assign a restricted asset
+  Then the system blocks the assignment and notifies me
+  ```
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E07, E09-2
+- **Notes:** Forklifts, etc.
+
+### Story 4: Asset History Log
+- **User Story:** As an auditor, I want to view the history of asset assignments and returns so that I can trace usage.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an asset or employee
+  When I view the history log
+  Then I see all assignments, returns, and condition notes
+  ```
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E09-2
+- **Notes:** Filter by asset or employee.
+
+### Story 5: Report Overdue Asset Returns
+- **User Story:** As an asset manager, I want to report on overdue asset returns so that missing equipment can be recovered.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given assets are overdue for return
+  When I generate a report
+  Then I see a list of overdue assets and assigned employees
+  ```
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E09-2
+- **Notes:** Exportable report.
+
+---
+## E10: Performance Reviews & Goals
+
+### Story 1: Create Review Templates
+- **User Story:** As an HR user, I want to create templates for performance reviews so that reviews are consistent.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Add Review Template
+    Given valid template details
+    When I POST to /reviews/templates
+    Then the template is created and available for use
+  ```
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E02, E03
+- **Notes:** Quarterly/annual.
+
+### Story 2: Assign Reviews to Employees
+- **User Story:** As a supervisor, I want to assign review cycles to employees so that performance is tracked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a review template exists
+  When I assign it to employees
+  Then the review cycle is created and visible to both parties
+  ```
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E10-1
+- **Notes:** Role-based access.
+
+### Story 3: Submit and Acknowledge Reviews
+- **User Story:** As a supervisor or employee, I want to submit and acknowledge reviews so that feedback is documented.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Submit Review
+    Given a review cycle is active
+    When supervisor submits ratings and comments
+    Then the review is saved and visible to employee
+
+  Scenario: Employee Acknowledgement
+    Given a review is submitted
+    When employee acknowledges
+    Then the review is marked as acknowledged and locked
+  ```
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E10-2
+- **Notes:** Immutable after sign-off.
+
+### Story 4: PDF Export of Reviews
+- **User Story:** As an HR user, I want to export completed reviews as PDF so that records can be archived.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a review is completed
+  When I request an export
+  Then a PDF file is generated with all review details
+  ```
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E10-3
+- **Notes:** Export endpoint.
+
+### Story 5: Role-Based Review Visibility
+- **User Story:** As a user, I want to see only reviews relevant to my role so that confidentiality is maintained.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am logged in
+  When I view reviews
+  Then I see only those where I am the subject, supervisor, or HR
+  ```
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E10-2
+- **Notes:** RBAC enforced.
