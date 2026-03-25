@@ -1,0 +1,15 @@
+Title: Safety Incidents & OSHA Reporting - Metrics Dashboard
+
+User Story: As a manager, I want to view safety KPIs and metrics so that I can monitor warehouse safety performance.
+
+Acceptance Criteria:
+Scenario: View Dashboard
+Given recorded incidents
+When I access the metrics endpoint
+Then safety KPIs are displayed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Dashboard endpoints available
