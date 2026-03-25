@@ -1,0 +1,15 @@
+Title: Training & Certification Tracking - Assignment Blocking
+
+User Story: As a scheduler, I want to block assignment to tasks requiring expired certifications so that only qualified staff are assigned.
+
+Acceptance Criteria:
+Scenario: Assignment Blocking
+Given an employee with expired certification
+When I assign them to a task requiring certification
+Then the assignment is blocked and error shown
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Scheduling checks enforced
