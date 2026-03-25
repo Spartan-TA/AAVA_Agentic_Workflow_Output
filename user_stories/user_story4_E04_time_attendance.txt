@@ -1,0 +1,62 @@
+---
+## E04: Time & Attendance (Clock In/Out)
+
+### Story 1: Implement Clock-In/Clock-Out Endpoints
+- **User Story:** As a worker, I want to clock in and out via API so that my attendance is accurately recorded.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Valid Clock-In
+    Given I am within geofence and on shift
+    When I POST to /attendance/clock-in
+    Then my clock-in is recorded with timestamp and device info
+
+  Scenario: Valid Clock-Out
+    Given I am clocked in
+    When I POST to /attendance/clock-out
+    Then my clock-out is recorded
+  ```
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E02, E03
+- **Notes:** Geofence optional.
+
+### Story 2: Calculate Hours Worked per Shift
+- **User Story:** As a payroll admin, I want hours worked to be calculated per shift so that payroll is accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a worker has clocked in and out
+  When I view their attendance record
+  Then total hours worked for the shift are displayed
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E04-1
+- **Notes:** Handle overnight shifts.
+
+### Story 3: Handle Missed Punches and Corrections
+- **User Story:** As a supervisor, I want to correct missed punches so that attendance records are accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Missed Punch Correction
+    Given a worker missed a clock-in/out
+    When a correction is submitted
+    Then an approval task is generated for supervisor
+    And upon approval, the record is updated
+  ```
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E04-1
+- **Notes:** Audit corrections.
+
+### Story 4: Export Attendance Reports
+- **User Story:** As an HR user, I want to export attendance data as CSV so that I can analyze and share records.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given attendance data exists
+  When I request an export
+  Then a CSV file is generated with clock-in/out and hours worked
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E04-2
+- **Notes:** Export endpoint required.
