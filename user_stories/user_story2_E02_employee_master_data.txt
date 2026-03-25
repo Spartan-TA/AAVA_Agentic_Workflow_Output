@@ -1,0 +1,71 @@
+---
+## E02: Employee Master Data (CRUD)
+
+### Story 1: Create Employee Entity and Repository
+- **User Story:** As a developer, I want an Employee entity and repository so that employee data can be persisted and retrieved.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given the application is running
+  When I create an Employee record
+  Then the record is stored with fields: name, badgeId, role, department, shiftGroup, hireDate, status
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E01
+- **Notes:** badgeId must be unique.
+
+### Story 2: Implement Employee CRUD REST APIs
+- **User Story:** As an HR user, I want to create, read, update, and delete employee records via REST APIs so that employee data is managed centrally.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Create Employee
+    Given valid employee details
+    When I POST to /employees
+    Then the employee is created and returned with a unique badgeId
+
+  Scenario: Update Employee
+    Given an existing employee
+    When I PUT/PATCH to /employees/{id}
+    Then the employee record is updated
+
+  Scenario: Delete Employee
+    Given an existing employee
+    When I DELETE /employees/{id}
+    Then the employee is soft-deleted
+
+  Scenario: List Employees
+    Given multiple employees exist
+    When I GET /employees with pagination and filters
+    Then I receive a paginated, filtered list
+  ```
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E02-1
+- **Notes:** Support OpenAPI docs with examples.
+
+### Story 3: Enforce Unique Badge ID
+- **User Story:** As an HR user, I want badge IDs to be unique so that each employee can be uniquely identified.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an existing employee with badgeId X
+  When I try to create another employee with badgeId X
+  Then the API returns a 409 Conflict error
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E02-2
+- **Notes:** Validation at DB and API level.
+
+### Story 4: Support Soft Delete for Employees
+- **User Story:** As an HR user, I want to soft-delete employees so that historical data is preserved.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an employee is soft-deleted
+  When I GET /employees
+  Then the employee does not appear in active lists
+  And is retrievable with a filter for deleted records
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E02-2
+- **Notes:** Soft delete flag in DB.
