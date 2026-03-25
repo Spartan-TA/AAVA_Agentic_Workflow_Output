@@ -1,0 +1,289 @@
+---
+## E11: Payroll Export Integration
+
+### Story 1: Generate Payroll Export Files
+- **User Story:** As a payroll admin, I want to generate payroll-ready files from attendance and leave data so that payroll processing is automated.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given approved attendance and leave records
+  When I generate a payroll export
+  Then the file matches the provider's schema and totals reconcile with reports
+  ```
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E04, E06
+- **Notes:** Support multiple formats.
+
+### Story 2: Secure Delivery of Payroll Files (SFTP/API)
+- **User Story:** As a payroll admin, I want payroll files delivered securely via SFTP or API so that sensitive data is protected.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a payroll export is generated
+  When delivery is configured for SFTP or API
+  Then the file is sent securely and delivery status is tracked
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E11-1
+- **Notes:** Retry with backoff on failure.
+
+### Story 3: Audit Log for Payroll Exports
+- **User Story:** As an auditor, I want all payroll exports logged so that I can trace data delivery.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a payroll export is generated or delivered
+  When I view the audit log
+  Then I see actor, timestamp, export details, and delivery status
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E14
+- **Notes:** Immutable log.
+
+---
+## E12: Notifications & Announcements
+
+### Story 1: In-App and Email/SMS Notification Delivery
+- **User Story:** As a user, I want to receive notifications for shift changes, expiring certs, approvals, and announcements so that I stay informed.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Notification Delivery
+    Given a relevant event occurs
+    When notifications are enabled
+    Then I receive an in-app and/or email/SMS notification
+  ```
+- **Priority:** Medium
+- **Story Points:** 5
+- **Dependencies:** E03, E05, E06, E07
+- **Notes:** Opt-in/out per channel.
+
+### Story 2: Notification Templates and Localization
+- **User Story:** As a user, I want notification templates to be localized so that I receive messages in my preferred language.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given my locale is set
+  When a notification is sent
+  Then the message is in my preferred language
+  ```
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E12-1
+- **Notes:** Support en/es/fr at minimum.
+
+### Story 3: Notification Delivery Status Tracking
+- **User Story:** As an admin, I want to track notification delivery status so that I can troubleshoot failed messages.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a notification is sent
+  When I view the delivery log
+  Then I see status (delivered, failed, pending) for each channel
+  ```
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E12-1
+- **Notes:** Retry failed deliveries.
+
+### Story 4: Announcements Dashboard Widget
+- **User Story:** As a worker, I want to see announcements on my dashboard so that I don't miss important updates.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given announcements are posted
+  When I log in
+  Then I see a widget with current announcements
+  ```
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E12-1
+- **Notes:** Mark as read/unread.
+
+### Story 5: Quiet Hours Configuration
+- **User Story:** As a user, I want to configure quiet hours so that I am not disturbed outside of work hours.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I have set quiet hours
+  When a notification is triggered during that time
+  Then delivery is deferred until quiet hours end
+  ```
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E12-1
+- **Notes:** Per user setting.
+
+---
+## E13: Integration Layer (HRIS/WMS APIs)
+
+### Story 1: Expose JWT/OAuth2-Secured REST APIs
+- **User Story:** As an integration partner, I want secured REST APIs so that external systems can sync data safely.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I have a valid JWT/OAuth2 token
+  When I call the API
+  Then I can access endpoints per my permissions
+  ```
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E01, E02, E03
+- **Notes:** OpenAPI docs required.
+
+### Story 2: HRIS Sync Job for New Hires/Terms
+- **User Story:** As an HRIS admin, I want a sync job that creates/updates employees from HRIS so that master data is consistent.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given new hires/terms in HRIS
+  When the sync job runs
+  Then employees are created/updated in the system
+  ```
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E13-1
+- **Notes:** Idempotent processing.
+
+### Story 3: WMS Integration for Department/Location
+- **User Story:** As a warehouse manager, I want to sync department and location data with WMS so that assignments are accurate.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given departments/locations in WMS
+  When the sync job runs
+  Then the data is updated in the system
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E13-1
+- **Notes:** Map WMS fields.
+
+### Story 4: Webhooks for Key Events
+- **User Story:** As an integration partner, I want webhooks for events (new hire, term, shift assigned) so that external systems are notified in real time.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a key event occurs
+  When webhooks are configured
+  Then a POST is sent to the configured endpoint with event data
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E13-1
+- **Notes:** Retry on failure.
+
+### Story 5: SSO Integration with IDP
+- **User Story:** As an IT admin, I want SSO integration with our identity provider so that users can log in with corporate credentials.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given SSO is configured
+  When a user logs in
+  Then authentication is handled by the IDP and access is granted
+  ```
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E13-1
+- **Notes:** SAML/OIDC support.
+
+---
+## E14: Audit Trail & Compliance
+
+### Story 1: Log Sensitive Changes with Actor and Timestamp
+- **User Story:** As an auditor, I want all sensitive changes logged with actor and timestamp so that I can trace actions.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a create/update/delete on sensitive data
+  When the action occurs
+  Then an audit log entry is created with actor, timestamp, and before/after values
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E03
+- **Notes:** Applies to PII, schedules, approvals, payroll.
+
+### Story 2: Immutable Audit Log Table
+- **User Story:** As a compliance officer, I want audit logs stored immutably so that tampering is prevented.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given audit logs are stored
+  When I attempt to modify or delete a log entry
+  Then the system prevents the change
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E14-1
+- **Notes:** Use append-only storage.
+
+### Story 3: Export Audit Logs by Date/User/Entity
+- **User Story:** As an auditor, I want to export audit logs filtered by date, user, or entity so that I can conduct investigations.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given audit logs exist
+  When I filter by date, user, or entity
+  Then I can export the filtered logs as CSV
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E14-1
+- **Notes:** Export endpoint.
+
+### Story 4: Automated Tests for Audit Coverage
+- **User Story:** As a QA engineer, I want automated tests to verify audit logging so that coverage is complete.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a sensitive action occurs
+  When tests run
+  Then audit log entries are verified for presence and correctness
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E20
+- **Notes:** Test all sensitive actions.
+
+---
+## E15: Reporting & Analytics
+
+### Story 1: Generate Attendance and Overtime Reports
+- **User Story:** As a manager, I want to generate reports on attendance and overtime so that I can monitor workforce trends.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given attendance and overtime data exists
+  When I generate a report
+  Then I can filter by date, department, and shift
+  And export as CSV or PDF
+  ```
+- **Priority:** Medium
+- **Story Points:** 5
+- **Dependencies:** E04, E05, E14
+- **Notes:** Export within 10s for 50k rows.
+
+### Story 2: Leave Balance and Certification Status Reports
+- **User Story:** As an HR user, I want reports on leave balances and certification status so that I can plan staffing and compliance.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given leave and certification data exists
+  When I generate a report
+  Then I see current balances and expiring/expired certifications
+  ```
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E06, E07, E14
+- **Notes:** Role-based access.
+
+### Story 3: Safety KPI Dashboard
+- **User Story:** As a safety manager, I want a dashboard of safety KPIs so that I can track incident rates and resolution times.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given safety incident data exists
+  When I view the dashboard
+  Then I see KPIs for incident count, severity, and average resolution time
+  ```
+- **Priority:** Medium
+- **Story Points:** 3
+- **Dependencies:** E08, E14
+- **Notes:** Metrics endpoints for BI.
+
+### Story 4: Access Control for Reports and Dashboards
+- **User Story:** As a user, I want access to reports and dashboards to be controlled by role so that sensitive data is protected.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am logged in
+  When I access reports or dashboards
+  Then I see only data permitted by my role
+  ```
+- **Priority:** Medium
+- **Story Points:** 2
+- **Dependencies:** E15-1
+- **Notes:** RBAC enforced.
