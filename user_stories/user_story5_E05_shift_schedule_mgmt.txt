@@ -1,0 +1,73 @@
+---
+## E05: Shift & Schedule Management
+
+### Story 1: CRUD Shift Templates
+- **User Story:** As an HR user, I want to create, update, and delete shift templates so that recurring schedules are easy to manage.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Scenario: Create Shift Template
+    Given valid shift details
+    When I POST to /shifts/templates
+    Then the template is created and available for assignment
+
+  Scenario: Delete Shift Template
+    Given a template is no longer needed
+    When I DELETE /shifts/templates/{id}
+    Then the template is removed
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E02, E03, E04
+- **Notes:** Templates include start/end, breaks, rotation.
+
+### Story 2: Assign Shifts to Employees
+- **User Story:** As a supervisor, I want to assign shifts to employees so that staffing is planned.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a shift template exists
+  When I assign it to employees
+  Then the assignments are visible on their schedules
+  ```
+- **Priority:** High
+- **Story Points:** 3
+- **Dependencies:** E05-1
+- **Notes:** Bulk assignment supported.
+
+### Story 3: Detect and Prevent Scheduling Conflicts
+- **User Story:** As a scheduler, I want to detect conflicts when assigning shifts so that employees are not double-booked.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given an employee has an existing shift
+  When I try to assign an overlapping shift
+  Then the system prevents the assignment and notifies me
+  ```
+- **Priority:** High
+- **Story Points:** 5
+- **Dependencies:** E05-2
+- **Notes:** Includes blackout dates.
+
+### Story 4: Personal Shift View for Workers
+- **User Story:** As a worker, I want to view my upcoming shifts so that I know when to report to work.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given I am logged in
+  When I view my schedule
+  Then I see a list of my assigned shifts with dates and times
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E05-2
+- **Notes:** Mobile-friendly.
+
+### Story 5: Audit Shift Assignment Changes
+- **User Story:** As an auditor, I want all shift assignment changes to be logged so that I can review scheduling history.
+- **Acceptance Criteria (Gherkin):**
+  ```
+  Given a shift assignment is created, updated, or deleted
+  When I review the audit log
+  Then I see the actor, timestamp, and before/after values
+  ```
+- **Priority:** High
+- **Story Points:** 2
+- **Dependencies:** E14
+- **Notes:** Tamper-evident storage.
