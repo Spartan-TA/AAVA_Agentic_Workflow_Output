@@ -1,0 +1,20 @@
+Title: Time & Attendance - Clock In/Out
+
+User Story: As a worker, I want to clock in and out with geofence and device capture so that my attendance is accurately recorded.
+
+Acceptance Criteria:
+Scenario: Clock In
+Given a worker at the warehouse
+When they POST /attendance/clock-in with location and device info
+Then the event is recorded and validated
+
+Scenario: Clock Out
+Given a worker who has clocked in
+When they POST /attendance/clock-out
+Then the event is recorded and shift hours calculated
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Automatic shift association
