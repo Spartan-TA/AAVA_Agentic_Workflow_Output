@@ -1,0 +1,20 @@
+Title: Time & Attendance - Missed Punch Correction
+
+User Story: As a supervisor, I want to handle missed punches and corrections so that attendance records are accurate.
+
+Acceptance Criteria:
+Scenario: Missed Punch
+Given a worker missed clock-in/out
+When a correction is submitted
+Then an approval task is created for supervisor
+
+Scenario: Correction Approval
+Given a pending correction
+When supervisor approves
+Then attendance is updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Reports exportable as CSV
