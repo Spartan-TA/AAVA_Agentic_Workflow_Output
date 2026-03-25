@@ -1,0 +1,15 @@
+Title: Shift & Schedule Management - Conflict Detection
+
+User Story: As a scheduler, I want to detect and prevent shift conflicts so that employees are not double-booked.
+
+Acceptance Criteria:
+Scenario: Conflict Detection
+Given overlapping shifts for an employee
+When I assign a new shift
+Then the system prevents assignment and shows an error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Audit entries generated for changes
