@@ -1,0 +1,15 @@
+Title: Role Based Access Control - Row-Level Security
+
+User Story: As a supervisor, I want to access only records for my team so that sensitive data is protected.
+
+Acceptance Criteria:
+Scenario: Supervisor Access
+Given a supervisor user
+When they GET /employees
+Then only their team's records are returned
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Row-level constraints enforced
