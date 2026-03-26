@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://prod-db-server:5432/warehouse_ems_prod
+    username: ems_prod
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+  flyway:
+    enabled: true
+
+logging:
+  level:
+    root: INFO
