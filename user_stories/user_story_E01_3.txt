@@ -1,0 +1,25 @@
+Title: E01-3 Set Up Database Migration Tool
+
+User Story:
+As a DevOps engineer,
+I want a database migration tool integrated into the deployment pipeline,
+So that database schema changes can be managed, versioned, and applied safely across environments.
+
+Acceptance Criteria:
+Given a new database schema change,
+When the migration tool is executed in any environment,
+Then the schema change is applied in a controlled, repeatable, and idempotent manner.
+
+Given a failed migration,
+When the tool detects an error,
+Then it rolls back the change and provides a clear error log.
+
+Given a new developer onboarding,
+When they run the migration tool,
+Then their local database is brought up to the latest schema version automatically.
+
+Additional Details:
+- Tool must support rollback and forward migration.
+- Migration scripts must be version-controlled.
+- Tool selection (e.g., Flyway, Liquibase) should be documented.
+- Documentation must be provided for running migrations locally and in CI/CD.
