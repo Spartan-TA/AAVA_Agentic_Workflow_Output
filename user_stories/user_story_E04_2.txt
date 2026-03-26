@@ -1,0 +1,25 @@
+Title: E04-2 Calculate Hours Worked
+
+User Story:
+As a payroll administrator,
+I want the system to automatically calculate hours worked for each employee based on clock-in/out events,
+So that payroll processing is accurate and efficient.
+
+Acceptance Criteria:
+Given valid clock-in and clock-out events for an employee,
+When the calculation job runs,
+Then total hours worked per day and per pay period are computed and stored.
+
+Given missing or overlapping clock events,
+When the calculation job runs,
+Then the affected records are flagged for review and not included in payroll totals.
+
+Given a request for hours worked,
+When the API is called,
+Then the correct totals are returned for the specified employee and date range.
+
+Additional Details:
+- Support for overtime, breaks, and rounding rules.
+- Calculation logic must be configurable by pay policy.
+- All calculations must be auditable.
+- API and calculation logic must be documented.
