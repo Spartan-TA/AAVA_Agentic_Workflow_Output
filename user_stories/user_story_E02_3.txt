@@ -1,0 +1,25 @@
+Title: E02-3 Update Employee Record
+
+User Story:
+As an HR administrator,
+I want to update employee records via the API,
+So that changes in employee information are accurately reflected in the system.
+
+Acceptance Criteria:
+Given a valid employee ID and update payload,
+When the API endpoint is called,
+Then the employee record is updated with the new information and a timestamp is recorded.
+
+Given an invalid employee ID,
+When the API is called,
+Then a not found error is returned and no changes are made.
+
+Given invalid or unauthorized update fields,
+When the API is called,
+Then the request is rejected with a clear error message.
+
+Additional Details:
+- Only authorized users can update records.
+- All changes must be logged in the audit trail.
+- API must be documented in OpenAPI spec.
+- Support partial updates (PATCH) and full updates (PUT).
