@@ -1,0 +1,25 @@
+Title: E02-1 Create Employee Record
+
+User Story:
+As an HR administrator,
+I want to create a new employee record via the API,
+So that new hires can be added to the system efficiently and accurately.
+
+Acceptance Criteria:
+Given valid employee details,
+When the API endpoint is called to create an employee,
+Then a new employee record is created with a unique identifier and all required fields populated.
+
+Given missing or invalid required fields,
+When the API is called,
+Then the request is rejected with a clear validation error message.
+
+Given a duplicate employee identifier,
+When the API is called,
+Then the request is rejected with a duplicate error message.
+
+Additional Details:
+- Required fields: name, employee ID, start date, department, role.
+- Optional fields: contact info, manager, certifications.
+- API must be documented in OpenAPI spec.
+- Audit log entry must be created for each new employee record.
