@@ -1,0 +1,11 @@
+/target/
+*.iml
+*.log
+*.swp
+*.tmp
+*.bak
+.DS_Store
+.idea/
+*.class
+.env
+/application.yml
