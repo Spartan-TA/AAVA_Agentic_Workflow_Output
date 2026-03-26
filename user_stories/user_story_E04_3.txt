@@ -1,0 +1,25 @@
+Title: E04-3 Missed Punches and Corrections Workflow
+
+User Story:
+As an employee or supervisor,
+I want to submit and approve corrections for missed clock-in/out events,
+So that attendance records are accurate and reflect actual hours worked.
+
+Acceptance Criteria:
+Given an employee with a missed punch,
+When they submit a correction request,
+Then the request is routed to their supervisor for review and approval.
+
+Given a supervisor reviews a correction request,
+When they approve or reject it,
+Then the attendance record is updated or the request is closed with a reason.
+
+Given an approved correction,
+When payroll calculations run,
+Then the corrected hours are included in payroll totals.
+
+Additional Details:
+- All correction requests and approvals must be logged.
+- Notifications must be sent to involved parties.
+- Correction workflow must be auditable.
+- API and UI must support the full workflow.
