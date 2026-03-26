@@ -1,0 +1,25 @@
+Title: E03-3 API Key/OAuth2 Toggle
+
+User Story:
+As a system administrator,
+I want to configure the authentication method for APIs (API Key or OAuth2),
+So that the system can support both internal automation and secure external integrations.
+
+Acceptance Criteria:
+Given a deployment environment,
+When the authentication method is set to API Key,
+Then all API endpoints require a valid API key for access.
+
+Given the authentication method is set to OAuth2,
+When an API endpoint is accessed,
+Then a valid OAuth2 token is required and validated.
+
+Given a configuration change,
+When the authentication method is toggled,
+Then the new method is enforced immediately for all endpoints.
+
+Additional Details:
+- Configuration must be environment-specific.
+- API keys must be securely stored and rotated.
+- OAuth2 integration must support standard flows (client credentials, authorization code).
+- Documentation must describe how to obtain and use credentials for both methods.
