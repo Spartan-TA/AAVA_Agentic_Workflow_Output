@@ -1,0 +1,87 @@
+Title: Training & Certification Tracking - Certification CRUD
+
+User Story: As an HR user, I want to create, update, and delete certifications for employees so that compliance is tracked.
+
+Acceptance Criteria:
+Scenario: Certification management
+Given valid certification data
+When I perform CRUD operations
+Then certifications are updated for employees
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC
+- Notes: Proof documents upload
+
+---
+
+Title: Training & Certification Tracking - Expiry Alerts
+
+User Story: As a supervisor, I want alerts 30 and 7 days before certification expiry so that renewals are timely.
+
+Acceptance Criteria:
+Scenario: Expiry alert
+Given a certification nearing expiry
+When the alert window is reached
+Then notifications are sent to employee and supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Certification CRUD
+- Notes: Notification integration
+
+---
+
+Title: Training & Certification Tracking - Assignment Blocking
+
+User Story: As a system, I want to block assignment to tasks requiring expired certifications so that only qualified staff are assigned.
+
+Acceptance Criteria:
+Scenario: Assignment check
+Given an expired certification
+When I assign a task requiring it
+Then the system prevents assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Certification CRUD
+- Notes: Scheduling checks
+
+---
+
+Title: Training & Certification Tracking - Certification Status Visibility
+
+User Story: As an HR user, I want certification status visible on employee profiles so that qualification is clear.
+
+Acceptance Criteria:
+Scenario: Status display
+Given an employee profile
+When I view it
+Then certification status and expiry dates are shown
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Certification CRUD
+- Notes: UI update
+
+---
+
+Title: Training & Certification Tracking - Proof Document Upload
+
+User Story: As an employee, I want to upload proof documents for certifications so that records are complete.
+
+Acceptance Criteria:
+Scenario: Document upload
+Given a certification record
+When I upload a document
+Then it is attached to the certification
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Certification CRUD
+- Notes: File storage
