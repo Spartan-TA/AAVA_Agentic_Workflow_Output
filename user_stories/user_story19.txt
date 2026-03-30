@@ -1,0 +1,81 @@
+EPIC E19 - Advanced Scheduling (AI-Assisted)
+
+===========================================
+
+User Story 1: Train ML Model on Historical Data
+---------------------------------------------
+Title: Train ML Model for Shift Assignment
+
+User Story: As a scheduler, I want an ML model trained on historical data so that shift assignments are optimized.
+
+Acceptance Criteria:
+Scenario: Model training
+  Given attendance and scheduling data
+  When model is trained
+  Then suggestions are generated
+
+Additional Details:
+- Priority: Low
+- Story Points: 5
+- Dependencies: E05, E15
+- Notes: Use employee preferences.
+
+===========================================
+
+User Story 2: Suggest Optimal Shift Assignments
+---------------------------------------------
+Title: Suggest Optimal Shift Assignments
+
+User Story: As a scheduler, I want AI-assisted suggestions for shift assignments so that manual planning is reduced.
+
+Acceptance Criteria:
+Scenario: Suggestion generation
+  Given scheduling constraints
+  When suggestions are generated
+  Then they are ranked by score
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E05, E15
+- Notes: Show ranking.
+
+===========================================
+
+User Story 3: Supervisor Accept/Reject Suggestions
+---------------------------------------------
+Title: Supervisor Can Accept/Reject AI Suggestions
+
+User Story: As a supervisor, I want to accept or reject AI suggestions so that human oversight is maintained.
+
+Acceptance Criteria:
+Scenario: Suggestion review
+  Given AI suggestions
+  When supervisor acts
+  Then assignments are finalized or discarded
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E05, E15
+- Notes: Track feedback.
+
+===========================================
+
+User Story 4: Feedback Loop for Retraining
+---------------------------------------------
+Title: Feedback Loop for ML Retraining
+
+User Story: As a scheduler, I want feedback on AI suggestions so that the model improves over time.
+
+Acceptance Criteria:
+Scenario: Model improvement
+  Given supervisor feedback
+  When submitted
+  Then model retrains with new data
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E05, E15
+- Notes: Log feedback.
