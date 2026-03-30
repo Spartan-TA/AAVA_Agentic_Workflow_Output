@@ -1,0 +1,87 @@
+Title: Integration Layer (HRIS/WMS APIs) - HRIS Sync API
+
+User Story: As a system integrator, I want a REST API for HRIS to create/update employee records so that master data is synchronized.
+
+Acceptance Criteria:
+Scenario: HRIS sync
+Given HRIS data
+When the sync job runs
+Then employees are created/updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project Scaffolding, Employee CRUD, RBAC
+- Notes: JWT/OAuth2 security
+
+---
+
+Title: Integration Layer (HRIS/WMS APIs) - WMS Department/Location API
+
+User Story: As a system integrator, I want a REST API for WMS to link department and location data so that warehouse structure is consistent.
+
+Acceptance Criteria:
+Scenario: WMS link
+Given department/location data
+When the API is called
+Then records are updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: HRIS Sync API
+- Notes: Idempotent operations
+
+---
+
+Title: Integration Layer (HRIS/WMS APIs) - Webhook Events
+
+User Story: As a developer, I want webhooks for key events (new hire, term, shift change) so that external systems are notified.
+
+Acceptance Criteria:
+Scenario: Webhook trigger
+Given a relevant event
+When it occurs
+Then a webhook is sent with event data
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: HRIS Sync API
+- Notes: OpenAPI docs
+
+---
+
+Title: Integration Layer (HRIS/WMS APIs) - SSO Integration
+
+User Story: As a user, I want SSO via IDP so that I can log in with my corporate credentials.
+
+Acceptance Criteria:
+Scenario: SSO login
+Given valid IDP credentials
+When I log in
+Then access is granted
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: HRIS Sync API
+- Notes: JWT/OAuth2
+
+---
+
+Title: Integration Layer (HRIS/WMS APIs) - API Documentation
+
+User Story: As a developer, I want OpenAPI documentation for all integration endpoints so that external teams can integrate easily.
+
+Acceptance Criteria:
+Scenario: API docs
+Given integration endpoints
+When I access docs
+Then all endpoints are documented
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: All above
+- Notes: Keep docs updated
