@@ -1,0 +1,87 @@
+Title: Performance Reviews & Goals - Review Cycle Creation
+
+User Story: As an HR user, I want to create quarterly and annual review cycles so that employee performance is evaluated regularly.
+
+Acceptance Criteria:
+Scenario: Review cycle setup
+Given cycle details
+When I create a cycle
+Then it is available for assignment
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee CRUD, RBAC
+- Notes: Template support
+
+---
+
+Title: Performance Reviews & Goals - Assign Reviews
+
+User Story: As a supervisor, I want to assign reviews to employees so that feedback is collected.
+
+Acceptance Criteria:
+Scenario: Review assignment
+Given a review cycle
+When I assign reviews
+Then employees receive review tasks
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Review Cycle Creation
+- Notes: Role-based visibility
+
+---
+
+Title: Performance Reviews & Goals - Submit/Acknowledge Workflow
+
+User Story: As an employee, I want to submit and acknowledge reviews so that the process is complete.
+
+Acceptance Criteria:
+Scenario: Review submission
+Given an assigned review
+When I submit and acknowledge
+Then the review is marked complete and immutable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Assign Reviews
+- Notes: PDF export
+
+---
+
+Title: Performance Reviews & Goals - PDF Export
+
+User Story: As an HR user, I want to export reviews as PDF so that records are archived.
+
+Acceptance Criteria:
+Scenario: PDF export
+Given completed reviews
+When I request export
+Then PDFs are generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Submit/Acknowledge Workflow
+- Notes: Format compliance
+
+---
+
+Title: Performance Reviews & Goals - Immutable History
+
+User Story: As a compliance officer, I want immutable history after sign-off so that records cannot be altered.
+
+Acceptance Criteria:
+Scenario: History lock
+Given a signed-off review
+When I attempt to edit
+Then the system prevents changes
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Submit/Acknowledge Workflow
+- Notes: Audit log
