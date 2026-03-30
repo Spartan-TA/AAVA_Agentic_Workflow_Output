@@ -1,0 +1,101 @@
+EPIC E18 - Localization & Multi-Warehouse
+
+===========================================
+
+User Story 1: Warehouse Entity with Config
+---------------------------------------------
+Title: Support Multiple Warehouses with Config
+
+User Story: As an admin, I want to configure multiple warehouses so that site-specific policies are applied.
+
+Acceptance Criteria:
+Scenario: Warehouse configuration
+  Given warehouse entity
+  When created
+  Then config options are available
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E01, E02, E05
+- Notes: Support calendars, shift templates.
+
+===========================================
+
+User Story 2: Assign Employees to Warehouse
+---------------------------------------------
+Title: Assign Employees to Specific Warehouses
+
+User Story: As an HR user, I want employees assigned to warehouses so that operations are site-specific.
+
+Acceptance Criteria:
+Scenario: Employee assignment
+  Given employee record
+  When warehouse is assigned
+  Then employee is linked to warehouse
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02, E05
+- Notes: Support transfers.
+
+===========================================
+
+User Story 3: Policies Scoped to Warehouse
+---------------------------------------------
+Title: Scope Policies to Warehouse
+
+User Story: As an admin, I want policies scoped to warehouse so that rules are site-specific.
+
+Acceptance Criteria:
+Scenario: Policy scoping
+  Given warehouse config
+  When policies are set
+  Then only apply to that warehouse
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02, E05
+- Notes: Include leave, scheduling.
+
+===========================================
+
+User Story 4: UI Language Toggle
+---------------------------------------------
+Title: UI Language Toggle for Localization
+
+User Story: As a user, I want to toggle UI language so that I can use EMS in Spanish or English.
+
+Acceptance Criteria:
+Scenario: Language toggle
+  Given UI
+  When language is toggled
+  Then all labels and messages are localized
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E01, E02, E05
+- Notes: Support date/time formats.
+
+===========================================
+
+User Story 5: Localized Date/Time Formats
+---------------------------------------------
+Title: Localize Date/Time Formats per Warehouse
+
+User Story: As a user, I want date/time formats localized so that schedules are clear.
+
+Acceptance Criteria:
+Scenario: Format localization
+  Given warehouse locale
+  When viewing schedules
+  Then date/time formats match locale
+
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: E01, E02, E05
+- Notes: Support US/EU formats.
