@@ -1,0 +1,87 @@
+Title: Time & Attendance (Clock In/Out) - Clock In Endpoint
+
+User Story: As a worker, I want to clock in via an endpoint with geofence and device capture so that attendance is accurately recorded.
+
+Acceptance Criteria:
+Scenario: Clock in event
+Given valid badgeId and location
+When I POST to /attendance/clock-in
+Then my clock-in is recorded with device and geofence info
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC
+- Notes: Optional geofence
+
+---
+
+Title: Time & Attendance (Clock In/Out) - Clock Out Endpoint
+
+User Story: As a worker, I want to clock out via an endpoint so that my shift hours are tracked.
+
+Acceptance Criteria:
+Scenario: Clock out event
+Given a clock-in record
+When I POST to /attendance/clock-out
+Then my clock-out is recorded and hours are calculated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Clock In Endpoint
+- Notes: Validate shift association
+
+---
+
+Title: Time & Attendance (Clock In/Out) - Missed Punch Correction
+
+User Story: As a worker, I want to request corrections for missed punches so that my attendance is accurate.
+
+Acceptance Criteria:
+Scenario: Correction workflow
+Given a missed punch
+When I submit a correction request
+Then an approval task is created for supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Clock In/Out
+- Notes: Approval workflow
+
+---
+
+Title: Time & Attendance (Clock In/Out) - Attendance Reports
+
+User Story: As a supervisor, I want to export attendance reports in CSV so that payroll processing is streamlined.
+
+Acceptance Criteria:
+Scenario: Report export
+Given attendance data
+When I request a CSV export
+Then a file is generated with daily totals
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Clock In/Out
+- Notes: Include corrections
+
+---
+
+Title: Time & Attendance (Clock In/Out) - Automatic Shift Association
+
+User Story: As a system, I want to automatically associate clock-in/out events with scheduled shifts so that hours worked are computed correctly.
+
+Acceptance Criteria:
+Scenario: Shift association
+Given a clock-in/out event
+When the event is processed
+Then it is linked to the correct shift
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift Management
+- Notes: Handle exceptions
