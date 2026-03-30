@@ -1,0 +1,87 @@
+Title: Reporting & Analytics - Attendance Report
+
+User Story: As an HR user, I want operational attendance reports filterable by date, department, and shift so that staffing trends are analyzed.
+
+Acceptance Criteria:
+Scenario: Attendance report
+Given attendance data
+When I filter and export
+Then a CSV/PDF is generated within 10s for up to 50k rows
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Attendance, Shift Management, Leave Management, Certification Tracking, Safety Incidents, Audit Trail
+- Notes: Access controlled
+
+---
+
+Title: Reporting & Analytics - Overtime Report
+
+User Story: As a supervisor, I want overtime reports so that extra hours are tracked.
+
+Acceptance Criteria:
+Scenario: Overtime report
+Given attendance data
+When I filter for overtime
+Then a report is generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance Report
+- Notes: Export support
+
+---
+
+Title: Reporting & Analytics - Certification Status Report
+
+User Story: As an HR user, I want certification status reports so that compliance is monitored.
+
+Acceptance Criteria:
+Scenario: Certification report
+Given certification data
+When I filter and export
+Then a CSV/PDF is generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance Report
+- Notes: Expiry alerts
+
+---
+
+Title: Reporting & Analytics - Safety KPI Dashboard
+
+User Story: As a safety officer, I want a dashboard for safety KPIs so that incident trends are visible.
+
+Acceptance Criteria:
+Scenario: KPI dashboard
+Given incident data
+When I access dashboard
+Then metrics are displayed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance Report
+- Notes: Role-based access
+
+---
+
+Title: Reporting & Analytics - Metrics Endpoints
+
+User Story: As a BI analyst, I want metrics endpoints available for BI tools so that data can be analyzed externally.
+
+Acceptance Criteria:
+Scenario: Metrics access
+Given metrics endpoints
+When I query them
+Then data is returned for BI integration
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Attendance Report
+- Notes: API docs
