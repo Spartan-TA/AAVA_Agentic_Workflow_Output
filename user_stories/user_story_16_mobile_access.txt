@@ -1,0 +1,87 @@
+Title: Mobile Access (PWA) - Responsive Clock-In/Out
+
+User Story: As a worker, I want to clock-in/out on mobile devices so that attendance is convenient.
+
+Acceptance Criteria:
+Scenario: Mobile clock-in/out
+Given a mobile device
+When I access the app
+Then I can clock-in/out responsively
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Attendance, Shift Management, Leave Management, Notifications
+- Notes: PWA manifest
+
+---
+
+Title: Mobile Access (PWA) - Schedule View
+
+User Story: As a worker, I want to view my schedule on mobile so that I know my shifts.
+
+Acceptance Criteria:
+Scenario: Mobile schedule
+Given a mobile device
+When I access the app
+Then my upcoming shifts are shown
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Responsive Clock-In/Out
+- Notes: Offline support
+
+---
+
+Title: Mobile Access (PWA) - Leave Request
+
+User Story: As a worker, I want to request leave on mobile so that time off is easy to manage.
+
+Acceptance Criteria:
+Scenario: Mobile leave request
+Given a mobile device
+When I submit a leave request
+Then it is processed as on desktop
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Responsive Clock-In/Out
+- Notes: PWA offline queue
+
+---
+
+Title: Mobile Access (PWA) - Announcement Access
+
+User Story: As a worker, I want to see announcements on mobile so that I stay informed.
+
+Acceptance Criteria:
+Scenario: Mobile announcements
+Given a mobile device
+When I access the app
+Then announcements are visible
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Responsive Clock-In/Out
+- Notes: UI update
+
+---
+
+Title: Mobile Access (PWA) - Offline Queue & Conflict Resolution
+
+User Story: As a worker, I want offline queue for clock events with conflict resolution so that attendance is not lost.
+
+Acceptance Criteria:
+Scenario: Offline queue
+Given no network
+When I clock-in/out
+Then events are queued and resolved on reconnect
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Responsive Clock-In/Out
+- Notes: Lighthouse PWA score â¥ 80
