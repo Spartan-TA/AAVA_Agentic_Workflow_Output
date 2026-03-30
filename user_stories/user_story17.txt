@@ -1,0 +1,101 @@
+EPIC E17 - Onboarding & Offboarding Workflow
+
+===========================================
+
+User Story 1: Automate Account Provisioning
+---------------------------------------------
+Title: Automate Account Provisioning for New Hires
+
+User Story: As an HR user, I want accounts provisioned automatically for new hires so that onboarding is efficient.
+
+Acceptance Criteria:
+Scenario: Account creation
+  Given HRIS sync
+  When new hire appears
+  Then account is provisioned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Link to training/tasks.
+
+===========================================
+
+User Story 2: Initial Schedule Assignment
+---------------------------------------------
+Title: Assign Initial Schedule to New Hires
+
+User Story: As a scheduler, I want new hires assigned to initial schedules so that staffing is planned.
+
+Acceptance Criteria:
+Scenario: Schedule assignment
+  Given new hire
+  When onboarding
+  Then schedule is assigned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Integrate with shift management.
+
+===========================================
+
+User Story 3: Required Training Tasks
+---------------------------------------------
+Title: Generate Required Training Tasks for New Hires
+
+User Story: As a training manager, I want training tasks generated for new hires so that compliance is ensured.
+
+Acceptance Criteria:
+Scenario: Training task creation
+  Given new hire
+  When onboarding
+  Then training tasks are created
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Link to cert tracking.
+
+===========================================
+
+User Story 4: Asset Assignment for Onboarding
+---------------------------------------------
+Title: Assign Assets to New Hires During Onboarding
+
+User Story: As an asset manager, I want assets assigned to new hires so that equipment is ready.
+
+Acceptance Criteria:
+Scenario: Asset assignment
+  Given onboarding workflow
+  When new hire is processed
+  Then assets are assigned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Track asset history.
+
+===========================================
+
+User Story 5: Offboarding Workflow for Terminations
+---------------------------------------------
+Title: Automate Offboarding Workflow for Terminations
+
+User Story: As an HR user, I want access revoked, assets collected, and schedules updated for terminations so that risk is reduced.
+
+Acceptance Criteria:
+Scenario: Offboarding process
+  Given termination
+  When offboarding is triggered
+  Then access is revoked, assets collected, and schedules updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Link to audit trail.
