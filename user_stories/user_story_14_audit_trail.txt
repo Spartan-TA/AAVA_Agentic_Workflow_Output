@@ -1,0 +1,87 @@
+Title: Audit Trail & Compliance - Audit Logging
+
+User Story: As a compliance officer, I want centralized audit logging for sensitive changes so that actions are traceable.
+
+Acceptance Criteria:
+Scenario: Audit log entry
+Given a create/update/delete
+When it occurs
+Then actor, timestamp, before/after are logged
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: RBAC
+- Notes: Tamper-evident storage
+
+---
+
+Title: Audit Trail & Compliance - Immutable Log Table
+
+User Story: As a compliance officer, I want an immutable log table so that audit records cannot be altered.
+
+Acceptance Criteria:
+Scenario: Log immutability
+Given an audit log entry
+When I attempt to edit/delete
+Then the system prevents changes
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Audit Logging
+- Notes: Export support
+
+---
+
+Title: Audit Trail & Compliance - Audit Export
+
+User Story: As a compliance officer, I want to export audit logs by date, user, or entity so that investigations are supported.
+
+Acceptance Criteria:
+Scenario: Audit export
+Given audit logs
+When I filter by date/user/entity
+Then matching logs are exported
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Immutable Log Table
+- Notes: Format compliance
+
+---
+
+Title: Audit Trail & Compliance - Test Coverage
+
+User Story: As a QA engineer, I want tests to validate audit log coverage so that compliance is ensured.
+
+Acceptance Criteria:
+Scenario: Test validation
+Given test suite
+When tests run
+Then all sensitive actions are logged
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Audit Logging
+- Notes: Negative tests
+
+---
+
+Title: Audit Trail & Compliance - Tamper Detection
+
+User Story: As a compliance officer, I want tamper-evident storage so that unauthorized changes are detected.
+
+Acceptance Criteria:
+Scenario: Tamper detection
+Given audit logs
+When tampering occurs
+Then alerts are generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Immutable Log Table
+- Notes: Alerting integration
