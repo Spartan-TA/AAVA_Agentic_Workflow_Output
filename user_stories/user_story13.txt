@@ -1,0 +1,101 @@
+EPIC E13 - Integration Layer (HRIS/WMS APIs)
+
+===========================================
+
+User Story 1: Secure REST APIs with JWT/OAuth2
+---------------------------------------------
+Title: Secure REST APIs with JWT/OAuth2
+
+User Story: As a developer, I want APIs secured with JWT/OAuth2 so that integrations are protected.
+
+Acceptance Criteria:
+Scenario: API authentication
+  Given API endpoints
+  When accessed
+  Then authentication is required
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Document security flow.
+
+===========================================
+
+User Story 2: HRIS Sync Job for Employees
+---------------------------------------------
+Title: HRIS Sync Job Creates/Updates Employees
+
+User Story: As an HRIS admin, I want sync jobs to create/update employees so that master data is synchronized.
+
+Acceptance Criteria:
+Scenario: Employee synchronization
+  Given HRIS data
+  When sync job runs
+  Then employees are created/updated
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Handle new hires/terms.
+
+===========================================
+
+User Story 3: WMS Link for Department/Location
+---------------------------------------------
+Title: Link WMS Data for Department and Location
+
+User Story: As a warehouse manager, I want department/location data linked from WMS so that employee assignments are accurate.
+
+Acceptance Criteria:
+Scenario: WMS data integration
+  Given WMS API
+  When department/location is updated
+  Then EMS reflects changes
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Map fields.
+
+===========================================
+
+User Story 4: Idempotent Webhooks for Events
+---------------------------------------------
+Title: Implement Idempotent Webhooks for Events
+
+User Story: As a developer, I want webhooks to be idempotent so that duplicate events are handled gracefully.
+
+Acceptance Criteria:
+Scenario: Webhook idempotency
+  Given webhook event
+  When duplicate is received
+  Then only one action is performed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02, E03
+- Notes: Log all events.
+
+===========================================
+
+User Story 5: OpenAPI Documentation for Integration APIs
+---------------------------------------------
+Title: Document Integration APIs in OpenAPI
+
+User Story: As a developer, I want OpenAPI documentation for integration APIs so that external systems can integrate easily.
+
+Acceptance Criteria:
+Scenario: API documentation
+  Given API documentation
+  When viewed
+  Then all endpoints are documented
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01, E02, E03
+- Notes: Keep docs updated.
