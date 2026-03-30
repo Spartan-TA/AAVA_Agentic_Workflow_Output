@@ -1,0 +1,87 @@
+Title: Onboarding & Offboarding Workflow - New Hire Provisioning
+
+User Story: As an HR user, I want new hires to appear from HRIS and provision accounts, initial schedule, and required training so that onboarding is automated.
+
+Acceptance Criteria:
+Scenario: New hire onboarding
+Given a new hire in HRIS
+When sync occurs
+Then account, schedule, and training tasks are created
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC, Shift Management, Certification Tracking, Asset Assignment, Integration Layer
+- Notes: Task generation
+
+---
+
+Title: Onboarding & Offboarding Workflow - Asset Assignment
+
+User Story: As a supervisor, I want assets assigned to new hires during onboarding so that equipment is ready.
+
+Acceptance Criteria:
+Scenario: Asset assignment
+Given a new hire
+When onboarding tasks run
+Then assets are assigned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: New Hire Provisioning
+- Notes: Certification checks
+
+---
+
+Title: Onboarding & Offboarding Workflow - Training Task Generation
+
+User Story: As a supervisor, I want training tasks generated for new hires so that compliance is ensured.
+
+Acceptance Criteria:
+Scenario: Training tasks
+Given a new hire
+When onboarding tasks run
+Then required training is assigned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: New Hire Provisioning
+- Notes: Certification expiry alerts
+
+---
+
+Title: Onboarding & Offboarding Workflow - Access Revocation
+
+User Story: As an HR user, I want access and asset deprovisioning on termination so that risk is reduced.
+
+Acceptance Criteria:
+Scenario: Offboarding workflow
+Given a terminated employee
+When offboarding tasks run
+Then access is revoked and assets collected
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: New Hire Provisioning
+- Notes: Schedule updates
+
+---
+
+Title: Onboarding & Offboarding Workflow - Schedule Update
+
+User Story: As a supervisor, I want schedules updated on onboarding/offboarding so that staffing is accurate.
+
+Acceptance Criteria:
+Scenario: Schedule update
+Given onboarding/offboarding event
+When it occurs
+Then schedules are updated accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: New Hire Provisioning
+- Notes: Shift coverage
