@@ -1,0 +1,87 @@
+Title: Safety Incidents & OSHA Reporting - Incident Recording
+
+User Story: As a safety officer, I want to record incidents and near-misses with severity, location, description, and involved employees so that safety data is captured.
+
+Acceptance Criteria:
+Scenario: Incident creation
+Given incident details
+When I POST to /safety/incidents
+Then the incident is recorded with validation
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee CRUD, RBAC
+- Notes: Required fields
+
+---
+
+Title: Safety Incidents & OSHA Reporting - Investigation Workflow
+
+User Story: As a safety officer, I want a workflow for investigating incidents and corrective actions so that issues are resolved.
+
+Acceptance Criteria:
+Scenario: Investigation status
+Given an open incident
+When I update status to 'Investigating' or 'Resolved'
+Then workflow progresses and actions are tracked
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Incident Recording
+- Notes: Status transitions
+
+---
+
+Title: Safety Incidents & OSHA Reporting - OSHA Export
+
+User Story: As a compliance officer, I want to export OSHA 300/300A summary fields so that regulatory reporting is supported.
+
+Acceptance Criteria:
+Scenario: OSHA export
+Given incident records
+When I request an export
+Then a file is generated with OSHA fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Incident Recording
+- Notes: Format compliance
+
+---
+
+Title: Safety Incidents & OSHA Reporting - Metrics Dashboard
+
+User Story: As a safety officer, I want metrics dashboard endpoints for safety KPIs so that trends are monitored.
+
+Acceptance Criteria:
+Scenario: Dashboard access
+Given incident data
+When I access dashboard endpoints
+Then safety metrics are displayed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Incident Recording
+- Notes: Role-based access
+
+---
+
+Title: Safety Incidents & OSHA Reporting - Status Workflow
+
+User Story: As a system, I want incident status workflow (OpenâInvestigatingâResolved) so that process is standardized.
+
+Acceptance Criteria:
+Scenario: Status transitions
+Given an incident
+When status changes
+Then allowed transitions are enforced
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: Incident Recording
+- Notes: Validation rules
