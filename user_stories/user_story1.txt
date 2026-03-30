@@ -1,0 +1,106 @@
+EPIC E01 - Project Scaffolding & Domain Setup
+
+===========================================
+
+User Story 1: Initialize Spring Boot Project
+---------------------------------------------
+Title: Initialize Spring Boot (Maven) Project
+
+User Story: As a developer, I want to initialize a Spring Boot project using Maven so that the EMS application has a standardized foundation.
+
+Acceptance Criteria:
+Scenario: Successful project initialization
+  Given a new repository
+  When I run the Maven build
+  Then the project builds successfully and runs on port 8080
+
+Scenario: Health endpoint verification
+  Given the project setup
+  When I access the Actuator health endpoint
+  Then it returns UP
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Ensure README includes build/run steps.
+
+===========================================
+
+User Story 2: Configure Base Package Structure
+---------------------------------------------
+Title: Configure Base Package Structure
+
+User Story: As a developer, I want to set up base packages for employee, scheduling, attendance, and safety modules so that code is organized and maintainable.
+
+Acceptance Criteria:
+Scenario: Package structure validation
+  Given the project structure
+  When I inspect the source code
+  Then I see distinct packages for each core module
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Follow naming conventions.
+
+===========================================
+
+User Story 3: Database Migration Setup
+---------------------------------------------
+Title: Set Up Flyway/Liquibase for DB Migrations
+
+User Story: As a developer, I want to configure Flyway or Liquibase so that database migrations are versioned and repeatable.
+
+Acceptance Criteria:
+Scenario: Migration tool configuration
+  Given the migration tool configuration
+  When I run the migration
+  Then baseline migration is applied successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: None
+- Notes: Use baseline migration for initial schema.
+
+===========================================
+
+User Story 4: Enable Actuator Monitoring
+---------------------------------------------
+Title: Enable Actuator Monitoring
+
+User Story: As a DevOps engineer, I want Actuator enabled so that I can monitor application health and metrics.
+
+Acceptance Criteria:
+Scenario: Actuator health check
+  Given the application is running
+  When I access /actuator/health
+  Then I receive a status of UP
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: None
+- Notes: Expose health endpoint.
+
+===========================================
+
+User Story 5: Documentation for Setup
+---------------------------------------------
+Title: Provide README with Build/Run Steps
+
+User Story: As a developer, I want a README with build and run instructions so that new team members can onboard quickly.
+
+Acceptance Criteria:
+Scenario: README documentation
+  Given the repository
+  When I open README.md
+  Then I see clear build and run steps
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: None
+- Notes: Include migration instructions.
