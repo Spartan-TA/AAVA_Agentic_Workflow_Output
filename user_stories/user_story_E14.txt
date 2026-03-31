@@ -1,0 +1,53 @@
+### E14 - Audit Trail & Compliance
+
+**User Story 1**
+Title: Log Sensitive Data Changes
+User Story: As an auditor, I want every create, update, or delete of sensitive data to be logged so that changes are traceable.
+Acceptance Criteria:
+Scenario: Audit log entry
+Given a sensitive data change
+When the action occurs
+Then actor, timestamp, and before/after values are logged
+Priority: High
+Story Points: 3
+Dependencies: E03
+Notes: Cover employee PII, schedules, approvals, payroll.
+
+**User Story 2**
+Title: Store Audit Logs in Tamper-Evident Table
+User Story: As a compliance officer, I want audit logs stored immutably so that they cannot be altered.
+Acceptance Criteria:
+Scenario: Immutable storage
+Given an audit log
+When it is written
+Then it cannot be modified or deleted
+Priority: High
+Story Points: 2
+Dependencies: E03
+Notes: Use append-only storage.
+
+**User Story 3**
+Title: Export Audit Logs by Date, User, or Entity
+User Story: As an auditor, I want to export logs by filter so that investigations are efficient.
+Acceptance Criteria:
+Scenario: Audit log export
+Given audit logs
+When I filter by date, user, or entity
+Then only matching logs are exported
+Priority: High
+Story Points: 2
+Dependencies: E03
+Notes: Support CSV export.
+
+**User Story 4**
+Title: Automated Tests for Audit Coverage
+User Story: As a QA, I want tests to validate audit logging so that coverage is complete.
+Acceptance Criteria:
+Scenario: Audit tests
+Given all sensitive actions
+When tests are run
+Then audit logs are verified for each action
+Priority: High
+Story Points: 2
+Dependencies: E03
+Notes: Include negative test cases.
