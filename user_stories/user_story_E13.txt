@@ -1,0 +1,53 @@
+### E13 - Integration Layer (HRIS/WMS APIs)
+
+**User Story 1**
+Title: Expose Secured REST APIs
+User Story: As an integration developer, I want JWT/OAuth2-secured APIs so that external systems can sync data securely.
+Acceptance Criteria:
+Scenario: Secured API access
+Given valid credentials
+When I call the API
+Then access is granted and data is returned
+Priority: High
+Story Points: 3
+Dependencies: E01, E02, E03
+Notes: Document all endpoints in OpenAPI.
+
+**User Story 2**
+Title: Sync Employees from HRIS
+User Story: As an HR admin, I want a sync job to create or update employees from HRIS so that records are up to date.
+Acceptance Criteria:
+Scenario: HRIS sync
+Given new or updated employee data in HRIS
+When the sync job runs
+Then employees are created or updated in EMS
+Priority: High
+Story Points: 3
+Dependencies: E01, E02, E03
+Notes: Handle new hires and terminations.
+
+**User Story 3**
+Title: Link Departments and Locations from WMS
+User Story: As an admin, I want to link department and location data from WMS so that assignments are accurate.
+Acceptance Criteria:
+Scenario: WMS link
+Given department/location data in WMS
+When the sync job runs
+Then EMS departments and locations are updated
+Priority: High
+Story Points: 2
+Dependencies: E01, E02, E03
+Notes: Map WMS fields to EMS schema.
+
+**User Story 4**
+Title: Support Idempotent Webhooks
+User Story: As a developer, I want webhooks to be idempotent so that duplicate events do not cause errors.
+Acceptance Criteria:
+Scenario: Idempotent webhook
+Given a webhook event
+When it is received multiple times
+Then only one action is performed
+Priority: High
+Story Points: 2
+Dependencies: E01, E02, E03
+Notes: Use event IDs for deduplication.
