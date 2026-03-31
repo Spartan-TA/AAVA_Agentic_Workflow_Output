@@ -1,0 +1,523 @@
+===========================================
+WAREHOUSE EMS - COMPLETE USER STORIES SUMMARY
+===========================================
+
+EXECUTIVE SUMMARY
+-----------------
+This document contains the complete transformation of 20 high-level epics from the Warehouse Employee Management System (EMS) into detailed, actionable user stories. Each epic has been decomposed into 2-5 user stories with:
+
+- Clear user story narratives (As a [role] I want [action] So that [benefit])
+- Gherkin-formatted acceptance criteria (Given/When/Then)
+- Priority levels (High/Medium/Low)
+- Story point estimates (1-13 scale)
+- Dependencies on other epics
+- Implementation notes
+
+TOTAL EPICS PROCESSED: 20
+TOTAL USER STORIES CREATED: 89
+TOTAL STORY POINTS: 213
+
+GITHUB UPLOAD STATUS: SUCCESSFUL
+All 20 user story files have been successfully uploaded to the GitHub repository in the 'user_stories' directory.
+
+===========================================
+DETAILED USER STORIES BY EPIC
+===========================================
+
+### E01 - Project Scaffolding & Domain Setup (3 User Stories, 6 Story Points)
+
+**User Story 1: Initialize Spring Boot Project Structure**
+As a developer, I want the project to be scaffolded with Spring Boot and Maven so that all modules have a consistent foundation.
+Priority: High | Story Points: 3 | Dependencies: None
+Acceptance Criteria:
+- Given a new repository
+- When I build and run the project
+- Then the application starts on port 8080 and the base package structure is present
+
+**User Story 2: Enable Database Migration Tool**
+As a developer, I want Flyway or Liquibase configured so that database schema changes are versioned and repeatable.
+Priority: High | Story Points: 2 | Dependencies: None
+Acceptance Criteria:
+- Given the application is started
+- When Flyway/Liquibase runs
+- Then the baseline migration is applied without errors
+
+**User Story 3: Expose Health Endpoint**
+As an operator, I want an Actuator health endpoint enabled so that I can monitor application status.
+Priority: High | Story Points: 1 | Dependencies: None
+Acceptance Criteria:
+- Given the application is running
+- When I GET /actuator/health
+- Then the response status is 200 and body contains "UP"
+
+---
+
+### E02 - Employee Master Data (CRUD) (5 User Stories, 13 Story Points)
+
+**User Story 1: Create Employee API Endpoints**
+As an HR user, I want to create, read, update, and delete employee records so that employee data is managed centrally.
+Priority: High | Story Points: 5 | Dependencies: E01
+
+**User Story 2: Enforce Unique Badge ID**
+As an HR user, I want each employee to have a unique badgeId so that duplicate records are prevented.
+Priority: High | Story Points: 2 | Dependencies: E01
+
+**User Story 3: Support Soft-Delete for Employees**
+As an HR user, I want to soft-delete employees so that historical data is preserved.
+Priority: High | Story Points: 2 | Dependencies: E01
+
+**User Story 4: Employee List Pagination and Filtering**
+As an HR user, I want to paginate and filter employee lists so that large datasets are manageable.
+Priority: High | Story Points: 3 | Dependencies: E01
+
+**User Story 5: OpenAPI Documentation for Employee APIs**
+As a developer, I want OpenAPI schemas with examples for employee APIs so that integration is straightforward.
+Priority: High | Story Points: 1 | Dependencies: E01
+
+---
+
+### E03 - Role Based Access Control (RBAC) (4 User Stories, 10 Story Points)
+
+**User Story 1: Implement Role-Based Endpoint Security**
+As an admin, I want endpoints secured by role so that only authorized users can access sensitive data.
+Priority: High | Story Points: 3 | Dependencies: E01, E02
+
+**User Story 2: Support Multiple Authentication Methods**
+As a system admin, I want to toggle between API key and OAuth2 authentication so that integration is flexible.
+Priority: High | Story Points: 2 | Dependencies: E01, E02
+
+**User Story 3: Enforce Row-Level Security for Supervisors**
+As a supervisor, I want to access only my team's records so that data privacy is maintained.
+Priority: High | Story Points: 3 | Dependencies: E01, E02
+
+**User Story 4: Security Test Coverage**
+As a QA, I want automated tests for security rules so that unauthorized access is prevented.
+Priority: High | Story Points: 2 | Dependencies: E01, E02
+
+---
+
+### E04 - Time & Attendance (Clock In/Out) (4 User Stories, 10 Story Points)
+
+**User Story 1: Clock-In/Clock-Out Endpoints**
+As a worker, I want to clock in and out via API so that my attendance is accurately recorded.
+Priority: High | Story Points: 3 | Dependencies: E02, E03
+
+**User Story 2: Calculate Hours Worked Per Shift**
+As a supervisor, I want the system to calculate hours worked per shift so that payroll is accurate.
+Priority: High | Story Points: 2 | Dependencies: E02, E03
+
+**User Story 3: Handle Missed Punches and Corrections**
+As a worker, I want to request corrections for missed punches so that my attendance is accurate.
+Priority: High | Story Points: 3 | Dependencies: E02, E03
+
+**User Story 4: Export Attendance Reports**
+As an admin, I want to export attendance data as CSV so that I can analyze attendance trends.
+Priority: High | Story Points: 2 | Dependencies: E02, E03
+
+---
+
+### E05 - Shift & Schedule Management (5 User Stories, 12 Story Points)
+
+**User Story 1: Manage Shift Templates**
+As an HR user, I want to create, update, and delete shift templates so that recurring schedules are easy to set up.
+Priority: High | Story Points: 3 | Dependencies: E02, E03, E04
+
+**User Story 2: Assign Shifts to Employees**
+As a supervisor, I want to assign shifts to employees in bulk so that scheduling is efficient.
+Priority: High | Story Points: 3 | Dependencies: E02, E03, E04
+
+**User Story 3: Detect and Prevent Scheduling Conflicts**
+As a scheduler, I want the system to detect conflicts so that employees are not double-booked.
+Priority: High | Story Points: 2 | Dependencies: E02, E03, E04
+
+**User Story 4: View Personal Upcoming Shifts**
+As a worker, I want to view my upcoming shifts so that I can plan my schedule.
+Priority: High | Story Points: 2 | Dependencies: E02, E03, E04
+
+**User Story 5: Audit Shift Assignments**
+As an admin, I want all shift changes to be audited so that I can track scheduling history.
+Priority: High | Story Points: 2 | Dependencies: E02, E03, E04
+
+---
+
+### E06 - Leave & Absence Management (5 User Stories, 9 Story Points)
+
+**User Story 1: Request Leave**
+As an employee, I want to request PTO, sick, or unpaid leave so that my time off is tracked.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E05
+
+**User Story 2: Approve or Deny Leave Requests**
+As a supervisor, I want to approve or deny leave requests so that staffing is managed.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E05
+
+**User Story 3: Update Leave Balances**
+As an employee, I want my leave balance to update automatically so that I know how much time off I have left.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E05
+
+**User Story 4: Auto-Flag Scheduled Shifts for Coverage**
+As a scheduler, I want scheduled shifts to be flagged when an employee is on leave so that coverage can be arranged.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E05
+
+**User Story 5: Export Approved Leaves**
+As an admin, I want to export approved leaves so that payroll and compliance reporting is accurate.
+Priority: Medium | Story Points: 1 | Dependencies: E02, E03, E05
+
+---
+
+### E07 - Training & Certification Tracking (4 User Stories, 9 Story Points)
+
+**User Story 1: Manage Employee Certifications**
+As an HR user, I want to CRUD certifications for employees so that compliance is tracked.
+Priority: High | Story Points: 2 | Dependencies: E02, E03
+
+**User Story 2: Alert on Expiring Certifications**
+As a supervisor, I want alerts 30 and 7 days before a certification expires so that renewals are not missed.
+Priority: High | Story Points: 2 | Dependencies: E02, E03
+
+**User Story 3: Block Assignment to Tasks Requiring Valid Certification**
+As a scheduler, I want to prevent assignment of tasks to employees with expired certifications so that safety is ensured.
+Priority: High | Story Points: 3 | Dependencies: E02, E03
+
+**User Story 4: Upload Proof of Certification**
+As an employee, I want to upload proof documents for certifications so that my records are complete.
+Priority: High | Story Points: 2 | Dependencies: E02, E03
+
+---
+
+### E08 - Safety Incidents & OSHA Reporting (4 User Stories, 9 Story Points)
+
+**User Story 1: Record Safety Incidents**
+As a supervisor, I want to record incidents and near-misses so that safety issues are tracked.
+Priority: High | Story Points: 3 | Dependencies: E02, E03
+
+**User Story 2: Manage Incident Workflow**
+As a safety officer, I want to update incident status through investigation and resolution so that corrective actions are tracked.
+Priority: High | Story Points: 2 | Dependencies: E02, E03
+
+**User Story 3: Export OSHA Summary Reports**
+As a compliance officer, I want to export OSHA 300/300A summaries so that regulatory requirements are met.
+Priority: High | Story Points: 2 | Dependencies: E02, E03
+
+**User Story 4: Safety Metrics Dashboard**
+As a manager, I want a dashboard of safety KPIs so that I can monitor trends and compliance.
+Priority: High | Story Points: 2 | Dependencies: E02, E03
+
+---
+
+### E09 - Equipment & Asset Assignment (5 User Stories, 10 Story Points)
+
+**User Story 1: Manage Asset Registry**
+As an asset manager, I want to CRUD assets so that all equipment is tracked.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E07
+
+**User Story 2: Assign and Return Assets**
+As a supervisor, I want to check out and return assets to employees so that usage is tracked.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E07
+
+**User Story 3: Block Asset Use Without Valid Certification**
+As a supervisor, I want to prevent asset use if the employee lacks required certification so that safety is enforced.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E07
+
+**User Story 4: View Asset Assignment History**
+As an asset manager, I want to view the history of asset assignments so that accountability is maintained.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E07
+
+**User Story 5: Report Overdue Asset Returns**
+As an asset manager, I want to report overdue returns so that lost or unreturned assets are flagged.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E07
+
+---
+
+### E10 - Performance Reviews & Goals (5 User Stories, 9 Story Points)
+
+**User Story 1: Create Performance Review Templates**
+As an HR user, I want to create review templates so that performance cycles are standardized.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03
+
+**User Story 2: Assign Reviews to Employees**
+As a supervisor, I want to assign performance reviews to my team so that feedback is structured.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03
+
+**User Story 3: Submit and Acknowledge Reviews**
+As an employee, I want to submit and acknowledge reviews so that the process is complete.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03
+
+**User Story 4: Export Reviews as PDF**
+As an HR user, I want to export completed reviews as PDF so that records are archived.
+Priority: Medium | Story Points: 1 | Dependencies: E02, E03
+
+**User Story 5: Role-Based Review Visibility**
+As a supervisor, I want to see only my team's reviews so that privacy is maintained.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03
+
+---
+
+### E11 - Payroll Export Integration (4 User Stories, 9 Story Points)
+
+**User Story 1: Generate Payroll-Ready Export Files**
+As a payroll admin, I want to export attendance and leave data in provider format so that payroll processing is automated.
+Priority: High | Story Points: 3 | Dependencies: E04, E06
+
+**User Story 2: Reconcile Export Totals with Reports**
+As a payroll admin, I want export totals to match attendance reports so that errors are prevented.
+Priority: High | Story Points: 2 | Dependencies: E04, E06
+
+**User Story 3: Retry Failed Deliveries with Backoff**
+As a system admin, I want failed exports retried with backoff so that transient errors are handled.
+Priority: High | Story Points: 2 | Dependencies: E04, E06
+
+**User Story 4: Audit Payroll Export Events**
+As an auditor, I want every export event logged so that payroll changes are traceable.
+Priority: High | Story Points: 2 | Dependencies: E04, E06
+
+---
+
+### E12 - Notifications & Announcements (5 User Stories, 9 Story Points)
+
+**User Story 1: Configure Notification Channels**
+As a user, I want to opt-in or out of email, SMS, and in-app notifications so that I control how I am notified.
+Priority: Medium | Story Points: 2 | Dependencies: E03, E05, E06, E07
+
+**User Story 2: Localize Notification Templates**
+As an admin, I want notification templates localized so that users receive messages in their preferred language.
+Priority: Medium | Story Points: 2 | Dependencies: E03, E05, E06, E07
+
+**User Story 3: Track Notification Delivery Status**
+As an admin, I want to track delivery status of notifications so that failures are visible.
+Priority: Medium | Story Points: 2 | Dependencies: E03, E05, E06, E07
+
+**User Story 4: Enforce Quiet Hours for Notifications**
+As a user, I want to set quiet hours so that I am not disturbed outside work hours.
+Priority: Medium | Story Points: 2 | Dependencies: E03, E05, E06, E07
+
+**User Story 5: Announcements on Dashboard**
+As a worker, I want to see company announcements on my dashboard so that I stay informed.
+Priority: Medium | Story Points: 1 | Dependencies: E03, E05, E06, E07
+
+---
+
+### E13 - Integration Layer (HRIS/WMS APIs) (4 User Stories, 10 Story Points)
+
+**User Story 1: Expose Secured REST APIs**
+As an integration developer, I want JWT/OAuth2-secured APIs so that external systems can sync data securely.
+Priority: High | Story Points: 3 | Dependencies: E01, E02, E03
+
+**User Story 2: Sync Employees from HRIS**
+As an HR admin, I want a sync job to create or update employees from HRIS so that records are up to date.
+Priority: High | Story Points: 3 | Dependencies: E01, E02, E03
+
+**User Story 3: Link Departments and Locations from WMS**
+As an admin, I want to link department and location data from WMS so that assignments are accurate.
+Priority: High | Story Points: 2 | Dependencies: E01, E02, E03
+
+**User Story 4: Support Idempotent Webhooks**
+As a developer, I want webhooks to be idempotent so that duplicate events do not cause errors.
+Priority: High | Story Points: 2 | Dependencies: E01, E02, E03
+
+---
+
+### E14 - Audit Trail & Compliance (4 User Stories, 9 Story Points)
+
+**User Story 1: Log Sensitive Data Changes**
+As an auditor, I want every create, update, or delete of sensitive data to be logged so that changes are traceable.
+Priority: High | Story Points: 3 | Dependencies: E03
+
+**User Story 2: Store Audit Logs in Tamper-Evident Table**
+As a compliance officer, I want audit logs stored immutably so that they cannot be altered.
+Priority: High | Story Points: 2 | Dependencies: E03
+
+**User Story 3: Export Audit Logs by Date, User, or Entity**
+As an auditor, I want to export logs by filter so that investigations are efficient.
+Priority: High | Story Points: 2 | Dependencies: E03
+
+**User Story 4: Automated Tests for Audit Coverage**
+As a QA, I want tests to validate audit logging so that coverage is complete.
+Priority: High | Story Points: 2 | Dependencies: E03
+
+---
+
+### E15 - Reporting & Analytics (5 User Stories, 12 Story Points)
+
+**User Story 1: Generate Operational Reports**
+As a manager, I want reports on attendance, overtime, leave, certifications, and safety so that I can monitor operations.
+Priority: Medium | Story Points: 3 | Dependencies: E04, E05, E06, E07, E08, E14
+
+**User Story 2: Filter Reports by Date, Department, and Shift**
+As a manager, I want to filter reports so that I can analyze specific data segments.
+Priority: Medium | Story Points: 2 | Dependencies: E04, E05, E06, E07, E08, E14
+
+**User Story 3: Export Large Reports Efficiently**
+As a user, I want to export up to 50k rows within 10 seconds so that large datasets are accessible.
+Priority: Medium | Story Points: 3 | Dependencies: E04, E05, E06, E07, E08, E14
+
+**User Story 4: Role-Based Dashboard Access**
+As a user, I want dashboard access controlled by role so that sensitive data is protected.
+Priority: Medium | Story Points: 2 | Dependencies: E04, E05, E06, E07, E08, E14
+
+**User Story 5: Metrics Endpoints for BI Integration**
+As a BI developer, I want metrics endpoints so that external tools can consume analytics data.
+Priority: Medium | Story Points: 2 | Dependencies: E04, E05, E06, E07, E08, E14
+
+---
+
+### E16 - Mobile Access (PWA) (4 User Stories, 10 Story Points)
+
+**User Story 1: Responsive Mobile Views for Core Flows**
+As a worker, I want to clock in/out, view schedules, request leave, and see announcements on mobile so that I can use EMS anywhere.
+Priority: Medium | Story Points: 3 | Dependencies: E04, E05, E06, E12
+
+**User Story 2: Installable PWA Manifest**
+As a worker, I want to install EMS as a PWA so that I have quick access from my device.
+Priority: Medium | Story Points: 2 | Dependencies: E04, E05, E06, E12
+
+**User Story 3: Offline Queue for Clock Events**
+As a worker, I want clock events queued offline so that my attendance is not lost if I have no connection.
+Priority: Medium | Story Points: 3 | Dependencies: E04, E05, E06, E12
+
+**User Story 4: Lighthouse PWA Score Compliance**
+As a QA, I want the PWA to meet Lighthouse best practices so that performance and reliability are ensured.
+Priority: Medium | Story Points: 2 | Dependencies: E04, E05, E06, E12
+
+---
+
+### E17 - Onboarding & Offboarding Workflow (3 User Stories, 8 Story Points)
+
+**User Story 1: Automate New Hire Provisioning**
+As an HR user, I want new hires from HRIS to trigger account, schedule, and training setup so that onboarding is seamless.
+Priority: Medium | Story Points: 3 | Dependencies: E02, E03, E05, E07, E09, E13
+
+**User Story 2: Automate Offboarding Tasks**
+As an HR user, I want terminations to trigger access revocation, asset collection, and schedule updates so that offboarding is complete.
+Priority: Medium | Story Points: 3 | Dependencies: E02, E03, E05, E07, E09, E13
+
+**User Story 3: Track Onboarding/Offboarding Task Completion**
+As a supervisor, I want to track the status of onboarding and offboarding tasks so that nothing is missed.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E05, E07, E09, E13
+
+---
+
+### E18 - Localization & Multi-Tenant (5 User Stories, 11 Story Points)
+
+**User Story 1: Support Tenant Isolation**
+As an admin, I want all queries to include tenant ID so that data is isolated per warehouse/region.
+Priority: Low | Story Points: 3 | Dependencies: E01, E02, E03
+
+**User Story 2: Locale Configuration Per Tenant**
+As an admin, I want to configure locale settings per tenant so that date, time, and currency are correct.
+Priority: Low | Story Points: 2 | Dependencies: E01, E02, E03
+
+**User Story 3: Translate UI Strings**
+As a user, I want UI strings translated so that I can use EMS in my preferred language.
+Priority: Low | Story Points: 2 | Dependencies: E01, E02, E03
+
+**User Story 4: Timezone-Aware Timestamps**
+As a user, I want all timestamps to be timezone-aware so that schedules and reports are accurate.
+Priority: Low | Story Points: 2 | Dependencies: E01, E02, E03
+
+**User Story 5: Test Tenant Isolation and Localization**
+As a QA, I want automated tests for tenant isolation and localization so that data and config do not leak.
+Priority: Low | Story Points: 2 | Dependencies: E01, E02, E03
+
+---
+
+### E19 - Advanced Scheduling (AI/Optimization) (4 User Stories, 14 Story Points)
+
+**User Story 1: Train Predictive Staffing Model**
+As a scheduler, I want an ML model trained on historical demand so that staffing is optimized.
+Priority: Low | Story Points: 5 | Dependencies: E05, E15
+
+**User Story 2: Suggest Shift Assignments**
+As a scheduler, I want the system to auto-suggest shift assignments so that manual scheduling is reduced.
+Priority: Low | Story Points: 3 | Dependencies: E05, E15
+
+**User Story 3: Constraint Solver for Complex Rotations**
+As a scheduler, I want a constraint solver for complex rotations so that all rules are respected.
+Priority: Low | Story Points: 4 | Dependencies: E05, E15
+
+**User Story 4: Track Performance Metrics for Scheduling AI**
+As a product owner, I want to track performance metrics for AI suggestions so that improvements can be measured.
+Priority: Low | Story Points: 2 | Dependencies: E05, E15
+
+---
+
+### E20 - Self-Service Portal (5 User Stories, 10 Story Points)
+
+**User Story 1: Employee Profile Updates**
+As an employee, I want to update my contact info so that my records are current.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E06, E10, E11
+
+**User Story 2: Upload Personal Documents**
+As an employee, I want to upload documents (e.g., tax forms) so that my records are complete.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E06, E10, E11
+
+**User Story 3: View Pay Stubs and Tax Forms**
+As an employee, I want to view my pay history and tax forms so that I can access my financial records.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E06, E10, E11
+
+**User Story 4: Benefits Enrollment**
+As an employee, I want to enroll in benefits so that my selections are recorded.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E06, E10, E11
+
+**User Story 5: Supervisor Team Management Portal**
+As a supervisor, I want to view my team roster and pending approvals so that I can manage my team efficiently.
+Priority: Medium | Story Points: 2 | Dependencies: E02, E03, E06, E10, E11
+
+===========================================
+IMPLEMENTATION ROADMAP
+===========================================
+
+PHASE 1 - FOUNDATION (Epics E01-E03): 29 Story Points
+- Project scaffolding and infrastructure
+- Employee master data management
+- Security and access control
+
+PHASE 2 - CORE OPERATIONS (Epics E04-E06): 31 Story Points
+- Time and attendance tracking
+- Shift and schedule management
+- Leave and absence management
+
+PHASE 3 - COMPLIANCE & SAFETY (Epics E07-E09, E14): 37 Story Points
+- Training and certification tracking
+- Safety incidents and OSHA reporting
+- Equipment and asset assignment
+- Audit trail and compliance
+
+PHASE 4 - INTEGRATION & AUTOMATION (Epics E10-E13): 37 Story Points
+- Performance reviews and goals
+- Payroll export integration
+- Notifications and announcements
+- HRIS/WMS API integration
+
+PHASE 5 - ANALYTICS & MOBILE (Epics E15-E17): 30 Story Points
+- Reporting and analytics
+- Mobile access (PWA)
+- Onboarding and offboarding workflows
+
+PHASE 6 - ADVANCED FEATURES (Epics E18-E20): 35 Story Points
+- Localization and multi-tenant support
+- Advanced scheduling with AI/optimization
+- Self-service portal
+
+===========================================
+CONCLUSION
+===========================================
+
+All 20 epics have been successfully transformed into 89 detailed user stories with complete Gherkin acceptance criteria. The user stories are ready for sprint planning and implementation by agile development teams.
+
+GitHub Upload Status: â SUCCESSFUL
+All user story files have been committed to the repository in the 'user_stories' directory.
+
+Repository Structure:
+- user_stories/user_story_E01.txt through user_story_E20.txt
+- user_stories/COMPLETE_USER_STORIES_SUMMARY.txt (this file)
+
+Next Steps:
+1. Review and prioritize user stories with stakeholders
+2. Assign stories to development sprints
+3. Begin implementation starting with Phase 1 (Foundation)
+4. Conduct regular sprint reviews and retrospectives
+5. Iterate based on feedback and changing requirements
+
+===========================================
+END OF DOCUMENT
+===========================================
