@@ -1,0 +1,53 @@
+### E19 - Advanced Scheduling (AI/Optimization)
+
+**User Story 1**
+Title: Train Predictive Staffing Model
+User Story: As a scheduler, I want an ML model trained on historical demand so that staffing is optimized.
+Acceptance Criteria:
+Scenario: Model training
+Given historical attendance and demand data
+When the model is trained
+Then it predicts future staffing needs
+Priority: Low
+Story Points: 5
+Dependencies: E05, E15
+Notes: Evaluate model accuracy.
+
+**User Story 2**
+Title: Suggest Shift Assignments
+User Story: As a scheduler, I want the system to auto-suggest shift assignments so that manual scheduling is reduced.
+Acceptance Criteria:
+Scenario: Assignment suggestions
+Given predicted demand
+When I generate suggestions
+Then the system ranks assignments by confidence
+Priority: Low
+Story Points: 3
+Dependencies: E05, E15
+Notes: Allow supervisor to accept/reject.
+
+**User Story 3**
+Title: Constraint Solver for Complex Rotations
+User Story: As a scheduler, I want a constraint solver for complex rotations so that all rules are respected.
+Acceptance Criteria:
+Scenario: Constraint solving
+Given scheduling constraints
+When I run the solver
+Then all assignments respect rules and constraints
+Priority: Low
+Story Points: 4
+Dependencies: E05, E15
+Notes: Support legal, union, and business rules.
+
+**User Story 4**
+Title: Track Performance Metrics for Scheduling AI
+User Story: As a product owner, I want to track performance metrics for AI suggestions so that improvements can be measured.
+Acceptance Criteria:
+Scenario: Metrics tracking
+Given AI-generated assignments
+When assignments are accepted or rejected
+Then acceptance rates and outcomes are tracked
+Priority: Low
+Story Points: 2
+Dependencies: E05, E15
+Notes: Use metrics to improve model.
