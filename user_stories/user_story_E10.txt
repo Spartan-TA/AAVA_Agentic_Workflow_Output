@@ -1,0 +1,66 @@
+### E10 - Performance Reviews & Goals
+
+**User Story 1**
+Title: Create Performance Review Templates
+User Story: As an HR user, I want to create review templates so that performance cycles are standardized.
+Acceptance Criteria:
+Scenario: Template creation
+Given template data
+When I create a template
+Then it is available for review cycles
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Support quarterly and annual templates.
+
+**User Story 2**
+Title: Assign Reviews to Employees
+User Story: As a supervisor, I want to assign performance reviews to my team so that feedback is structured.
+Acceptance Criteria:
+Scenario: Review assignment
+Given a review cycle
+When I assign employees
+Then each receives a review task
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Track assignment status.
+
+**User Story 3**
+Title: Submit and Acknowledge Reviews
+User Story: As an employee, I want to submit and acknowledge reviews so that the process is complete.
+Acceptance Criteria:
+Scenario: Review workflow
+Given a review assigned
+When I submit or acknowledge
+Then the workflow status updates and history is logged
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Reviews are immutable after sign-off.
+
+**User Story 4**
+Title: Export Reviews as PDF
+User Story: As an HR user, I want to export completed reviews as PDF so that records are archived.
+Acceptance Criteria:
+Scenario: PDF export
+Given a completed review
+When I export
+Then a PDF file is generated with all review details
+Priority: Medium
+Story Points: 1
+Dependencies: E02, E03
+Notes: Include signatures and timestamps.
+
+**User Story 5**
+Title: Role-Based Review Visibility
+User Story: As a supervisor, I want to see only my team's reviews so that privacy is maintained.
+Acceptance Criteria:
+Scenario: Review visibility
+Given a supervisor
+When I view reviews
+Then only reviews for my team are visible
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Enforce RBAC on review endpoints.
