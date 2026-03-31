@@ -1,0 +1,53 @@
+### E11 - Payroll Export Integration
+
+**User Story 1**
+Title: Generate Payroll-Ready Export Files
+User Story: As a payroll admin, I want to export attendance and leave data in provider format so that payroll processing is automated.
+Acceptance Criteria:
+Scenario: Payroll export
+Given approved attendance and leave
+When I export payroll
+Then the file matches provider schema
+Priority: High
+Story Points: 3
+Dependencies: E04, E06
+Notes: Support SFTP and API delivery.
+
+**User Story 2**
+Title: Reconcile Export Totals with Reports
+User Story: As a payroll admin, I want export totals to match attendance reports so that errors are prevented.
+Acceptance Criteria:
+Scenario: Totals reconciliation
+Given exported data
+When I compare with reports
+Then totals match exactly
+Priority: High
+Story Points: 2
+Dependencies: E04, E06
+Notes: Log discrepancies.
+
+**User Story 3**
+Title: Retry Failed Deliveries with Backoff
+User Story: As a system admin, I want failed exports retried with backoff so that transient errors are handled.
+Acceptance Criteria:
+Scenario: Retry logic
+Given a failed export
+When retry is triggered
+Then the system retries with exponential backoff
+Priority: High
+Story Points: 2
+Dependencies: E04, E06
+Notes: Notify admin on repeated failures.
+
+**User Story 4**
+Title: Audit Payroll Export Events
+User Story: As an auditor, I want every export event logged so that payroll changes are traceable.
+Acceptance Criteria:
+Scenario: Export audit
+Given an export
+When it is generated or delivered
+Then an audit log entry is created with timestamp and status
+Priority: High
+Story Points: 2
+Dependencies: E04, E06
+Notes: Store logs in tamper-evident storage.
