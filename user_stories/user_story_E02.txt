@@ -1,0 +1,66 @@
+### E02 - Employee Master Data (CRUD)
+
+**User Story 1**
+Title: Create Employee API Endpoints
+User Story: As an HR user, I want to create, read, update, and delete employee records so that employee data is managed centrally.
+Acceptance Criteria:
+Scenario: Employee CRUD
+Given valid employee data
+When I POST/GET/PUT/PATCH/DELETE /employees
+Then the employee record is created, retrieved, updated, or deleted accordingly
+Priority: High
+Story Points: 5
+Dependencies: E01
+Notes: Use DTOs for API requests/responses.
+
+**User Story 2**
+Title: Enforce Unique Badge ID
+User Story: As an HR user, I want each employee to have a unique badgeId so that duplicate records are prevented.
+Acceptance Criteria:
+Scenario: Duplicate badgeId
+Given an existing employee with badgeId X
+When I try to create another employee with badgeId X
+Then the API returns a validation error
+Priority: High
+Story Points: 2
+Dependencies: E01
+Notes: Validation at DB and API layers.
+
+**User Story 3**
+Title: Support Soft-Delete for Employees
+User Story: As an HR user, I want to soft-delete employees so that historical data is preserved.
+Acceptance Criteria:
+Scenario: Soft-delete
+Given an active employee
+When I delete the employee
+Then the status is updated to 'inactive' and the record is not removed from the database
+Priority: High
+Story Points: 2
+Dependencies: E01
+Notes: Exclude soft-deleted employees from default queries.
+
+**User Story 4**
+Title: Employee List Pagination and Filtering
+User Story: As an HR user, I want to paginate and filter employee lists so that large datasets are manageable.
+Acceptance Criteria:
+Scenario: Paginated and filtered results
+Given a list of employees
+When I request page 2 with filter department=Shipping
+Then I receive only employees from Shipping on page 2
+Priority: High
+Story Points: 3
+Dependencies: E01
+Notes: Support filtering by department, role, status.
+
+**User Story 5**
+Title: OpenAPI Documentation for Employee APIs
+User Story: As a developer, I want OpenAPI schemas with examples for employee APIs so that integration is straightforward.
+Acceptance Criteria:
+Scenario: API docs
+Given the API is deployed
+When I access /swagger-ui or /v3/api-docs
+Then all employee endpoints are documented with request/response examples
+Priority: High
+Story Points: 1
+Dependencies: E01
+Notes: Keep documentation up to date with code changes.
