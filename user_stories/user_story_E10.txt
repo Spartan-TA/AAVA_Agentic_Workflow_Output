@@ -1,0 +1,81 @@
+EPIC E10 - PERFORMANCE REVIEWS & GOALS
+
+===========================================
+User Story 1
+===========================================
+
+Title: Create Review Templates
+
+User Story: As an HR user I want to define quarterly and annual review templates So that performance reviews are standardized
+
+Acceptance Criteria:
+Scenario: Template creation
+Given the review module
+When I create a template
+Then it is available for assignment
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Templates include goals, competencies
+
+===========================================
+User Story 2
+===========================================
+
+Title: Assign and Complete Performance Reviews
+
+User Story: As a supervisor I want to assign performance reviews to employees and track completion So that feedback is documented
+
+Acceptance Criteria:
+Scenario: Review assignment
+Given a review cycle
+When I assign it to employees
+Then they can submit and acknowledge reviews
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E10
+- Notes: Supervisor/employee workflow
+
+===========================================
+User Story 3
+===========================================
+
+Title: Track Goals, Ratings, and Comments
+
+User Story: As an employee I want to track my goals, ratings, and comments So that I can monitor my progress
+
+Acceptance Criteria:
+Scenario: Goal tracking
+Given an active review
+When I update goals or add comments
+Then changes are saved and visible to both parties
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E10
+- Notes: Role-based visibility
+
+===========================================
+User Story 4
+===========================================
+
+Title: Export Signed-Off Reviews as PDF
+
+User Story: As an HR user I want to export completed reviews as PDF So that records are archived
+
+Acceptance Criteria:
+Scenario: PDF export
+Given a signed-off review
+When I request export
+Then a PDF is generated and immutable
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E10
+- Notes: History cannot be edited after sign-off
