@@ -1,0 +1,81 @@
+EPIC E14 - AUDIT TRAIL & COMPLIANCE
+
+===========================================
+User Story 1
+===========================================
+
+Title: Log Sensitive Changes to Central Audit Table
+
+User Story: As a compliance officer I want all sensitive changes logged centrally So that audit requirements are met
+
+Acceptance Criteria:
+Scenario: Audit logging
+Given a create/update/delete
+When it occurs
+Then actor, timestamp, before/after values are logged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03
+- Notes: Applies to PII, schedules, approvals, payroll
+
+===========================================
+User Story 2
+===========================================
+
+Title: Ensure Tamper-Evident Storage of Audit Logs
+
+User Story: As a system I want audit logs to be tamper-evident So that integrity is ensured
+
+Acceptance Criteria:
+Scenario: Tamper check
+Given audit logs
+When I attempt to modify them
+Then changes are detected and flagged
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E14
+- Notes: Immutable log table
+
+===========================================
+User Story 3
+===========================================
+
+Title: Export Audit Logs by Date, User, or Entity
+
+User Story: As an auditor I want to export audit logs by filter So that investigations are efficient
+
+Acceptance Criteria:
+Scenario: Audit export
+Given audit logs
+When I filter by date/user/entity
+Then matching logs are exported
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E14
+- Notes: Export as CSV/PDF
+
+===========================================
+User Story 4
+===========================================
+
+Title: Automated Tests for Audit Coverage
+
+User Story: As a QA I want automated tests to validate audit log coverage So that all sensitive actions are tracked
+
+Acceptance Criteria:
+Scenario: Audit test
+Given sensitive actions
+When tests run
+Then audit entries are verified
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E14
+- Notes: Test coverage report required
