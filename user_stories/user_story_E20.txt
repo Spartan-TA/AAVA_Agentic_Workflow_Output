@@ -1,0 +1,81 @@
+EPIC E20 - DOCUMENT MANAGEMENT
+
+===========================================
+User Story 1
+===========================================
+
+Title: Store and Version Employee Documents
+
+User Story: As an HR user I want to store and version employee documents So that compliance records are centralized
+
+Acceptance Criteria:
+Scenario: Document storage
+Given an employee document
+When I upload a new version
+Then the previous version is retained and history is visible
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Documents: contracts, I-9, certs
+
+===========================================
+User Story 2
+===========================================
+
+Title: Secure Access to Documents
+
+User Story: As a system I want to restrict document access by role So that sensitive files are protected
+
+Acceptance Criteria:
+Scenario: Access control
+Given a document
+When a user requests access
+Then permissions are enforced
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E20
+- Notes: Role-based access
+
+===========================================
+User Story 3
+===========================================
+
+Title: Send Expiration Reminders for Documents
+
+User Story: As an HR user I want to receive reminders for expiring documents So that renewals are timely
+
+Acceptance Criteria:
+Scenario: Expiry reminder
+Given a document with expiration
+When the date approaches
+Then a reminder is sent to responsible users
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E20
+- Notes: Notification channel configurable
+
+===========================================
+User Story 4
+===========================================
+
+Title: Integrate E-Signature for Documents
+
+User Story: As an HR user I want to request e-signatures on documents So that approvals are digital
+
+Acceptance Criteria:
+Scenario: E-signature integration
+Given a document requiring signature
+When I send a request
+Then the recipient can sign electronically and status is tracked
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E20
+- Notes: Integration with e-signature provider
