@@ -1,0 +1,81 @@
+EPIC E05 - SHIFT & SCHEDULE MANAGEMENT
+
+===========================================
+User Story 1
+===========================================
+
+Title: Create and Manage Shift Templates
+
+User Story: As an HR user I want to define recurring shift templates So that I can standardize scheduling
+
+Acceptance Criteria:
+Scenario: Shift template CRUD
+Given the scheduling module
+When I create/edit/delete a template
+Then the template is saved and available for assignment
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Supports rotations and overtime rules
+
+===========================================
+User Story 2
+===========================================
+
+Title: Assign Shifts to Employees
+
+User Story: As a supervisor I want to assign shifts to employees So that staffing is ensured
+
+Acceptance Criteria:
+Scenario: Shift assignment
+Given a shift template
+When I assign it to employees
+Then assignments are reflected in their schedules
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E05
+- Notes: Bulk assignment supported
+
+===========================================
+User Story 3
+===========================================
+
+Title: Detect and Prevent Scheduling Conflicts
+
+User Story: As a scheduler I want the system to detect scheduling conflicts So that double-booking is avoided
+
+Acceptance Criteria:
+Scenario: Conflict detection
+Given overlapping shifts
+When I try to assign them
+Then the system prevents the conflict and shows an error
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E05
+- Notes: Includes blackout dates
+
+===========================================
+User Story 4
+===========================================
+
+Title: View Personal Upcoming Shifts
+
+User Story: As a worker I want to view my upcoming shifts So that I can plan my attendance
+
+Acceptance Criteria:
+Scenario: Upcoming shifts view
+Given a logged-in worker
+When they access their schedule
+Then all future assigned shifts are listed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E05
+- Notes: Mobile-friendly view
