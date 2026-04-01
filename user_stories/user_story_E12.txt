@@ -1,0 +1,81 @@
+EPIC E12 - NOTIFICATIONS & ANNOUNCEMENTS
+
+===========================================
+User Story 1
+===========================================
+
+Title: Send In-App and Email/SMS Notifications
+
+User Story: As a supervisor I want to send notifications for shift changes, approvals, and announcements So that employees are informed
+
+Acceptance Criteria:
+Scenario: Notification delivery
+Given a shift change
+When a notification is triggered
+Then users receive it via selected channels
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E03, E05, E06, E07
+- Notes: Users opt-in/out per channel
+
+===========================================
+User Story 2
+===========================================
+
+Title: Localize Notification Templates
+
+User Story: As a system I want notification templates to be localized So that users receive messages in their preferred language
+
+Acceptance Criteria:
+Scenario: Template localization
+Given a user with language preference
+When a notification is sent
+Then it is delivered in the correct language
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E12
+- Notes: Supports English and Spanish
+
+===========================================
+User Story 3
+===========================================
+
+Title: Track Notification Delivery Status
+
+User Story: As an admin I want to track the delivery status of notifications So that I can monitor communication effectiveness
+
+Acceptance Criteria:
+Scenario: Delivery tracking
+Given a sent notification
+When I view the status
+Then delivery/read status is visible
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E12
+- Notes: Rate limits applied
+
+===========================================
+User Story 4
+===========================================
+
+Title: Display Announcements on Dashboard
+
+User Story: As a worker I want to see important announcements on my dashboard So that I stay informed
+
+Acceptance Criteria:
+Scenario: Announcement display
+Given an active announcement
+When I log in
+Then it is visible on my dashboard
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E12
+- Notes: Dismissible by user
