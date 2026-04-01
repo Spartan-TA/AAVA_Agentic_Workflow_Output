@@ -1,0 +1,61 @@
+EPIC E18 - LOCALIZATION & MULTI-WAREHOUSE
+
+===========================================
+User Story 1
+===========================================
+
+Title: Support Multiple Warehouse Entities
+
+User Story: As an admin I want to manage multiple warehouses with distinct calendars and policies So that operations scale
+
+Acceptance Criteria:
+Scenario: Multi-warehouse setup
+Given multiple warehouses
+When I configure calendars and policies
+Then each warehouse operates independently
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E01, E02, E05
+- Notes: Org structure per warehouse
+
+===========================================
+User Story 2
+===========================================
+
+Title: Localize UI for English and Spanish
+
+User Story: As a user I want to use the EMS in my preferred language So that I can understand the interface
+
+Acceptance Criteria:
+Scenario: UI localization
+Given a language preference
+When I log in
+Then the UI is displayed in English or Spanish
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E18
+- Notes: Language toggle in profile
+
+===========================================
+User Story 3
+===========================================
+
+Title: Apply Warehouse-Specific Policies
+
+User Story: As an HR user I want to enforce warehouse-specific policies So that compliance is maintained
+
+Acceptance Criteria:
+Scenario: Policy enforcement
+Given a policy assigned to a warehouse
+When scheduling or leave is processed
+Then the correct policy is applied
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E18
+- Notes: Policy versioning supported
