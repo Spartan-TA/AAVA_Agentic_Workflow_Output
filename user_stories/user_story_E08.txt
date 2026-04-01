@@ -1,0 +1,81 @@
+EPIC E08 - SAFETY INCIDENTS & OSHA REPORTING
+
+===========================================
+User Story 1
+===========================================
+
+Title: Record Safety Incidents and Near-Misses
+
+User Story: As a supervisor I want to log safety incidents and near-misses So that all events are tracked
+
+Acceptance Criteria:
+Scenario: Incident logging
+Given an incident
+When I POST to /safety/incidents
+Then the event is recorded with all required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Severity, location, involved employees
+
+===========================================
+User Story 2
+===========================================
+
+Title: Manage Incident Investigation Workflow
+
+User Story: As a safety officer I want to manage the investigation workflow for incidents So that corrective actions are tracked
+
+Acceptance Criteria:
+Scenario: Investigation workflow
+Given an open incident
+When I update the status
+Then it transitions through Open, Investigating, Resolved
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E08
+- Notes: Status change history tracked
+
+===========================================
+User Story 3
+===========================================
+
+Title: Generate OSHA Summary Reports
+
+User Story: As a compliance officer I want to generate OSHA 300/300A summary reports So that regulatory requirements are met
+
+Acceptance Criteria:
+Scenario: OSHA export
+Given incident data
+When I request a summary
+Then the report is generated with all required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E08
+- Notes: Exportable as CSV/PDF
+
+===========================================
+User Story 4
+===========================================
+
+Title: Safety Metrics Dashboard
+
+User Story: As a manager I want to view safety KPIs on a dashboard So that I can monitor trends
+
+Acceptance Criteria:
+Scenario: Metrics dashboard
+Given incident and investigation data
+When I access the dashboard
+Then KPIs are displayed and filterable
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E08
+- Notes: Filters by date, location
