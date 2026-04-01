@@ -1,0 +1,81 @@
+EPIC E06 - LEAVE & ABSENCE MANAGEMENT
+
+===========================================
+User Story 1
+===========================================
+
+Title: Request Leave (PTO, Sick, Unpaid)
+
+User Story: As an employee I want to request different types of leave So that my time off is tracked
+
+Acceptance Criteria:
+Scenario: Leave request
+Given an employee with leave balance
+When they submit a leave request
+Then the request is recorded and pending approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Leave types configurable
+
+===========================================
+User Story 2
+===========================================
+
+Title: Approve or Deny Leave Requests
+
+User Story: As a supervisor I want to approve or deny leave requests So that staffing is maintained
+
+Acceptance Criteria:
+Scenario: Leave approval
+Given a pending leave request
+When a supervisor reviews it
+Then they can approve or deny with comments
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E06
+- Notes: Approval workflow
+
+===========================================
+User Story 3
+===========================================
+
+Title: Update Leave Balances and Policies
+
+User Story: As an HR user I want leave balances to update automatically So that accruals and usage are accurate
+
+Acceptance Criteria:
+Scenario: Leave balance update
+Given an approved leave
+When the leave is taken
+Then the employee's balance is reduced accordingly
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E06
+- Notes: Policy rules enforced
+
+===========================================
+User Story 4
+===========================================
+
+Title: Exclude Approved Leave from Scheduling and Payroll
+
+User Story: As a scheduler I want approved leaves to auto-flag scheduled shifts So that coverage can be arranged
+
+Acceptance Criteria:
+Scenario: Leave integration
+Given an approved leave
+When it overlaps with a scheduled shift
+Then the shift is flagged for coverage and payroll excludes those hours
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E06
+- Notes: Integration hooks for scheduling/payroll
