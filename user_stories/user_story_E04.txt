@@ -1,0 +1,81 @@
+EPIC E04 - TIME & ATTENDANCE (CLOCK IN/OUT)
+
+===========================================
+User Story 1
+===========================================
+
+Title: Implement Clock-In/Clock-Out Endpoints
+
+User Story: As a worker I want to clock in and out via API So that my attendance is recorded
+
+Acceptance Criteria:
+Scenario: Clock-in event
+Given a valid employee
+When they POST to /attendance/clock-in
+Then their clock-in time is recorded
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Device and location capture optional
+
+===========================================
+User Story 2
+===========================================
+
+Title: Calculate Hours Worked Per Shift
+
+User Story: As a payroll admin I want the system to calculate hours worked per shift So that payroll is accurate
+
+Acceptance Criteria:
+Scenario: Shift hours calculation
+Given clock-in and clock-out events
+When I view the shift summary
+Then total hours are computed correctly
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04
+- Notes: Handles overnight shifts
+
+===========================================
+User Story 3
+===========================================
+
+Title: Handle Missed Punches and Corrections
+
+User Story: As a supervisor I want to approve corrections for missed punches So that attendance records are accurate
+
+Acceptance Criteria:
+Scenario: Missed punch correction
+Given a missed punch
+When a correction request is submitted
+Then a supervisor can approve or reject it
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E04
+- Notes: Correction workflow required
+
+===========================================
+User Story 4
+===========================================
+
+Title: Export Attendance Reports
+
+User Story: As an HR user I want to export attendance data as CSV So that I can analyze and archive records
+
+Acceptance Criteria:
+Scenario: Attendance export
+Given attendance data
+When I request a CSV export
+Then the file is generated and downloadable
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E04
+- Notes: Export includes all relevant fields
