@@ -1,0 +1,69 @@
+Title: RBAC - Role Assignment
+
+User Story: As an admin I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users So that access is restricted appropriately
+
+Acceptance Criteria:
+Scenario: Assign role
+Given a user account
+When I set the role
+Then the user has permissions according to their role
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Roles stored in DB and enforced by Spring Security
+
+---
+
+Title: RBAC - Endpoint Security
+
+User Story: As a developer I want to secure endpoints by role So that only authorized users can access sensitive data
+
+Acceptance Criteria:
+Scenario: Access control
+Given a protected endpoint
+When a user without permission accesses it
+Then a 403 Forbidden is returned
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Security rules covered by automated tests
+
+---
+
+Title: RBAC - Row-Level Security
+
+User Story: As a supervisor I want to access only my team's records So that I cannot view or modify other teams' data
+
+Acceptance Criteria:
+Scenario: Row-level constraint
+Given a supervisor user
+When accessing employee data
+Then only records for their team are visible/editable
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E01, E02
+- Notes: Enforced at repository/service layer
+
+---
+
+Title: RBAC - API Key/OAuth2 Toggle
+
+User Story: As a system admin I want to toggle between API key and OAuth2 authentication So that integration partners can use the preferred method
+
+Acceptance Criteria:
+Scenario: Auth method toggle
+Given a configuration setting
+When I change auth mode
+Then endpoints require the selected authentication method
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Documented in API docs
