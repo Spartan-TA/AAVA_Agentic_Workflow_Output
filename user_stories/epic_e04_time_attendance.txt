@@ -1,0 +1,69 @@
+Title: Clock In/Out - Record Event
+
+User Story: As a worker I want to clock in and out via an endpoint So that my attendance is accurately recorded
+
+Acceptance Criteria:
+Scenario: Clock in/out
+Given a valid employee and location
+When I POST to /attendance/clock-in or /clock-out
+Then the event is recorded with timestamp and device info
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Geofence validation optional
+
+---
+
+Title: Clock In/Out - Calculate Hours Worked
+
+User Story: As a payroll admin I want the system to calculate hours worked per shift So that payroll is accurate
+
+Acceptance Criteria:
+Scenario: Calculate shift hours
+Given clock-in and clock-out events
+When daily totals are computed
+Then hours worked are calculated and available for export
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Handles overnight shifts
+
+---
+
+Title: Clock In/Out - Missed Punch Correction
+
+User Story: As a supervisor I want to correct missed punches So that attendance records are accurate
+
+Acceptance Criteria:
+Scenario: Missed punch correction
+Given a missed punch
+When a correction is submitted
+Then an approval task is created and processed
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Correction workflow must be auditable
+
+---
+
+Title: Clock In/Out - Export Attendance
+
+User Story: As a payroll admin I want to export attendance data in CSV format So that I can process payroll
+
+Acceptance Criteria:
+Scenario: Export attendance
+Given approved attendance records
+When I request an export
+Then a CSV file is generated with all relevant fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Export matches payroll schema
