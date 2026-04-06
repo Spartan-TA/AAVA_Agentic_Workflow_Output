@@ -1,0 +1,15 @@
+Title: User Login â Secure Authentication
+
+User Story: As a registered user, I want to log in securely so that I can access my personal dashboard and data.
+
+Acceptance Criteria:
+Scenario: Successful login
+Given I am on the login page
+When I enter valid credentials
+Then I am redirected to my dashboard
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User registration, authentication backend
+- Notes: Should support account lockout after 5 failed attempts.
