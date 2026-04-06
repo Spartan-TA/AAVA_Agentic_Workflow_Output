@@ -1,1 +1,0 @@
-/* Complete content of SearchResponse.java */
