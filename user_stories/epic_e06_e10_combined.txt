@@ -1,0 +1,363 @@
+=== EPIC E06: LEAVE & ABSENCE MANAGEMENT ===
+
+Title: Leave Management - Request Leave
+
+User Story: As an employee I want to request PTO, sick, or unpaid leave So that my time off is tracked
+
+Acceptance Criteria:
+Scenario: Request leave
+Given available leave balance
+When I submit a leave request
+Then the request is created and pending approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Validates accrual balances
+
+---
+
+Title: Leave Management - Approve/Deny Leave
+
+User Story: As a supervisor I want to approve or deny leave requests So that staffing is managed
+
+Acceptance Criteria:
+Scenario: Approve leave
+Given a pending leave request
+When I approve or deny it
+Then the employee is notified and balances are updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Approval triggers schedule update
+
+---
+
+Title: Leave Management - Auto-Flag Scheduled Shifts
+
+User Story: As a scheduler I want scheduled shifts to be auto-flagged for coverage when leave is approved So that coverage gaps are addressed
+
+Acceptance Criteria:
+Scenario: Auto-flag shifts
+Given an approved leave overlapping scheduled shifts
+When approval is processed
+Then affected shifts are flagged for coverage
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05
+- Notes: Integrates with shift management
+
+---
+
+Title: Leave Management - Export Approved Leaves
+
+User Story: As a payroll admin I want to export approved leave records So that payroll is accurate
+
+Acceptance Criteria:
+Scenario: Export leaves
+Given approved leave requests
+When I export leave data
+Then a file is generated with all relevant fields
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E05
+- Notes: Export matches payroll schema
+
+
+=== EPIC E07: TRAINING & CERTIFICATION TRACKING ===
+
+Title: Certification Tracking - Add Certification
+
+User Story: As an HR user I want to add required certifications to employee profiles So that compliance is tracked
+
+Acceptance Criteria:
+Scenario: Add certification
+Given a valid certification
+When I add it to an employee
+Then it appears on their profile with expiry date
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Upload proof documents
+
+---
+
+Title: Certification Tracking - Expiry Alerts
+
+User Story: As a supervisor I want to receive alerts before certifications expire So that renewals are not missed
+
+Acceptance Criteria:
+Scenario: Certification expiry alert
+Given a certification expiring in 30 or 7 days
+When the system checks expirations
+Then an alert is sent to the employee and supervisor
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Alerts via in-app and email
+
+---
+
+Title: Certification Tracking - Block Unqualified Assignments
+
+User Story: As a scheduler I want to block assignment of tasks to employees with expired certifications So that only qualified staff are assigned
+
+Acceptance Criteria:
+Scenario: Block assignment
+Given an expired certification
+When assigning a task requiring that cert
+Then the assignment is prevented and a warning is shown
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Enforced in scheduling logic
+
+---
+
+Title: Certification Tracking - Certification Status Visibility
+
+User Story: As a supervisor I want to view certification status on employee profiles So that I can verify qualifications
+
+Acceptance Criteria:
+Scenario: View certification status
+Given an employee profile
+When I view certifications
+Then all current and expired certs are listed with status
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Visible to HR and supervisors
+
+
+=== EPIC E08: SAFETY INCIDENTS & OSHA REPORTING ===
+
+Title: Safety Incidents - Record Incident
+
+User Story: As a worker I want to record a safety incident or near-miss So that hazards are documented
+
+Acceptance Criteria:
+Scenario: Record incident
+Given a safety event
+When I POST to /safety/incidents
+Then the incident is saved with severity, location, and involved employees
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Input validation required
+
+---
+
+Title: Safety Incidents - Investigation Workflow
+
+User Story: As a safety officer I want to manage incident investigation workflow So that corrective actions are tracked
+
+Acceptance Criteria:
+Scenario: Incident workflow
+Given a new incident
+When investigation is started
+Then status updates from Open to Investigating to Resolved
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03
+- Notes: Workflow must be auditable
+
+---
+
+Title: Safety Incidents - OSHA Reporting
+
+User Story: As a compliance officer I want to export OSHA 300/300A summary fields So that regulatory reports are generated
+
+Acceptance Criteria:
+Scenario: Export OSHA report
+Given recorded incidents
+When I export OSHA data
+Then a file is generated with all required fields
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Export matches OSHA schema
+
+---
+
+Title: Safety Incidents - Metrics Dashboard
+
+User Story: As a manager I want to view safety KPIs on a dashboard So that I can monitor trends
+
+Acceptance Criteria:
+Scenario: View safety metrics
+Given incident data
+When I access the dashboard
+Then key metrics are displayed and filterable
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Metrics endpoints available for BI
+
+
+=== EPIC E09: EQUIPMENT & ASSET ASSIGNMENT ===
+
+Title: Asset Assignment - Register Asset
+
+User Story: As an asset manager I want to register equipment and PPE in the system So that all assets are tracked
+
+Acceptance Criteria:
+Scenario: Register asset
+Given asset details
+When I add a new asset
+Then it appears in the asset registry
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Asset type and condition required
+
+---
+
+Title: Asset Assignment - Assign Asset to Employee
+
+User Story: As a supervisor I want to assign assets to employees So that accountability is maintained
+
+Acceptance Criteria:
+Scenario: Assign asset
+Given an available asset and a qualified employee
+When I assign the asset
+Then the assignment is recorded and visible in history
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E07
+- Notes: Blocks if required cert is missing
+
+---
+
+Title: Asset Assignment - Asset Check-in/Check-out
+
+User Story: As an employee I want to check out and return assets So that usage is tracked
+
+Acceptance Criteria:
+Scenario: Asset check-in/out
+Given an assigned asset
+When I check out or return it
+Then the action is logged with timestamp
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Overdue returns are reported
+
+---
+
+Title: Asset Assignment - Asset Condition Tracking
+
+User Story: As an asset manager I want to track asset condition state So that maintenance can be scheduled
+
+Acceptance Criteria:
+Scenario: Update asset condition
+Given an asset
+When condition changes are reported
+Then the state is updated and visible in the registry
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Condition history maintained
+
+
+=== EPIC E10: PERFORMANCE REVIEWS & GOALS ===
+
+Title: Performance Reviews - Create Review Template
+
+User Story: As an HR user I want to create performance review templates So that reviews are standardized
+
+Acceptance Criteria:
+Scenario: Create review template
+Given review criteria
+When I create a template
+Then it is available for assignment to employees
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Supports quarterly/annual cycles
+
+---
+
+Title: Performance Reviews - Assign Review Cycle
+
+User Story: As a supervisor I want to assign review cycles to employees So that performance is evaluated regularly
+
+Acceptance Criteria:
+Scenario: Assign review cycle
+Given a review template
+When I assign it to employees
+Then review tasks are generated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: Role-based visibility
+
+---
+
+Title: Performance Reviews - Submit and Acknowledge Review
+
+User Story: As a supervisor I want to submit reviews and have employees acknowledge them So that feedback is documented
+
+Acceptance Criteria:
+Scenario: Submit and acknowledge review
+Given a completed review
+When I submit it
+Then the employee can acknowledge receipt and comments are recorded
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Immutable after sign-off
+
+---
+
+Title: Performance Reviews - Export Review PDF
+
+User Story: As an HR user I want to export performance reviews as PDF So that records can be archived
+
+Acceptance Criteria:
+Scenario: Export review PDF
+Given a completed review
+When I export it
+Then a PDF file is generated with all review details
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03
+- Notes: PDF matches template
