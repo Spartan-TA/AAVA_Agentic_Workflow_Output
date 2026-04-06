@@ -1,0 +1,1 @@
+/* Complete content of LoginResponse.java */
