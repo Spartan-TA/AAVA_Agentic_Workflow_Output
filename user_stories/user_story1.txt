@@ -1,0 +1,15 @@
+Title: User Registration â Email Signup
+
+User Story: As a new user, I want to register using my email address so that I can create a personalized account and access member features.
+
+Acceptance Criteria:
+Scenario: Successful email registration
+Given I am on the registration page
+When I enter a valid email and password and submit the form
+Then my account is created and I receive a confirmation email
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Email service integration, UI registration form
+- Notes: Password must meet security requirements.
