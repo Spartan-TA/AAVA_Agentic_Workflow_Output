@@ -1,0 +1,15 @@
+Title: Dashboard â View Recent Activity
+
+User Story: As a user, I want to see my recent activity on the dashboard so that I can track my engagement and usage.
+
+Acceptance Criteria:
+Scenario: View activity log
+Given I am logged in
+When I navigate to the dashboard
+Then I see a list of my recent actions
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Activity tracking module
+- Notes: Show last 30 days of activity.
