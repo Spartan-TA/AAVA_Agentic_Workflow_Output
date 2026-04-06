@@ -1,0 +1,327 @@
+=== EPIC E16: MOBILE ACCESS (PWA) ===
+
+Title: Mobile Access - Responsive Clock In/Out
+
+User Story: As a worker I want to clock in/out from my mobile device So that I can record attendance on the go
+
+Acceptance Criteria:
+Scenario: Mobile clock in/out
+Given a mobile device
+When I access the PWA
+Then I can clock in/out and events are queued offline if needed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E04, E05, E06, E12
+- Notes: Offline queue with conflict resolution
+
+---
+
+Title: Mobile Access - View Schedule
+
+User Story: As a worker I want to view my schedule on mobile So that I know my shifts
+
+Acceptance Criteria:
+Scenario: Mobile schedule view
+Given assigned shifts
+When I access the PWA
+Then my schedule is displayed responsively
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: PWA manifest installable
+
+---
+
+Title: Mobile Access - Request Leave
+
+User Story: As a worker I want to request leave from my mobile device So that I can manage time off easily
+
+Acceptance Criteria:
+Scenario: Mobile leave request
+Given leave balances
+When I submit a request via PWA
+Then the request is created and pending approval
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Mobile-friendly form
+
+---
+
+Title: Mobile Access - Announcements
+
+User Story: As a worker I want to view announcements on mobile So that I stay informed
+
+Acceptance Criteria:
+Scenario: Mobile announcements
+Given active announcements
+When I access the PWA
+Then announcements are visible and dismissible
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E04, E05, E06, E12
+- Notes: Supports push notifications
+
+
+=== EPIC E17: ONBOARDING & OFFBOARDING WORKFLOW ===
+
+Title: Onboarding - Automate New Hire Provisioning
+
+User Story: As an HR user I want new hires from HRIS to be provisioned automatically So that onboarding is efficient
+
+Acceptance Criteria:
+Scenario: Automate new hire
+Given a new hire in HRIS
+When the sync job runs
+Then an account, initial schedule, and required training tasks are created
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Asset assignment tasks generated
+
+---
+
+Title: Onboarding - Offboarding Workflow
+
+User Story: As an HR user I want offboarding to revoke access, collect assets, and update schedules So that terminations are secure
+
+Acceptance Criteria:
+Scenario: Offboard employee
+Given a terminated employee
+When offboarding is triggered
+Then access is revoked, assets are collected, and future shifts are removed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: All steps logged
+
+---
+
+Title: Onboarding - Training Task Generation
+
+User Story: As a supervisor I want required training tasks generated for new hires So that compliance is ensured
+
+Acceptance Criteria:
+Scenario: Generate training tasks
+Given a new hire
+When onboarding is processed
+Then all required training tasks are assigned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Training status tracked
+
+---
+
+Title: Onboarding - Asset Assignment for New Hires
+
+User Story: As an asset manager I want assets assigned to new hires during onboarding So that they are equipped from day one
+
+Acceptance Criteria:
+Scenario: Assign assets to new hire
+Given a new hire
+When onboarding is processed
+Then required assets are assigned and tracked
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Blocks if certs missing
+
+
+=== EPIC E18: LOCALIZATION & MULTI-WAREHOUSE ===
+
+Title: Localization - Multi-Warehouse Support
+
+User Story: As an admin I want to support multiple warehouses with distinct calendars and policies So that each location is managed independently
+
+Acceptance Criteria:
+Scenario: Multi-warehouse setup
+Given multiple warehouses
+When I configure calendars and policies
+Then each warehouse operates with its own settings
+
+Additional Details:
+- Priority: Low
+- Story Points: 5
+- Dependencies: E01, E02, E05
+- Notes: UI supports warehouse selection
+
+---
+
+Title: Localization - UI Localization
+
+User Story: As a user I want the UI to be localized So that I can use the system in my preferred language
+
+Acceptance Criteria:
+Scenario: UI localization
+Given supported locales
+When I select a language
+Then all UI text is translated
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E01, E02, E05
+- Notes: Language toggle in user profile
+
+---
+
+Title: Localization - Warehouse-Specific Policies
+
+User Story: As an HR user I want to define warehouse-specific leave and overtime policies So that compliance is maintained
+
+Acceptance Criteria:
+Scenario: Configure warehouse policies
+Given multiple warehouses
+When I set policies
+Then each warehouse enforces its own rules
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E01, E02, E05
+- Notes: Policy engine supports per-warehouse rules
+
+
+=== EPIC E19: ADVANCED SCHEDULING (AI-ASSISTED) ===
+
+Title: Advanced Scheduling - AI Shift Suggestions
+
+User Story: As a scheduler I want the system to suggest optimal shift assignments based on historical demand and skills So that staffing is efficient
+
+Acceptance Criteria:
+Scenario: AI shift suggestion
+Given historical data and employee skills
+When I generate shift suggestions
+Then the system proposes optimal assignments
+
+Additional Details:
+- Priority: Low
+- Story Points: 8
+- Dependencies: E02, E05, E07
+- Notes: Suggestions can be overridden
+
+---
+
+Title: Advanced Scheduling - Skills & Certification Matching
+
+User Story: As a scheduler I want shift assignments to consider employee skills and certifications So that only qualified staff are scheduled
+
+Acceptance Criteria:
+Scenario: Skills/cert matching
+Given shift requirements
+When assigning shifts
+Then only employees with matching skills/certs are eligible
+
+Additional Details:
+- Priority: Low
+- Story Points: 5
+- Dependencies: E02, E05, E07
+- Notes: Blocks unqualified assignments
+
+---
+
+Title: Advanced Scheduling - Demand Forecast Integration
+
+User Story: As a scheduler I want to integrate demand forecasts into scheduling So that shifts match expected workload
+
+Acceptance Criteria:
+Scenario: Demand forecast scheduling
+Given a demand forecast
+When generating schedules
+Then shift assignments align with forecasted demand
+
+Additional Details:
+- Priority: Low
+- Story Points: 5
+- Dependencies: E02, E05, E07
+- Notes: Forecast data import supported
+
+
+=== EPIC E20: SELF-SERVICE PORTAL ===
+
+Title: Self-Service Portal - Update Contact Info
+
+User Story: As an employee I want to update my contact information So that my records are current
+
+Acceptance Criteria:
+Scenario: Update contact info
+Given an employee profile
+When I edit my contact details
+Then changes are saved and visible to HR
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E02, E03, E11, E12
+- Notes: Audit log for changes
+
+---
+
+Title: Self-Service Portal - View Pay Stubs
+
+User Story: As an employee I want to view my pay stubs online So that I can access my payment history
+
+Acceptance Criteria:
+Scenario: View pay stubs
+Given payroll data
+When I access the portal
+Then all pay stubs are listed and downloadable
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E02, E03, E11, E12
+- Notes: PDF download supported
+
+---
+
+Title: Self-Service Portal - Download Tax Forms
+
+User Story: As an employee I want to download tax forms So that I can file my taxes
+
+Acceptance Criteria:
+Scenario: Download tax forms
+Given available tax forms
+When I access the portal
+Then I can download my forms for the current and previous years
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E02, E03, E11, E12
+- Notes: Access controlled
+
+---
+
+Title: Self-Service Portal - Notification Preferences
+
+User Story: As an employee I want to manage my notification preferences in the portal So that I control how I am contacted
+
+Acceptance Criteria:
+Scenario: Manage notification preferences
+Given notification settings
+When I update preferences
+Then notifications are sent according to my choices
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: E02, E03, E11, E12
+- Notes: Preferences persist across sessions
