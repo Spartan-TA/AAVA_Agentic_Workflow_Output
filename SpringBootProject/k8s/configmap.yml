@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: warehouse-ems-config
+  labels:
+    app: warehouse-ems
+data:
+  application.yml: |
+    spring:
+      datasource:
+        url: jdbc:postgresql://postgres:5432/warehouse_ems
+        username: ems
+        password: ems_pass
+      jpa:
+        hibernate:
+          ddl-auto: none
+        show-sql: false
+      flyway:
+        enabled: true
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: "*"
+      metrics:
+        export:
+          prometheus:
+            enabled: true
+    logging:
+      level:
+        root: INFO
+      pattern:
+        console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    server:
+      port: 8080
