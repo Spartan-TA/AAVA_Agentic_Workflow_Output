@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: warehouse-ems
+  labels:
+    app: warehouse-ems
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: warehouse-ems
+  template:
+    metadata:
+      labels:
+        app: warehouse-ems
+    spec:
+      containers:
+        - name: warehouse-ems
+          image: warehouse-ems:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: prod
+            - name: JAVA_OPTS
+              value: "-Xms512m -Xmx1024m"
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: warehouse-ems-config
