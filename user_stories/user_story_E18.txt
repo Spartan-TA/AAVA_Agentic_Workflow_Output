@@ -1,0 +1,76 @@
+### E18 - Localization & Multi-Tenant
+
+**User Story 1**
+Title: Tenant Isolation for Data and Config
+User Story: As an ADMIN I want tenant isolation for data and config So that multiple warehouses/regions are supported.
+Acceptance Criteria:
+Scenario: Tenant Isolation
+Given multiple tenants
+When I access EMS
+Then data and config are isolated per tenant
+
+Additional Details:
+- Priority: Low
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Tenant ID in all entities
+
+**User Story 2**
+Title: Locale Config per Tenant
+User Story: As an ADMIN I want locale config per tenant So that date/time, currency, and language are region-specific.
+Acceptance Criteria:
+Scenario: Locale Configuration
+Given tenant settings
+When locale config is updated
+Then UI and data reflect locale
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Locale settings editable
+
+**User Story 3**
+Title: Translations for UI Strings
+User Story: As a WORKER I want UI strings translated So that I can use EMS in my preferred language.
+Acceptance Criteria:
+Scenario: UI Translation
+Given translation files
+When I select a language
+Then UI strings are displayed in that language
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Translation coverage tested
+
+**User Story 4**
+Title: Timezone-Aware Timestamps
+User Story: As an HR I want timestamps to be timezone-aware So that scheduling is accurate.
+Acceptance Criteria:
+Scenario: Timezone Handling
+Given tenant timezone settings
+When events are recorded
+Then timestamps reflect correct timezone
+
+Additional Details:
+- Priority: Low
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Timezone conversion logic
+
+**User Story 5**
+Title: Test Isolation for Multi-Tenant
+User Story: As a Developer I want tests validating tenant isolation So that data is not leaked across tenants.
+Acceptance Criteria:
+Scenario: Tenant Isolation Tests
+Given test suite
+When tests run
+Then tenant isolation is validated
+
+Additional Details:
+- Priority: Low
+- Story Points: 1
+- Dependencies: User Story 1
+- Notes: Test coverage documented
