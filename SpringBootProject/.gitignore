@@ -1,0 +1,41 @@
+### Java ###
+*.class
+
+### Maven ###
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.ipr
+*.iws
+
+### Eclipse ###
+.project
+.classpath
+.settings/
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/dist/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### OS Files ###
+.DS_Store
+Thumbs.db
+
+### Logs ###
+*.log
+
+### Environment ###
+.env
+
+### Others ###
+*.swp
