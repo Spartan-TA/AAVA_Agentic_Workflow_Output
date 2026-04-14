@@ -1,0 +1,61 @@
+### E14 - Audit Trail & Compliance
+
+**User Story 1**
+Title: Centralized Audit Logging for Sensitive Changes
+User Story: As an ADMIN I want centralized audit logging for sensitive changes So that compliance is maintained.
+Acceptance Criteria:
+Scenario: Audit Log Entry
+Given a create/update/delete action
+When it occurs
+Then actor, timestamp, before/after are logged
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E03
+- Notes: Tamper-evident storage
+
+**User Story 2**
+Title: Immutable Log Table
+User Story: As a Compliance Officer I want an immutable log table So that audit data cannot be altered.
+Acceptance Criteria:
+Scenario: Log Table Immutability
+Given audit logs
+When I attempt to modify logs
+Then modification is prevented
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Storage mechanism enforced
+
+**User Story 3**
+Title: Export Audit Logs by Date/User/Entity
+User Story: As an ADMIN I want to export audit logs by date, user, or entity So that investigations are supported.
+Acceptance Criteria:
+Scenario: Audit Log Export
+Given audit logs
+When I request export
+Then logs are filtered and exported
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Export format configurable
+
+**User Story 4**
+Title: Test Coverage for Audit Logging
+User Story: As a Developer I want tests validating audit logging coverage So that all sensitive actions are logged.
+Acceptance Criteria:
+Scenario: Audit Logging Tests
+Given test suite
+When I run tests
+Then all sensitive actions are covered
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Test coverage >80%
