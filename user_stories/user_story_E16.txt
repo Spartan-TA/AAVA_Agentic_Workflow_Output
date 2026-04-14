@@ -1,0 +1,61 @@
+### E16 - Mobile Access (PWA)
+
+**User Story 1**
+Title: Responsive Mobile Views for Core Flows
+User Story: As a WORKER I want responsive mobile views for clock-in/out, schedules, leave requests, and announcements So that I can use EMS on any device.
+Acceptance Criteria:
+Scenario: Mobile Usability
+Given a mobile device
+When I access EMS
+Then core flows are usable and responsive
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E04, E05, E06, E12
+- Notes: UI tested on multiple devices
+
+**User Story 2**
+Title: Installable PWA Manifest
+User Story: As a WORKER I want EMS to be installable as a PWA So that I can access it offline.
+Acceptance Criteria:
+Scenario: PWA Installation
+Given a browser supporting PWA
+When I install EMS
+Then it appears as an app on my device
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Manifest file required
+
+**User Story 3**
+Title: Offline Queue for Clock Events
+User Story: As a WORKER I want offline queueing for clock events with conflict resolution So that attendance is not lost.
+Acceptance Criteria:
+Scenario: Offline Clock Event
+Given no network
+When I clock in/out
+Then events are queued and resolved when online
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: User Story 1
+- Notes: Conflict resolution logic
+
+**User Story 4**
+Title: Lighthouse PWA Score
+User Story: As a Developer I want EMS to achieve a high Lighthouse PWA score So that performance and usability are validated.
+Acceptance Criteria:
+Scenario: Lighthouse Audit
+Given EMS PWA
+When Lighthouse audit runs
+Then score meets target threshold
+
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: User Story 1, User Story 2
+- Notes: Target score documented
