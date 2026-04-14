@@ -1,0 +1,61 @@
+### E01 - Project Scaffolding & Domain Setup
+
+**User Story 1**
+Title: Initialize Spring Boot Project
+User Story: As a Developer I want to initialize a Spring Boot project So that the EMS has a standardized foundation for all modules.
+Acceptance Criteria:
+Scenario: Project Initialization
+Given a clean repository
+When I run the build command
+Then the project builds and runs on port 8080
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: Ensure README includes build/run steps
+
+**User Story 2**
+Title: Configure Base Package Structure
+User Story: As a Developer I want to configure base packages for employee, scheduling, attendance, and safety So that the codebase is organized for future development.
+Acceptance Criteria:
+Scenario: Package Structure Creation
+Given the project is initialized
+When I inspect the source folders
+Then base packages for employee, scheduling, attendance, and safety exist
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Follows naming conventions
+
+**User Story 3**
+Title: Enable Actuator Health Endpoint
+User Story: As a DevOps Engineer I want to enable the Actuator health endpoint So that system health can be monitored.
+Acceptance Criteria:
+Scenario: Health Endpoint Availability
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns UP
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: User Story 1
+- Notes: Endpoint must be secured
+
+**User Story 4**
+Title: Add Flyway/Liquibase for DB Migrations
+User Story: As a Developer I want to add Flyway/Liquibase for database migrations So that schema changes are managed consistently.
+Acceptance Criteria:
+Scenario: Baseline Migration Runs
+Given the migration tool is configured
+When I start the application
+Then baseline migration runs successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Migration scripts versioned
