@@ -1,0 +1,61 @@
+### E07 - Training & Certification Tracking
+
+**User Story 1**
+Title: CRUD for Certifications
+User Story: As an HR I want to manage certifications for employees So that compliance is tracked.
+Acceptance Criteria:
+Scenario: Certification Management
+Given employee and certification details
+When I create, update, or delete a certification
+Then the certification status updates accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03
+- Notes: Proof documents uploadable
+
+**User Story 2**
+Title: Expiry Alerts for Certifications
+User Story: As an HR I want alerts for certifications expiring in 30/7 days So that renewals are timely.
+Acceptance Criteria:
+Scenario: Expiry Alert
+Given certifications nearing expiry
+When the alert job runs
+Then notifications are sent to relevant users
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Alert channels configurable
+
+**User Story 3**
+Title: Block Assignment to Tasks Requiring Expired Certs
+User Story: As a SUPERVISOR I want to prevent assignment of employees with expired certifications So that safety is ensured.
+Acceptance Criteria:
+Scenario: Assignment Block
+Given an employee with expired cert
+When I assign them to a task requiring certification
+Then the assignment is blocked
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 1
+- Notes: Scheduling checks required
+
+**User Story 4**
+Title: Certification Status on Employee Profile
+User Story: As an HR I want certification status visible on employee profiles So that qualifications are easily reviewed.
+Acceptance Criteria:
+Scenario: Profile Certification Display
+Given an employee profile
+When I view the profile
+Then certification status and expiry dates are shown
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: UI updates needed
