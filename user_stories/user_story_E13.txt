@@ -1,0 +1,61 @@
+### E13 - Integration Layer (HRIS/WMS APIs)
+
+**User Story 1**
+Title: JWT/OAuth2-Secured REST APIs
+User Story: As a Developer I want REST APIs secured with JWT/OAuth2 So that integrations are protected.
+Acceptance Criteria:
+Scenario: API Security
+Given API endpoints
+When accessed with valid token
+Then data is returned securely
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02, E03
+- Notes: Security config documented
+
+**User Story 2**
+Title: HRIS Sync Job for Employees
+User Story: As an HR I want a sync job that creates/updates employees from HRIS So that master data is synchronized.
+Acceptance Criteria:
+Scenario: HRIS Sync
+Given new hires/terms in HRIS
+When sync job runs
+Then employees are created/updated in EMS
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 1
+- Notes: Idempotency enforced
+
+**User Story 3**
+Title: WMS Link for Department/Location
+User Story: As an HR I want department/location data linked from WMS So that employee assignments are accurate.
+Acceptance Criteria:
+Scenario: WMS Linkage
+Given department/location data
+When sync occurs
+Then employee records are updated
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Mapping rules documented
+
+**User Story 4**
+Title: Webhooks for Events
+User Story: As a Developer I want webhooks for EMS events So that external systems are notified.
+Acceptance Criteria:
+Scenario: Webhook Trigger
+Given relevant EMS events
+When they occur
+Then webhooks are sent idempotently
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: OpenAPI docs updated
