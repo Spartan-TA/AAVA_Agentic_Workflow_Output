@@ -1,0 +1,46 @@
+### E17 - Onboarding & Offboarding Workflow
+
+**User Story 1**
+Title: Automate Account Provisioning for New Hires
+User Story: As an HR I want new hires from HRIS to trigger account provisioning So that onboarding is streamlined.
+Acceptance Criteria:
+Scenario: Account Provisioning
+Given new hire data from HRIS
+When onboarding workflow starts
+Then accounts are provisioned automatically
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E02, E03, E05, E07, E09, E13
+- Notes: Workflow tasks generated
+
+**User Story 2**
+Title: Initial Schedule and Training Assignment
+User Story: As an HR I want initial schedules and required training assigned to new hires So that onboarding is complete.
+Acceptance Criteria:
+Scenario: Schedule and Training Assignment
+Given new hire onboarding
+When workflow runs
+Then schedule and training tasks are assigned
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: User Story 1
+- Notes: Training requirements checked
+
+**User Story 3**
+Title: Offboarding Workflow for Terminations
+User Story: As an HR I want offboarding to revoke access, collect assets, and update schedules So that terminations are handled securely.
+Acceptance Criteria:
+Scenario: Offboarding Execution
+Given a termination event
+When offboarding workflow runs
+Then access is revoked, assets collected, and schedules updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: User Story 1, User Story 2
+- Notes: Asset return tracked
