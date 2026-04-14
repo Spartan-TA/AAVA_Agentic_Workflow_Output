@@ -1,0 +1,61 @@
+### E05 - Shift & Schedule Management
+
+**User Story 1**
+Title: Create Recurring Shift Templates
+User Story: As an HR I want to create recurring shift templates So that scheduling is efficient.
+Acceptance Criteria:
+Scenario: Shift Template Creation
+Given valid shift details
+When I POST /shifts/templates
+Then a recurring template is created
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Supports rotations
+
+**User Story 2**
+Title: Assign Shifts to Employees
+User Story: As a SUPERVISOR I want to bulk-assign shifts to employees So that staffing is managed easily.
+Acceptance Criteria:
+Scenario: Bulk Assignment
+Given a list of employees
+When I assign shifts
+Then assignments are created and conflicts are detected/prevented
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: User Story 1
+- Notes: Audit entries generated
+
+**User Story 3**
+Title: View Upcoming Shifts
+User Story: As a WORKER I want to view my upcoming shifts So that I can plan my schedule.
+Acceptance Criteria:
+Scenario: Shift Viewing
+Given assigned shifts
+When I access my schedule
+Then upcoming shifts are displayed
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: User Story 1, User Story 2
+- Notes: Personal calendar view
+
+**User Story 4**
+Title: Manage Blackout Dates and Operation Calendars
+User Story: As an HR I want to manage blackout dates and operation calendars So that scheduling conflicts are avoided.
+Acceptance Criteria:
+Scenario: Blackout Date Management
+Given operation calendar settings
+When I add blackout dates
+Then scheduling prevents assignments on those dates
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: User Story 1
+- Notes: Calendar integration
