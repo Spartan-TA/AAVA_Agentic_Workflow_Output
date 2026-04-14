@@ -1,0 +1,75 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/warehouse_ems
+    username: ems_user
+    password: ems_pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  messages:
+    basename: i18n/messages
+    fallback-to-system-locale: false
+  profiles:
+    active: default
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG
+    com.wms.ems: DEBUG
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,logfile,env,beans
+  endpoint:
+    health:
+      show-details: always
+  health:
+    db:
+      enabled: true
+    diskspace:
+      enabled: true
+    ping:
+      enabled: true
+  info:
+    env:
+      enabled: true
+jwt:
+  secret: "ReplaceWithAStrongSecretKeyForJWTs"
+  expiration: 3600000
+  issuer: "wms-ems"
+  audience: "wms-users"
+security:
+  cors:
+    allowed-origins: "*"
+    allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+    allowed-headers: "*"
+    allow-credentials: true
+  csrf:
+    enabled: true
+  headers:
+    x-frame-options: DENY
+    x-content-type-options: nosniff
+    x-xss-protection: 1; mode=block
+rate-limiting:
+  enabled: true
+  requests-per-minute: 60
