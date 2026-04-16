@@ -1,0 +1,57 @@
+### E05 - Shift & Schedule Management
+
+**User Story 1**
+Title: CRUD Shift Templates  
+User Story: As an HR user, I want to create, update, and delete shift templates so that recurring schedules are easy to manage.  
+Acceptance Criteria:  
+Scenario: Shift Template CRUD  
+Given the shift template API  
+When I perform CRUD operations  
+Then templates are correctly managed  
+Additional Details:  
+- Priority: High  
+- Story Points: 5  
+- Dependencies: E02, E03, E04  
+- Notes: Templates support rotation rules
+
+**User Story 2**
+Title: Assign Shifts to Employees  
+User Story: As a SUPERVISOR, I want to assign shifts to employees in bulk so that scheduling is efficient.  
+Acceptance Criteria:  
+Scenario: Bulk Assignment  
+Given a list of employees  
+When I assign shifts  
+Then assignments are created and audit entries generated  
+Additional Details:  
+- Priority: High  
+- Story Points: 5  
+- Dependencies: E02, E03, E04  
+- Notes: Audit trail required
+
+**User Story 3**
+Title: Conflict Detection and Prevention  
+User Story: As an HR user, I want to detect and prevent scheduling conflicts so that employees are not double-booked.  
+Acceptance Criteria:  
+Scenario: Conflict Detection  
+Given existing schedules  
+When I assign a new shift  
+Then conflicts are flagged and prevented  
+Additional Details:  
+- Priority: High  
+- Story Points: 5  
+- Dependencies: E02, E03, E04  
+- Notes: Includes blackout dates
+
+**User Story 4**
+Title: Personal Upcoming Shifts View  
+User Story: As a WORKER, I want to view my upcoming shifts so that I can plan my work schedule.  
+Acceptance Criteria:  
+Scenario: Upcoming Shifts  
+Given my employee ID  
+When I access my schedule  
+Then my upcoming shifts are displayed  
+Additional Details:  
+- Priority: High  
+- Story Points: 3  
+- Dependencies: E02, E03, E04  
+- Notes: Mobile-friendly view
