@@ -1,0 +1,57 @@
+### E03 - Role-Based Access Control (RBAC)
+
+**User Story 1**
+Title: Implement Role-Based Endpoint Security  
+User Story: As an ADMIN, I want to restrict API endpoints by role so that sensitive operations are protected.  
+Acceptance Criteria:  
+Scenario: Endpoint Security  
+Given a user with a specific role  
+When they access a restricted endpoint  
+Then unauthorized requests return 401, forbidden actions return 403  
+Additional Details:  
+- Priority: High  
+- Story Points: 8  
+- Dependencies: E01, E02  
+- Notes: Security rules covered by tests
+
+**User Story 2**
+Title: Method-Level Security for Sensitive Operations  
+User Story: As a Developer, I want method-level security so that only authorized roles can perform sensitive actions.  
+Acceptance Criteria:  
+Scenario: Method Security  
+Given a method annotated for security  
+When a user without permission calls it  
+Then the action is blocked  
+Additional Details:  
+- Priority: High  
+- Story Points: 5  
+- Dependencies: E01, E02  
+- Notes: Covers create/update/delete
+
+**User Story 3**
+Title: Row-Level Security for Team Data  
+User Story: As a SUPERVISOR, I want to access only my team's data so that privacy is maintained.  
+Acceptance Criteria:  
+Scenario: Row-Level Security  
+Given a supervisor user  
+When they access employee data  
+Then only records for their team are visible  
+Additional Details:  
+- Priority: High  
+- Story Points: 5  
+- Dependencies: E01, E02  
+- Notes: Team mapping required
+
+**User Story 4**
+Title: API Key/OAuth2 Toggle via Config  
+User Story: As a DevOps Engineer, I want to toggle API authentication between API key and OAuth2 so that integration flexibility is provided.  
+Acceptance Criteria:  
+Scenario: Auth Toggle  
+Given the config is set  
+When I switch auth mode  
+Then endpoints require the selected authentication  
+Additional Details:  
+- Priority: High  
+- Story Points: 3  
+- Dependencies: E01, E02  
+- Notes: Documented in README
