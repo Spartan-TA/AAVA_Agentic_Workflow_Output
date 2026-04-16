@@ -1,0 +1,16 @@
+Title: Student Attempts Assertion and Reason MCQ Assessment
+
+User Story: As a student I want to attempt assertion and reason-based MCQ assessments So that I can demonstrate my understanding of the concepts
+
+Acceptance Criteria:
+Scenario: Attempting an Assertion and Reason MCQ
+  Given I am assigned an assertion and reason MCQ assessment
+  When I select an answer for each question
+  And I submit my responses
+  Then my answers should be recorded and feedback provided
+
+Additional Details:
+Priority: High
+Story Points: 5
+Dependencies: Assessment delivery module, student dashboard
+Notes: Feedback should indicate correct/incorrect and provide explanations if available
