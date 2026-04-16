@@ -1,0 +1,57 @@
+### E02 - Employee Master Data (CRUD)
+
+**User Story 1**
+Title: Create Employee CRUD APIs  
+User Story: As an HR user, I want to create, read, update, and delete employee records so that employee data is managed centrally.  
+Acceptance Criteria:  
+Scenario: Employee CRUD  
+Given the employee API is available  
+When I POST/GET/PUT/PATCH/DELETE /employees  
+Then employee records are created, updated, retrieved, or deleted  
+Additional Details:  
+- Priority: High  
+- Story Points: 8  
+- Dependencies: E01  
+- Notes: Must support soft-delete
+
+**User Story 2**
+Title: Enforce Unique Badge ID  
+User Story: As an HR user, I want to enforce unique badge IDs for employees so that duplicate entries are prevented.  
+Acceptance Criteria:  
+Scenario: Badge ID Uniqueness  
+Given an employee record exists  
+When I try to create another with the same badgeId  
+Then the API returns a validation error  
+Additional Details:  
+- Priority: High  
+- Story Points: 3  
+- Dependencies: E01  
+- Notes: BadgeId uniqueness checked at DB and API
+
+**User Story 3**
+Title: Support Pagination and Filtering  
+User Story: As an HR user, I want to paginate and filter employee records so that large datasets are manageable.  
+Acceptance Criteria:  
+Scenario: Pagination and Filtering  
+Given multiple employee records  
+When I request a paginated and filtered list  
+Then the API returns the correct subset  
+Additional Details:  
+- Priority: High  
+- Story Points: 5  
+- Dependencies: E01  
+- Notes: Filters by department, status, etc.
+
+**User Story 4**
+Title: Provide OpenAPI Schemas with Examples  
+User Story: As a Developer, I want OpenAPI schemas with examples for employee APIs so that integration is easier.  
+Acceptance Criteria:  
+Scenario: OpenAPI Documentation  
+Given the API is deployed  
+When I access the OpenAPI docs  
+Then schemas and examples are present  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E01  
+- Notes: Must include all fields
