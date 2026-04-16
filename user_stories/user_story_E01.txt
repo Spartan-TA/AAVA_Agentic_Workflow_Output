@@ -1,0 +1,57 @@
+### E01 - Project Scaffolding & Domain Setup
+
+**User Story 1**
+Title: Initialize Spring Boot Project Structure  
+User Story: As a Developer, I want to initialize a Spring Boot project with Maven so that all modules have a consistent foundation.  
+Acceptance Criteria:  
+Scenario: Project Initialization  
+Given a clean repository  
+When I run the Maven initialization command  
+Then the project builds and runs on port 8080  
+Additional Details:  
+- Priority: High  
+- Story Points: 3  
+- Dependencies: None  
+- Notes: README must include build/run steps
+
+**User Story 2**
+Title: Configure Base Packages and Core Modules  
+User Story: As a Developer, I want to set up base packages and core modules (employee, scheduling, attendance, safety) so that the codebase is organized for future development.  
+Acceptance Criteria:  
+Scenario: Package Structure Creation  
+Given the initialized project  
+When I create base packages for each domain  
+Then the package structure matches the architectural plan  
+Additional Details:  
+- Priority: High  
+- Story Points: 5  
+- Dependencies: E01  
+- Notes: Follows domain-driven design
+
+**User Story 3**
+Title: Database Migration Setup  
+User Story: As a Developer, I want to add Flyway/Liquibase for DB migrations so that schema changes are versioned and repeatable.  
+Acceptance Criteria:  
+Scenario: Baseline Migration  
+Given the migration tool is configured  
+When I run the migration  
+Then the baseline schema is applied successfully  
+Additional Details:  
+- Priority: High  
+- Story Points: 3  
+- Dependencies: E01  
+- Notes: Baseline migration must run without errors
+
+**User Story 4**
+Title: Enable Actuator Health Endpoint  
+User Story: As a DevOps Engineer, I want to enable the Actuator health endpoint so that system health can be monitored.  
+Acceptance Criteria:  
+Scenario: Health Endpoint  
+Given the application is running  
+When I access /actuator/health  
+Then the endpoint returns UP  
+Additional Details:  
+- Priority: High  
+- Story Points: 2  
+- Dependencies: E01  
+- Notes: Endpoint must be secured
