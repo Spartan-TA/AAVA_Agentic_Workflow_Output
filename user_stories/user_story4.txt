@@ -1,0 +1,15 @@
+Title: Support for Multiple Weeks and Topics in MCQ Assessments
+
+User Story: As a curriculum planner I want to organize MCQ assessments by week and topic So that assessments align with the teaching schedule
+
+Acceptance Criteria:
+Scenario: Organizing Assessments by Week and Topic
+  Given I am creating or editing an assessment
+  When I assign a week and topic to each question
+  Then the assessment should be categorized accordingly for easy retrieval
+
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: Assessment metadata tagging
+Notes: Enables longitudinal tracking of student progress
