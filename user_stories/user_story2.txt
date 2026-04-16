@@ -1,0 +1,31 @@
+Title: Employee Master Data (CRUD)
+
+User Story: As an HR manager I want to create, update, and manage employee records So that there is a single source of truth for warehouse employee records across systems
+
+Acceptance Criteria:
+
+Scenario: Employee CRUD operations
+Given I am authenticated as HR
+When I POST, GET, PUT, PATCH, or DELETE /employees
+Then the employee record is created, retrieved, updated, or soft-deleted as requested
+
+Scenario: Unique badgeId enforcement
+Given an employee is being created or updated
+When I enter a badgeId
+Then the system validates that it is unique
+
+Scenario: Pagination and filtering
+Given there are multiple employee records
+When I request a paginated or filtered list
+Then the response contains the correct subset
+
+Scenario: OpenAPI schemas
+Given the API is documented
+When I view the OpenAPI schema
+Then it includes examples for all endpoints
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Project Scaffolding & Domain Setup (E01)
+- Notes: Support soft-delete and ensure badgeId uniqueness.
