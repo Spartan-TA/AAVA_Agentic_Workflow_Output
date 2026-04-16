@@ -1,0 +1,69 @@
+Title: Create Employee Record
+
+User Story: As an HR manager I want to create a new employee record with all required fields so that employee data is accurately captured from the start.
+
+Acceptance Criteria:
+Scenario: Employee creation
+  Given I am authenticated as HR
+  When I POST a new employee with name, badgeId, role, department, shiftGroup, hireDate, and status
+  Then the employee is created and badgeId is unique
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding
+- Notes: Validate all required fields and enforce badgeId uniqueness.
+
+---
+
+Title: Update Employee Details
+
+User Story: As an HR manager I want to update employee details so that changes in role, department, or status are reflected in the system.
+
+Acceptance Criteria:
+Scenario: Employee update
+  Given an employee exists
+  When I PATCH or PUT updated details
+  Then the changes are saved and reflected in GET endpoints
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee record exists
+- Notes: Support partial updates and audit changes.
+
+---
+
+Title: Soft-Delete Employee
+
+User Story: As an HR manager I want to soft-delete an employee record so that historical data is preserved but the employee is excluded from active lists.
+
+Acceptance Criteria:
+Scenario: Employee soft-delete
+  Given an employee exists
+  When I DELETE the employee
+  Then the status is set to inactive and record is not returned in active queries
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee record exists
+- Notes: Ensure soft-delete does not remove data from the database.
+
+---
+
+Title: List and Filter Employees
+
+User Story: As a supervisor I want to list and filter employees by department, role, or status so that I can quickly find relevant staff.
+
+Acceptance Criteria:
+Scenario: Employee filtering
+  Given employees exist
+  When I GET /employees with filters
+  Then only matching employees are returned with pagination
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Employee records exist
+- Notes: Support pagination and filtering by all fields.
