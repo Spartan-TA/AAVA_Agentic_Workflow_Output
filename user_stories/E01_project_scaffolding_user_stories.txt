@@ -1,0 +1,53 @@
+Epic E01: Project Scaffolding & Domain Setup
+
+1. Title: Initialize Spring Boot Project Structure
+   User Story: As a developer I want a standardized Spring Boot project structure So that all modules follow best practices and are easy to maintain
+   Acceptance Criteria:
+   Scenario: Project initialization
+   Given I clone the repository
+   When I build and run the project
+   Then the application starts on port 8080 and the base package structure is present
+   Additional Details:
+   - Priority: High
+   - Story Points: 3
+   - Dependencies: None
+   - Notes: README must include build/run instructions.
+
+2. Title: Configure Database Migration Tool
+   User Story: As a developer I want Flyway or Liquibase configured So that database schema changes are versioned and automated
+   Acceptance Criteria:
+   Scenario: Database migration runs
+   Given a clean database
+   When I start the application
+   Then the baseline migration is applied without errors
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: Project structure
+   - Notes: Migration scripts must be in version control.
+
+3. Title: Enable Spring Boot Actuator
+   User Story: As an operator I want Actuator endpoints enabled So that I can monitor application health
+   Acceptance Criteria:
+   Scenario: Health endpoint available
+   Given the application is running
+   When I access /actuator/health
+   Then I receive a status of UP
+   Additional Details:
+   - Priority: High
+   - Story Points: 1
+   - Dependencies: Project structure
+   - Notes: Secure actuator endpoints as needed.
+
+4. Title: Set Up Core Domain Modules
+   User Story: As a developer I want base modules for employee, scheduling, attendance, and safety So that future features can be developed independently
+   Acceptance Criteria:
+   Scenario: Core modules present
+   Given the project is initialized
+   When I inspect the codebase
+   Then I see separate packages for employee, scheduling, attendance, and safety
+   Additional Details:
+   - Priority: High
+   - Story Points: 3
+   - Dependencies: Project structure
+   - Notes: Follow DDD best practices.
