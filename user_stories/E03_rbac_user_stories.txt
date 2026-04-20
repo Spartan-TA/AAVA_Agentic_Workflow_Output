@@ -1,0 +1,53 @@
+Epic E03: Role-Based Access Control (RBAC)
+
+1. Title: Implement Role-Based Endpoint Security
+   User Story: As an admin I want endpoints secured by role So that only authorized users can access sensitive data
+   Acceptance Criteria:
+   Scenario: Unauthorized access blocked
+   Given I am not authenticated
+   When I access a protected endpoint
+   Then I receive a 401 Unauthorized response
+   Additional Details:
+   - Priority: High
+   - Story Points: 3
+   - Dependencies: E01, E02
+   - Notes: Use Spring Security.
+
+2. Title: Enforce Row-Level Security for Supervisors
+   User Story: As a supervisor I want to see only my team's data So that I cannot access other teams' records
+   Acceptance Criteria:
+   Scenario: Row-level access enforced
+   Given I am logged in as a supervisor
+   When I query employee data
+   Then I see only employees assigned to my team
+   Additional Details:
+   - Priority: High
+   - Story Points: 5
+   - Dependencies: Endpoint security
+   - Notes: Map supervisors to teams.
+
+3. Title: Support API Key and OAuth2 Authentication
+   User Story: As a system integrator I want to choose between API key and OAuth2 authentication So that integration is flexible
+   Acceptance Criteria:
+   Scenario: Auth method toggle
+   Given the config is set to API key
+   When I call an endpoint with a valid key
+   Then I am authenticated
+   Additional Details:
+   - Priority: Medium
+   - Story Points: 3
+   - Dependencies: Endpoint security
+   - Notes: Toggle via config.
+
+4. Title: Test Security Rules
+   User Story: As a QA I want automated tests for security rules So that unauthorized actions are prevented
+   Acceptance Criteria:
+   Scenario: Security tests pass
+   Given the test suite runs
+   When security tests execute
+   Then all unauthorized actions return 401/403 as appropriate
+   Additional Details:
+   - Priority: High
+   - Story Points: 2
+   - Dependencies: Security implementation
+   - Notes: Cover all roles.
