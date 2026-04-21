@@ -1,0 +1,15 @@
+Title: Performance Dashboard
+
+User Story: As a warehouse manager, I want to view employee performance metrics So that I can identify top performers and areas for improvement.
+
+Acceptance Criteria:
+Scenario: Performance dashboard viewing
+Given employee performance data is available
+When I access the dashboard
+Then I see metrics such as task completion rates, attendance, and errors
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Task Completion Tracking, Time Tracking
+- Notes: Supports filtering by date and employee
