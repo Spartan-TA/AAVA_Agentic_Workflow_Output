@@ -1,0 +1,15 @@
+Title: Employee Profile Creation
+
+User Story: As an HR administrator, I want to create a new employee profile So that I can onboard new hires efficiently.
+
+Acceptance Criteria:
+Scenario: Successful profile creation
+Given I am logged in as an HR administrator
+When I enter all required employee details and submit the form
+Then the new employee profile is created and visible in the employee directory
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Authentication module
+- Notes: Required fields include name, contact info, role, and start date
