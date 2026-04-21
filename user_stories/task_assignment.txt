@@ -1,0 +1,15 @@
+Title: Task Assignment
+
+User Story: As a warehouse manager, I want to assign tasks to employees So that daily operations are organized and efficient.
+
+Acceptance Criteria:
+Scenario: Task assignment
+Given a list of tasks and available employees
+When I assign tasks to employees
+Then employees receive task notifications and can view their assignments
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Employee Profile Management
+- Notes: Tasks can be prioritized and tracked
