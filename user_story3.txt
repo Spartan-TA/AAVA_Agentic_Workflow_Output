@@ -1,0 +1,15 @@
+Title: Onboarding Progress Tracking
+
+User Story: As an HR manager, I want to monitor onboarding progress for each employee so that I can ensure timely completion.
+
+Acceptance Criteria:
+Scenario: Viewing onboarding progress
+Given an employee is undergoing onboarding
+When the HR manager views their profile
+Then the onboarding progress and outstanding tasks are displayed
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Onboarding module, employee profile
+- Notes: Progress tracking should highlight overdue tasks
