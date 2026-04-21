@@ -1,0 +1,15 @@
+Title: Shift Swap Request
+
+User Story: As a warehouse employee, I want to request a shift swap with a colleague so that I can manage personal commitments.
+
+Acceptance Criteria:
+Scenario: Requesting a shift swap
+Given an employee is assigned to a shift
+When they submit a swap request
+Then the manager is notified and can approve or reject the request
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Shift scheduling module, notification system
+- Notes: Swap requests should be logged for audit purposes
