@@ -1,0 +1,15 @@
+Title: Shift Scheduling Creation
+
+User Story: As a warehouse manager, I want to create and publish shift schedules so that employees know when they are expected to work.
+
+Acceptance Criteria:
+Scenario: Publishing a shift schedule
+Given a list of employees and shift requirements
+When the manager creates and publishes a schedule
+Then employees receive notifications about their assigned shifts
+
+Additional Details:
+- Priority: High
+- Story Points: 5
+- Dependencies: Employee database, notification system
+- Notes: Schedule conflicts and overtime should be flagged
