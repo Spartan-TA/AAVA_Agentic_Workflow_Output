@@ -1,0 +1,15 @@
+Title: Performance Review Notification
+
+User Story: As an HR manager, I want to notify employees about upcoming performance reviews so that they are prepared.
+
+Acceptance Criteria:
+Scenario: Sending review notifications
+Given a performance review is scheduled
+When the HR manager triggers notifications
+Then employees receive review details and preparation guidelines
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Notification system, employee database
+- Notes: Notification should include review date and criteria
