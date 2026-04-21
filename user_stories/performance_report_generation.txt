@@ -1,0 +1,15 @@
+Title: Performance Report Generation
+
+User Story: As an HR administrator, I want to generate performance reports So that I can review employee evaluations and support HR decisions.
+
+Acceptance Criteria:
+Scenario: Report generation
+Given performance data is available
+When I select criteria and generate a report
+Then the report is downloadable in PDF or Excel format
+
+Additional Details:
+- Priority: Medium
+- Story Points: 3
+- Dependencies: Performance Dashboard
+- Notes: Supports custom date ranges
