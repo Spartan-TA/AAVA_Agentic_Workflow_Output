@@ -1,0 +1,15 @@
+Title: Shift Attendance Confirmation
+
+User Story: As a warehouse manager, I want to confirm employee attendance for each shift so that payroll and performance records are accurate.
+
+Acceptance Criteria:
+Scenario: Confirming attendance
+Given a shift has ended
+When the manager reviews attendance records
+Then attendance is confirmed and discrepancies are flagged
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Time tracking module, shift scheduling module
+- Notes: Attendance confirmation should integrate with payroll
