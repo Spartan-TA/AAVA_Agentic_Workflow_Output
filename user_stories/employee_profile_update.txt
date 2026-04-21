@@ -1,0 +1,15 @@
+Title: Employee Profile Update
+
+User Story: As an HR administrator, I want to update employee profiles So that I can keep employee information accurate and current.
+
+Acceptance Criteria:
+Scenario: Profile update
+Given an existing employee profile
+When I edit and save changes to the profile
+Then the updated information is reflected in the system
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Employee Profile Creation
+- Notes: Track changes for audit purposes
