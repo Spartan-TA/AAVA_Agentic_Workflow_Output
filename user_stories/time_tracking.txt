@@ -1,0 +1,15 @@
+Title: Time Tracking
+
+User Story: As a warehouse employee, I want to clock in and clock out So that my work hours are accurately recorded.
+
+Acceptance Criteria:
+Scenario: Clock in/out
+Given I am scheduled for a shift
+When I clock in at the start and clock out at the end
+Then my hours are logged in the system
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Shift Scheduling
+- Notes: Supports biometric or badge-based clocking
