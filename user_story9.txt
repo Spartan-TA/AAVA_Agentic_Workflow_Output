@@ -1,0 +1,15 @@
+Title: Task Reassignment
+
+User Story: As a warehouse supervisor, I want to reassign tasks if an employee is unavailable so that operations are not disrupted.
+
+Acceptance Criteria:
+Scenario: Reassigning a task
+Given an employee is unavailable for a task
+When the supervisor reassigns the task
+Then the new assignee is notified and the task status is updated
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Task management module, notification system
+- Notes: Reassignment history should be tracked
