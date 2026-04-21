@@ -1,0 +1,15 @@
+Title: Certification Tracking
+
+User Story: As a system administrator, I want to track employee certifications So that I can ensure compliance with safety and operational requirements.
+
+Acceptance Criteria:
+Scenario: Certification tracking
+Given employee certification data
+When I view certification records
+Then I see expiration dates and renewal reminders
+
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: Training Assignment
+- Notes: Automated reminders for renewals
