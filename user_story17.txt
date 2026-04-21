@@ -1,0 +1,15 @@
+Title: Equipment Maintenance Scheduling
+
+User Story: As a warehouse manager, I want to schedule equipment maintenance so that tools remain safe and operational.
+
+Acceptance Criteria:
+Scenario: Scheduling maintenance
+Given equipment maintenance requirements
+When the manager schedules maintenance
+Then maintenance tasks are assigned and tracked
+
+Additional Details:
+- Priority: Medium
+- Story Points: 4
+- Dependencies: Equipment management module, maintenance module
+- Notes: Maintenance history should be reportable
