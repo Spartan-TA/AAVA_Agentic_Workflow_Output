@@ -1,0 +1,15 @@
+Title: Safety Incident Reporting
+
+User Story: As a warehouse employee, I want to report safety incidents so that hazards are addressed quickly.
+
+Acceptance Criteria:
+Scenario: Reporting a safety incident
+Given an employee witnesses a safety issue
+When they submit an incident report
+Then the supervisor is notified and the incident is logged
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Safety compliance module, notification system
+- Notes: Incident reports should be auditable
