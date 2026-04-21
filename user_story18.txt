@@ -1,0 +1,15 @@
+Title: Time Tracking for Shifts
+
+User Story: As a warehouse employee, I want to clock in and out for shifts so that my working hours are accurately recorded.
+
+Acceptance Criteria:
+Scenario: Clocking in and out
+Given an employee is scheduled for a shift
+When they clock in at the start and out at the end
+Then their time is logged and available for payroll
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Time tracking module, shift scheduling module
+- Notes: Time logs should be tamper-proof
