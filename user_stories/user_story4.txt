@@ -1,0 +1,70 @@
+---
+Epic: E04 - Time & Attendance (Clock In/Out)
+
+User Story 1: Clock-In Endpoint
+Title: Employee Clock-In
+User Story: As a worker, I want to clock in at the start of my shift so that my attendance is recorded.
+Acceptance Criteria (Gherkin):
+Given I am at the warehouse,
+When I POST to /attendance/clock-in,
+Then my clock-in event is recorded with timestamp and device info.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Supports payroll.
+
+User Story 2: Clock-Out Endpoint
+Title: Employee Clock-Out
+User Story: As a worker, I want to clock out at the end of my shift so that my hours worked are tracked.
+Acceptance Criteria (Gherkin):
+Given I am at the warehouse,
+When I POST to /attendance/clock-out,
+Then my clock-out event is recorded.
+And hours worked are calculated.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Supports compliance.
+
+User Story 3: Geofence Validation
+Title: Geofence Clock-In/Out
+User Story: As a supervisor, I want geofence validation for clock events so that only on-site attendance is accepted.
+Acceptance Criteria (Gherkin):
+Given geofence is enabled,
+When a worker clocks in/out,
+Then the event is accepted only if within geofence.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Prevents fraud.
+
+User Story 4: Missed Punch Correction
+Title: Attendance Correction Workflow
+User Story: As a worker, I want to request corrections for missed punches so that my attendance is accurate.
+Acceptance Criteria (Gherkin):
+Given a missed punch,
+When I submit a correction request,
+Then an approval task is created for supervisor.
+And upon approval, attendance is updated.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E02, E03
+Notes: Supports error handling.
+
+User Story 5: Attendance Reporting
+Title: Export Attendance Reports
+User Story: As an HR manager, I want to export attendance data as CSV so that payroll processing is streamlined.
+Acceptance Criteria (Gherkin):
+Given attendance data exists,
+When I request a CSV export,
+Then the report is generated with daily totals.
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E02, E03
+Notes: Supports payroll integration.
+---
