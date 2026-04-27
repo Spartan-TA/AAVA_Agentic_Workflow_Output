@@ -1,0 +1,101 @@
+EPIC E01 â PROJECT SCAFFOLDING & DOMAIN SETUP
+
+===========================================
+User Story 1: Project Scaffolding - Spring Boot Project Initialization
+===========================================
+
+Title: Project Scaffolding - Spring Boot Project Initialization
+
+User Story: As a developer, I want to initialize a Spring Boot (Maven) project with core modules and base packages so that the team has a standardized foundation for all EMS features.
+
+Acceptance Criteria:
+Scenario: Successful project scaffolding
+Given a clean repository
+When I run the build and start the application
+Then the project builds and runs on port 8080, and the base package structure is present
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: None
+- Notes: README must include build/run steps.
+
+===========================================
+User Story 2: Project Scaffolding - Database Migration Setup
+===========================================
+
+Title: Project Scaffolding - Database Migration Setup
+
+User Story: As a developer, I want to configure Flyway/Liquibase for database migrations so that schema changes are versioned and repeatable across environments.
+
+Acceptance Criteria:
+Scenario: Baseline migration runs on startup
+Given a new database
+When the application starts
+Then Flyway/Liquibase applies the baseline migration successfully
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project initialization
+- Notes: Migration scripts must be included in the repo.
+
+===========================================
+User Story 3: Project Scaffolding - Actuator Health Endpoint
+===========================================
+
+Title: Project Scaffolding - Actuator Health Endpoint
+
+User Story: As a DevOps engineer, I want to enable the Actuator health endpoint so that system health can be monitored automatically.
+
+Acceptance Criteria:
+Scenario: Health endpoint returns UP
+Given the application is running
+When I access /actuator/health
+Then the endpoint returns status UP
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project initialization
+- Notes: Health endpoint must be accessible without authentication for monitoring.
+
+===========================================
+User Story 4: Project Scaffolding - Documentation
+===========================================
+
+Title: Project Scaffolding - Documentation
+
+User Story: As a developer, I want a README with build and run instructions so that new team members can onboard quickly.
+
+Acceptance Criteria:
+Scenario: README completeness
+Given the repository
+When a new developer reads the README
+Then they can build and run the project without external help
+
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: Project initialization
+- Notes: README must include environment setup, build, and run steps.
+
+===========================================
+User Story 5: Project Scaffolding - Core Module Structure
+===========================================
+
+Title: Project Scaffolding - Core Module Structure
+
+User Story: As a developer, I want core modules for employee, scheduling, attendance, and safety set up as packages so that future features are organized and maintainable.
+
+Acceptance Criteria:
+Scenario: Core modules present
+Given the project structure
+When I browse the codebase
+Then I see separate packages for employee, scheduling, attendance, and safety
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Project initialization
+- Notes: Follow standard naming conventions.
