@@ -1,0 +1,101 @@
+EPIC E03 â ROLE BASED ACCESS CONTROL (RBAC)
+
+===========================================
+User Story 1: RBAC - Role Management
+===========================================
+
+Title: RBAC - Role Management
+
+User Story: As an admin, I want to assign roles (ADMIN, HR, SUPERVISOR, WORKER) to users so that access to sensitive operations is controlled.
+
+Acceptance Criteria:
+Scenario: Assign role
+Given a user
+When I assign a role
+Then the user's permissions are updated accordingly
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Project scaffolding, Employee CRUD
+- Notes: Roles must be persisted.
+
+===========================================
+User Story 2: RBAC - Endpoint Security
+===========================================
+
+Title: RBAC - Endpoint Security
+
+User Story: As a developer, I want to secure endpoints based on user roles so that unauthorized access is prevented.
+
+Acceptance Criteria:
+Scenario: Unauthorized access
+Given a user without required role
+When they access a protected endpoint
+Then the system returns 401 or 403
+
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: Role management
+- Notes: Security rules must be covered by tests.
+
+===========================================
+User Story 3: RBAC - Row-Level Security
+===========================================
+
+Title: RBAC - Row-Level Security
+
+User Story: As a supervisor, I want to access only my team's records so that data privacy is maintained.
+
+Acceptance Criteria:
+Scenario: Row-level access
+Given a supervisor
+When they access employee data
+Then only records for their team are visible
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Role management
+- Notes: Enforce via query filters.
+
+===========================================
+User Story 4: RBAC - API Key/OAuth2 Toggle
+===========================================
+
+Title: RBAC - API Key/OAuth2 Toggle
+
+User Story: As a DevOps engineer, I want to toggle between API key and OAuth2 authentication via config so that security can be adapted to deployment needs.
+
+Acceptance Criteria:
+Scenario: Auth toggle
+Given a configuration change
+When I restart the application
+Then the selected authentication method is enforced
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Endpoint security
+- Notes: Document config options.
+
+===========================================
+User Story 5: RBAC - Security Test Coverage
+===========================================
+
+Title: RBAC - Security Test Coverage
+
+User Story: As a QA engineer, I want automated tests for security rules so that unauthorized actions are reliably blocked.
+
+Acceptance Criteria:
+Scenario: Security tests
+Given the test suite
+When I run security tests
+Then all unauthorized actions are covered and return correct status codes
+
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: Endpoint security
+- Notes: Cover all roles and endpoints.
