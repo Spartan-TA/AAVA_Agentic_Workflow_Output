@@ -1,0 +1,69 @@
+---
+Epic: E03 - Role-Based Access Control (RBAC)
+
+User Story 1: Role Definition
+Title: Define User Roles
+User Story: As a system admin, I want to define roles (ADMIN, HR, SUPERVISOR, WORKER) so that access is controlled.
+Acceptance Criteria (Gherkin):
+Given the system is running,
+When I assign a role to a user,
+Then the user has permissions as per role definition.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02
+Notes: Foundation for security.
+
+User Story 2: Endpoint Security
+Title: Secure Endpoints by Role
+User Story: As a developer, I want to secure endpoints so that only authorized roles can access sensitive data.
+Acceptance Criteria (Gherkin):
+Given a user with a role,
+When I access a protected endpoint,
+Then unauthorized requests return 401,
+And forbidden actions return 403.
+Additional Details:
+Priority: High
+Story Points: 3
+Dependencies: E01, E02
+Notes: Protects PII.
+
+User Story 3: Row-Level Security
+Title: Implement Row-Level Constraints
+User Story: As a supervisor, I want to access only my team's records so that privacy is maintained.
+Acceptance Criteria (Gherkin):
+Given a supervisor is logged in,
+When they access employee records,
+Then only their team's records are visible.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02
+Notes: Supports compliance.
+
+User Story 4: API Key/OAuth2 Toggle
+Title: Configurable Authentication Modes
+User Story: As a DevOps engineer, I want to toggle between API key and OAuth2 authentication so that security is flexible.
+Acceptance Criteria (Gherkin):
+Given the config is updated,
+When I restart the app,
+Then authentication mode is applied as per config.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02
+Notes: Supports integrations.
+
+User Story 5: Security Test Coverage
+Title: Automated Security Tests
+User Story: As a QA engineer, I want automated tests for security rules so that vulnerabilities are detected early.
+Acceptance Criteria (Gherkin):
+Given test cases are defined,
+When I run the test suite,
+Then security rules are validated for all endpoints.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02
+Notes: Ensures robustness.
+---
