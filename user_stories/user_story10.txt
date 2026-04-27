@@ -1,0 +1,68 @@
+---
+Epic: E10 - Performance Reviews & Goals
+
+User Story 1: Review Cycle Creation
+Title: Create Review Cycles
+User Story: As an HR manager, I want to create quarterly and annual review cycles so that performance is evaluated regularly.
+Acceptance Criteria (Gherkin):
+Given access to review cycles,
+When I create a cycle,
+Then it is assigned to employees.
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Supports structured feedback.
+
+User Story 2: Goal Tracking
+Title: Track Employee Goals
+User Story: As a supervisor, I want to set and track goals for employees so that performance is improved.
+Acceptance Criteria (Gherkin):
+Given a review cycle exists,
+When I set goals,
+Then goals are tracked and visible to employee.
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Supports productivity.
+
+User Story 3: Review Submission Workflow
+Title: Submit and Acknowledge Reviews
+User Story: As a supervisor, I want to submit reviews and employees to acknowledge them so that feedback is documented.
+Acceptance Criteria (Gherkin):
+Given a review is assigned,
+When supervisor submits and employee acknowledges,
+Then review is marked complete and history is immutable.
+Additional Details:
+Priority: Medium
+Story Points: 2
+Dependencies: E02, E03
+Notes: Supports retention.
+
+User Story 4: PDF Export
+Title: Export Reviews as PDF
+User Story: As an HR manager, I want to export reviews as PDF so that records are archived.
+Acceptance Criteria (Gherkin):
+Given reviews exist,
+When I request a PDF export,
+Then the review is generated as PDF.
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: E02, E03
+Notes: Supports compliance.
+
+User Story 5: Role-Based Visibility
+Title: Control Review Visibility
+User Story: As an HR manager, I want reviews to be visible only to authorized roles so that privacy is maintained.
+Acceptance Criteria (Gherkin):
+Given a review exists,
+When an unauthorized user accesses,
+Then access is denied.
+Additional Details:
+Priority: Medium
+Story Points: 1
+Dependencies: E02, E03
+Notes: Supports privacy.
+---
