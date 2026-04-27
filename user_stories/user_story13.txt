@@ -1,0 +1,68 @@
+---
+Epic: E13 - Integration Layer (HRIS/WMS APIs)
+
+User Story 1: Secure API Endpoints
+Title: JWT/OAuth2-Secured APIs
+User Story: As an integration engineer, I want APIs secured with JWT/OAuth2 so that data is protected.
+Acceptance Criteria (Gherkin):
+Given API endpoints exist,
+When I authenticate,
+Then access is granted only with valid token.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02, E03
+Notes: Supports integrations.
+
+User Story 2: HRIS Sync Job
+Title: Sync Employees from HRIS
+User Story: As an HR manager, I want a sync job to create/update employees from HRIS so that master data is consistent.
+Acceptance Criteria (Gherkin):
+Given HRIS integration is enabled,
+When sync job runs,
+Then employees are created/updated as per HRIS data.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02, E03
+Notes: Reduces manual entry.
+
+User Story 3: WMS Department/Location Link
+Title: Link Employees to WMS Departments
+User Story: As a warehouse manager, I want employees linked to WMS departments and locations so that assignments are accurate.
+Acceptance Criteria (Gherkin):
+Given WMS integration is enabled,
+When employee data is synced,
+Then department/location is updated from WMS.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01, E02, E03
+Notes: Supports operational accuracy.
+
+User Story 4: Webhook Event Handling
+Title: Idempotent Webhook Processing
+User Story: As a developer, I want webhooks for events processed idempotently so that duplicate events do not cause errors.
+Acceptance Criteria (Gherkin):
+Given a webhook event is received,
+When it is processed,
+Then duplicate events are ignored and only one action occurs.
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E01, E02, E03
+Notes: Supports reliability.
+
+User Story 5: OpenAPI Documentation
+Title: Document Integration APIs
+User Story: As a developer, I want integration APIs documented in OpenAPI so that external systems can integrate easily.
+Acceptance Criteria (Gherkin):
+Given APIs are deployed,
+When I access documentation,
+Then endpoints are described with request/response examples.
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E01, E02, E03
+Notes: Supports integrations.
+---
