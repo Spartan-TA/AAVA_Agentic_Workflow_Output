@@ -1,0 +1,55 @@
+---
+Epic: E14 - Audit Trail & Compliance
+
+User Story 1: Audit Logging
+Title: Log Sensitive Changes
+User Story: As an auditor, I want all sensitive changes logged with actor, timestamp, before/after so that compliance is ensured.
+Acceptance Criteria (Gherkin):
+Given a sensitive change occurs,
+When it is processed,
+Then an audit log entry is created with all details.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E03
+Notes: Supports compliance.
+
+User Story 2: Immutable Log Storage
+Title: Tamper-Evident Audit Log
+User Story: As a compliance officer, I want audit logs stored immutably so that tampering is detectable.
+Acceptance Criteria (Gherkin):
+Given audit logs are stored,
+When I attempt to modify,
+Then modification is prevented and logs are immutable.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E03
+Notes: Supports forensic analysis.
+
+User Story 3: Audit Log Export
+Title: Export Audit Logs
+User Story: As an auditor, I want to export audit logs by date, user, or entity so that investigations are supported.
+Acceptance Criteria (Gherkin):
+Given audit logs exist,
+When I request an export,
+Then logs are filtered and exported as CSV.
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E03
+Notes: Supports investigations.
+
+User Story 4: Test Coverage Validation
+Title: Validate Audit Coverage
+User Story: As a QA engineer, I want tests to validate audit coverage so that all sensitive actions are logged.
+Acceptance Criteria (Gherkin):
+Given test cases are defined,
+When I run the suite,
+Then all sensitive actions are covered by audit logs.
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E03
+Notes: Ensures robustness.
+---
