@@ -1,0 +1,68 @@
+---
+Epic: E20 - CI/CD & Deployment Automation
+
+User Story 1: CI Pipeline Setup
+Title: Set Up CI Pipeline
+User Story: As a developer, I want a CI pipeline configured so that code is built and tested automatically.
+Acceptance Criteria (Gherkin):
+Given code is pushed,
+When CI pipeline runs,
+Then build and tests complete successfully.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01
+Notes: Supports quality.
+
+User Story 2: CD Pipeline Setup
+Title: Set Up CD Pipeline
+User Story: As a DevOps engineer, I want a CD pipeline configured so that deployments are automated.
+Acceptance Criteria (Gherkin):
+Given build artifacts exist,
+When CD pipeline runs,
+Then deployment is triggered and status reported.
+Additional Details:
+Priority: High
+Story Points: 2
+Dependencies: E01
+Notes: Supports delivery.
+
+User Story 3: Environment Configuration
+Title: Manage Environment Configurations
+User Story: As a DevOps engineer, I want environment configurations managed in CI/CD so that deployments are consistent.
+Acceptance Criteria (Gherkin):
+Given environment configs exist,
+When pipeline runs,
+Then correct configs are applied per environment.
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E01
+Notes: Supports reliability.
+
+User Story 4: Test Coverage in CI
+Title: Enforce Test Coverage in CI
+User Story: As a QA engineer, I want test coverage thresholds enforced in CI so that code quality is maintained.
+Acceptance Criteria (Gherkin):
+Given tests are run in CI,
+When coverage is below threshold,
+Then build fails and feedback is provided.
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E01
+Notes: Supports quality.
+
+User Story 5: Deployment Audit Logging
+Title: Log Deployment Events
+User Story: As a DevOps engineer, I want deployment events logged so that history is traceable.
+Acceptance Criteria (Gherkin):
+Given a deployment occurs,
+When it completes,
+Then a log entry is created with details.
+Additional Details:
+Priority: High
+Story Points: 1
+Dependencies: E01
+Notes: Supports audits.
+---
