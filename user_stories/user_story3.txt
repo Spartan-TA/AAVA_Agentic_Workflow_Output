@@ -1,0 +1,57 @@
+### E03 - Role Based Access Control (RBAC)
+
+#### User Story 1
+Title: Implement Role-Based Endpoint Security
+User Story: As a System Administrator I want to restrict endpoints by role (ADMIN, HR, SUPERVISOR, WORKER) So that sensitive data is protected.
+Acceptance Criteria:
+Scenario: Endpoint Access
+Given a user is authenticated
+When the user accesses a restricted endpoint
+Then unauthorized requests return 401, forbidden actions return 403
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01, E02
+- Notes: Security rules covered by tests.
+
+#### User Story 2
+Title: Row-Level Security for Supervisors
+User Story: As a SUPERVISOR I want to access only my team's records So that I cannot view or edit other teams.
+Acceptance Criteria:
+Scenario: Team Data Access
+Given a supervisor is authenticated
+When supervisor requests employee data
+Then only records for their team are returned
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Team assignment enforced.
+
+#### User Story 3
+Title: API Key/OAuth2 Toggle
+User Story: As a System Administrator I want to toggle between API key and OAuth2 authentication So that integration flexibility is maintained.
+Acceptance Criteria:
+Scenario: Auth Mode Configuration
+Given the system is running
+When admin updates config
+Then authentication mode switches as specified
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01, E02
+- Notes: Configurable via properties.
+
+#### User Story 4
+Title: ADMIN Full Access
+User Story: As an ADMIN I want to manage all records So that I can perform any operation.
+Acceptance Criteria:
+Scenario: Admin Access
+Given ADMIN is authenticated
+When ADMIN performs CRUD
+Then all actions succeed unless business rules block
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01, E02
+- Notes: ADMIN role tested.
