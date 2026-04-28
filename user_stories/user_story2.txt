@@ -1,0 +1,71 @@
+### E02 - Employee Master Data (CRUD)
+
+#### User Story 1
+Title: Create Employee Record
+User Story: As an HR I want to create employee records with name, badgeId, role, department, shiftGroup, hireDate, and status So that employee data is centralized.
+Acceptance Criteria:
+Scenario: Employee Creation
+Given HR is authenticated
+When HR submits a POST /employees request
+Then a new employee is created with a unique badgeId
+Additional Details:
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: badgeId uniqueness enforced.
+
+#### User Story 2
+Title: Update Employee Record
+User Story: As an HR I want to update employee details So that records remain accurate.
+Acceptance Criteria:
+Scenario: Employee Update
+Given HR is authenticated
+When HR submits a PUT/PATCH /employees/{id} request
+Then the employee record is updated
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Only editable fields allowed.
+
+#### User Story 3
+Title: Delete Employee Record (Soft Delete)
+User Story: As an HR I want to soft-delete employee records So that historical data is preserved.
+Acceptance Criteria:
+Scenario: Employee Soft Delete
+Given HR is authenticated
+When HR submits a DELETE /employees/{id} request
+Then the employee status is set to inactive
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Record remains in DB for audit.
+
+#### User Story 4
+Title: List and Filter Employees
+User Story: As an HR I want to list and filter employees by department, status, etc. So that I can quickly find relevant records.
+Acceptance Criteria:
+Scenario: Employee Listing
+Given HR is authenticated
+When HR requests GET /employees with filters
+Then paginated, filtered results are returned
+Additional Details:
+- Priority: High
+- Story Points: 2
+- Dependencies: E01
+- Notes: Supports pagination.
+
+#### User Story 5
+Title: OpenAPI Schema Generation
+User Story: As a Developer I want OpenAPI schemas with examples for employee APIs So that integration is easy and clear.
+Acceptance Criteria:
+Scenario: API Documentation
+Given the API is implemented
+When I access the OpenAPI docs
+Then schemas and example payloads are present
+Additional Details:
+- Priority: High
+- Story Points: 1
+- Dependencies: E01
+- Notes: Follows OpenAPI standards.
