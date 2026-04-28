@@ -1,0 +1,57 @@
+### E09 - Equipment & Asset Assignment
+
+#### User Story 1
+Title: Asset Registry CRUD
+User Story: As a System Administrator I want to manage asset registry So that equipment and PPE are tracked.
+Acceptance Criteria:
+Scenario: Asset CRUD
+Given admin is authenticated
+When admin creates/updates/deletes asset
+Then registry reflects changes
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Asset types include scanners, forklifts, PPE.
+
+#### User Story 2
+Title: Asset Checkout/Return
+User Story: As a WORKER I want to check out and return assets So that usage is tracked.
+Acceptance Criteria:
+Scenario: Asset Checkout
+Given WORKER is authenticated
+When WORKER checks out asset
+Then checkout is recorded and certs validated
+Additional Details:
+- Priority: Medium
+- Story Points: 2
+- Dependencies: E02, E03, E07
+- Notes: Blocks if certs invalid.
+
+#### User Story 3
+Title: Overdue Asset Report
+User Story: As a SUPERVISOR I want to see reports of overdue asset returns So that accountability is enforced.
+Acceptance Criteria:
+Scenario: Overdue Report
+Given assets are overdue
+When SUPERVISOR views report
+Then overdue assets are listed
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E07
+- Notes: History log per asset.
+
+#### User Story 4
+Title: Asset Condition Tracking
+User Story: As a WORKER I want to update asset condition on return So that maintenance needs are flagged.
+Acceptance Criteria:
+Scenario: Condition Update
+Given asset is returned
+When WORKER submits condition
+Then status is updated
+Additional Details:
+- Priority: Medium
+- Story Points: 1
+- Dependencies: E02, E03, E07
+- Notes: Condition history maintained.
