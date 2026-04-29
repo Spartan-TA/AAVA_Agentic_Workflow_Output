@@ -1,0 +1,34 @@
+Title: Role Based Access Control (RBAC)
+
+User Story: As a system administrator I want to enforce role-based access control with endpoint and row-level security so that only authorized users can access or modify sensitive employee data.
+
+Acceptance Criteria:
+Scenario: Unauthorized access
+  Given an unauthenticated user
+  When they attempt to access a protected endpoint
+  Then the system should return a 401 Unauthorized response
+
+Scenario: Forbidden actions
+  Given a user with insufficient privileges
+  When they attempt to perform a restricted action
+  Then the system should return a 403 Forbidden response
+
+Scenario: Role permissions
+  Given an ADMIN user
+  When they access employee records
+  Then they can manage all records
+
+  Given a SUPERVISOR user
+  When they access employee records
+  Then they are limited to their team only
+
+Scenario: Security tests
+  Given the security configuration
+  When tests are executed
+  Then all security rules should be covered and pass
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Project Scaffolding & Domain Setup (E01), Employee Master Data (E02)
+- Notes: Support ADMIN, HR, SUPERVISOR, WORKER roles; allow API key/OAuth2 toggle via config.
