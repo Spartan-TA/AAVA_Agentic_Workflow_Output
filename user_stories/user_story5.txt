@@ -1,0 +1,30 @@
+Title: Shift & Schedule Management
+
+User Story: As a supervisor I want to create and manage recurring shift templates, rotations, and overtime rules so that I can ensure adequate staffing and reduce scheduling conflicts.
+
+Acceptance Criteria:
+Scenario: CRUD for shift templates and schedules
+  Given I have supervisor access
+  When I create, update, or delete shift templates or schedules
+  Then the changes should be saved and reflected in the system
+
+Scenario: Conflict detection
+  Given I am assigning shifts
+  When a conflict is detected (e.g., double booking)
+  Then the system should prevent the assignment and display an error
+
+Scenario: Worker visibility
+  Given I am a worker
+  When I view my schedule
+  Then I should see all my upcoming shifts
+
+Scenario: Bulk assignment and audit
+  Given I am a supervisor
+  When I bulk-assign shifts
+  Then the assignments are made and audit entries are generated
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Employee Master Data (E02), Role Based Access Control (E03), Time & Attendance (E04)
+- Notes: Support blackout dates and warehouse operation calendars.
