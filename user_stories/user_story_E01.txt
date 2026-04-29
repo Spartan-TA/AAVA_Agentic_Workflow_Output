@@ -1,0 +1,78 @@
+## E01: Project Scaffolding & Domain Setup
+
+### User Story 1: Spring Boot Project Initialization
+**User Story:** As a developer I want the EMS project to be initialized with Spring Boot and Maven So that I have a standardized foundation for all modules.
+
+**Acceptance Criteria:**
+- Scenario: Project builds and runs
+  - Given the project is cloned
+  - When I run `mvn spring-boot:run`
+  - Then the application starts on port 8080
+
+- Scenario: Health endpoint available
+  - Given the application is running
+  - When I GET `/actuator/health`
+  - Then the response is 200 and contains `"status":"UP"`
+
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** None  
+**Notes:** README must include build/run instructions.
+
+---
+
+### User Story 2: Database Migration Setup
+**User Story:** As a developer I want Flyway or Liquibase configured for DB migrations So that schema changes are versioned and repeatable.
+
+**Acceptance Criteria:**
+- Scenario: Baseline migration runs
+  - Given a new database
+  - When the app starts
+  - Then Flyway/Liquibase applies the baseline migration without error
+
+- Scenario: Migration failure blocks startup
+  - Given a migration with errors
+  - When the app starts
+  - Then startup fails and logs the error
+
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** None  
+**Notes:** Baseline migration must create core tables.
+
+---
+
+### User Story 3: Base Package Structure
+**User Story:** As a developer I want a standardized package structure for core modules So that code is organized and maintainable.
+
+**Acceptance Criteria:**
+- Scenario: Packages exist for each domain
+  - Given the project structure
+  - When I browse the source
+  - Then I see packages for employee, scheduling, attendance, safety
+
+**Priority:** High  
+**Story Points:** 2  
+**Dependencies:** None  
+**Notes:** Follows company Java package conventions.
+
+---
+
+### User Story 4: Actuator Endpoints Enabled
+**User Story:** As an admin I want Actuator endpoints enabled So that I can monitor application health and metrics.
+
+**Acceptance Criteria:**
+- Scenario: Health endpoint returns UP
+  - Given the app is running
+  - When I GET `/actuator/health`
+  - Then status is UP
+
+- Scenario: Metrics endpoint is available
+  - Given the app is running
+  - When I GET `/actuator/metrics`
+  - Then metrics data is returned
+
+**Priority:** High  
+**Story Points:** 2  
+**Dependencies:** None  
+**Notes:** Secure actuator endpoints for production.
