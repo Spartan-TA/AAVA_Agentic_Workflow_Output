@@ -1,0 +1,78 @@
+## E04: Time & Attendance (Clock In/Out)
+
+### User Story 1: Employee Clock-In
+**User Story:** As a WORKER I want to clock in at the start of my shift So that my attendance is accurately recorded.
+
+**Acceptance Criteria:**
+- Scenario: Valid clock-in
+  - Given a scheduled shift
+  - When I POST to `/attendance/clock-in` with valid location/device
+  - Then my clock-in is recorded with timestamp
+
+- Scenario: Out-of-geofence clock-in
+  - Given I am outside the allowed geofence
+  - When I clock in
+  - Then the request is rejected with 400 and error message
+
+**Priority:** High  
+**Story Points:** 5  
+**Dependencies:** E02, E03  
+**Notes:** Geofence is optional per warehouse.
+
+---
+
+### User Story 2: Employee Clock-Out
+**User Story:** As a WORKER I want to clock out at the end of my shift So that my work hours are calculated.
+
+**Acceptance Criteria:**
+- Scenario: Valid clock-out
+  - Given I am clocked in
+  - When I POST to `/attendance/clock-out`
+  - Then my clock-out is recorded and hours are computed
+
+- Scenario: Missed clock-in
+  - Given I did not clock in
+  - When I attempt to clock out
+  - Then the request is rejected with 400 and error message
+
+**Priority:** High  
+**Story Points:** 5  
+**Dependencies:** E02, E03  
+**Notes:** Handles missed punches.
+
+---
+
+### User Story 3: Attendance Corrections Workflow
+**User Story:** As a SUPERVISOR I want to approve corrections for missed punches So that attendance records are accurate.
+
+**Acceptance Criteria:**
+- Scenario: Worker submits correction
+  - Given a missed punch
+  - When a correction is submitted
+  - Then a task is created for supervisor approval
+
+- Scenario: Supervisor approves correction
+  - Given a pending correction
+  - When supervisor approves
+  - Then attendance is updated and audit logged
+
+**Priority:** High  
+**Story Points:** 8  
+**Dependencies:** E02, E03  
+**Notes:** Correction history must be retained.
+
+---
+
+### User Story 4: Attendance Reports Export
+**User Story:** As an HR I want to export attendance reports in CSV So that I can process payroll.
+
+**Acceptance Criteria:**
+- Scenario: Export attendance
+  - Given attendance data exists
+  - When I request export
+  - Then a CSV file is generated with daily totals
+
+**Priority:** High  
+**Story Points:** 3  
+**Dependencies:** E02, E03  
+**Notes:** Export includes all relevant fields.
