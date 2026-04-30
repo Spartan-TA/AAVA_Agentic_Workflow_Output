@@ -1,0 +1,33 @@
+### E12: Notifications & Announcements
+
+**User Story 1: Notification Preferences and Delivery**
+- User Story: As a user, I want to opt-in/out of in-app, email, and SMS notifications So that I receive relevant updates.
+- Acceptance Criteria:
+  - Scenario: Set preferences
+    - Given notification channels
+    - When I update my preferences
+    - Then only selected channels are used
+  - Scenario: Delivery status
+    - Given a notification sent
+    - When I check status
+    - Then delivery is tracked and visible
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E03, E05, E06, E07
+- Notes: Rate limits and quiet hours enforced.
+
+**User Story 2: Announcements Dashboard**
+- User Story: As a supervisor, I want to post announcements visible to my team So that important updates are communicated.
+- Acceptance Criteria:
+  - Scenario: Post announcement
+    - Given announcement content
+    - When I post it
+    - Then it appears on the dashboard for targeted users
+  - Scenario: Localization
+    - Given a user's language preference
+    - When an announcement is posted
+    - Then it is displayed in the user's language
+- Priority: Medium
+- Story Points: 3
+- Dependencies: E03, E05, E06, E07
+- Notes: Templates localized.
