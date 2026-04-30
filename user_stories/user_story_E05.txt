@@ -1,0 +1,33 @@
+### E05: Shift & Schedule Management
+
+**User Story 1: Create and Manage Shift Templates**
+- User Story: As an HR user, I want to create recurring shift templates and assign them to employees So that scheduling is efficient and consistent.
+- Acceptance Criteria:
+  - Scenario: Create shift template
+    - Given shift details
+    - When I POST to /shifts/templates
+    - Then the template is created and available for assignment
+  - Scenario: Assign shift to employee
+    - Given a template and employee
+    - When I assign the shift
+    - Then the employee sees the upcoming shift in their schedule
+- Priority: High
+- Story Points: 5
+- Dependencies: E02, E03, E04
+- Notes: Bulk assignment supported.
+
+**User Story 2: Conflict Detection and Audit Logging**
+- User Story: As a scheduler, I want to detect and prevent scheduling conflicts So that employees are not double-booked.
+- Acceptance Criteria:
+  - Scenario: Conflict detection
+    - Given overlapping shifts
+    - When I attempt to assign both to an employee
+    - Then the system prevents the assignment and shows an error
+  - Scenario: Audit log
+    - Given a schedule change
+    - When the change is made
+    - Then an audit entry is generated
+- Priority: High
+- Story Points: 3
+- Dependencies: E02, E03, E04
+- Notes: Blackout dates and warehouse calendars must be supported.
