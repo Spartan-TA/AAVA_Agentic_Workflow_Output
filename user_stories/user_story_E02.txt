@@ -1,0 +1,37 @@
+### E02: Employee Master Data (CRUD)
+
+**User Story 1: Create Employee API**
+- User Story: As an HR user, I want to create new employee records with name, badgeId, role, department, shiftGroup, hireDate, and status So that employee data is centrally managed.
+- Acceptance Criteria:
+  - Scenario: Successful creation
+    - Given valid employee data
+    - When I POST to /employees
+    - Then the employee is created and returned with a unique badgeId
+  - Scenario: Duplicate badgeId
+    - Given an existing badgeId
+    - When I try to create another employee with the same badgeId
+    - Then I receive a validation error
+- Priority: High
+- Story Points: 3
+- Dependencies: E01
+- Notes: OpenAPI schema must be provided.
+
+**User Story 2: Read/Update/Delete Employee API**
+- User Story: As an HR user, I want to retrieve, update, and soft-delete employee records So that employee data remains accurate and auditable.
+- Acceptance Criteria:
+  - Scenario: Retrieve employees
+    - Given existing employees
+    - When I GET /employees with filters
+    - Then I receive paginated, filtered results
+  - Scenario: Update employee
+    - Given an employee
+    - When I PATCH /employees/{id}
+    - Then the employee data is updated
+  - Scenario: Soft-delete employee
+    - Given an employee
+    - When I DELETE /employees/{id}
+    - Then the employee is marked as inactive, not removed from DB
+- Priority: High
+- Story Points: 5
+- Dependencies: E01
+- Notes: Filtering by department, role, status required.
