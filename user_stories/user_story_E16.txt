@@ -1,0 +1,33 @@
+### E16: Mobile Access (PWA)
+
+**User Story 1: Mobile Clock-In/Out and Schedule View**
+- User Story: As a worker, I want to clock in/out and view my schedule on my mobile device So that I can manage my shifts easily.
+- Acceptance Criteria:
+  - Scenario: Mobile clock-in
+    - Given a mobile device
+    - When I access the PWA and clock in
+    - Then my attendance is recorded
+  - Scenario: View schedule
+    - Given upcoming shifts
+    - When I view my schedule
+    - Then all shifts are visible in a mobile-friendly format
+- Priority: Medium
+- Story Points: 5
+- Dependencies: E04, E05, E06, E12
+- Notes: Responsive design required.
+
+**User Story 2: Offline Support for PWA**
+- User Story: As a worker, I want to clock in/out offline and sync when reconnected So that attendance is not lost due to connectivity issues.
+- Acceptance Criteria:
+  - Scenario: Offline clock-in
+    - Given no network
+    - When I clock in
+    - Then the event is queued locally
+  - Scenario: Sync on reconnect
+    - Given queued events
+    - When network is restored
+    - Then events are synced and conflicts resolved
+- Priority: Medium
+- Story Points: 8
+- Dependencies: E04, E05, E06, E12
+- Notes: Lighthouse PWA score tracked.
