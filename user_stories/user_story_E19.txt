@@ -1,0 +1,29 @@
+### E19: Advanced Scheduling (AI-Assisted)
+
+**User Story 1: AI-Driven Shift Suggestions**
+- User Story: As a scheduler, I want the system to suggest optimal shift assignments based on historical data and forecasted demand So that staffing is efficient.
+- Acceptance Criteria:
+  - Scenario: Generate suggestions
+    - Given historical attendance and demand data
+    - When I request shift suggestions
+    - Then the system proposes optimal assignments
+- Priority: Low
+- Story Points: 8
+- Dependencies: E02, E05, E07
+- Notes: Manual override allowed.
+
+**User Story 2: Accept/Reject AI Suggestions**
+- User Story: As a scheduler, I want to review and accept or reject AI-generated shift assignments So that I retain control over scheduling.
+- Acceptance Criteria:
+  - Scenario: Accept suggestion
+    - Given a proposed assignment
+    - When I accept it
+    - Then the shift is assigned to the employee
+  - Scenario: Reject suggestion
+    - Given a proposed assignment
+    - When I reject it
+    - Then no changes are made
+- Priority: Low
+- Story Points: 3
+- Dependencies: E02, E05, E07
+- Notes: Audit log of decisions.
