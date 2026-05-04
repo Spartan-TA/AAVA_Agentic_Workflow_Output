@@ -1,0 +1,55 @@
+### E03: Role-Based Access Control (RBAC)
+
+**User Story 1**
+- **Title:** Implement Role-Based Endpoint Security
+- **User Story:** As a system admin, I want endpoints secured by user role so that only authorized users can access sensitive data.
+- **Acceptance Criteria:**
+    - Scenario: Unauthorized access
+      - Given I am not authenticated
+      - When I access a protected endpoint
+      - Then I receive a 401 Unauthorized error
+    - Scenario: Forbidden action
+      - Given I am logged in as WORKER
+      - When I try to access an ADMIN-only endpoint
+      - Then I receive a 403 Forbidden error
+- **Additional Details:** Priority: High, Story Points: 3, Dependencies: E01, E02, Notes: Cover all endpoints.
+
+**User Story 2**
+- **Title:** Row-Level Security for Supervisors
+- **User Story:** As a supervisor, I want to access only my team's data so that I cannot view or modify other teams.
+- **Acceptance Criteria:**
+    - Scenario: Supervisor access
+      - Given I am a supervisor for Team A
+      - When I GET `/employees`
+      - Then I only see employees in Team A
+- **Additional Details:** Priority: High, Story Points: 3, Dependencies: User Story 1, Notes: Enforced at API and DB.
+
+**User Story 3**
+- **Title:** ADMIN Role Full Access
+- **User Story:** As an ADMIN, I want to manage all records so that I can perform any operation in the system.
+- **Acceptance Criteria:**
+    - Scenario: ADMIN access
+      - Given I am logged in as ADMIN
+      - When I perform any CRUD operation
+      - Then the action is permitted
+- **Additional Details:** Priority: High, Story Points: 2, Dependencies: User Story 1, Notes: Test coverage required.
+
+**User Story 4**
+- **Title:** API Key/OAuth2 Toggle
+- **User Story:** As a system admin, I want to toggle between API key and OAuth2 authentication so that I can adapt to different environments.
+- **Acceptance Criteria:**
+    - Scenario: Toggle authentication
+      - Given the system is configured for API key
+      - When I switch to OAuth2 in config
+      - Then all endpoints require OAuth2 tokens
+- **Additional Details:** Priority: High, Story Points: 2, Dependencies: User Story 1, Notes: Document config options.
+
+**User Story 5**
+- **Title:** Automated Security Tests
+- **User Story:** As a QA engineer, I want automated tests for security rules so that unauthorized access is prevented.
+- **Acceptance Criteria:**
+    - Scenario: Test unauthorized access
+      - Given a test suite
+      - When I run security tests
+      - Then all unauthorized/forbidden scenarios are covered and pass
+- **Additional Details:** Priority: High, Story Points: 2, Dependencies: All RBAC stories, Notes: Integrate with CI.
