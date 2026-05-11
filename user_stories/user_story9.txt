@@ -1,0 +1,31 @@
+Title: Equipment & Asset Assignment
+
+User Story: As an asset manager I want to assign and track warehouse equipment and PPE to employees so that asset accountability and safe operation are ensured.
+
+Acceptance Criteria:
+
+Scenario: Assign asset
+Given an available asset and a qualified employee
+When I check out the asset
+Then the assignment is recorded and the employee's certification is validated
+
+Scenario: Return asset
+Given an asset is checked out
+When it is returned
+Then the asset's condition and history log are updated
+
+Scenario: Block assignment for invalid certs
+Given an employee with expired or missing certification
+When I attempt to assign restricted equipment
+Then the assignment is blocked
+
+Scenario: Overdue report
+Given assets are overdue for return
+When I generate a report
+Then all overdue assets are listed by employee
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Employee Master Data (E02), Role-Based Access Control (E03), Training & Certification Tracking (E07)
+- Notes: Track asset condition and maintain history log per asset and employee.
