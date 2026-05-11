@@ -1,0 +1,31 @@
+Title: Notifications & Announcements
+
+User Story: As a warehouse worker or supervisor I want to receive in-app and email/SMS notifications for important events so that I stay informed about shift changes, expiring certifications, approvals, and announcements.
+
+Acceptance Criteria:
+
+Scenario: Notification preferences
+Given I am a user
+When I configure my notification settings
+Then I can opt-in or out per channel (in-app, email, SMS)
+
+Scenario: Localized templates
+Given a notification is sent
+When my preferred language is set
+Then the notification is localized accordingly
+
+Scenario: Delivery status tracking
+Given notifications are sent
+When I review my notification history
+Then the delivery status is visible
+
+Scenario: Announcements dashboard
+Given announcements are published
+When I log in
+Then I see all relevant announcements on my dashboard
+
+Additional Details:
+- Priority: Medium
+- Story Points: 5
+- Dependencies: Role-Based Access Control (E03), Shift & Schedule Management (E05), Leave & Absence Management (E06), Training & Certification Tracking (E07)
+- Notes: Support quiet hours configuration and rate limits.
