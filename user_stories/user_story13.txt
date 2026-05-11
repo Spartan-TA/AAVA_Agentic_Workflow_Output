@@ -1,0 +1,31 @@
+Title: Integration Layer (HRIS/WMS APIs)
+
+User Story: As a system integrator I want to expose and consume REST APIs for HRIS, WMS, and SSO so that master data is synchronized and duplicate entry is reduced.
+
+Acceptance Criteria:
+
+Scenario: Secure API endpoints
+Given the integration layer is enabled
+When I access APIs
+Then JWT/OAuth2 authentication is required
+
+Scenario: HRIS sync job
+Given new hires or terminations in HRIS
+When the sync job runs
+Then employee records are created or updated accordingly
+
+Scenario: WMS department/location link
+Given department or location data in WMS
+When the connector runs
+Then warehouse data is updated in the system
+
+Scenario: Webhook events
+Given an event occurs
+When a webhook is triggered
+Then the event is delivered idempotently and documented in OpenAPI
+
+Additional Details:
+- Priority: High
+- Story Points: 8
+- Dependencies: Project Scaffolding & Domain Setup (E01), Employee Master Data (E02), Role-Based Access Control (E03)
+- Notes: Support for SSO, idempotent webhooks, and OpenAPI documentation.
