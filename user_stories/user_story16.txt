@@ -1,0 +1,31 @@
+Title: Mobile Access (PWA)
+
+User Story: As a warehouse worker I want to access core workflows (clock-in/out, schedules, leave requests, announcements) on my mobile device so that I can perform my job efficiently from anywhere in the warehouse.
+
+Acceptance Criteria:
+
+Scenario: Responsive views
+Given I access the application on a mobile device
+When I use core workflows
+Then all views are responsive and usable
+
+Scenario: PWA installation
+Given I am on a supported device
+When I add the app to my home screen
+Then it installs as a PWA with a manifest
+
+Scenario: Offline clock events
+Given I am offline
+When I clock in or out
+Then the event is queued and synced with conflict resolution when online
+
+Scenario: PWA quality score
+Given the PWA is deployed
+When I run Lighthouse
+Then the PWA score is 80 or higher
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Time & Attendance (E04), Shift & Schedule Management (E05), Leave & Absence Management (E06), Notifications & Announcements (E12)
+- Notes: Core flows must be offline-friendly and installable.
