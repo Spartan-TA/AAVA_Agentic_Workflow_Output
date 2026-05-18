@@ -1,0 +1,12 @@
+Title: Reporting & Analytics
+User Story: As an operations manager I want operational reports and dashboards so that data-driven decisions for staffing, safety, and compliance are enabled
+Acceptance Criteria:
+Scenario: Report generation and export
+Given reporting endpoints
+When reports are generated
+Then filters by date, department, shift; exports within 10s for 50k rows; access controlled; metrics endpoints available
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Time & Attendance, Shift & Schedule, Leave & Absence, Training & Certification, Safety Incidents, Audit Trail
+- Notes: CSV/PDF export
