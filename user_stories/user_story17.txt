@@ -1,0 +1,15 @@
+Title: Onboarding & Offboarding Workflow
+
+User Story: As an HR manager I want automated onboarding and offboarding workflows so that employee lifecycle changes are efficient and risk is reduced.
+
+Acceptance Criteria:
+Scenario: Onboarding and offboarding automation
+Given new hires or terminations occur
+When workflows are triggered
+Then tasks are generated for training and asset assignment, offboarding revokes access, collects assets, and updates schedules
+
+Additional Details:
+- Priority: Medium
+- Story Points: 8
+- Dependencies: Employee Master Data, RBAC, Shift & Schedule Management, Training & Certification Tracking, Equipment & Asset Assignment, Integration Layer
+- Notes: HRIS integration for new hires
